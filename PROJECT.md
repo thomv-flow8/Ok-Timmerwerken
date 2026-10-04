@@ -168,3 +168,69 @@ Gecontroleerd op 375px en 1440px: geen horizontale scroll in alle drie.
 - Inhoud naar `docs/*.json` halen, generatoren bouwen, `.pages.yml` voor Pages CMS.
 - Redirectlijst van de circa 38 oude URL's naar de nieuwe zes.
 - Git-repository aanmaken (nog niet gedaan).
+
+---
+
+## Richting gekozen: C — Nocturne (4 oktober 2026)
+
+Aangepast ten opzichte van versie 1:
+- **Afwisselend donker en licht.** Volledig zwart was te zwaar. De pagina wisselt nu:
+  hero + bewijs + diensten (donker) → werkwijze + recent werk (licht, `#f5f5f0`) →
+  reviews (donker) → over Ozcan (licht) → contact (donker) → voet (donker).
+  Technisch opgelost met omkeerbare tokens: `.licht` herdefinieert `--vlak --inkt --kaart
+  --zacht --rand --knop-vul`, zodat elke component in beide banden werkt zonder eigen regels.
+- **Nummering 01–06 op de diensten**, overgenomen uit richting B: linksboven op de beeldkaart,
+  met een haarlijn eronder. Ook de werkwijzestappen dragen nu dat nummerformaat.
+- **Sectie "Recent opgeleverd"** toegevoegd (stond alleen in A en B).
+- **Koppelingen**: Werkspot-profiel bij de reviews en in de voet, Instagram bij "Recent
+  opgeleverd" en in de voet, plus drie sociale knoppen (Instagram, Werkspot, WhatsApp).
+- Contactformulier met zichtbare labels en `autocomplete`.
+
+## Reviews automatisch bijwerken — onderzocht, niet haalbaar via Werkspot
+
+Doel was: reviews op de site die zichzelf bijwerken. Onderzocht op 4 oktober 2026:
+
+| Bron | Automatisch? | Nu bruikbaar? |
+|---|---|---|
+| **Werkspot** | **Nee** | 78 reviews, 4,9 — alleen handmatig |
+| **Google Bedrijfsprofiel** | Ja, via de officiële Places API | Nog niet aangemaakt |
+| **Klantenvertellen** | Ja, officiële widget | Profiel bestaat (id 1018993) maar heeft 0 reviews |
+| **Trustpilot** | Ja, widget | Betaald voor de nette varianten |
+
+Waarom Werkspot afvalt:
+- Geen publieke API en geen officiële review-widget voor vakmensen.
+- De reviewpagina is server-gerenderd; er is géén XHR of JSON-endpoint aan te spreken
+  (`__NEXT_DATA__.props.pageProps` bevat alleen Sentry-velden).
+- Elke geautomatiseerde aanvraag wordt door **Cloudflare** geblokkeerd: `curl` met volledige
+  browser-headers geeft `403` met de pagina "Just a moment...". Een scraper die daar omheen
+  werkt zou hun botbeveiliging omzeilen — dat bouwen we niet.
+
+**Besluit (voorstel):** tweesporig.
+1. **Nu**: Werkspot-score, aantal en citaten in `docs/reviews.json`, te wijzigen via Pages CMS,
+   met een link naar het profiel. Een paar keer per jaar bijwerken is een minuut werk.
+2. **Structureel**: Google Bedrijfsprofiel aanmaken en klanten daarheen sturen. Daarna een
+   GitHub Action die nachtelijk de Places API uitleest → `docs/reviews-google.json` → site
+   herbouwt. Volledig automatisch, officieel toegestaan, en Google-reviews wegen voor lokale
+   vindbaarheid veel zwaarder dan Werkspot. Vereist een API-sleutel in de repository-secrets.
+
+## Beeldrechten — let op
+De drie foto's `assets/werkspot/sr-22`, `sr-23` en `sr-24` zijn door **klanten** geüpload bij hun
+review, niet door Ozcan. Die gebruiken we niet zonder hun toestemming. In de preview is daarom
+`sr-24` (berging) vervangen door `carport-overkapping` (sp-19, eigen upload).
+Instagram (@oktimmerwerken): 12 berichten van 20 mei 2025, maximaal 640px en achter een inlogmuur
+— te klein voor de site. De originelen opvragen bij Ozcan (staat op de opnamelijst).
+
+## Cookies en Google Analytics — aan het einde
+Nog niet gebouwd, op verzoek pas aan het eind. Voorwaarden om rekening mee te houden:
+- Onder de AVG/ePrivacy mag GA4 **pas laden na toestemming**. Dus: cookiebanner met
+  weigeren even prominent als accepteren, en Google Consent Mode v2 met alle signalen op
+  `denied` als beginwaarde.
+- Keuze opslaan in `localStorage`, GA4-script pas injecteren na akkoord.
+- Cookieverklaring en privacyverklaring als aparte pagina's, bewerkbaar via het CMS.
+- Alternatief dat géén banner nodig heeft: een cookieloze teller zoals Plausible of
+  Simple Analytics (betaald, maar scheelt de hele toestemmingslaag en is sneller).
+
+## Opnamelijst
+`docs/opnamelijst.md` — compleet, bedoeld om één op één aan Ozcan door te sturen.
+Grootste ontbrekende post: **een afgeronde vliering of zolderkamer**, zijn grootste dienst,
+waarvan geen enkele foto bestaat. Plus portret en foto's van hemzelf aan het werk.
