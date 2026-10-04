@@ -234,3 +234,28 @@ Nog niet gebouwd, op verzoek pas aan het eind. Voorwaarden om rekening mee te ho
 `docs/opnamelijst.md` — compleet, bedoeld om één op één aan Ozcan door te sturen.
 Grootste ontbrekende post: **een afgeronde vliering of zolderkamer**, zijn grootste dienst,
 waarvan geen enkele foto bestaat. Plus portret en foto's van hemzelf aan het werk.
+
+---
+
+## Beter beeldmateriaal aangeleverd (4 oktober 2026)
+Thomas vond in de Werkspot-reviews twaalf foto's die niet op het profiel stonden, plus het
+VELUX Montagepartner-logo. Originelen in `assets/aangeleverd/`, webversies via `sh tools/webbeeld.sh`.
+
+Dit materiaal is duidelijk beter dan wat op het profiel stond en vult twee gaten:
+- **`foto-11` — vlindermachine op een verse vloer.** Precies het beeld dat op de opnamelijst stond.
+  Nu de kaart bij Betonvloeren.
+- **`foto-06` — houten draagconstructie van een vliering.** De dienst waar géén beeld van was.
+  Lag 90° gedraaid; rechtgezet met `sips -r 270` → `foto-06-rechtgezet.jpg`. Nu de kaart bij
+  Vliering & zolderverbouwing.
+- **`foto-03` — de ploeg die beton stort op het wapeningsnet.** De enige foto met mensen erop.
+  Nu het hero-beeld; sluit aan op de kop "Ozcan en zijn ploeg".
+- `foto-04` spiegelende gevlinderde vloer · `foto-10` berging met vloer en open deur ·
+  `foto-07` tuinhuis met dubbele deuren · `foto-02` vlonder met lichtkoepels (scherper dan sp-03).
+
+Aangepast in de preview: hero, dienst 01, 02 en 06, en alle drie de kaarten onder
+"Recent opgeleverd". A en B zijn meegenomen waar ze dezelfde bestanden gebruikten.
+Hero-beeld en dienstkaarten zijn minder sterk verdonkerd (`brightness` .78 → .95 respectievelijk
+.68 → .80) zodat de foto's zichtbaar blijven.
+
+**Nog niet verwerkt:** de carportfoto met het zinken dakrandje tegen de bakstenen gevel is
+alleen in de chat geplakt en staat niet als bestand op de schijf. Even downloaden, dan pak ik hem op.

@@ -92,9 +92,9 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spaci
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;
   background:var(--void)}
 .hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.1) brightness(.78)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.06) brightness(.95)}
 .hero-scrim{position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 32%,rgba(0,0,0,.55) 62%,rgba(0,0,0,.92) 100%)}
+  background:linear-gradient(to bottom,rgba(0,0,0,.5) 0%,rgba(0,0,0,.05) 30%,rgba(0,0,0,.45) 58%,rgba(0,0,0,.88) 100%)}
 .hero-in{position:relative;width:100%;padding-bottom:var(--sp64);padding-top:150px}
 .hero .lead{margin-top:var(--sp24)}
 .hero-actions{display:flex;gap:var(--sp12);flex-wrap:wrap;margin-top:var(--sp32)}
@@ -129,7 +129,7 @@ section{background:var(--vlak);color:var(--inkt);
 .dienst{position:relative;border-radius:var(--r);overflow:hidden;background:var(--charcoal);
   min-height:400px;display:flex;align-items:flex-end;color:#fff}
 .dienst img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  filter:saturate(.72) contrast(1.08) brightness(.68);transition:transform .7s var(--ease)}
+  filter:saturate(.8) contrast(1.05) brightness(.8);transition:transform .7s var(--ease)}
 .dienst:hover img{transform:scale(1.04)}
 .dienst::after{content:"";position:absolute;inset:0;
   background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.4) 48%,rgba(0,0,0,0) 78%)}
@@ -252,7 +252,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <!-- ══ 1. hero — donker ══ -->
 <header class="hero">
   <div class="hero-bg">
-    <img fetchpriority="high" decoding="async" src="../assets/web/betonvloer-woonkamer.jpg" alt="Gevlinderde betonvloer in een woning met openslaande deuren naar de tuin">
+    <img fetchpriority="high" decoding="async" src="../assets/web/betonvloer-storten.jpg" alt="Ozcan en twee collega's storten beton op een gelegd wapeningsnet">
   </div>
   <div class="hero-scrim"></div>
   <div class="hero-in wrap">
@@ -289,7 +289,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     </div>
     <div class="diensten">
       <article class="dienst">
-        <img loading="lazy" decoding="async" src="../assets/web/betonvloer-oprit.jpg" alt="Strakke gevlinderde betonvloer">
+        <img loading="lazy" decoding="async" src="../assets/web/betonvloer-vlinderen.jpg" alt="Vlindermachine op een pas gestorte betonvloer">
         <span class="dienst-n">01</span>
         <span class="glas">Meest gevraagd</span>
         <div class="dienst-body">
@@ -301,7 +301,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
         </div>
       </article>
       <article class="dienst">
-        <img loading="lazy" decoding="async" src="../assets/web/verbouwing-ruwbouw.jpg" alt="Verbouwing van een zolder tot woonruimte">
+        <img loading="lazy" decoding="async" src="../assets/web/vliering-constructie.jpg" alt="Houten draagconstructie van een vliering op zolder">
         <span class="dienst-n">02</span>
         <div class="dienst-body">
           <h3 class="h3">Vliering &amp; zolderverbouwing</h3>
@@ -344,7 +344,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
         </div>
       </article>
       <article class="dienst">
-        <img loading="lazy" decoding="async" src="../assets/web/beton-wapening.jpg" alt="Wapeningsnet voor een betonvloer">
+        <img loading="lazy" decoding="async" src="../assets/web/betonvloer-storten.jpg" alt="Drie man storten beton op een gelegd wapeningsnet">
         <span class="dienst-n">06</span>
         <div class="dienst-body">
           <h3 class="h3">Funderingen</h3>
@@ -388,19 +388,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     </div>
     <div class="werk">
       <article class="werkkaart">
-        <img loading="lazy" decoding="async" src="../assets/web/timmerwerk-lamellenwand.jpg" alt="Houten lamellenwand tegen een bakstenen muur">
-        <div><h3 class="h3">Lamellenwand in de woonkamer</h3>
-          <p>Verticale latten in warm hout tegen de bestaande gevel, op maat gezaagd en strak uitgelijnd.</p></div>
+        <img loading="lazy" decoding="async" src="../assets/web/betonvloer-berging.jpg" alt="Berging met gevlinderde betonvloer en openstaande deur naar de tuin">
+        <div><h3 class="h3">Berging met gevlinderde vloer</h3>
+          <p>Vloer gestort en gevlinderd, wanden afgetimmerd en de deur op maat afgehangen.</p></div>
       </article>
       <article class="werkkaart">
-        <img loading="lazy" decoding="async" src="../assets/web/timmerwerk-vlonder.jpg" alt="Composiet vlonder met twee ingebouwde lichtkoepels">
+        <img loading="lazy" decoding="async" src="../assets/web/vlonder-lichtkoepels.jpg" alt="Composiet vlonder met twee ingebouwde lichtkoepels">
         <div><h3 class="h3">Vlonder met lichtkoepels</h3>
           <p>Composiet terras rondom twee bestaande lichtkoepels, strak ingepast en zonder zichtbare schroeven.</p></div>
       </article>
       <article class="werkkaart">
-        <img loading="lazy" decoding="async" src="../assets/web/carport-overkapping.jpg" alt="Houten overkapping met een dakraam">
-        <div><h3 class="h3">Overkapping met dakraam</h3>
-          <p>Douglas constructie tegen de schuur, met een dakraam dat daglicht tot achter in de ruimte brengt.</p></div>
+        <img loading="lazy" decoding="async" src="../assets/web/tuinhuis-deuren.jpg" alt="Tuinhuis met dubbele openslaande deuren in onbehandeld hout">
+        <div><h3 class="h3">Tuinhuis met openslaande deuren</h3>
+          <p>Tuinhuis in geschaafd hout, met op maat gemaakte dubbele deuren en een strakke dakrand.</p></div>
       </article>
     </div>
   </div>
