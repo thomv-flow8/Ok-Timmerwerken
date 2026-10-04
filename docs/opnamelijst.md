@@ -2,9 +2,9 @@
 
 Voor: Ozcan, OK Timmerwerken · Opgesteld 4 oktober 2026
 
-De nieuwe site is gebouwd rond grote foto's. Van het Werkspot-profiel zijn 24 foto's gehaald,
-waarvan er 12 bruikbaar zijn. Wat ontbreekt is beeld van **jou**, en van een paar diensten.
-Hieronder staat precies wat er nodig is, in volgorde van belang.
+De nieuwe site is gebouwd rond grote foto's. Er zijn er inmiddels genoeg om de site mee te vullen:
+24 van het Werkspot-profiel en 12 uit de reviews. Wat nog ontbreekt is beeld van **jou**, en van
+een paar afgeronde resultaten. Hieronder staat precies wat er nodig is, in volgorde van belang.
 
 ---
 
@@ -39,23 +39,24 @@ afwerking waar je trots op bent.
 
 | Dienst | Wat we nodig hebben | Hebben we al? |
 |---|---|---|
-| **Betonvloeren** | Gevlinderde vloer binnen én buiten, leeg en opgeruimd, glans zichtbaar | ja, redelijk |
-| **Vliering & zolderverbouwing** | **Afgeronde** vliering of zolderkamer, ingericht of leeg maar gestuukt en geschilderd | **nee — ontbreekt volledig** |
+| **Betonvloeren** | Gevlinderde vloer binnen én buiten, leeg en opgeruimd, glans zichtbaar | ja, goed |
+| **Vliering & zolderverbouwing** | **Afgeronde** vliering of zolderkamer, gestuukt en geschilderd | alleen de ruwbouwconstructie |
 | **Carport, veranda & overkapping** | Carport met auto eronder, boeidelen scherp in beeld, EPDM-rand | ja, redelijk |
 | **Dakramen (Velux)** | Van binnen mét daglicht, en van buiten op het dak | deels |
 | **Timmerwerk & afbouw** | Maatwerkkast, lamellenwand, trap, vlizotrap, nette plinten | ja, goed |
-| **Funderingen** | Gestorte fundering of zwembadbak, strak in de bekisting | deels, rommelig |
+| **Funderingen** | Gestorte fundering of zwembadbak, strak in de bekisting | ja, goed |
 
-**De vliering is de grootste ontbrekende post.** Dat is volgens de reviews je grootste
-dienst en er is geen enkele foto van een afgerond resultaat.
+**De vliering blijft de grootste ontbrekende post.** Er is nu één foto van de draagconstructie
+in ruwbouw, maar geen enkele van een afgeronde, gestuukte en geschilderde zolderkamer. Dat is
+volgens de reviews je grootste dienst — daar hoort het mooiste eindbeeld bij.
 
 ---
 
 ## C. Proces — dit verkoopt het vakmanschap
 
-- Wapeningsnet gelegd, vóór het storten (we hebben er één, meer mag).
+- Wapeningsnet gelegd, vóór het storten (hebben we, meer mag).
 - De betonwagen met giek tijdens het storten.
-- De vloer halverwege het vlinderen, met de machinesporen er nog in.
+- De vloer halverwege het vlinderen (hebben we — een goede, meer mag).
 - Houtskeletwand in opbouw.
 - Dakraam half ingebouwd, met het gootstuk zichtbaar.
 
@@ -102,9 +103,8 @@ Stuur de **originelen van je telefoon** van die posts, dan kunnen we ze alsnog g
 ---
 
 ## Samengevat: het kortste lijstje
-Als er maar tijd is voor vijf foto's, dan deze:
-1. Portret van jou
-2. Jij met de vlindermachine op een verse vloer
-3. Een afgeronde vliering of zolderkamer
-4. Een carport met auto eronder
-5. Een voor-en-na van dezelfde ruimte
+Als er maar tijd is voor vier foto's, dan deze:
+1. **Portret van jou** — zonder dit blijft er een lege plek op de site staan
+2. **Een afgeronde vliering of zolderkamer** — de enige dienst zonder eindbeeld
+3. **Jij aan het werk**, bijvoorbeeld achter de vlindermachine
+4. **Een voor-en-na** van dezelfde ruimte
