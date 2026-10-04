@@ -323,3 +323,42 @@ dat kan zolang er geen tweede kloon van de repository bestaat.
 
 Nog niet ingericht: GitHub Actions voor de build en Pages als doel. Dat komt
 pas als `tools/bouw-site.js` bestaat en de inhoud in `docs/*.json` staat.
+
+## Logo — besluit
+
+Thomas koos op 4 oktober 2026 voor een **combinatie van beide richtingen, kleurloos**:
+de gevel van het huidige logo, opnieuw getekend als vector, met de leesbare O en K uit
+concept 5 erin. Geen messing meer — het merk is zwart-wit.
+
+De maatvoering is niet verzonnen maar opgemeten aan `assets/logo-oud/ok-timmerwerken-origineel.png`
+(met een scan van het alfakanaal): gevel 444 bij 417 pixels, lijndikte 31 pixels, dakhelling
+30 graden. Genormaliseerd op breedte 100 wordt dat hoogte 94 en lijndikte 7. Die drie getallen
+zijn letterlijk overgenomen, zodat bestaande klanten hetzelfde teken blijven zien.
+
+De letters vullen een blok van x=14 tot x=86, kapitaalhoogte 38,3. Dat blok is zo gekozen dat
+er rondom precies een hele lijndikte lucht tussen de letters en de staanders zit; met minder
+lucht loopt het bij verkleining als eerste dicht. De bovenarm van de K staat op 35 graden —
+tussen de dakhelling van 30 en de 45 van een gewone K in, zodat hij het dak echoot zonder een
+rare letter te worden.
+
+Bronbestand: `tools/logo-combi.js`. Daaruit schrijven `tools/genereer-logobestanden.js` de
+SVG's naar `assets/logo-nieuw/` en `tools/genereer-logocombi-pagina.js` de pagina
+`preview/logo-combi.html`. Bewerk de uitvoer nooit rechtstreeks.
+
+Op ongeveer 24 pixels loopt het volledige merk dicht. Daarom is er een vereenvoudiging voor
+favicon en app-tegel: alleen het silhouet, lijndikte 12 in plaats van 7, zonder letters.
+
+### Gevolg voor de site
+
+Kleurloos betekent dat richting C (`preview/c-nocturne.html`) ook achromatisch wordt: de
+nummers 01 tot 06, de sterren bij de reviews en de haarlijnen gaan van messing `#b08d4f` naar
+wit of grijs. Dat moet nog doorgevoerd worden.
+
+### Nog te doen voor het volledige pakket
+
+- PNG's op meerdere maten, transparant, zwart en wit
+- Het woordmerk omzetten naar letteromtrekken, zodat een drukker geen Inter nodig heeft
+- Favicon-set (ico, 180 px apple-touch, 192 en 512 px voor de app-tegel)
+- Social: profielfoto vierkant en omslagbanners
+- HTML-mailhandtekening en briefhoofd
+- Een korte merkpagina met minimummaten en vrije ruimte rondom

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 94" role="img" aria-label="OK Timmerwerken">
+  <title>OK Timmerwerken</title>
+  <g fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter">
+    <path d="M3.5,94 V30.9 L50,4 L96.5,30.9 V94" stroke-linecap="butt"/>
+    <g stroke-linecap="square">
+      <circle cx="33.15" cy="63" r="15.65"/>
+      <path d="M59.6,47.35 V78.65 M59.6,63 L83.4,45.9 M59.6,63 L83.4,80.1"/>
+    </g>
+  </g>
+</svg>

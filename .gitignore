@@ -11,3 +11,8 @@ node_modules/
 .agents/
 .claude/
 skills-lock.json
+
+# Door klanten bij hun review geuploade foto's - geen gebruiksrecht
+assets/werkspot/sr-22.jpg
+assets/werkspot/sr-23.jpg
+assets/werkspot/sr-24.jpg
