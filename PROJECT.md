@@ -261,3 +261,38 @@ Hero-beeld en dienstkaarten zijn minder sterk verdonkerd (`brightness` .78 → .
 
 **Nog niet verwerkt:** de carportfoto met het zinken dakrandje tegen de bakstenen gevel is
 alleen in de chat geplakt en staat niet als bestand op de schijf. Even downloaden, dan pak ik hem op.
+
+## Logoconcepten (4 oktober 2026)
+`preview/logo.html` — acht richtingen, gegenereerd uit één bron.
+
+- `tools/logo-concepten.js` — de bron: per concept het idee, waar het sterk in is, waar je op
+  moet letten, en de SVG-vorm met `currentColor`.
+- `tools/genereer-logopagina.js` — schrijft `assets/logo/*.svg` én `preview/logo.html`.
+  Een concept aanpassen doe je in de bron, nooit in de HTML.
+
+| # | Concept | Kern |
+|---|---|---|
+| 1 | Gevel | Gevelsilhouet, OK uitgespaard. Evolutie van het huidige logo |
+| 2 | Spant | Dakspant: kepers, trekbalk, hanenbalk. Best schaalbaar |
+| 3 | Monogram | O en K, de K-bovenarm op dakhelling |
+| 4 | Verstek | Hoekstuk met verstekzaagsnede van 45 graden |
+| 5 | Keper | Dakvlak als luifel over de letters OK |
+| 6 | Stempel | Afgerond vierkant, OK uitgespaard. Keurmerk-gevoel |
+| 7 | Gevel open | Omgekeerde variant van 1: omtrek met massieve letters |
+| 8 | Woordmerk | Geen beeldmerk, alleen de naam tussen twee haarlijnen |
+
+Elk concept staat op zwart, op crème, als favicon op 64/32/16px, als ronde profielfoto, en in
+de navigatiebalk van de site. Schakelaar tussen **messing** (`#b08d4f`, platte kleur afgeleid
+van het oude goud) en **kleurloos**.
+
+Tijdens het tekenen bijgesteld:
+- **Spant**: de balken waren zo dik dat het spant dichtliep tot een gevulde driehoek en als
+  waarschuwingsbord las. Flauwere dakhelling, bredere overspanning, dunnere balken.
+- **Verstek**: las als de letter L — verwarrend voor een bedrijf dat OK heet. Gespiegeld naar
+  een hoekstuk met de staande balk rechts.
+
+**Openstaande beslissing met gevolgen voor de site:** messing of kleurloos. Kiezen we messing,
+dan neem ik dat accent op in richting C (nummers 01–06, sterren, haarlijnen). Nu is de site
+volledig kleurloos.
+
+Gebruikte skill: `svg-logo-designer` (geïnstalleerd en gekopieerd naar `~/.claude/skills/`).

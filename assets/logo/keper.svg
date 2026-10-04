@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 96" role="img" aria-label="OK Timmerwerken">
+  <title>OK Timmerwerken — beeldmerk Keper</title>
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="square">
+    <path d="M6,36 L50,8 L94,36"/>
+    <circle cx="27" cy="66" r="17"/>
+    <path d="M67,49 V83 M67,66 L87,49 M67,66 L87,83"/>
+  </g>
+</svg>

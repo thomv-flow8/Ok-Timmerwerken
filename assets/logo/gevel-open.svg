@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="OK Timmerwerken">
+  <title>OK Timmerwerken — beeldmerk Gevel open</title>
+  <g fill="none" stroke="currentColor" stroke-linejoin="miter">
+    <path d="M10,46 L50,12 L90,46 L90,90 L10,90 Z" stroke-width="8"/>
+    <circle cx="35" cy="68" r="11" stroke-width="6"/>
+    <path d="M63,57 V79 M63,68 L77,56 M63,68 L77,80" stroke-width="6" stroke-linecap="square"/>
+  </g>
+</svg>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OK Timmerwerken — drie logorichtingen</title>
+<title>OK Timmerwerken — logoconcepten</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --zwart:#000; --creme:#f5f5f0; --houtskool:#202020; --grafiet:#333;
   --messing:#b08d4f; --rook:#999;
-  --accent:var(--messing);          /* wordt omgezet door de schakelaar */
+  --accent:var(--messing);
   --f:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;
 }
 body.kleurloos{--accent:var(--creme)}
@@ -18,285 +18,419 @@ body{background:var(--zwart);color:#fff;font-family:var(--f);line-height:1.5;
   -webkit-font-smoothing:antialiased;padding:48px 24px 120px}
 .wrap{max-width:1100px;margin:0 auto}
 h1{font-weight:300;font-size:clamp(28px,4.5vw,44px);letter-spacing:-.025em;line-height:1.05}
-.intro{color:rgba(255,255,255,.7);max-width:62ch;margin-top:16px;font-size:17px}
+.intro{color:rgba(255,255,255,.7);max-width:64ch;margin-top:16px;font-size:17px}
+a{color:inherit}
+
 .schakelaar{display:inline-flex;gap:4px;background:var(--houtskool);border-radius:999px;
   padding:4px;margin-top:32px}
 .schakelaar button{border:0;background:transparent;color:rgba(255,255,255,.7);font:inherit;
   font-size:14px;font-weight:500;padding:9px 18px;border-radius:999px;cursor:pointer;transition:.2s}
 .schakelaar button[aria-pressed="true"]{background:var(--accent);color:#000}
-body.kleurloos .schakelaar button[aria-pressed="true"]{background:var(--creme);color:#000}
 
-.richting{margin-top:72px;border-top:1px solid var(--grafiet);padding-top:32px}
-.kop{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+/* het merk */
+.merk{display:block;flex:none;color:var(--accent)}
+.lockup{display:flex;align-items:center;gap:14px}
+.lockup.gestapeld{flex-direction:column;gap:14px}
+.woord{font-weight:500;letter-spacing:.17em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.woord .dun{font-weight:300}
+.op-licht{color:#12110f}.op-donker{color:#fff}
+
+/* overzicht */
+.overzicht{margin-top:40px;background:var(--houtskool);border-radius:12px;padding:32px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+@media(max-width:780px){.overzicht{grid-template-columns:repeat(2,1fr)}}
+.tegel{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.tegel figcaption{font-size:12px;color:var(--rook);letter-spacing:.04em}
+.tegel b{color:#fff;font-weight:500}
+
+/* concepten */
+.concept{margin-top:72px;border-top:1px solid var(--grafiet);padding-top:32px}
+.kop{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:10px}
 .kop h2{font-weight:400;font-size:26px;letter-spacing:-.015em}
 .kop .nr{font-size:13px;font-weight:500;letter-spacing:.16em;color:var(--rook)}
-.richting > p{color:rgba(255,255,255,.68);max-width:68ch;font-size:16px}
+.idee{color:rgba(255,255,255,.72);max-width:70ch;font-size:16px}
+.weging{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px;font-size:15px}
+@media(max-width:700px){.weging{grid-template-columns:1fr;gap:12px}}
+.weging dt{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--rook);margin-bottom:5px}
+.weging dd{color:rgba(255,255,255,.78)}
 
 .proeven{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
 @media(max-width:800px){.proeven{grid-template-columns:1fr}}
-.proef{border-radius:10px;padding:40px 32px;display:grid;place-items:center;min-height:210px}
+.proef{border-radius:10px;padding:40px 32px;display:grid;place-items:center;min-height:230px}
 .proef.donker{background:var(--houtskool)}
 .proef.licht{background:var(--creme)}
 .proef.wit{background:#fff}
+.mid{text-align:center}
 .bijschrift{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--rook);
-  margin-top:10px;display:block}
+  margin-top:14px;display:block}
 
-.klein{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;margin-top:28px;
+.klein{display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap;margin-top:16px;
   background:var(--houtskool);border-radius:10px;padding:28px 32px}
 .klein figure{text-align:center}
-.klein figcaption{font-size:11px;color:var(--rook);margin-top:8px;letter-spacing:.05em}
+.klein figcaption{font-size:11px;color:var(--rook);margin-top:10px;letter-spacing:.05em}
+.klein .rond .merk{background:#000;border-radius:50%;padding:14px;box-sizing:content-box}
 
 .balk{margin-top:16px;background:#000;border:1px solid var(--grafiet);border-radius:10px;
   padding:16px 22px;display:flex;align-items:center;gap:28px}
 .balk nav{display:flex;gap:22px;margin-left:auto;font-size:14px;font-weight:500;color:rgba(255,255,255,.8)}
 .balk .knop{background:var(--creme);color:#000;border-radius:999px;padding:10px 18px;
   font-size:14px;font-weight:500}
-@media(max-width:700px){.balk nav{display:none}}
+@media(max-width:760px){.balk nav{display:none}}
 
-/* het sluitstuk: logo in de context van een bus of banner */
-.banner{margin-top:16px;border-radius:10px;overflow:hidden;position:relative;min-height:170px;
-  display:flex;align-items:center;padding:0 40px;
-  background:linear-gradient(100deg,#111 0%,#1c1c1c 55%,#0b0b0b 100%)}
-.banner .rechts{margin-left:auto;text-align:right;font-size:13px;color:rgba(255,255,255,.55);line-height:1.8}
-
-/* ---- het merk zelf ---- */
-.lockup{display:flex;align-items:center;gap:16px}
-.lockup.gestapeld{flex-direction:column;gap:14px}
-.merk{display:block;flex:none}
-.woord{font-weight:500;letter-spacing:.17em;text-transform:uppercase;white-space:nowrap;line-height:1}
-.woord .licht-deel{font-weight:300}
-.op-licht{color:#12110f}
-.op-donker{color:#fff}
+/* woordmerk-concept */
+.woordmerk-proef{display:grid;place-items:center;min-height:230px}
+.wm{text-align:center}
+.wm .regel{font-weight:500;letter-spacing:.3em;text-transform:uppercase;line-height:1}
+.wm .sub{font-weight:300;letter-spacing:.3em;text-transform:uppercase;font-size:12px;
+  margin-top:14px;color:var(--rook)}
+.wm hr{border:0;border-top:1px solid currentColor;opacity:.35;margin:16px auto 0;width:100%}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="merk-gevel" viewBox="0 0 100 100"><mask id="m-gevel">
+    <rect width="100" height="100" fill="#fff"/>
+    <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
+    <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/>
+  </mask>
+  <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="currentColor" mask="url(#m-gevel)"/></symbol>
+  <symbol id="merk-spant" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square">
+    <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/>
+  </g></symbol>
+  <symbol id="merk-monogram" viewBox="0 0 100 86"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square">
+    <circle cx="31" cy="43" r="22"/>
+    <path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/>
+  </g></symbol>
+  <symbol id="merk-verstek" viewBox="0 0 100 100"><mask id="m-verstek">
+    <rect width="100" height="100" fill="#fff"/>
+    <path d="M66,66 L88,88" stroke="#000" stroke-width="6"/>
+  </mask>
+  <path d="M88,12 H66 V66 H12 V88 H88 Z" fill="currentColor" mask="url(#m-verstek)"/></symbol>
+  <symbol id="merk-keper" viewBox="0 0 100 96"><g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="square">
+    <path d="M6,36 L50,8 L94,36"/>
+    <circle cx="27" cy="66" r="17"/>
+    <path d="M67,49 V83 M67,66 L87,49 M67,66 L87,83"/>
+  </g></symbol>
+  <symbol id="merk-stempel" viewBox="0 0 100 100"><mask id="m-stempel">
+    <rect width="100" height="100" fill="#fff"/>
+    <circle cx="36" cy="50" r="14" fill="none" stroke="#000" stroke-width="7"/>
+    <path d="M64,36 V64 M64,50 L80,36 M64,50 L80,64" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/>
+  </mask>
+  <rect x="6" y="6" width="88" height="88" rx="16" fill="currentColor" mask="url(#m-stempel)"/></symbol>
+  <symbol id="merk-gevel-open" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-linejoin="miter">
+    <path d="M10,46 L50,12 L90,46 L90,90 L10,90 Z" stroke-width="8"/>
+    <circle cx="35" cy="68" r="11" stroke-width="6"/>
+    <path d="M63,57 V79 M63,68 L77,56 M63,68 L77,80" stroke-width="6" stroke-linecap="square"/>
+  </g></symbol>
+</defs></svg>
+
 <div class="wrap">
-  <h1>Drie logorichtingen</h1>
-  <p class="intro">Alle drie zijn vectorvormen, zonder verlopen, en getekend om ook op 16 pixels
-    en in één kleur te werken — precies wat het huidige logo niet kan. De letters in het woordmerk
-    worden in het eindpakket omgezet naar vormen, zodat er geen lettertype nodig is.</p>
+  <h1>Logoconcepten</h1>
+  <p class="intro">Acht richtingen, allemaal vectorvormen zonder verlopen, getekend om ook op
+    16 pixels en in één kleur te werken — precies wat het huidige logo niet kan. Bovenaan staan
+    ze naast elkaar; daaronder elk concept in zijn gebruikscontexten, met waar het sterk in is en
+    waar je op moet letten. De letters in het woordmerk worden in het eindpakket omgezet naar
+    vormen, zodat er geen lettertype meer nodig is.</p>
 
   <div class="schakelaar" role="group" aria-label="Kleurvariant">
     <button id="k-messing" aria-pressed="true">Messing accent</button>
     <button id="k-kleurloos" aria-pressed="false">Kleurloos</button>
   </div>
 
-  <!-- ══════════ richting 1 ══════════ -->
-  <section class="richting">
-    <div class="kop"><span class="nr">RICHTING 1</span><h2>Gevel</h2></div>
-    <p>De evolutie van het huidige logo: het gevelsilhouet blijft, maar wordt een gesloten vorm met
-      de letters <strong>OK</strong> eruit gespaard. Daardoor is het monogram eindelijk leesbaar en
-      blijft de vorm herkenbaar voor bestaande klanten. Dichtst bij wat er nu staat.</p>
+  <div class="overzicht">
+      <figure class="tegel">
+        <svg class="merk" width="56" height="56" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel"/></svg>
+        <figcaption><b>1. Gevel</b></figcaption>
+      </figure>
+      <figure class="tegel">
+        <svg class="merk" width="56" height="56" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-spant"/></svg>
+        <figcaption><b>2. Spant</b></figcaption>
+      </figure>
+      <figure class="tegel">
+        <svg class="merk" width="65" height="56" viewBox="0 0 100 86"  aria-hidden="true"><use href="#merk-monogram"/></svg>
+        <figcaption><b>3. Monogram</b></figcaption>
+      </figure>
+      <figure class="tegel">
+        <svg class="merk" width="56" height="56" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-verstek"/></svg>
+        <figcaption><b>4. Verstek</b></figcaption>
+      </figure>
+      <figure class="tegel">
+        <svg class="merk" width="58" height="56" viewBox="0 0 100 96"  aria-hidden="true"><use href="#merk-keper"/></svg>
+        <figcaption><b>5. Keper</b></figcaption>
+      </figure>
+      <figure class="tegel">
+        <svg class="merk" width="56" height="56" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-stempel"/></svg>
+        <figcaption><b>6. Stempel</b></figcaption>
+      </figure>
+      <figure class="tegel">
+        <svg class="merk" width="56" height="56" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel-open"/></svg>
+        <figcaption><b>7. Gevel open</b></figcaption>
+      </figure>
+      <figure class="tegel">
+        <span class="woord op-donker" style="font-size:13px;letter-spacing:.26em">OK</span>
+        <figcaption><b>8. Woordmerk</b></figcaption>
+      </figure>
+  </div>
+
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 1</span><h2>Gevel</h2></div>
+    <p class="idee">De evolutie van het huidige logo: het gevelsilhouet blijft, maar wordt een gesloten vorm met de letters OK eruit gespaard.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Herkenbaar voor bestaande klanten, en het monogram is eindelijk leesbaar.</dd></div>
+      <div><dt>Let op</dt><dd>De uitgespaarde letters lopen op 16 pixels dicht; als favicon is een vereenvoudigde versie nodig.</dd></div>
+    </dl>
 
     <div class="proeven">
-      <div class="proef donker">
-        <div>
-          <div class="lockup gestapeld">
-            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" role="img" aria-label="OK Timmerwerken beeldmerk">
-              <mask id="g1"><rect width="100" height="100" fill="#fff"/>
-                <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
-                <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/>
-              </mask>
-              <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="currentColor" mask="url(#g1)" style="color:var(--accent)"/>
-            </svg>
-            <div class="woord op-donker" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
-          </div>
-          <span class="bijschrift" style="text-align:center">op zwart</span>
-        </div>
-      </div>
-      <div class="proef licht">
-        <div>
-          <div class="lockup gestapeld">
-            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" aria-hidden="true">
-              <mask id="g2"><rect width="100" height="100" fill="#fff"/>
-                <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
-                <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/>
-              </mask>
-              <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="currentColor" mask="url(#g2)" style="color:var(--accent)"/>
-            </svg>
-            <div class="woord op-licht" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
-          </div>
-          <span class="bijschrift" style="text-align:center">op crème</span>
-        </div>
-      </div>
+      <div class="proef donker"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel"/></svg><span class="woord op-donker" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op zwart</span></div></div>
+      <div class="proef licht"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel"/></svg><span class="woord op-licht" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op crème</span></div></div>
     </div>
 
     <div class="klein">
-      <figure><svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
-        <mask id="g3"><rect width="100" height="100" fill="#fff"/>
-          <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
-          <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
-        <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="#fff" mask="url(#g3)"/></svg>
-        <figcaption>64px, één kleur</figcaption></figure>
-      <figure><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
-        <mask id="g4"><rect width="100" height="100" fill="#fff"/>
-          <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
-          <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
-        <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="#fff" mask="url(#g4)"/></svg>
-        <figcaption>32px</figcaption></figure>
-      <figure><svg width="16" height="16" viewBox="0 0 100 100" aria-hidden="true">
-        <mask id="g5"><rect width="100" height="100" fill="#fff"/>
-          <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
-          <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
-        <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="#fff" mask="url(#g5)"/></svg>
-        <figcaption>16px (favicon)</figcaption></figure>
+      <figure><svg class="merk" width="64" height="64" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel"/></svg><figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg class="merk" width="32" height="32" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel"/></svg><figcaption>32px</figcaption></figure>
+      <figure><svg class="merk" width="16" height="16" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel"/></svg><figcaption>16px (favicon)</figcaption></figure>
+      <figure class="rond"><svg class="merk" width="40" height="40" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel"/></svg><figcaption>profielfoto</figcaption></figure>
     </div>
 
     <div class="balk">
-      <div class="lockup">
-        <svg class="merk" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
-          <mask id="g6"><rect width="100" height="100" fill="#fff"/>
-            <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
-            <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
-          <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="currentColor" mask="url(#g6)" style="color:var(--accent)"/></svg>
-        <span class="woord op-donker" style="font-size:14px">OK Timmerwerken</span>
-      </div>
+      <div class="lockup"><svg class="merk" width="28" height="28" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel"/></svg><span class="woord op-donker" style="font-size:14px">OK <span class="dun">Timmerwerken</span></span></div>
       <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
       <span class="knop">Vraag advies aan</span>
     </div>
   </section>
 
-  <!-- ══════════ richting 2 ══════════ -->
-  <section class="richting">
-    <div class="kop"><span class="nr">RICHTING 2</span><h2>Spant</h2></div>
-    <p>Geen huis maar een <strong>dakspant</strong>: twee kepers, een trekbalk en een hanenbalk —
-      het meest herkenbare teken van timmerwerk dat er bestaat. Abstract, bouwkundig, en van alle
-      drie het best schaalbaar: dit blijft op 16 pixels én op een bus leesbaar.</p>
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 2</span><h2>Spant</h2></div>
+    <p class="idee">Geen huis maar een dakspant: twee kepers, een trekbalk en een hanenbalk — het meest herkenbare teken van timmerwerk dat er bestaat.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Bouwkundig en eigen. Van alle concepten het best schaalbaar: blijft op 16 pixels leesbaar.</dd></div>
+      <div><dt>Let op</dt><dd>Zegt niets over beton, en bevat de letters OK niet.</dd></div>
+    </dl>
 
     <div class="proeven">
-      <div class="proef donker">
-        <div>
-          <div class="lockup gestapeld">
-            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" role="img" aria-label="OK Timmerwerken beeldmerk">
-              <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square" style="color:var(--accent)">
-                <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/>
-              </g>
-            </svg>
-            <div class="woord op-donker" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
-          </div>
-          <span class="bijschrift" style="text-align:center">op zwart</span>
-        </div>
-      </div>
-      <div class="proef licht">
-        <div>
-          <div class="lockup gestapeld">
-            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" aria-hidden="true">
-              <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square" style="color:var(--accent)">
-                <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/>
-              </g>
-            </svg>
-            <div class="woord op-licht" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
-          </div>
-          <span class="bijschrift" style="text-align:center">op crème</span>
-        </div>
-      </div>
+      <div class="proef donker"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-spant"/></svg><span class="woord op-donker" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op zwart</span></div></div>
+      <div class="proef licht"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-spant"/></svg><span class="woord op-licht" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op crème</span></div></div>
     </div>
 
     <div class="klein">
-      <figure><svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
-        <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="square">
-          <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
-        <figcaption>64px, één kleur</figcaption></figure>
-      <figure><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
-        <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="square">
-          <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
-        <figcaption>32px</figcaption></figure>
-      <figure><svg width="16" height="16" viewBox="0 0 100 100" aria-hidden="true">
-        <g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="square">
-          <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
-        <figcaption>16px (favicon)</figcaption></figure>
+      <figure><svg class="merk" width="64" height="64" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-spant"/></svg><figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg class="merk" width="32" height="32" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-spant"/></svg><figcaption>32px</figcaption></figure>
+      <figure><svg class="merk" width="16" height="16" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-spant"/></svg><figcaption>16px (favicon)</figcaption></figure>
+      <figure class="rond"><svg class="merk" width="40" height="40" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-spant"/></svg><figcaption>profielfoto</figcaption></figure>
     </div>
 
     <div class="balk">
-      <div class="lockup">
-        <svg class="merk" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
-          <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square" style="color:var(--accent)">
-            <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
-        <span class="woord op-donker" style="font-size:14px">OK Timmerwerken</span>
-      </div>
+      <div class="lockup"><svg class="merk" width="28" height="28" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-spant"/></svg><span class="woord op-donker" style="font-size:14px">OK <span class="dun">Timmerwerken</span></span></div>
       <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
       <span class="knop">Vraag advies aan</span>
     </div>
   </section>
 
-  <!-- ══════════ richting 3 ══════════ -->
-  <section class="richting">
-    <div class="kop"><span class="nr">RICHTING 3</span><h2>Monogram</h2></div>
-    <p>De letters zelf zijn het merk: een perfecte cirkel als <strong>O</strong> en een
-      <strong>K</strong> waarvan de bovenarm op dakhelling staat. Geen huisje meer, wel de
-      verwijzing. Het meest eigentijdse van de drie en het sterkst op social, waar een profielfoto
-      rond is en een monogram het beste werkt.</p>
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 3</span><h2>Monogram</h2></div>
+    <p class="idee">De letters zelf zijn het merk: een perfecte cirkel als O en een K waarvan de bovenarm op dakhelling staat.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Het meest eigentijds, en het sterkst op social waar een profielfoto rond is.</dd></div>
+      <div><dt>Let op</dt><dd>De verwijzing naar het dak is subtiel; zonder uitleg ziet niet iedereen die.</dd></div>
+    </dl>
 
     <div class="proeven">
-      <div class="proef donker">
-        <div>
-          <div class="lockup gestapeld">
-            <svg class="merk" width="128" height="112" viewBox="0 0 100 86" role="img" aria-label="OK Timmerwerken beeldmerk">
-              <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square" style="color:var(--accent)">
-                <circle cx="31" cy="43" r="22"/>
-                <path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/>
-              </g>
-            </svg>
-            <div class="woord op-donker" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
-          </div>
-          <span class="bijschrift" style="text-align:center">op zwart</span>
-        </div>
-      </div>
-      <div class="proef licht">
-        <div>
-          <div class="lockup gestapeld">
-            <svg class="merk" width="128" height="112" viewBox="0 0 100 86" aria-hidden="true">
-              <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square" style="color:var(--accent)">
-                <circle cx="31" cy="43" r="22"/>
-                <path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/>
-              </g>
-            </svg>
-            <div class="woord op-licht" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
-          </div>
-          <span class="bijschrift" style="text-align:center">op crème</span>
-        </div>
-      </div>
+      <div class="proef donker"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="121" height="104" viewBox="0 0 100 86"  aria-hidden="true"><use href="#merk-monogram"/></svg><span class="woord op-donker" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op zwart</span></div></div>
+      <div class="proef licht"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="121" height="104" viewBox="0 0 100 86"  aria-hidden="true"><use href="#merk-monogram"/></svg><span class="woord op-licht" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op crème</span></div></div>
     </div>
 
     <div class="klein">
-      <figure><svg width="74" height="64" viewBox="0 0 100 86" aria-hidden="true">
-        <g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="square">
-          <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
-        <figcaption>64px, één kleur</figcaption></figure>
-      <figure><svg width="37" height="32" viewBox="0 0 100 86" aria-hidden="true">
-        <g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="square">
-          <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
-        <figcaption>32px</figcaption></figure>
-      <figure><svg width="19" height="16" viewBox="0 0 100 86" aria-hidden="true">
-        <g fill="none" stroke="#fff" stroke-width="11" stroke-linecap="square">
-          <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
-        <figcaption>16px (favicon)</figcaption></figure>
+      <figure><svg class="merk" width="74" height="64" viewBox="0 0 100 86" style="color:#fff" aria-hidden="true"><use href="#merk-monogram"/></svg><figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg class="merk" width="37" height="32" viewBox="0 0 100 86" style="color:#fff" aria-hidden="true"><use href="#merk-monogram"/></svg><figcaption>32px</figcaption></figure>
+      <figure><svg class="merk" width="19" height="16" viewBox="0 0 100 86" style="color:#fff" aria-hidden="true"><use href="#merk-monogram"/></svg><figcaption>16px (favicon)</figcaption></figure>
+      <figure class="rond"><svg class="merk" width="47" height="40" viewBox="0 0 100 86" style="color:#fff" aria-hidden="true"><use href="#merk-monogram"/></svg><figcaption>profielfoto</figcaption></figure>
     </div>
 
     <div class="balk">
-      <div class="lockup">
-        <svg class="merk" width="34" height="29" viewBox="0 0 100 86" aria-hidden="true">
-          <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square" style="color:var(--accent)">
-            <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
-        <span class="woord op-donker" style="font-size:14px">OK Timmerwerken</span>
-      </div>
+      <div class="lockup"><svg class="merk" width="33" height="28" viewBox="0 0 100 86"  aria-hidden="true"><use href="#merk-monogram"/></svg><span class="woord op-donker" style="font-size:14px">OK <span class="dun">Timmerwerken</span></span></div>
       <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
       <span class="knop">Vraag advies aan</span>
     </div>
   </section>
 
-  <!-- ══════════ ter vergelijking ══════════ -->
-  <section class="richting">
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 4</span><h2>Verstek</h2></div>
+    <p class="idee">Een hoek van twee balken, met de verstekzaagsnede van 45 graden er zichtbaar in. De verbinding waar een timmerman op afgerekend wordt.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Volwassen en bouwkundig, zonder cliché huisje. Werkt uitstekend als beeldmerk op briefpapier en als watermerk.</dd></div>
+      <div><dt>Let op</dt><dd>Het meest abstract van de acht: wie geen timmerman is, ziet een hoekstuk en geen verbinding. Bevat de letters OK niet.</dd></div>
+    </dl>
+
+    <div class="proeven">
+      <div class="proef donker"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-verstek"/></svg><span class="woord op-donker" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op zwart</span></div></div>
+      <div class="proef licht"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-verstek"/></svg><span class="woord op-licht" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op crème</span></div></div>
+    </div>
+
+    <div class="klein">
+      <figure><svg class="merk" width="64" height="64" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-verstek"/></svg><figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg class="merk" width="32" height="32" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-verstek"/></svg><figcaption>32px</figcaption></figure>
+      <figure><svg class="merk" width="16" height="16" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-verstek"/></svg><figcaption>16px (favicon)</figcaption></figure>
+      <figure class="rond"><svg class="merk" width="40" height="40" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-verstek"/></svg><figcaption>profielfoto</figcaption></figure>
+    </div>
+
+    <div class="balk">
+      <div class="lockup"><svg class="merk" width="28" height="28" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-verstek"/></svg><span class="woord op-donker" style="font-size:14px">OK <span class="dun">Timmerwerken</span></span></div>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 5</span><h2>Keper</h2></div>
+    <p class="idee">Een dakvlak dat als een luifel over de letters OK heen ligt. Combineert de naam met het vak, zonder het huis helemaal uit te tekenen.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Naam én vak in één teken, en ruimtelijk: het dak beschermt de letters. Sluit aan op "uw zorg is onze zorg".</dd></div>
+      <div><dt>Let op</dt><dd>Drie losse onderdelen; het is het drukste van de acht en verliest het meest bij verkleining.</dd></div>
+    </dl>
+
+    <div class="proeven">
+      <div class="proef donker"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="108" height="104" viewBox="0 0 100 96"  aria-hidden="true"><use href="#merk-keper"/></svg><span class="woord op-donker" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op zwart</span></div></div>
+      <div class="proef licht"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="108" height="104" viewBox="0 0 100 96"  aria-hidden="true"><use href="#merk-keper"/></svg><span class="woord op-licht" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op crème</span></div></div>
+    </div>
+
+    <div class="klein">
+      <figure><svg class="merk" width="67" height="64" viewBox="0 0 100 96" style="color:#fff" aria-hidden="true"><use href="#merk-keper"/></svg><figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg class="merk" width="33" height="32" viewBox="0 0 100 96" style="color:#fff" aria-hidden="true"><use href="#merk-keper"/></svg><figcaption>32px</figcaption></figure>
+      <figure><svg class="merk" width="17" height="16" viewBox="0 0 100 96" style="color:#fff" aria-hidden="true"><use href="#merk-keper"/></svg><figcaption>16px (favicon)</figcaption></figure>
+      <figure class="rond"><svg class="merk" width="42" height="40" viewBox="0 0 100 96" style="color:#fff" aria-hidden="true"><use href="#merk-keper"/></svg><figcaption>profielfoto</figcaption></figure>
+    </div>
+
+    <div class="balk">
+      <div class="lockup"><svg class="merk" width="29" height="28" viewBox="0 0 100 96"  aria-hidden="true"><use href="#merk-keper"/></svg><span class="woord op-donker" style="font-size:14px">OK <span class="dun">Timmerwerken</span></span></div>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 6</span><h2>Stempel</h2></div>
+    <p class="idee">Een massief vierkant met afgeronde hoeken en OK eruit gespaard — een keurmerk of gietstempel, zoals je die in beton drukt.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Leest als een kwaliteitszegel en sluit aan op garantie en de Velux-erkenning. Perfect vierkant, dus ideaal als profielfoto en app-icoon.</dd></div>
+      <div><dt>Let op</dt><dd>Minder eigen: een afgerond vierkant met initialen is een veelgebruikte vorm.</dd></div>
+    </dl>
+
+    <div class="proeven">
+      <div class="proef donker"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-stempel"/></svg><span class="woord op-donker" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op zwart</span></div></div>
+      <div class="proef licht"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-stempel"/></svg><span class="woord op-licht" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op crème</span></div></div>
+    </div>
+
+    <div class="klein">
+      <figure><svg class="merk" width="64" height="64" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-stempel"/></svg><figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg class="merk" width="32" height="32" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-stempel"/></svg><figcaption>32px</figcaption></figure>
+      <figure><svg class="merk" width="16" height="16" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-stempel"/></svg><figcaption>16px (favicon)</figcaption></figure>
+      <figure class="rond"><svg class="merk" width="40" height="40" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-stempel"/></svg><figcaption>profielfoto</figcaption></figure>
+    </div>
+
+    <div class="balk">
+      <div class="lockup"><svg class="merk" width="28" height="28" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-stempel"/></svg><span class="woord op-donker" style="font-size:14px">OK <span class="dun">Timmerwerken</span></span></div>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 7</span><h2>Gevel open</h2></div>
+    <p class="idee">Dezelfde gevel als concept 1, maar omgekeerd: een getekende omtrek met de letters massief erin.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Lichter en eleganter dan de dichte variant, en de letters blijven bij verkleining langer leesbaar.</dd></div>
+      <div><dt>Let op</dt><dd>Een dunne omtrek is kwetsbaar: op werkkleding en bij gravures vult hij snel dicht.</dd></div>
+    </dl>
+
+    <div class="proeven">
+      <div class="proef donker"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel-open"/></svg><span class="woord op-donker" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op zwart</span></div></div>
+      <div class="proef licht"><div class="mid">
+        <div class="lockup gestapeld"><svg class="merk" width="104" height="104" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel-open"/></svg><span class="woord op-licht" style="font-size:19px">OK <span class="dun">Timmerwerken</span></span></div>
+        <span class="bijschrift">op crème</span></div></div>
+    </div>
+
+    <div class="klein">
+      <figure><svg class="merk" width="64" height="64" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel-open"/></svg><figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg class="merk" width="32" height="32" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel-open"/></svg><figcaption>32px</figcaption></figure>
+      <figure><svg class="merk" width="16" height="16" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel-open"/></svg><figcaption>16px (favicon)</figcaption></figure>
+      <figure class="rond"><svg class="merk" width="40" height="40" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#merk-gevel-open"/></svg><figcaption>profielfoto</figcaption></figure>
+    </div>
+
+    <div class="balk">
+      <div class="lockup"><svg class="merk" width="28" height="28" viewBox="0 0 100 100"  aria-hidden="true"><use href="#merk-gevel-open"/></svg><span class="woord op-donker" style="font-size:14px">OK <span class="dun">Timmerwerken</span></span></div>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <!-- ══ concept 8: alleen typografie ══ -->
+  <section class="concept">
+    <div class="kop"><span class="nr">CONCEPT 8</span><h2>Woordmerk</h2></div>
+    <p class="idee">Helemaal geen beeldmerk. Alleen de naam, ruim gespatieerd tussen twee
+      haarlijnen — zoals een stempel op een bouwtekening. Dit is wat de referentiesites die je
+      koos (Sequel, Custo) zelf doen: de naam ís het logo.</p>
+    <dl class="weging">
+      <div><dt>Sterk</dt><dd>Nooit onleesbaar, nooit te klein, en past naadloos bij het gekozen
+        ontwerp. Niets om verkeerd te interpreteren.</dd></div>
+      <div><dt>Let op</dt><dd>Geen teken voor social, bus of werkkleding. In de praktijk wil je
+        er altijd nog een klein beeldmerk naast — dat zou dan een van de zeven hierboven worden.</dd></div>
+    </dl>
+    <div class="proeven">
+      <div class="proef donker woordmerk-proef"><div class="wm op-donker">
+        <div class="regel" style="font-size:26px;color:var(--accent)">OK Timmerwerken</div>
+        <hr><div class="sub">Timmer- en betonwerk · Gorinchem</div>
+      </div></div>
+      <div class="proef licht woordmerk-proef"><div class="wm op-licht">
+        <div class="regel" style="font-size:26px">OK Timmerwerken</div>
+        <hr><div class="sub">Timmer- en betonwerk · Gorinchem</div>
+      </div></div>
+    </div>
+    <div class="balk">
+      <span class="woord op-donker" style="font-size:14px">OK Timmerwerken</span>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <!-- ══ ter vergelijking ══ -->
+  <section class="concept">
     <div class="kop"><span class="nr">TER VERGELIJKING</span><h2>Het huidige logo</h2></div>
-    <p>Zelfde formaten, zodat de verschillen zichtbaar worden. Let op wat er op 32 en 16 pixels
-      overblijft, en dat er in de woordregel geen "OK" staat.</p>
+    <p class="idee">Dezelfde formaten, zodat de verschillen zichtbaar worden. Let op wat er op
+      32 en 16 pixels overblijft, dat het grijze woordmerk op zwart wegvalt, en dat er in de
+      woordregel geen "OK" staat.</p>
     <div class="proeven">
-      <div class="proef wit"><div style="text-align:center">
+      <div class="proef wit"><div class="mid">
         <img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="Huidige logo van OK Timmerwerken" style="height:120px">
         <span class="bijschrift">origineel, op wit</span></div></div>
-      <div class="proef donker"><div style="text-align:center">
+      <div class="proef donker"><div class="mid">
         <img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="" style="height:120px">
-        <span class="bijschrift">origineel, op zwart — het grijze woordmerk valt weg</span></div></div>
+        <span class="bijschrift">origineel, op zwart — het woordmerk valt weg</span></div></div>
     </div>
     <div class="klein">
       <figure><img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="" style="height:64px"><figcaption>64px</figcaption></figure>
@@ -305,13 +439,14 @@ body.kleurloos .schakelaar button[aria-pressed="true"]{background:var(--creme);c
     </div>
   </section>
 
-  <section class="richting">
+  <section class="concept">
     <div class="kop"><span class="nr">DAARNA</span><h2>Wat het pakket wordt</h2></div>
-    <p>Zodra er een richting gekozen is, lever ik: beeldmerk, woordmerk en combinatie als SVG en PNG
-      (transparant, meerdere maten) · eenkleurvarianten zwart en wit voor borduren, graveren en
-      zeefdruk · favicon-set · profielfoto en omslagbanner voor social · een HTML-mailhandtekening ·
-      en een briefpapier- en offertekop. Plus een korte huisstijlpagina met de kleuren, het
-      lettertype en de witruimteregels.</p>
+    <p class="idee">Zodra er een richting gekozen is, lever ik: beeldmerk, woordmerk en combinatie
+      als SVG en PNG (transparant, meerdere maten) · liggende, staande en vierkante opmaak ·
+      eenkleurvarianten zwart en wit voor borduren, graveren en zeefdruk · favicon-set ·
+      profielfoto en omslagbanner voor social · een HTML-mailhandtekening · en een briefpapier-
+      en offertekop. Plus een korte huisstijlpagina met kleuren, lettertype, minimumformaten en
+      witruimteregels.</p>
   </section>
 </div>
 
