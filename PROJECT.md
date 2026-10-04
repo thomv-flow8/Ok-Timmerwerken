@@ -248,7 +248,9 @@ Dit materiaal is duidelijk beter dan wat op het profiel stond en vult twee gaten
   Lag 90° gedraaid; rechtgezet met `sips -r 270` → `foto-06-rechtgezet.jpg`. Nu de kaart bij
   Vliering & zolderverbouwing.
 - **`foto-03` — de ploeg die beton stort op het wapeningsnet.** De enige foto met mensen erop.
-  Nu het hero-beeld; sluit aan op de kop "Ozcan en zijn ploeg".
+  Staat op de kaart bij Funderingen. Als hero geprobeerd, maar teruggedraaid: het oorspronkelijke
+  beeld van de woonkamer met gevlinderde vloer is sfeervoller (keuze van Thomas, 4 oktober).
+  Hero-verdonkering daarop afgestemd: `brightness(.84)`, zodat de witte kop leesbaar blijft.
 - `foto-04` spiegelende gevlinderde vloer · `foto-10` berging met vloer en open deur ·
   `foto-07` tuinhuis met dubbele deuren · `foto-02` vlonder met lichtkoepels (scherper dan sp-03).
 
