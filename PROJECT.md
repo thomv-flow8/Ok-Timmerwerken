@@ -305,3 +305,21 @@ vlakke kleur met behoud van transparantie → `assets/logo-oud/*-zwart|wit|messi
 Twee punten blijven bij het huidige logo staan, ook in één kleur:
 PNG van 894px (voor druk opnieuw als vector nodig) en het monogram leest nog steeds niet als "OK".
 Voorstel als derde weg: de gevel opnieuw tekenen als vector met een leesbare OK erin.
+
+## Repository
+
+`https://github.com/thomv-flow8/Ok-Timmerwerken` — publiek, branch `main`,
+aangemaakt door Thomas op 4 oktober 2026. Publiek omdat GitHub Pages alleen
+dan gratis is; dat is ook de opzet bij Mozi en ViVo.
+
+De eerste push bevatte de hele geschiedenis van negen commits. Daarin zitten
+in de oudste commits nog `assets/werkspot/sr-22.jpg`, `sr-23.jpg` en
+`sr-24.jpg`: foto's die klanten zelf bij hun Werkspot-review uploadden. Ik heb
+ze uit versiebeheer gehaald en in `.gitignore` gezet, dus nieuwe commits
+bevatten ze niet meer, maar via de commitgeschiedenis zijn ze publiek
+vindbaar. Thomas heeft dat afgewogen en besloten zo te pushen. Wil je het
+later alsnog opruimen, dan kan dat met een herschrijving plus force-push —
+dat kan zolang er geen tweede kloon van de repository bestaat.
+
+Nog niet ingericht: GitHub Actions voor de build en Pages als doel. Dat komt
+pas als `tools/bouw-site.js` bestaat en de inhoud in `docs/*.json` staat.
