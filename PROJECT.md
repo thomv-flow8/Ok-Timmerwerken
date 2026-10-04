@@ -296,3 +296,12 @@ dan neem ik dat accent op in richting C (nummers 01–06, sterren, haarlijnen). 
 volledig kleurloos.
 
 Gebruikte skill: `svg-logo-designer` (geïnstalleerd en gekopieerd naar `~/.claude/skills/`).
+
+## Keuze ingeperkt (4 oktober 2026)
+`preview/logo-keuze.html` — het huidige logo in één kleur naast concept 5 (Keper).
+`tools/eenkleur.swift <in.png> <uit.png> <r> <g> <b>` kleurt alle zichtbare pixels om naar één
+vlakke kleur met behoud van transparantie → `assets/logo-oud/*-zwart|wit|messing.png`.
+
+Twee punten blijven bij het huidige logo staan, ook in één kleur:
+PNG van 894px (voor druk opnieuw als vector nodig) en het monogram leest nog steeds niet als "OK".
+Voorstel als derde weg: de gevel opnieuw tekenen als vector met een leesbare OK erin.
