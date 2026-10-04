@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OK Timmerwerken — drie logorichtingen</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --zwart:#000; --creme:#f5f5f0; --houtskool:#202020; --grafiet:#333;
+  --messing:#b08d4f; --rook:#999;
+  --accent:var(--messing);          /* wordt omgezet door de schakelaar */
+  --f:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;
+}
+body.kleurloos{--accent:var(--creme)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--zwart);color:#fff;font-family:var(--f);line-height:1.5;
+  -webkit-font-smoothing:antialiased;padding:48px 24px 120px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-weight:300;font-size:clamp(28px,4.5vw,44px);letter-spacing:-.025em;line-height:1.05}
+.intro{color:rgba(255,255,255,.7);max-width:62ch;margin-top:16px;font-size:17px}
+.schakelaar{display:inline-flex;gap:4px;background:var(--houtskool);border-radius:999px;
+  padding:4px;margin-top:32px}
+.schakelaar button{border:0;background:transparent;color:rgba(255,255,255,.7);font:inherit;
+  font-size:14px;font-weight:500;padding:9px 18px;border-radius:999px;cursor:pointer;transition:.2s}
+.schakelaar button[aria-pressed="true"]{background:var(--accent);color:#000}
+body.kleurloos .schakelaar button[aria-pressed="true"]{background:var(--creme);color:#000}
+
+.richting{margin-top:72px;border-top:1px solid var(--grafiet);padding-top:32px}
+.kop{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.kop h2{font-weight:400;font-size:26px;letter-spacing:-.015em}
+.kop .nr{font-size:13px;font-weight:500;letter-spacing:.16em;color:var(--rook)}
+.richting > p{color:rgba(255,255,255,.68);max-width:68ch;font-size:16px}
+
+.proeven{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+@media(max-width:800px){.proeven{grid-template-columns:1fr}}
+.proef{border-radius:10px;padding:40px 32px;display:grid;place-items:center;min-height:210px}
+.proef.donker{background:var(--houtskool)}
+.proef.licht{background:var(--creme)}
+.proef.wit{background:#fff}
+.bijschrift{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--rook);
+  margin-top:10px;display:block}
+
+.klein{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;margin-top:28px;
+  background:var(--houtskool);border-radius:10px;padding:28px 32px}
+.klein figure{text-align:center}
+.klein figcaption{font-size:11px;color:var(--rook);margin-top:8px;letter-spacing:.05em}
+
+.balk{margin-top:16px;background:#000;border:1px solid var(--grafiet);border-radius:10px;
+  padding:16px 22px;display:flex;align-items:center;gap:28px}
+.balk nav{display:flex;gap:22px;margin-left:auto;font-size:14px;font-weight:500;color:rgba(255,255,255,.8)}
+.balk .knop{background:var(--creme);color:#000;border-radius:999px;padding:10px 18px;
+  font-size:14px;font-weight:500}
+@media(max-width:700px){.balk nav{display:none}}
+
+/* het sluitstuk: logo in de context van een bus of banner */
+.banner{margin-top:16px;border-radius:10px;overflow:hidden;position:relative;min-height:170px;
+  display:flex;align-items:center;padding:0 40px;
+  background:linear-gradient(100deg,#111 0%,#1c1c1c 55%,#0b0b0b 100%)}
+.banner .rechts{margin-left:auto;text-align:right;font-size:13px;color:rgba(255,255,255,.55);line-height:1.8}
+
+/* ---- het merk zelf ---- */
+.lockup{display:flex;align-items:center;gap:16px}
+.lockup.gestapeld{flex-direction:column;gap:14px}
+.merk{display:block;flex:none}
+.woord{font-weight:500;letter-spacing:.17em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.woord .licht-deel{font-weight:300}
+.op-licht{color:#12110f}
+.op-donker{color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Drie logorichtingen</h1>
+  <p class="intro">Alle drie zijn vectorvormen, zonder verlopen, en getekend om ook op 16 pixels
+    en in één kleur te werken — precies wat het huidige logo niet kan. De letters in het woordmerk
+    worden in het eindpakket omgezet naar vormen, zodat er geen lettertype nodig is.</p>
+
+  <div class="schakelaar" role="group" aria-label="Kleurvariant">
+    <button id="k-messing" aria-pressed="true">Messing accent</button>
+    <button id="k-kleurloos" aria-pressed="false">Kleurloos</button>
+  </div>
+
+  <!-- ══════════ richting 1 ══════════ -->
+  <section class="richting">
+    <div class="kop"><span class="nr">RICHTING 1</span><h2>Gevel</h2></div>
+    <p>De evolutie van het huidige logo: het gevelsilhouet blijft, maar wordt een gesloten vorm met
+      de letters <strong>OK</strong> eruit gespaard. Daardoor is het monogram eindelijk leesbaar en
+      blijft de vorm herkenbaar voor bestaande klanten. Dichtst bij wat er nu staat.</p>
+
+    <div class="proeven">
+      <div class="proef donker">
+        <div>
+          <div class="lockup gestapeld">
+            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" role="img" aria-label="OK Timmerwerken beeldmerk">
+              <mask id="g1"><rect width="100" height="100" fill="#fff"/>
+                <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
+                <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/>
+              </mask>
+              <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="currentColor" mask="url(#g1)" style="color:var(--accent)"/>
+            </svg>
+            <div class="woord op-donker" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
+          </div>
+          <span class="bijschrift" style="text-align:center">op zwart</span>
+        </div>
+      </div>
+      <div class="proef licht">
+        <div>
+          <div class="lockup gestapeld">
+            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" aria-hidden="true">
+              <mask id="g2"><rect width="100" height="100" fill="#fff"/>
+                <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
+                <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/>
+              </mask>
+              <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="currentColor" mask="url(#g2)" style="color:var(--accent)"/>
+            </svg>
+            <div class="woord op-licht" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
+          </div>
+          <span class="bijschrift" style="text-align:center">op crème</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="klein">
+      <figure><svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
+        <mask id="g3"><rect width="100" height="100" fill="#fff"/>
+          <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
+          <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
+        <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="#fff" mask="url(#g3)"/></svg>
+        <figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+        <mask id="g4"><rect width="100" height="100" fill="#fff"/>
+          <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
+          <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
+        <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="#fff" mask="url(#g4)"/></svg>
+        <figcaption>32px</figcaption></figure>
+      <figure><svg width="16" height="16" viewBox="0 0 100 100" aria-hidden="true">
+        <mask id="g5"><rect width="100" height="100" fill="#fff"/>
+          <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
+          <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
+        <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="#fff" mask="url(#g5)"/></svg>
+        <figcaption>16px (favicon)</figcaption></figure>
+    </div>
+
+    <div class="balk">
+      <div class="lockup">
+        <svg class="merk" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+          <mask id="g6"><rect width="100" height="100" fill="#fff"/>
+            <circle cx="35" cy="69" r="13" fill="none" stroke="#000" stroke-width="7"/>
+            <path d="M63,56 V82 M63,69 L79,55 M63,69 L79,83" fill="none" stroke="#000" stroke-width="7" stroke-linecap="square"/></mask>
+          <path d="M8,44 L50,10 L92,44 L92,94 L8,94 Z" fill="currentColor" mask="url(#g6)" style="color:var(--accent)"/></svg>
+        <span class="woord op-donker" style="font-size:14px">OK Timmerwerken</span>
+      </div>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <!-- ══════════ richting 2 ══════════ -->
+  <section class="richting">
+    <div class="kop"><span class="nr">RICHTING 2</span><h2>Spant</h2></div>
+    <p>Geen huis maar een <strong>dakspant</strong>: twee kepers, een trekbalk en een hanenbalk —
+      het meest herkenbare teken van timmerwerk dat er bestaat. Abstract, bouwkundig, en van alle
+      drie het best schaalbaar: dit blijft op 16 pixels én op een bus leesbaar.</p>
+
+    <div class="proeven">
+      <div class="proef donker">
+        <div>
+          <div class="lockup gestapeld">
+            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" role="img" aria-label="OK Timmerwerken beeldmerk">
+              <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square" style="color:var(--accent)">
+                <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/>
+              </g>
+            </svg>
+            <div class="woord op-donker" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
+          </div>
+          <span class="bijschrift" style="text-align:center">op zwart</span>
+        </div>
+      </div>
+      <div class="proef licht">
+        <div>
+          <div class="lockup gestapeld">
+            <svg class="merk" width="112" height="112" viewBox="0 0 100 100" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square" style="color:var(--accent)">
+                <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/>
+              </g>
+            </svg>
+            <div class="woord op-licht" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
+          </div>
+          <span class="bijschrift" style="text-align:center">op crème</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="klein">
+      <figure><svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="square">
+          <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
+        <figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="square">
+          <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
+        <figcaption>32px</figcaption></figure>
+      <figure><svg width="16" height="16" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="square">
+          <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
+        <figcaption>16px (favicon)</figcaption></figure>
+    </div>
+
+    <div class="balk">
+      <div class="lockup">
+        <svg class="merk" width="30" height="30" viewBox="0 0 100 100" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square" style="color:var(--accent)">
+            <path d="M8,72 L50,30 L92,72"/><path d="M8,72 H92"/><path d="M50,30 V72"/></g></svg>
+        <span class="woord op-donker" style="font-size:14px">OK Timmerwerken</span>
+      </div>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <!-- ══════════ richting 3 ══════════ -->
+  <section class="richting">
+    <div class="kop"><span class="nr">RICHTING 3</span><h2>Monogram</h2></div>
+    <p>De letters zelf zijn het merk: een perfecte cirkel als <strong>O</strong> en een
+      <strong>K</strong> waarvan de bovenarm op dakhelling staat. Geen huisje meer, wel de
+      verwijzing. Het meest eigentijdse van de drie en het sterkst op social, waar een profielfoto
+      rond is en een monogram het beste werkt.</p>
+
+    <div class="proeven">
+      <div class="proef donker">
+        <div>
+          <div class="lockup gestapeld">
+            <svg class="merk" width="128" height="112" viewBox="0 0 100 86" role="img" aria-label="OK Timmerwerken beeldmerk">
+              <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square" style="color:var(--accent)">
+                <circle cx="31" cy="43" r="22"/>
+                <path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/>
+              </g>
+            </svg>
+            <div class="woord op-donker" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
+          </div>
+          <span class="bijschrift" style="text-align:center">op zwart</span>
+        </div>
+      </div>
+      <div class="proef licht">
+        <div>
+          <div class="lockup gestapeld">
+            <svg class="merk" width="128" height="112" viewBox="0 0 100 86" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square" style="color:var(--accent)">
+                <circle cx="31" cy="43" r="22"/>
+                <path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/>
+              </g>
+            </svg>
+            <div class="woord op-licht" style="font-size:19px">OK <span class="licht-deel">Timmerwerken</span></div>
+          </div>
+          <span class="bijschrift" style="text-align:center">op crème</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="klein">
+      <figure><svg width="74" height="64" viewBox="0 0 100 86" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="square">
+          <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
+        <figcaption>64px, één kleur</figcaption></figure>
+      <figure><svg width="37" height="32" viewBox="0 0 100 86" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="10" stroke-linecap="square">
+          <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
+        <figcaption>32px</figcaption></figure>
+      <figure><svg width="19" height="16" viewBox="0 0 100 86" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="11" stroke-linecap="square">
+          <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
+        <figcaption>16px (favicon)</figcaption></figure>
+    </div>
+
+    <div class="balk">
+      <div class="lockup">
+        <svg class="merk" width="34" height="29" viewBox="0 0 100 86" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="square" style="color:var(--accent)">
+            <circle cx="31" cy="43" r="22"/><path d="M66,21 V65 M66,43 L88,21 M66,43 L88,65"/></g></svg>
+        <span class="woord op-donker" style="font-size:14px">OK Timmerwerken</span>
+      </div>
+      <nav><span>Diensten</span><span>Werkwijze</span><span>Reviews</span><span>Over ons</span></nav>
+      <span class="knop">Vraag advies aan</span>
+    </div>
+  </section>
+
+  <!-- ══════════ ter vergelijking ══════════ -->
+  <section class="richting">
+    <div class="kop"><span class="nr">TER VERGELIJKING</span><h2>Het huidige logo</h2></div>
+    <p>Zelfde formaten, zodat de verschillen zichtbaar worden. Let op wat er op 32 en 16 pixels
+      overblijft, en dat er in de woordregel geen "OK" staat.</p>
+    <div class="proeven">
+      <div class="proef wit"><div style="text-align:center">
+        <img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="Huidige logo van OK Timmerwerken" style="height:120px">
+        <span class="bijschrift">origineel, op wit</span></div></div>
+      <div class="proef donker"><div style="text-align:center">
+        <img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="" style="height:120px">
+        <span class="bijschrift">origineel, op zwart — het grijze woordmerk valt weg</span></div></div>
+    </div>
+    <div class="klein">
+      <figure><img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="" style="height:64px"><figcaption>64px</figcaption></figure>
+      <figure><img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="" style="height:32px"><figcaption>32px</figcaption></figure>
+      <figure><img src="../assets/logo-oud/ok-timmerwerken-origineel.png" alt="" style="height:16px"><figcaption>16px</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="richting">
+    <div class="kop"><span class="nr">DAARNA</span><h2>Wat het pakket wordt</h2></div>
+    <p>Zodra er een richting gekozen is, lever ik: beeldmerk, woordmerk en combinatie als SVG en PNG
+      (transparant, meerdere maten) · eenkleurvarianten zwart en wit voor borduren, graveren en
+      zeefdruk · favicon-set · profielfoto en omslagbanner voor social · een HTML-mailhandtekening ·
+      en een briefpapier- en offertekop. Plus een korte huisstijlpagina met de kleuren, het
+      lettertype en de witruimteregels.</p>
+  </section>
+</div>
+
+<script>
+var mes = document.getElementById('k-messing'), kl = document.getElementById('k-kleurloos');
+function zet(kleurloos){
+  document.body.classList.toggle('kleurloos', kleurloos);
+  mes.setAttribute('aria-pressed', String(!kleurloos));
+  kl.setAttribute('aria-pressed', String(kleurloos));
+}
+mes.addEventListener('click', function(){ zet(false); });
+kl.addEventListener('click', function(){ zet(true); });
+</script>
+</body>
+</html>
