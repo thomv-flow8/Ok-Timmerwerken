@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OK Timmerwerken — drie ontwerprichtingen</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#f0efe9;color:#322d2a;line-height:1.5;padding:48px 24px 96px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-weight:300;font-size:clamp(30px,5vw,48px);line-height:1.05;letter-spacing:-.01em;margin-bottom:16px}
+.intro{max-width:62ch;opacity:.75;margin-bottom:48px}
+.keuze{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.keuze{grid-template-columns:1fr}}
+.kaart{background:#fff;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;
+  text-decoration:none;color:inherit;transition:transform .25s}
+.kaart:hover{transform:translateY(-4px)}
+.staal{height:150px;display:flex;align-items:flex-end;padding:16px;gap:8px}
+.staal i{display:block;width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.kaart-body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.kaart h2{font-weight:400;font-size:22px}
+.kaart .let{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.5}
+.kaart p{font-size:15px;opacity:.72;line-height:1.55}
+.kaart .open{margin-top:auto;padding-top:14px;font-size:13px;letter-spacing:.08em;
+  text-transform:uppercase;color:#8a6f3d}
+ul.let-op{margin-top:48px;padding:24px;background:#fff;border-radius:20px;font-size:15px;
+  list-style:none;display:flex;flex-direction:column;gap:10px;max-width:72ch}
+ul.let-op li::before{content:"— ";opacity:.4}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Drie ontwerprichtingen</h1>
+  <p class="intro">Dezelfde inhoud, drie keer anders vormgegeven. De teksten, foto's en reviews zijn
+    in alle drie identiek en echt — alleen de vormgeving verschilt. Bekijk ze ook op een telefoon.</p>
+
+  <div class="keuze">
+    <a class="kaart" href="a-vellum.html">
+      <div class="staal" style="background:#f0efe9">
+        <i style="background:#f0efe9"></i><i style="background:#fff"></i>
+        <i style="background:#322d2a"></i><i style="background:#8a6f3d"></i>
+      </div>
+      <div class="kaart-body">
+        <span class="let">Richting A</span>
+        <h2>Vellum</h2>
+        <p>Warm gebroken wit, houtskoolgrijze tekst en lichte koppen op groot formaat. Royale
+          afronding op het beeld, een donkere navigatiepil en een brons accent uit het oude logo.
+          Rustig, premium en vriendelijk. Naar T1 Energy.</p>
+        <span class="open">Bekijk richting A →</span>
+      </div>
+    </a>
+
+    <a class="kaart" href="b-gallery.html">
+      <div class="staal" style="background:#9ea29f">
+        <i style="background:#9ea29f"></i><i style="background:#fff"></i>
+        <i style="background:#4b514d"></i><i style="background:#000"></i>
+      </div>
+      <div class="kaart-body">
+        <span class="let">Richting B</span>
+        <h2>Gallery</h2>
+        <p>Gunmetal en wit in afwisselende banden, het woordmerk op architectonisch formaat,
+          en de diensten als strakke lijst met haarlijnen. Industrieel en zakelijk, past bij het
+          betonwerk. Naar Custo.</p>
+        <span class="open">Bekijk richting B →</span>
+      </div>
+    </a>
+
+    <a class="kaart" href="c-nocturne.html">
+      <div class="staal" style="background:#000">
+        <i style="background:#000;border-color:rgba(255,255,255,.25)"></i>
+        <i style="background:#202020;border-color:rgba(255,255,255,.25)"></i>
+        <i style="background:#f5f5f0"></i><i style="background:#999"></i>
+      </div>
+      <div class="kaart-body">
+        <span class="let">Richting C</span>
+        <h2>Nocturne</h2>
+        <p>Zwart doek met filmische beelden, crèmekleurige knoppen en één cursief schreefwoord per
+          kop. De diensten als grote beeldkaarten. Het meest onderscheidend, maar leunt volledig
+          op de fotografie. Naar Sequel.</p>
+        <span class="open">Bekijk richting C →</span>
+      </div>
+    </a>
+  </div>
+
+  <ul class="let-op">
+    <li>De foto's komen van het Werkspot-profiel en zijn alleen verkleind, nog niet bewerkt. In de
+      previews ligt er per richting een CSS-filter overheen om de sfeer te laten zien.</li>
+    <li>Het portret van Ozcan ontbreekt nog — dat staat in alle drie als lege plek aangegeven.</li>
+    <li>Het logo in de previews is een eerste voorstel: een daklijn met de O en de K eronder.
+      Het definitieve logopakket volgt nadat de richting is gekozen.</li>
+    <li>De reviews zijn letterlijk overgenomen van Werkspot.</li>
+  </ul>
+</div>
+</body>
+</html>

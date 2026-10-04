@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OK Timmerwerken — Vakwerk waar u op kunt bouwen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gunmetal:#9ea29f; --paper:#fff; --obsidian:#000; --graphite:#4b514d;
+  --steel:#8e9194; --linen:#a7aaad; --hairline:#d8d8d8;
+  --sp16:16px; --sp20:20px; --sp24:24px; --sp28:28px; --sp32:32px; --sp40:40px; --sp76:76px;
+  --gap:110px; --max:1280px; --r:8px; --r-pill:31.35px;
+  --f:'DM Sans',ui-sans-serif,system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--obsidian);font-family:var(--f);font-weight:400;
+  font-size:16px;line-height:1.62;font-feature-settings:"kern" on,"liga" on;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp32)}
+@media(max-width:600px){.wrap{padding:0 var(--sp20)}}
+
+/* ---------- typografie ---------- */
+.display{font-weight:400;font-size:clamp(40px,8vw,90px);line-height:1;letter-spacing:-.02em}
+.h1{font-weight:400;font-size:clamp(30px,4.6vw,56px);line-height:1.08;letter-spacing:-.015em}
+.h2{font-weight:400;font-size:clamp(24px,3vw,38px);line-height:1.15;letter-spacing:-.01em}
+.h3{font-weight:500;font-size:20px;line-height:1.38}
+.cap{font-size:15px;line-height:1.43;max-width:30ch}
+.body19{font-size:19px;line-height:1.42}
+@media(max-width:600px){.body19{font-size:17px}}
+
+/* ---------- knoppen ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:var(--r-pill);
+  padding:16px 28px;font-size:16px;line-height:1.1;border:1px solid var(--obsidian);
+  background:transparent;color:var(--obsidian);transition:.22s;cursor:pointer}
+.btn:hover{background:var(--obsidian);color:var(--paper)}
+.btn-light{border-color:var(--paper);color:var(--paper)}
+.btn-light:hover{background:var(--paper);color:var(--obsidian)}
+.lnk{display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid currentColor;
+  padding-bottom:3px;font-size:16px}
+
+/* ---------- navigatie ---------- */
+.nav{position:sticky;top:0;z-index:50;background:var(--gunmetal);transition:background .3s}
+.nav.scrolled{background:var(--paper);border-bottom:1px solid var(--hairline)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:var(--sp24) var(--sp32);
+  display:flex;align-items:center;gap:var(--sp32)}
+@media(max-width:600px){.nav-in{padding:var(--sp20)}}
+.brand{display:flex;align-items:center;gap:9px;margin-right:auto;font-size:15px;
+  letter-spacing:.1em;text-transform:uppercase}
+.nav-links{display:flex;gap:var(--sp28);font-size:15px}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:560px){
+  .brand{font-size:12px;letter-spacing:.08em;white-space:nowrap}
+  .brand svg{width:22px;height:22px}
+  .nav-in{gap:12px}
+  .nav .btn{padding:10px 15px;font-size:13px;white-space:nowrap}
+}
+.nav .btn{padding:11px 20px;font-size:15px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--gunmetal);color:var(--paper);padding:var(--sp76) 0 0;position:relative;overflow:hidden}
+.hero .h1{max-width:18ch}
+.hero .cap{margin-top:var(--sp24);max-width:46ch;font-size:17px;line-height:1.5;opacity:.92}
+.hero-actions{display:flex;gap:var(--sp16);flex-wrap:wrap;margin-top:var(--sp32)}
+.hero-photo{margin-top:var(--sp40);border-radius:var(--r);overflow:hidden;position:relative}
+.hero-photo img{width:100%;aspect-ratio:21/9;object-fit:cover;filter:saturate(.8) contrast(1.06)}
+@media(max-width:800px){.hero-photo img{aspect-ratio:4/3}}
+.wordmark{padding:var(--sp32) 0 var(--sp24)}
+.wordmark svg{display:block;width:100%;height:auto}
+
+/* ---------- bewijsstrook ---------- */
+.proof{background:var(--graphite);color:var(--paper)}
+.proof-in{max-width:var(--max);margin:0 auto;padding:var(--sp28) var(--sp32);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp24)}
+@media(max-width:800px){.proof-in{grid-template-columns:repeat(2,1fr)}}
+.proof-item{border-left:1px solid rgba(255,255,255,.28);padding-left:var(--sp20)}
+.proof-item b{display:block;font-size:24px;font-weight:400;line-height:1.2}
+.proof-item span{font-size:14px;opacity:.72;line-height:1.4;display:block;margin-top:2px}
+
+/* ---------- secties ---------- */
+section{padding:var(--gap) 0}
+@media(max-width:700px){section{padding:72px 0}}
+.band-grey{background:var(--gunmetal);color:var(--paper)}
+.band-dark{background:var(--graphite);color:var(--paper)}
+.rij{display:grid;grid-template-columns:280px 1fr;gap:var(--sp24)}
+@media(max-width:860px){.rij{grid-template-columns:1fr;gap:var(--sp20)}}
+.rij .h2{margin-bottom:var(--sp24)}
+.rij .body19{max-width:62ch}
+
+/* ---------- diensten als lijst ---------- */
+.lijst{margin-top:var(--sp76);border-top:1px solid var(--obsidian)}
+.band-grey .lijst,.band-dark .lijst{border-color:rgba(255,255,255,.4)}
+.item{border-bottom:1px solid var(--obsidian);display:grid;
+  grid-template-columns:72px 1fr 1.1fr 180px;gap:var(--sp24);padding:var(--sp32) 0;align-items:start}
+.band-grey .item,.band-dark .item{border-color:rgba(255,255,255,.4)}
+@media(max-width:900px){.item{grid-template-columns:44px 1fr;gap:var(--sp16)}
+  .item .item-foto{display:none}
+  .item > .item-tekst{grid-column:2}
+  .item > .item-tekst + .item-tekst{margin-top:-6px}}
+.item-n{font-size:14px;opacity:.55;padding-top:5px}
+.item-tekst p{font-size:16px;line-height:1.5;margin-top:10px;opacity:.82}
+.item-foto{border-radius:var(--r);overflow:hidden}
+.item-foto img{width:100%;aspect-ratio:3/2;object-fit:cover;filter:saturate(.82) contrast(1.05)}
+.item-gaan{display:flex;align-items:center;justify-content:flex-end}
+@media(max-width:900px){.item-gaan{justify-content:flex-start}}
+
+/* ---------- drie kaarten ---------- */
+.kaarten{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp24);margin-top:var(--sp40)}
+@media(max-width:860px){.kaarten{grid-template-columns:1fr}}
+.kaart{border:1px solid var(--linen);border-radius:var(--r);padding:var(--sp20);background:var(--paper)}
+.kaart img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);
+  filter:saturate(.82) contrast(1.05)}
+.kaart h3{margin:var(--sp20) 0 6px}
+.kaart p{font-size:15px;line-height:1.5;color:#5c605d}
+
+/* ---------- reviews ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp40);margin-top:var(--sp40)}
+@media(max-width:860px){.quotes{grid-template-columns:1fr;gap:var(--sp32)}}
+.quote{border-top:1px solid rgba(255,255,255,.4);padding-top:var(--sp20)}
+.quote p{font-size:18px;line-height:1.45}
+.quote footer{margin-top:var(--sp20);font-size:14px;opacity:.75}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp40);align-items:start}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.veld{width:100%;border:1px solid var(--hairline);border-radius:var(--r);
+  padding:16px var(--sp32);font:inherit;font-size:16px;background:var(--paper);color:var(--obsidian)}
+.veld::placeholder{color:var(--steel)}
+.veld:focus{outline:none;border-color:var(--obsidian)}
+form{display:flex;flex-direction:column;gap:var(--sp20)}
+.veld-rij{display:flex;flex-direction:column;gap:7px}
+.veld-rij label{font-size:14px;color:var(--paper)}
+textarea.veld{min-height:130px;resize:vertical}
+.gegevens{display:flex;flex-direction:column;gap:var(--sp20);font-size:17px;line-height:1.5}
+.gegevens div span{display:block;font-size:14px;color:rgba(255,255,255,.8);margin-bottom:3px}
+
+/* ---------- footer ---------- */
+footer.site{border-top:1px solid var(--linen);padding:var(--sp40) 0}
+.foot{display:flex;gap:var(--sp32);flex-wrap:wrap;justify-content:space-between;
+  font-size:15px;color:#5c605d}
+.foot a:hover{color:var(--obsidian)}
+.foot ul{list-style:none;display:flex;gap:var(--sp20);flex-wrap:wrap}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.22)}
+
+/* ---------- toegankelijkheid & beweging ---------- */
+a,button{cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--obsidian);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .dienst:hover img,.dienst:hover,.kaart:hover,.btn-cream:hover{transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M3 14 16 4l13 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="11" cy="21" r="5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M21 16v10M27 16l-5 5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      OK Timmerwerken<sup style="font-size:9px;vertical-align:super">®</sup>
+    </a>
+    <div class="nav-links">
+      <a href="#diensten">Diensten</a>
+      <a href="#werk">Werk</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#over">Over ons</a>
+    </div>
+    <a class="btn" href="#contact">Vraag advies aan</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="h1">Beton dat vlak ligt. Hout dat klopt. Afspraken die staan.</h1>
+    <p class="cap">Gevlinderde betonvloeren, vlieringen, carports en Velux-dakramen.
+      Ozcan en zijn ploeg werken vanuit Gorinchem door heel Nederland.</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#contact">Vraag vrijblijvend advies</a>
+      <a class="btn btn-light" href="https://wa.me/31641429106">WhatsApp ons</a>
+    </div>
+    <div class="hero-photo">
+      <img fetchpriority="high" decoding="async" src="../assets/web/betonvloer-woonkamer.jpg" alt="Gevlinderde betonvloer in een woning met openslaande deuren naar de tuin">
+    </div>
+    <div class="wordmark">
+      <svg viewBox="0 0 1000 108" width="100%" role="img" aria-label="OK Timmerwerken">
+        <text x="0" y="86" textLength="1000" lengthAdjust="spacingAndGlyphs"
+              font-family="DM Sans, sans-serif" font-size="108" font-weight="400"
+              fill="#fff">OK TIMMERWERKEN®</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="proof-in">
+    <div class="proof-item"><b>4,9 / 5</b><span>78 reviews op Werkspot</span></div>
+    <div class="proof-item"><b>Velux</b><span>Erkend Montagepartner</span></div>
+    <div class="proof-item"><b>Garantie</b><span>Op al het uitgevoerde werk</span></div>
+    <div class="proof-item"><b>Vaste prijs</b><span>Vooraf, zwart op wit</span></div>
+  </div>
+</div>
+
+<section id="diensten">
+  <div class="wrap">
+    <div class="rij">
+      <p class="cap">Het werk waar we dagelijks mee bezig zijn — niet alles wat denkbaar is.</p>
+      <div>
+        <h2 class="h2">Zes diensten, elke week in uitvoering.</h2>
+        <p class="body19">Een vakman die alles zegt te kunnen, kan meestal niets echt goed.
+          Dit is waar onze klanten ons voor terugbellen, en waar we het grootste deel van het
+          jaar mee bezig zijn.</p>
+      </div>
+    </div>
+
+    <div class="lijst">
+      <article class="item">
+        <div class="item-n">01</div>
+        <div class="item-tekst"><h3 class="h3">Betonvloeren</h3>
+          <p>Gestort, geëgaliseerd en machinaal gevlinderd tot een vlakke, gladde vloer.</p></div>
+        <div class="item-tekst"><p style="margin-top:0">Garages, schuren, terrassen en bedrijfsvloeren,
+          inclusief isolatie, wapening en vloerverwarming. Een vloer tot circa 30 m² ligt er meestal
+          in één dag: storten voor achten, vlinderen tot een uur of drie.</p></div>
+        <div class="item-foto"><img loading="lazy" decoding="async" src="../assets/web/betonvloer-oprit.jpg" alt="Strakke gevlinderde betonvloer"></div>
+      </article>
+
+      <article class="item">
+        <div class="item-n">02</div>
+        <div class="item-tekst"><h3 class="h3">Vliering &amp; zolderverbouwing</h3>
+          <p>Van ongebruikte zolder naar volwaardige verdieping.</p></div>
+        <div class="item-tekst"><p style="margin-top:0">Draagconstructie, vlizotrap, wanden, isolatie,
+          elektra en afwerking tot en met stuc- en schilderwerk. Eén aanspreekpunt voor de hele
+          verbouwing, in plaats van vijf partijen die naar elkaar wijzen.</p></div>
+        <div class="item-foto"><img loading="lazy" decoding="async" src="../assets/web/verbouwing-ruwbouw.jpg" alt="Verbouwing van een zolder"></div>
+      </article>
+
+      <article class="item">
+        <div class="item-n">03</div>
+        <div class="item-tekst"><h3 class="h3">Carport, veranda &amp; overkapping</h3>
+          <p>Maatwerk in Douglas hout, afgedekt met EPDM.</p></div>
+        <div class="item-tekst"><p style="margin-top:0">Op maat van uw woning en uw tuin — bij een
+          bestaand huis past zelden iets uit een pakket. Nette boeidelen, strakke aansluitingen,
+          en een constructie die er over twintig jaar nog staat.</p></div>
+        <div class="item-foto"><img loading="lazy" decoding="async" src="../assets/web/carport-douglas.jpg" alt="Carport van Douglas hout"></div>
+      </article>
+
+      <article class="item">
+        <div class="item-n">04</div>
+        <div class="item-tekst"><h3 class="h3">Dakramen (Velux)</h3>
+          <p>Erkend VELUX Montagepartner.</p></div>
+        <div class="item-tekst"><p style="margin-top:0">Uitsluitend met de officiële gootstukkensets,
+          met isolatieframe en waterkerend manchet. Geen lekkage, geen koudebrug, en de binnenzijde
+          netjes afgetimmerd. Ook het vervangen van een oud dakraam.</p></div>
+        <div class="item-foto"><img loading="lazy" decoding="async" src="../assets/web/dakraam-velux.jpg" alt="Twee Velux dakramen in een schuin dak"></div>
+      </article>
+
+      <article class="item">
+        <div class="item-n">05</div>
+        <div class="item-tekst"><h3 class="h3">Timmerwerk &amp; afbouw</h3>
+          <p>Het werk waar een huis pas af van wordt.</p></div>
+        <div class="item-tekst"><p style="margin-top:0">Wanden en plafonds, kozijnen en deuren,
+          trappen en vlizotrappen, gevelbekleding, schuttingen en maatwerkkasten. Tot en met de
+          plinten, zodat er geen klusjes overblijven.</p></div>
+        <div class="item-foto"><img loading="lazy" decoding="async" src="../assets/web/timmerwerk-tvwand.jpg" alt="Maatwerk tv-wand met nissen"></div>
+      </article>
+
+      <article class="item">
+        <div class="item-n">06</div>
+        <div class="item-tekst"><h3 class="h3">Funderingen</h3>
+          <p>Het werk dat niemand later nog ziet.</p></div>
+        <div class="item-tekst"><p style="margin-top:0">Stroken-, tempex- en traditionele funderingen,
+          betonpoeren, vorstranden en complete zwembadbakken. Juist omdat het straks onzichtbaar is,
+          moet het in één keer goed.</p></div>
+        <div class="item-foto"><img loading="lazy" decoding="async" src="../assets/web/beton-wapening.jpg" alt="Wapeningsnet voor een betonvloer"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="werk" class="band-grey">
+  <div class="wrap">
+    <div class="rij">
+      <p class="cap">Opgeleverd werk uit de afgelopen jaren.</p>
+      <h2 class="h2">Recent opgeleverd.</h2>
+    </div>
+    <div class="kaarten">
+      <article class="kaart">
+        <img loading="lazy" decoding="async" src="../assets/web/timmerwerk-lamellenwand.jpg" alt="Houten lamellenwand tegen een bakstenen muur">
+        <h3 class="h3">Lamellenwand in de woonkamer</h3>
+        <p>Verticale latten in warm hout tegen de bestaande gevel, op maat gezaagd en strak uitgelijnd.</p>
+      </article>
+      <article class="kaart">
+        <img loading="lazy" decoding="async" src="../assets/web/timmerwerk-vlonder.jpg" alt="Composiet vlonder met ingebouwde lichtkoepels">
+        <h3 class="h3">Vlonder met lichtkoepels</h3>
+        <p>Composiet terras rondom twee bestaande lichtkoepels, strak ingepast en zonder zichtbare schroeven.</p>
+      </article>
+      <article class="kaart">
+        <img loading="lazy" decoding="async" src="../assets/web/berging-zwart.jpg" alt="Zwart afgewerkte berging met overkapping in een tuin">
+        <h3 class="h3">Berging met overkapping</h3>
+        <p>Houtskeletbouw met zwart afgewerkte gevelbekleding en een overkapping die aansluit op de tuin.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="werkwijze">
+  <div class="wrap">
+    <div class="rij">
+      <p class="cap">Hoe het bij ons gaat, van eerste telefoontje tot oplevering.</p>
+      <div>
+        <h2 class="h2">Drie stappen, geen verrassingen.</h2>
+        <div class="kaarten" style="margin-top:var(--sp40)">
+          <div><h3 class="h3">01 — We komen langs</h3>
+            <p class="body19" style="margin-top:10px">Gratis en vrijblijvend. We bekijken de situatie
+              ter plaatse, denken mee over wat mogelijk is en zeggen eerlijk wanneer iets geen goed idee is.</p></div>
+          <div><h3 class="h3">02 — U krijgt een offerte</h3>
+            <p class="body19" style="margin-top:10px">Vaste prijs, heldere omschrijving van het werk
+              en de materialen, en een realistische planning. Wat erin staat, is wat u betaalt.</p></div>
+          <div><h3 class="h3">03 — We leveren netjes op</h3>
+            <p class="body19" style="margin-top:10px">Op de afgesproken dag, met een opgeruimde
+              werkplek en garantie op het werk. Is er achteraf iets, dan komen we terug.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-dark">
+  <div class="wrap">
+    <div class="rij">
+      <p class="cap" style="opacity:.8">Openbaar na te lezen op Werkspot, waar alleen klanten
+        kunnen schrijven die de klus daadwerkelijk lieten uitvoeren.</p>
+      <h2 class="h2">4,9 uit 5, op basis van 78 reviews.</h2>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote">
+        <p>"Ik schrijf normaal gesproken nooit reviews, maar dit project is echt super verlopen.
+          Afspraken werden nagekomen en minutieus uitgewerkt. Dit waren vakmensen waar je op kunt bouwen!"</p>
+        <footer>Souhail, Den Haag — betonvloer 14 m²</footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>"Van het doorbreken van een dragende muur tot een nieuwe betonvloer met vloerverwarming,
+          biobased isoleren en het bouwen van een houten vliering: alles is vakkundig en strak uitgevoerd."</p>
+        <footer>Joris Seghers, Bavel — vliering 40 m²</footer>
+      </blockquote>
+      <blockquote class="quote">
+        <p>"De carport is uitgevoerd in mooi en degelijk Douglas hout, met een EPDM-dak en keurig
+          afgewerkte boeidelen. Alles werd na afloop netjes achtergelaten."</p>
+        <footer>Peter, Den Haag — carport voor 2 auto's</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="over">
+  <div class="wrap">
+    <div class="rij">
+      <p class="cap">Over ons</p>
+      <div>
+        <h2 class="h2">Achter OK Timmerwerken staat Ozcan.</h2>
+        <p class="body19" style="margin-top:var(--sp24)">In de reviews die klanten schrijven staat
+          zelden de bedrijfsnaam. Er staat Ozcan. Dat zegt genoeg over hoe hier gewerkt wordt: u
+          heeft één aanspreekpunt, van het eerste telefoontje tot de oplevering, en dat is dezelfde
+          man die ook op de steiger staat.</p>
+        <p class="body19" style="margin-top:var(--sp20)">Wat begon met timmerwerk groeide uit tot
+          complete projecten — een zolder die een verdieping wordt, een garagevloer die in één dag
+          ligt, een zwembadbak die waterpas moet zijn tot op de millimeter. Daarbij werkt een vaste
+          ploeg mee die het vak kent.</p>
+        <p class="body19" style="margin-top:var(--sp20)">Het motto staat al jaren op zijn
+          bedrijfsprofiel en is nooit veranderd: <strong style="font-weight:500">uw zorg is onze zorg.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band-grey">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h2 class="h2">Even overleggen kost niets.</h2>
+        <p class="body19" style="margin-top:var(--sp20);max-width:40ch">Bel, app of laat uw gegevens
+          achter. Meestal kunnen we al aan de telefoon zeggen wat er mogelijk is en wat het
+          ongeveer gaat kosten.</p>
+        <div class="gegevens" style="margin-top:var(--sp40);color:var(--paper)">
+          <div><span>Telefoon</span><a href="tel:0641429106">06 41 42 91 06</a></div>
+          <div><span>E-mail</span><a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a></div>
+          <div><span>Werktijden</span>Ma – vr 7:00 – 18:00 · za 7:00 – 15:00</div>
+          <div><span>Werkgebied</span>Vanuit Gorinchem door heel Nederland</div>
+        </div>
+      </div>
+      <form onsubmit="return false">
+        <div class="veld-rij"><label for="v-naam">Uw naam</label>
+          <input class="veld" id="v-naam" name="naam" autocomplete="name"></div>
+        <div class="veld-rij"><label for="v-mail">E-mailadres</label>
+          <input class="veld" id="v-mail" name="email" type="email" autocomplete="email"></div>
+        <div class="veld-rij"><label for="v-tel">Telefoonnummer</label>
+          <input class="veld" id="v-tel" name="telefoon" type="tel" autocomplete="tel"></div>
+        <div class="veld-rij"><label for="v-vraag">Waar gaat het om?</label>
+          <textarea class="veld" id="v-vraag" name="vraag" placeholder="Een paar zinnen is genoeg."></textarea></div>
+        <button class="btn btn-light" style="align-self:flex-start">Verstuur aanvraag</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <span>OK Timmerwerken® · KvK 51855232 · Suzanna van Oostdijkstraat 4, 4206 XW Gorinchem</span>
+      <ul>
+        <li><a href="#">Algemene voorwaarden</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/31641429106" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.7 15l-1.2 4.4 4.5-1.2A10 10 0 1 0 12 2Zm5.6 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.8-2.7-1.2-4.4-4-4.5-4.2-.1-.2-1-1.4-1-2.6 0-1.3.6-1.9.9-2.1.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.3.3c-.1.1-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.2.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg>
+</a>
+
+<script>
+var nav = document.getElementById('nav');
+addEventListener('scroll', function(){
+  nav.classList.toggle('scrolled', scrollY > 40);
+}, {passive:true});
+</script>
+</body>
+</html>

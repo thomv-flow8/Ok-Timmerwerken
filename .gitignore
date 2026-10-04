@@ -1,0 +1,13 @@
+# Bouwresultaat (wordt door GitHub Actions gemaakt)
+_site/
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Lokaal geïnstalleerde skills (staan ook in ~/.claude/skills)
+.agents/
+.claude/
+skills-lock.json
