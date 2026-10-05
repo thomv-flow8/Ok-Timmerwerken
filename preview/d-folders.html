@@ -3,51 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OK Timmerwerken — folder-kaarten (prototype)</title>
+<title>OK Timmerwerken — diensten met folder-kaarten</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --vlak:#ffffff; --inkt:#14130f; --zacht:#6b6762; --rand:#e9e7e1;
+  --vlak:#ffffff; --inkt:#14130f; --zacht:#6b6762; --rand:#dcdad2;
   --kaart:#ffffff; --f:'Inter',system-ui,sans-serif; --serif:'Instrument Serif',Georgia,serif;
-  --max:1180px; --ease:cubic-bezier(.62,.05,0,1);
-  --bounce:cubic-bezier(.3,1.42,.5,1);   /* korte overshoot bij het openen */
+  --max:1180px; --ease:cubic-bezier(.62,.05,0,1); --bounce:cubic-bezier(.3,1.42,.5,1);
 }
-*{cursor:none}  /* echte cursor verbergen; de stip neemt het over (alleen desktop) */
+*{cursor:none}
 @media(hover:none){*{cursor:auto}}
-/* custom cursor */
 .cur{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:#fff;
   pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;
-  transition:width .28s var(--ease),height .28s var(--ease),opacity .3s;will-change:transform}
+  transition:width .28s var(--ease),height .28s var(--ease),opacity .3s;will-change:transform;opacity:0}
 .cur.groot{width:54px;height:54px;background:rgba(255,255,255,.9)}
 @media(hover:none){.cur{display:none}}
+
 body{background:var(--vlak);color:var(--inkt);font-family:var(--f);line-height:1.5;
-  -webkit-font-smoothing:antialiased;padding:60px 0}
+  -webkit-font-smoothing:antialiased;padding:64px 0 90px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 em.serif{font-family:var(--serif);font-style:italic;font-weight:400}
-.kop{margin-bottom:8px}
-.kop .oog{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht);margin-bottom:16px}
+
+/* label met streep + pijl omlaag naar de kop */
+.oog{display:inline-flex;align-items:center;gap:16px;font-size:13px;font-weight:500;
+  letter-spacing:.02em;color:var(--inkt);margin-bottom:18px}
+.oog .baan{display:inline-block;width:clamp(56px,9vw,130px);height:1px;background:var(--rand);position:relative}
+.oog .baan::after{content:'';position:absolute;right:-4px;top:-4px;width:0;height:0;
+  border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--zacht)}
+
+.kop{margin-bottom:12px}
 .kop h2{font-size:clamp(34px,5.6vw,64px);font-weight:700;letter-spacing:-.03em;line-height:1.02}
-.kop p.lead{margin-top:16px;max-width:56ch;color:var(--zacht);font-weight:300;font-size:17px;margin-bottom:46px}
+.kop p.lead{margin-top:16px;max-width:56ch;color:var(--zacht);font-weight:300;font-size:17px;margin-bottom:30px}
 
 /* ---- rij: folder-kaart + opsomming, om en om ---- */
-.rij{display:flex;gap:64px;align-items:center;padding:46px 0}
-.rij.om{flex-direction:row-reverse}          /* kaart rechts, tekst links */
-.kolom-kaart{flex:0 0 clamp(300px,33vw,400px)}   /* altijd dezelfde kaartbreedte */
+.rij{display:flex;gap:64px;align-items:center;padding:44px 0}
+.rij.om{flex-direction:row-reverse}
+.kolom-kaart{flex:0 0 clamp(300px,33vw,400px)}
 .kolom-tekst{flex:1;min-width:0}
 
 /* ---- de folder-kaart ---- */
 .folder{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;
-  background:#0e0e0c;cursor:pointer;box-shadow:0 10px 40px rgba(0,0,0,.14)}
+  background:#0e0e0c;box-shadow:0 10px 40px rgba(0,0,0,.14)}
 .folder .visual{position:absolute;inset:0;overflow:hidden}
 .folder .visual img{width:100%;height:100%;object-fit:cover;
   transform:scale(1.12) translateY(8%);transition:transform .85s var(--bounce);filter:brightness(.97)}
 .folder:hover .visual img,.folder.open .visual img{transform:scale(1) translateY(0)}
-
-/* voorkant van de map: staat iets open en schuift bij hover verder omlaag.
-   clip-path = het folder-tabje bovenaan */
 .folder .face{position:absolute;inset:0;z-index:2;transform:translateY(16%);
   background:linear-gradient(165deg,#272723 0%,#15140f 72%);
   transition:transform .85s var(--bounce);
@@ -56,8 +59,6 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400}
 .folder .nr{position:absolute;top:24px;left:28px;z-index:3;font-family:var(--serif);
   font-style:italic;font-size:46px;line-height:1;color:#fff}
 .folder .pijl{position:absolute;top:32px;right:28px;z-index:3;color:#fff;opacity:.85;font-size:20px}
-
-/* dienstnaam: vast onderin de kaart, blijft staan bij hover */
 .folder .onder{position:absolute;left:28px;right:28px;bottom:24px;z-index:4;color:#fff}
 .folder .onder h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
 .folder .onder p{font-size:13px;font-weight:300;color:rgba(255,255,255,.75);margin-top:5px}
@@ -65,8 +66,6 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400}
   background:linear-gradient(to top,rgba(8,8,6,.9),transparent);pointer-events:none}
 
 /* ---- opsomming van werkzaamheden ---- */
-.kolom-tekst .oog{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--zacht);margin-bottom:14px}
 .kolom-tekst h3{font-size:clamp(26px,3.3vw,38px);font-weight:700;letter-spacing:-.025em;line-height:1.05}
 .kolom-tekst .intro{color:var(--zacht);font-weight:300;margin-top:14px;max-width:46ch}
 .werk{list-style:none;margin-top:26px;columns:2;column-gap:32px}
@@ -85,57 +84,122 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400}
 <body>
 <div class="wrap">
   <div class="kop">
-    <div class="oog">Diensten — prototype</div>
+    <span class="oog">Diensten<i class="baan"></i></span>
     <h2>Beweeg over een kaart om de <em class="serif">klus</em> te zien.</h2>
     <p class="lead">De map schuift open en onthult het werk. Ernaast: alles wat we binnen die
     dienst oppakken.</p>
   </div>
 
-  <!-- 01 Betonvloeren -->
+  <!-- 01 -->
   <div class="rij">
-    <div class="kolom-kaart">
-      <article class="folder" tabindex="0">
-        <div class="visual"><img src="../assets/eigen/web/beton-woonhuis-droog.jpg" alt="Gevlinderde betonvloer"></div>
-        <div class="face"><span class="nr">01</span><span class="pijl">&#8599;</span></div>
-        <div class="onder"><h3>Betonvloeren</h3><p>Gestort, geëgaliseerd en machinaal gevlinderd</p></div>
-      </article>
-    </div>
+    <div class="kolom-kaart"><article class="folder" tabindex="0">
+      <div class="visual"><img src="../assets/eigen/web/beton-woonhuis-droog.jpg" alt="Gevlinderde betonvloer"></div>
+      <div class="face"><span class="nr">01</span><span class="pijl">&#8599;</span></div>
+      <div class="onder"><h3>Betonvloeren</h3><p>Gestort, geëgaliseerd en machinaal gevlinderd</p></div>
+    </article></div>
     <div class="kolom-tekst">
-      <div class="oog">01 — Betonvloeren</div>
+      <span class="oog">01 — Betonvloeren<i class="baan"></i></span>
       <h3>Een vlakke, gladde vloer die jaren meegaat.</h3>
-      <p class="intro">Binnen en buiten, van een garage tot een compleet terras — inclusief
-      isolatie, wapening en vloerverwarming.</p>
+      <p class="intro">Binnen en buiten, van een garage tot een compleet terras — inclusief isolatie, wapening en vloerverwarming.</p>
       <ul class="werk">
-        <li>Gevlinderde betonvloer</li>
-        <li>Garage- en schuurvloer</li>
-        <li>Bedrijfs- en opslagvloer</li>
-        <li>Vloer met vloerverwarming</li>
-        <li>Isolatie &amp; wapening</li>
-        <li>Buitenterras in beton</li>
+        <li>Gevlinderde betonvloer</li><li>Vloer met vloerverwarming</li>
+        <li>Garage- en schuurvloer</li><li>Isolatie &amp; wapening</li>
+        <li>Bedrijfs- en opslagvloer</li><li>Buitenterras in beton</li>
       </ul>
     </div>
   </div>
 
-  <!-- 02 Vliering & zolder -->
+  <!-- 02 -->
   <div class="rij om">
-    <div class="kolom-kaart">
-      <article class="folder" tabindex="0">
-        <div class="visual"><img src="../assets/eigen/web/zolder-na.jpg" alt="Afgewerkte zolderkamer"></div>
-        <div class="face"><span class="nr">02</span><span class="pijl">&#8599;</span></div>
-        <div class="onder"><h3>Vliering &amp; zolder</h3><p>Van ongebruikte zolder naar volwaardige kamer</p></div>
-      </article>
-    </div>
+    <div class="kolom-kaart"><article class="folder" tabindex="0">
+      <div class="visual"><img src="../assets/eigen/web/zolder-na.jpg" alt="Afgewerkte zolderkamer"></div>
+      <div class="face"><span class="nr">02</span><span class="pijl">&#8599;</span></div>
+      <div class="onder"><h3>Vliering &amp; zolder</h3><p>Van ongebruikte zolder naar volwaardige kamer</p></div>
+    </article></div>
     <div class="kolom-tekst">
-      <div class="oog">02 — Vliering &amp; zolderverbouwing</div>
+      <span class="oog">02 — Vliering &amp; zolderverbouwing<i class="baan"></i></span>
       <h3>Een hele verdieping erbij, kant-en-klaar.</h3>
       <p class="intro">Van draagconstructie tot het laatste likje verf — u kunt er zo intrekken.</p>
       <ul class="werk">
-        <li>Draagconstructie &amp; balklaag</li>
-        <li>Vlizotrap of vaste trap</li>
-        <li>Dakkapel</li>
-        <li>Isolatie &amp; dakramen</li>
-        <li>Elektra &amp; verlichting</li>
-        <li>Wanden, stuc- en schilderwerk</li>
+        <li>Draagconstructie &amp; balklaag</li><li>Isolatie &amp; dakramen</li>
+        <li>Vlizotrap of vaste trap</li><li>Elektra &amp; verlichting</li>
+        <li>Dakkapel</li><li>Wanden, stuc- en schilderwerk</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="rij">
+    <div class="kolom-kaart"><article class="folder" tabindex="0">
+      <div class="visual"><img src="../assets/eigen/web/carport-bestrating.jpg" alt="Carport in Douglas hout"></div>
+      <div class="face"><span class="nr">03</span><span class="pijl">&#8599;</span></div>
+      <div class="onder"><h3>Carport &amp; overkapping</h3><p>Maatwerk in hout, afgewerkt tot in de puntjes</p></div>
+    </article></div>
+    <div class="kolom-tekst">
+      <span class="oog">03 — Carport, veranda &amp; overkapping<i class="baan"></i></span>
+      <h3>Maatwerk dat uw buitenruimte afmaakt.</h3>
+      <p class="intro">In Douglas- of eikenhout, afgedekt met EPDM en nette boeidelen — passend bij uw woning.</p>
+      <ul class="werk">
+        <li>Carport op maat</li><li>Lichtkoepel of dakraam</li>
+        <li>Veranda &amp; overkapping</li><li>Verlichting</li>
+        <li>EPDM-dak &amp; boeidelen</li><li>Fundering &amp; verankering</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="rij om">
+    <div class="kolom-kaart"><article class="folder" tabindex="0">
+      <div class="visual"><img src="../assets/eigen/web/overkapping-zwart.jpg" alt="Overkapping met lichtkoepel"></div>
+      <div class="face"><span class="nr">04</span><span class="pijl">&#8599;</span></div>
+      <div class="onder"><h3>Dakramen (Velux)</h3><p>Erkend montagepartner — altijd waterdicht</p></div>
+    </article></div>
+    <div class="kolom-tekst">
+      <span class="oog">04 — Dakramen (Velux)<i class="baan"></i></span>
+      <h3>Meer licht op zolder, altijd waterdicht.</h3>
+      <p class="intro">Als erkend Velux-montagepartner met de officiële sets — netjes ingepast en afgewerkt.</p>
+      <ul class="werk">
+        <li>Dakraam plaatsen</li><li>Isolatieframe</li>
+        <li>Dakraam vervangen</li><li>Waterkerend manchet</li>
+        <li>Officiële gootstukken</li><li>Binnenafwerking</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="rij">
+    <div class="kolom-kaart"><article class="folder" tabindex="0">
+      <div class="visual"><img src="../assets/eigen/web/woonkamer-verbouwing.jpg" alt="Afgewerkte woonkamer"></div>
+      <div class="face"><span class="nr">05</span><span class="pijl">&#8599;</span></div>
+      <div class="onder"><h3>Timmerwerk &amp; afbouw</h3><p>Van ruwbouw tot de laatste lijst</p></div>
+    </article></div>
+    <div class="kolom-tekst">
+      <span class="oog">05 — Timmerwerk &amp; afbouw<i class="baan"></i></span>
+      <h3>Van ruwbouw tot de laatste lijst.</h3>
+      <p class="intro">Alles wat van een ruimte een afgewerkt geheel maakt — tot en met het stuc- en schilderwerk.</p>
+      <ul class="werk">
+        <li>Kozijnen &amp; deuren</li><li>Gevelbekleding</li>
+        <li>Wanden &amp; plafonds</li><li>Complete badkamer</li>
+        <li>Trappen</li><li>Stuc- &amp; schilderwerk</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="rij om">
+    <div class="kolom-kaart"><article class="folder" tabindex="0">
+      <div class="visual"><img src="../assets/eigen/web/vloer-staalbalken-ploeg.jpg" alt="Nieuwe vloerconstructie met stalen balken"></div>
+      <div class="face"><span class="nr">06</span><span class="pijl">&#8599;</span></div>
+      <div class="onder"><h3>Funderingen</h3><p>Het fundament onder al het werk</p></div>
+    </article></div>
+    <div class="kolom-tekst">
+      <span class="oog">06 — Funderingen<i class="baan"></i></span>
+      <h3>Het fundament onder al het werk.</h3>
+      <p class="intro">Stevig beginnen — van strokenfundering tot betonpoeren en vorstranden.</p>
+      <ul class="werk">
+        <li>Strokenfundering</li><li>Vorstranden</li>
+        <li>Tempex-fundering</li><li>Complete fundering</li>
+        <li>Betonpoeren</li><li>Herstel &amp; uitbreiding</li>
       </ul>
     </div>
   </div>
@@ -146,8 +210,6 @@ document.querySelectorAll('.folder').forEach(function(f){
   f.addEventListener('click', function(){ f.classList.toggle('open'); });
   f.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); f.classList.toggle('open'); } });
 });
-
-// custom cursor: stip die de muis volgt en vergroot boven interactieve elementen
 (function(){
   if(window.matchMedia('(hover:none)').matches) return;
   var cur=document.createElement('div'); cur.className='cur'; document.body.appendChild(cur);
@@ -156,14 +218,11 @@ document.querySelectorAll('.folder').forEach(function(f){
     if(!zichtbaar){ zichtbaar=true; cur.style.opacity=1; } },{passive:true});
   addEventListener('mouseleave',function(){ cur.style.opacity=0; });
   (function loop(){ cx+=(mx-cx)*.2; cy+=(my-cy)*.2;
-    cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
-    requestAnimationFrame(loop); })();
+    cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)'; requestAnimationFrame(loop); })();
   var sel='a,button,.folder,.knop,img,input,textarea,[role=button]';
   document.addEventListener('mouseover',function(e){ if(e.target.closest&&e.target.closest(sel)) cur.classList.add('groot'); });
-  document.addEventListener('mouseout',function(e){
-    var naar=e.relatedTarget;
-    if(e.target.closest&&e.target.closest(sel) && !(naar&&naar.closest&&naar.closest(sel))) cur.classList.remove('groot');
-  });
+  document.addEventListener('mouseout',function(e){ var n=e.relatedTarget;
+    if(e.target.closest&&e.target.closest(sel) && !(n&&n.closest&&n.closest(sel))) cur.classList.remove('groot'); });
 })();
 </script>
 </body>
