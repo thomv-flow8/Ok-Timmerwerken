@@ -362,3 +362,44 @@ wit of grijs. Dat moet nog doorgevoerd worden.
 - Social: profielfoto vierkant en omslagbanners
 - HTML-mailhandtekening en briefhoofd
 - Een korte merkpagina met minimummaten en vrije ruimte rondom
+
+## Logopakket — opgeleverd
+
+Alles komt uit één bron, `tools/logo-combi.js`, zodat elke maat met elke andere klopt.
+Twee generatoren en één rasteraar schrijven de bestanden:
+
+- `tools/logo-combi.js` — de maatvoering en alle tekeningen (beeldmerk, favicon, vierkante
+  favicon, tegel, profieltegel, liggende en staande opmaak, twee social-banners). Een element
+  mag een eigen schaal en verschuiving hebben; de vierkante en gecentreerde varianten worden
+  berekend, niet met de hand ingetikt.
+- `tools/woordmerk-omtrekken.js` — GEGENEREERD. Het woordmerk als letteromtrekken, gezet uit
+  Inter SemiBold (SIL Open Font License) met opentype.js, letterafstand 0,14 em. Hierdoor heeft
+  geen enkel bestand nog het lettertype nodig. Opnieuw maken kan met het scriptje in de
+  scratchpad, maar dat is zelden nodig.
+- `tools/genereer-logobestanden.js` — schrijft 18 SVG's naar `assets/logo-nieuw/` en een
+  opdrachtenlijst `tekening.json` voor de rasteraar.
+- `tools/tekening-naar-png.swift` — leest `tekening.json` en rastert 33 PNG's in één
+  compilatie naar `assets/logo-nieuw/png/`. Eigen mini-padontleder (M L V H Q C Z), met de fix
+  dat een `-` midden in een getal een nieuw getal begint (anders liep het woordmerk vast).
+- `tools/genereer-merkpagina.js` → `preview/merk.html` — de merkrichtlijnen.
+- `tools/genereer-logocombi-pagina.js` → `preview/logo-combi.html` — de toelichting op de keuze.
+
+Herbouwen:
+```
+node tools/genereer-logobestanden.js
+swift tools/tekening-naar-png.swift assets/logo-nieuw/tekening.json assets/logo-nieuw/png
+node tools/genereer-merkpagina.js && node tools/genereer-logocombi-pagina.js
+```
+
+Geleverde bestanden in `assets/logo-nieuw/`:
+- SVG: beeldmerk, faviconvierkant, tegel, tegelvol, liggend, staand — elk in currentColor,
+  zwart en wit.
+- PNG in `png/`: beeldmerk 512/1024/2048, favicon 16/32/48/64, apple-touch-icon 180,
+  app-tegel 192/512, profielfoto 1000 (donker en licht), liggend 800/1600/3200,
+  staand 600/1200, mailhandtekening 440, banner LinkedIn 1584, banner Facebook 1640.
+- `docs/merk/mailhandtekening.html` — plak-klare HTML-handtekening met Ozcans gegevens;
+  LOGO_URL moet naar het logo op de live site wijzen.
+
+Nog open: een favicon.ico (meerdere maten in één bestand) kan later met een los hulpmiddel;
+browsers accepteren de PNG- en SVG-favicons prima. Een gedrukt briefhoofd/offerteblad is nog
+niet gemaakt — de liggende opmaak is er klaar voor zodra de layout bekend is.

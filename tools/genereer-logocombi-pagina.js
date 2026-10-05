@@ -5,13 +5,25 @@ const fs = require('fs');
 const path = require('path');
 const m = require('./logo-combi.js');
 
-const merk = `<svg viewBox="0 0 ${m.BREED} ${m.HOOG}" role="img" aria-label="OK Timmerwerken">${m.beeldmerk}</svg>`;
-const fav = `<svg viewBox="0 0 ${m.BREED} ${m.HOOG}" role="img" aria-label="OK Timmerwerken">${m.favicon}</svg>`;
+// Inline SVG, zodat de tekening currentColor erft van zijn omgeving.
+const inline = (naam) => {
+  const t = m.tekeningen[naam];
+  return `<svg viewBox="0 0 ${t.breed} ${t.hoog}" role="img" aria-label="OK Timmerwerken">
+${m.naarSvgBinnenkant(t.elementen)}
+</svg>`;
+};
+const merk = inline('beeldmerk');
+const fav = inline('faviconvierkant');
 
+// De ladder toont elke maat op zijn werkelijke hoogte in pixels.
 const maten = [96, 64, 48, 32, 24, 16];
-const ladder = (svg) => maten.map((p) =>
-  `<figure class="trap"><div class="doos" style="width:${Math.round(p * m.BREED / m.HOOG)}px">${svg}</div><figcaption>${p} px</figcaption></figure>`
-).join('\n      ');
+const ladder = (naam) => {
+  const t = m.tekeningen[naam];
+  const svg = inline(naam);
+  return maten.map((p) =>
+    `<figure class="trap"><div class="doos" style="width:${Math.round(p * t.breed / t.hoog)}px">${svg}</div><figcaption>${p} px</figcaption></figure>`
+  ).join('\n      ');
+};
 
 const html = `<!doctype html>
 <html lang="nl">
@@ -127,12 +139,12 @@ ul.punten b{color:var(--inkt);font-weight:500}
 
     <h3>Volledig beeldmerk</h3>
     <div class="rij">
-      ${ladder(merk)}
+      ${ladder('beeldmerk')}
     </div>
 
     <h3>Vereenvoudigd, voor favicon en app-tegel</h3>
     <div class="rij">
-      ${ladder(fav)}
+      ${ladder('faviconvierkant')}
     </div>
   </div>
 </section>
