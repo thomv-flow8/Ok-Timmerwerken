@@ -312,6 +312,15 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .v-fundering img.na{clip-path:inset(0 0 calc(100% - var(--p,0) * 100%) 0)}
 .v-fundering .snijlijn{position:absolute;left:0;right:0;z-index:3;top:calc(var(--p,0) * 100%);height:1px;
   background:rgba(255,255,255,.8);box-shadow:0 0 14px rgba(255,255,255,.7);opacity:calc(var(--p,0) * (1 - var(--p,0)) * 6)}
+/* 07 onderhoud — "tegel voor tegel": het beeld verschijnt als tegels die één voor één worden gelegd */
+.v-onderhoud .tegels{position:absolute;inset:0;z-index:2;display:grid;grid-template:repeat(4,1fr)/repeat(4,1fr)}
+.v-onderhoud .tegels i{background:var(--bg);border:1px solid rgba(255,255,255,.18);
+  transition:opacity .5s ease,transform .6s var(--ease);transition-delay:calc(.35s + var(--n) * 90ms)}
+.v-onderhoud.in .tegels i{opacity:0;transform:scale(.82)}
+/* 08 nieuwbouw — "opbouw": tijdens het scrollen rijst het beeld kolom voor kolom op, als wanden die omhoog gaan */
+.v-nieuwbouw .stroken{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:repeat(6,1fr)}
+.v-nieuwbouw .stroken i{background:var(--bg);transform-origin:top;border-right:1px solid rgba(255,255,255,.12);
+  transform:scaleY(clamp(0, calc(1 - (var(--p,0) * 1.7 - var(--n) * .12)), 1))}
 /* fase-label (regelwerk/afgewerkt, wapening/gestort) */
 .vitrine .fl{position:absolute;z-index:4;left:6%;top:6%;font-size:11px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
@@ -354,7 +363,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 [data-kantel]{transition:transform .7s cubic-bezier(.2,.7,.2,1);
   transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--sc,1))}
 
-/* strook "en verder" onder de vitrine */
+/* knop naar het overzicht onder de vitrine */
+.alle-knop{text-align:center;margin:0 0 clamp(80px,9vw,120px)}
 .meer-diensten{display:grid;grid-template-columns:auto 1fr 1fr auto;gap:14px;align-items:stretch;
   margin:10px 0 clamp(80px,9vw,120px);padding-top:28px;border-top:1px solid var(--rand)}
 .meer-diensten .md-label{align-self:center;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht);padding-right:10px}
@@ -531,6 +541,8 @@ footer.groot{padding:72px 0 46px}
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
+.p-beeld.portret{border:1px solid var(--rand)}
+.p-beeld.portret .tag{background:#14130f;color:#fff}
 .p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
 .leeg-in{display:flex;flex-direction:column;align-items:center;gap:10px;color:#9a8f7e;text-align:center}
 .leeg-in svg{width:64px;height:auto;margin-bottom:6px}
@@ -627,7 +639,14 @@ footer.groot{padding:72px 0 46px}
 .nav-in .merk{margin-right:auto}
 
 /* andere diensten: beeldkaarten met dienstkleur */
-.andere{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
+.andere{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;
+  width:min(var(--max),94vw);margin-left:calc(50% - min(var(--max),94vw) / 2)}   /* 2 rijen van 4, precies tussen de lijnen */
+.andere > a{margin:14px}
+a.kaart.alle-kaart{background:#14130f;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:#fff}
+a.kaart.alle-kaart::after{display:none}
+.alle-kaart .krul-mini{width:70px;margin-bottom:auto;color:var(--brons)}
+.alle-kaart b{font-size:19px;font-weight:600;line-height:1.2}
+.alle-kaart small{display:block;margin-top:8px;color:rgba(255,255,255,.65);font-size:13px}
 a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
   color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
 a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -640,8 +659,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
 .kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
 .kaart:hover .knaam span::after{transform:translateX(4px)}
-@media(max-width:1000px){.andere{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.andere{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){.andere{grid-template-columns:1fr 1fr;width:auto;margin-left:0}.andere > a{margin:6px}}
 
 /* afsluitende oproep */
 .oproep{padding:clamp(80px,10vw,130px) 0}
@@ -699,8 +717,8 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
           <a href="dienst-dakramen.html" style="--kl:#7394b4"><img src="../assets/render/echt/web/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
           <a href="dienst-timmerwerk.html" style="--kl:#9cb189"><img src="../assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
           <a href="dienst-funderingen.html" style="--kl:#474e5b"><img src="../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a href="dienst-onderhoud.html" style="--kl:#b98b6e"><img src="../assets/eigen/web/badkamer-afgewerkt.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
-          <a href="dienst-nieuwbouw.html" style="--kl:#6f7d6a"><img src="../assets/web/vliering-constructie.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a href="dienst-onderhoud.html" style="--kl:#b98b6e"><img src="../assets/render/echt/web/onderhoud.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="dienst-nieuwbouw.html" style="--kl:#6f7d6a"><img src="../assets/render/echt/web/nieuwbouw.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
           <a class="alle" href="diensten.html">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
@@ -946,14 +964,18 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="knaam"><b>Timmerwerk &amp; afbouw</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="dienst-onderhoud.html" style="--kl:#b98b6e" data-kantel>
-        <img src="../assets/eigen/web/badkamer-afgewerkt.jpg" alt="" loading="lazy">
+        <img src="../assets/render/echt/web/onderhoud.jpg" alt="" loading="lazy">
         <span class="knr">07</span>
         <span class="knaam"><b>Onderhoud &amp; renovatie</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="dienst-nieuwbouw.html" style="--kl:#6f7d6a" data-kantel>
-        <img src="../assets/web/vliering-constructie.jpg" alt="" loading="lazy">
+        <img src="../assets/render/echt/web/nieuwbouw.jpg" alt="" loading="lazy">
         <span class="knr">08</span>
         <span class="knaam"><b>Nieuwbouw</b><span>Bekijk dienst</span></span>
+      </a>
+      <a class="kaart alle-kaart" href="diensten.html">
+        <svg class="krul-mini" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <b>Alle diensten</b><small>Alle werkzaamheden op een rij →</small>
       </a>
     </div>
   </div>

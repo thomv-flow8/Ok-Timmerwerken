@@ -54,6 +54,8 @@ const extraStijl = `<style>
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
+.p-beeld.portret{border:1px solid var(--rand)}
+.p-beeld.portret .tag{background:#14130f;color:#fff}
 .p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
 .leeg-in{display:flex;flex-direction:column;align-items:center;gap:10px;color:#9a8f7e;text-align:center}
 .leeg-in svg{width:64px;height:auto;margin-bottom:6px}
@@ -150,7 +152,14 @@ const extraStijl = `<style>
 .nav-in .merk{margin-right:auto}
 
 /* andere diensten: beeldkaarten met dienstkleur */
-.andere{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
+.andere{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;
+  width:min(var(--max),94vw);margin-left:calc(50% - min(var(--max),94vw) / 2)}   /* 2 rijen van 4, precies tussen de lijnen */
+.andere > a{margin:14px}
+a.kaart.alle-kaart{background:#14130f;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:#fff}
+a.kaart.alle-kaart::after{display:none}
+.alle-kaart .krul-mini{width:70px;margin-bottom:auto;color:var(--brons)}
+.alle-kaart b{font-size:19px;font-weight:600;line-height:1.2}
+.alle-kaart small{display:block;margin-top:8px;color:rgba(255,255,255,.65);font-size:13px}
 a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
   color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
 a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -163,8 +172,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
 .kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
 .kaart:hover .knaam span::after{transform:translateX(4px)}
-@media(max-width:1000px){.andere{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.andere{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){.andere{grid-template-columns:1fr 1fr;width:auto;margin-left:0}.andere > a{margin:6px}}
 
 /* afsluitende oproep */
 .oproep{padding:clamp(80px,10vw,130px) 0}
@@ -300,7 +308,11 @@ function dienstPagina(d, alle) {
         <img src="${x.beeld}" alt="" loading="lazy">
         <span class="knr">${x.nr}</span>
         <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk dienst</span></span>
-      </a>`).join('\n');
+      </a>`).join('\n') + `
+      <a class="kaart alle-kaart" href="diensten.html">
+        <svg class="krul-mini" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <b>Alle diensten</b><small>Alle werkzaamheden op een rij →</small>
+      </a>`;
   const onderdelen = d.onderdelen ? `
 <!-- ALLE WERKZAAMHEDEN -->
 <section class="creme" id="werkzaamheden">
@@ -449,11 +461,8 @@ function overPagina(o) {
         <a class="knop lijn" href="d-lijn.html#diensten">Bekijk de diensten</a>
       </div>
     </div>
-    <div class="p-beeld leeg" style="--bg:#ece6dc;aspect-ratio:4/5" data-kantel aria-label="Plek voor het portret van Ozcan">
-      <div class="leeg-in">
-        <svg viewBox="0 0 100 94" fill="none" aria-hidden="true"><path d="M3.5,94 V30.9 L50,4 L96.5,30.9 V94" stroke="currentColor" stroke-width="3"/></svg>
-        <span>Portret van Ozcan</span><em>volgt nog</em>
-      </div>
+    <div class="p-beeld portret" style="--bg:#ffffff;aspect-ratio:4/5" data-kantel>
+      <img src="../assets/render/portret/web/ozcan-portret.jpg" alt="Ozcan, eigenaar van OK Timmerwerken">
       <span class="tag">— Ozcan, OK Timmerwerken</span>
     </div>
   </div>

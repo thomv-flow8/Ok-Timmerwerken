@@ -311,6 +311,15 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .v-fundering img.na{clip-path:inset(0 0 calc(100% - var(--p,0) * 100%) 0)}
 .v-fundering .snijlijn{position:absolute;left:0;right:0;z-index:3;top:calc(var(--p,0) * 100%);height:1px;
   background:rgba(255,255,255,.8);box-shadow:0 0 14px rgba(255,255,255,.7);opacity:calc(var(--p,0) * (1 - var(--p,0)) * 6)}
+/* 07 onderhoud — "tegel voor tegel": het beeld verschijnt als tegels die één voor één worden gelegd */
+.v-onderhoud .tegels{position:absolute;inset:0;z-index:2;display:grid;grid-template:repeat(4,1fr)/repeat(4,1fr)}
+.v-onderhoud .tegels i{background:var(--bg);border:1px solid rgba(255,255,255,.18);
+  transition:opacity .5s ease,transform .6s var(--ease);transition-delay:calc(.35s + var(--n) * 90ms)}
+.v-onderhoud.in .tegels i{opacity:0;transform:scale(.82)}
+/* 08 nieuwbouw — "opbouw": tijdens het scrollen rijst het beeld kolom voor kolom op, als wanden die omhoog gaan */
+.v-nieuwbouw .stroken{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:repeat(6,1fr)}
+.v-nieuwbouw .stroken i{background:var(--bg);transform-origin:top;border-right:1px solid rgba(255,255,255,.12);
+  transform:scaleY(clamp(0, calc(1 - (var(--p,0) * 1.7 - var(--n) * .12)), 1))}
 /* fase-label (regelwerk/afgewerkt, wapening/gestort) */
 .vitrine .fl{position:absolute;z-index:4;left:6%;top:6%;font-size:11px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
@@ -353,7 +362,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 [data-kantel]{transition:transform .7s cubic-bezier(.2,.7,.2,1);
   transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--sc,1))}
 
-/* strook "en verder" onder de vitrine */
+/* knop naar het overzicht onder de vitrine */
+.alle-knop{text-align:center;margin:0 0 clamp(80px,9vw,120px)}
 .meer-diensten{display:grid;grid-template-columns:auto 1fr 1fr auto;gap:14px;align-items:stretch;
   margin:10px 0 clamp(80px,9vw,120px);padding-top:28px;border-top:1px solid var(--rand)}
 .meer-diensten .md-label{align-self:center;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht);padding-right:10px}
@@ -542,8 +552,8 @@ footer.groot{padding:72px 0 46px}
           <a href="diensten/dakramen/" style="--kl:#7394b4"><img src="assets/render/echt/web/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
           <a href="diensten/timmerwerk/" style="--kl:#9cb189"><img src="assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
           <a href="diensten/funderingen/" style="--kl:#474e5b"><img src="assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a href="diensten/onderhoud/" style="--kl:#b98b6e"><img src="assets/eigen/web/badkamer-afgewerkt.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
-          <a href="diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="assets/web/vliering-constructie.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a href="diensten/onderhoud/" style="--kl:#b98b6e"><img src="assets/render/echt/web/onderhoud.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="assets/render/echt/web/nieuwbouw.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
           <a class="alle" href="diensten/">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
@@ -722,13 +732,36 @@ footer.groot{padding:72px 0 46px}
           <a class="pil" href="diensten/funderingen/">Meer over funderingen</a></div>
       </article>
 
+      <!-- 07 ONDERHOUD -->
+      <article class="rij">
+        <div class="vak"><div class="vitrine v-onderhoud" style="--bg:#b98b6e;--tag:#f3e7de">
+          <img class="beeld" src="assets/render/echt/web/onderhoud.jpg" alt="Gerenoveerde badkamer met nieuw tegelwerk">
+          <div class="tegels" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i><i style="--n:6"></i></div>
+          <span class="tag">tegel voor tegel</span>
+        </div></div>
+        <div class="tekst"><span class="nr">07 — Onderhoud &amp; renovatie</span>
+          <h3>Uw woning weer in topconditie.</h3>
+          <p>Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties. Eén vaste ploeg die het werk vooraf helder bespreekt en netjes oplevert.</p>
+          <ul class="werk"><li>Houtrot</li><li>Tegelwerk</li><li>Isolatie</li><li>Schilderwerk</li><li>Kleine reparaties</li></ul>
+          <a class="pil" href="diensten/onderhoud/">Meer over onderhoud &amp; renovatie</a></div>
+      </article>
+
+      <!-- 08 NIEUWBOUW -->
+      <article class="rij">
+        <div class="vak"><div class="vitrine v-nieuwbouw" style="--bg:#6f7d6a;--tag:#e6ebe3">
+          <img class="beeld" src="assets/render/echt/web/nieuwbouw.jpg" alt="Houtskeletbouw in opbouw">
+          <div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
+          <span class="tag" style="left:auto;right:7%">vanaf de eerste balk</span>
+        </div></div>
+        <div class="tekst"><span class="nr">08 — Nieuwbouw</span>
+          <h3>Vakwerk vanaf de eerste balk.</h3>
+          <p>HSB-wanden zetten, kozijnen stellen, dak- en vloerconstructies maken en ramen, deuren en boeidelen plaatsen. Nauwkeurig volgens tekening.</p>
+          <ul class="werk"><li>HSB-wanden</li><li>Stelwerk kozijnen</li><li>Constructies</li><li>Ramen &amp; deuren</li><li>Boeidelen</li></ul>
+          <a class="pil" href="diensten/nieuwbouw/">Meer over nieuwbouw</a></div>
+      </article>
+
     </div>
-    <div class="meer-diensten">
-      <span class="md-label">En verder</span>
-      <a href="diensten/onderhoud/" style="--kl:#b98b6e"><i></i><b>Onderhoud &amp; renovatie</b><small>Houtrot · tegelwerk · isolatie · schilderwerk · kleine reparaties</small></a>
-      <a href="diensten/nieuwbouw/" style="--kl:#6f7d6a"><i></i><b>Nieuwbouw</b><small>HSB-wanden · stelwerk kozijnen · boeidelen · dak- &amp; vloerconstructies</small></a>
-      <a class="alle" href="diensten/">Alle diensten en werkzaamheden →</a>
-    </div>
+    <div class="alle-knop"><a class="pil" href="diensten/">Alle diensten en werkzaamheden op een rij →</a></div>
   </div>
 </section>
 
@@ -1027,7 +1060,7 @@ footer.groot{padding:72px 0 46px}
 
   // Scroll-gestuurde effecten
   var vakken=[].slice.call(document.querySelectorAll('.vak'));
-  var vignetten=[].slice.call(document.querySelectorAll('.vignet')), timmer=document.querySelector('.v-timmer'), fund=document.querySelector('.v-fundering'),
+  var vignetten=[].slice.call(document.querySelectorAll('.vignet')), nieuwbouw=document.querySelector('.v-nieuwbouw'), timmer=document.querySelector('.v-timmer'), fund=document.querySelector('.v-fundering'),
       fundFl=fund.querySelector('.fl'), timmerFl=timmer.querySelector('.fl');
   var chaos=document.querySelector('.chaos .scene'), fase=document.getElementById('fase');
   var krul=document.getElementById('krulpad'), krulLen=krul.getTotalLength();
@@ -1052,6 +1085,8 @@ footer.groot{padding:72px 0 46px}
     // vignetten (beton, carport, timmerwerk): cirkel groeit van 14% tot het hele vlak
     vignetten.forEach(function(v){ var p=rm?1:voortgang(v,.95,.3);
       v.style.setProperty('--p',p.toFixed(3)); v.style.setProperty('--r',(14+p*62).toFixed(1)+'%'); });
+    // 08 nieuwbouw: kolommen rijzen op tijdens het scrollen
+    if(nieuwbouw) nieuwbouw.style.setProperty('--p',(rm?1:voortgang(nieuwbouw,.95,.35)).toFixed(3));
     // 06 fundering: het beton wordt gestort over de wapening
     var pf=rm?1:voortgang(fund,.9,.2); fund.style.setProperty('--p',pf.toFixed(3));
     fundFl.textContent=pf<.5?'Wapening':'Gestort';
