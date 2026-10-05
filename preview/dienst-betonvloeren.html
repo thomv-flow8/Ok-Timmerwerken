@@ -192,7 +192,7 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .band .cijfer b{display:block;font-size:44px;font-weight:300;letter-spacing:-.02em}
 .band .cijfer span{color:var(--zacht);font-size:14px}
 
-footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);color:var(--inkt);border-top:1px solid var(--rand)}
+footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);color:var(--inkt)}
 
 /* zwevende WhatsApp + socials, rechtsonder (zoals de referentie) */
 .dock{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;
@@ -581,7 +581,7 @@ footer.groot{padding:72px 0 46px}
 .oproep .acties{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .oproep .knop{padding:13px 24px;font-size:14px}
 .oproep .knop.wa{background:#25D366;color:#fff}
-.oproep .knop.lijn{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.oproep .knop.lijn{background:transparent;color:var(--inkt);border-color:var(--inkt)}
 
 /* over ons */
 .verhaal{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);margin-top:10px}
@@ -857,8 +857,9 @@ footer.groot{padding:72px 0 46px}
   </div>
 </section>
 
-<section class="oproep donker">
+<section class="oproep">
   <div class="kolommen"></div>
+  <div class="scheidlijn" data-teken aria-hidden="true"></div>
   <div class="wrap op">
     <span class="oog">Contact<i class="baan"></i></span>
     <h2>Vraag vrijblijvend <em>advies</em> aan.</h2>
@@ -871,7 +872,7 @@ footer.groot{padding:72px 0 46px}
   </div>
 </section>
 
-<footer class="groot">
+<footer class="groot donker zwart">
   <div class="kolommen"></div>
   <div class="wrap">
     <div class="foot-grid">

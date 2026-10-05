@@ -139,7 +139,7 @@ const extraStijl = `<style>
 .oproep .acties{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .oproep .knop{padding:13px 24px;font-size:14px}
 .oproep .knop.wa{background:#25D366;color:#fff}
-.oproep .knop.lijn{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.oproep .knop.lijn{background:transparent;color:var(--inkt);border-color:var(--inkt)}
 
 /* over ons */
 .verhaal{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);margin-top:10px}
@@ -217,8 +217,9 @@ ${dock}
 function oog(tekst) { return `<span class="oog">${esc(tekst)}<i class="baan"></i></span>`; }
 
 function oproep() {
-  return `<section class="oproep donker">
+  return `<section class="oproep">
   <div class="kolommen"></div>
+  <div class="scheidlijn" data-teken aria-hidden="true"></div>
   <div class="wrap op">
     ${oog('Contact')}
     <h2>Vraag vrijblijvend <em>advies</em> aan.</h2>
