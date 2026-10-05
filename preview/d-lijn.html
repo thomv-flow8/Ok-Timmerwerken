@@ -188,10 +188,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 @media(max-width:600px){.dock{right:14px;bottom:14px;gap:10px}
   .dock .soc{width:38px;height:38px}.dock .wa{width:52px;height:52px}}
 
-/* ---------- custom cursor ---------- */
-*{cursor:none}
-input,textarea,select{cursor:text}
-@media(hover:none){*{cursor:auto}}
+/* ---------- volg-stip (2e cursor achter de gewone muispijl) ---------- */
 .cur{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:#fff;
   pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;
   transition:width .28s var(--ease),height .28s var(--ease),opacity .3s;will-change:transform;opacity:0}
@@ -338,6 +335,7 @@ footer.groot{padding:72px 0 46px}
     </a>
     <div class="nav-links">
       <a href="#diensten">Diensten</a>
+      <a href="#reviews">Reviews</a>
       <a href="#over">Over ons</a>
       <a href="#contact">Contact</a>
     </div>
@@ -761,7 +759,7 @@ footer.groot{padding:72px 0 46px}
     f.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); f.classList.toggle('open'); } });
   });
 
-  // Custom cursor: stip die de muis volgt en vergroot boven interactieve elementen.
+  // Volg-stip: loopt achter de gewone muispijl aan en vergroot boven interactieve elementen.
   (function(){
     if(window.matchMedia('(hover:none)').matches) return;
     var cur=document.createElement('div'); cur.className='cur'; document.body.appendChild(cur);
@@ -769,7 +767,7 @@ footer.groot{padding:72px 0 46px}
     addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY;
       if(!zichtbaar){ zichtbaar=true; cur.style.opacity=1; } },{passive:true});
     addEventListener('mouseleave',function(){ cur.style.opacity=0; });
-    (function loop(){ cx+=(mx-cx)*.2; cy+=(my-cy)*.2;
+    (function loop(){ cx+=(mx-cx)*.12; cy+=(my-cy)*.12;
       cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)'; requestAnimationFrame(loop); })();
     var sel='a,button,.folder,.knop,.soc,.wa,input,textarea,[role=button]';
     document.addEventListener('mouseover',function(e){ if(e.target.closest&&e.target.closest(sel)) cur.classList.add('groot'); });

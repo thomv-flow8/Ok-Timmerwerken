@@ -14,8 +14,6 @@
   --kaart:#ffffff; --f:'Inter',system-ui,sans-serif; --serif:'Instrument Serif',Georgia,serif;
   --max:1180px; --ease:cubic-bezier(.62,.05,0,1); --bounce:cubic-bezier(.3,1.42,.5,1);
 }
-*{cursor:none}
-@media(hover:none){*{cursor:auto}}
 .cur{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:#fff;
   pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;
   transition:width .28s var(--ease),height .28s var(--ease),opacity .3s;will-change:transform;opacity:0}
@@ -218,7 +216,7 @@ document.querySelectorAll('.folder').forEach(function(f){
   addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY;
     if(!zichtbaar){ zichtbaar=true; cur.style.opacity=1; } },{passive:true});
   addEventListener('mouseleave',function(){ cur.style.opacity=0; });
-  (function loop(){ cx+=(mx-cx)*.2; cy+=(my-cy)*.2;
+  (function loop(){ cx+=(mx-cx)*.12; cy+=(my-cy)*.12;
     cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)'; requestAnimationFrame(loop); })();
   var sel='a,button,.folder,.knop,img,input,textarea,[role=button]';
   document.addEventListener('mouseover',function(e){ if(e.target.closest&&e.target.closest(sel)) cur.classList.add('groot'); });
