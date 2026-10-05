@@ -357,6 +357,13 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .stap h3{font-size:21px;font-weight:600;margin:22px 0 10px;letter-spacing:-.015em}
 .stap p{color:var(--zacht);font-weight:300;font-size:15px;line-height:1.65}
 .stap-cta{background:#14130f;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+/* werkwijze als crèmekleurige band: witte stapblokken die zweven, zoals bij de reviews */
+.creme{--vlak:#f2ebdf; --rand:#e2d8c8; --lijn:rgba(20,19,15,.05)}
+#werkwijze .wrap{padding-bottom:clamp(90px,11vw,150px)}
+/* schaduw per blok (niet op de rij), zodat hij meekomt met de binnenkomst-animatie */
+.creme .stap{box-shadow:0 46px 80px -56px rgba(20,19,15,.38)}
+.creme .stap:not(.stap-cta){background:#fff;border-right:1px solid var(--rand)}
+.creme .stap:not(.stap-cta):hover{background:#fff;box-shadow:0 24px 50px -34px rgba(20,19,15,.35);z-index:1}
 .stap-cta:hover{background:#1f1d19}
 .stap-cta .snr{color:var(--brons)}
 /* krul die zich tijdens het scrollen tekent en met een pijl naar "Klaar voor stap 1?" wijst */
@@ -433,6 +440,8 @@ footer.groot{padding:72px 0 46px}
   .stappen{grid-template-columns:1fr;width:auto;margin-left:0}
   .stap{padding:26px 0 30px;border-top:1px solid var(--rand)}
   .stap-cta{padding:28px 24px;border-radius:14px;border:0}
+  .creme .stap:not(.stap-cta){padding:26px 22px 30px;border:0;margin-bottom:10px;border-radius:12px}
+  .creme .stap{box-shadow:0 20px 40px -30px rgba(20,19,15,.3)}
   .kaarten{grid-template-columns:1fr;width:auto;margin-left:0}
   .rev{padding:26px 0 30px;border-top:1px solid var(--rand)}
   .rev-totaal{padding:28px 24px;border-radius:14px}
