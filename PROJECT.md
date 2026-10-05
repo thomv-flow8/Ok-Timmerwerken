@@ -403,3 +403,28 @@ Geleverde bestanden in `assets/logo-nieuw/`:
 Nog open: een favicon.ico (meerdere maten in één bestand) kan later met een los hulpmiddel;
 browsers accepteren de PNG- en SVG-favicons prima. Een gedrukt briefhoofd/offerteblad is nog
 niet gemaakt — de liggende opmaak is er klaar voor zodra de layout bekend is.
+
+## Google Bedrijfsprofiel
+
+OK Timmerwerken heeft naast Werkspot ook een Google Bedrijfsprofiel: **5,0 uit 5 op 97
+reviews**, Aannemer in Gorinchem, Suzanna van Oostdijkstraat 4. 113 foto's. Gevonden op
+5 oktober 2026.
+
+Stabiele, deelbare reviewlink (opent het profiel met de reviews):
+`https://www.google.com/maps?cid=13014174389854650295`
+
+Vaste identifiers van de plaats, voor een latere koppeling via de Google Places API:
+- CID (decimaal): `13014174389854650295`
+- Maps feature-id: `/g/11nms7tzfr`
+- Hex place-id uit de Maps-URL: `0x47c6870aec0892cb:0xb49ba2a7d045bfb7`
+
+Dit is de sleutel voor het eerder voorgestelde plan om de reviews vanzélf bij te werken:
+een GitHub Action die de Google Places API ('place details', veld `reviews`) met deze plaats-id
+leest en `docs/reviews.json` ververst. Google levert via die API maximaal 5 reviews per
+aanroep; de volledige set blijft handmatig via de CMS. Werkspot blijft daarnaast de bron met
+de meeste reviews (78) en citaten.
+
+**Foto's — rechten.** Van de 113 foto's zijn alleen de foto's die Ozcan zélf heeft geplaatst
+vrij bruikbaar. Foto's die klanten bij hun review uploadden blijven van die klant; die niet
+gebruiken zonder toestemming. Op Google is de inzender niet altijd zichtbaar, dus per foto
+nagaan of 'm opvragen bij Ozcan.
