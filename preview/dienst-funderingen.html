@@ -22,6 +22,7 @@
   --serif:'Instrument Serif',Georgia,serif;
   --max:1180px; --ease:cubic-bezier(.62,.05,0,1); --bounce:cubic-bezier(.3,1.42,.5,1);
   --accent-warm:#c6702f; --brons:#b58a52;
+  --kl-insta:#d87f57; --kl-werkspot:#9cb189; --kl-google:#7394b4;   /* terracotta / salie / blauw uit de diensten */
 }
 .donker{
   --vlak:#1a1a1a; --inkt:#ffffff; --zacht:#9c9c97; --rand:#333;
@@ -91,7 +92,7 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .menu-voet .tel{font-size:20px;font-weight:600;color:#fff}
 .menu-voet .knoppen{display:flex;gap:10px;align-items:center}
 .menu-voet .wa-knop{background:#25D366;color:#fff;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
-.menu-voet .soc{width:42px;height:42px;border-radius:50%;border:1px solid rgba(181,138,82,.5);color:var(--brons);
+.menu-voet .soc{width:42px;height:42px;border-radius:50%;background:var(--kl);color:#fff;
   display:grid;place-items:center}
 .menu-voet .soc svg{width:18px;height:18px}
 @media(max-width:560px){.nav-tel .nr{display:none}}
@@ -171,7 +172,7 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .band .cijfer b{display:block;font-size:44px;font-weight:300;letter-spacing:-.02em}
 .band .cijfer span{color:var(--zacht);font-size:14px}
 
-footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);color:var(--inkt)}
+footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);color:var(--inkt);border-top:1px solid var(--rand)}
 
 /* zwevende WhatsApp + socials, rechtsonder (zoals de referentie) */
 .dock{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;
@@ -179,9 +180,10 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .dock a{display:flex;align-items:center;justify-content:center;border-radius:9999px;
   text-decoration:none;transition:transform .2s var(--ease)}
 .dock a:hover{transform:translateY(-3px)}
-.dock .soc{width:42px;height:42px;background:#14130f;color:var(--brons);border:1px solid rgba(181,138,82,.5);
-  box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .2s var(--ease),background .25s,color .25s}
-.dock .soc:hover{background:var(--brons);color:#14130f}
+.dock .soc{width:42px;height:42px;background:var(--kl,#14130f);color:#fff;border:0;
+  box-shadow:0 6px 18px rgba(20,19,15,.16);transition:transform .2s var(--ease),filter .25s}
+.dock .soc:hover{filter:brightness(.92)}
+.soc.insta{--kl:var(--kl-insta)}.soc.werkspot{--kl:var(--kl-werkspot)}.soc.google{--kl:var(--kl-google)}
 .dock .soc svg{width:18px;height:18px}
 .dock .soc img{width:22px;height:22px;object-fit:contain;display:block}
 .dock .soc-vul{overflow:hidden;background:transparent;border-color:transparent}
@@ -337,16 +339,38 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
   transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--sc,1))}
 
 /* ---------- werkwijze ---------- */
+/* dunne horizontale lijn die zich van links naar rechts tekent, met een bronzen punt die meeloopt */
+.scheidlijn{position:absolute;top:0;left:50%;width:min(var(--max),94vw);height:1px;transform:translateX(-50%);z-index:1}
+.scheidlijn::before{content:'';position:absolute;inset:0;background:rgba(20,19,15,.16);transform:scaleX(0);
+  transform-origin:left;transition:transform 1.6s var(--ease)}
+.scheidlijn::after{content:'';position:absolute;top:-3.5px;left:0;width:8px;height:8px;border-radius:50%;
+  background:var(--brons);opacity:0;transition:left 1.6s var(--ease),opacity .3s}
+.scheidlijn.in::before{transform:scaleX(1)}
+.scheidlijn.in::after{left:calc(100% - 8px);opacity:1}
 .stappen{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;
   width:min(var(--max),94vw);margin-left:calc(50% - min(var(--max),94vw) / 2)}   /* precies op de 5 lijnen */
-.stap{position:relative;padding:34px 28px 44px;transition:background .4s ease}
-.stap:hover{background:rgba(20,19,15,.022)}
-.stap .snr{font-family:var(--serif);font-style:italic;font-size:58px;color:var(--zacht);line-height:1}
+.stap{position:relative;padding:40px 28px 48px;transition:background .4s ease,opacity .8s var(--ease),transform .8s var(--ease)}
+.stap:hover{background:rgba(20,19,15,.03)}
+.stap .snr{font-family:var(--serif);font-style:italic;font-size:clamp(64px,7vw,96px);color:var(--zacht);line-height:.9;
+  transition:color .4s ease,transform .5s var(--ease)}
+.stap:hover .snr{color:var(--brons);transform:translateX(6px)}
+/* bronzen balk bovenaan per kolom, loopt stap voor stap vol */
+.stap::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:var(--brons);
+  transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease)}
+/* binnenkomst: kolommen komen één voor één omhoog */
+.stappen .stap{opacity:0;transform:translateY(34px)}
+.stappen.in .stap{opacity:1;transform:none}
+.stappen.in .stap::before{transform:scaleX(1)}
+.stappen.in .stap:nth-child(2){transition-delay:0s,.18s,.18s}.stappen.in .stap:nth-child(2)::before{transition-delay:.5s}
+.stappen.in .stap:nth-child(3){transition-delay:0s,.36s,.36s}.stappen.in .stap:nth-child(3)::before{transition-delay:1s}
+.stappen.in .stap:nth-child(4){transition-delay:0s,.54s,.54s}.stappen.in .stap:nth-child(4)::before{transition-delay:1.5s}
+@media(prefers-reduced-motion:reduce){.stappen .stap{opacity:1;transform:none}.stap::before{transform:scaleX(1)}}
 .stap h3{font-size:21px;font-weight:600;margin:22px 0 10px;letter-spacing:-.015em}
 .stap p{color:var(--zacht);font-weight:300;font-size:15px;line-height:1.65}
 .stap-cta{background:#14130f;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
 .stap-cta:hover{background:#1f1d19}
 .stap-cta .snr{color:var(--brons)}
+.stap-cta::before{background:#fff}
 .stap-cta p{color:rgba(255,255,255,.7)}
 .stap-cta .verder{margin-top:26px;font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
 .stap-cta .verder::after{content:'→';transition:transform .3s var(--ease)}
@@ -360,14 +384,15 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .rev:hover{background:rgba(255,255,255,.6)}
 .rev .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .rev .sterren{color:var(--brons);letter-spacing:3px;font-size:14px}
-.rev .via{width:17px;height:17px;color:var(--brons)}
+.rev .via{width:17px;height:17px;color:var(--kl-werkspot)}
 .rev p{margin:16px 0 20px;font-weight:300;line-height:1.65;color:#3b3934;font-size:15px;flex:1}
 .rev .wie b{font-weight:600;font-size:14px}
 .rev .wie span{color:var(--zacht);font-size:13px;display:block;margin-top:2px}
 .rev-totaal{background:#14130f;color:#fff;padding:34px 28px 40px;display:flex;flex-direction:column;gap:26px}
 .rev-totaal .score b{display:block;font-size:46px;font-weight:300;letter-spacing:-.02em;line-height:1}
 .rev-totaal .score span{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;color:rgba(255,255,255,.65)}
-.rev-totaal .score svg{width:15px;height:15px;color:var(--brons)}
+.rev-totaal .score svg{width:15px;height:15px}
+.rev-totaal .score:first-child svg{color:var(--kl-werkspot)}.rev-totaal .score:nth-child(2) svg{color:var(--kl-google)}
 .rev-totaal .links{margin-top:auto;display:flex;flex-direction:column;gap:12px}
 .rev-totaal .links a{font-size:14px;font-weight:600;display:flex;justify-content:space-between;
   border-top:1px solid rgba(255,255,255,.14);padding-top:12px}
@@ -446,6 +471,11 @@ footer.groot{padding:72px 0 46px}
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
+.p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
+.leeg-in{display:flex;flex-direction:column;align-items:center;gap:10px;color:#9a8f7e;text-align:center}
+.leeg-in svg{width:64px;height:auto;margin-bottom:6px}
+.leeg-in span{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.leeg-in em{font-family:var(--serif);font-size:22px;color:#7d7262}
 .p-beeld .bijsch{position:absolute;left:14px;top:14px;font-size:11px;color:#fff;background:rgba(0,0,0,.5);
   backdrop-filter:blur(6px);border-radius:999px;padding:6px 12px}
 
@@ -590,9 +620,9 @@ footer.groot{padding:72px 0 46px}
     <a class="tel" href="tel:+31641429106">06 41 42 91 06</a>
     <div class="knoppen">
       <a class="wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp ons</a>
-      <a class="soc" href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
-      <a class="soc" href="https://www.werkspot.nl/profiel/ok-timmerwerken" target="_blank" rel="noopener" aria-label="Werkspot"><svg aria-hidden="true"><use href="#i-werkspot"/></svg></a>
-      <a class="soc" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener" aria-label="Google reviews"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
+      <a class="soc insta" href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+      <a class="soc werkspot" href="https://www.werkspot.nl/profiel/ok-timmerwerken" target="_blank" rel="noopener" aria-label="Werkspot"><svg aria-hidden="true"><use href="#i-werkspot"/></svg></a>
+      <a class="soc google" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener" aria-label="Google reviews"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
     </div>
   </div>
 </div>
@@ -752,7 +782,7 @@ footer.groot{padding:72px 0 46px}
   </div>
 </section>
 
-<footer class="donker zwart groot">
+<footer class="groot">
   <div class="kolommen"></div>
   <div class="wrap">
     <div class="foot-grid">
@@ -794,9 +824,9 @@ footer.groot{padding:72px 0 46px}
 </footer>
 
 <div class="dock">
-  <a class="soc" href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
-  <a class="soc" href="https://www.werkspot.nl/profiel/ok-timmerwerken" target="_blank" rel="noopener" aria-label="Werkspot" title="Werkspot"><svg aria-hidden="true"><use href="#i-werkspot"/></svg></a>
-  <a class="soc" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener" aria-label="Google reviews" title="Google reviews"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
+  <a class="soc insta" href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+  <a class="soc werkspot" href="https://www.werkspot.nl/profiel/ok-timmerwerken" target="_blank" rel="noopener" aria-label="Werkspot" title="Werkspot"><svg aria-hidden="true"><use href="#i-werkspot"/></svg></a>
+  <a class="soc google" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener" aria-label="Google reviews" title="Google reviews"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
   <a class="wa" href="https://wa.me/31641429106" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
     <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
       <path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5c-1.3-2-2-4.3-2-6.8C3.1 8.8 8.9 3 16 3s12.9 5.8 12.9 12.9S23.1 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.3-.1-.6-.2-.8.2-.2.4-.9 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.4-.6.1-.2.1-.5 0-.6-.1-.2-.8-2-1.2-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.5 3.9 6.1 5.4.9.4 1.5.6 2 .8.9.3 1.6.2 2.2.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/>
@@ -830,6 +860,14 @@ footer.groot{padding:72px 0 46px}
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });
 
   // [[gedeeld — wordt door tools/genereer-paginas.js overgenomen
+  // Binnenkomst: stappen-rasters en tekenlijnen krijgen .in zodra ze in beeld komen.
+  (function(){
+    var els=[].slice.call(document.querySelectorAll('.stappen,[data-teken]'));
+    if(rm || !('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.25});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
   // Mobiel menu: openen/sluiten, sluit ook bij een klik op een link of Escape.
   (function(){
     var knop=document.querySelector('.menu-knop'), paneel=document.getElementById('menu');

@@ -54,6 +54,11 @@ const extraStijl = `<style>
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
+.p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
+.leeg-in{display:flex;flex-direction:column;align-items:center;gap:10px;color:#9a8f7e;text-align:center}
+.leeg-in svg{width:64px;height:auto;margin-bottom:6px}
+.leeg-in span{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.leeg-in em{font-family:var(--serif);font-size:22px;color:#7d7262}
 .p-beeld .bijsch{position:absolute;left:14px;top:14px;font-size:11px;color:#fff;background:rgba(0,0,0,.5);
   backdrop-filter:blur(6px);border-radius:999px;padding:6px 12px}
 
@@ -355,9 +360,11 @@ function overPagina(o) {
         <a class="knop lijn" href="d-lijn.html#diensten">Bekijk de diensten</a>
       </div>
     </div>
-    <div class="p-beeld" style="--bg:#c4af92;aspect-ratio:4/5" data-kantel>
-      <img src="${o.beeld}" alt="${esc(o.beeldAlt)}">
-      <span class="bijsch">Portret volgt</span>
+    <div class="p-beeld leeg" style="--bg:#ece6dc;aspect-ratio:4/5" data-kantel aria-label="Plek voor het portret van Ozcan">
+      <div class="leeg-in">
+        <svg viewBox="0 0 100 94" fill="none" aria-hidden="true"><path d="M3.5,94 V30.9 L50,4 L96.5,30.9 V94" stroke="currentColor" stroke-width="3"/></svg>
+        <span>Portret van Ozcan</span><em>volgt nog</em>
+      </div>
       <span class="tag">— Ozcan, OK Timmerwerken</span>
     </div>
   </div>
