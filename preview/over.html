@@ -249,18 +249,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .vitrine .badge svg.ring text{font-size:8.4px;letter-spacing:.2em;fill:rgba(255,255,255,.75);font-family:var(--f);font-weight:600}
 @keyframes draai{to{transform:rotate(360deg)}}
 
-/* 01 beton — "laag voor laag": lijnen zakken naar de lagen, labels verschijnen */
-.v-beton img.beeld{animation:kenburns 16s ease-in-out infinite alternate}
-.laag{position:absolute;z-index:4;left:var(--x);top:0;height:var(--y);width:0}
-.laag i{position:absolute;left:0;top:0;width:1px;height:100%;background:rgba(255,255,255,.85);
-  transform-origin:top;transform:scaleY(0);transition:transform .9s var(--ease) var(--d)}
-.laag i::after{content:'';position:absolute;left:-3.5px;bottom:-3.5px;width:8px;height:8px;border-radius:50%;
-  background:#fff;border:1.5px solid #14130f;box-shadow:0 0 0 4px rgba(255,255,255,.3)}
-.laag b{position:absolute;top:100%;left:0;margin-top:12px;transform:translateX(-50%) translateY(6px);white-space:nowrap;
-  font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#14130f;color:#fff;
-  padding:5px 10px;border-radius:999px;opacity:0;transition:opacity .5s ease calc(var(--d) + .7s),transform .6s var(--bounce) calc(var(--d) + .7s)}
-.vitrine.in .laag i{transform:scaleY(1)}
-.vitrine.in .laag b{opacity:1;transform:translateX(-50%)}
+/* 01 beton — vignet (zie "vignet" hieronder), kleurvlak in Google-blauw */
 
 /* 02 zolder — "voor/na-schuif" */
 .v-zolder .voor{position:absolute;inset:0;z-index:2;clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
@@ -275,9 +264,11 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .v-zolder .vl.l{left:6%}.v-zolder .vl.r{right:6%}
 .v-zolder{cursor:ew-resize}
 
-/* 03 carport — "cirkel vouwt open" (scroll-gestuurd) */
-.v-carport img.beeld{clip-path:circle(var(--r,14%) at 62% 40%);transform:scale(calc(1.18 - var(--p,0) * .18))}
-.v-carport .ring2{position:absolute;z-index:3;left:62%;top:40%;width:calc(var(--r,14%) * 2);aspect-ratio:1;
+/* vignet — "cirkel vouwt open" (scroll-gestuurd): beton, carport en timmerwerk.
+   Het beeld start als kleine cirkel op het kleurvlak en groeit tijdens het scrollen tot het hele vierkant. */
+.vignet img.beeld{clip-path:circle(var(--r,14%) at var(--cx,50%) var(--cy,50%));
+  transform:scale(calc(1.18 - var(--p,0) * .18));transform-origin:var(--cx,50%) var(--cy,50%)}
+.vignet .ring2{position:absolute;z-index:3;left:var(--cx,50%);top:var(--cy,50%);width:calc(var(--r,14%) * 2);aspect-ratio:1;
   translate:-50% -50%;border:1px solid rgba(255,255,255,.6);border-radius:50%;opacity:calc(1 - var(--p,0))}
 
 /* 04 velux — "lichtbundel": trage zoom + zachte lichtbaan */
@@ -288,10 +279,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
   animation:veeg 9s cubic-bezier(.5,0,.3,1) infinite}
 @keyframes veeg{0%{transform:translateX(-60%)}55%,100%{transform:translateX(60%)}}
 
-/* 05 timmerwerk — "dichtzetten": tijdens het scrollen schuift het afgewerkte plafond van links over het regelwerk */
-.v-timmer img.na{clip-path:inset(0 calc(100% - var(--p,0) * 100%) 0 0)}
-.v-timmer .veeg{position:absolute;top:0;bottom:0;z-index:3;left:calc(var(--p,0) * 100%);width:2px;margin-left:-1px;
-  background:#fff;box-shadow:0 0 16px rgba(255,255,255,.7);opacity:calc(var(--p,0) * (1 - var(--p,0)) * 6)}
+/* 05 timmerwerk — vignet met het regelwerk; als de cirkel bijna vol is, vloeit het afgewerkte plafond erin */
+.v-timmer img.na{opacity:clamp(0, calc((var(--p,0) - .72) * 3.6), 1)}
 /* 06 fundering — "storten": tijdens het scrollen loopt het verse beton van achter naar voren over de wapening */
 .v-fundering img.na{clip-path:inset(0 0 calc(100% - var(--p,0) * 100%) 0)}
 .v-fundering .snijlijn{position:absolute;left:0;right:0;z-index:3;top:calc(var(--p,0) * 100%);height:1px;
@@ -380,8 +369,9 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .fris{--vlak:#f5f1ea; --kaart:#ffffff; --rand:#e4ddd1; --lijn:rgba(20,19,15,.045)}
 .kaarten{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;
   width:min(var(--max),94vw);margin-left:calc(50% - min(var(--max),94vw) / 2)}   /* precies op de 5 lijnen */
-.rev{padding:34px 28px 40px;display:flex;flex-direction:column;transition:background .4s ease}
-.rev:hover{background:rgba(255,255,255,.6)}
+.rev{padding:34px 28px 40px;display:flex;flex-direction:column;background:#fff;
+  border-right:1px solid var(--rand);transition:background .4s ease,box-shadow .4s ease}
+.rev:hover{box-shadow:0 24px 50px -34px rgba(20,19,15,.35);position:relative;z-index:1}
 .rev .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .rev .sterren{color:var(--brons);letter-spacing:3px;font-size:14px}
 .rev .via{width:17px;height:17px;color:var(--kl-werkspot)}
@@ -391,8 +381,9 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .rev-totaal{background:#14130f;color:#fff;padding:34px 28px 40px;display:flex;flex-direction:column;gap:26px}
 .rev-totaal .score b{display:block;font-size:46px;font-weight:300;letter-spacing:-.02em;line-height:1}
 .rev-totaal .score span{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;color:rgba(255,255,255,.65)}
-.rev-totaal .score svg{width:15px;height:15px}
-.rev-totaal .score:first-child svg{color:var(--kl-werkspot)}.rev-totaal .score:nth-child(2) svg{color:var(--kl-google)}
+.rev-totaal .score .logo{width:28px;height:28px;border-radius:50%;object-fit:contain;flex:none}
+.rev-totaal .score .logo.g{background:#fff;padding:5px}
+.rev-totaal .score span{gap:10px!important;font-size:14px!important;color:rgba(255,255,255,.8)!important}
 .rev-totaal .links{margin-top:auto;display:flex;flex-direction:column;gap:12px}
 .rev-totaal .links a{font-size:14px;font-weight:600;display:flex;justify-content:space-between;
   border-top:1px solid rgba(255,255,255,.14);padding-top:12px}
@@ -733,9 +724,9 @@ footer.groot{padding:72px 0 46px}
       </article>
       <aside class="rev-totaal">
         <div class="score"><b>4,9</b>
-          <span><svg aria-hidden="true"><use href="#i-werkspot"/></svg>Werkspot · 78 reviews</span></div>
+          <span><img class="logo" src="../assets/socials/werkspot-officieel.png" alt="Werkspot">Werkspot · 78 reviews</span></div>
         <div class="score"><b>5,0</b>
-          <span><svg aria-hidden="true"><use href="#i-google"/></svg>Google · 97 reviews</span></div>
+          <span><img class="logo g" src="../assets/socials/google-officieel.png" alt="Google">Google · 97 reviews</span></div>
         <div class="links">
           <a href="https://www.werkspot.nl/profiel/ok-timmerwerken" target="_blank" rel="noopener">Alle reviews op Werkspot</a>
           <a href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener">Onze Google-reviews</a>
