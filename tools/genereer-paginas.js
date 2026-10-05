@@ -463,3 +463,41 @@ for (const f of geschreven) {
   }
 }
 console.log(`${geschreven.length} pagina's geschreven: ${geschreven.join(', ')}${mist ? ` — ${mist} beeld(en) ontbreken` : ' — alle beelden gevonden'}`);
+
+// ---------- bouwen: de echte site met nette adressen in de hoofdmap ----------
+// preview/ blijft de werkomgeving; hieronder komt de publieke structuur:
+//   /index.html                     ← preview/d-lijn.html
+//   /over-ons/index.html            ← preview/over.html
+//   /diensten/<slug>/index.html     ← preview/dienst-<slug>.html
+// Alle verwijzingen worden relatief herschreven, zodat het werkt op github.io/Ok-Timmerwerken/
+// én straks op ok-timmerwerken.nl.
+const slugs = inhoud.diensten.map((d) => d.slug);
+function herschrijf(html, pre) {
+  const home = pre || './';
+  let h = html.split('../assets/').join(pre + 'assets/');
+  h = h.replace(/href="d-lijn\.html(#[^"]*)?"/g, (m, a) => `href="${a ? (pre ? pre + a : a) : home}"`);
+  h = h.replace(/href="over\.html"/g, `href="${pre}over-ons/"`);
+  for (const s of slugs) h = h.split(`href="dienst-${s}.html"`).join(`href="${pre}diensten/${s}/"`);
+  return h;
+}
+function schrijf(rel, html) {
+  const doel = path.join(root, rel);
+  fs.mkdirSync(path.dirname(doel), { recursive: true });
+  fs.writeFileSync(doel, html);
+}
+schrijf('index.html', herschrijf(fs.readFileSync(path.join(uit, 'd-lijn.html'), 'utf8'), ''));
+schrijf('over-ons/index.html', herschrijf(fs.readFileSync(path.join(uit, 'over.html'), 'utf8'), '../'));
+for (const s of slugs) {
+  schrijf(`diensten/${s}/index.html`, herschrijf(fs.readFileSync(path.join(uit, `dienst-${s}.html`), 'utf8'), '../../'));
+}
+// controle: verwijst de gebouwde site nog naar preview-bestanden, en bestaan alle beelden?
+let fout = 0;
+for (const rel of ['index.html', 'over-ons/index.html', ...slugs.map((s) => `diensten/${s}/index.html`)]) {
+  const html = fs.readFileSync(path.join(root, rel), 'utf8');
+  const map = path.dirname(path.join(root, rel));
+  if (/d-lijn\.html|dienst-[a-z]+\.html|over\.html|\.\.\/assets\/(?!)/.test(html.replace(/\.\.\/(\.\.\/)?assets\//g, ''))) { console.error(`  ${rel}: bevat nog een preview-link`); fout++; }
+  for (const m of html.matchAll(/(?:src|href)="([^"#:?][^"]*\.(?:jpg|png|webp|svg))"/g)) {
+    if (!fs.existsSync(path.join(map, m[1]))) { console.error(`  ${rel}: ontbreekt ${m[1]}`); fout++; }
+  }
+}
+console.log(`site gebouwd: index.html, over-ons/, diensten/{${slugs.join(',')}}/${fout ? ` — ${fout} probleem/problemen` : ' — alle links en beelden in orde'}`);

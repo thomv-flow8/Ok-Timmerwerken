@@ -440,7 +440,9 @@ nagaan of 'm opvragen bij Ozcan.
   alleen op de homepage-vitrine en als hoofdbeeld van een dienstpagina.
 
 ## Testomgeving (GitHub Pages)
-- Adres: https://thomv-flow8.github.io/Ok-Timmerwerken/ (basis stuurt door naar `preview/d-lijn.html`).
+- Adres: https://thomv-flow8.github.io/Ok-Timmerwerken/ — met **nette adressen**: `/`, `/over-ons/`,
+  `/diensten/<slug>/`. Die worden door `node tools/genereer-paginas.js` gebouwd uit de preview-bestanden
+  (preview/ blijft de werkomgeving; de gebouwde bestanden in de hoofdmap niet met de hand aanpassen).
 - Bewust **niet vindbaar**: `robots.txt` (Disallow: /) en `<meta name="robots" content="noindex, nofollow">`
   in d-lijn en de gegenereerde pagina's. **Bij livegang op ok-timmerwerken.nl alle drie weghalen.**
 - Contactformulier verstuurt nog niets; bij verzenden verschijnt een melding met telefoon/mail.
