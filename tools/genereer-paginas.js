@@ -26,7 +26,9 @@ const kopdeel = tussen(hoofd, '<!-- iconenset', '<section class="hero">', false)
 const footer = tussen(hoofd, '<footer', '</footer>');
 const dock = tussen(hoofd, '<div class="dock">', '</div>');
 const gedeeldJs = tussen(hoofd, '// [[gedeeld', '// gedeeld]]');
-const reviewkaarten = tussen(hoofd, '<div class="kaarten">', '<div class="reviews-meer">', false).trim();
+// reviews-raster (3 reviews + scores) — de optel-animatie draait alleen op de hoofdpagina, dus hier de eindwaarde
+const reviewkaarten = tussen(hoofd, '<div class="kaarten">', '<!-- /kaarten -->')
+  .replace(/<b data-tel data-naar="([\d.]+)" data-dec="(\d)">[^<]*<\/b>/g, (m, n, d) => `<b>${Number(n).toFixed(Number(d)).replace('.', ',')}</b>`);
 
 // Ankers op de hoofdpagina werken vanaf een subpagina via d-lijn.html#…
 // (alleen <a>-links; <use href="#i-…"> verwijst naar de iconenset op dezelfde pagina en blijft staan)
