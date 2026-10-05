@@ -54,8 +54,12 @@ const extraStijl = `<style>
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
-.p-beeld.portret{border:1px solid var(--rand)}
-.p-beeld.portret .tag{background:#14130f;color:#fff}
+.portret-blok{position:relative;aspect-ratio:1/1.04;border-radius:28px;overflow:hidden;display:flex;align-items:flex-end;
+  justify-content:center;padding-top:9%;
+  background:radial-gradient(120% 90% at 50% 18%,#ffffff 0%,#f6f1e9 52%,#e9e0d1 100%)}   /* zachte, warme gloed: blendt in, net iets anders dan de achtergrond */
+.portret-blok img{width:100%;height:auto;display:block}
+.portret-blok .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
+  background:#14130f;color:#fff;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
 .p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
 .leeg-in{display:flex;flex-direction:column;align-items:center;gap:10px;color:#9a8f7e;text-align:center}
 .leeg-in svg{width:64px;height:auto;margin-bottom:6px}
@@ -461,8 +465,8 @@ function overPagina(o) {
         <a class="knop lijn" href="d-lijn.html#diensten">Bekijk de diensten</a>
       </div>
     </div>
-    <div class="p-beeld portret" style="--bg:#ffffff;aspect-ratio:4/5" data-kantel>
-      <img src="../assets/render/portret/web/ozcan-portret.jpg" alt="Ozcan, eigenaar van OK Timmerwerken">
+    <div class="portret-blok" data-kantel>
+      <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="800" height="775">
       <span class="tag">— Ozcan, OK Timmerwerken</span>
     </div>
   </div>
