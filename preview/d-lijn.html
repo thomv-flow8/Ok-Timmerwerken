@@ -86,7 +86,6 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .menu-knop i:first-child{top:17px}.menu-knop i:last-child{top:23px}
 @media(max-width:820px){.nav-links{display:none}.menu-knop{display:block}}
 @media(max-width:600px){.nav-in .knop{display:none}}   /* WhatsApp zit dan in het menu en rechtsonder */
-@media(max-width:820px){.scroldown{display:none}}
 
 /* mobiel menu: donker paneel over de hele pagina, links schuiven gestaffeld in */
 .menu-paneel{position:fixed;inset:0;z-index:90;background:#14130f;color:#fff;display:flex;flex-direction:column;
@@ -173,6 +172,7 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
   letter-spacing:.34em;text-transform:uppercase;opacity:.8}
 .scroldown .sd-baan{width:1px;height:42px;background:currentColor;opacity:.42}
 .scroldown .sd-pijl{font-size:8px;line-height:1;opacity:.85}
+@media(max-width:820px){.scroldown{display:none}}   /* niet op mobiel/tablet: na de basisregel, anders wint display:flex */
 /* de hele indicator verschijnt kort, zakt en faadt dan weg — elke paar seconden */
 @keyframes sdpulse{
   0%{opacity:0;transform:translateX(-50%) translateY(-12px)}
