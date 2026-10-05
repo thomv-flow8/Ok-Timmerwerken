@@ -268,7 +268,7 @@ section{position:relative;background:var(--vlak);overflow:hidden}
   var vakken=[].slice.call(document.querySelectorAll('.vitrine-vak'));
   var krul=document.getElementById('krulpad'), krulLen=krul.getTotalLength();
   krul.style.strokeDasharray=krulLen; krul.style.strokeDashoffset=krulLen;
-  var tik=false;
+  var tik=false, krulMax=0;
   function scroll(){
     tik=false; var h=innerHeight;
     if(!rm) vakken.forEach(function(vk){
@@ -277,8 +277,10 @@ section{position:relative;background:var(--vlak);overflow:hidden}
     });
     // 4. de krul tekent zich mee met het scrollen door de kop
     var kr=krul.ownerSVGElement.getBoundingClientRect();
-    var p=Math.min(1,Math.max(0,(h-kr.top)/(h*.9+kr.height*.4)));
-    krul.style.strokeDashoffset=(krulLen*(1-(rm?1:p))).toFixed(1);
+    // alleen vooruit: eenmaal getekend blijft de lijn staan, ook als je terug scrolt
+    var p=Math.min(1,Math.max(0,(h*.85-kr.top)/(kr.height*.9)));
+    krulMax=Math.max(krulMax,rm?1:p);
+    krul.style.strokeDashoffset=(krulLen*(1-krulMax)).toFixed(1);
   }
   addEventListener('scroll',function(){ if(!tik){ tik=true; requestAnimationFrame(scroll);} },{passive:true});
   addEventListener('resize',scroll); scroll();
