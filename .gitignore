@@ -36,3 +36,6 @@ assets/render/foto/
 assets/aangeleverd/ozcan-*.jpg
 assets/render/portret/*.png
 assets/render/portret/*.jpg
+
+# ruwe WhatsApp-foto's van Ozcan (publieke repo: niet committen; selecties gaan via tools/webbeeld.sh naar assets/web)
+assets/whatsapp/
