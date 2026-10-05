@@ -74,7 +74,8 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spaci
 .nav.scrolled{background:var(--void);border-bottom:1px solid var(--graphite)}
 .nav-in{max-width:var(--max);margin:0 auto;padding:var(--sp20) var(--sp24);
   display:flex;align-items:center;gap:var(--sp32)}
-.brand{display:flex;align-items:center;gap:9px;margin-right:auto;font-size:15px;
+.brand .merk{height:26px;width:auto;display:block}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;font-size:15px;
   font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:#fff}
 .nav-links{display:flex;gap:var(--sp24);font-size:15px;font-weight:500}
 .nav-links a{color:rgba(255,255,255,.82);transition:color .2s}
@@ -83,7 +84,7 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spaci
 @media(max-width:900px){.nav-links{display:none}}
 @media(max-width:560px){
   .brand{font-size:12px;letter-spacing:.08em;white-space:nowrap}
-  .brand svg{width:22px;height:22px}
+  .brand .merk{height:22px}
   .nav-in{gap:12px;padding:14px var(--sp16)}
   .nav .btn{padding:10px 15px;font-size:13px;white-space:nowrap}
 }
@@ -169,7 +170,7 @@ section{background:var(--vlak);color:var(--inkt);
 .quote p{font-size:17px;line-height:1.5;font-weight:300}
 .quote footer{margin-top:auto;font-size:13px;color:var(--zacht)}
 .quote footer b{display:block;color:var(--inkt);font-weight:500;font-size:14px;margin-bottom:3px}
-.sterren{color:#c9a227;letter-spacing:1px}
+.sterren{color:#fff;letter-spacing:1px}
 
 /* ---------- over ---------- */
 .over{display:grid;grid-template-columns:.85fr 1fr;gap:var(--sp64);align-items:center}
@@ -232,10 +233,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <nav class="nav" id="nav">
   <div class="nav-in">
     <a class="brand" href="#">
-      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M3 14 16 4l13 10" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="11" cy="21" r="5" stroke="#fff" stroke-width="1.8"/>
-        <path d="M21 16v10M27 16l-5 5 5 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg class="merk" viewBox="0 0 100 94" fill="none" aria-hidden="true">
+        <path d="M3.5,94 V30.9 L50,4 L96.5,30.9 V94" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-linecap="butt"/>
+        <circle cx="33.15" cy="63" r="15.65" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/>
+        <path d="M59.6,47.35 V78.65 M83.6,46.1 L63.1,63 L83.6,79.9" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-linecap="square"/>
       </svg>
       OK Timmerwerken
     </a>
