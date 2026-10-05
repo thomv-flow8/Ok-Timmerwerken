@@ -448,3 +448,13 @@ nagaan of 'm opvragen bij Ozcan.
 - Contactformulier verstuurt nog niets; bij verzenden verschijnt een melding met telefoon/mail.
 - Nog te doen vóór de echte livegang: formulier koppelen, nette URL's (/diensten/<slug>/), redirects
   van de oude site, teksten laten nalezen door Ozcan, portret, cookies/GA4, domein omzetten.
+
+## Alles van de oude site overgenomen (okt 2026)
+- Ozcan wil de oude site "in een nieuw jasje": alle 44 pagina's zijn verwerkt.
+- 8 dienstpagina's (+ Onderhoud & renovatie, Nieuwbouw), elk met een blok **Alle werkzaamheden** (44 onderdelen,
+  elk met eigen anker), een diensten-overzicht (`/diensten/`), algemene voorwaarden + disclaimer (tekst letterlijk
+  van de oude site, pdf in `assets/documenten/`), werktijden (volgens Google) en het VELUX Montagepartner-logo.
+- **Doorverwijzingen**: elk oud adres (bijv. `/strokenfundering`) heeft een klein bestand dat doorstuurt naar de
+  nieuwe plek; tabel in `docs/inhoud.json` → `doorverwijzingen`.
+- Portret van Ozcan (AI, op basis van 3 eigen foto's) staat in `assets/render/portret/` — **niet in git** tot Ozcan
+  akkoord geeft; zijn eigen foto's (`assets/aangeleverd/ozcan-*.jpg`) blijven ook buiten de openbare repo.

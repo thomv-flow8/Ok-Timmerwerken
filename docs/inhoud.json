@@ -94,6 +94,38 @@
           "Doen jullie ook vloeren buiten?",
           "Zeker: terrassen, oprit-stroken, ondergronden voor een tuinhuis of overkapping. Buiten storten we met afschot, zodat water goed wegloopt."
         ]
+      ],
+      "onderdelen": [
+        {
+          "id": "gevlinderde-betonvloer",
+          "titel": "Gevlinderde betonvloer (monoliet vloer)",
+          "tekst": "Een gevlinderde vloer — ook wel monoliet vloer — wordt in één keer gestort en direct machinaal afgewerkt met een vlindermachine, zonder aparte zandcement-dekvloer erop. Het resultaat is een dichte, harde vloer die veel gewicht verdraagt, weinig stof geeft en makkelijk schoon te houden is."
+        },
+        {
+          "id": "cementdekvloeren",
+          "titel": "Cementdekvloeren",
+          "tekst": "Een dekvloer op basis van zandcement vlakt niveauverschillen in de ondergrond uit en maakt de vloer klaar voor de afwerking. Hij is goed onder afschot te leggen — zodat water vanzelf wegloopt — en daarom ook geschikt voor vochtige ruimtes."
+        },
+        {
+          "id": "egaliseren",
+          "titel": "Egaliseren",
+          "tekst": "Bij egaliseren maken we een vloer glad en waterpas. Eerst brengen we de oneffenheden in kaart, daarna wordt de vloer op het juiste niveau gebracht. Zo krijgt u een sterke, strakke ondergrond die mooi oogt en eenvoudig schoon te maken is."
+        },
+        {
+          "id": "beton-buiten",
+          "titel": "Beton buiten",
+          "tekst": "Terrassen, paden, opritten of een ondergrond voor een schuur of overkapping: buiten is beton duurzaam, sterk, vorstbestendig en onderhoudsarm. We storten met afschot, zodat regenwater goed wegloopt."
+        },
+        {
+          "id": "schuimbeton",
+          "titel": "Schuimbeton",
+          "tekst": "Schuimbeton is licht, isolerend en vorstbestendig. Het wordt gebruikt om vloeren uit te vullen en te isoleren, als vloer in kruipruimtes of als werkvloer — ook om verzakte bestrating op te hogen. Een betaalbare en duurzame oplossing."
+        },
+        {
+          "id": "bedrijfsvloer",
+          "titel": "Bedrijfsvloeren",
+          "tekst": "Voor werkplaatsen, loodsen en bedrijfspanden maken we betonvloeren die tegen een stootje kunnen: sterk, vochtbestendig en met een lange levensduur. We stemmen vooraf de belasting, het gebruik en de afwerking met u af."
+        }
       ]
     },
     {
@@ -173,6 +205,28 @@
           "Moet ik de zolder zelf leegmaken?",
           "Graag wel de spullen; het afvoeren van oude materialen en bouwafval nemen wij mee."
         ]
+      ],
+      "onderdelen": [
+        {
+          "id": "vliering",
+          "titel": "Vliering plaatsen",
+          "tekst": "Een vlak plafond op de hanenbalken met een strak luik: daarboven ontstaat extra bergruimte, eronder een rustige, afgewerkte zolder."
+        },
+        {
+          "id": "zolder-isoleren",
+          "titel": "Zolder isoleren",
+          "tekst": "Het dak wordt geïsoleerd en afgewerkt, zodat de zolder in de zomer koel en in de winter warm blijft — en uw energierekening omlaag gaat."
+        },
+        {
+          "id": "knieschotten",
+          "titel": "Knieschotten & inbouwkasten",
+          "tekst": "De lage ruimte onder het dakbeschot wordt nuttige opbergruimte met knieschotten en deurtjes op maat."
+        },
+        {
+          "id": "zolderkamer",
+          "titel": "Van zolder naar kamer",
+          "tekst": "Tussenwanden, deuren, plafonds en vloer: we maken van de zolder een volwaardige slaapkamer, werkkamer of logeerkamer. Een dakraam plaatsen we in hetzelfde traject."
+        }
       ]
     },
     {
@@ -260,6 +314,33 @@
           "Leggen jullie ook de bestrating?",
           "Ja, de ondergrond — bestrating of een betonvloer — kunnen we in hetzelfde traject meenemen."
         ]
+      ],
+      "onderdelen": [
+        {
+          "id": "carport-laten-bouwen",
+          "titel": "Carport laten bouwen",
+          "tekst": "Een carport beschermt uw auto en voegt waarde toe aan uw woning. We beginnen met een inventarisatie van uw wensen en de mogelijkheden van uw perceel, maken een nauwkeurige planning en bouwen met degelijke materialen — van ontwerp tot afwerking."
+        },
+        {
+          "id": "overkapping",
+          "titel": "Veranda & overkapping",
+          "tekst": "Een overdekt terras dat het hele jaar bruikbaar is, eventueel met lichtkoepels. Op maat ontworpen en passend bij uw woning."
+        },
+        {
+          "id": "schuur-tuinhuis",
+          "titel": "Schuur & tuinhuis bouwen",
+          "tekst": "Een schuur of tuinhuis met voldoende vloeroppervlak, stahoogte, licht en minstens één raam — als berging voor gereedschap en tuinspullen of als tuinkamer. We bespreken vooraf wat u nodig heeft en bouwen het in korte tijd."
+        },
+        {
+          "id": "schuttingen",
+          "titel": "Schuttingen plaatsen",
+          "tekst": "Een schutting geeft privacy, beschut tegen wind en zon en houdt huisdieren binnen. We plaatsen schuttingen snel, stevig en voor een redelijke prijs."
+        },
+        {
+          "id": "betonpoeren-carport",
+          "titel": "Fundering & betonpoeren",
+          "tekst": "Een carport of overkapping rust op betonpoeren of een betonplaat. Zo staat het hout niet in de vochtige grond en voorkomt u verzakking en houtrot."
+        }
       ]
     },
     {
@@ -334,6 +415,37 @@
           "Kan het ook bij een bewoonde zolder?",
           "Ja. We werken netjes en ruimen dagelijks op, zodat u de ruimte zo min mogelijk kwijt bent."
         ]
+      ],
+      "onderdelen": [
+        {
+          "id": "velux-dakraam-laten-plaatsen",
+          "titel": "Velux dakraam laten plaatsen",
+          "tekst": "Een dakraam plaatsen is meer dan een gat in het dak zagen: de juiste maat bepalen, de sparing correct uitvoeren, het raam waterdicht inbouwen en de binnenkant netjes afwerken. Als erkend VELUX Montagepartner doen we dit volgens de officiële montagerichtlijnen."
+        },
+        {
+          "id": "oud-dakraam-vervangen",
+          "titel": "Oud dakraam vervangen voor Velux",
+          "tekst": "Lekt uw dakraam, heeft u last van condens op het glas, tocht het langs de naden of gaat het moeilijk open en dicht? Veel dakramen van 15 à 20 jaar oud voldoen niet meer aan de huidige isolatienormen. We verwijderen het oude raam en plaatsen een nieuw VELUX-raam — snel, schoon en met minimale overlast."
+        },
+        {
+          "id": "gootstukken",
+          "titel": "Officiële VELUX-gootstukken",
+          "tekst": "We werken uitsluitend met de officiële VELUX-gootstukkensets. De PRO+-set met isolatieframe (BDX) en waterkerend manchet (BFX) zorgt voor een montage zonder lekkage, koudebruggen of warmteverlies — de beste keuze voor isolatie en energieprestaties op de lange termijn."
+        },
+        {
+          "id": "daglicht-ventilatie",
+          "titel": "Meer daglicht, betere ventilatie",
+          "tekst": "Een nieuw VELUX-dakraam met HR++-glas houdt in de winter de warmte binnen en in de zomer de zon buiten. De ingebouwde ventilatieklep laat ook bij een gesloten raam frisse lucht binnen. Dat vermindert condens en verbetert de luchtkwaliteit in huis."
+        },
+        {
+          "id": "erkend-montagepartner",
+          "titel": "Erkend VELUX Montagepartner",
+          "tekst": "OK Timmerwerken wordt door VELUX getraind en gecertificeerd. Zo bent u verzekerd van een vakkundige montage en een duurzaam resultaat — in Gorinchem en de hele regio Zuid-Holland."
+        }
+      ],
+      "download": [
+        "Download de VELUX-brochure (pdf)",
+        "../assets/documenten/velux-brochure.pdf"
       ]
     },
     {
@@ -416,6 +528,43 @@
           "Kan ik tijdens de verbouwing thuis blijven wonen?",
           "Vaak wel. We stemmen de planning met u af en houden de werkplek zo schoon mogelijk."
         ]
+      ],
+      "onderdelen": [
+        {
+          "id": "plafond-verlagen",
+          "titel": "Plafond verlagen",
+          "tekst": "Een verlaagd plafond maakt een hoge ruimte intiemer en biedt ruimte voor leidingen, spots, airco of ventilatie. De minimale opbouw is maar enkele centimeters. We zetten strak regelwerk, isoleren waar nodig en werken het plafond glad af."
+        },
+        {
+          "id": "wanden-plaatsen",
+          "titel": "Wanden plaatsen",
+          "tekst": "Met een nieuwe wand maakt u extra ruimtes, bijvoorbeeld een kamer op zolder. We werken met metal studs (stabieler en rechter dan hout), gipsplaten, gasbeton of mdf — en volgen een vast stappenplan: positie bepalen, liggers plaatsen, platen vastzetten en afwerken."
+        },
+        {
+          "id": "deuren-kozijnen-plaatsen",
+          "titel": "Deuren & kozijnen plaatsen",
+          "tekst": "Nieuwe deuren en kozijnen verbeteren de uitstraling én de isolatie van uw woning: oude, slecht sluitende exemplaren laten veel warmte ontsnappen. We adviseren vrijblijvend over vervangen en plaatsen ze vakkundig."
+        },
+        {
+          "id": "aftimmerwerk",
+          "titel": "Aftimmerwerk",
+          "tekst": "Aftimmeren is het netjes afwerken van ruwe aansluitingen na timmerwerk — bijvoorbeeld rond een nieuw (verlaagd) plafond, kozijnen of leidingen. Het is gedetailleerd maatwerk waarbij vakmanschap het verschil maakt."
+        },
+        {
+          "id": "koven-maken",
+          "titel": "Koven maken",
+          "tekst": "Een koof is een strakke ombouw op de overgang van muur en plafond om leidingen, gordijnrails of verlichting weg te werken. Met indirecte verlichting erin geeft een koof de ruimte direct meer sfeer."
+        },
+        {
+          "id": "gevelbetimmering",
+          "titel": "Gevelbetimmering & gevelbekleding",
+          "tekst": "De gevel bepaalt de uitstraling van uw woning en beschermt hem tegen weer en wind. We betimmeren en bekleden gevels in onder meer lariks, red cedar en douglas — nieuw, of ter vervanging van beschadigde of verouderde bekleding."
+        },
+        {
+          "id": "doorbraken",
+          "titel": "Doorbraken",
+          "tekst": "Een muur eruit voor een open ruimte: we plaatsen de stalen balk volgens de berekening van de constructeur en werken alles daarna netjes af."
+        }
       ]
     },
     {
@@ -490,6 +639,245 @@
           "Hoe zit het met afvoer en leidingen?",
           "Afvoeren en mantelbuizen leggen we vóór het storten, zodat ze netjes in de plaat zitten."
         ]
+      ],
+      "onderdelen": [
+        {
+          "id": "strokenfundering",
+          "titel": "Strokenfundering",
+          "tekst": "Bij een strokenfundering rusten de muren op stroken of platen van gewapend beton, op een draagkrachtige ondergrond (fundering op staal). Er is minder beton nodig dan voor een volledige vloer, en de methode laat zich goed combineren met een borstwering."
+        },
+        {
+          "id": "traditionele-fundering",
+          "titel": "Traditionele fundering",
+          "tekst": "Een traditionele fundering op staal — een betonnen of gemetselde fundering direct op een stevige, draagkrachtige grondlaag — is een beproefde oplossing voor aanbouwen, schuren en bijgebouwen. We bepalen samen met u (en waar nodig de constructeur) wat uw project nodig heeft."
+        },
+        {
+          "id": "tempex-fundering",
+          "titel": "Tempex-fundering",
+          "tekst": "Een tempex-fundering is licht en isolerend en kan hoogteverschillen opvangen, bijvoorbeeld bij een verzakte straat of tuin. Samen met schuimbeton kan tempex ook worden gebruikt om bestrating op te hogen."
+        },
+        {
+          "id": "betonpoeren",
+          "titel": "Betonpoeren",
+          "tekst": "Betonpoeren dragen de krachten van een constructie — zoals een carport of veranda — over op de ondergrond en voorkomen zo verzakking. Omdat het hout niet in de vochtige grond staat, voorkomen ze ook houtrot. We adviseren welk type poer bij uw project past."
+        },
+        {
+          "id": "vorstrand",
+          "titel": "Vorstrand",
+          "tekst": "Een vorstrand is een funderingsrib die in één keer met de vloer wordt meegestort, zonder heipalen. Hij voorkomt dat de grond onder het bouwwerk opvriest en verschuift — ideaal voor kleinere bouwwerken zoals een schuur, samen met een funderingsplaat."
+        },
+        {
+          "id": "zwembad-fundering",
+          "titel": "Zwembadfundering",
+          "tekst": "Water is zwaar: een zwembad vraagt om een stevige ondergrond en een robuuste fundering. We controleren vooraf de draagkracht en de grondwaterstand, en storten daarna de fundering op maat."
+        },
+        {
+          "id": "constructies-vloer",
+          "titel": "Vloerconstructies",
+          "tekst": "Nieuwe vloeren bij verbouwingen — ook met stalen balken en een geïsoleerde systeemvloer."
+        }
+      ]
+    },
+    {
+      "slug": "onderhoud",
+      "nr": "07",
+      "naam": "Onderhoud & renovatie",
+      "kleur": "#b98b6e",
+      "kop": "Uw woning weer in topconditie.",
+      "intro": "Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties: OK Timmerwerken houdt uw woning in goede staat. Eén vaste ploeg die meedenkt, het werk vooraf helder bespreekt en netjes oplevert.",
+      "beeld": "../assets/eigen/web/badkamer-afgewerkt.jpg",
+      "beeldAlt": "Gerenoveerde badkamer met nieuw tegelwerk",
+      "werk": [
+        [
+          "Houtrot",
+          "Aangetast hout vervangen en de oorzaak — vocht — aanpakken, zodat het niet terugkomt."
+        ],
+        [
+          "Tegelwerk",
+          "Badkamers, keukens en toiletten strak betegeld."
+        ],
+        [
+          "Isolatie",
+          "Dak, vloer en wanden isoleren voor een lagere energierekening."
+        ],
+        [
+          "Kleine klussen",
+          "Schilderwerk, reparaties en dagelijks onderhoud in en om het huis."
+        ]
+      ],
+      "aanpak": [
+        [
+          "Langskomen & inventariseren",
+          "We bekijken wat er aan de hand is en wat er nodig is."
+        ],
+        [
+          "Plan & offerte",
+          "U krijgt vooraf een helder plan: wat we doen, in welke volgorde en wat het kost."
+        ],
+        [
+          "Uitvoeren & opleveren",
+          "We werken netjes, ruimen op en leveren af zoals afgesproken."
+        ]
+      ],
+      "galerij": [
+        [
+          "../assets/eigen/web/badkamer-afgewerkt.jpg",
+          "Badkamer met nieuw tegelwerk"
+        ],
+        [
+          "../assets/web/zolder-vliering-na.jpg",
+          "Geïsoleerde en afgewerkte zolder"
+        ],
+        [
+          "../assets/eigen/web/woonkamer-verbouwing.jpg",
+          "Woonkamer tijdens de renovatie"
+        ],
+        [
+          "../assets/eigen/web/doorbraak-sloop.jpg",
+          "Renovatie: muur doorgebroken"
+        ]
+      ],
+      "faq": [
+        [
+          "Doen jullie ook kleine klussen?",
+          "Ja. Naast grote verbouwingen pakken we ook kleinere reparaties en onderhoud op — bel of app gerust om te overleggen."
+        ],
+        [
+          "Hoe pakken jullie houtrot aan?",
+          "We verwijderen het aangetaste hout, vervangen of herstellen het en kijken naar de oorzaak: zonder goede vochtbeheersing komt houtrot terug."
+        ],
+        [
+          "Kunnen jullie een complete badkamer doen?",
+          "We verzorgen het tegelwerk en het timmer- en afbouwwerk. Bespreek gerust wat u verder nodig heeft — dan kijken we samen wat we voor u kunnen doen."
+        ]
+      ],
+      "onderdelen": [
+        {
+          "id": "houtrot",
+          "titel": "Houtrot",
+          "tekst": "Houtrot ontstaat als vocht en schimmels de structuur van het hout aantasten. Het leidt tot scheuren, lekkages en zelfs constructieve schade, en trekt insecten aan. We verwijderen het aangetaste hout, herstellen of vervangen het en maken samen een plan om te voorkomen dat het terugkomt."
+        },
+        {
+          "id": "kleine-schilderwerkzaamheden",
+          "titel": "Kleine schilderwerkzaamheden",
+          "tekst": "Een nieuw likje verf maakt veel verschil. We schilderen trappen, deuren, kozijnen en andere onderdelen in en om het huis met hoogwaardige verf — en bespreken het werk vooraf, zodat u weet waar u aan toe bent."
+        },
+        {
+          "id": "tegelwerk",
+          "titel": "Tegelwerk",
+          "tekst": "Tegels zijn duurzaam, waterbestendig en makkelijk schoon te houden — ideaal voor badkamer, keuken en toilet. Goed gelegd en onderhouden gaan ze vele jaren mee. We zetten wand- en vloertegels strak en vakkundig."
+        },
+        {
+          "id": "isolatie",
+          "titel": "Isolatie",
+          "tekst": "Goede isolatie verlaagt uw energiekosten, voorkomt vochtproblemen en schimmel, en zorgt voor minder geluidsoverlast. We isoleren daken, vloeren en wanden met de juiste materialen en werken alles netjes af."
+        },
+        {
+          "id": "dagelijks-onderhoud",
+          "titel": "Dagelijks onderhoud",
+          "tekst": "Onverwachte reparaties — een slot dat klemt, een kleine lekkage, een kapotte deur — lossen we vakkundig op. We bespreken eerst wat er moet gebeuren en pakken het daarna stap voor stap aan."
+        }
+      ]
+    },
+    {
+      "slug": "nieuwbouw",
+      "nr": "08",
+      "naam": "Nieuwbouw",
+      "kleur": "#6f7d6a",
+      "kop": "Vakwerk vanaf de eerste balk.",
+      "intro": "Voor nieuwbouwprojecten zet OK Timmerwerken HSB-wanden, stelt kozijnen, maakt dak- en vloerconstructies en plaatst ramen, deuren en boeidelen. Nauwkeurig werk volgens tekening, zodat de rest van de bouw er goed op aansluit.",
+      "beeld": "../assets/web/vliering-constructie.jpg",
+      "beeldAlt": "Houtskeletbouw in opbouw",
+      "werk": [
+        [
+          "HSB-wanden",
+          "Houtskeletbouwwanden zetten volgens tekening."
+        ],
+        [
+          "Stelwerk kozijnen",
+          "Kozijnen exact op maat en in positie gesteld."
+        ],
+        [
+          "Dak- & vloerconstructies",
+          "Balklagen in hout, staal of beton."
+        ],
+        [
+          "Ramen, deuren & boeidelen",
+          "Plaatsen en strak afwerken."
+        ]
+      ],
+      "aanpak": [
+        [
+          "Tekening & planning",
+          "We nemen de bouwtekening door en stemmen de planning af met u of de aannemer."
+        ],
+        [
+          "Opbouw",
+          "Wanden, constructies en kozijnen worden nauwkeurig en waterpas gezet."
+        ],
+        [
+          "Afwerking",
+          "Ramen, deuren en boeidelen erin en eraan — klaar voor de volgende fase."
+        ]
+      ],
+      "galerij": [
+        [
+          "../assets/web/vliering-constructie.jpg",
+          "Houtskeletconstructie in opbouw"
+        ],
+        [
+          "../assets/eigen/web/vloer-staalbalken-ploeg.jpg",
+          "Vloerconstructie met stalen balken"
+        ],
+        [
+          "../assets/web/verbouwing-ruwbouw.jpg",
+          "Ruwbouw"
+        ],
+        [
+          "../assets/eigen/web/beton-woonhuis-droog.jpg",
+          "Afgewerkt terras bij een nieuwbouwwoning"
+        ]
+      ],
+      "faq": [
+        [
+          "Kunnen jullie een deel van het werk doen?",
+          "Ja. U kunt ons inschakelen voor het hele timmerwerk of voor losse onderdelen, zoals het stellen van kozijnen of het plaatsen van boeidelen."
+        ],
+        [
+          "Wat is HSB?",
+          "HSB staat voor houtskeletbouw: wanden met een houten frame, geïsoleerd en beplaat. Licht, snel te bouwen en goed isolerend."
+        ],
+        [
+          "Kunnen jullie ook het betonwerk doen?",
+          "Zeker — funderingen, betonplaten en vloeren doen we in eigen hand. Zo sluit alles op elkaar aan."
+        ]
+      ],
+      "onderdelen": [
+        {
+          "id": "hsb-wanden-zetten",
+          "titel": "HSB-wanden zetten",
+          "tekst": "HSB — houtskeletbouw — wanden vormen de constructie van veel nieuwbouwprojecten. We zetten ze nauwkeurig volgens tekening, zodat de verdere afbouw er goed op aansluit."
+        },
+        {
+          "id": "stelwerk-kozijnen",
+          "titel": "Stelwerk kozijnen",
+          "tekst": "Stelwerk gebeurt vóór het metselen of lijmen: aan de hand van de bouwtekening worden kozijnen exact op maat, waterpas en in positie gezet. Precisiewerk waar we veel ervaring mee hebben."
+        },
+        {
+          "id": "boeidelen",
+          "titel": "Boeidelen",
+          "tekst": "Boeidelen werken de dakrand af en beschermen het dak — bijvoorbeeld bij de dakgoot of de rand van een plat dak. We plaatsen ze in hout zoals red cedar of in onderhoudsarme materialen, passend bij uw project en budget."
+        },
+        {
+          "id": "constructies-dak-vloer",
+          "titel": "Constructies dak & vloer",
+          "tekst": "Dak- en vloerconstructies — balken van hout, staal of beton — zijn de basis van elk gebouw en moeten wind, regen en belasting kunnen dragen. We bouwen nieuwe constructies en inspecteren of vernieuwen bestaande, zodat problemen als houtrot geen kans krijgen."
+        },
+        {
+          "id": "ramen-deuren",
+          "titel": "Ramen & deuren",
+          "tekst": "Nieuwe ramen en deuren verbeteren de isolatie, de veiligheid en het wooncomfort, en verhogen de waarde van uw woning. We zetten eerst uw wensen op een rij, maken een plan en plaatsen of vervangen daarna vakkundig."
+        }
       ]
     }
   ],
@@ -499,7 +887,8 @@
     "verhaal": [
       "Sinds 2019 werkt OK Timmerwerken vanuit Gorinchem aan woningen in de wijde omgeving: van een gevlinderde vloer in een schuur tot een complete verbouwing met doorbraak, vliering en dakramen.",
       "Ozcan werkt met een vaste ploeg vakmensen. Geen wisselende onderaannemers, maar mensen die elkaars werk kennen — zodat het betonwerk, het timmerwerk en de afbouw naadloos op elkaar aansluiten.",
-      "Als erkend VELUX Montagepartner en met tientallen reviews van tevreden klanten op Werkspot en Google weet u waar u aan toe bent."
+      "Als erkend VELUX Montagepartner en met tientallen reviews van tevreden klanten op Werkspot en Google weet u waar u aan toe bent.",
+      "Klantgericht. Professioneel. Flexibel. Dat zijn de principes waar we elke dag naar werken — en op al onze werkzaamheden krijgt u garantie."
     ],
     "waarden": [
       [
@@ -517,5 +906,199 @@
     ],
     "beeld": "../assets/eigen/web/beton-vlinderen-machine.jpg",
     "beeldAlt": "Ozcan aan het werk met de vlindermachine"
+  },
+  "werktijden": [
+    [
+      "Maandag – vrijdag",
+      "07:00 – 20:00"
+    ],
+    [
+      "Zaterdag",
+      "07:00 – 16:00"
+    ],
+    [
+      "Zondag",
+      "Gesloten"
+    ]
+  ],
+  "juridisch": {
+    "voorwaarden": {
+      "titel": "Algemene voorwaarden",
+      "intro": "Algemene voorwaarden van OK-Timmerwerken, eenmanszaak · info@ok-timmerwerken.nl · www.ok-timmerwerken.nl",
+      "pdf": "../assets/documenten/algemene-voorwaarden-ok-timmerwerken.pdf",
+      "artikelen": [
+        {
+          "titel": "Artikel 1 - Definities",
+          "leden": [
+            "OK-TIMMERWERKEN: de eenmanszaak die deze algemene voorwaarden hanteert en werkzaamheden verricht op het gebied van timmer-, onderhouds- en renovatiewerkzaamheden.",
+            "Klant: iedere natuurlijke of rechtspersoon met wie OK-TIMMERWERKEN een overeenkomst sluit.",
+            "Consument: een Klant die niet handelt in de uitoefening van beroep of bedrijf.",
+            "Overeenkomst: iedere afspraak tussen partijen betreffende levering van diensten en/of materialen."
+          ]
+        },
+        {
+          "titel": "Artikel 2 - Toepasselijkheid",
+          "leden": [
+            "Deze voorwaarden zijn van toepassing op alle aanbiedingen, offertes, overeenkomsten en werkzaamheden.",
+            "Afwijkingen zijn slechts geldig indien schriftelijk overeengekomen.",
+            "Toepasselijkheid van voorwaarden van Klant wordt uitdrukkelijk uitgesloten."
+          ]
+        },
+        {
+          "titel": "Artikel 3 - Offertes en totstandkoming overeenkomst",
+          "leden": [
+            "Offertes zijn vrijblijvend en 30 dagen geldig tenzij anders vermeld.",
+            "Kennelijke fouten of vergissingen binden OK-TIMMERWERKEN niet.",
+            "De overeenkomst komt tot stand na schriftelijke bevestiging of feitelijke aanvang van werkzaamheden."
+          ]
+        },
+        {
+          "titel": "Artikel 4 - Prijzen en meerwerk",
+          "leden": [
+            "Alle prijzen zijn inclusief btw tenzij anders vermeld.",
+            "Indien een richtprijs is overeengekomen, mag deze met maximaal 10% worden overschreden.",
+            "Meerwerk wordt afzonderlijk in rekening gebracht na overleg met Klant.",
+            "Prijsstijgingen door overheidsmaatregelen of stijgende materiaalkosten mogen worden doorberekend."
+          ]
+        },
+        {
+          "titel": "Artikel 5 - Betaling",
+          "leden": [
+            "OK-TIMMERWERKEN mag een aanbetaling tot 50% verlangen.",
+            "Facturen dienen binnen 7 dagen na factuurdatum te worden voldaan.",
+            "Bij overschrijding is wettelijke rente conform artikel 6:119 BW verschuldigd.",
+            "Alle redelijke incassokosten komen voor rekening van Klant conform wettelijke regeling."
+          ]
+        },
+        {
+          "titel": "Artikel 6 - Opschorting en ontbinding",
+          "leden": [
+            "OK-TIMMERWERKEN mag verplichtingen opschorten bij niet-tijdige betaling.",
+            "Ontbinding is mogelijk bij toerekenbare tekortkoming na ingebrekestelling."
+          ]
+        },
+        {
+          "titel": "Artikel 7 - Annulering",
+          "leden": [
+            "Annulering langer dan 14 dagen voor aanvang: 15% van de opdrachtsom.",
+            "Tussen 7 en 14 dagen: 25%.",
+            "Korter dan 7 dagen: 50%.",
+            "Op dag van uitvoering of spoedopdracht (binnen 48 uur): 100%."
+          ]
+        },
+        {
+          "titel": "Artikel 8 - Uitvoering werkzaamheden",
+          "leden": [
+            "Werkzaamheden worden uitgevoerd naar beste inzicht en vakmanschap.",
+            "Termijnen zijn indicatief tenzij uitdrukkelijk schriftelijk anders overeengekomen.",
+            "Klant draagt zorg voor tijdige toegang tot de werkplek."
+          ]
+        },
+        {
+          "titel": "Artikel 9 - Aansprakelijkheid",
+          "leden": [
+            "Aansprakelijkheid is beperkt tot directe schade.",
+            "Geen aansprakelijkheid voor indirecte schade zoals gevolgschade of winstderving.",
+            "Aansprakelijkheid is beperkt tot het bedrag dat door verzekering wordt uitgekeerd, dan wel tot het factuurbedrag.",
+            "Beperkingen gelden niet bij opzet of bewuste roekeloosheid."
+          ]
+        },
+        {
+          "titel": "Artikel 10 - Overmacht",
+          "leden": [
+            "Onder overmacht wordt verstaan iedere omstandigheid buiten de macht van OK-TIMMERWERKEN.",
+            "Verplichtingen worden opgeschort gedurende overmacht.",
+            "Bij overmacht langer dan 30 dagen mogen partijen ontbinden."
+          ]
+        },
+        {
+          "titel": "Artikel 11 - Garantie",
+          "leden": [
+            "Er geldt een inspanningsverplichting tenzij uitdrukkelijk anders overeengekomen.",
+            "Garantie vervalt bij onoordeelkundig gebruik of wijzigingen door derden."
+          ]
+        },
+        {
+          "titel": "Artikel 12 - Klachten",
+          "leden": [
+            "Klachten dienen binnen bekwame tijd schriftelijk te worden gemeld.",
+            "Consument uiterlijk binnen 2 maanden na ontdekking.",
+            "Klachten schorten betalingsverplichting niet op."
+          ]
+        },
+        {
+          "titel": "Artikel 13 - Verzekering en risico",
+          "leden": [
+            "Risico van materialen gaat over bij levering.",
+            "Klant dient werkobject adequaat te verzekeren."
+          ]
+        },
+        {
+          "titel": "Artikel 14 - Eigendomsvoorbehoud",
+          "leden": [
+            "Geleverde materialen blijven eigendom tot volledige betaling heeft plaatsgevonden."
+          ]
+        },
+        {
+          "titel": "Artikel 15 - Toepasselijk recht en bevoegde rechter",
+          "leden": [
+            "Op alle overeenkomsten is Nederlands recht van toepassing.",
+            "Geschillen worden voorgelegd aan de bevoegde rechter conform wettelijke bepalingen."
+          ]
+        }
+      ]
+    },
+    "disclaimer": {
+      "titel": "Disclaimer",
+      "alineas": [
+        "De informatie die op de website en offerte/factuur vermeld staat is alleen bedoeld voor informatieve doeleinden. OK Timmerwerken besteedt continue zorg en aandacht aan de inhoud van onze website en offertes/facturen.",
+        "Toch kan informatie onvolledig of onjuist zijn. OK Timmerwerken accepteert geen aansprakelijkheid voor directe of indirecte schade die is ontstaan of dreigt te ontstaan die op wat voor manier dan ook verband houdt met het gebruik van deze website en offerte/factuur en informatie die daarop te vinden is of het niet kunnen gebruiken daarvan.",
+        "De informatie op de website en de offerte/factuur wordt met grote zorgvuldigheid samengesteld en onderhouden. Ondanks onze zorgvuldigheid kan het voorkomen dat u typefouten aantreft. Voor dergelijke fouten aanvaarden wij geen aansprakelijkheid. Alle informatie op de website en offerte/factuur is dan ook onder voorbehoud van druk- en typefouten."
+      ]
+    }
+  },
+  "doorverwijzingen": {
+    "carport-laten-bouwen": "carport#carport-laten-bouwen",
+    "vorstrand": "funderingen#vorstrand",
+    "hsb-wanden-zetten": "nieuwbouw#hsb-wanden-zetten",
+    "traditionele-fundering": "funderingen#traditionele-fundering",
+    "constructies-dak-vloer": "nieuwbouw#constructies-dak-vloer",
+    "schuttingen-plaatsen": "carport#schuttingen",
+    "bedrijfsvloer": "betonvloeren#bedrijfsvloer",
+    "nieuwbouw": "nieuwbouw",
+    "ramen-deuren": "nieuwbouw#ramen-deuren",
+    "isolatie": "onderhoud#isolatie",
+    "tegelwerk": "onderhoud#tegelwerk",
+    "tempex-fundering": "funderingen#tempex-fundering",
+    "gevelbetimmering-gevelbekleding": "timmerwerk#gevelbetimmering",
+    "plafond-verlagen": "timmerwerk#plafond-verlagen",
+    "strokenfundering": "funderingen#strokenfundering",
+    "contact": "#contact",
+    "onderhoud-renovatie": "onderhoud",
+    "betonpoeren": "funderingen#betonpoeren",
+    "schuur-tuinhuis-bouwen": "carport#schuur-tuinhuis",
+    "beton-buiten": "betonvloeren#beton-buiten",
+    "kleine-schilderwerkzaamheden": "onderhoud#kleine-schilderwerkzaamheden",
+    "wanden-plaatsen": "timmerwerk#wanden-plaatsen",
+    "betonvloeren": "betonvloeren",
+    "dagelijks-onderhoud": "onderhoud#dagelijks-onderhoud",
+    "gevlinderde-betonvloer/schuimbeton": "betonvloeren#schuimbeton",
+    "boeidelen": "nieuwbouw#boeidelen",
+    "stelwerk-kozijnen": "nieuwbouw#stelwerk-kozijnen",
+    "onze-diensten": "@overzicht",
+    "cementdekvloeren": "betonvloeren#cementdekvloeren",
+    "deuren-kozijnen-plaatsen": "timmerwerk#deuren-kozijnen-plaatsen",
+    "egaliseren": "betonvloeren#egaliseren",
+    "funderingen": "funderingen",
+    "timmerwerk": "timmerwerk",
+    "aftimmerwerk": "timmerwerk#aftimmerwerk",
+    "koven-maken": "timmerwerk#koven-maken",
+    "gevlinderde-betonvloer-monoliet-vloer": "betonvloeren#gevlinderde-betonvloer",
+    "gevlinderde-betonvloer": "betonvloeren#gevlinderde-betonvloer",
+    "houtrot": "onderhoud#houtrot",
+    "zwembad-fundering": "funderingen#zwembad-fundering",
+    "dakramen-velux": "dakramen",
+    "oud-dakraam-vervangen-voor-velux-dakraam": "dakramen#oud-dakraam-vervangen",
+    "velux-dakraam-laten-plaatsen": "dakramen#velux-dakraam-laten-plaatsen"
   }
 }

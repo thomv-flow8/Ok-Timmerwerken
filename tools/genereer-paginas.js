@@ -85,6 +85,41 @@ const extraStijl = `<style>
 .lichtbak button{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;
   border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:20px;cursor:pointer}
 
+/* alle werkzaamheden: inhoudsopgave links (blijft staan), teksten rechts */
+.onderdelen{display:grid;grid-template-columns:260px 1fr;gap:clamp(30px,6vw,90px);margin-top:46px;align-items:start}
+.ond-nav{position:sticky;top:100px;display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
+  transition:color .2s,border-color .2s}
+.ond-nav a:hover{color:var(--inkt);border-left-color:var(--brons)}
+.ond-lijst article{padding:30px 0 32px;border-top:1px solid var(--rand);scroll-margin-top:96px;display:grid;
+  grid-template-columns:56px 1fr;gap:0 20px}
+.ond-lijst article:first-child{border-top:0;padding-top:0}
+.ond-lijst .onr{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--brons);line-height:1.1}
+.ond-lijst h3{font-size:clamp(21px,2.2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.ond-lijst p{grid-column:2;margin-top:10px;color:#4a4740;font-weight:300;line-height:1.75;font-size:16px;max-width:64ch}
+.download{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 22px;border-radius:999px;
+  background:#14130f;color:#fff;font-weight:600;font-size:14px}
+.download::before{content:'↓';color:var(--brons);font-size:16px}
+.p-hero .erkend{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
+.p-hero .erkend img{width:64px;height:64px;border-radius:6px}
+@media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
+  .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
+
+/* diensten-overzicht */
+.overzicht{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px 22px;margin-top:46px}
+.overzicht .blok .kaart{aspect-ratio:4/3}
+.overzicht .blok ul{list-style:none;margin-top:14px}
+.overzicht .blok li a{display:flex;justify-content:space-between;gap:10px;padding:8px 2px;border-bottom:1px solid var(--rand);
+  font-size:14px;color:#4a4740}
+.overzicht .blok li a::after{content:'→';color:var(--zacht)}
+.overzicht .blok li a:hover{color:var(--inkt)}
+
+/* juridische tekst */
+.juridisch{max-width:760px}
+.juridisch h2{font-size:20px;font-weight:700;margin:34px 0 10px;letter-spacing:-.01em}
+.juridisch ol{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300}
+.juridisch p{color:#4a4740;line-height:1.8;font-weight:300;margin-top:14px}
+
 /* review-citaat */
 .citaat{max-width:880px}
 .citaat blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.4vw,42px);line-height:1.25;
@@ -116,18 +151,18 @@ const extraStijl = `<style>
 
 /* andere diensten: beeldkaarten met dienstkleur */
 .andere{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
-.andere a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
+a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
   color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
-.andere a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   clip-path:circle(38% at 50% 40%);transition:clip-path .8s var(--ease),transform .8s var(--ease)}
-.andere a.kaart:hover img{clip-path:circle(80% at 50% 40%);transform:scale(1.04)}
-.andere a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.72) 0%,rgba(10,10,8,0) 48%)}
-.andere .kaart .knr{position:absolute;top:14px;left:16px;z-index:1;font-family:var(--serif);font-style:italic;font-size:26px}
-.andere .kaart .knaam{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
-.andere .kaart .knaam b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
-.andere .kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
-.andere .kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
-.andere .kaart:hover .knaam span::after{transform:translateX(4px)}
+a.kaart:hover img{clip-path:circle(80% at 50% 40%);transform:scale(1.04)}
+a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.72) 0%,rgba(10,10,8,0) 48%)}
+.kaart .knr{position:absolute;top:14px;left:16px;z-index:1;font-family:var(--serif);font-style:italic;font-size:26px}
+.kaart .knaam{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
+.kaart .knaam b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
+.kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
+.kaart:hover .knaam span::after{transform:translateX(4px)}
 @media(max-width:1000px){.andere{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.andere{grid-template-columns:1fr 1fr}}
 
@@ -196,6 +231,13 @@ ${dock}
   if(rm || !('IntersectionObserver' in window)) op.forEach(function(e){ e.classList.add('in'); });
   else { var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.15});
     op.forEach(function(e){ io.observe(e); }); }
+  // vangnet: ook vanuit de scroll onthullen (sommige browsers vuren de observer te laat)
+  function vang(){ var h=innerHeight; op.forEach(function(e){ if(!e.classList.contains('in') && e.getBoundingClientRect().top<h*.92) e.classList.add('in'); }); }
+  addEventListener('scroll',vang,{passive:true}); addEventListener('load',vang); vang();
+  // kom je binnen via een anker (bijv. een doorverwijzing van de oude site), spring dan naar die werkzaamheid
+  if(location.hash && location.hash.length>1){ var doelEl=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if(doelEl) addEventListener('load',function(){ setTimeout(function(){ document.documentElement.style.scrollBehavior='auto';
+      doelEl.scrollIntoView({block:'start'}); document.documentElement.style.scrollBehavior=''; vang(); },60); }); }
 
   // Lichtbak voor de galerij
   var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbTxt=lb.querySelector('p');
@@ -259,8 +301,30 @@ function dienstPagina(d, alle) {
         <span class="knr">${x.nr}</span>
         <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk dienst</span></span>
       </a>`).join('\n');
+  const onderdelen = d.onderdelen ? `
+<!-- ALLE WERKZAAMHEDEN -->
+<section class="creme" id="werkzaamheden">
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="kop op">
+      ${oog('Alle werkzaamheden')}
+      <h2>Wat we doen binnen <em class="serif">${esc(d.naam.charAt(0).toLowerCase() + d.naam.slice(1))}</em>.</h2>
+    </div>
+    <div class="onderdelen op">
+      <nav class="ond-nav" aria-label="Werkzaamheden">
+${d.onderdelen.map((o) => `        <a href="#${o.id}">${esc(o.titel)}</a>`).join('\n')}
+      </nav>
+      <div class="ond-lijst">
+${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${String(i + 1).padStart(2, '0')}</span><h3>${esc(o.titel)}</h3><p>${esc(o.tekst)}</p></article>`).join('\n')}
+${d.download ? `        <a class="download" href="${d.download[1]}" target="_blank" rel="noopener">${esc(d.download[0])}</a>` : ''}
+      </div>
+    </div>
+  </div>
+</section>` : '';
+  const erkend = d.slug === 'dakramen' ? `
+      <div class="erkend"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</div>` : '';
   const review = d.review ? `
-<section class="fris">
+<section>
   <div class="kolommen"></div>
   <div class="wrap sectie op">
     <div class="citaat">
@@ -276,14 +340,14 @@ function dienstPagina(d, alle) {
   <div class="kolommen"></div>
   <div class="wrap">
     <div>
-      <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><a href="d-lijn.html#diensten">Diensten</a><span>/</span><span>${esc(d.naam)}</span></div>
+      <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><a href="diensten.html">Diensten</a><span>/</span><span>${esc(d.naam)}</span></div>
       ${oog(d.nr + ' — ' + d.naam)}
       <h1>${esc(d.kop)}</h1>
       <p class="lead">${esc(d.intro)}</p>
       <div class="acties">
         <a class="knop" href="d-lijn.html#contact">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
-      </div>
+      </div>${erkend}
     </div>
     <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
       <img src="${d.beeld}" alt="${esc(d.beeldAlt)}">
@@ -297,14 +361,15 @@ function dienstPagina(d, alle) {
   <div class="wrap sectie">
     <div class="kop op">
       ${oog('Wat we doen')}
-      <h2>Alles rond ${esc(d.naam.toLowerCase())}, in één hand.</h2>
+      <h2>Alles rond ${esc(d.naam.charAt(0).toLowerCase() + d.naam.slice(1))}, in één hand.</h2>
     </div>
     ${stappenRaster(d.werk)}
   </div>
 </section>
+${onderdelen}
 
 <!-- UITGEVOERD WERK -->
-<section id="werk" class="fris">
+<section id="werk">
   <div class="kolommen"></div>
   <div class="wrap sectie">
     <div class="kop op">
@@ -319,7 +384,7 @@ ${galerij}
 </section>
 
 <!-- AANPAK -->
-<section>
+<section class="fris">
   <div class="kolommen"></div>
   <div class="wrap sectie">
     <div class="kop op">
@@ -443,6 +508,66 @@ ${oproep()}`;
   });
 }
 
+// ---------- diensten-overzicht ----------
+function overzichtPagina(alle) {
+  const blokken = alle.map((x) => `      <div class="blok">
+        <a class="kaart" href="dienst-${x.slug}.html" style="--kl:${x.kleur}" data-kantel>
+          <img src="${x.beeld}" alt="" loading="lazy">
+          <span class="knr">${x.nr}</span>
+          <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk dienst</span></span>
+        </a>
+        <ul>
+${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#${o.id}">${esc(o.titel)}</a></li>`).join('\n')}
+        </ul>
+      </div>`).join('\n');
+  const body = `<section class="p-hero" style="padding-bottom:20px">
+  <div class="kolommen"></div>
+  <div class="wrap" style="display:block">
+    <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Diensten</span></div>
+    ${oog('Diensten')}
+    <h1>Alle vakken, <em class="serif">één</em> ploeg.</h1>
+    <p class="lead">Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot de laatste lijst. Kies een dienst of ga direct naar een werkzaamheid.</p>
+  </div>
+</section>
+<section>
+  <div class="kolommen"></div>
+  <div class="wrap sectie" style="padding-top:20px">
+    <div class="overzicht op">
+${blokken}
+    </div>
+  </div>
+</section>
+
+${oproep()}`;
+  return pagina({ titel: 'Diensten — OK Timmerwerken Gorinchem', omschrijving: 'Alle diensten van OK Timmerwerken: timmerwerk, betonvloeren, funderingen, dakramen (Velux), carports, onderhoud & renovatie en nieuwbouw in Gorinchem en Zuid-Holland.', body });
+}
+
+// ---------- juridische pagina's ----------
+function juridischPagina(titel, inhoudHtml) {
+  const body = `<section class="p-hero" style="padding-bottom:20px">
+  <div class="kolommen"></div>
+  <div class="wrap" style="display:block">
+    <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>${esc(titel)}</span></div>
+    ${oog('OK Timmerwerken')}
+    <h1>${esc(titel)}</h1>
+  </div>
+</section>
+<section>
+  <div class="kolommen"></div>
+  <div class="wrap sectie" style="padding-top:20px">
+    <div class="juridisch">
+${inhoudHtml}
+    </div>
+  </div>
+</section>`;
+  return pagina({ titel: `${titel} — OK Timmerwerken`, omschrijving: `${titel} van OK Timmerwerken, Gorinchem.`, body });
+}
+function voorwaardenHtml(v) {
+  return `      <p>${esc(v.intro)}</p>
+      <a class="download" href="${v.pdf}" target="_blank" rel="noopener">Download als pdf</a>
+${v.artikelen.map((a) => `      <h2>${esc(a.titel)}</h2>\n      <ol>${a.leden.map((l) => `<li>${esc(l)}</li>`).join('')}</ol>`).join('\n')}`;
+}
+
 // ---------- schrijven ----------
 const uit = path.join(root, 'preview');
 const geschreven = [];
@@ -453,6 +578,10 @@ for (const d of inhoud.diensten) {
 }
 fs.writeFileSync(path.join(uit, 'over.html'), overPagina(inhoud.over));
 geschreven.push('over.html');
+fs.writeFileSync(path.join(uit, 'diensten.html'), overzichtPagina(inhoud.diensten));
+fs.writeFileSync(path.join(uit, 'voorwaarden.html'), juridischPagina('Algemene voorwaarden', voorwaardenHtml(inhoud.juridisch.voorwaarden)));
+fs.writeFileSync(path.join(uit, 'disclaimer.html'), juridischPagina('Disclaimer', inhoud.juridisch.disclaimer.alineas.map((p) => `      <p>${esc(p)}</p>`).join('\n')));
+geschreven.push('diensten.html', 'voorwaarden.html', 'disclaimer.html');
 
 // controle: bestaan alle verwezen beelden?
 let mist = 0;
@@ -477,7 +606,10 @@ function herschrijf(html, pre) {
   let h = html.split('../assets/').join(pre + 'assets/');
   h = h.replace(/href="d-lijn\.html(#[^"]*)?"/g, (m, a) => `href="${a ? (pre ? pre + a : a) : home}"`);
   h = h.replace(/href="over\.html"/g, `href="${pre}over-ons/"`);
-  for (const s of slugs) h = h.split(`href="dienst-${s}.html"`).join(`href="${pre}diensten/${s}/"`);
+  h = h.replace(/href="diensten\.html"/g, `href="${pre}diensten/"`);
+  h = h.replace(/href="voorwaarden\.html"/g, `href="${pre}algemene-voorwaarden/"`);
+  h = h.replace(/href="disclaimer\.html"/g, `href="${pre}disclaimer/"`);
+  for (const s of slugs) h = h.replace(new RegExp(`href="dienst-${s}\\.html(#[^"]*)?"`, 'g'), (m, a) => `href="${pre}diensten/${s}/${a || ''}"`);
   return h;
 }
 function schrijf(rel, html) {
@@ -490,14 +622,38 @@ schrijf('over-ons/index.html', herschrijf(fs.readFileSync(path.join(uit, 'over.h
 for (const s of slugs) {
   schrijf(`diensten/${s}/index.html`, herschrijf(fs.readFileSync(path.join(uit, `dienst-${s}.html`), 'utf8'), '../../'));
 }
+schrijf('diensten/index.html', herschrijf(fs.readFileSync(path.join(uit, 'diensten.html'), 'utf8'), '../'));
+schrijf('algemene-voorwaarden/index.html', herschrijf(fs.readFileSync(path.join(uit, 'voorwaarden.html'), 'utf8'), '../'));
+schrijf('disclaimer/index.html', herschrijf(fs.readFileSync(path.join(uit, 'disclaimer.html'), 'utf8'), '../'));
+
+// doorverwijzingen: elk oud adres van ok-timmerwerken.nl krijgt een klein bestand dat direct doorstuurt
+// naar de nieuwe plek (GitHub Pages kent geen serverredirects; dit werkt ook voor Google via canonical).
+const oud = Object.entries(inhoud.doorverwijzingen);
+for (const [van, naar] of oud) {
+  const diepte = van.split('/').length;
+  const pre = '../'.repeat(diepte);
+  let doel;
+  if (naar === '@overzicht') doel = `${pre}diensten/`;
+  else if (naar.startsWith('#')) doel = `${pre}${naar}`;
+  else { const [sl, anker] = naar.split('#'); doel = `${pre}diensten/${sl}/${anker ? '#' + anker : ''}`; }
+  schrijf(`${van}/index.html`, `<!doctype html>
+<html lang="nl"><head><meta charset="utf-8">
+<title>Doorverwijzing — OK Timmerwerken</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=${doel}">
+<link rel="canonical" href="${doel}">
+<script>location.replace(${JSON.stringify(doel)});</script>
+</head><body><p>Deze pagina is verhuisd: <a href="${doel}">ga naar de nieuwe pagina</a>.</p></body></html>
+`);
+}
 // controle: verwijst de gebouwde site nog naar preview-bestanden, en bestaan alle beelden?
 let fout = 0;
-for (const rel of ['index.html', 'over-ons/index.html', ...slugs.map((s) => `diensten/${s}/index.html`)]) {
+for (const rel of ['index.html', 'over-ons/index.html', 'diensten/index.html', 'algemene-voorwaarden/index.html', 'disclaimer/index.html', ...slugs.map((s) => `diensten/${s}/index.html`)]) {
   const html = fs.readFileSync(path.join(root, rel), 'utf8');
   const map = path.dirname(path.join(root, rel));
-  if (/d-lijn\.html|dienst-[a-z]+\.html|over\.html|\.\.\/assets\/(?!)/.test(html.replace(/\.\.\/(\.\.\/)?assets\//g, ''))) { console.error(`  ${rel}: bevat nog een preview-link`); fout++; }
+  if (/d-lijn\.html|dienst-[a-z]+\.html|over\.html|diensten\.html|voorwaarden\.html|disclaimer\.html|\.\.\/assets\/(?!)/.test(html.replace(/\.\.\/(\.\.\/)?assets\//g, ''))) { console.error(`  ${rel}: bevat nog een preview-link`); fout++; }
   for (const m of html.matchAll(/(?:src|href)="([^"#:?][^"]*\.(?:jpg|png|webp|svg))"/g)) {
     if (!fs.existsSync(path.join(map, m[1]))) { console.error(`  ${rel}: ontbreekt ${m[1]}`); fout++; }
   }
 }
-console.log(`site gebouwd: index.html, over-ons/, diensten/{${slugs.join(',')}}/${fout ? ` — ${fout} probleem/problemen` : ' — alle links en beelden in orde'}`);
+console.log(`site gebouwd: index.html, over-ons/, diensten/ (+${slugs.length}), algemene-voorwaarden/, disclaimer/, ${oud.length} doorverwijzingen${fout ? ` — ${fout} probleem/problemen` : ' — alle links en beelden in orde'}`);

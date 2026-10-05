@@ -31,3 +31,7 @@ assets/render/diensten/*.png
 assets/render/chaos/*.png
 assets/render/echt/*.png
 assets/render/foto/
+
+# persoonlijke foto's van Ozcan (alleen als referentie, niet publiceren)
+assets/aangeleverd/ozcan-*.jpg
+assets/render/portret/*.png

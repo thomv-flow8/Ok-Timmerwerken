@@ -145,7 +145,8 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .hero-in{position:relative;z-index:2;color:var(--inkt);width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
 .hero .badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;background:rgba(20,19,15,.05);border:1px solid var(--rand);
-  border-radius:9999px;padding:8px 15px;margin-bottom:22px;color:var(--zacht)}
+  border-radius:9999px;padding:8px 15px;margin-bottom:22px;color:var(--zacht);display:inline-flex;align-items:center;gap:10px}
+.hero .badge img{width:26px;height:26px;border-radius:4px;margin:-3px 0 -3px -7px}
 .hero h1{font-size:clamp(40px,7vw,84px);font-weight:700;letter-spacing:-.035em;line-height:1.0}
 .hero p{margin-top:20px;max-width:44ch;font-weight:300;color:var(--zacht);font-size:clamp(15px,1.6vw,18px)}
 .hero-acties{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
@@ -353,6 +354,20 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 [data-kantel]{transition:transform .7s cubic-bezier(.2,.7,.2,1);
   transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--sc,1))}
 
+/* strook "en verder" onder de vitrine */
+.meer-diensten{display:grid;grid-template-columns:auto 1fr 1fr auto;gap:14px;align-items:stretch;
+  margin:10px 0 clamp(80px,9vw,120px);padding-top:28px;border-top:1px solid var(--rand)}
+.meer-diensten .md-label{align-self:center;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht);padding-right:10px}
+.meer-diensten a{display:block;padding:20px 22px;border-radius:14px;background:#fff;border:1px solid var(--rand);
+  transition:transform .3s var(--ease),box-shadow .3s}
+.meer-diensten a:hover{transform:translateY(-3px);box-shadow:0 22px 44px -30px rgba(20,19,15,.4)}
+.meer-diensten i{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--kl);margin-right:10px}
+.meer-diensten b{font-size:17px;font-weight:600}
+.meer-diensten small{display:block;margin-top:8px;color:var(--zacht);font-size:13px;line-height:1.5}
+.meer-diensten .alle{align-self:center;border:0;background:transparent;font-weight:600;font-size:14px;padding:0 6px}
+.meer-diensten .alle:hover{transform:translateX(3px);box-shadow:none}
+@media(max-width:900px){.meer-diensten{grid-template-columns:1fr}.meer-diensten .alle{padding:6px 0}}
+
 /* ---------- werkwijze ---------- */
 /* dunne horizontale lijn die zich van links naar rechts tekent, met een bronzen punt die meeloopt */
 .scheidlijn{position:absolute;top:0;left:50%;width:min(var(--max),94vw);height:1px;transform:translateX(-50%);z-index:1}
@@ -452,11 +467,20 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .contact-grid .veld-knop{background:var(--knop-vul);color:var(--knop-inkt);border:none;border-radius:9999px;
   padding:14px 28px;font-weight:600;font-size:14px;cursor:pointer}
 .contact-info a{display:block;color:var(--inkt);margin-bottom:10px;font-size:16px}
+.contact-info .tijden{display:grid;grid-template-columns:auto auto;gap:4px 18px;font-size:15px;width:fit-content}
+.contact-info .tijden span:nth-child(even){color:var(--zacht)}
+.erkend{display:inline-flex!important;align-items:center;gap:12px}
+.erkend img{width:56px;height:56px;border-radius:6px}
 .contact-info .lbl{color:var(--zacht);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:22px 0 8px}
 
 /* ---------- voet ---------- */
 footer.groot{padding:72px 0 46px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+.foot-erkend{margin-top:22px;font-size:13px!important;line-height:1.35;opacity:1!important}
+.foot-erkend img{width:52px;height:52px}
+.foot-tijden{line-height:1.9!important}
+.foot-onder a{color:inherit;display:inline!important;margin:0!important}
+.foot-onder a:hover{text-decoration:underline}
 .foot-grid .merk-foot{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.12em;
   text-transform:uppercase;font-size:14px;margin-bottom:16px}
 .foot-grid .merk-foot svg{height:34px;color:var(--inkt)}
@@ -538,6 +562,41 @@ footer.groot{padding:72px 0 46px}
 .lichtbak button{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;
   border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:20px;cursor:pointer}
 
+/* alle werkzaamheden: inhoudsopgave links (blijft staan), teksten rechts */
+.onderdelen{display:grid;grid-template-columns:260px 1fr;gap:clamp(30px,6vw,90px);margin-top:46px;align-items:start}
+.ond-nav{position:sticky;top:100px;display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
+  transition:color .2s,border-color .2s}
+.ond-nav a:hover{color:var(--inkt);border-left-color:var(--brons)}
+.ond-lijst article{padding:30px 0 32px;border-top:1px solid var(--rand);scroll-margin-top:96px;display:grid;
+  grid-template-columns:56px 1fr;gap:0 20px}
+.ond-lijst article:first-child{border-top:0;padding-top:0}
+.ond-lijst .onr{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--brons);line-height:1.1}
+.ond-lijst h3{font-size:clamp(21px,2.2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.ond-lijst p{grid-column:2;margin-top:10px;color:#4a4740;font-weight:300;line-height:1.75;font-size:16px;max-width:64ch}
+.download{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 22px;border-radius:999px;
+  background:#14130f;color:#fff;font-weight:600;font-size:14px}
+.download::before{content:'↓';color:var(--brons);font-size:16px}
+.p-hero .erkend{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
+.p-hero .erkend img{width:64px;height:64px;border-radius:6px}
+@media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
+  .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
+
+/* diensten-overzicht */
+.overzicht{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px 22px;margin-top:46px}
+.overzicht .blok .kaart{aspect-ratio:4/3}
+.overzicht .blok ul{list-style:none;margin-top:14px}
+.overzicht .blok li a{display:flex;justify-content:space-between;gap:10px;padding:8px 2px;border-bottom:1px solid var(--rand);
+  font-size:14px;color:#4a4740}
+.overzicht .blok li a::after{content:'→';color:var(--zacht)}
+.overzicht .blok li a:hover{color:var(--inkt)}
+
+/* juridische tekst */
+.juridisch{max-width:760px}
+.juridisch h2{font-size:20px;font-weight:700;margin:34px 0 10px;letter-spacing:-.01em}
+.juridisch ol{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300}
+.juridisch p{color:#4a4740;line-height:1.8;font-weight:300;margin-top:14px}
+
 /* review-citaat */
 .citaat{max-width:880px}
 .citaat blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.4vw,42px);line-height:1.25;
@@ -569,18 +628,18 @@ footer.groot{padding:72px 0 46px}
 
 /* andere diensten: beeldkaarten met dienstkleur */
 .andere{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
-.andere a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
+a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
   color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
-.andere a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   clip-path:circle(38% at 50% 40%);transition:clip-path .8s var(--ease),transform .8s var(--ease)}
-.andere a.kaart:hover img{clip-path:circle(80% at 50% 40%);transform:scale(1.04)}
-.andere a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.72) 0%,rgba(10,10,8,0) 48%)}
-.andere .kaart .knr{position:absolute;top:14px;left:16px;z-index:1;font-family:var(--serif);font-style:italic;font-size:26px}
-.andere .kaart .knaam{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
-.andere .kaart .knaam b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
-.andere .kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
-.andere .kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
-.andere .kaart:hover .knaam span::after{transform:translateX(4px)}
+a.kaart:hover img{clip-path:circle(80% at 50% 40%);transform:scale(1.04)}
+a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.72) 0%,rgba(10,10,8,0) 48%)}
+.kaart .knr{position:absolute;top:14px;left:16px;z-index:1;font-family:var(--serif);font-style:italic;font-size:26px}
+.kaart .knaam{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
+.kaart .knaam b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
+.kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
+.kaart:hover .knaam span::after{transform:translateX(4px)}
 @media(max-width:1000px){.andere{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.andere{grid-template-columns:1fr 1fr}}
 
@@ -640,7 +699,9 @@ footer.groot{padding:72px 0 46px}
           <a href="../../diensten/dakramen/" style="--kl:#7394b4"><img src="../../assets/render/echt/web/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
           <a href="../../diensten/timmerwerk/" style="--kl:#9cb189"><img src="../../assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
           <a href="../../diensten/funderingen/" style="--kl:#474e5b"><img src="../../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a class="alle" href="../../#diensten">Alle diensten op een rij →</a>
+          <a href="../../diensten/onderhoud/" style="--kl:#b98b6e"><img src="../../assets/eigen/web/badkamer-afgewerkt.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="../../diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="../../assets/web/vliering-constructie.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a class="alle" href="../../diensten/">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
       <a href="../../#reviews">Reviews</a>
@@ -681,6 +742,8 @@ footer.groot{padding:72px 0 46px}
     <a href="../../diensten/dakramen/">Dakramen (Velux)</a>
     <a href="../../diensten/timmerwerk/">Timmerwerk &amp; afbouw</a>
     <a href="../../diensten/funderingen/">Funderingen</a>
+    <a href="../../diensten/onderhoud/">Onderhoud &amp; renovatie</a>
+    <a href="../../diensten/nieuwbouw/">Nieuwbouw</a>
   </div>
   <div class="menu-voet">
     <a class="tel" href="tel:+31641429106">06 41 42 91 06</a>
@@ -699,7 +762,7 @@ footer.groot{padding:72px 0 46px}
   <div class="kolommen"></div>
   <div class="wrap">
     <div>
-      <div class="kruimel"><a href="../../">Home</a><span>/</span><a href="../../#diensten">Diensten</a><span>/</span><span>Vliering &amp; zolder</span></div>
+      <div class="kruimel"><a href="../../">Home</a><span>/</span><a href="../../diensten/">Diensten</a><span>/</span><span>Vliering &amp; zolder</span></div>
       <span class="oog">02 — Vliering &amp; zolder<i class="baan"></i></span>
       <h1>Een hele verdieping erbij.</h1>
       <p class="lead">Een rommelige, koude zolder wordt een lichte, volwaardige ruimte. We isoleren het dak, maken wanden en knieschotten met bergruimte, en bouwen waar mogelijk een vliering: een vlak plafond op de hanenbalken met een luik, met daarboven extra opslag.</p>
@@ -747,8 +810,34 @@ footer.groot{padding:72px 0 46px}
   </div>
 </section>
 
+<!-- ALLE WERKZAAMHEDEN -->
+<section class="creme" id="werkzaamheden">
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="kop op">
+      <span class="oog">Alle werkzaamheden<i class="baan"></i></span>
+      <h2>Wat we doen binnen <em class="serif">vliering &amp; zolder</em>.</h2>
+    </div>
+    <div class="onderdelen op">
+      <nav class="ond-nav" aria-label="Werkzaamheden">
+        <a href="#vliering">Vliering plaatsen</a>
+        <a href="#zolder-isoleren">Zolder isoleren</a>
+        <a href="#knieschotten">Knieschotten &amp; inbouwkasten</a>
+        <a href="#zolderkamer">Van zolder naar kamer</a>
+      </nav>
+      <div class="ond-lijst">
+        <article id="vliering"><span class="onr">01</span><h3>Vliering plaatsen</h3><p>Een vlak plafond op de hanenbalken met een strak luik: daarboven ontstaat extra bergruimte, eronder een rustige, afgewerkte zolder.</p></article>
+        <article id="zolder-isoleren"><span class="onr">02</span><h3>Zolder isoleren</h3><p>Het dak wordt geïsoleerd en afgewerkt, zodat de zolder in de zomer koel en in de winter warm blijft — en uw energierekening omlaag gaat.</p></article>
+        <article id="knieschotten"><span class="onr">03</span><h3>Knieschotten &amp; inbouwkasten</h3><p>De lage ruimte onder het dakbeschot wordt nuttige opbergruimte met knieschotten en deurtjes op maat.</p></article>
+        <article id="zolderkamer"><span class="onr">04</span><h3>Van zolder naar kamer</h3><p>Tussenwanden, deuren, plafonds en vloer: we maken van de zolder een volwaardige slaapkamer, werkkamer of logeerkamer. Een dakraam plaatsen we in hetzelfde traject.</p></article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- UITGEVOERD WERK -->
-<section id="werk" class="fris">
+<section id="werk">
   <div class="kolommen"></div>
   <div class="wrap sectie">
     <div class="kop op">
@@ -766,7 +855,7 @@ footer.groot{padding:72px 0 46px}
 </section>
 
 <!-- AANPAK -->
-<section>
+<section class="fris">
   <div class="kolommen"></div>
   <div class="wrap sectie">
     <div class="kop op">
@@ -799,7 +888,7 @@ footer.groot{padding:72px 0 46px}
   </div>
 </section>
 
-<section class="fris">
+<section>
   <div class="kolommen"></div>
   <div class="wrap sectie op">
     <div class="citaat">
@@ -860,6 +949,16 @@ footer.groot{padding:72px 0 46px}
         <span class="knr">06</span>
         <span class="knaam"><b>Funderingen</b><span>Bekijk dienst</span></span>
       </a>
+      <a class="kaart" href="../../diensten/onderhoud/" style="--kl:#b98b6e" data-kantel>
+        <img src="../../assets/eigen/web/badkamer-afgewerkt.jpg" alt="" loading="lazy">
+        <span class="knr">07</span>
+        <span class="knaam"><b>Onderhoud &amp; renovatie</b><span>Bekijk dienst</span></span>
+      </a>
+      <a class="kaart" href="../../diensten/nieuwbouw/" style="--kl:#6f7d6a" data-kantel>
+        <img src="../../assets/web/vliering-constructie.jpg" alt="" loading="lazy">
+        <span class="knr">08</span>
+        <span class="knaam"><b>Nieuwbouw</b><span>Bekijk dienst</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -893,6 +992,7 @@ footer.groot{padding:72px 0 46px}
           OK Timmerwerken
         </div>
         <p>Timmer- en betonwerk in Gorinchem en omstreken. Vakwerk waar u op kunt bouwen.</p>
+        <a class="erkend foot-erkend" href="../../diensten/dakramen/"><img src="../../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner"><span>Erkend VELUX<br>Montagepartner</span></a>
       </div>
       <div>
         <h4>Diensten</h4>
@@ -902,6 +1002,12 @@ footer.groot{padding:72px 0 46px}
         <a href="../../diensten/dakramen/">Dakramen (Velux)</a>
         <a href="../../diensten/timmerwerk/">Timmerwerk &amp; afbouw</a>
         <a href="../../diensten/funderingen/">Funderingen</a>
+        <a href="../../diensten/onderhoud/">Onderhoud &amp; renovatie</a>
+        <a href="../../diensten/nieuwbouw/">Nieuwbouw</a>
+      </div>
+      <div>
+        <h4>Werktijden</h4>
+        <p class="foot-tijden">Ma – vr: 07:00 – 20:00<br>Zaterdag: 07:00 – 16:00<br>Zondag: gesloten</p>
       </div>
       <div>
         <h4>Contact &amp; volg ons</h4>
@@ -915,7 +1021,7 @@ footer.groot{padding:72px 0 46px}
     </div>
     <div class="foot-onder">
       <span>Suzanna van Oostdijkstraat 4, 4206 XW Gorinchem · KvK 51855232</span>
-      <span>© 2026 OK Timmerwerken</span>
+      <span><a href="../../algemene-voorwaarden/">Algemene voorwaarden</a> · <a href="../../disclaimer/">Disclaimer</a> · © 2026 OK Timmerwerken</span>
     </div>
   </div>
 </footer>
@@ -945,6 +1051,13 @@ footer.groot{padding:72px 0 46px}
   if(rm || !('IntersectionObserver' in window)) op.forEach(function(e){ e.classList.add('in'); });
   else { var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.15});
     op.forEach(function(e){ io.observe(e); }); }
+  // vangnet: ook vanuit de scroll onthullen (sommige browsers vuren de observer te laat)
+  function vang(){ var h=innerHeight; op.forEach(function(e){ if(!e.classList.contains('in') && e.getBoundingClientRect().top<h*.92) e.classList.add('in'); }); }
+  addEventListener('scroll',vang,{passive:true}); addEventListener('load',vang); vang();
+  // kom je binnen via een anker (bijv. een doorverwijzing van de oude site), spring dan naar die werkzaamheid
+  if(location.hash && location.hash.length>1){ var doelEl=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if(doelEl) addEventListener('load',function(){ setTimeout(function(){ document.documentElement.style.scrollBehavior='auto';
+      doelEl.scrollIntoView({block:'start'}); document.documentElement.style.scrollBehavior=''; vang(); },60); }); }
 
   // Lichtbak voor de galerij
   var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbTxt=lb.querySelector('p');
