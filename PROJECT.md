@@ -438,3 +438,11 @@ nagaan of 'm opvragen bij Ozcan.
   (blok tussen `// [[gedeeld` en `// gedeeld]]`). **Na elke wijziging aan d-lijn de generator opnieuw draaien.**
 - Galerijen tonen alleen **echte foto's** van Ozcan (assets/web, assets/eigen/web); de AI-renders staan
   alleen op de homepage-vitrine en als hoofdbeeld van een dienstpagina.
+
+## Testomgeving (GitHub Pages)
+- Adres: https://thomv-flow8.github.io/Ok-Timmerwerken/ (basis stuurt door naar `preview/d-lijn.html`).
+- Bewust **niet vindbaar**: `robots.txt` (Disallow: /) en `<meta name="robots" content="noindex, nofollow">`
+  in d-lijn en de gegenereerde pagina's. **Bij livegang op ok-timmerwerken.nl alle drie weghalen.**
+- Contactformulier verstuurt nog niets; bij verzenden verschijnt een melding met telefoon/mail.
+- Nog te doen vóór de echte livegang: formulier koppelen, nette URL's (/diensten/<slug>/), redirects
+  van de oude site, teksten laten nalezen door Ozcan, portret, cookies/GA4, domein omzetten.

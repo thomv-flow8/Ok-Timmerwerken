@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- TESTOMGEVING: niet indexeren. Bij livegang op ok-timmerwerken.nl weghalen. -->
+<meta name="robots" content="noindex, nofollow">
 <title>OK Timmerwerken — richting D</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -436,6 +438,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
   border-radius:10px;padding:13px 15px;color:var(--inkt);font-family:inherit;font-size:15px;margin-bottom:18px}
 .contact-grid input:focus,.contact-grid textarea:focus{outline:2px solid var(--inkt);outline-offset:1px;border-color:transparent}
 .contact-grid textarea{min-height:120px;resize:vertical}
+.form-melding{margin-top:16px;padding:14px 16px;border-radius:10px;background:#f5f1ea;font-size:14px;line-height:1.5}
+.form-melding a{text-decoration:underline}
 .contact-grid .veld-knop{background:var(--knop-vul);color:var(--knop-inkt);border:none;border-radius:9999px;
   padding:14px 28px;font-weight:600;font-size:14px;cursor:pointer}
 .contact-info a{display:block;color:var(--inkt);margin-bottom:10px;font-size:16px}
@@ -802,7 +806,7 @@ footer.groot{padding:72px 0 46px}
       bellen of appen mag natuurlijk ook.</p>
     </div>
     <div class="contact-grid">
-      <form onsubmit="return false">
+      <form id="aanvraag" novalidate>
         <label for="c-naam">Naam</label>
         <input id="c-naam" type="text" autocomplete="name" placeholder="Uw naam">
         <label for="c-tel">Telefoonnummer</label>
@@ -810,6 +814,7 @@ footer.groot{padding:72px 0 46px}
         <label for="c-ber">Waar kunnen we mee helpen?</label>
         <textarea id="c-ber" placeholder="Bijvoorbeeld: gevlinderde betonvloer van 30 m² in de garage"></textarea>
         <button class="veld-knop" type="submit">Verstuur aanvraag</button>
+        <p class="form-melding" role="status" hidden>Dit formulier is nog in de testfase en verstuurt nog niets. Bel of app Ozcan op <a href="tel:+31641429106">06 41 42 91 06</a> of mail naar <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>.</p>
       </form>
       <div class="contact-info">
         <div class="lbl">Direct contact</div>
@@ -1043,6 +1048,11 @@ footer.groot{padding:72px 0 46px}
     paneel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){
       document.documentElement.classList.remove('menu-open'); knop.setAttribute('aria-expanded','false'); }); });
     addEventListener('keydown',function(e){ if(e.key==='Escape' && document.documentElement.classList.contains('menu-open')) zet(false); });
+  })();
+
+  // Testfase: het formulier verstuurt nog niets — laat dat eerlijk zien i.p.v. berichten kwijt te raken.
+  (function(){ var f=document.getElementById('aanvraag'); if(!f) return;
+    f.addEventListener('submit',function(e){ e.preventDefault(); var m=f.querySelector('.form-melding'); m.hidden=false; m.scrollIntoView({block:'nearest'}); });
   })();
 
   // Hover-kanteling: vitrines en [data-kantel] vergroten en kantelen heel licht mee met de muis.

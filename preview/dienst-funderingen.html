@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>Funderingen — OK Timmerwerken Gorinchem</title>
 <meta name="description" content="Gewapende betonplaten en funderingen voor een aanbouw, tuinhuis, overkapping of grote verbouwing. Bekisting, wapening en storten houden we in eigen hand — ">
 <!-- GEGENEREERD door tools/genereer-paginas.js uit docs/inhoud.json — niet met de hand aanpassen -->
@@ -438,6 +439,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
   border-radius:10px;padding:13px 15px;color:var(--inkt);font-family:inherit;font-size:15px;margin-bottom:18px}
 .contact-grid input:focus,.contact-grid textarea:focus{outline:2px solid var(--inkt);outline-offset:1px;border-color:transparent}
 .contact-grid textarea{min-height:120px;resize:vertical}
+.form-melding{margin-top:16px;padding:14px 16px;border-radius:10px;background:#f5f1ea;font-size:14px;line-height:1.5}
+.form-melding a{text-decoration:underline}
 .contact-grid .veld-knop{background:var(--knop-vul);color:var(--knop-inkt);border:none;border-radius:9999px;
   padding:14px 28px;font-weight:600;font-size:14px;cursor:pointer}
 .contact-info a{display:block;color:var(--inkt);margin-bottom:10px;font-size:16px}
@@ -971,6 +974,11 @@ footer.groot{padding:72px 0 46px}
     paneel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){
       document.documentElement.classList.remove('menu-open'); knop.setAttribute('aria-expanded','false'); }); });
     addEventListener('keydown',function(e){ if(e.key==='Escape' && document.documentElement.classList.contains('menu-open')) zet(false); });
+  })();
+
+  // Testfase: het formulier verstuurt nog niets — laat dat eerlijk zien i.p.v. berichten kwijt te raken.
+  (function(){ var f=document.getElementById('aanvraag'); if(!f) return;
+    f.addEventListener('submit',function(e){ e.preventDefault(); var m=f.querySelector('.form-melding'); m.hidden=false; m.scrollIntoView({block:'nearest'}); });
   })();
 
   // Hover-kanteling: vitrines en [data-kantel] vergroten en kantelen heel licht mee met de muis.
