@@ -102,6 +102,9 @@ const extraStijl = `<style>
 .faq summary::after{content:'+';position:absolute;right:6px;top:20px;font-size:26px;font-weight:300;
   transition:transform .3s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
+.donker .faq details p{color:rgba(255,255,255,.68)}
+.donker .faq summary::after{color:var(--brons)}
+.donker .faq summary:hover{color:#fff}
 .faq details p{color:var(--zacht);font-weight:300;line-height:1.7;padding:0 44px 26px 0;max-width:68ch}
 
 /* terugknop naar home (zwart bolletje met witte pijl) */
@@ -327,7 +330,7 @@ ${galerij}
 ${review}
 
 <!-- VRAGEN -->
-<section>
+<section class="donker">
   <div class="kolommen"></div>
   <div class="wrap sectie">
     <div class="kop op">
@@ -341,7 +344,7 @@ ${faq}
 </section>
 
 <!-- ANDERE DIENSTEN -->
-<section class="fris">
+<section>
   <div class="kolommen"></div>
   <div class="wrap sectie">
     <div class="kop op">
