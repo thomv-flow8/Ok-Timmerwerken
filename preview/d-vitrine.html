@@ -115,16 +115,17 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
   animation:veeg 9s cubic-bezier(.5,0,.3,1) infinite}
 @keyframes veeg{0%{transform:translateX(-60%)}55%,100%{transform:translateX(60%)}}
 
-/* 05 timmerwerk — "uitzoomen": begint op een detail, zoomt tijdens scrollen uit naar de hele kamer */
-.v-timmer img.beeld{transform-origin:14% 30%;transform:scale(calc(2.2 - var(--p,0) * 1.2))}
-.v-timmer .zoomlabel{position:absolute;z-index:4;left:6%;top:6%;font-size:11px;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;
-  border-radius:999px;opacity:calc(1 - var(--p,0) * 2)}
-
-/* 06 fundering — "uitgraven": tijdens het scrollen wordt de sleuf van boven naar beneden zichtbaar */
-.v-fundering img.beeld{clip-path:inset(0 0 calc(100% - var(--p,0) * 100%) 0)}
+/* 05 timmerwerk — "dichtzetten": tijdens het scrollen schuift het afgewerkte plafond van links over het regelwerk */
+.v-timmer img.na{clip-path:inset(0 calc(100% - var(--p,0) * 100%) 0 0)}
+.v-timmer .veeg{position:absolute;top:0;bottom:0;z-index:3;left:calc(var(--p,0) * 100%);width:2px;margin-left:-1px;
+  background:#fff;box-shadow:0 0 16px rgba(255,255,255,.7);opacity:calc(var(--p,0) * (1 - var(--p,0)) * 6)}
+/* 06 fundering — "storten": tijdens het scrollen loopt het verse beton van achter naar voren over de wapening */
+.v-fundering img.na{clip-path:inset(0 0 calc(100% - var(--p,0) * 100%) 0)}
 .v-fundering .snijlijn{position:absolute;left:0;right:0;z-index:3;top:calc(var(--p,0) * 100%);height:1px;
-  background:rgba(255,255,255,.8);box-shadow:0 0 14px rgba(255,255,255,.7);opacity:calc(1 - var(--p,0))}
+  background:rgba(255,255,255,.8);box-shadow:0 0 14px rgba(255,255,255,.7);opacity:calc(var(--p,0) * (1 - var(--p,0)) * 6)}
+/* fase-label (regelwerk/afgewerkt, wapening/gestort) */
+.vitrine .fl{position:absolute;z-index:4;left:6%;top:6%;font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
 /* ---------- chaos-band ---------- */
 /* de band is 2,4 schermen hoog; het beeld staat vast (sticky) terwijl de overgang loopt */
 .chaos{height:240vh;overflow:visible}
@@ -242,29 +243,30 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
       <!-- 05 TIMMERWERK -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-timmer" style="--bg:#c4af92;--tag:#f3ede3">
-          <img class="beeld" src="../assets/render/echt/web/timmerwerk.jpg" alt="Afgewerkte woonkamer met nieuwe trapbetimmering en vensterbank">
-          <span class="zoomlabel">Detail: trapbetimmering &amp; handregel</span>
+          <img class="beeld" src="../assets/render/echt/web/plafond-regelwerk.jpg" alt="Regelwerk voor een verlaagd plafond, met isolatie">
+          <img class="beeld na" src="../assets/render/echt/web/plafond-af.jpg" alt="Dezelfde kamer met afgewerkt verlaagd plafond en inbouwspots">
+          <span class="veeg"></span><span class="fl">Regelwerk</span>
           <span class="tag" style="left:auto;right:7%">tot de laatste lijst</span>
         </div></div>
         <div class="tekst"><span class="nr">05 — Timmerwerk &amp; afbouw</span>
           <h3>Van ruwbouw tot de laatste lijst.</h3>
-          <p>Doorbraken, wanden, plafonds, kozijnen en de afwerking die alles af maakt. Eén ploeg met het juiste gereedschap voor elke klus.</p>
-          <ul class="werk"><li>Doorbraken</li><li>Wanden &amp; plafonds</li><li>Kozijnen</li><li>Afwerking</li></ul>
+          <p>Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt — van het regelwerk tot de laatste lijst, door één ploeg.</p>
+          <ul class="werk"><li>Verlaagde plafonds</li><li>Wanden</li><li>Doorbraken</li><li>Kozijnen</li><li>Afwerking</li></ul>
           <a class="pil" href="#">Vraag advies over timmerwerk</a></div>
       </article>
 
       <!-- 06 FUNDERING -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-fundering" style="--bg:#474e5b;--tag:#e5e8eb">
-          <img class="beeld" src="../assets/render/echt/web/fundering.jpg" alt="Funderingssleuf met wapening, bekisting en palen naast een woning">
-          <span class="snijlijn"></span>
-          <span class="laag" style="--x:58%;--y:46%;--d:.4s"><i></i><b>Wapening &amp; bekisting</b></span>
+          <img class="beeld" src="../assets/render/echt/web/fundering-wapening.jpg" alt="Bekisting en wapeningsnet voor een betonplaat in de tuin">
+          <img class="beeld na" src="../assets/render/echt/web/fundering-gestort.jpg" alt="Dezelfde betonplaat, gestort en gevlinderd">
+          <span class="snijlijn"></span><span class="fl">Wapening</span>
           <span class="tag" style="left:auto;right:7%">degelijk voorbereid</span>
         </div></div>
         <div class="tekst"><span class="nr">06 — Funderingen</span>
           <h3>Het fundament onder al het werk.</h3>
-          <p>Strokenfunderingen, palen en vloerconstructies — voor een aanbouw, uitbouw of grote verbouwing. Degelijk voorbereid, zodat alles erboven goed staat.</p>
-          <ul class="werk"><li>Funderingen</li><li>Vloerconstructies</li><li>Stalen balken</li><li>Grondwerk</li></ul>
+          <p>Gewapende betonplaten en funderingen — voor een aanbouw, tuinhuis, overkapping of grote verbouwing. Bekisting, wapening en storten in eigen hand, zodat alles erboven goed staat.</p>
+          <ul class="werk"><li>Betonplaten</li><li>Funderingen</li><li>Vloerconstructies</li><li>Grondwerk</li></ul>
           <a class="pil" href="#">Vraag advies over funderingen</a></div>
       </article>
 
@@ -315,7 +317,8 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
 
   // Scroll-gestuurde effecten
   var vakken=[].slice.call(document.querySelectorAll('.vak'));
-  var carport=document.querySelector('.v-carport'), timmer=document.querySelector('.v-timmer'), fund=document.querySelector('.v-fundering');
+  var carport=document.querySelector('.v-carport'), timmer=document.querySelector('.v-timmer'), fund=document.querySelector('.v-fundering'),
+      fundFl=fund.querySelector('.fl'), timmerFl=timmer.querySelector('.fl');
   var chaos=document.querySelector('.chaos .scene'), stap=document.getElementById('stap');
   var krul=document.getElementById('krulpad'), krulLen=krul.getTotalLength(), krulMax=0;
   krul.style.strokeDasharray=krulLen; krul.style.strokeDashoffset=krulLen;
@@ -326,6 +329,9 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
   var tik=false;
   function scroll(){
     tik=false; var h=innerHeight;
+    // vangnet: onthul ook vanuit de scroll, voor browsers waar de observer te laat vuurt
+    vitrines.forEach(function(v){ var r=v.parentElement.getBoundingClientRect();
+      if(r.top<h*.85 && r.bottom>0){ v.classList.add('in'); v._zicht=true; } });
     // parallax: de vitrine schuift iets trager dan de tekst
     if(!rm) vakken.forEach(function(vk){ var r=vk.getBoundingClientRect(), mid=r.top+r.height/2-h/2;
       vk.style.transform='translateY('+(mid*-.12).toFixed(1)+'px)'; });
@@ -336,10 +342,12 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
     // 03 carport: cirkel groeit van 14% tot het hele vlak
     var pc=rm?1:voortgang(carport,.95,.3);
     carport.style.setProperty('--p',pc.toFixed(3)); carport.style.setProperty('--r',(14+pc*62).toFixed(1)+'%');
-    // 06 fundering: sleuf wordt van boven naar beneden zichtbaar
-    fund.style.setProperty('--p',(rm?1:voortgang(fund,.95,.3)).toFixed(3));
-    // 05 timmerwerk: van detail naar de hele kamer
-    timmer.style.setProperty('--p',(rm?1:voortgang(timmer,.95,.25)).toFixed(3));
+    // 06 fundering: het beton wordt gestort over de wapening
+    var pf=rm?1:voortgang(fund,.9,.2); fund.style.setProperty('--p',pf.toFixed(3));
+    fundFl.textContent=pf<.5?'Wapening':'Gestort';
+    // 05 timmerwerk: het afgewerkte plafond schuift over het regelwerk
+    var pt=rm?1:voortgang(timmer,.9,.2); timmer.style.setProperty('--p',pt.toFixed(3));
+    timmerFl.textContent=pt<.5?'Regelwerk':'Afgewerkt';
     // chaos-band: de afgewerkte kamer schuift over het puin
     var cr=chaos.parentElement.getBoundingClientRect(), loop=cr.height-h;
     var pk=rm?.5:Math.min(1,Math.max(0,(-cr.top-loop*.15)/(loop*.7)));
