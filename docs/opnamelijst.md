@@ -108,3 +108,17 @@ Als er maar tijd is voor vier foto's, dan deze:
 2. **Een afgeronde vliering of zolderkamer** — de enige dienst zonder eindbeeld
 3. **Jij aan het werk**, bijvoorbeeld achter de vlindermachine
 4. **Een voor-en-na** van dezelfde ruimte
+
+## Aanvulling (5 oktober 2026)
+
+Na het nieuwe beeldmateriaal missen nog:
+
+- **Een Velux-dakraam in een dakvlak** — op de site heet dienst 04 "Dakramen (Velux)",
+  maar geen van de aangeleverde foto's toont een geplaatst dakraam. Als erkend Velux-
+  montagepartner heb je hier vast een mooie foto van: een afgewerkt dakraam van binnen
+  (met het lichte dakvlak eromheen) of van buiten op het dak. Tot die er is staat er een
+  tijdelijke overkapping-foto op die plek.
+- **Hogere resolutie van enkele foto's** — een paar beelden zijn relatief klein
+  (±1200-1500 px) en ogen daardoor iets korrelig op groot formaat. Als je van deze klussen
+  nog de originelen uit de telefoon hebt (betonterras tuinmuur, vlindermachine, vloer met
+  stalen balken), stuur die dan; dan worden ze scherper op de site.
