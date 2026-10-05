@@ -29,3 +29,5 @@ assets/eigen/bewerkt/badkamer-afgewerkt.jpg
 # ruwe Higgsfield-renders (alleen de web-versies gaan mee)
 assets/render/diensten/*.png
 assets/render/chaos/*.png
+assets/render/echt/*.png
+assets/render/foto/
