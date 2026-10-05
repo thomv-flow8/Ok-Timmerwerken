@@ -298,13 +298,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .vignet .ring2{position:absolute;z-index:3;left:var(--cx,50%);top:var(--cy,50%);width:calc(var(--r,14%) * 2);aspect-ratio:1;
   translate:-50% -50%;border:1px solid rgba(255,255,255,.6);border-radius:50%;opacity:calc(1 - var(--p,0))}
 
-/* 04 velux — "lichtbundel": trage zoom + zachte lichtbaan */
-.v-velux img.beeld{animation:kenburns 14s ease-in-out infinite alternate}
-@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-2%,1.5%)}}
-.v-velux .licht{position:absolute;inset:-30%;z-index:2;pointer-events:none;mix-blend-mode:soft-light;
-  background:linear-gradient(115deg,transparent 42%,rgba(255,244,215,.55) 50%,transparent 58%);
-  animation:veeg 9s cubic-bezier(.5,0,.3,1) infinite}
-@keyframes veeg{0%{transform:translateX(-60%)}55%,100%{transform:translateX(60%)}}
+/* 04 velux — "opbouw", net als 08 nieuwbouw (zie hieronder), kleurvlak in Google-blauw */
 
 /* 05 timmerwerk — vignet met het regelwerk; als de cirkel bijna vol is, vloeit het afgewerkte plafond erin */
 .v-timmer img.na{opacity:clamp(0, calc((var(--p,0) - .72) * 3.6), 1)}
@@ -313,9 +307,9 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .v-fundering .snijlijn{position:absolute;left:0;right:0;z-index:3;top:calc(var(--p,0) * 100%);height:1px;
   background:rgba(255,255,255,.8);box-shadow:0 0 14px rgba(255,255,255,.7);opacity:calc(var(--p,0) * (1 - var(--p,0)) * 6)}
 /* 07 onderhoud — vignet, kleurvlak in warm brons */
-/* 08 nieuwbouw — "opbouw": tijdens het scrollen rijst het beeld kolom voor kolom op, als wanden die omhoog gaan */
-.v-nieuwbouw .stroken{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:repeat(6,1fr)}
-.v-nieuwbouw .stroken i{background:var(--bg);transform-origin:top;border-right:1px solid rgba(255,255,255,.12);
+/* opbouw — velux en nieuwbouw: tijdens het scrollen rijst het beeld kolom voor kolom op, als wanden die omhoog gaan */
+.opbouw .stroken{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:repeat(6,1fr)}
+.opbouw .stroken i{background:var(--bg);transform-origin:top;border-right:1px solid rgba(255,255,255,.12);
   transform:scaleY(clamp(0, calc(1 - (var(--p,0) * 1.7 - var(--n) * .12)), 1))}
 /* fase-label (regelwerk/afgewerkt, wapening/gestort) */
 .vitrine .fl{position:absolute;z-index:4;left:6%;top:6%;font-size:11px;font-weight:600;letter-spacing:.14em;

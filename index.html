@@ -297,13 +297,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .vignet .ring2{position:absolute;z-index:3;left:var(--cx,50%);top:var(--cy,50%);width:calc(var(--r,14%) * 2);aspect-ratio:1;
   translate:-50% -50%;border:1px solid rgba(255,255,255,.6);border-radius:50%;opacity:calc(1 - var(--p,0))}
 
-/* 04 velux — "lichtbundel": trage zoom + zachte lichtbaan */
-.v-velux img.beeld{animation:kenburns 14s ease-in-out infinite alternate}
-@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-2%,1.5%)}}
-.v-velux .licht{position:absolute;inset:-30%;z-index:2;pointer-events:none;mix-blend-mode:soft-light;
-  background:linear-gradient(115deg,transparent 42%,rgba(255,244,215,.55) 50%,transparent 58%);
-  animation:veeg 9s cubic-bezier(.5,0,.3,1) infinite}
-@keyframes veeg{0%{transform:translateX(-60%)}55%,100%{transform:translateX(60%)}}
+/* 04 velux — "opbouw", net als 08 nieuwbouw (zie hieronder), kleurvlak in Google-blauw */
 
 /* 05 timmerwerk — vignet met het regelwerk; als de cirkel bijna vol is, vloeit het afgewerkte plafond erin */
 .v-timmer img.na{opacity:clamp(0, calc((var(--p,0) - .72) * 3.6), 1)}
@@ -312,9 +306,9 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .v-fundering .snijlijn{position:absolute;left:0;right:0;z-index:3;top:calc(var(--p,0) * 100%);height:1px;
   background:rgba(255,255,255,.8);box-shadow:0 0 14px rgba(255,255,255,.7);opacity:calc(var(--p,0) * (1 - var(--p,0)) * 6)}
 /* 07 onderhoud — vignet, kleurvlak in warm brons */
-/* 08 nieuwbouw — "opbouw": tijdens het scrollen rijst het beeld kolom voor kolom op, als wanden die omhoog gaan */
-.v-nieuwbouw .stroken{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:repeat(6,1fr)}
-.v-nieuwbouw .stroken i{background:var(--bg);transform-origin:top;border-right:1px solid rgba(255,255,255,.12);
+/* opbouw — velux en nieuwbouw: tijdens het scrollen rijst het beeld kolom voor kolom op, als wanden die omhoog gaan */
+.opbouw .stroken{position:absolute;inset:0;z-index:2;display:grid;grid-template-columns:repeat(6,1fr)}
+.opbouw .stroken i{background:var(--bg);transform-origin:top;border-right:1px solid rgba(255,255,255,.12);
   transform:scaleY(clamp(0, calc(1 - (var(--p,0) * 1.7 - var(--n) * .12)), 1))}
 /* fase-label (regelwerk/afgewerkt, wapening/gestort) */
 .vitrine .fl{position:absolute;z-index:4;left:6%;top:6%;font-size:11px;font-weight:600;letter-spacing:.14em;
@@ -684,9 +678,9 @@ footer.groot{padding:72px 0 46px}
 
       <!-- 04 VELUX -->
       <article class="rij">
-        <div class="vak"><div class="vitrine v-velux" style="--bg:#7394b4;--tag:#e2ecf5">
+        <div class="vak"><div class="vitrine v-velux opbouw" style="--bg:#7394b4;--tag:#e2ecf5">
           <img class="beeld" src="assets/render/echt/web/velux.jpg" alt="Twee nieuwe dakramen naast elkaar in een zolder">
-          <div class="licht"></div>
+          <div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
           <div class="badge"><svg class="ring" viewBox="0 0 62 62"><defs><path id="rv" d="M31,31 m-23,0 a23,23 0 1,1 46,0 a23,23 0 1,1 -46,0"/></defs><text><textPath href="#rv">VELUX · MONTAGEPARTNER · ERKEND · </textPath></text></svg>
             <svg class="icoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l9-8 9 8M8 9.5l4-3 4 3V14H8z M12 6.5V14"/></svg></div>
           <span class="tag">erkend montagepartner</span>
@@ -744,7 +738,7 @@ footer.groot{padding:72px 0 46px}
 
       <!-- 08 NIEUWBOUW -->
       <article class="rij">
-        <div class="vak"><div class="vitrine v-nieuwbouw" style="--bg:#6f7d6a;--tag:#e6ebe3">
+        <div class="vak"><div class="vitrine v-nieuwbouw opbouw" style="--bg:#6f7d6a;--tag:#e6ebe3">
           <img class="beeld" src="assets/render/echt/web/nieuwbouw.jpg" alt="Houtskeletbouw in opbouw">
           <div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
           <span class="tag" style="left:auto;right:7%">vanaf de eerste balk</span>
@@ -1056,7 +1050,7 @@ footer.groot{padding:72px 0 46px}
 
   // Scroll-gestuurde effecten
   var vakken=[].slice.call(document.querySelectorAll('.vak'));
-  var vignetten=[].slice.call(document.querySelectorAll('.vignet')), nieuwbouw=document.querySelector('.v-nieuwbouw'), timmer=document.querySelector('.v-timmer'), fund=document.querySelector('.v-fundering'),
+  var vignetten=[].slice.call(document.querySelectorAll('.vignet')), opbouw=[].slice.call(document.querySelectorAll('.opbouw')), timmer=document.querySelector('.v-timmer'), fund=document.querySelector('.v-fundering'),
       fundFl=fund.querySelector('.fl'), timmerFl=timmer.querySelector('.fl');
   var chaos=document.querySelector('.chaos .scene'), fase=document.getElementById('fase');
   var krul=document.getElementById('krulpad'), krulLen=krul.getTotalLength();
@@ -1081,8 +1075,8 @@ footer.groot{padding:72px 0 46px}
     // vignetten (beton, carport, timmerwerk, onderhoud): cirkel groeit van 14% tot het hele vlak
     vignetten.forEach(function(v){ var p=rm?1:voortgang(v,.95,.3);
       v.style.setProperty('--p',p.toFixed(3)); v.style.setProperty('--r',(14+p*62).toFixed(1)+'%'); });
-    // 08 nieuwbouw: kolommen rijzen op tijdens het scrollen
-    if(nieuwbouw) nieuwbouw.style.setProperty('--p',(rm?1:voortgang(nieuwbouw,.95,.35)).toFixed(3));
+    // 04 velux en 08 nieuwbouw: kolommen rijzen op tijdens het scrollen
+    opbouw.forEach(function(v){ v.style.setProperty('--p',(rm?1:voortgang(v,.95,.35)).toFixed(3)); });
     // 06 fundering: het beton wordt gestort over de wapening
     var pf=rm?1:voortgang(fund,.9,.2); fund.style.setProperty('--p',pf.toFixed(3));
     fundFl.textContent=pf<.5?'Wapening':'Gestort';
