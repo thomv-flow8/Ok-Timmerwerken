@@ -382,9 +382,9 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .creme{--vlak:#f2ebdf; --rand:#e2d8c8; --lijn:rgba(20,19,15,.05)}
 #werkwijze .wrap{padding-bottom:clamp(90px,11vw,150px)}
 /* schaduw per blok (niet op de rij), zodat hij meekomt met de binnenkomst-animatie */
-.creme .stap{box-shadow:0 46px 80px -56px rgba(20,19,15,.38)}
-.creme .stap:not(.stap-cta){background:#fff;border-right:1px solid var(--rand)}
-.creme .stap:not(.stap-cta):hover{background:#fff;box-shadow:0 24px 50px -34px rgba(20,19,15,.35);z-index:1}
+:is(.creme,.fris) .stap{box-shadow:0 46px 80px -56px rgba(20,19,15,.38)}
+:is(.creme,.fris) .stap:not(.stap-cta){background:#fff;border-right:1px solid var(--rand)}
+:is(.creme,.fris) .stap:not(.stap-cta):hover{background:#fff;box-shadow:0 24px 50px -34px rgba(20,19,15,.35);z-index:1}
 .stap-cta:hover{background:#1f1d19}
 .stap-cta .snr{color:var(--brons)}
 /* krul die zich tijdens het scrollen tekent en met een pijl naar "Klaar voor stap 1?" wijst */
@@ -440,6 +440,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
   border-radius:10px;padding:13px 15px;color:var(--inkt);font-family:inherit;font-size:15px;margin-bottom:18px}
 .contact-grid input:focus,.contact-grid textarea:focus{outline:2px solid var(--inkt);outline-offset:1px;border-color:transparent}
 .contact-grid textarea{min-height:120px;resize:vertical}
+.veld-rij{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media(max-width:600px){.veld-rij{grid-template-columns:1fr}}
 .form-melding{margin-top:16px;padding:14px 16px;border-radius:10px;background:#f5f1ea;font-size:14px;line-height:1.5}
 .form-melding a{text-decoration:underline}
 .contact-grid .veld-knop{background:var(--knop-vul);color:var(--knop-inkt);border:none;border-radius:9999px;
@@ -464,8 +466,8 @@ footer.groot{padding:72px 0 46px}
   .stappen{grid-template-columns:1fr;width:auto;margin-left:0}
   .stap{padding:26px 0 30px;border-top:1px solid var(--rand)}
   .stap-cta{padding:28px 24px;border-radius:14px;border:0}
-  .creme .stap:not(.stap-cta){padding:26px 22px 30px;border:0;margin-bottom:10px;border-radius:12px}
-  .creme .stap{box-shadow:0 20px 40px -30px rgba(20,19,15,.3)}
+  :is(.creme,.fris) .stap:not(.stap-cta){padding:26px 22px 30px;border:0;margin-bottom:10px;border-radius:12px}
+  :is(.creme,.fris) .stap{box-shadow:0 20px 40px -30px rgba(20,19,15,.3)}
   .kaarten{grid-template-columns:1fr;width:auto;margin-left:0}
   .rev{padding:26px 0 30px;border-top:1px solid var(--rand)}
   .rev-totaal{padding:28px 24px;border-radius:14px}
@@ -810,11 +812,15 @@ footer.groot{padding:72px 0 46px}
     <div class="contact-grid">
       <form id="aanvraag" novalidate>
         <label for="c-naam">Naam</label>
-        <input id="c-naam" type="text" autocomplete="name" placeholder="Uw naam">
-        <label for="c-tel">Telefoonnummer</label>
-        <input id="c-tel" type="tel" autocomplete="tel" placeholder="06 ...">
+        <input id="c-naam" name="naam" type="text" autocomplete="name" placeholder="Uw naam" required>
+        <div class="veld-rij">
+          <div><label for="c-mail">E-mailadres</label>
+          <input id="c-mail" name="email" type="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required></div>
+          <div><label for="c-tel">Telefoonnummer</label>
+          <input id="c-tel" name="telefoon" type="tel" autocomplete="tel" placeholder="06 ..."></div>
+        </div>
         <label for="c-ber">Waar kunnen we mee helpen?</label>
-        <textarea id="c-ber" placeholder="Bijvoorbeeld: gevlinderde betonvloer van 30 m² in de garage"></textarea>
+        <textarea id="c-ber" name="bericht" placeholder="Bijvoorbeeld: gevlinderde betonvloer van 30 m² in de garage" required></textarea>
         <button class="veld-knop" type="submit">Verstuur aanvraag</button>
         <p class="form-melding" role="status" hidden>Dit formulier is nog in de testfase en verstuurt nog niets. Bel of app Ozcan op <a href="tel:+31641429106">06 41 42 91 06</a> of mail naar <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>.</p>
       </form>
