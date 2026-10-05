@@ -68,21 +68,47 @@ const extraStijl = `<style>
 .p-beeld .bijsch{position:absolute;left:14px;top:14px;font-size:11px;color:#fff;background:rgba(0,0,0,.5);
   backdrop-filter:blur(6px);border-radius:999px;padding:6px 12px}
 
-.sectie{padding:clamp(70px,9vw,120px) 0}
+.sectie{padding-top:clamp(70px,9vw,120px);padding-bottom:clamp(70px,9vw,120px)}   /* alleen boven/onder: de zijmarge van .wrap blijft staan */
 .sectie .kop{padding:0 0 8px}
 .stappen.vier .stap{min-height:220px}
 .stap .snr.klein{font-size:42px}
 
-/* galerij: echte projecten, met lichtbak */
-.galerij{columns:3 280px;column-gap:18px;margin-top:46px}
-.galerij figure{break-inside:avoid;margin:0 0 18px;position:relative;border-radius:10px;overflow:hidden;cursor:zoom-in;
-  background:#eee}
-.galerij img{width:100%;height:auto;display:block}
-.galerij figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;font-size:13px;color:#fff;
-  background:linear-gradient(to top,rgba(10,10,8,.7),transparent);opacity:0;transform:translateY(6px);
-  transition:opacity .35s var(--ease),transform .35s var(--ease)}
-.galerij figure:hover figcaption{opacity:1;transform:none}
-@media(hover:none){.galerij figcaption{opacity:1;transform:none}}
+/* speler: echte projecten één voor één, met voortgangsbalkjes (zoals stories), duimen en lichtbak */
+.speler{margin-top:46px}
+.podium{position:relative;aspect-ratio:16/10;max-height:72vh;width:100%;border-radius:18px;overflow:hidden;background:#14130f;cursor:zoom-in;
+  box-shadow:0 50px 90px -40px rgba(20,19,15,.45),0 18px 36px -24px rgba(20,19,15,.25);touch-action:pan-y}
+.dia{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s var(--ease);pointer-events:none}
+.dia.aan{opacity:1;pointer-events:auto}
+.dia .waas{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(28px) brightness(.55) saturate(1.1)}
+.dia .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.045);transition:transform 7s linear}
+.dia.aan .foto{transform:scale(1)}
+.dia figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:60px 26px 22px;color:#fff;font-size:15px;line-height:1.4;
+  background:linear-gradient(to top,rgba(10,10,8,.75),transparent);padding-right:120px}
+.balkjes{position:absolute;z-index:3;left:18px;right:18px;top:16px;display:flex;gap:5px}
+.balkjes i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden}
+.balkjes b{display:block;height:100%;width:0;background:#fff}
+.balkjes i.klaar b{width:100%}
+.balkjes i.nu b{animation:balk var(--duur,5s) linear forwards}
+.speler:not(.speelt) .balkjes i.nu b,.podium:hover .balkjes i.nu b{animation-play-state:paused}
+@keyframes balk{to{width:100%}}
+.teller{position:absolute;z-index:3;right:24px;bottom:22px;color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.teller b{color:#fff;font-weight:600}
+.sp-pijl{position:absolute;z-index:3;top:50%;width:48px;height:48px;margin-top:-24px;border-radius:50%;border:0;cursor:pointer;
+  background:#14130f;color:#fff;display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .3s var(--ease)}
+.sp-pijl svg{width:18px;height:18px}
+.sp-vorige{left:18px}.sp-volgende{right:18px}
+.podium:hover .sp-pijl,.sp-pijl:focus-visible{opacity:1}
+.sp-pijl:hover{transform:scale(1.08)}
+@media(hover:none){.sp-pijl{opacity:.85;width:40px;height:40px;margin-top:-20px}}
+.strook{display:flex;gap:10px;margin-top:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 8px;scrollbar-width:none}
+.strook::-webkit-scrollbar{display:none}
+.duim{flex:0 0 auto;width:96px;aspect-ratio:1;border-radius:10px;overflow:hidden;padding:0;border:2px solid transparent;cursor:pointer;
+  scroll-snap-align:start;background:#eee;opacity:.55;transition:opacity .3s,border-color .3s}
+.duim img{width:100%;height:100%;object-fit:cover;display:block}
+.duim:hover{opacity:.85}
+.duim.aan{opacity:1;border-color:var(--brons)}
+@media(max-width:700px){.podium{aspect-ratio:4/5;border-radius:14px}.dia figcaption{font-size:14px;padding:50px 18px 18px;padding-right:80px}
+  .teller{right:18px;bottom:18px}.duim{width:68px}}
 .lichtbak{position:fixed;inset:0;z-index:95;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;
   opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
 .lichtbak.open{opacity:1;visibility:visible;transition:opacity .3s}
@@ -253,11 +279,35 @@ ${dock}
 
   // Lichtbak voor de galerij
   var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbTxt=lb.querySelector('p');
-  document.querySelectorAll('.galerij figure').forEach(function(f){
-    f.addEventListener('click',function(){ var i=f.querySelector('img');
-      lbImg.src=i.src; lbImg.alt=i.alt; lbTxt.textContent=f.querySelector('figcaption').textContent; lb.classList.add('open'); });
-  });
-  function dicht(){ lb.classList.remove('open'); }
+  function dicht(){ lb.classList.remove('open'); if(sp) sp.classList.add('speelt'); }
+
+  // Speler: elke foto ~5 s in beeld; balkje loopt mee, pauze bij hover, buiten beeld of in de lichtbak
+  var sp=document.querySelector('.speler');
+  if(sp){
+    var podium=sp.querySelector('.podium'), dias=[].slice.call(sp.querySelectorAll('.dia')), balk=[].slice.call(sp.querySelectorAll('.balkjes i')),
+        duim=[].slice.call(sp.querySelectorAll('.duim')), teller=sp.querySelector('.teller b'), strook=sp.querySelector('.strook'), nu=0;
+    function toon(i){ nu=(i+dias.length)%dias.length;
+      dias.forEach(function(d,k){ d.classList.toggle('aan',k===nu); });
+      duim.forEach(function(d,k){ d.classList.toggle('aan',k===nu); });
+      balk.forEach(function(b,k){ b.classList.toggle('klaar',k<nu); b.classList.remove('nu'); });
+      void balk[nu].offsetWidth; if(!rm) balk[nu].classList.add('nu'); else balk[nu].classList.add('klaar');
+      teller.textContent=(nu<9?'0':'')+(nu+1);
+      var d=duim[nu]; strook.scrollTo({left:d.offsetLeft-strook.clientWidth/2+d.clientWidth/2,behavior:'smooth'}); }
+    balk.forEach(function(b){ b.firstChild.addEventListener('animationend',function(){ toon(nu+1); }); });
+    sp.querySelector('.sp-vorige').addEventListener('click',function(e){ e.stopPropagation(); toon(nu-1); });
+    sp.querySelector('.sp-volgende').addEventListener('click',function(e){ e.stopPropagation(); toon(nu+1); });
+    duim.forEach(function(d,k){ d.addEventListener('click',function(){ toon(k); }); });
+    var x0=null, veeg=false;
+    podium.addEventListener('pointerdown',function(e){ x0=e.clientX; veeg=false; });
+    podium.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null;
+      if(Math.abs(dx)>40){ veeg=true; toon(nu+(dx<0?1:-1)); } });
+    podium.addEventListener('click',function(){ if(veeg) return; var f=dias[nu], i=f.querySelector('.foto');
+      lbImg.src=i.src; lbImg.alt=i.alt; lbTxt.textContent=f.querySelector('figcaption').textContent; lb.classList.add('open'); sp.classList.remove('speelt'); });
+    sp.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') toon(nu+1); if(e.key==='ArrowLeft') toon(nu-1); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ sp.classList.toggle('speelt',es[0].isIntersecting && !lb.classList.contains('open')); },{threshold:.35}).observe(podium);
+    else sp.classList.add('speelt');
+    toon(0);
+  }
   lb.addEventListener('click',function(e){ if(e.target===lb||e.target.tagName==='BUTTON') dicht(); });
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });
 
@@ -306,7 +356,22 @@ function stappenRaster(items, cta) {
 
 // ---------- dienstpagina ----------
 function dienstPagina(d, alle) {
-  const galerij = d.galerij.map(([src, bijschrift]) => `      <figure data-kantel><img src="${src}" alt="${esc(bijschrift)}" loading="lazy"><figcaption>${esc(bijschrift)}</figcaption></figure>`).join('\n');
+  const n = d.galerij.length, nn = (i) => String(i).padStart(2, '0');
+  const dias = d.galerij.map(([src, bijschrift], i) => `        <figure class="dia${i ? '' : ' aan'}"><img class="waas" src="${src}" alt="" loading="lazy"><img class="foto" src="${src}" alt="${esc(bijschrift)}"${i ? ' loading="lazy"' : ''}><figcaption>${esc(bijschrift)}</figcaption></figure>`).join('\n');
+  const duimen = d.galerij.map(([src, bijschrift], i) => `      <button type="button" class="duim${i ? '' : ' aan'}" aria-label="Foto ${i + 1}: ${esc(bijschrift)}"><img src="${src}" alt="" loading="lazy"></button>`).join('\n');
+  const pijl = (r) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${r ? 'M9 5l7 7-7 7' : 'M15 5l-7 7 7 7'}"/></svg>`;
+  const galerij = `    <div class="speler op" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
+      <div class="podium">
+        <div class="balkjes" aria-hidden="true">${'<i><b></b></i>'.repeat(n)}</div>
+${dias}
+        <button type="button" class="sp-pijl sp-vorige" aria-label="Vorige foto">${pijl(false)}</button>
+        <button type="button" class="sp-pijl sp-volgende" aria-label="Volgende foto">${pijl(true)}</button>
+        <span class="teller" aria-live="polite"><b>01</b> / ${nn(n)}</span>
+      </div>
+      <div class="strook">
+${duimen}
+      </div>
+    </div>`;
   const faq = d.faq.map(([v, a]) => `      <details><summary>${esc(v)}</summary><p>${esc(a)}</p></details>`).join('\n');
   const andere = alle.filter((x) => x.slug !== d.slug).map((x) => `      <a class="kaart" href="dienst-${x.slug}.html" style="--kl:${x.kleur}" data-kantel>
         <img src="${x.beeld}" alt="" loading="lazy">
@@ -391,11 +456,9 @@ ${onderdelen}
     <div class="kop op">
       ${oog('Uitgevoerd werk')}
       <h2>Echte projecten van <em class="serif">OK</em>.</h2>
-      <p class="lead">Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto om hem groot te bekijken.</p>
+      <p class="lead">Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op de foto om hem groot te bekijken.</p>
     </div>
-    <div class="galerij op">
 ${galerij}
-    </div>
   </div>
 </section>
 

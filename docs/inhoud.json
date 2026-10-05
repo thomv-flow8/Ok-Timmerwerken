@@ -44,6 +44,34 @@
       ],
       "galerij": [
         [
+          "../assets/web/beton-vlinderen-machine.jpg",
+          "Vlinderen: de vloer wordt machinaal glad afgewerkt"
+        ],
+        [
+          "../assets/web/beton-vloerverwarming.jpg",
+          "Vloerverwarming ligt klaar voor de dekvloer"
+        ],
+        [
+          "../assets/web/beton-vloer-zonlicht.jpg",
+          "Verse gevlinderde vloer in een verbouwing"
+        ],
+        [
+          "../assets/web/beton-vloer-woning.jpg",
+          "Gevlinderde vloer in een woning"
+        ],
+        [
+          "../assets/web/beton-plaat-spiegelend.jpg",
+          "Net gestorte betonplaat in de tuin"
+        ],
+        [
+          "../assets/web/beton-plaat-polder.jpg",
+          "Grote betonplaat met uitzicht over de polder"
+        ],
+        [
+          "../assets/web/beton-overkapping.jpg",
+          "Betonvloer onder een overkapping"
+        ],
+        [
           "../assets/web/betonvloer-woonkamer.jpg",
           "Gevlinderde vloer onder een overkapping"
         ],
@@ -52,28 +80,16 @@
           "Spiegelgladde betonplaat in de tuin"
         ],
         [
-          "../assets/web/betonvloer-vlinderen.jpg",
-          "Vlinderen in een berging"
-        ],
-        [
-          "../assets/eigen/web/beton-woonhuis-droog.jpg",
-          "Terras achter een nieuwbouwwoning"
-        ],
-        [
           "../assets/web/betonvloer-oprit.jpg",
           "Betonvloer onder een carport"
         ],
         [
-          "../assets/eigen/web/beton-terras-tuinmuur.jpg",
-          "Terras tussen twee tuinmuren"
+          "../assets/web/betonvloer-tuin-groot.jpg",
+          "Grote betonplaat in L-vorm"
         ],
         [
           "../assets/web/betonvloer-berging.jpg",
           "Afgewerkte vloer in een tuinhuis"
-        ],
-        [
-          "../assets/web/betonvloer-tuin-groot.jpg",
-          "Grote betonplaat in L-vorm"
         ]
       ],
       "review": [
@@ -170,6 +186,34 @@
         ]
       ],
       "galerij": [
+        [
+          "../assets/web/zolder-dakisolatie.jpg",
+          "Dakisolatie met regelwerk, klaar voor de afwerking"
+        ],
+        [
+          "../assets/web/zolder-vliering-ladder.jpg",
+          "Vliering met vaste ladder en hekwerk"
+        ],
+        [
+          "../assets/web/zolder-ladder-overloop.jpg",
+          "Ladder naar de vliering vanaf de overloop"
+        ],
+        [
+          "../assets/web/zolder-knieschotkasten.jpg",
+          "Knieschotkasten onder een dakraam"
+        ],
+        [
+          "../assets/web/zolder-schuifdeuren.jpg",
+          "Kasten met schuifdeuren onder het schuine dak"
+        ],
+        [
+          "../assets/web/zolder-plafond-spots.jpg",
+          "Afgewerkte zolder met spots en luik"
+        ],
+        [
+          "../assets/web/zolder-vlizotrap.jpg",
+          "Vlizotrap naar de vliering"
+        ],
         [
           "../assets/web/zolder-vliering-voor.jpg",
           "Vóór: zolder als wasruimte en opslag"
@@ -272,6 +316,26 @@
       ],
       "galerij": [
         [
+          "../assets/web/overkapping-glas.jpg",
+          "Overkapping met glazen schuifwanden"
+        ],
+        [
+          "../assets/web/carport-douglas-dak.jpg",
+          "Carport in Douglas met plat dak"
+        ],
+        [
+          "../assets/web/overkapping-vlonder.jpg",
+          "Overkapping met vlonder tegen de woning"
+        ],
+        [
+          "../assets/web/overkapping-zijpad.jpg",
+          "Lange overkapping langs de zijgevel"
+        ],
+        [
+          "../assets/web/tuinhuis-douglas.jpg",
+          "Tuinhuis in Douglas met deur en raam"
+        ],
+        [
           "../assets/web/carport-douglas.jpg",
           "Vrijstaande carport in Douglas hout"
         ],
@@ -290,10 +354,6 @@
         [
           "../assets/web/tuinhuis-deuren.jpg",
           "Tuinhuis met openslaande deuren"
-        ],
-        [
-          "../assets/web/vlonder-lichtkoepels.jpg",
-          "Dakvlak met lichtkoepels"
         ]
       ],
       "review": [
@@ -386,6 +446,34 @@
       ],
       "galerij": [
         [
+          "../assets/web/dakraam-inbouw.jpg",
+          "Inbouw: het dakraam gaat erin"
+        ],
+        [
+          "../assets/web/dakraam-sparing.jpg",
+          "De sparing in het dak is gemaakt"
+        ],
+        [
+          "../assets/web/dakraam-open.jpg",
+          "Nieuw dakraam, helemaal open"
+        ],
+        [
+          "../assets/web/dakraam-drie.jpg",
+          "Drie dakramen naast elkaar, afgewerkt"
+        ],
+        [
+          "../assets/web/dakraam-afwerking.jpg",
+          "Strak afgewerkte dagkanten"
+        ],
+        [
+          "../assets/web/dakraam-buiten.jpg",
+          "Het dakraam van buiten, netjes in de pannen"
+        ],
+        [
+          "../assets/web/lichtkoepels-dak.jpg",
+          "Twee lichtkoepels in een plat dak"
+        ],
+        [
           "../assets/web/dakraam-dubbel.jpg",
           "Dubbel dakraam in een zolderkamer"
         ],
@@ -396,10 +484,6 @@
         [
           "../assets/eigen/web/zolder-na.jpg",
           "Afgewerkte zolder met dakraam"
-        ],
-        [
-          "../assets/web/vlonder-lichtkoepels.jpg",
-          "Lichtkoepels in een plat dak"
         ]
       ],
       "faq": [
@@ -491,6 +575,34 @@
       ],
       "galerij": [
         [
+          "../assets/web/timmer-regelwerk-wand.jpg",
+          "Regelwerk voor nieuwe wanden"
+        ],
+        [
+          "../assets/web/timmer-stalen-balk.jpg",
+          "Doorbraak met stalen balk, gestempeld"
+        ],
+        [
+          "../assets/web/timmer-plafond-spots.jpg",
+          "Verlaagd plafond met inbouwspots"
+        ],
+        [
+          "../assets/web/timmer-lamellen-hanglampen.jpg",
+          "Lamellenwand met hanglampen"
+        ],
+        [
+          "../assets/web/timmer-haardwand.jpg",
+          "Haardwand met lamellen"
+        ],
+        [
+          "../assets/web/timmer-stalen-deur.jpg",
+          "Stalen binnendeur geplaatst"
+        ],
+        [
+          "../assets/web/timmer-wasmachinekast.jpg",
+          "Inbouwkast voor wasmachine en droger"
+        ],
+        [
           "../assets/web/verlaagd-plafond.jpg",
           "Regelwerk voor een verlaagd plafond"
         ],
@@ -501,10 +613,6 @@
         [
           "../assets/web/timmerwerk-lamellenwand.jpg",
           "Lamellenwand in de woonkamer"
-        ],
-        [
-          "../assets/web/verbouwing-ruwbouw.jpg",
-          "Ruwbouw tijdens een verbouwing"
         ],
         [
           "../assets/eigen/web/doorbraak-sloop.jpg",
@@ -609,6 +717,30 @@
         ]
       ],
       "galerij": [
+        [
+          "../assets/web/fundering-bekisting.jpg",
+          "Bekisting en wapening voor een fundering"
+        ],
+        [
+          "../assets/web/fundering-stroken.jpg",
+          "Funderingsstroken uitgezet en bekist"
+        ],
+        [
+          "../assets/web/fundering-poer.jpg",
+          "Wapening voor een betonpoer"
+        ],
+        [
+          "../assets/web/fundering-tempex.jpg",
+          "Tempex-fundering ligt klaar"
+        ],
+        [
+          "../assets/web/fundering-wapening-tuin.jpg",
+          "Wapening voor een betonplaat in de tuin"
+        ],
+        [
+          "../assets/web/fundering-plaat-gestort.jpg",
+          "Gestorte betonplaat, klaar om uit te harden"
+        ],
         [
           "../assets/web/betonplaat-wapening.jpg",
           "Wapening ligt klaar, het storten begint"
@@ -721,12 +853,32 @@
       ],
       "galerij": [
         [
-          "../assets/eigen/web/badkamer-afgewerkt.jpg",
-          "Badkamer met nieuw tegelwerk"
+          "../assets/web/onderhoud-douche.jpg",
+          "Douche met nieuw tegelwerk"
         ],
         [
-          "../assets/web/zolder-vliering-na.jpg",
-          "Geïsoleerde en afgewerkte zolder"
+          "../assets/web/onderhoud-toilet.jpg",
+          "Toilet opnieuw betegeld"
+        ],
+        [
+          "../assets/web/onderhoud-toilet-tegels.jpg",
+          "Tegelwerk in uitvoering"
+        ],
+        [
+          "../assets/web/onderhoud-toilet-voorzetwand.jpg",
+          "Voorzetwand voor een hangend toilet"
+        ],
+        [
+          "../assets/web/onderhoud-badkamer-tegels.jpg",
+          "Badkamer tijdens het tegelen"
+        ],
+        [
+          "../assets/web/onderhoud-hal-tegels.jpg",
+          "Hal met nieuwe tegelvloer"
+        ],
+        [
+          "../assets/web/onderhoud-schuur.jpg",
+          "Schuur aan de achtergevel opgeknapt"
         ],
         [
           "../assets/eigen/web/woonkamer-verbouwing.jpg",
@@ -822,20 +974,40 @@
       ],
       "galerij": [
         [
-          "../assets/web/vliering-constructie.jpg",
-          "Houtskeletconstructie in opbouw"
+          "../assets/web/nieuwbouw-bekisting.jpg",
+          "Bekisting voor een betonwand met steiger"
         ],
         [
-          "../assets/eigen/web/vloer-staalbalken-ploeg.jpg",
-          "Vloerconstructie met stalen balken"
+          "../assets/web/nieuwbouw-bekisting-schoren.jpg",
+          "Bekisting met schoren, klaar om te storten"
         ],
         [
-          "../assets/web/verbouwing-ruwbouw.jpg",
-          "Ruwbouw"
+          "../assets/web/nieuwbouw-wand-steiger.jpg",
+          "Betonwand in aanbouw"
         ],
         [
-          "../assets/eigen/web/beton-woonhuis-droog.jpg",
-          "Afgewerkt terras bij een nieuwbouwwoning"
+          "../assets/web/nieuwbouw-houtconstructie.jpg",
+          "Houtconstructie met trap naar boven"
+        ],
+        [
+          "../assets/web/nieuwbouw-balklaag.jpg",
+          "Balklaag en plafond in een nieuwe woning"
+        ],
+        [
+          "../assets/web/nieuwbouw-hsb-wand.jpg",
+          "HSB-wand met isolatie"
+        ],
+        [
+          "../assets/web/nieuwbouw-ruwe-vloer.jpg",
+          "Ruwe vloer, klaar voor de afwerking"
+        ],
+        [
+          "../assets/web/nieuwbouw-spanten.jpg",
+          "Nieuwe woning met houten spanten"
+        ],
+        [
+          "../assets/web/nieuwbouw-oplevering.jpg",
+          "Klaar voor oplevering: spanten en gevlinderde vloer"
         ]
       ],
       "faq": [
