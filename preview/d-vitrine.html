@@ -121,18 +121,10 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
   text-transform:uppercase;color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;
   border-radius:999px;opacity:calc(1 - var(--p,0) * 2)}
 
-/* 06 fundering — "laser": de groene laserlijn trekt zich vanaf het statief over de wanden */
-.v-fundering img.beeld{animation:kenburns 18s ease-in-out infinite alternate}
-.v-fundering .laser{position:absolute;z-index:3;left:0;right:0;top:42.5%;height:2px;
-  background:linear-gradient(90deg,transparent,rgba(80,255,120,.95) 8%,rgba(80,255,120,.95) 92%,transparent);
-  box-shadow:0 0 10px rgba(80,255,120,.9);transform:scaleX(0);transform-origin:5% 50%;
-  transition:transform 1.6s var(--ease) .5s;animation:laserpuls 2.4s ease-in-out infinite}
-.vitrine.in .laser{transform:scaleX(1)}
-@keyframes laserpuls{50%{opacity:.6}}
-.v-fundering .laserlabel{position:absolute;z-index:4;right:6%;top:calc(42.5% - 38px);font-size:11px;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(20,19,15,.6);padding:5px 10px;border-radius:999px;
-  opacity:0;transition:opacity .6s ease 1.8s}
-.vitrine.in .laserlabel{opacity:1}
+/* 06 fundering — "uitgraven": tijdens het scrollen wordt de sleuf van boven naar beneden zichtbaar */
+.v-fundering img.beeld{clip-path:inset(0 0 calc(100% - var(--p,0) * 100%) 0)}
+.v-fundering .snijlijn{position:absolute;left:0;right:0;z-index:3;top:calc(var(--p,0) * 100%);height:1px;
+  background:rgba(255,255,255,.8);box-shadow:0 0 14px rgba(255,255,255,.7);opacity:calc(1 - var(--p,0))}
 /* ---------- chaos-band ---------- */
 /* de band is 2,4 schermen hoog; het beeld staat vast (sticky) terwijl de overgang loopt */
 .chaos{height:240vh;overflow:visible}
@@ -234,7 +226,7 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
       <!-- 04 VELUX -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-velux" style="--bg:#7394b4;--tag:#e2ecf5">
-          <img class="beeld" src="../assets/render/echt/web/velux.jpg" alt="Nieuw dakraam in een verbouwde zolder">
+          <img class="beeld" src="../assets/render/echt/web/velux.jpg" alt="Twee nieuwe dakramen naast elkaar in een zolder">
           <div class="licht"></div>
           <div class="badge"><svg class="ring" viewBox="0 0 62 62"><defs><path id="rv" d="M31,31 m-23,0 a23,23 0 1,1 46,0 a23,23 0 1,1 -46,0"/></defs><text><textPath href="#rv">VELUX · MONTAGEPARTNER · ERKEND · </textPath></text></svg>
             <svg class="icoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l9-8 9 8M8 9.5l4-3 4 3V14H8z M12 6.5V14"/></svg></div>
@@ -264,13 +256,14 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
       <!-- 06 FUNDERING -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-fundering" style="--bg:#474e5b;--tag:#e5e8eb">
-          <img class="beeld" src="../assets/render/echt/web/fundering.jpg" alt="Nieuwe vloerconstructie met stalen balken tijdens een verbouwing">
-          <span class="laser"></span><span class="laserlabel">Waterpas tot op de millimeter</span>
+          <img class="beeld" src="../assets/render/echt/web/fundering.jpg" alt="Funderingssleuf met wapening, bekisting en palen naast een woning">
+          <span class="snijlijn"></span>
+          <span class="laag" style="--x:58%;--y:46%;--d:.4s"><i></i><b>Wapening &amp; bekisting</b></span>
           <span class="tag" style="left:auto;right:7%">degelijk voorbereid</span>
         </div></div>
         <div class="tekst"><span class="nr">06 — Funderingen</span>
           <h3>Het fundament onder al het werk.</h3>
-          <p>Funderingen en vloerconstructies — ook bij grote verbouwingen met stalen balken. Degelijk voorbereid, zodat alles erboven goed staat.</p>
+          <p>Strokenfunderingen, palen en vloerconstructies — voor een aanbouw, uitbouw of grote verbouwing. Degelijk voorbereid, zodat alles erboven goed staat.</p>
           <ul class="werk"><li>Funderingen</li><li>Vloerconstructies</li><li>Stalen balken</li><li>Grondwerk</li></ul>
           <a class="pil" href="#">Vraag advies over funderingen</a></div>
       </article>
@@ -322,7 +315,7 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
 
   // Scroll-gestuurde effecten
   var vakken=[].slice.call(document.querySelectorAll('.vak'));
-  var carport=document.querySelector('.v-carport'), timmer=document.querySelector('.v-timmer');
+  var carport=document.querySelector('.v-carport'), timmer=document.querySelector('.v-timmer'), fund=document.querySelector('.v-fundering');
   var chaos=document.querySelector('.chaos .scene'), stap=document.getElementById('stap');
   var krul=document.getElementById('krulpad'), krulLen=krul.getTotalLength(), krulMax=0;
   krul.style.strokeDasharray=krulLen; krul.style.strokeDashoffset=krulLen;
@@ -343,6 +336,8 @@ section{position:relative;background:var(--vlak);color:var(--inkt);overflow:hidd
     // 03 carport: cirkel groeit van 14% tot het hele vlak
     var pc=rm?1:voortgang(carport,.95,.3);
     carport.style.setProperty('--p',pc.toFixed(3)); carport.style.setProperty('--r',(14+pc*62).toFixed(1)+'%');
+    // 06 fundering: sleuf wordt van boven naar beneden zichtbaar
+    fund.style.setProperty('--p',(rm?1:voortgang(fund,.95,.3)).toFixed(3));
     // 05 timmerwerk: van detail naar de hele kamer
     timmer.style.setProperty('--p',(rm?1:voortgang(timmer,.95,.25)).toFixed(3));
     // chaos-band: de afgewerkte kamer schuift over het puin

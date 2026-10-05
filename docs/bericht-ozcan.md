@@ -21,7 +21,10 @@ In bijna alle reviews noemen klanten jou bij naam. Daarom wil ik je op de site z
 goede foto van jou, het liefst aan het werk of voor een afgerond project. Dat maakt het echt
 persoonlijk.
 
-**4. Eén of twee "voor en na"**
+**4. Een fundering**
+Heb je een foto van een fundering die je hebt gemaakt (sleuf met wapening en bekisting, of net gestort)? Dan kan ik die bij "Funderingen" laten zien.
+
+**5. Eén of twee "voor en na"**
 Als je van een klus toevallig een foto van de begin- én de eindsituatie hebt (dezelfde ruimte),
 die werken op de site het allersterkst.
 
