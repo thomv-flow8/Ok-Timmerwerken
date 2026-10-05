@@ -13,7 +13,16 @@
   --vlak:#ffffff; --inkt:#14130f; --zacht:#6b6762; --rand:#e9e7e1;
   --kaart:#ffffff; --f:'Inter',system-ui,sans-serif; --serif:'Instrument Serif',Georgia,serif;
   --max:1180px; --ease:cubic-bezier(.62,.05,0,1);
+  --bounce:cubic-bezier(.3,1.42,.5,1);   /* korte overshoot bij het openen */
 }
+*{cursor:none}  /* echte cursor verbergen; de stip neemt het over (alleen desktop) */
+@media(hover:none){*{cursor:auto}}
+/* custom cursor */
+.cur{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:#fff;
+  pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;
+  transition:width .28s var(--ease),height .28s var(--ease),opacity .3s;will-change:transform}
+.cur.groot{width:54px;height:54px;background:rgba(255,255,255,.9)}
+@media(hover:none){.cur{display:none}}
 body{background:var(--vlak);color:var(--inkt);font-family:var(--f);line-height:1.5;
   -webkit-font-smoothing:antialiased;padding:60px 0}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
@@ -24,26 +33,26 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400}
 .kop p.lead{margin-top:16px;max-width:56ch;color:var(--zacht);font-weight:300;font-size:17px;margin-bottom:46px}
 
 /* ---- rij: folder-kaart + opsomming, om en om ---- */
-.rij{display:grid;grid-template-columns:minmax(300px,400px) 1fr;gap:64px;align-items:center;padding:46px 0}
-.rij.om{grid-template-columns:1fr minmax(300px,400px)}   /* kaart rechts, zelfde breedte */
-.rij.om .kolom-kaart{grid-column:2}
-.rij.om .kolom-tekst{grid-column:1}
+.rij{display:flex;gap:64px;align-items:center;padding:46px 0}
+.rij.om{flex-direction:row-reverse}          /* kaart rechts, tekst links */
+.kolom-kaart{flex:0 0 clamp(300px,33vw,400px)}   /* altijd dezelfde kaartbreedte */
+.kolom-tekst{flex:1;min-width:0}
 
 /* ---- de folder-kaart ---- */
 .folder{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;
   background:#0e0e0c;cursor:pointer;box-shadow:0 10px 40px rgba(0,0,0,.14)}
 .folder .visual{position:absolute;inset:0;overflow:hidden}
 .folder .visual img{width:100%;height:100%;object-fit:cover;
-  transform:scale(1.12) translateY(7%);transition:transform .75s var(--ease);filter:brightness(.97)}
+  transform:scale(1.12) translateY(8%);transition:transform .85s var(--bounce);filter:brightness(.97)}
 .folder:hover .visual img,.folder.open .visual img{transform:scale(1) translateY(0)}
 
 /* voorkant van de map: staat iets open en schuift bij hover verder omlaag.
    clip-path = het folder-tabje bovenaan */
-.folder .face{position:absolute;inset:0;z-index:2;transform:translateY(8%);
+.folder .face{position:absolute;inset:0;z-index:2;transform:translateY(16%);
   background:linear-gradient(165deg,#272723 0%,#15140f 72%);
-  transition:transform .75s var(--ease);
+  transition:transform .85s var(--bounce);
   clip-path:polygon(0 0, 45% 0, 50% 11%, 100% 11%, 100% 100%, 0 100%)}
-.folder:hover .face,.folder.open .face{transform:translateY(52%)}
+.folder:hover .face,.folder.open .face{transform:translateY(62%)}
 .folder .nr{position:absolute;top:24px;left:28px;z-index:3;font-family:var(--serif);
   font-style:italic;font-size:46px;line-height:1;color:#fff}
 .folder .pijl{position:absolute;top:32px;right:28px;z-index:3;color:#fff;opacity:.85;font-size:20px}
@@ -65,10 +74,9 @@ em.serif{font-family:var(--serif);font-style:italic;font-weight:400}
   border-top:1px solid var(--rand);break-inside:avoid}
 .werk li::before{content:'';position:absolute;left:0;top:19px;width:11px;height:1px;background:var(--inkt)}
 
-@media(max-width:820px){
-  .rij{grid-template-columns:1fr;gap:28px;padding:34px 0}
-  .rij.om .kolom-kaart{order:0}
-  .folder{max-width:360px;margin:0 auto}
+@media(max-width:760px){
+  .rij,.rij.om{flex-direction:column;gap:26px;padding:34px 0}
+  .kolom-kaart{flex:0 0 auto;width:100%;max-width:360px;margin:0 auto}
   .werk{columns:1}
 }
 @media(prefers-reduced-motion:reduce){ .folder .face,.folder .visual img{transition:none} }
@@ -138,6 +146,25 @@ document.querySelectorAll('.folder').forEach(function(f){
   f.addEventListener('click', function(){ f.classList.toggle('open'); });
   f.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); f.classList.toggle('open'); } });
 });
+
+// custom cursor: stip die de muis volgt en vergroot boven interactieve elementen
+(function(){
+  if(window.matchMedia('(hover:none)').matches) return;
+  var cur=document.createElement('div'); cur.className='cur'; document.body.appendChild(cur);
+  var mx=innerWidth/2, my=innerHeight/2, cx=mx, cy=my, zichtbaar=false;
+  addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY;
+    if(!zichtbaar){ zichtbaar=true; cur.style.opacity=1; } },{passive:true});
+  addEventListener('mouseleave',function(){ cur.style.opacity=0; });
+  (function loop(){ cx+=(mx-cx)*.2; cy+=(my-cy)*.2;
+    cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
+    requestAnimationFrame(loop); })();
+  var sel='a,button,.folder,.knop,img,input,textarea,[role=button]';
+  document.addEventListener('mouseover',function(e){ if(e.target.closest&&e.target.closest(sel)) cur.classList.add('groot'); });
+  document.addEventListener('mouseout',function(e){
+    var naar=e.relatedTarget;
+    if(e.target.closest&&e.target.closest(sel) && !(naar&&naar.closest&&naar.closest(sel))) cur.classList.remove('groot');
+  });
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OK Timmerwerken — hero-animatie (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--f:'Inter',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;
+  --ease:cubic-bezier(.62,.05,0,1)}
+body{background:#0e0e0c;color:#fff;font-family:var(--f);-webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero{max-width:1180px;margin:0 auto;padding:0 32px;width:100%;
+  display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
+.tekst .oog{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-bottom:22px}
+.tekst h1{font-size:clamp(40px,5.2vw,74px);font-weight:700;letter-spacing:-.035em;line-height:1.0}
+.tekst h1 em{font-family:var(--serif);font-style:italic;font-weight:400}
+.tekst p.lead{margin-top:22px;max-width:46ch;color:rgba(255,255,255,.65);font-weight:300;
+  font-size:17px;line-height:1.6}
+/* het wisselende dienst-label */
+.nu{margin-top:34px;height:30px;display:flex;align-items:center;gap:12px}
+.nu .punt{width:8px;height:8px;border-radius:50%;background:#fff;flex:none}
+.nu .label{font-size:15px;font-weight:500;letter-spacing:.01em;position:relative}
+.nu .label span{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;transform:translateY(6px);
+  transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.nu .label span.aan{opacity:1;transform:none}
+.acties{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.knop{border-radius:9999px;padding:13px 24px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.knop.licht{background:#f6f5ef;color:#000}
+.knop.lijn{border:1px solid rgba(255,255,255,.4);color:#fff}
+
+/* het huis */
+.huisvak{position:relative}
+svg.huis{width:100%;height:auto;display:block;overflow:visible}
+svg.huis .lijn{fill:none;stroke:rgba(255,255,255,.34);stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:1;animation:teken 1.5s var(--ease) forwards}
+svg.huis .vlak{fill:rgba(255,255,255,0);transition:fill .5s var(--ease)}
+/* dienstgroepen lichten op */
+svg.huis .dienst{transition:stroke .5s var(--ease),stroke-width .5s var(--ease),opacity .5s}
+svg.huis .dienst .lijn{stroke:rgba(255,255,255,.26)}
+svg.huis .dienst.actief .lijn{stroke:#fff;stroke-width:3.2;stroke-dashoffset:0;animation:none}
+svg.huis .dienst.actief .vlak{fill:rgba(255,255,255,.06)}
+@keyframes teken{to{stroke-dashoffset:0}}
+
+@media(max-width:860px){
+  body{align-items:flex-start;padding-top:80px}
+  .hero{grid-template-columns:1fr;gap:30px}
+  .huisvak{order:-1;max-width:460px}
+}
+@media(prefers-reduced-motion:reduce){
+  svg.huis .lijn{animation:none;stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="tekst">
+    <div class="oog">Timmer- &amp; betonwerk · Gorinchem</div>
+    <h1>Alles aan uw huis,<br>onder <em>één dak</em>.</h1>
+    <p class="lead">Van de fundering tot het dakraam — gevlinderde betonvloeren, vlieringen,
+    carports, Velux-dakramen en compleet timmerwerk. Eén vaste ploeg, één aanspreekpunt.</p>
+    <div class="nu">
+      <span class="punt"></span>
+      <span class="label" id="label"></span>
+    </div>
+    <div class="acties">
+      <a class="knop licht" href="#">Vraag vrijblijvend advies</a>
+      <a class="knop lijn" href="#">Bekijk het werk</a>
+    </div>
+  </div>
+
+  <div class="huisvak">
+    <svg class="huis" viewBox="0 0 860 520" role="img" aria-label="Illustratie van een huis met alle werkzaamheden">
+      <!-- grond -->
+      <path class="lijn" style="animation-delay:.0s" d="M40,430 H820"/>
+
+      <!-- CARPORT / OVERKAPPING -->
+      <g class="dienst" data-naam="Carport, veranda &amp; overkapping">
+        <path class="lijn" style="animation-delay:.9s" d="M150,300 H376"/>
+        <path class="lijn" style="animation-delay:.95s" d="M150,292 H376"/>
+        <path class="lijn" style="animation-delay:1.0s" d="M170,300 V430"/>
+        <path class="lijn" style="animation-delay:1.05s" d="M356,300 V430"/>
+      </g>
+
+      <!-- HUIS-OMTREK (basis) -->
+      <path class="lijn" style="animation-delay:.2s" d="M380,430 V220 L520,110 L660,220 V430"/>
+
+      <!-- VLIERING / ZOLDER (zolderverdieping onder het dak) -->
+      <g class="dienst" data-naam="Vliering &amp; zolderverbouwing">
+        <path class="lijn" style="animation-delay:.6s" d="M380,220 H660"/>
+        <path class="lijn vlak-pad" style="animation-delay:.65s" d="M408,220 V160 L520,160 M520,160 L520,130"/>
+      </g>
+
+      <!-- DAKRAAM (VELUX) op de rechter dakschuin -->
+      <g class="dienst" data-naam="Dakramen (Velux)">
+        <path class="lijn" style="animation-delay:1.15s" d="M566,150 L600,124 L620,156 L586,182 Z"/>
+        <path class="lijn" style="animation-delay:1.2s" d="M576,166 L610,140"/>
+      </g>
+
+      <!-- BETONVLOER (begane-grond vloer + verdiepingsvloer) -->
+      <g class="dienst" data-naam="Betonvloeren">
+        <path class="lijn" style="animation-delay:.5s" d="M380,320 H660"/>
+        <path class="lijn" style="animation-delay:.55s" d="M380,424 H660"/>
+      </g>
+
+      <!-- TIMMERWERK & AFBOUW (deur, kozijnen, ramen) -->
+      <g class="dienst" data-naam="Timmerwerk &amp; afbouw">
+        <path class="lijn" style="animation-delay:1.3s" d="M498,430 V362 H542 V430"/>
+        <path class="lijn" style="animation-delay:1.35s" d="M410,356 H452 V400 H410 Z"/>
+        <path class="lijn" style="animation-delay:1.4s" d="M588,356 H630 V400 H588 Z"/>
+        <path class="lijn" style="animation-delay:1.45s" d="M410,250 H452 V294 H410 Z"/>
+        <path class="lijn" style="animation-delay:1.5s" d="M588,250 H630 V294 H588 Z"/>
+      </g>
+
+      <!-- FUNDERING (onder de grond, arcering) -->
+      <g class="dienst" data-naam="Funderingen">
+        <path class="lijn" style="animation-delay:.3s" d="M380,430 V462 H660 V430"/>
+        <path class="lijn" style="animation-delay:.35s" d="M398,462 L414,430 M430,462 L446,430 M462,462 L478,430 M494,462 L510,430 M526,462 L542,430 M558,462 L574,430 M590,462 L606,430 M622,462 L638,430"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<script>
+(function(){
+  var groepen = [...document.querySelectorAll('.dienst')];
+  // volgorde van onder naar boven: fundering, betonvloer, carport, vliering, dakraam, timmerwerk
+  var volgorde = ['Funderingen','Betonvloeren','Carport, veranda & overkapping',
+                  'Vliering & zolderverbouwing','Dakramen (Velux)','Timmerwerk & afbouw'];
+  var opNaam = {};
+  groepen.forEach(function(g){ opNaam[g.getAttribute('data-naam')] = g; });
+
+  // labels als losse spans die in/uit faden
+  var labelHost = document.getElementById('label');
+  var spans = volgorde.map(function(n){
+    var s=document.createElement('span'); s.textContent=n; labelHost.appendChild(s); return s;
+  });
+  // breedte van het label-vak op de langste naam
+  labelHost.style.minWidth = Math.max.apply(null, volgorde.map(function(n){return n.length;})) * 8.3 + 'px';
+
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0;
+  function toon(n){
+    groepen.forEach(function(g){ g.classList.remove('actief'); });
+    spans.forEach(function(s){ s.classList.remove('aan'); });
+    var g = opNaam[volgorde[n]]; if(g) g.classList.add('actief');
+    spans[n].classList.add('aan');
+  }
+  // start na de tekenanimatie
+  setTimeout(function(){
+    toon(0);
+    if(rm) return;
+    setInterval(function(){ i=(i+1)%volgorde.length; toon(i); }, 2300);
+  }, rm ? 0 : 1700);
+})();
+</script>
+</body>
+</html>
