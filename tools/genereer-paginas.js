@@ -104,14 +104,29 @@ const extraStijl = `<style>
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{color:var(--zacht);font-weight:300;line-height:1.7;padding:0 44px 26px 0;max-width:68ch}
 
-/* andere diensten */
-.andere{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:40px}
-.andere a{display:flex;align-items:center;gap:14px;padding:20px 22px;border:1px solid var(--rand);border-radius:12px;
-  background:var(--kaart);transition:transform .3s var(--ease),box-shadow .3s}
-.andere a:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(20,19,15,.4)}
-.andere i{width:14px;height:14px;border-radius:50%;background:var(--kl);flex:none}
-.andere span{font-weight:600;font-size:15px;flex:1}
-.andere a::after{content:'→';color:var(--zacht)}
+/* terugknop naar home (zwart bolletje met witte pijl) */
+.terug{width:40px;height:40px;border-radius:50%;background:#14130f;color:#fff;display:grid;place-items:center;flex:none;
+  transition:transform .25s var(--ease),background .25s}
+.terug:hover{transform:translateX(-3px);background:#2a2824}
+.terug svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-in .merk{margin-right:auto}
+
+/* andere diensten: beeldkaarten met dienstkleur */
+.andere{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
+.andere a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
+  color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
+.andere a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  clip-path:circle(38% at 50% 40%);transition:clip-path .8s var(--ease),transform .8s var(--ease)}
+.andere a.kaart:hover img{clip-path:circle(80% at 50% 40%);transform:scale(1.04)}
+.andere a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.72) 0%,rgba(10,10,8,0) 48%)}
+.andere .kaart .knr{position:absolute;top:14px;left:16px;z-index:1;font-family:var(--serif);font-style:italic;font-size:26px}
+.andere .kaart .knaam{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
+.andere .kaart .knaam b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.andere .kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
+.andere .kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
+.andere .kaart:hover .knaam span::after{transform:translateX(4px)}
+@media(max-width:1000px){.andere{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.andere{grid-template-columns:1fr 1fr}}
 
 /* afsluitende oproep */
 .oproep{padding:clamp(80px,10vw,130px) 0}
@@ -156,7 +171,7 @@ ${extraStijl}
 </head>
 <body>
 
-${naarHoofd(kopdeel)}
+${naarHoofd(kopdeel).replace('<div class="nav-in">\n    <a class="merk"', '<div class="nav-in">\n    <a class="terug" href="d-lijn.html" aria-label="Terug naar de homepage" title="Terug naar home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>\n    <a class="merk"')}
 ${body}
 
 ${naarHoofd(footer)}
@@ -234,7 +249,11 @@ function stappenRaster(items, cta) {
 function dienstPagina(d, alle) {
   const galerij = d.galerij.map(([src, bijschrift]) => `      <figure data-kantel><img src="${src}" alt="${esc(bijschrift)}" loading="lazy"><figcaption>${esc(bijschrift)}</figcaption></figure>`).join('\n');
   const faq = d.faq.map(([v, a]) => `      <details><summary>${esc(v)}</summary><p>${esc(a)}</p></details>`).join('\n');
-  const andere = alle.filter((x) => x.slug !== d.slug).map((x) => `      <a href="dienst-${x.slug}.html" style="--kl:${x.kleur}"><i></i><span>${esc(x.naam)}</span></a>`).join('\n');
+  const andere = alle.filter((x) => x.slug !== d.slug).map((x) => `      <a class="kaart" href="dienst-${x.slug}.html" style="--kl:${x.kleur}" data-kantel>
+        <img src="${x.beeld}" alt="" loading="lazy">
+        <span class="knr">${x.nr}</span>
+        <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk dienst</span></span>
+      </a>`).join('\n');
   const review = d.review ? `
 <section class="fris">
   <div class="kolommen"></div>

@@ -54,8 +54,28 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .merk{display:flex;align-items:center;gap:10px;margin-right:auto;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;font-size:14px}
 .merk svg{height:26px;width:auto;color:var(--inkt)}
-.nav-links{display:flex;gap:26px;font-size:14px;font-weight:500}
-.nav-links a{color:var(--zacht)}.nav-links a:hover{color:var(--inkt)}
+.nav-links{display:flex;gap:4px;font-size:14px;font-weight:500;align-items:center}
+.nav-links > a,.nav-sub > a{color:var(--zacht);padding:8px 15px;border-radius:999px;border:1px solid transparent;
+  display:inline-flex;align-items:center;gap:6px;transition:border-color .25s,color .25s}
+.nav-links > a:hover,.nav-sub > a:hover,.nav-sub:focus-within > a{color:var(--inkt);border-color:var(--inkt)}
+.nav-sub{position:relative}
+.nav-sub > a svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .3s var(--ease)}
+.nav-sub:hover > a svg,.nav-sub:focus-within > a svg{transform:rotate(180deg)}
+/* submenu met alle diensten, met klein beeld per dienst */
+.submenu{position:absolute;top:calc(100% + 14px);left:50%;width:560px;transform:translate(-50%,8px);
+  display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:12px;background:#fff;border:1px solid var(--rand);
+  border-radius:16px;box-shadow:0 30px 70px -30px rgba(20,19,15,.35);opacity:0;visibility:hidden;
+  transition:opacity .25s var(--ease),transform .3s var(--ease),visibility 0s .3s}
+.submenu::before{content:'';position:absolute;left:0;right:0;top:-16px;height:16px}   /* brug, zodat hover niet wegvalt */
+.nav-sub:hover .submenu,.nav-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translate(-50%,0);
+  transition:opacity .25s var(--ease),transform .3s var(--ease)}
+.submenu a{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;color:var(--inkt);transition:background .2s}
+.submenu a:hover{background:#f5f1ea}
+.submenu img{width:52px;height:52px;border-radius:8px;object-fit:cover;flex:none;outline:3px solid var(--kl);outline-offset:-3px}
+.submenu b{display:block;font-size:14px;font-weight:600}
+.submenu small{display:block;font-size:12px;color:var(--zacht);margin-top:2px}
+.submenu .alle{grid-column:1/-1;justify-content:center;font-size:13px;font-weight:600;color:var(--zacht);
+  border-top:1px solid var(--rand);border-radius:0 0 8px 8px;margin-top:4px;padding-top:12px}
 .knop{display:inline-block;border-radius:9999px;padding:10px 18px;font-size:13px;font-weight:600;
   background:var(--knop-vul);color:var(--knop-inkt);border:1px solid transparent;cursor:pointer}
 .nav-tel{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--inkt)}
@@ -371,7 +391,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .cta-krul path{fill:none;stroke:var(--brons);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .stap-cta::before{background:#fff}
 .stap-cta p{color:rgba(255,255,255,.7)}
-.stap-cta .verder{margin-top:26px;font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+.stap-cta .verder{margin-top:26px;font-size:17px;font-weight:600;display:inline-flex;gap:10px;align-items:center}
 .stap-cta .verder::after{content:'→';transition:transform .3s var(--ease)}
 .stap-cta:hover .verder::after{transform:translateX(4px)}
 
@@ -526,14 +546,29 @@ footer.groot{padding:72px 0 46px}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{color:var(--zacht);font-weight:300;line-height:1.7;padding:0 44px 26px 0;max-width:68ch}
 
-/* andere diensten */
-.andere{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:40px}
-.andere a{display:flex;align-items:center;gap:14px;padding:20px 22px;border:1px solid var(--rand);border-radius:12px;
-  background:var(--kaart);transition:transform .3s var(--ease),box-shadow .3s}
-.andere a:hover{transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(20,19,15,.4)}
-.andere i{width:14px;height:14px;border-radius:50%;background:var(--kl);flex:none}
-.andere span{font-weight:600;font-size:15px;flex:1}
-.andere a::after{content:'→';color:var(--zacht)}
+/* terugknop naar home (zwart bolletje met witte pijl) */
+.terug{width:40px;height:40px;border-radius:50%;background:#14130f;color:#fff;display:grid;place-items:center;flex:none;
+  transition:transform .25s var(--ease),background .25s}
+.terug:hover{transform:translateX(-3px);background:#2a2824}
+.terug svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-in .merk{margin-right:auto}
+
+/* andere diensten: beeldkaarten met dienstkleur */
+.andere{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px}
+.andere a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
+  color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
+.andere a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  clip-path:circle(38% at 50% 40%);transition:clip-path .8s var(--ease),transform .8s var(--ease)}
+.andere a.kaart:hover img{clip-path:circle(80% at 50% 40%);transform:scale(1.04)}
+.andere a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.72) 0%,rgba(10,10,8,0) 48%)}
+.andere .kaart .knr{position:absolute;top:14px;left:16px;z-index:1;font-family:var(--serif);font-style:italic;font-size:26px}
+.andere .kaart .knaam{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
+.andere .kaart .knaam b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.andere .kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
+.andere .kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
+.andere .kaart:hover .knaam span::after{transform:translateX(4px)}
+@media(max-width:1000px){.andere{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.andere{grid-template-columns:1fr 1fr}}
 
 /* afsluitende oproep */
 .oproep{padding:clamp(80px,10vw,130px) 0}
@@ -572,6 +607,7 @@ footer.groot{padding:72px 0 46px}
 </svg>
 <nav class="nav">
   <div class="nav-in">
+    <a class="terug" href="d-lijn.html" aria-label="Terug naar de homepage" title="Terug naar home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
     <a class="merk" href="d-lijn.html">
       <svg viewBox="0 0 100 94" aria-hidden="true" fill="none">
         <path d="M3.5,94 V30.9 L50,4 L96.5,30.9 V94" stroke="currentColor" stroke-width="7" stroke-linejoin="miter" stroke-linecap="butt"/>
@@ -581,7 +617,18 @@ footer.groot{padding:72px 0 46px}
       OK Timmerwerken
     </a>
     <div class="nav-links">
-      <a href="d-lijn.html#diensten">Diensten</a>
+      <div class="nav-sub">
+        <a href="d-lijn.html#diensten" aria-haspopup="true">Diensten<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></a>
+        <div class="submenu" role="menu">
+          <a href="dienst-betonvloeren.html" style="--kl:#7394b4"><img src="../assets/render/echt/web/beton.jpg" alt="" loading="lazy"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
+          <a href="dienst-zolder.html" style="--kl:#9cb189"><img src="../assets/render/echt/web/zolder-na.jpg" alt="" loading="lazy"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
+          <a href="dienst-carport.html" style="--kl:#d87f57"><img src="../assets/render/echt/web/carport.jpg" alt="" loading="lazy"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
+          <a href="dienst-dakramen.html" style="--kl:#7394b4"><img src="../assets/render/echt/web/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
+          <a href="dienst-timmerwerk.html" style="--kl:#9cb189"><img src="../assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
+          <a href="dienst-funderingen.html" style="--kl:#474e5b"><img src="../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
+          <a class="alle" href="d-lijn.html#diensten">Alle diensten op een rij →</a>
+        </div>
+      </div>
       <a href="d-lijn.html#reviews">Reviews</a>
       <a href="over.html">Over ons</a>
       <a href="d-lijn.html#contact">Contact</a>
@@ -764,11 +811,31 @@ footer.groot{padding:72px 0 46px}
       <h2>Andere diensten.</h2>
     </div>
     <div class="andere op">
-      <a href="dienst-betonvloeren.html" style="--kl:#7394b4"><i></i><span>Betonvloeren</span></a>
-      <a href="dienst-zolder.html" style="--kl:#9cb189"><i></i><span>Vliering &amp; zolder</span></a>
-      <a href="dienst-carport.html" style="--kl:#d87f57"><i></i><span>Carport &amp; overkapping</span></a>
-      <a href="dienst-dakramen.html" style="--kl:#7394b4"><i></i><span>Dakramen (Velux)</span></a>
-      <a href="dienst-timmerwerk.html" style="--kl:#9cb189"><i></i><span>Timmerwerk &amp; afbouw</span></a>
+      <a class="kaart" href="dienst-betonvloeren.html" style="--kl:#7394b4" data-kantel>
+        <img src="../assets/render/echt/web/beton.jpg" alt="" loading="lazy">
+        <span class="knr">01</span>
+        <span class="knaam"><b>Betonvloeren</b><span>Bekijk dienst</span></span>
+      </a>
+      <a class="kaart" href="dienst-zolder.html" style="--kl:#9cb189" data-kantel>
+        <img src="../assets/render/echt/web/zolder-na.jpg" alt="" loading="lazy">
+        <span class="knr">02</span>
+        <span class="knaam"><b>Vliering &amp; zolder</b><span>Bekijk dienst</span></span>
+      </a>
+      <a class="kaart" href="dienst-carport.html" style="--kl:#d87f57" data-kantel>
+        <img src="../assets/render/echt/web/carport.jpg" alt="" loading="lazy">
+        <span class="knr">03</span>
+        <span class="knaam"><b>Carport &amp; overkapping</b><span>Bekijk dienst</span></span>
+      </a>
+      <a class="kaart" href="dienst-dakramen.html" style="--kl:#7394b4" data-kantel>
+        <img src="../assets/render/echt/web/velux.jpg" alt="" loading="lazy">
+        <span class="knr">04</span>
+        <span class="knaam"><b>Dakramen (Velux)</b><span>Bekijk dienst</span></span>
+      </a>
+      <a class="kaart" href="dienst-timmerwerk.html" style="--kl:#9cb189" data-kantel>
+        <img src="../assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy">
+        <span class="knr">05</span>
+        <span class="knaam"><b>Timmerwerk &amp; afbouw</b><span>Bekijk dienst</span></span>
+      </a>
     </div>
   </div>
 </section>

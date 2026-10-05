@@ -52,8 +52,28 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .merk{display:flex;align-items:center;gap:10px;margin-right:auto;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;font-size:14px}
 .merk svg{height:26px;width:auto;color:var(--inkt)}
-.nav-links{display:flex;gap:26px;font-size:14px;font-weight:500}
-.nav-links a{color:var(--zacht)}.nav-links a:hover{color:var(--inkt)}
+.nav-links{display:flex;gap:4px;font-size:14px;font-weight:500;align-items:center}
+.nav-links > a,.nav-sub > a{color:var(--zacht);padding:8px 15px;border-radius:999px;border:1px solid transparent;
+  display:inline-flex;align-items:center;gap:6px;transition:border-color .25s,color .25s}
+.nav-links > a:hover,.nav-sub > a:hover,.nav-sub:focus-within > a{color:var(--inkt);border-color:var(--inkt)}
+.nav-sub{position:relative}
+.nav-sub > a svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .3s var(--ease)}
+.nav-sub:hover > a svg,.nav-sub:focus-within > a svg{transform:rotate(180deg)}
+/* submenu met alle diensten, met klein beeld per dienst */
+.submenu{position:absolute;top:calc(100% + 14px);left:50%;width:560px;transform:translate(-50%,8px);
+  display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:12px;background:#fff;border:1px solid var(--rand);
+  border-radius:16px;box-shadow:0 30px 70px -30px rgba(20,19,15,.35);opacity:0;visibility:hidden;
+  transition:opacity .25s var(--ease),transform .3s var(--ease),visibility 0s .3s}
+.submenu::before{content:'';position:absolute;left:0;right:0;top:-16px;height:16px}   /* brug, zodat hover niet wegvalt */
+.nav-sub:hover .submenu,.nav-sub:focus-within .submenu{opacity:1;visibility:visible;transform:translate(-50%,0);
+  transition:opacity .25s var(--ease),transform .3s var(--ease)}
+.submenu a{display:flex;align-items:center;gap:12px;padding:8px;border-radius:10px;color:var(--inkt);transition:background .2s}
+.submenu a:hover{background:#f5f1ea}
+.submenu img{width:52px;height:52px;border-radius:8px;object-fit:cover;flex:none;outline:3px solid var(--kl);outline-offset:-3px}
+.submenu b{display:block;font-size:14px;font-weight:600}
+.submenu small{display:block;font-size:12px;color:var(--zacht);margin-top:2px}
+.submenu .alle{grid-column:1/-1;justify-content:center;font-size:13px;font-weight:600;color:var(--zacht);
+  border-top:1px solid var(--rand);border-radius:0 0 8px 8px;margin-top:4px;padding-top:12px}
 .knop{display:inline-block;border-radius:9999px;padding:10px 18px;font-size:13px;font-weight:600;
   background:var(--knop-vul);color:var(--knop-inkt);border:1px solid transparent;cursor:pointer}
 .nav-tel{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--inkt)}
@@ -369,7 +389,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .cta-krul path{fill:none;stroke:var(--brons);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .stap-cta::before{background:#fff}
 .stap-cta p{color:rgba(255,255,255,.7)}
-.stap-cta .verder{margin-top:26px;font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+.stap-cta .verder{margin-top:26px;font-size:17px;font-weight:600;display:inline-flex;gap:10px;align-items:center}
 .stap-cta .verder::after{content:'→';transition:transform .3s var(--ease)}
 .stap-cta:hover .verder::after{transform:translateX(4px)}
 
@@ -477,7 +497,18 @@ footer.groot{padding:72px 0 46px}
       OK Timmerwerken
     </a>
     <div class="nav-links">
-      <a href="#diensten">Diensten</a>
+      <div class="nav-sub">
+        <a href="#diensten" aria-haspopup="true">Diensten<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></a>
+        <div class="submenu" role="menu">
+          <a href="dienst-betonvloeren.html" style="--kl:#7394b4"><img src="../assets/render/echt/web/beton.jpg" alt="" loading="lazy"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
+          <a href="dienst-zolder.html" style="--kl:#9cb189"><img src="../assets/render/echt/web/zolder-na.jpg" alt="" loading="lazy"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
+          <a href="dienst-carport.html" style="--kl:#d87f57"><img src="../assets/render/echt/web/carport.jpg" alt="" loading="lazy"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
+          <a href="dienst-dakramen.html" style="--kl:#7394b4"><img src="../assets/render/echt/web/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
+          <a href="dienst-timmerwerk.html" style="--kl:#9cb189"><img src="../assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
+          <a href="dienst-funderingen.html" style="--kl:#474e5b"><img src="../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
+          <a class="alle" href="#diensten">Alle diensten op een rij →</a>
+        </div>
+      </div>
       <a href="#reviews">Reviews</a>
       <a href="over.html">Over ons</a>
       <a href="#contact">Contact</a>
