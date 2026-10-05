@@ -697,6 +697,12 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .verhaal{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);margin-top:10px}
 .verhaal p{color:var(--zacht);font-weight:300;line-height:1.75;font-size:16.5px}
 .verhaal p:first-child{color:var(--inkt);font-size:20px;line-height:1.55;font-weight:400}
+/* skyline van Gorinchem (eigen lijntekening): tekent zichzelf als het verhaal in beeld komt */
+.skyline{display:block;width:100%;max-width:520px;height:auto;margin-top:clamp(28px,4vw,48px);overflow:visible}
+.skyline path{fill:none;stroke:var(--brons);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;
+  stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease) calc(.4s + var(--d))}
+.verhaal.in .skyline path{stroke-dashoffset:0}
+@media(prefers-reduced-motion:reduce){.skyline path{stroke-dashoffset:0;transition:none}}
 
 /* binnenkomst */
 .op{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
