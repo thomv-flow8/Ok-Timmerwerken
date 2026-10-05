@@ -222,7 +222,7 @@ function stappenRaster(items, cta) {
       </div>`).join('\n');
   const slot = cta ? `
       <a class="stap stap-cta" href="d-lijn.html#contact">
-        <div><div class="snr">→</div>
+        <div><svg class="cta-krul" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83"/></svg>
         <h3>${esc(cta[0])}</h3>
         <p>${esc(cta[1])}</p></div>
         <span class="verder">${esc(cta[2])}</span>

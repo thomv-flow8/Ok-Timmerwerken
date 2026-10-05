@@ -359,6 +359,9 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .stap-cta{background:#14130f;color:#fff;display:flex;flex-direction:column;justify-content:space-between}
 .stap-cta:hover{background:#1f1d19}
 .stap-cta .snr{color:var(--brons)}
+/* krul die zich tijdens het scrollen tekent en met een pijl naar "Klaar voor stap 1?" wijst */
+.cta-krul{display:block;width:150px;height:auto;margin:-10px 0 6px -4px;overflow:visible}
+.cta-krul path{fill:none;stroke:var(--brons);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .stap-cta::before{background:#fff}
 .stap-cta p{color:rgba(255,255,255,.7)}
 .stap-cta .verder{margin-top:26px;font-size:14px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
@@ -369,6 +372,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .fris{--vlak:#f5f1ea; --kaart:#ffffff; --rand:#e4ddd1; --lijn:rgba(20,19,15,.045)}
 .kaarten{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;
   width:min(var(--max),94vw);margin-left:calc(50% - min(var(--max),94vw) / 2)}   /* precies op de 5 lijnen */
+#reviews .wrap{padding-bottom:clamp(90px,11vw,150px)}   /* off-white adem voor het zwarte contactblok */
+.kaarten{box-shadow:0 46px 90px -56px rgba(20,19,15,.38)}
 .rev{padding:34px 28px 40px;display:flex;flex-direction:column;background:#fff;
   border-right:1px solid var(--rand);transition:background .4s ease,box-shadow .4s ease}
 .rev:hover{box-shadow:0 24px 50px -34px rgba(20,19,15,.35);position:relative;z-index:1}
@@ -719,7 +724,7 @@ footer.groot{padding:72px 0 46px}
         <p>Zodra het beton zover is, vlinderen we machinaal tot het gewenste glanzende, dichte oppervlak.</p>
       </div>
       <a class="stap stap-cta" href="d-lijn.html#contact">
-        <div><div class="snr">→</div>
+        <div><svg class="cta-krul" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83"/></svg>
         <h3>Klaar voor stap 1?</h3>
         <p>Bel, app of mail Ozcan. Binnen een dag hoort u van ons.</p></div>
         <span class="verder">Plan een afspraak</span>
@@ -865,6 +870,21 @@ footer.groot{padding:72px 0 46px}
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });
 
   // [[gedeeld — wordt door tools/genereer-paginas.js overgenomen
+  // CTA-krullen: tekenen zich mee met het scrollen (en weer terug bij omhoog scrollen).
+  (function(){
+    var paden=[].slice.call(document.querySelectorAll('.cta-krul path'));
+    if(!paden.length) return;
+    paden.forEach(function(p){ p._len=p.getTotalLength(); p.style.strokeDasharray=p._len; p.style.strokeDashoffset=rm?0:p._len; });
+    if(rm) return;
+    var tik=false;
+    function teken(){ tik=false; var h=innerHeight;
+      paden.forEach(function(p){ var r=p.ownerSVGElement.getBoundingClientRect();
+        var v=Math.min(1,Math.max(0,(h*.92-r.top)/(h*.45)));
+        p.style.strokeDashoffset=(p._len*(1-v)).toFixed(1); }); }
+    addEventListener('scroll',function(){ if(!tik){ tik=true; requestAnimationFrame(teken);} },{passive:true});
+    addEventListener('resize',teken); teken();
+  })();
+
   // Binnenkomst: stappen-rasters en tekenlijnen krijgen .in zodra ze in beeld komen.
   (function(){
     var els=[].slice.call(document.querySelectorAll('.stappen,[data-teken]'));
