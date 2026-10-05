@@ -35,3 +35,11 @@ maak assets/werkspot/sp-09.jpg carport-douglas          1600
 maak assets/werkspot/sp-19.jpg carport-overkapping      1600
 maak assets/werkspot/sp-20.jpg carport-tussenwoning     1600
 maak assets/werkspot/sp-07.jpg verbouwing-ruwbouw       1600
+
+echo "— aangeleverd door Thomas (projecten Ozcan, okt 2026) —"
+maak assets/aangeleverd/zolder-vliering-voor.jpg       zolder-vliering-voor     1600
+maak assets/aangeleverd/zolder-vliering-na.jpg         zolder-vliering-na       1600
+maak assets/aangeleverd/dakraam-dubbel.jpg             dakraam-dubbel           1600
+maak assets/aangeleverd/betonplaat-wapening.jpg        betonplaat-wapening      1800
+maak assets/aangeleverd/betonplaat-gestort.jpg         betonplaat-gestort       1800
+maak assets/aangeleverd/verlaagd-plafond-regelwerk.jpg verlaagd-plafond         1600

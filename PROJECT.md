@@ -428,3 +428,13 @@ de meeste reviews (78) en citaten.
 vrij bruikbaar. Foto's die klanten bij hun review uploadden blijven van die klant; die niet
 gebruiken zonder toestemming. Op Google is de inzender niet altijd zichtbaar, dus per foto
 nagaan of 'm opvragen bij Ozcan.
+
+## Subpagina's (okt 2026)
+- **Over ons** (`preview/over.html`) en **zes dienstpagina's** (`preview/dienst-<slug>.html`) worden
+  gegenereerd met `node tools/genereer-paginas.js`.
+- Inhoud: `docs/inhoud.json` (teksten, werkzaamheden, aanpak, galerij, FAQ, review). Teksten zijn een
+  eerste versie — **laten nalezen door Ozcan** (vooral de FAQ-antwoorden).
+- Opmaak, navigatie, mobiel menu, footer, iconen en gedeelde scripts komen uit `preview/d-lijn.html`
+  (blok tussen `// [[gedeeld` en `// gedeeld]]`). **Na elke wijziging aan d-lijn de generator opnieuw draaien.**
+- Galerijen tonen alleen **echte foto's** van Ozcan (assets/web, assets/eigen/web); de AI-renders staan
+  alleen op de homepage-vitrine en als hoofdbeeld van een dienstpagina.

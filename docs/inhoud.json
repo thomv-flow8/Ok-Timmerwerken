@@ -1,0 +1,224 @@
+{
+  "_uitleg": "Eén bron voor de dienstpagina's en de Over-ons-pagina. Genereren: node tools/genereer-paginas.js. Teksten zijn een eerste versie — laten nalezen door Ozcan.",
+  "diensten": [
+    {
+      "slug": "betonvloeren",
+      "nr": "01",
+      "naam": "Betonvloeren",
+      "kleur": "#e0aa59",
+      "kop": "Een vlakke, gladde vloer die jaren meegaat.",
+      "intro": "Van een garage of schuur tot een complete woonkamer of een terras in de tuin: OK Timmerwerken stort de vloer en vlindert hem machinaal tot een strak, dicht oppervlak. Isolatie, wapening en vloerverwarming nemen we in hetzelfde traject mee.",
+      "beeld": "../assets/render/echt/web/beton.jpg",
+      "beeldAlt": "Vers gevlinderd betonterras achter een woning",
+      "werk": [
+        ["Gevlinderde vloeren", "Binnen in woning, garage of schuur — machinaal gevlinderd tot een glad, dicht oppervlak."],
+        ["Vloerverwarming", "Leidingen op de wapening, in één keer mee ingestort en netjes afgewerkt."],
+        ["Terrassen & buitenplaten", "Strak afgereid met afschot, zodat regenwater vanzelf wegloopt."],
+        ["Isolatie & wapening", "De onzichtbare basis: isolatieplaten en wapeningsnet op de juiste hoogte."]
+      ],
+      "aanpak": [
+        ["Opmeten & voorbereiden", "We bepalen de vloerhoogte, het afschot en de opbouw, en zetten de bekisting waterpas."],
+        ["Wapenen & storten", "Isolatie, wapening en eventueel vloerverwarming erin; daarna storten we in één doorgaande gang."],
+        ["Vlinderen & opleveren", "Zodra het beton zover is, vlinderen we machinaal tot het gewenste glanzende, dichte oppervlak."]
+      ],
+      "galerij": [
+        ["../assets/web/betonvloer-woonkamer.jpg", "Gevlinderde vloer onder een overkapping"],
+        ["../assets/web/betonvloer-spiegel.jpg", "Spiegelgladde betonplaat in de tuin"],
+        ["../assets/web/betonvloer-vlinderen.jpg", "Vlinderen in een berging"],
+        ["../assets/eigen/web/beton-woonhuis-droog.jpg", "Terras achter een nieuwbouwwoning"],
+        ["../assets/web/betonvloer-oprit.jpg", "Betonvloer onder een carport"],
+        ["../assets/eigen/web/beton-terras-tuinmuur.jpg", "Terras tussen twee tuinmuren"],
+        ["../assets/web/betonvloer-berging.jpg", "Afgewerkte vloer in een tuinhuis"],
+        ["../assets/web/betonvloer-tuin-groot.jpg", "Grote betonplaat in L-vorm"]
+      ],
+      "review": ["Vriendelijk, betrouwbaar, transparant en goede communicatie. Ik wist niets van beton en vloeren, en Ozcan gaf me uitstekend advies op basis van wat ik nodig had.", "Jonathan van Putten", "Gouda · Betonvloer schuur"],
+      "faq": [
+        ["Wanneer kan ik over de vloer lopen?", "Meestal na een tot twee dagen. Volledig belasten — met een auto of zware kasten — kan pas na enkele weken. We spreken het precies met u af voor uw vloer."],
+        ["Kan vloerverwarming in een gevlinderde vloer?", "Ja. De leidingen gaan op de wapening en worden in één keer mee ingestort. Zo zit de verwarming dicht onder het oppervlak en reageert de vloer snel."],
+        ["Doen jullie ook vloeren buiten?", "Zeker: terrassen, oprit-stroken, ondergronden voor een tuinhuis of overkapping. Buiten storten we met afschot, zodat water goed wegloopt."]
+      ]
+    },
+    {
+      "slug": "zolder",
+      "nr": "02",
+      "naam": "Vliering & zolder",
+      "kleur": "#9cb189",
+      "kop": "Een hele verdieping erbij.",
+      "intro": "Een rommelige, koude zolder wordt een lichte, volwaardige ruimte. We isoleren het dak, maken wanden en knieschotten met bergruimte, en bouwen waar mogelijk een vliering: een vlak plafond op de hanenbalken met een luik, met daarboven extra opslag.",
+      "beeld": "../assets/render/echt/web/zolder-na.jpg",
+      "beeldAlt": "Afgewerkte zolder met vliering en bergruimte",
+      "werk": [
+        ["Vliering plaatsen", "Een vlak plafond op de hanenbalken met een strak luik — extra bergruimte erboven."],
+        ["Zolder isoleren", "Het dak geïsoleerd en afgewerkt, zodat de zolder 's zomers koel en 's winters warm blijft."],
+        ["Knieschotten & kasten", "Knieschotten met deurtjes: de lage ruimte onder het dak wordt nuttige opbergruimte."],
+        ["Wanden & afwerking", "Tussenwanden, deuren, plafonds en vloer — opgeleverd als echte kamer."]
+      ],
+      "aanpak": [
+        ["Samen indelen", "We bekijken de zolder, bepalen waar de vliering, kasten en eventueel een dakraam komen."],
+        ["Isoleren & bouwen", "Eerst de isolatie en het regelwerk, daarna wanden, vliering en knieschotten."],
+        ["Afwerken & opleveren", "Stucwerk, plinten, deurtjes en vloer: u krijgt een kamer die direct klaar is voor gebruik."]
+      ],
+      "galerij": [
+        ["../assets/web/zolder-vliering-voor.jpg", "Vóór: zolder als wasruimte en opslag"],
+        ["../assets/web/zolder-vliering-na.jpg", "Na: lichte zolder met vliering en luik"],
+        ["../assets/web/vliering-constructie.jpg", "Constructie van een vliering in opbouw"],
+        ["../assets/eigen/web/zolder-na.jpg", "Afgewerkte zolder met dakraam"]
+      ],
+      "review": ["Ozcan is een sterke allround aannemer die actief meedenkt en oplossingsgericht werkt. Van het doorbreken van een dragende muur tot een nieuwe vliering: alles vakkundig en strak uitgevoerd.", "Joris Seghers", "Bavel · Vliering 40 m²"],
+      "faq": [
+        ["Wat is een vliering precies?", "Een vliering is een extra vloer of plafond hoog in de nok, meestal op de hoogte van de hanenbalken. Via een luik heeft u daarboven bergruimte, terwijl de zolder eronder een strakke, vlakke afwerking krijgt."],
+        ["Kan er tegelijk een dakraam in?", "Ja. Als erkend VELUX Montagepartner plaatsen we het dakraam in hetzelfde traject, inclusief de afwerking aan de binnenkant."],
+        ["Moet ik de zolder zelf leegmaken?", "Graag wel de spullen; het afvoeren van oude materialen en bouwafval nemen wij mee."]
+      ]
+    },
+    {
+      "slug": "carport",
+      "nr": "03",
+      "naam": "Carport & overkapping",
+      "kleur": "#d87f57",
+      "kop": "Maatwerk dat uw buitenruimte afmaakt.",
+      "intro": "Een carport, veranda, overkapping of tuinhuis in hout — ontworpen op uw woning en uw tuin, en afgewerkt tot in de puntjes. Fundering, bestrating en eventuele lichtkoepels regelen we in hetzelfde traject.",
+      "beeld": "../assets/render/echt/web/carport.jpg",
+      "beeldAlt": "Houten carport naast een woning",
+      "werk": [
+        ["Carports", "Vrijstaand of tegen de woning, voor één of twee auto's, in Douglas of hardhout."],
+        ["Veranda's & overkappingen", "Een overdekt terras dat het hele jaar bruikbaar is, eventueel met lichtkoepels."],
+        ["Tuinhuizen", "Van eenvoudige berging tot tuinkamer met openslaande deuren."],
+        ["Fundering & dak", "Poeren of een betonplaat eronder, EPDM-dak en strakke boeidelen erop."]
+      ],
+      "aanpak": [
+        ["Ontwerp op maat", "We meten op, denken mee over maat, houtsoort en dak, en u krijgt een heldere offerte."],
+        ["Fundering & opbouw", "Eerst een stevige fundering, daarna staanders, balklaag en dak."],
+        ["Afwerking", "Boeidelen, goten, eventueel bestrating en verlichting — netjes opgeleverd."]
+      ],
+      "galerij": [
+        ["../assets/web/carport-douglas.jpg", "Vrijstaande carport in Douglas hout"],
+        ["../assets/eigen/web/carport-bestrating.jpg", "Carport tegen de woning met nieuwe bestrating"],
+        ["../assets/web/carport-overkapping.jpg", "Overkapping met lichtkoepel"],
+        ["../assets/web/carport-tussenwoning.jpg", "Carport tussen twee woningen"],
+        ["../assets/web/tuinhuis-deuren.jpg", "Tuinhuis met openslaande deuren"],
+        ["../assets/web/vlonder-lichtkoepels.jpg", "Dakvlak met lichtkoepels"]
+      ],
+      "review": ["OK Timmerwerken levert vakwerk. Er werd goed meegedacht en alles is netjes op de bestaande situatie aangepast. Mooi en degelijk Douglas hout, EPDM-dak en keurig afgewerkte boeidelen.", "Peter", "Den Haag · Carport voor 2 auto's"],
+      "faq": [
+        ["Heb ik een vergunning nodig?", "Dat hangt af van de maat en de plek op uw perceel. Veel carports en overkappingen zijn vergunningvrij; we kijken het samen met u na voordat we beginnen."],
+        ["Welke houtsoort raden jullie aan?", "Douglas is populair: sterk, mooi en betaalbaar. Voor een strakkere of duurzamere uitstraling kan hardhout of een zwart gebeitste afwerking."],
+        ["Leggen jullie ook de bestrating?", "Ja, de ondergrond — bestrating of een betonvloer — kunnen we in hetzelfde traject meenemen."]
+      ]
+    },
+    {
+      "slug": "dakramen",
+      "nr": "04",
+      "naam": "Dakramen (Velux)",
+      "kleur": "#7394b4",
+      "kop": "Meer licht, altijd waterdicht.",
+      "intro": "Als erkend VELUX Montagepartner plaatst OK Timmerwerken dakramen vakkundig en waterdicht — van één raam tot een dubbele combinatie die uw zolder volledig verandert. Inclusief betimmering en strakke afwerking aan de binnenkant.",
+      "beeld": "../assets/render/echt/web/velux.jpg",
+      "beeldAlt": "Twee nieuwe dakramen naast elkaar in een zolder",
+      "werk": [
+        ["Nieuw dakraam plaatsen", "Gat in het dak, raam erin, waterdicht aangesloten op de pannen."],
+        ["Bestaand raam vervangen", "Een oud of lekkend dakraam vervangen door een nieuw exemplaar."],
+        ["Binnenafwerking", "Strakke, witte dagkanten en een vensterbank — geen losse kieren of naden."],
+        ["Lichtkoepels", "Voor platte daken van overkappingen en uitbouwen."]
+      ],
+      "aanpak": [
+        ["Plek & maat kiezen", "We kijken naar de lichtinval, de dakconstructie en wat u met de ruimte wilt."],
+        ["Plaatsen", "Het raam wordt volgens de VELUX-voorschriften geplaatst en waterdicht aangesloten."],
+        ["Afwerken", "Binnen werken we de dagkanten en vensterbank strak af, klaar om te schilderen of al wit."]
+      ],
+      "galerij": [
+        ["../assets/web/dakraam-dubbel.jpg", "Dubbel dakraam in een zolderkamer"],
+        ["../assets/web/dakraam-velux.jpg", "Drie dakramen naast elkaar"],
+        ["../assets/eigen/web/zolder-na.jpg", "Afgewerkte zolder met dakraam"],
+        ["../assets/web/vlonder-lichtkoepels.jpg", "Lichtkoepels in een plat dak"]
+      ],
+      "faq": [
+        ["Wat betekent erkend VELUX Montagepartner?", "Dat OK Timmerwerken door VELUX is getraind en erkend om hun dakramen volgens de voorschriften te plaatsen. Zo bent u zeker van een waterdichte montage."],
+        ["Hoe lang duurt het plaatsen van een dakraam?", "Een enkel dakraam plaatsen we meestal binnen een dag, inclusief de waterdichte aansluiting. De binnenafwerking kan daarna volgen."],
+        ["Kan het ook bij een bewoonde zolder?", "Ja. We werken netjes en ruimen dagelijks op, zodat u de ruimte zo min mogelijk kwijt bent."]
+      ]
+    },
+    {
+      "slug": "timmerwerk",
+      "nr": "05",
+      "naam": "Timmerwerk & afbouw",
+      "kleur": "#c4af92",
+      "kop": "Van ruwbouw tot de laatste lijst.",
+      "intro": "Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt. Van het regelwerk tot de laatste plint werkt één ploeg aan uw verbouwing — zodat alles op elkaar aansluit.",
+      "beeld": "../assets/render/echt/web/plafond-af.jpg",
+      "beeldAlt": "Kamer met afgewerkt verlaagd plafond en inbouwspots",
+      "werk": [
+        ["Verlaagde plafonds", "Strak regelwerk, isolatie waar nodig, en ruimte voor inbouwspots en leidingen."],
+        ["Wanden & ombouw", "Metal-stud of hout, met een tv-wand, nissen of lamellen als blikvanger."],
+        ["Doorbraken", "Een muur eruit voor een open ruimte — inclusief stalen balk en afwerking."],
+        ["Kozijnen & afwerking", "Deuren, kozijnen, vensterbanken en plinten tot in de puntjes."]
+      ],
+      "aanpak": [
+        ["Plan & indeling", "We bespreken wat er moet gebeuren en in welke volgorde, zodat het werk logisch op elkaar aansluit."],
+        ["Ruwbouw", "Sloopwerk, doorbraken, regelwerk en wanden — de basis staat strak en waterpas."],
+        ["Afbouw", "Platen, stuc- of schilderklare afwerking, kozijnen en plinten: klaar om in te wonen."]
+      ],
+      "galerij": [
+        ["../assets/web/verlaagd-plafond.jpg", "Regelwerk voor een verlaagd plafond"],
+        ["../assets/web/timmerwerk-tvwand.jpg", "Tv-wand met nissen en haard"],
+        ["../assets/web/timmerwerk-lamellenwand.jpg", "Lamellenwand in de woonkamer"],
+        ["../assets/web/verbouwing-ruwbouw.jpg", "Ruwbouw tijdens een verbouwing"],
+        ["../assets/eigen/web/doorbraak-sloop.jpg", "Een dragende muur eruit"],
+        ["../assets/eigen/web/woonkamer-verbouwing.jpg", "Woonkamer tijdens de afbouw"]
+      ],
+      "faq": [
+        ["Kunnen jullie een dragende muur verwijderen?", "Ja. We plaatsen een stalen balk volgens de berekening van de constructeur, verwijderen de muur en werken alles netjes af."],
+        ["Doen jullie ook het stucwerk?", "We leveren schilder- of stucklaar op en kunnen het stucwerk voor u regelen, zodat u één aanspreekpunt houdt."],
+        ["Kan ik tijdens de verbouwing thuis blijven wonen?", "Vaak wel. We stemmen de planning met u af en houden de werkplek zo schoon mogelijk."]
+      ]
+    },
+    {
+      "slug": "funderingen",
+      "nr": "06",
+      "naam": "Funderingen",
+      "kleur": "#474e5b",
+      "kop": "Het fundament onder al het werk.",
+      "intro": "Gewapende betonplaten en funderingen voor een aanbouw, tuinhuis, overkapping of grote verbouwing. Bekisting, wapening en storten houden we in eigen hand — zodat alles wat erop komt, goed staat.",
+      "beeld": "../assets/render/echt/web/fundering-gestort.jpg",
+      "beeldAlt": "Gestorte en gevlinderde betonplaat in een tuin",
+      "werk": [
+        ["Betonplaten", "Een gewapende plaat als vloer en fundering ineen, voor tuinhuis, overkapping of berging."],
+        ["Funderingen", "Strokenfunderingen en poeren voor aanbouwen en carports."],
+        ["Vloerconstructies", "Nieuwe vloeren bij verbouwingen, ook met stalen balken."],
+        ["Grondwerk", "Uitgraven, aanvullen en verdichten — een stabiele ondergrond."]
+      ],
+      "aanpak": [
+        ["Uitzetten & graven", "We zetten de maten uit, graven uit en maken de ondergrond stabiel."],
+        ["Bekisten & wapenen", "Stalen of houten bekisting, isolatie en wapening precies op hoogte en waterpas."],
+        ["Storten & afwerken", "Storten in één keer, en waar gewenst direct gevlinderd tot een strakke bovenkant."]
+      ],
+      "galerij": [
+        ["../assets/web/betonplaat-wapening.jpg", "Wapening ligt klaar, het storten begint"],
+        ["../assets/web/betonplaat-gestort.jpg", "Dezelfde plaat, gestort en afgewerkt"],
+        ["../assets/web/beton-wapening.jpg", "Wapening voor een lange betonstrook"],
+        ["../assets/eigen/web/vloer-staalbalken-ploeg.jpg", "Nieuwe vloerconstructie met stalen balken"]
+      ],
+      "faq": [
+        ["Heb ik een betonplaat of een fundering nodig?", "Voor een tuinhuis, berging of overkapping volstaat vaak een gewapende betonplaat. Voor een aanbouw is meestal een fundering op staal of op palen nodig — dat volgt uit de constructieberekening."],
+        ["Kunnen jullie de bovenkant direct afwerken?", "Ja. Een betonplaat kunnen we direct vlinderen, zodat hij meteen als nette vloer dienst doet."],
+        ["Hoe zit het met afvoer en leidingen?", "Afvoeren en mantelbuizen leggen we vóór het storten, zodat ze netjes in de plaat zitten."]
+      ]
+    }
+  ],
+  "over": {
+    "kop": "Eén aanspreekpunt, van begin tot eind.",
+    "intro": "Achter OK Timmerwerken staat Ozcan. In de reviews die klanten schrijven staat zelden de bedrijfsnaam — er staat Ozcan. Dat zegt genoeg: u heeft één vast aanspreekpunt dat meedenkt, de klus zelf meedraait en 'm afmaakt zoals besproken.",
+    "verhaal": [
+      "Sinds 2019 werkt OK Timmerwerken vanuit Gorinchem aan woningen in de wijde omgeving: van een gevlinderde vloer in een schuur tot een complete verbouwing met doorbraak, vliering en dakramen.",
+      "Ozcan werkt met een vaste ploeg vakmensen. Geen wisselende onderaannemers, maar mensen die elkaars werk kennen — zodat het betonwerk, het timmerwerk en de afbouw naadloos op elkaar aansluiten.",
+      "Als erkend VELUX Montagepartner en met tientallen reviews van tevreden klanten op Werkspot en Google weet u waar u aan toe bent."
+    ],
+    "waarden": [
+      ["Eén aanspreekpunt", "U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw."],
+      ["Vaste ploeg", "Vakmensen die al jaren samenwerken. Dat merkt u aan het tempo én aan de afwerking."],
+      ["Afspraak is afspraak", "Een heldere offerte en een realistische planning. Wat erin staat, is wat u krijgt."]
+    ],
+    "beeld": "../assets/eigen/web/beton-vlinderen-machine.jpg",
+    "beeldAlt": "Ozcan aan het werk met de vlindermachine"
+  }
+}
