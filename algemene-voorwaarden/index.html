@@ -1043,7 +1043,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     zet(); setInterval(zet,60000);
   })();
 
-  // Hero: wolkenvideo alleen laden op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
+  // Hero: wolkenvideo speelt één keer en blijft op het laatste beeld staan (geen loop: geen sprong). Alleen op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
   (function(){
     var v=document.querySelector('.hero-beeld video'); if(!v) return;
     var zuinig=navigator.connection&&navigator.connection.saveData;
@@ -1051,8 +1051,9 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     v.muted=true; v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
     var p=v.play(); if(p&&p.catch) p.catch(function(){});
     var inBeeld=true;
-    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ inBeeld=es[0].isIntersecting; inBeeld?v.play().catch(function(){}):v.pause(); }).observe(v);
-    document.addEventListener('visibilitychange',function(){ if(!document.hidden&&inBeeld) v.play().catch(function(){}); });
+    function speel(){ if(!v.ended) v.play().catch(function(){}); }   // een afgelopen video niet opnieuw starten
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ inBeeld=es[0].isIntersecting; inBeeld?speel():v.pause(); }).observe(v);
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden&&inBeeld) speel(); });
   })();
 
   // Binnenkomst: stappen-rasters en tekenlijnen krijgen .in zodra ze in beeld komen.

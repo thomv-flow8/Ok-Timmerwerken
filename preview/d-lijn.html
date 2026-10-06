@@ -641,7 +641,7 @@ footer.groot{padding:72px 0 46px}
 <!-- HERO — beeld behouden -->
 <section class="hero">
   <div class="hero-kader">
-    <div class="hero-beeld"><img src="../assets/render/hero-wolken.jpg" alt="Modern huis met gevlinderde betonvloer, dakraam, carport en timmerwerk, met wolken erboven"><video muted loop playsinline preload="none" aria-hidden="true" data-src="../assets/render/hero-wolken.mp4"></video></div>
+    <div class="hero-beeld"><img src="../assets/render/hero-wolken.jpg" alt="Modern huis met gevlinderde betonvloer, dakraam, carport en timmerwerk, met wolken erboven"><video muted playsinline preload="none" aria-hidden="true" data-src="../assets/render/hero-wolken.mp4"></video></div>
     <div class="hero-in">
       <span class="badge"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner</span>
       <h1>Vakwerk waar u<br>op kunt <em class="serif">bouwen</em>.</h1>
@@ -1168,7 +1168,7 @@ footer.groot{padding:72px 0 46px}
     zet(); setInterval(zet,60000);
   })();
 
-  // Hero: wolkenvideo alleen laden op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
+  // Hero: wolkenvideo speelt één keer en blijft op het laatste beeld staan (geen loop: geen sprong). Alleen op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
   (function(){
     var v=document.querySelector('.hero-beeld video'); if(!v) return;
     var zuinig=navigator.connection&&navigator.connection.saveData;
@@ -1176,8 +1176,9 @@ footer.groot{padding:72px 0 46px}
     v.muted=true; v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
     var p=v.play(); if(p&&p.catch) p.catch(function(){});
     var inBeeld=true;
-    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ inBeeld=es[0].isIntersecting; inBeeld?v.play().catch(function(){}):v.pause(); }).observe(v);
-    document.addEventListener('visibilitychange',function(){ if(!document.hidden&&inBeeld) v.play().catch(function(){}); });
+    function speel(){ if(!v.ended) v.play().catch(function(){}); }   // een afgelopen video niet opnieuw starten
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ inBeeld=es[0].isIntersecting; inBeeld?speel():v.pause(); }).observe(v);
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden&&inBeeld) speel(); });
   })();
 
   // Binnenkomst: stappen-rasters en tekenlijnen krijgen .in zodra ze in beeld komen.
