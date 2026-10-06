@@ -128,18 +128,21 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 
 /* ---------- hero (beeld behouden) ---------- */
 .hero{position:relative;overflow:hidden;
-  background:radial-gradient(ellipse 80% 90% at 66% 48%,#f0ede7 0%,#e8e3db 55%,#ddd6cc 100%)}
+  background:radial-gradient(ellipse 80% 90% at 66% 48%,#ece1d9 0%,#e4d8cf 55%,#d9ccc2 100%)}   /* afgestemd op de warme studio-achtergrond van de wolkenrender */
 .hero-kader{position:relative;max-width:none;margin:0;border-radius:0;
   overflow:hidden;min-height:100vh;display:flex;align-items:center}
 /* de render als eigen blok rechts; randen vervagen zacht in de achtergrond */
 .hero-beeld{position:absolute;right:2vw;top:54%;transform:translateY(-50%);
   width:min(68vw,1360px);aspect-ratio:2560/1434;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 94%,transparent 100%),
-                     linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 92%,transparent 100%),
+                     linear-gradient(to bottom,transparent 0%,#000 22%,#000 82%,transparent 100%);
   -webkit-mask-composite:source-in;
-          mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 94%,transparent 100%),
-                     linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);
+          mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 92%,transparent 100%),
+                     linear-gradient(to bottom,transparent 0%,#000 22%,#000 82%,transparent 100%);
           mask-composite:intersect}
+/* wolkenvideo ligt over de foto en vloeit in zodra hij speelt (alleen desktop, niet bij "minder beweging" of databesparing) */
+.hero-beeld video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.hero-beeld video.speelt{opacity:1}
 .hero-beeld img{width:100%;height:100%;object-fit:cover;display:block;
   transform-origin:62% 55%;animation:heroFloat 28s ease-in-out infinite alternate}
 @keyframes heroFloat{from{transform:scale(1)}to{transform:scale(1.06) translate(-1%,-.8%)}}
@@ -1236,6 +1239,16 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         txt='Nu gesloten — '+w+' weer vanaf 07:00'; }
       el.classList.toggle('dicht',!open); el.querySelector('span').textContent=txt; el.hidden=false; }
     zet(); setInterval(zet,60000);
+  })();
+
+  // Hero: wolkenvideo alleen laden op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
+  (function(){
+    var v=document.querySelector('.hero-beeld video'); if(!v) return;
+    var zuinig=navigator.connection&&navigator.connection.saveData;
+    if(rm||zuinig||!matchMedia('(min-width:821px)').matches) return;
+    v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ es[0].isIntersecting?v.play().catch(function(){}):v.pause(); }).observe(v);
   })();
 
   // Binnenkomst: stappen-rasters en tekenlijnen krijgen .in zodra ze in beeld komen.

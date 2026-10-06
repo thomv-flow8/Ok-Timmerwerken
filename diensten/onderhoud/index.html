@@ -128,18 +128,21 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 
 /* ---------- hero (beeld behouden) ---------- */
 .hero{position:relative;overflow:hidden;
-  background:radial-gradient(ellipse 80% 90% at 66% 48%,#f0ede7 0%,#e8e3db 55%,#ddd6cc 100%)}
+  background:radial-gradient(ellipse 80% 90% at 66% 48%,#ece1d9 0%,#e4d8cf 55%,#d9ccc2 100%)}   /* afgestemd op de warme studio-achtergrond van de wolkenrender */
 .hero-kader{position:relative;max-width:none;margin:0;border-radius:0;
   overflow:hidden;min-height:100vh;display:flex;align-items:center}
 /* de render als eigen blok rechts; randen vervagen zacht in de achtergrond */
 .hero-beeld{position:absolute;right:2vw;top:54%;transform:translateY(-50%);
   width:min(68vw,1360px);aspect-ratio:2560/1434;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 94%,transparent 100%),
-                     linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 92%,transparent 100%),
+                     linear-gradient(to bottom,transparent 0%,#000 22%,#000 82%,transparent 100%);
   -webkit-mask-composite:source-in;
-          mask-image:linear-gradient(to right,transparent 0%,#000 18%,#000 94%,transparent 100%),
-                     linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);
+          mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 92%,transparent 100%),
+                     linear-gradient(to bottom,transparent 0%,#000 22%,#000 82%,transparent 100%);
           mask-composite:intersect}
+/* wolkenvideo ligt over de foto en vloeit in zodra hij speelt (alleen desktop, niet bij "minder beweging" of databesparing) */
+.hero-beeld video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.hero-beeld video.speelt{opacity:1}
 .hero-beeld img{width:100%;height:100%;object-fit:cover;display:block;
   transform-origin:62% 55%;animation:heroFloat 28s ease-in-out infinite alternate}
 @keyframes heroFloat{from{transform:scale(1)}to{transform:scale(1.06) translate(-1%,-.8%)}}
@@ -919,7 +922,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     </div>
     <div class="speler op" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
       <div class="podium">
-        <div class="balkjes" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+        <div class="balkjes" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
         <figure class="dia aan"><img class="waas" src="../../assets/eigen/web/doorbraak-sloop.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/eigen/web/doorbraak-sloop.jpg" alt="Een dragende muur eruit"><figcaption>Een dragende muur eruit</figcaption></figure>
         <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa329.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa329.jpg" alt="Toilet met nieuw tegelwerk" loading="lazy"><figcaption>Toilet met nieuw tegelwerk</figcaption></figure>
         <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-toilet.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-toilet.jpg" alt="Toilet opnieuw betegeld" loading="lazy"><figcaption>Toilet opnieuw betegeld</figcaption></figure>
@@ -927,9 +930,12 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-badkamer-tegels.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-badkamer-tegels.jpg" alt="Badkamer tijdens het tegelen" loading="lazy"><figcaption>Badkamer tijdens het tegelen</figcaption></figure>
         <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-hal-tegels.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-hal-tegels.jpg" alt="Hal met nieuwe tegelvloer" loading="lazy"><figcaption>Hal met nieuwe tegelvloer</figcaption></figure>
         <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa316.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa316.jpg" alt="Tegelwerk in uitvoering" loading="lazy"><figcaption>Tegelwerk in uitvoering</figcaption></figure>
+        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa309.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa309.jpg" alt="Nieuwe pannen en een doorvoer in het dak" loading="lazy"><figcaption>Nieuwe pannen en een doorvoer in het dak</figcaption></figure>
+        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa025.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa025.jpg" alt="Toilet tijdens het tegelen, voorzetwand nog open" loading="lazy"><figcaption>Toilet tijdens het tegelen, voorzetwand nog open</figcaption></figure>
+        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa333.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa333.jpg" alt="Panlatten klaar voor dakonderhoud" loading="lazy"><figcaption>Panlatten klaar voor dakonderhoud</figcaption></figure>
         <button type="button" class="sp-pijl sp-vorige" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
         <button type="button" class="sp-pijl sp-volgende" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-        <span class="teller" aria-live="polite"><b>01</b> / 07</span>
+        <span class="teller" aria-live="polite"><b>01</b> / 10</span>
       </div>
       <div class="strook">
       <button type="button" class="duim aan" aria-label="Foto 1: Een dragende muur eruit"><img src="../../assets/eigen/web/doorbraak-sloop.jpg" alt="" loading="lazy"></button>
@@ -939,6 +945,9 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <button type="button" class="duim" aria-label="Foto 5: Badkamer tijdens het tegelen"><img src="../../assets/web/onderhoud-badkamer-tegels.jpg" alt="" loading="lazy"></button>
       <button type="button" class="duim" aria-label="Foto 6: Hal met nieuwe tegelvloer"><img src="../../assets/web/onderhoud-hal-tegels.jpg" alt="" loading="lazy"></button>
       <button type="button" class="duim" aria-label="Foto 7: Tegelwerk in uitvoering"><img src="../../assets/web/onderhoud-wa316.jpg" alt="" loading="lazy"></button>
+      <button type="button" class="duim" aria-label="Foto 8: Nieuwe pannen en een doorvoer in het dak"><img src="../../assets/web/onderhoud-wa309.jpg" alt="" loading="lazy"></button>
+      <button type="button" class="duim" aria-label="Foto 9: Toilet tijdens het tegelen, voorzetwand nog open"><img src="../../assets/web/onderhoud-wa025.jpg" alt="" loading="lazy"></button>
+      <button type="button" class="duim" aria-label="Foto 10: Panlatten klaar voor dakonderhoud"><img src="../../assets/web/onderhoud-wa333.jpg" alt="" loading="lazy"></button>
       </div>
     </div>
   </div>
@@ -1214,6 +1223,16 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         txt='Nu gesloten — '+w+' weer vanaf 07:00'; }
       el.classList.toggle('dicht',!open); el.querySelector('span').textContent=txt; el.hidden=false; }
     zet(); setInterval(zet,60000);
+  })();
+
+  // Hero: wolkenvideo alleen laden op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
+  (function(){
+    var v=document.querySelector('.hero-beeld video'); if(!v) return;
+    var zuinig=navigator.connection&&navigator.connection.saveData;
+    if(rm||zuinig||!matchMedia('(min-width:821px)').matches) return;
+    v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ es[0].isIntersecting?v.play().catch(function(){}):v.pause(); }).observe(v);
   })();
 
   // Binnenkomst: stappen-rasters en tekenlijnen krijgen .in zodra ze in beeld komen.

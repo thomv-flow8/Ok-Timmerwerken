@@ -867,6 +867,18 @@
         [
           "../assets/web/onderhoud-wa316.jpg",
           "Tegelwerk in uitvoering"
+        ],
+        [
+          "../assets/web/onderhoud-wa309.jpg",
+          "Nieuwe pannen en een doorvoer in het dak"
+        ],
+        [
+          "../assets/web/onderhoud-wa025.jpg",
+          "Toilet tijdens het tegelen, voorzetwand nog open"
+        ],
+        [
+          "../assets/web/onderhoud-wa333.jpg",
+          "Panlatten klaar voor dakonderhoud"
         ]
       ],
       "faq": [
@@ -954,36 +966,40 @@
       ],
       "galerij": [
         [
+          "../assets/web/nieuwbouw-spanten.jpg",
+          "Nieuwe woning met houten spanten"
+        ],
+        [
           "../assets/web/nieuwbouw-bekisting-schoren.jpg",
           "Bekisting met schoren, klaar om te storten"
+        ],
+        [
+          "../assets/web/nieuwbouw-wa254.jpg",
+          "Betonmixer en pomp op de bouwplaats"
         ],
         [
           "../assets/web/nieuwbouw-wand-steiger.jpg",
           "Betonwand in aanbouw"
         ],
         [
-          "../assets/web/nieuwbouw-houtconstructie.jpg",
-          "Houtconstructie met trap naar boven"
-        ],
-        [
-          "../assets/web/nieuwbouw-balklaag.jpg",
-          "Balklaag en plafond in een nieuwe woning"
+          "../assets/web/nieuwbouw-wa253.jpg",
+          "Betonwanden storten met de pomp"
         ],
         [
           "../assets/web/nieuwbouw-hsb-wand.jpg",
           "HSB-wand met isolatie"
         ],
         [
+          "../assets/web/nieuwbouw-balklaag.jpg",
+          "Balklaag en plafond in een nieuwe woning"
+        ],
+        [
+          "../assets/web/nieuwbouw-houtconstructie.jpg",
+          "Houtconstructie met trap naar boven"
+        ],
+        [
           "../assets/web/nieuwbouw-ruwe-vloer.jpg",
           "Ruwe vloer, klaar voor de afwerking"
-        ],
-        [
-          "../assets/web/nieuwbouw-spanten.jpg",
-          "Nieuwe woning met houten spanten"
-        ],
-        [
-          "../assets/web/nieuwbouw-oplevering.jpg",
-          "Klaar voor oplevering: spanten en gevlinderde vloer"
         ]
       ],
       "faq": [
