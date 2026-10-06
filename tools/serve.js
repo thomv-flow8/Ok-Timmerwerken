@@ -3,7 +3,7 @@ const http = require('http'), fs = require('fs'), path = require('path');
 const root = path.resolve(__dirname, '..');
 const port = Number(process.env.PORT) || 5173;
 const types = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.png':'image/png',
-  '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.svg':'image/svg+xml', '.json':'application/json', '.woff2':'font/woff2' };
+  '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.webp':'image/webp', '.svg':'image/svg+xml', '.json':'application/json', '.woff2':'font/woff2', '.mp4':'video/mp4' };
 http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0]);
   if (p.endsWith('/')) p += 'index.html';

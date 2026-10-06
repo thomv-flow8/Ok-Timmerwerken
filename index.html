@@ -1162,9 +1162,11 @@ footer.groot{padding:72px 0 46px}
     var v=document.querySelector('.hero-beeld video'); if(!v) return;
     var zuinig=navigator.connection&&navigator.connection.saveData;
     if(rm||zuinig||!matchMedia('(min-width:821px)').matches) return;
-    v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
+    v.muted=true; v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
     var p=v.play(); if(p&&p.catch) p.catch(function(){});
-    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ es[0].isIntersecting?v.play().catch(function(){}):v.pause(); }).observe(v);
+    var inBeeld=true;
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ inBeeld=es[0].isIntersecting; inBeeld?v.play().catch(function(){}):v.pause(); }).observe(v);
+    document.addEventListener('visibilitychange',function(){ if(!document.hidden&&inBeeld) v.play().catch(function(){}); });
   })();
 
   // Binnenkomst: stappen-rasters en tekenlijnen krijgen .in zodra ze in beeld komen.
