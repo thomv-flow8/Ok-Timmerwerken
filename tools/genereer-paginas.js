@@ -406,7 +406,7 @@ function contactPagina() {
       <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. Bel, app of stuur een bericht — u hoort meestal binnen een dag van ons.</p>
       <div class="acties">
         <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
-        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><span class="wa-rond" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>WhatsApp</a>
         <a class="knop lijn" href="mailto:info@ok-timmerwerken.nl">Mail</a>
       </div>
     </div>
@@ -455,13 +455,13 @@ function contactPagina() {
 /* contactpagina: de werktijden staan al in het contactraster, dus niet nog eens in de footer */
 .foot-tijden-kol{display:none}
 @media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
-.c-persoonlijk{justify-self:end;max-width:360px;text-align:center}
-.c-avatar{width:clamp(180px,22vw,260px);aspect-ratio:1;border-radius:50%;overflow:hidden;margin:0 auto;background:#f2ebdf;
+.c-persoonlijk{justify-self:end;align-self:end;width:calc(min(var(--max),94vw) / 2 - 48px);text-align:center}   /* midden op de 3e kolomlijn; onderkant gelijk met de knoppen */
+.c-avatar{width:clamp(220px,20vw,290px);   /* bovenkant gelijk met de kop links */aspect-ratio:1;border-radius:50%;overflow:hidden;margin:0 auto;background:#f2ebdf;
   box-shadow:0 40px 70px -40px rgba(20,19,15,.45)}
 .c-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.15);transform-origin:50% 0}
-.c-citaat{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--inkt)}
+.c-citaat{max-width:30ch;margin-left:auto;margin-right:auto;margin-top:24px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--inkt)}
 .c-naam{display:block;margin-top:12px;font-size:13px;color:var(--zacht);letter-spacing:.04em}
-@media(max-width:820px){.c-persoonlijk{justify-self:start;text-align:left}.c-avatar{margin:0}}
+@media(max-width:820px){.c-persoonlijk{justify-self:start;align-self:start;width:auto;text-align:left}.c-avatar{margin:0}.c-citaat{margin-left:0}}
 </style>
 </head>`);
 }
