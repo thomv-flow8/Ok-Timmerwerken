@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Carrousel-proef — 2 varianten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* Proef: twee carrousels voor de dienstpagina's, nagebouwd in gewone JS/CSS (zonder React/Tailwind),
+   in de huisstijl van de site en met Ozcans echte foto's. Tokens gelijk aan preview/d-lijn.html. */
+:root{--vlak:#ffffff;--inkt:#14130f;--zacht:#6b6762;--rand:#e9e7e1;--brons:#b58a52;--lijn:rgba(20,19,15,.06);
+  --f:'Inter',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;--max:1180px;--ease:cubic-bezier(.62,.05,0,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--vlak);color:var(--inkt);font-family:var(--f);-webkit-font-smoothing:antialiased}
+img{display:block}
+section{position:relative;overflow:hidden;background:var(--vlak)}
+.fris{--vlak:#f5f1ea}
+.kolommen{position:absolute;inset:0;pointer-events:none;z-index:0}
+.kolommen::before{content:'';position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(var(--max),94vw);
+  background-image:linear-gradient(90deg,var(--lijn) 1px,transparent 1px);background-size:calc(100%/4) 100%;
+  border-left:1px solid var(--lijn);border-right:1px solid var(--lijn)}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 24px}
+.kop{padding:100px 0 44px}
+.oog{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht)}
+.oog b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--inkt);color:#fff;font-size:13px;letter-spacing:0}
+h2{font-size:clamp(34px,4.6vw,58px);font-weight:700;letter-spacing:-.035em;line-height:1;margin-top:20px}
+h2 em{font-family:var(--serif);font-style:italic;font-weight:400}
+.lead{margin-top:16px;max-width:60ch;color:var(--zacht);font-weight:300;font-size:16.5px;line-height:1.65}
+.uitleg{background:#14130f;color:#fff;font-size:14px;padding:14px 24px;text-align:center}
+.rond{width:48px;height:48px;border-radius:50%;border:0;background:var(--inkt);color:#fff;cursor:pointer;display:grid;place-items:center;
+  transition:transform .25s,background .25s}
+.rond:hover{transform:translateY(-2px);background:var(--brons)}
+.rond:active{transform:translateY(1px)}
+.rond svg{width:18px;height:18px}
+.rond:focus-visible{outline:2px solid var(--brons);outline-offset:3px}
+
+/* ================= 1 — 3D-kaarten ================= */
+#een .podium{position:relative;width:min(70vmin,560px);height:min(70vmin,560px);margin:0 auto 0;padding-bottom:0}
+#een .rail{position:absolute;left:calc(-1 * min(4vmin,32px));top:0;   /* compenseert de marge van de eerste kaart */ display:flex;height:100%;transition:transform 1s var(--ease)}
+#een .persp{perspective:1200px;transform-style:preserve-3d}
+#een .dia{position:relative;width:min(70vmin,560px);height:min(70vmin,560px);margin:0 min(4vmin,32px);list-style:none;cursor:pointer;
+  transform-origin:bottom;transition:transform .5s cubic-bezier(.4,0,.2,1);transform:scale(.98) rotateX(8deg)}
+#een .dia.aan{transform:scale(1) rotateX(0);cursor:default}
+#een .vlak{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#1d1d1a;transition:transform .15s ease-out;
+  box-shadow:0 50px 90px -40px rgba(20,19,15,.5)}
+#een .dia.aan .vlak{transform:translate3d(calc(var(--x,0px) / 30),calc(var(--y,0px) / 30),0)}
+#een .vlak img{position:absolute;inset:-10%;width:120%;height:120%;object-fit:cover;opacity:.5;transition:opacity .6s ease}
+#een .dia.aan .vlak img{opacity:1}
+#een .dia.aan .vlak::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.65),rgba(10,10,8,.05) 55%)}
+#een .tekst{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 7% 7%;color:#fff;opacity:0;visibility:hidden;transition:opacity 1s ease,visibility 1s}
+#een .dia.aan .tekst{opacity:1;visibility:visible}
+#een .tekst .nr{font-family:var(--serif);font-style:italic;color:#e7c9a0;font-size:22px}
+#een .tekst h3{font-size:clamp(20px,2.6vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-top:6px}
+#een .tekst button{margin-top:18px;border:0;background:#fff;color:var(--inkt);border-radius:999px;padding:11px 20px;font:600 13.5px var(--f);cursor:pointer}
+#een .tekst button:hover{background:var(--brons);color:#fff}
+#een .bediening{display:flex;justify-content:center;gap:12px;margin:34px 0 110px}
+#een .teller{align-self:center;min-width:76px;text-align:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--brons)}
+
+/* ================= 2 — Squeeze ================= */
+#twee .sq{--h:clamp(220px,32vw,400px);padding-bottom:110px}
+#twee .sq-pijlen{display:flex;justify-content:flex-end;gap:10px;margin-bottom:18px}
+#twee .sq-raam{overflow:hidden;height:var(--h)}
+#twee .sq-strook{display:flex;height:100%;width:max-content}
+#twee .sq-strook.anim{transition:transform 1s cubic-bezier(.16,1,.3,1)}
+#twee .paneel{position:relative;flex:none;height:100%;overflow:hidden;border:0;padding:0;cursor:pointer;background:#ddd;border-radius:10px}
+#twee .sq-strook.anim .paneel{transition:width 1s cubic-bezier(.16,1,.3,1),margin-left 1s cubic-bezier(.16,1,.3,1),border-radius 1s}
+#twee .paneel img{position:absolute;top:0;left:50%;height:100%;width:calc(var(--h) * 16 / 9);min-width:100%;max-width:none;object-fit:cover;transform:translateX(-50%);pointer-events:none}
+#twee .paneel .merk{position:absolute;left:0;right:0;bottom:0;padding:60px 20px 16px;color:#fff;font-family:var(--serif);font-style:italic;font-size:20px;text-align:left;
+  background:linear-gradient(to top,rgba(0,0,0,.55),transparent);opacity:0;transition:opacity 1s cubic-bezier(.16,1,.3,1)}
+#twee .paneel.open .merk{opacity:1}
+#twee .paneel:focus-visible{outline:2px solid var(--brons);outline-offset:3px}
+#twee .sq-tekst{display:grid;margin-top:26px}
+#twee .sq-tekst > div{grid-area:1/1;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;opacity:0;visibility:hidden;
+  transition:opacity 1s cubic-bezier(.16,1,.3,1),visibility 1s}
+#twee .sq-tekst > div.aan{opacity:1;visibility:visible}
+#twee .sq-tekst p{max-width:46rem;font-size:17px;line-height:1.6}
+#twee .sq-tekst p .nr{font-family:var(--serif);font-style:italic;color:var(--brons);font-size:22px;margin-right:6px}
+#twee .sq-tekst p span.z{color:var(--zacht)}
+#twee .sq-tekst a{flex:none;display:inline-flex;align-items:center;gap:9px;background:var(--inkt);color:#fff;text-decoration:none;border-radius:999px;padding:11px 20px;font-size:13.5px;font-weight:600}
+#twee .sq-tekst a:hover{background:var(--brons)}
+@media(max-width:700px){#twee .sq-tekst > div{flex-direction:column;gap:16px}}
+
+/* lichtbak */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .3s}
+.lb img{max-width:min(1200px,92vw);max-height:80vh;object-fit:contain;border-radius:6px}
+.lb p{color:rgba(255,255,255,.85);text-align:center;margin-top:12px;font-size:14px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="uitleg">Proef — twee carrousels voor de dienstpagina's, met de 12 foto's van Betonvloeren. Klik, veeg of gebruik de pijltjestoetsen.</div>
+
+<!-- 1 -->
+<section id="een"><div class="kolommen"></div>
+  <div class="wrap"><div class="kop"><span class="oog"><b>1</b>3D-kaarten</span><h2>Echte projecten van <em>OK</em>.</h2>
+    <p class="lead">De actieve foto beweegt licht mee met de muis; de foto's ernaast kantelen naar achteren. Klik op een zijfoto om ernaartoe te gaan.</p></div></div>
+  <div class="podium" id="een-podium" tabindex="0" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk"><ul class="rail" id="een-rail"></ul></div>
+  <div class="bediening">
+    <button class="rond" id="een-terug" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <span class="teller" id="een-teller">01 / 12</span>
+    <button class="rond" id="een-verder" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="twee" class="fris"><div class="kolommen"></div>
+  <div class="wrap">
+    <div class="kop"><span class="oog"><b>2</b>Squeeze</span><h2>Echte projecten van <em>OK</em>.</h2>
+      <p class="lead">Eén foto krijgt de ruimte, de rest wordt samengedrukt tot latjes. Klik op een smalle foto om hem open te schuiven; met de muis erboven wordt hij alvast iets breder.</p></div>
+    <div class="sq">
+      <div class="sq-pijlen">
+        <button class="rond" id="sq-terug" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="rond" id="sq-verder" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="sq-raam" id="sq-raam"><div class="sq-strook anim" id="sq-strook" role="tablist" aria-label="Foto's van uitgevoerd werk"></div></div>
+      <div class="sq-tekst" id="sq-tekst" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb"><div><img alt=""><p></p></div></div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches, W='../assets/web/';
+  var F=[['beton-wa009.jpg','Gevlinderde vloer onder een veranda'],['beton-wa202.jpg','Vlinderen in een garage'],
+    ['beton-wa047.jpg','Verse betonplaat in een smalle achtertuin'],['beton-wa120.jpg','De garagevloer wordt machinaal gevlinderd'],
+    ['beton-wa193.jpg','Strakke betonvloer onder een overkapping'],['beton-wa233.jpg','Donkere betonvloer in de tuin, net afgewerkt'],
+    ['beton-wa225.jpg','Betonplaat tot aan de achtergevel'],['betonvloer-oprit.jpg','Betonvloer onder een carport'],
+    ['betonvloer-woonkamer.jpg','Gevlinderde vloer onder een overkapping'],['beton-wa175.jpg','Betonplaat in de bekisting, net gestort'],
+    ['beton-wa283.jpg','Spiegelgladde betonplaat, net gestort'],['beton-wa294.jpg','Zandbed en hoogtemeting voor een garagevloer']];
+  var n=F.length;
+  function nn(i){ return (i<9?'0':'')+(i+1); }
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
+  var lb=document.getElementById('lb');
+  function groot(i){ lb.querySelector('img').src=W+F[i][0]; lb.querySelector('p').textContent=F[i][1]; lb.classList.add('open'); }
+  lb.addEventListener('click',function(){ lb.classList.remove('open'); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('open'); });
+  function veeg(el,links,rechts){ var x0=null; el.addEventListener('pointerdown',function(e){ x0=e.clientX; });
+    el.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null; if(dx<-40) links(); else if(dx>40) rechts(); }); }
+
+  /* ---------- 1: 3D-kaarten ---------- */
+  var rail=document.getElementById('een-rail'), nu1=0;
+  rail.innerHTML=F.map(function(f,i){ return '<div class="persp"><li class="dia" data-i="'+i+'"><div class="vlak"><img src="'+W+f[0]+'" alt="'+esc(f[1])+'"'+(i>2?' loading="lazy"':'')+'></div>'+
+    '<div class="tekst"><span class="nr">'+nn(i)+'</span><h3>'+esc(f[1])+'</h3><button type="button" data-groot="'+i+'">Bekijk groot</button></div></li></div>'; }).join('');
+  var dias=[].slice.call(rail.querySelectorAll('.dia'));
+  function toon1(i){ nu1=(i+n)%n;
+    rail.style.transform='translateX(-'+(nu1*(100/n))+'%)';
+    dias.forEach(function(d,k){ d.classList.toggle('aan',k===nu1); });
+    document.getElementById('een-teller').textContent=nn(nu1)+' / '+n; }
+  rail.addEventListener('click',function(e){ var g=e.target.closest('[data-groot]'); if(g){ groot(+g.dataset.groot); return; }
+    var d=e.target.closest('.dia'); if(d && +d.dataset.i!==nu1) toon1(+d.dataset.i); });
+  dias.forEach(function(d){ var doel={x:0,y:0}, raf=0;
+    d.addEventListener('mousemove',function(e){ var r=d.getBoundingClientRect(); doel.x=e.clientX-(r.left+r.width/2); doel.y=e.clientY-(r.top+r.height/2);
+      if(!raf) raf=requestAnimationFrame(function(){ raf=0; d.style.setProperty('--x',doel.x+'px'); d.style.setProperty('--y',doel.y+'px'); }); });
+    d.addEventListener('mouseleave',function(){ d.style.setProperty('--x','0px'); d.style.setProperty('--y','0px'); }); });
+  document.getElementById('een-terug').addEventListener('click',function(){ toon1(nu1-1); });
+  document.getElementById('een-verder').addEventListener('click',function(){ toon1(nu1+1); });
+  var pod=document.getElementById('een-podium');
+  pod.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') toon1(nu1+1); if(e.key==='ArrowLeft') toon1(nu1-1); });
+  veeg(pod,function(){ toon1(nu1+1); },function(){ toon1(nu1-1); });
+  toon1(0);
+
+  /* ---------- 2: Squeeze ---------- */
+  // De foto's staan drie keer achter elkaar; we blijven in het middelste stuk en springen na een stap
+  // onzichtbaar terug, zodat de rij eindeloos lijkt door te lopen.
+  var strook=document.getElementById('sq-strook'), raam=document.getElementById('sq-raam'), tekst=document.getElementById('sq-tekst');
+  var ALLE=F.concat(F).concat(F), nu2=n, hover=-1;
+  var DELEN=[-0.06,0.61,0.30,0.15], RUIM=[0,0.71,0.40,0.25], KRAP=[-0.12,0.59,0.28,0.13], LAT=8, LATGAT=8, GAT=16, STAART=3;
+  strook.innerHTML=ALLE.map(function(f,i){ return '<button type="button" class="paneel" role="tab" data-i="'+i+'" aria-label="'+esc(f[1])+'">'+
+    '<img src="'+W+f[0]+'" alt="" draggable="false" loading="lazy"><span class="merk">'+nn(i%n)+' — Betonvloeren</span></button>'; }).join('');
+  tekst.innerHTML=F.map(function(f,i){ return '<div data-i="'+i+'"><p><span class="nr">'+nn(i)+'</span> '+esc(f[1])+'. <span class="z">Een project van OK Timmerwerken.</span></p>'+
+    '<a href="#" data-groot="'+i+'">Bekijk groot <svg width="6" height="9" viewBox="0 0 6 9" fill="none"><path d="M1.2 1 4.7 4.5 1.2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>'; }).join('');
+  var panelen=[].slice.call(strook.children), teksten=[].slice.call(tekst.children);
+  function maten(){ var Wb=raam.clientWidth, H=raam.clientHeight, held=Math.min(H*16/9, Wb*.62);
+    var ruimte=Wb-held-STAART*LATGAT-3*GAT-STAART*LAT; return {held:held,ruimte:ruimte}; }
+  function breedte(col,m){ if(col<0||col>3) return LAT;
+    var deel=(hover>=0&&hover<=3)?(hover===col?RUIM[col]:KRAP[col]):DELEN[col];
+    return col===0 ? m.held+m.ruimte*deel : m.ruimte*deel; }
+  function leg(){ var m=maten(), x=0;
+    panelen.forEach(function(p,i){ var col=i-nu2, w=Math.max(LAT,breedte(col,m));
+      p.style.width=w+'px'; p.style.marginLeft=(i===0?0:(col>=1&&col<=3?GAT:LATGAT))+'px';
+      p.style.borderRadius=Math.min(10,w/2)+'px'; p.classList.toggle('open',col===0); p.tabIndex=col===0?0:-1; p.setAttribute('aria-selected',col===0);
+      if(col<0) x+=w+(i===0?0:LATGAT); });
+    // eerste paneel van het middelste stuk links in beeld; de latjes ervoor schuiven links weg
+    strook.style.transform='translateX('+(-(x+LATGAT))+'px)';
+    teksten.forEach(function(t,k){ t.classList.toggle('aan',k===nu2%n); }); }
+  function stap(by){ nu2+=by; leg();
+    clearTimeout(stap.t); stap.t=setTimeout(function(){
+      if(nu2<n||nu2>=2*n){ strook.classList.remove('anim'); nu2=n+((nu2%n)+n)%n; leg(); void strook.offsetWidth; strook.classList.add('anim'); } },rm?0:1050); }
+  strook.addEventListener('click',function(e){ var p=e.target.closest('.paneel'); if(!p) return; var col=+p.dataset.i-nu2; if(col>0) stap(col); else if(col===0) groot(nu2%n); });
+  strook.addEventListener('mousemove',function(e){ var p=e.target.closest('.paneel'); var col=p?+p.dataset.i-nu2:-1; if(col!==hover){ hover=col; leg(); } });
+  strook.addEventListener('mouseleave',function(){ hover=-1; leg(); });
+  tekst.addEventListener('click',function(e){ var a=e.target.closest('[data-groot]'); if(a){ e.preventDefault(); groot(+a.dataset.groot); } });
+  document.getElementById('sq-terug').addEventListener('click',function(){ stap(-1); });
+  document.getElementById('sq-verder').addEventListener('click',function(){ stap(1); });
+  strook.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ e.preventDefault(); stap(1); } if(e.key==='ArrowLeft'){ e.preventDefault(); stap(-1); } });
+  veeg(raam,function(){ stap(1); },function(){ stap(-1); });
+  addEventListener('resize',leg);
+  strook.classList.remove('anim'); leg(); void strook.offsetWidth; strook.classList.add('anim');
+})();
+</script>
+</body>
+</html>
