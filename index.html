@@ -112,14 +112,10 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .menu-voet{margin-top:auto;padding-top:30px;display:flex;flex-direction:column;gap:12px}
 .menu-voet .tel{font-size:20px;font-weight:600;color:#fff}
 .menu-voet .knoppen{display:flex;gap:10px;align-items:center}
-.menu-voet .wa-knop{background:#25D366;color:#fff;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
+.menu-voet .wa-knop{background:var(--inkt);color:#fff;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
 /* WhatsApp-knoppen: overal de herkenbare WhatsApp-groen, met het icoon uit de iconenset */
 .wa-knop{display:inline-flex;align-items:center;gap:8px}
-.knop.wa-knop{background:var(--inkt);border-color:var(--inkt);color:#fff}   /* zwart; alleen het ronde logo is groen */
-.wa-rond{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#25D366;color:#fff;flex:none;
-  margin:-4px 0 -4px -8px;transition:transform .3s var(--ease)}
-.wa-rond svg{width:14px!important;height:14px!important}
-.knop.wa-knop:hover .wa-rond{transform:scale(1.12)}
+.knop.wa-knop{background:var(--inkt);border-color:var(--inkt);color:#fff}   /* WhatsApp-knoppen altijd zwart; alleen het ronde knopje rechtsonder is groen */
 .wa-knop svg{width:16px;height:16px;flex:none}
 /* WhatsApp-knop in de menubalk: donker zoals de andere knoppen, met het icoon */
 .wa-nav{display:inline-flex;align-items:center;gap:8px}
@@ -1036,7 +1032,7 @@ footer.groot{padding:72px 0 46px}
       bellen of appen mag natuurlijk ook.</p>
       <div class="contact-knoppen">
         <a class="knop" href="contact/">Naar het contactformulier</a>
-        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><span class="wa-rond" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>WhatsApp</a>
+        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
         <a class="knop lijn" href="tel:+31641429106">Bel 06 41 42 91 06</a>
       </div>
     </div>
