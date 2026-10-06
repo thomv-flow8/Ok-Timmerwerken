@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Werkmuur-proef</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* Proef: schuine fotomuur met al het werk, onder de reviews op de homepage. Tokens gelijk aan preview/d-lijn.html. */
+:root{--vlak:#ffffff;--inkt:#14130f;--zacht:#6b6762;--rand:#e9e7e1;--brons:#b58a52;--lijn:rgba(20,19,15,.06);
+  --f:'Inter',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;--max:1180px;--ease:cubic-bezier(.62,.05,0,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--vlak);color:var(--inkt);font-family:var(--f);-webkit-font-smoothing:antialiased}
+section{position:relative;overflow:hidden;background:var(--vlak)}
+.fris{--vlak:#f5f1ea}
+.kolommen{position:absolute;inset:0;pointer-events:none;z-index:0}
+.kolommen::before{content:'';position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(var(--max),94vw);
+  background-image:linear-gradient(90deg,var(--lijn) 1px,transparent 1px);background-size:calc(100%/4) 100%;
+  border-left:1px solid var(--lijn);border-right:1px solid var(--lijn)}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 24px}
+.oog{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht)}
+h2{font-size:clamp(34px,4.6vw,58px);font-weight:700;letter-spacing:-.035em;line-height:1;margin-top:20px}
+h2 em{font-family:var(--serif);font-style:italic;font-weight:400}
+.uitleg{background:#14130f;color:#fff;font-size:14px;padding:14px 24px;text-align:center}
+.nep{padding:120px 0 110px}.nep p{margin-top:14px;color:var(--zacht);max-width:56ch;line-height:1.6}
+
+/* ---- werkmuur ---- */
+.werkmuur{height:min(118vh,1100px);background:#fff}
+.werkmuur .muur{position:absolute;left:50%;top:50%;width:230vw;display:flex;flex-direction:column;gap:clamp(14px,1.6vw,24px);
+  transform:translate(-50%,-50%) rotate(24deg)}
+.werkmuur .rij{display:flex;gap:clamp(14px,1.6vw,24px);will-change:transform}
+.werkmuur .rij:nth-child(even){margin-left:calc(-1 * var(--kaart) / 2)}
+.werkmuur{--kaart:clamp(200px,21vw,330px)}
+.werkmuur a{flex:none;position:relative;display:block;width:var(--kaart);aspect-ratio:4/3;border-radius:clamp(12px,1.3vw,20px);overflow:hidden;
+  background:#eee;box-shadow:0 30px 50px -34px rgba(20,19,15,.5);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.werkmuur a img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease)}
+.werkmuur a span{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--inkt);border-radius:999px;padding:5px 13px;
+  font-family:var(--serif);font-style:italic;font-size:17px;transform:rotate(-24deg) translateY(8px);transform-origin:left bottom;opacity:0;
+  transition:opacity .35s,transform .45s var(--ease)}
+.werkmuur a:hover{transform:scale(1.04);box-shadow:0 40px 70px -30px rgba(20,19,15,.55);z-index:2}
+.werkmuur a:hover img{transform:scale(1.06)}
+.werkmuur a:hover span{opacity:1;transform:rotate(-24deg)}
+/* zachte overgang naar de secties erboven en eronder */
+.werkmuur::before,.werkmuur::after{content:'';position:absolute;left:0;right:0;height:90px;z-index:3;pointer-events:none}
+.werkmuur::before{top:0;background:linear-gradient(#f5f1ea,rgba(245,241,234,0))}
+.werkmuur::after{bottom:0;background:linear-gradient(rgba(255,255,255,0),#fff)}
+@media(max-width:820px){.werkmuur{height:92vh;--kaart:44vw}.werkmuur .muur{width:330vw}}
+@media(prefers-reduced-motion:reduce){.werkmuur .rij{transform:none!important}}
+</style>
+</head>
+<body>
+<div class="uitleg">Proef — de schuine fotomuur komt op de homepage tussen <b>reviews</b> en <b>contact</b>. Scroll rustig op en neer en ga met de muis over de foto's.</div>
+
+<section class="fris nep"><div class="kolommen"></div><div class="wrap">
+  <span class="oog">Wat klanten zeggen</span>
+  <h2>Tevreden klanten, in hun <em>eigen</em> woorden.</h2>
+  <p>(Hier staan de reviewkaarten van de homepage — ingekort voor deze proef.)</p>
+</div></section>
+
+<section class="werkmuur" aria-label="Een greep uit het werk van OK Timmerwerken">
+  <div class="muur" id="muur"></div>
+</section>
+
+<section class="nep"><div class="kolommen"></div><div class="wrap">
+  <span class="oog">Contact</span>
+  <h2>Vraag een vrijblijvend <em>advies</em> aan.</h2>
+  <p>(Hier begint het contactblok van de homepage.)</p>
+</div></section>
+
+<script>
+(function(){
+  var F=[{"src": "../assets/web/mix/mix-01.jpg", "dienst": "betonvloeren", "naam": "Betonvloeren", "alt": "Gevlinderde vloer onder een veranda"}, {"src": "../assets/web/mix/mix-02.jpg", "dienst": "zolder", "naam": "Vliering & zolder", "alt": "Zolderverbouwing in volle gang"}, {"src": "../assets/web/mix/mix-03.jpg", "dienst": "carport", "naam": "Carport & overkapping", "alt": "Tuinhuis in Douglas met deur en raam"}, {"src": "../assets/web/mix/mix-04.jpg", "dienst": "dakramen", "naam": "Dakramen (Velux)", "alt": "Dakraam met afgewerkte omlijsting"}, {"src": "../assets/web/mix/mix-05.jpg", "dienst": "timmerwerk", "naam": "Timmerwerk & afbouw", "alt": "Tv-wand met nissen in opbouw"}, {"src": "../assets/web/mix/mix-06.jpg", "dienst": "funderingen", "naam": "Funderingen", "alt": "Wapening voor een betonpoer"}, {"src": "../assets/web/mix/mix-07.jpg", "dienst": "onderhoud", "naam": "Onderhoud & renovatie", "alt": "Een dragende muur eruit"}, {"src": "../assets/web/mix/mix-08.jpg", "dienst": "nieuwbouw", "naam": "Nieuwbouw", "alt": "Bekisting met schoren, klaar om te storten"}, {"src": "../assets/web/mix/mix-09.jpg", "dienst": "betonvloeren", "naam": "Betonvloeren", "alt": "Strakke betonvloer onder een overkapping"}, {"src": "../assets/web/mix/mix-10.jpg", "dienst": "zolder", "naam": "Vliering & zolder", "alt": "Afgewerkt plafond met vlieringluik"}, {"src": "../assets/web/mix/mix-11.jpg", "dienst": "carport", "naam": "Carport & overkapping", "alt": "Overkapping met glazen schuifwanden en zwarte gevel"}, {"src": "../assets/web/mix/mix-12.jpg", "dienst": "dakramen", "naam": "Dakramen (Velux)", "alt": "Nieuw dakraam, helemaal open"}, {"src": "../assets/web/mix/mix-13.jpg", "dienst": "timmerwerk", "naam": "Timmerwerk & afbouw", "alt": "Verlaagd plafond met inbouwspots"}, {"src": "../assets/web/mix/mix-14.jpg", "dienst": "funderingen", "naam": "Funderingen", "alt": "Wapening met afstandhouders voor een betonplaat"}, {"src": "../assets/web/mix/mix-15.jpg", "dienst": "onderhoud", "naam": "Onderhoud & renovatie", "alt": "Nieuwe pannen en een doorvoer in het dak"}, {"src": "../assets/web/mix/mix-16.jpg", "dienst": "nieuwbouw", "naam": "Nieuwbouw", "alt": "Betonmixer en pomp op de bouwplaats"}, {"src": "../assets/web/mix/mix-17.jpg", "dienst": "betonvloeren", "naam": "Betonvloeren", "alt": "Donkere betonvloer in de tuin, net afgewerkt"}, {"src": "../assets/web/mix/mix-18.jpg", "dienst": "zolder", "naam": "Vliering & zolder", "alt": "Nieuwe vloerconstructie op zolder"}, {"src": "../assets/web/mix/mix-19.jpg", "dienst": "carport", "naam": "Carport & overkapping", "alt": "Carport tegen de woning"}, {"src": "../assets/web/mix/mix-20.jpg", "dienst": "dakramen", "naam": "Dakramen (Velux)", "alt": "De sparing in het dak is gemaakt"}, {"src": "../assets/web/mix/mix-21.jpg", "dienst": "timmerwerk", "naam": "Timmerwerk & afbouw", "alt": "Tv-wand met nissen en haard"}, {"src": "../assets/web/mix/mix-22.jpg", "dienst": "funderingen", "naam": "Funderingen", "alt": "Gestorte betonplaat langs de schutting"}, {"src": "../assets/web/mix/mix-23.jpg", "dienst": "onderhoud", "naam": "Onderhoud & renovatie", "alt": "Toilet met nieuw tegelwerk"}, {"src": "../assets/web/mix/mix-24.jpg", "dienst": "nieuwbouw", "naam": "Nieuwbouw", "alt": "Betonwand in aanbouw"}, {"src": "../assets/web/mix/mix-25.jpg", "dienst": "betonvloeren", "naam": "Betonvloeren", "alt": "Betonplaat tot aan de achtergevel"}, {"src": "../assets/web/mix/mix-26.jpg", "dienst": "zolder", "naam": "Vliering & zolder", "alt": "Dakisolatie tussen de spanten"}, {"src": "../assets/web/mix/mix-27.jpg", "dienst": "carport", "naam": "Carport & overkapping", "alt": "Overkapping met glazen schuifwanden"}, {"src": "../assets/web/mix/mix-28.jpg", "dienst": "dakramen", "naam": "Dakramen (Velux)", "alt": "Het dakraam van buiten, netjes in de pannen"}, {"src": "../assets/web/mix/mix-29.jpg", "dienst": "timmerwerk", "naam": "Timmerwerk & afbouw", "alt": "Nieuwe wanden op zolder, klaar voor de afwerking"}, {"src": "../assets/web/mix/mix-30.jpg", "dienst": "funderingen", "naam": "Funderingen", "alt": "Betonplaat in het gras, strak bekist"}, {"src": "../assets/web/mix/mix-31.jpg", "dienst": "onderhoud", "naam": "Onderhoud & renovatie", "alt": "Toilet opnieuw betegeld"}, {"src": "../assets/web/mix/mix-32.jpg", "dienst": "nieuwbouw", "naam": "Nieuwbouw", "alt": "Betonwanden storten met de pomp"}, {"src": "../assets/web/mix/mix-33.jpg", "dienst": "betonvloeren", "naam": "Betonvloeren", "alt": "Betonvloer onder een carport"}, {"src": "../assets/web/mix/mix-34.jpg", "dienst": "zolder", "naam": "Vliering & zolder", "alt": "Afgewerkte zolder met spots en luik"}, {"src": "../assets/web/mix/mix-35.jpg", "dienst": "carport", "naam": "Carport & overkapping", "alt": "Overkapping met vlonder in aanbouw"}, {"src": "../assets/web/mix/mix-36.jpg", "dienst": "dakramen", "naam": "Dakramen (Velux)", "alt": "Het dakraam wordt ingebouwd"}], RIJEN=6, PER=12;
+  var muur=document.getElementById('muur'), html='';
+  for(var r=0;r<RIJEN;r++){ html+='<div class="rij">';
+    for(var k=0;k<PER;k++){ var f=F[(r*7+k*5)%F.length];   // verspringend, zodat buren steeds anders zijn
+      html+='<a href="../diensten/'+f.dienst+'/" tabindex="-1"><img data-src="'+f.src+'" alt="'+f.alt.replace(/"/g,'&quot;')+'" decoding="async"><span>'+f.naam+'</span></a>'; }
+    html+='</div>'; }
+  muur.innerHTML=html;
+  // foto's in één keer laden zodra de band in de buurt komt (lazy loading herkent gedraaide kaarten slecht)
+  function laad(){ [].forEach.call(muur.querySelectorAll('img[data-src]'),function(im){ im.src=im.dataset.src; im.removeAttribute('data-src'); }); }
+  if('IntersectionObserver' in window){ var lo=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ laad(); lo.disconnect(); } },{rootMargin:'800px 0px'}); lo.observe(muur.parentNode); } else laad();
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches, sec=muur.parentNode, rijen=[].slice.call(muur.children), bezig=false;
+  function zet(){ bezig=false; var r=sec.getBoundingClientRect(), h=innerHeight;
+    var p=(h-r.top)/(h+r.height);            // 0 = komt binnen, 1 = gaat eruit
+    var basis=(p-.5)*-560;                     // hele muur schuift schuin mee
+    rijen.forEach(function(rij,i){ var extra=(i%2?1:-1)*(p-.5)*180;   // rijen om en om tegen elkaar in
+      rij.style.transform='translate3d('+(basis+extra).toFixed(1)+'px,0,0)'; }); }
+  function plan(){ if(!bezig){ bezig=true; requestAnimationFrame(zet); } }
+  if(!rm){ addEventListener('scroll',plan,{passive:true}); addEventListener('resize',plan); }
+  zet();
+})();
+</script>
+</body>
+</html>
