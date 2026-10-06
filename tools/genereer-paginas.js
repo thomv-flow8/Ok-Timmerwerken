@@ -25,8 +25,35 @@ const fonts = tussen(hoofd, '<link rel="preconnect"', 'rel="stylesheet">');
 const kopdeel = tussen(hoofd, '<!-- iconenset', '<section class="hero">', false).replace(/\n<!--[^\n]*-->\s*$/, '\n');
 const footer = tussen(hoofd, '<footer', '</footer>');
 const dock = tussen(hoofd, '<div class="dock">', '</div>');
-// het contactraster (formulier + gegevens) komt uit de homepage, zodat er één bron is
-const contactRaster = tussen(hoofd, '<div class="contact-grid">', '<!-- /contact-grid -->');
+// het contactraster (formulier + gegevens) staat alleen op de contactpagina; hier is de bron
+const contactRaster = `<div class="contact-grid">
+      <form id="aanvraag" novalidate>
+        <label for="c-naam">Naam</label>
+        <input id="c-naam" name="naam" type="text" autocomplete="name" placeholder="Uw naam" required>
+        <div class="veld-rij">
+          <div><label for="c-mail">E-mailadres</label>
+          <input id="c-mail" name="email" type="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required></div>
+          <div><label for="c-tel">Telefoonnummer</label>
+          <input id="c-tel" name="telefoon" type="tel" autocomplete="tel" placeholder="06 ..."></div>
+        </div>
+        <label for="c-ber">Waar kunnen we mee helpen?</label>
+        <textarea id="c-ber" name="bericht" placeholder="Bijvoorbeeld: gevlinderde betonvloer van 30 m² in de garage" required></textarea>
+        <button class="veld-knop" type="submit">Verstuur aanvraag</button>
+        <p class="form-melding" role="status" hidden>Dit formulier is nog in de testfase en verstuurt nog niets. Bel of app Ozcan op <a href="tel:+31641429106">06 41 42 91 06</a> of mail naar <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>.</p>
+      </form>
+      <div class="contact-info">
+        <div class="lbl">Direct contact</div>
+        <a href="tel:+31641429106">06 41 42 91 06</a>
+        <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>
+        <div class="lbl">Werkgebied</div>
+        <a href="#" style="pointer-events:none">Gorinchem en regio Zuid-Holland</a>
+        <div class="lbl">Werktijden</div>
+        <div class="tijden"><span>Maandag – vrijdag</span><span>07:00 – 20:00</span><span>Zaterdag</span><span>07:00 – 16:00</span><span>Zondag</span><span>Gesloten</span></div>
+        <div class="nu-open" hidden><i></i><span></span></div>
+        <div class="lbl">Erkenning</div>
+        <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner</a>
+      </div>
+    </div><!-- /contact-grid -->`;
 const gedeeldJs = tussen(hoofd, '// [[gedeeld', '// gedeeld]]');
 // reviews-raster (3 reviews + scores) — de optel-animatie draait alleen op de hoofdpagina, dus hier de eindwaarde
 const reviewkaarten = tussen(hoofd, '<div class="kaarten">', '<!-- /kaarten -->')
@@ -343,13 +370,13 @@ function oproep() {
     <div class="acties">
       <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
       <a class="knop wa" href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="knop lijn" href="d-lijn.html#contact">Contactformulier</a>
+      <a class="knop lijn" href="contact.html">Contactformulier</a>
     </div>
   </div>
 </section>`;
 }
 
-function stappenRaster(items, cta, iconen = [], ctaLink = 'd-lijn.html#contact') {
+function stappenRaster(items, cta, iconen = [], ctaLink = 'contact.html') {
   const stappen = items.map(([kop, tekst], i) => `      <div class="stap">
         <div class="snr klein">${String(i + 1).padStart(2, '0')}</div>${iconen[i] ? `<svg class="sico" aria-hidden="true"><use href="#${iconen[i]}"/></svg>` : ''}
         <h3>${esc(kop)}</h3>
@@ -513,7 +540,7 @@ ${d.download ? `        <a class="download" href="${d.download[1]}" target="_bla
       <h1>${esc(d.kop)}</h1>
       <p class="lead">${esc(d.intro)}</p>
       <div class="acties">
-        <a class="knop" href="d-lijn.html#contact">Vraag vrijblijvend advies</a>
+        <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
       </div>${erkend}
     </div>
@@ -612,7 +639,7 @@ function overPagina(o) {
       <h1>${esc(o.kop)}</h1>
       <p class="lead">${esc(o.intro)}</p>
       <div class="acties">
-        <a class="knop" href="d-lijn.html#contact">Maak kennis met Ozcan</a>
+        <a class="knop" href="contact.html">Maak kennis met Ozcan</a>
         <a class="knop lijn" href="d-lijn.html#diensten">Bekijk de diensten</a>
       </div>
       <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
@@ -744,7 +771,7 @@ for (const d of inhoud.diensten) {
 }
 fs.writeFileSync(path.join(uit, 'over.html'), overPagina(inhoud.over));
 geschreven.push('over.html');
-// contactpagina: voorlopig alleen als preview (preview/contact.html); /contact/ en de links volgen na akkoord
+// contactpagina
 fs.writeFileSync(path.join(uit, 'contact.html'), contactPagina());
 geschreven.push('contact.html');
 fs.writeFileSync(path.join(uit, 'diensten.html'), overzichtPagina(inhoud.diensten));
@@ -778,6 +805,7 @@ function herschrijf(html, pre) {
   h = h.replace(/href="diensten\.html"/g, `href="${pre}diensten/"`);
   h = h.replace(/href="voorwaarden\.html"/g, `href="${pre}algemene-voorwaarden/"`);
   h = h.replace(/href="disclaimer\.html"/g, `href="${pre}disclaimer/"`);
+  h = h.replace(/href="contact\.html"/g, `href="${pre}contact/"`);
   for (const s of slugs) h = h.replace(new RegExp(`href="dienst-${s}\\.html(#[^"]*)?"`, 'g'), (m, a) => `href="${pre}diensten/${s}/${a || ''}"`);
   return h;
 }
@@ -788,6 +816,7 @@ function schrijf(rel, html) {
 }
 schrijf('index.html', herschrijf(fs.readFileSync(path.join(uit, 'd-lijn.html'), 'utf8'), ''));
 schrijf('over-ons/index.html', herschrijf(fs.readFileSync(path.join(uit, 'over.html'), 'utf8'), '../'));
+schrijf('contact/index.html', herschrijf(fs.readFileSync(path.join(uit, 'contact.html'), 'utf8'), '../'));
 for (const s of slugs) {
   schrijf(`diensten/${s}/index.html`, herschrijf(fs.readFileSync(path.join(uit, `dienst-${s}.html`), 'utf8'), '../../'));
 }

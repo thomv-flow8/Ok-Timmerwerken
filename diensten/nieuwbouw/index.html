@@ -23,7 +23,9 @@
   --serif:'Instrument Serif',Georgia,serif;
   --max:1180px; --ease:cubic-bezier(.62,.05,0,1); --bounce:cubic-bezier(.3,1.42,.5,1);
   --accent-warm:#c6702f; --brons:#b58a52;
-  --kl-insta:#d87f57; --kl-werkspot:#9cb189; --kl-google:#7394b4;   /* terracotta / salie / blauw uit de diensten */
+  --kl-insta:#d87f57; --kl-werkspot:#9cb189; --kl-google:#7394b4;
+  /* dezelfde tinten als tekstkleur, donker genoeg om op wit/creme leesbaar te zijn (contrast ≥ 3) */
+  --tekst-insta:#c6702f; --tekst-werkspot:#5f8150; --tekst-google:#4a74a0; --licht-google:#a9c6e3;   /* terracotta / salie / blauw uit de diensten */
 }
 .donker{
   --vlak:#1a1a1a; --inkt:#ffffff; --zacht:#9c9c97; --rand:#333;
@@ -249,7 +251,10 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 
 /* ---------- diensten: vitrine (zwevende kleurvlakken, per dienst een eigen animatie) ---------- */
 .kop{position:relative}
-.kop h2 .warm{color:#c6702f}
+.kop h2 .warm{color:var(--tekst-insta)}
+/* gekleurd woord in een kop, in de kleuren van de logo's (Instagram / Werkspot / Google) */
+.accent-insta{color:var(--tekst-insta)}.accent-werkspot{color:var(--tekst-werkspot)}.accent-google{color:var(--tekst-google)}
+.chaos h2 .accent-google{color:var(--licht-google)}   /* op de donkere puinfoto */
 .krul{position:absolute;right:-4vw;top:40px;width:min(54vw,680px);height:auto;pointer-events:none;z-index:0}
 .krul path{fill:none;stroke:var(--inkt);stroke-width:1.1;stroke-linecap:round;opacity:.55}
 /* ---------- dienst-rijen ---------- */
@@ -455,6 +460,10 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 /* harde randen boven en onder, zoals het voorbeeld */
 @media(max-width:820px){.werkmuur{height:92vh;--kaart:44vw}.werkmuur .muur{width:330vw}}
 @media(prefers-reduced-motion:reduce){.werkmuur .mrij{transform:none!important}}
+/* korte contactoproep op home */
+.contact-knoppen{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.contact-knoppen .knop.lijn{background:transparent;color:var(--inkt);border:1px solid var(--inkt)}
+.contact-knoppen .knop.lijn:hover{background:var(--inkt);color:#fff}
 #contact .wrap{padding-bottom:clamp(90px,11vw,140px)}   /* witruimte onder het formulier, vóór de zwarte footer */   /* off-white adem voor het zwarte contactblok */
 .kaarten{box-shadow:0 46px 90px -56px rgba(20,19,15,.38)}
 .rev{padding:34px 28px 40px;display:flex;flex-direction:column;background:#fff;
@@ -812,7 +821,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <a href="../../#reviews">Reviews</a>
       <a href="../../over-ons/">Over ons</a>
-      <a href="../../#contact">Contact</a>
+      <a href="../../contact/">Contact</a>
     </div>
     <a class="nav-tel" href="tel:+31641429106" aria-label="Bel 06 41 42 91 06">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
@@ -839,7 +848,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     <a href="../../#werkwijze">Werkwijze</a>
     <a href="../../#reviews">Reviews</a>
     <a href="../../over-ons/">Over ons</a>
-    <a href="../../#contact">Contact</a>
+    <a href="../../contact/">Contact</a>
   </nav>
   <div class="menu-sub">
     <a href="../../diensten/betonvloeren/">Betonvloeren</a>
@@ -873,7 +882,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <h1>Vakwerk vanaf de eerste balk.</h1>
       <p class="lead">Voor nieuwbouwprojecten zet OK Timmerwerken HSB-wanden, stelt kozijnen, maakt dak- en vloerconstructies en plaatst ramen, deuren en boeidelen. Nauwkeurig werk volgens tekening, zodat de rest van de bouw er goed op aansluit.</p>
       <div class="acties">
-        <a class="knop" href="../../#contact">Vraag vrijblijvend advies</a>
+        <a class="knop" href="../../contact/">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
       </div>
     </div>
@@ -1027,7 +1036,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <h3>Afwerking</h3>
         <p>Ramen, deuren en boeidelen erin en eraan — klaar voor de volgende fase.</p>
       </div>
-      <a class="stap stap-cta" href="../../#contact">
+      <a class="stap stap-cta" href="../../contact/">
         <div><svg class="cta-krul" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83"/></svg>
         <h3>Klaar voor stap 1?</h3>
         <p>Bel, app of mail Ozcan. Binnen een dag hoort u van ons.</p></div>
@@ -1116,7 +1125,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     <div class="acties">
       <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
       <a class="knop wa" href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="knop lijn" href="../../#contact">Contactformulier</a>
+      <a class="knop lijn" href="../../contact/">Contactformulier</a>
     </div>
   </div>
 </section>
