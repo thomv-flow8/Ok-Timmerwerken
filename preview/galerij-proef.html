@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Galerij-proef — 4 varianten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* Proefpagina: vier galerijvarianten voor de dienstpagina's, met de echte foto's van Betonvloeren.
+   Tokens gelijk aan preview/d-lijn.html, zodat de proef er net zo uitziet als de site. */
+:root{--vlak:#ffffff;--inkt:#14130f;--zacht:#6b6762;--rand:#e9e7e1;--brons:#b58a52;--lijn:rgba(20,19,15,.06);
+  --f:'Inter',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;--max:1180px;--ease:cubic-bezier(.62,.05,0,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--vlak);color:var(--inkt);font-family:var(--f);-webkit-font-smoothing:antialiased}
+img{display:block}
+section{position:relative;overflow:hidden;background:var(--vlak)}
+.creme{--vlak:#f2ebdf}.fris{--vlak:#f5f1ea}
+.kolommen{position:absolute;inset:0;pointer-events:none;z-index:0}
+.kolommen::before{content:'';position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(var(--max),94vw);
+  background-image:linear-gradient(90deg,var(--lijn) 1px,transparent 1px);background-size:calc(100%/4) 100%;
+  border-left:1px solid var(--lijn);border-right:1px solid var(--lijn)}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 24px}
+.kop{padding:110px 0 40px}
+.oog{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht)}
+.oog b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--inkt);color:#fff;font-size:13px;letter-spacing:0}
+h2{font-size:clamp(34px,4.6vw,58px);font-weight:700;letter-spacing:-.035em;line-height:1;margin-top:20px}
+h2 em{font-family:var(--serif);font-style:italic;font-weight:400}
+.lead{margin-top:16px;max-width:60ch;color:var(--zacht);font-weight:300;font-size:16.5px;line-height:1.65}
+.intro{padding:70px 0 30px;border-bottom:1px solid var(--rand)}
+.intro h1{font-size:clamp(30px,4vw,48px);letter-spacing:-.03em}
+.intro p{margin-top:12px;color:var(--zacht);max-width:70ch;line-height:1.6}
+.intro ol{margin:18px 0 0 20px;color:var(--zacht);line-height:1.9}
+.intro a{color:var(--inkt)}
+.nr{font-family:var(--serif);font-style:italic;color:var(--brons)}
+.bij{font-size:14px;color:var(--zacht);line-height:1.45}
+
+/* ============ A — filmstrip die meeschuift met scrollen ============ */
+#a{height:340vh;overflow:clip}   /* clip i.p.v. hidden: anders werkt position:sticky niet */
+#a .plak{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+#a .wrap.kopje{width:100%}
+#a .kop{padding:0 0 34px}
+#a .baan{display:flex;align-items:flex-end;gap:34px;padding:0 max(24px,calc(50vw - var(--max)/2 + 24px));will-change:transform}
+#a figure{flex:none;margin:0}
+#a figure img{height:46vh;width:auto;border-radius:14px;box-shadow:0 40px 70px -40px rgba(20,19,15,.45)}
+#a figure.staand img{height:58vh}
+#a figure.breed img{height:40vh}
+#a figcaption{display:flex;gap:12px;align-items:baseline;margin-top:14px;max-width:46ch}
+#a figcaption .nr{font-size:28px;line-height:1}
+#a .voortgang{position:absolute;left:50%;transform:translateX(-50%);bottom:7vh;width:min(var(--max),94vw);height:1px;background:var(--rand)}
+#a .voortgang i{display:block;height:100%;width:100%;background:var(--brons);transform-origin:left;transform:scaleX(var(--p,0))}
+@media(max-width:820px){
+  #a{height:auto}#a .plak{position:relative;height:auto;padding:90px 0 70px}
+  #a .baan{overflow-x:auto;scroll-snap-type:x mandatory;padding:0 24px 10px;transform:none!important;scrollbar-width:none}
+  #a .baan::-webkit-scrollbar{display:none}
+  #a figure{scroll-snap-align:start}#a figure img,#a figure.staand img,#a figure.breed img{height:52vh}
+  #a .voortgang{display:none}}
+
+/* ============ B — stapel foto's op tafel ============ */
+#b .tafel{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;padding-bottom:110px}
+#b .stapel{position:relative;aspect-ratio:4/3.4;touch-action:pan-y;user-select:none}
+#b .kaart{position:absolute;inset:6% 8%;background:#fff;padding:12px 12px 46px;border-radius:6px;cursor:grab;
+  box-shadow:0 24px 50px -24px rgba(20,19,15,.45),0 2px 6px rgba(20,19,15,.08);
+  transform:translate(var(--x,0),var(--y,0)) rotate(var(--r,0deg));transition:transform .7s var(--ease),opacity .5s}
+#b .kaart img{width:100%;height:100%;object-fit:cover;border-radius:3px;pointer-events:none}
+#b .kaart span{position:absolute;left:16px;right:16px;bottom:14px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--inkt);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#b .kaart.weg{transition:transform .55s var(--ease),opacity .55s;opacity:0}
+#b .paneel .teller{font-family:var(--serif);font-style:italic;font-size:64px;line-height:1;color:var(--brons)}
+#b .paneel .teller small{font-size:24px;color:var(--zacht)}
+#b .paneel p.bij{margin-top:14px;font-size:16px;color:var(--inkt)}
+#b .knoppen{display:flex;gap:10px;margin-top:26px}
+.rond{width:48px;height:48px;border-radius:50%;border:1px solid var(--inkt);background:transparent;cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
+.rond:hover{background:var(--inkt);color:#fff}
+.rond svg{width:18px;height:18px}
+@media(max-width:820px){#b .tafel{grid-template-columns:1fr;gap:20px}}
+
+/* ============ C — mozaïek dat zich opbouwt ============ */
+#c .mozaiek{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,210px);grid-auto-flow:dense;gap:14px;
+  width:min(var(--max),94vw);margin:0 calc(50% - min(var(--max),94vw)/2);padding:0 14px 110px}
+#c figure{position:relative;margin:0;border-radius:12px;overflow:hidden;cursor:zoom-in;background:#ddd}
+#c figure.breed{grid-column:span 2}
+#c figure.staand{grid-row:span 2}
+#c figure.groot{grid-column:span 2;grid-row:span 2}
+#c figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+#c figure:hover img{transform:scale(1.05)}
+#c figure .stroken{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);z-index:2;pointer-events:none}
+#c figure .stroken i{background:var(--vlak);transform-origin:top;transition:transform .9s var(--ease);transition-delay:calc(var(--d,0s) + var(--n) * 90ms)}
+#c figure.in .stroken i{transform:scaleY(0)}
+#c figcaption{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:40px 16px 14px;color:#fff;font-size:13.5px;
+  background:linear-gradient(to top,rgba(10,10,8,.7),transparent);transform:translateY(100%);transition:transform .45s var(--ease)}
+#c figure:hover figcaption{transform:none}
+#c figcaption .nr{color:#e7c9a0;margin-right:8px;font-size:17px}
+@media(hover:none){#c figcaption{transform:none}}
+@media(max-width:820px){#c .mozaiek{grid-template-columns:repeat(2,1fr);grid-auto-rows:42vw}#c figure.groot{grid-column:span 2;grid-row:span 1}}
+
+/* ============ D — tijdlijn: van ruw naar af ============ */
+#d .podium{position:relative;aspect-ratio:16/9;max-height:70vh;width:100%;border-radius:18px;overflow:hidden;background:#14130f;cursor:zoom-in}
+#d .podium .laag{position:absolute;inset:0}
+#d .podium .laag .waas{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(26px) brightness(.55)}
+#d .podium .laag .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+#d .podium .laag.nieuw{clip-path:inset(0 100% 0 0);transition:clip-path 1s var(--ease)}
+#d .podium .laag.nieuw.open{clip-path:inset(0 0 0 0)}
+#d .podium .fase-tag{position:absolute;left:22px;top:20px;z-index:3;background:#fff;color:var(--inkt);border-radius:999px;padding:6px 16px;
+  font-family:var(--serif);font-style:italic;font-size:19px;transform:rotate(-3deg)}
+#d .podium .bij{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:60px 24px 20px;color:#fff;font-size:15px;
+  background:linear-gradient(to top,rgba(10,10,8,.75),transparent)}
+#d .lijnbaan{position:relative;margin:44px 0 110px;padding-top:30px}
+#d .lijnbaan::before{content:'';position:absolute;left:0;right:0;top:44px;height:1px;background:var(--rand)}
+#d .lijnbaan .gevuld{position:absolute;left:0;top:44px;height:1px;background:var(--brons);width:var(--w,0%);transition:width .8s var(--ease)}
+#d .fasen{display:grid;gap:0;position:relative}
+#d .fase{position:relative}
+#d .fase{padding-top:34px}
+#d .fase h4{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--zacht)}
+#d .fase.nu h4{color:var(--inkt)}
+#d .stippen{display:flex;gap:18px;position:absolute;top:8px;left:0}
+#d .stip{width:13px;height:13px;border-radius:50%;border:1px solid var(--brons);background:var(--vlak);cursor:pointer;padding:0;transition:transform .3s,background .3s}
+#d .stip:hover{transform:scale(1.35)}
+#d .stip.aan{background:var(--brons)}
+#d .stip.gehad{background:#e7d6bd}
+
+/* lichtbak (A, C, D) */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .3s}
+.lb img{max-width:min(1200px,92vw);max-height:80vh;object-fit:contain;border-radius:6px}
+.lb p{color:rgba(255,255,255,.85);text-align:center;margin-top:12px;font-size:14px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}#c figure .stroken{display:none}}
+</style>
+</head>
+<body>
+
+<section><div class="kolommen"></div><div class="wrap intro">
+  <h1>Galerij-proef: vier varianten</h1>
+  <p>Dezelfde 12 foto's van Betonvloeren, op vier manieren getoond. Scroll rustig door de varianten en klik gerust op de foto's. Daarna kies je er één; die komt dan op alle dienstpagina's.</p>
+  <ol>
+    <li><a href="#a">Filmstrip die meeschuift met scrollen</a></li>
+    <li><a href="#b">Stapel foto's op tafel</a></li>
+    <li><a href="#c">Mozaïek dat zich opbouwt</a></li>
+    <li><a href="#d">Tijdlijn: van ruw naar af</a></li>
+  </ol>
+</div></section>
+
+<!-- A -->
+<section id="a"><div class="kolommen"></div>
+  <div class="plak">
+    <div class="wrap kopje"><div class="kop"><span class="oog"><b>1</b>Filmstrip</span><h2>Echte projecten van <em>OK</em>.</h2></div></div>
+    <div class="baan" id="a-baan"></div>
+    <div class="voortgang"><i></i></div>
+  </div>
+</section>
+
+<!-- B -->
+<section id="b" class="fris"><div class="kolommen"></div>
+  <div class="wrap">
+    <div class="kop"><span class="oog"><b>2</b>Stapel foto's</span><h2>Echte projecten van <em>OK</em>.</h2>
+      <p class="lead">Klik op de bovenste foto, sleep hem opzij of gebruik de pijlen.</p></div>
+    <div class="tafel">
+      <div class="stapel" id="b-stapel"></div>
+      <div class="paneel">
+        <div class="teller"><span id="b-nr">01</span> <small>/ 12</small></div>
+        <p class="bij" id="b-bij"></p>
+        <div class="knoppen">
+          <button class="rond" id="b-terug" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="rond" id="b-verder" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- C -->
+<section id="c"><div class="kolommen"></div>
+  <div class="wrap"><div class="kop"><span class="oog"><b>3</b>Mozaïek</span><h2>Echte projecten van <em>OK</em>.</h2>
+    <p class="lead">De foto's bouwen zich op in het raster tussen de lijnen. Klik op een foto om hem groot te bekijken.</p></div></div>
+  <div class="mozaiek" id="c-mozaiek"></div>
+</section>
+
+<!-- D -->
+<section id="d" class="creme"><div class="kolommen"></div>
+  <div class="wrap">
+    <div class="kop"><span class="oog"><b>4</b>Tijdlijn</span><h2>Van ruw naar <em>af</em>.</h2>
+      <p class="lead">Klik op de stippen: de foto's volgen het werk, van voorbereiden tot opleveren.</p></div>
+    <div class="podium" id="d-podium"><span class="fase-tag" id="d-tag"></span><div class="bij" id="d-bij"></div></div>
+    <div class="lijnbaan"><span class="gevuld" id="d-gevuld"></span><div class="fasen" id="d-fasen"></div></div>
+  </div>
+</section>
+
+<div class="lb" id="lb"><div><img alt=""><p></p></div></div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W='../assets/web/';
+  // [bestand, bijschrift, vorm, fase]
+  var F=[
+    ['beton-wa294.jpg','Zandbed en hoogtemeting voor een garagevloer','breed','Voorbereiden'],
+    ['beton-wa175.jpg','Betonplaat in de bekisting, net gestort','liggend','Storten & vlinderen'],
+    ['beton-wa283.jpg','Spiegelgladde betonplaat, net gestort','liggend','Storten & vlinderen'],
+    ['beton-wa202.jpg','Vlinderen in een garage','staand','Storten & vlinderen'],
+    ['beton-wa120.jpg','De garagevloer wordt machinaal gevlinderd','staand','Storten & vlinderen'],
+    ['beton-wa047.jpg','Verse betonplaat in een smalle achtertuin','staand','Storten & vlinderen'],
+    ['beton-wa009.jpg','Gevlinderde vloer onder een veranda','liggend','Opgeleverd'],
+    ['beton-wa193.jpg','Strakke betonvloer onder een overkapping','breed','Opgeleverd'],
+    ['beton-wa233.jpg','Donkere betonvloer in de tuin, net afgewerkt','liggend','Opgeleverd'],
+    ['beton-wa225.jpg','Betonplaat tot aan de achtergevel','liggend','Opgeleverd'],
+    ['betonvloer-oprit.jpg','Betonvloer onder een carport','liggend','Opgeleverd'],
+    ['betonvloer-woonkamer.jpg','Gevlinderde vloer onder een overkapping','liggend','Opgeleverd']];
+  function nn(i){ return (i<9?'0':'')+(i+1); }
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  // lichtbak
+  var lb=document.getElementById('lb');
+  function open(i){ lb.querySelector('img').src=W+F[i][0]; lb.querySelector('p').textContent=F[i][1]; lb.classList.add('open'); }
+  lb.addEventListener('click',function(){ lb.classList.remove('open'); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') lb.classList.remove('open'); });
+
+  // A — filmstrip
+  var baan=document.getElementById('a-baan');
+  baan.innerHTML=F.map(function(f,i){ return '<figure class="'+f[2]+'" data-i="'+i+'"><img src="'+W+f[0]+'" alt="'+esc(f[1])+'" loading="lazy"><figcaption><span class="nr">'+nn(i)+'</span><span class="bij">'+esc(f[1])+'</span></figcaption></figure>'; }).join('');
+  baan.addEventListener('click',function(e){ var f=e.target.closest('figure'); if(f) open(+f.dataset.i); });
+  var secA=document.getElementById('a'), balk=secA.querySelector('.voortgang');
+  function filmstrip(){
+    if(innerWidth<=820){ baan.style.transform=''; return; }
+    var r=secA.getBoundingClientRect(), loop=secA.offsetHeight-innerHeight, p=Math.min(1,Math.max(0,-r.top/loop));
+    var ruimte=baan.scrollWidth-innerWidth; baan.style.transform='translateX('+(-p*ruimte).toFixed(1)+'px)'; balk.style.setProperty('--p',p.toFixed(3)); }
+  addEventListener('scroll',filmstrip,{passive:true}); addEventListener('resize',filmstrip); filmstrip();
+
+  // B — stapel
+  var stapel=document.getElementById('b-stapel'), volgorde=F.map(function(_,i){return i;}), kaarten=[];
+  F.forEach(function(f,i){ var k=document.createElement('div'); k.className='kaart';
+    k.innerHTML='<img src="'+W+f[0]+'" alt="'+esc(f[1])+'" loading="lazy"><span>'+esc(f[1])+'</span>'; kaarten.push(k); stapel.appendChild(k); });
+  function hussel(i){ var r=((i*37)%11-5)*1.2, x=((i*53)%9-4)*.6, y=((i*29)%7-3)*.6; return [r,x,y]; }
+  function legNeer(){ volgorde.forEach(function(idx,pos){ var k=kaarten[idx], h=hussel(idx);
+      k.style.zIndex=F.length-pos; k.style.setProperty('--r',(pos===0?h[0]*.35:h[0])+'deg');
+      k.style.setProperty('--x',(pos===0?0:h[1])+'%'); k.style.setProperty('--y',(pos===0?0:h[2])+'%'); });
+    var top=volgorde[0]; document.getElementById('b-nr').textContent=nn(top); document.getElementById('b-bij').textContent=F[top][1]; }
+  function volgende(richting){ var top=kaarten[volgorde[0]]; top.classList.add('weg');
+    top.style.setProperty('--x',(richting<0?-130:130)+'%'); top.style.setProperty('--r',(richting<0?-18:18)+'deg');
+    setTimeout(function(){ volgorde.push(volgorde.shift()); top.classList.remove('weg'); legNeer(); },rm?0:420); }
+  function vorige(){ volgorde.unshift(volgorde.pop()); legNeer(); }
+  document.getElementById('b-verder').addEventListener('click',function(){ volgende(1); });
+  document.getElementById('b-terug').addEventListener('click',vorige);
+  var x0=null;
+  stapel.addEventListener('pointerdown',function(e){ x0=e.clientX; });
+  stapel.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null; volgende(dx<-30?-1:1); });
+  legNeer();
+
+  // C — mozaïek
+  var vorm=['breed','liggend','groot','staand','staand','staand','liggend','breed','liggend','liggend','liggend','groot'];
+  var moz=document.getElementById('c-mozaiek');
+  moz.innerHTML=F.map(function(f,i){ var v=vorm[i]==='liggend'?'':vorm[i];
+    return '<figure class="'+v+'" data-i="'+i+'" style="--d:'+((i%4)*0.12)+'s"><img src="'+W+f[0]+'" alt="'+esc(f[1])+'" loading="lazy">'+
+      '<div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i></div>'+
+      '<figcaption><span class="nr">'+nn(i)+'</span>'+esc(f[1])+'</figcaption></figure>'; }).join('');
+  moz.addEventListener('click',function(e){ var f=e.target.closest('figure'); if(f) open(+f.dataset.i); });
+  var figs=[].slice.call(moz.children);
+  if(rm||!('IntersectionObserver' in window)) figs.forEach(function(f){ f.classList.add('in'); });
+  else { var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.2}); figs.forEach(function(f){ io.observe(f); }); }
+
+  // D — tijdlijn
+  var fasen=['Voorbereiden','Storten & vlinderen','Opgeleverd'], podium=document.getElementById('d-podium'), nu=-1, laatste=null;
+  var fasenEl=document.getElementById('d-fasen'); fasenEl.style.gridTemplateColumns=fasen.map(function(fa){ return 'minmax(190px,'+F.filter(function(f){return f[3]===fa;}).length+'fr)'; }).join(' ');
+  fasenEl.innerHTML=fasen.map(function(fa,fi){ return '<div class="fase" data-f="'+fi+'"><h4>'+fa+'</h4><div class="stippen">'+
+    F.map(function(f,i){ return f[3]===fa?'<button class="stip" data-i="'+i+'" aria-label="Foto '+(i+1)+': '+esc(f[1])+'"></button>':''; }).join('')+'</div></div>'; }).join('');
+  var stippen=[].slice.call(fasenEl.querySelectorAll('.stip'));
+  function toonD(i){ if(i===nu) return; var img=document.createElement('div'); img.className='laag nieuw';
+    img.innerHTML='<img class="waas" src="'+W+F[i][0]+'" alt=""><img class="foto" src="'+W+F[i][0]+'" alt="'+esc(F[i][1])+'">';
+    podium.insertBefore(img,document.getElementById('d-tag'));
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ img.classList.add('open'); }); });
+    laatste=img;
+    setTimeout(function(){ if(img!==laatste) return;   // alleen de nieuwste laag ruimt de oudere op
+      [].slice.call(podium.querySelectorAll('.laag')).forEach(function(o){ if(o!==img) o.remove(); }); img.className='laag'; },rm?0:1050);
+    nu=i; document.getElementById('d-tag').textContent=F[i][3]; document.getElementById('d-bij').textContent=nn(i)+' — '+F[i][1];
+    stippen.forEach(function(s){ var k=+s.dataset.i; s.classList.toggle('aan',k===i); s.classList.toggle('gehad',k<i); });
+    [].forEach.call(fasenEl.children,function(f){ f.classList.toggle('nu',fasen[+f.dataset.f]===F[i][3]); });
+    document.getElementById('d-gevuld').style.setProperty('--w',(i/(F.length-1)*100)+'%'); }
+  fasenEl.addEventListener('click',function(e){ var s=e.target.closest('.stip'); if(s) toonD(+s.dataset.i); });
+  podium.addEventListener('click',function(){ open(nu); });
+  toonD(0);
+})();
+</script>
+</body>
+</html>
