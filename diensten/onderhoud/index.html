@@ -590,42 +590,38 @@ footer.groot{padding:72px 0 46px}
 .stappen.vier .stap{min-height:220px}
 .stap .snr.klein{font-size:42px}
 
-/* speler: echte projecten één voor één, met voortgangsbalkjes (zoals stories), duimen en lichtbak */
-.speler{margin-top:46px}
-.podium{position:relative;aspect-ratio:16/10;max-height:72vh;width:100%;border-radius:18px;overflow:hidden;background:#14130f;cursor:zoom-in;
-  box-shadow:0 50px 90px -40px rgba(20,19,15,.45),0 18px 36px -24px rgba(20,19,15,.25);touch-action:pan-y}
-.dia{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s var(--ease);pointer-events:none}
-.dia.aan{opacity:1;pointer-events:auto}
-.dia .waas{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(28px) brightness(.55) saturate(1.1)}
-.dia .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.045);transition:transform 7s linear}
-.dia.aan .foto{transform:scale(1)}
-.dia figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:60px 26px 22px;color:#fff;font-size:15px;line-height:1.4;
-  background:linear-gradient(to top,rgba(10,10,8,.75),transparent);padding-right:120px}
-.balkjes{position:absolute;z-index:3;left:18px;right:18px;top:16px;display:flex;gap:5px}
-.balkjes i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden}
-.balkjes b{display:block;height:100%;width:0;background:#fff}
-.balkjes i.klaar b{width:100%}
-.balkjes i.nu b{animation:balk var(--duur,5s) linear forwards}
-.speler:not(.speelt) .balkjes i.nu b,.podium:hover .balkjes i.nu b{animation-play-state:paused}
-@keyframes balk{to{width:100%}}
-.teller{position:absolute;z-index:3;right:24px;bottom:22px;color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
-.teller b{color:#fff;font-weight:600}
-.sp-pijl{position:absolute;z-index:3;top:50%;width:48px;height:48px;margin-top:-24px;border-radius:50%;border:0;cursor:pointer;
-  background:#14130f;color:#fff;display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .3s var(--ease)}
-.sp-pijl svg{width:18px;height:18px}
-.sp-vorige{left:18px}.sp-volgende{right:18px}
-.podium:hover .sp-pijl,.sp-pijl:focus-visible{opacity:1}
-.sp-pijl:hover{transform:scale(1.08)}
-@media(hover:none){.sp-pijl{opacity:.85;width:40px;height:40px;margin-top:-20px}}
-.strook{display:flex;gap:10px;margin-top:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 8px;scrollbar-width:none}
-.strook::-webkit-scrollbar{display:none}
-.duim{flex:0 0 auto;width:96px;aspect-ratio:1;border-radius:10px;overflow:hidden;padding:0;border:2px solid transparent;cursor:pointer;
-  scroll-snap-align:start;background:#eee;opacity:.55;transition:opacity .3s,border-color .3s}
-.duim img{width:100%;height:100%;object-fit:cover;display:block}
-.duim:hover{opacity:.85}
-.duim.aan{opacity:1;border-color:var(--brons)}
-@media(max-width:700px){.podium{aspect-ratio:4/5;border-radius:14px}.dia figcaption{font-size:14px;padding:50px 18px 18px;padding-right:80px}
-  .teller{right:18px;bottom:18px}.duim{width:68px}}
+/* 3D-kaarten: grote vierkante foto in het midden, buren kantelen naar achteren en zijn gedimd;
+   de actieve foto beweegt licht mee met de muis. Klassen met kc- om botsingen met gedeelde stijlen te voorkomen. */
+.kc{margin-top:46px}
+.kc-podium{--kc-maat:min(70vmin,560px);--kc-marge:min(4vmin,32px);position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0 auto;outline:none}
+.kc-rail{position:absolute;left:calc(-1 * var(--kc-marge));top:0;display:flex;height:100%;margin:0;padding:0;transition:transform 1s var(--ease)}
+.kc-persp{perspective:1200px;transform-style:preserve-3d}
+.kc-kaart{position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0 var(--kc-marge);list-style:none;cursor:pointer;
+  transform-origin:bottom;transform:scale(.98) rotateX(8deg);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.kc-kaart.aan{transform:scale(1) rotateX(0);cursor:default}
+.kc-vlak{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#1d1d1a;transition:transform .15s ease-out;
+  box-shadow:0 50px 90px -40px rgba(20,19,15,.5)}
+.kc-kaart.aan .kc-vlak{transform:translate3d(calc(var(--x,0px) / 30),calc(var(--y,0px) / 30),0)}
+.kc-vlak img{position:absolute;inset:-10%;width:120%;height:120%;max-width:none;object-fit:cover;opacity:.5;transition:opacity .6s ease}
+.kc-kaart.aan .kc-vlak img{opacity:1}
+.kc-kaart.aan .kc-vlak::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.65),rgba(10,10,8,.05) 55%)}
+.kc-tekst{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 7% 7%;color:#fff;opacity:0;visibility:hidden;transition:opacity 1s ease,visibility 1s}
+.kc-kaart.aan .kc-tekst{opacity:1;visibility:visible}
+.kc-nr{font-family:var(--serif);font-style:italic;color:#e7c9a0;font-size:22px}
+.kc-tekst h3{font-size:clamp(19px,2.4vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-top:6px}
+.kc-groot{margin-top:18px;border:0;background:#fff;color:var(--inkt);border-radius:999px;padding:11px 20px;font:600 13.5px var(--f,inherit);cursor:pointer;
+  transition:background .25s,color .25s}
+.kc-groot:hover{background:var(--brons);color:#fff}
+.kc-bediening{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:34px}
+.kc-teller{min-width:76px;text-align:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--brons)}
+.kc-pijl{width:48px;height:48px;border-radius:50%;border:0;background:var(--inkt);color:#fff;cursor:pointer;display:grid;place-items:center;
+  transition:transform .25s,background .25s}
+.kc-pijl:hover{transform:translateY(-2px);background:var(--brons)}
+.kc-pijl:active{transform:translateY(1px)}
+.kc-pijl svg{width:18px;height:18px}
+.kc-pijl:focus-visible,.kc-podium:focus-visible .kc-kaart.aan .kc-vlak{outline:2px solid var(--brons);outline-offset:3px}
+@media(max-width:600px){.kc-podium{--kc-maat:80vw;--kc-marge:3vw}.kc-groot{padding:10px 16px}}   /* op telefoons groter dan 70vmin */
+@media(prefers-reduced-motion:reduce){.kc-rail,.kc-kaart,.kc-vlak,.kc-vlak img,.kc-tekst{transition:none}}
 .lichtbak{position:fixed;inset:0;z-index:95;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;
   opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
 .lichtbak.open{opacity:1;visibility:visible;transition:opacity .3s}
@@ -948,36 +944,57 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     <div class="kop op">
       <span class="oog">Uitgevoerd werk<i class="baan"></i></span>
       <h2>Echte projecten van <em class="serif">OK</em>.</h2>
-      <p class="lead">Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op de foto om hem groot te bekijken.</p>
+      <p class="lead">Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op <em>Bekijk groot</em>.</p>
     </div>
-    <div class="speler op" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
-      <div class="podium">
-        <div class="balkjes" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
-        <figure class="dia aan"><img class="waas" src="../../assets/eigen/web/doorbraak-sloop.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/eigen/web/doorbraak-sloop.jpg" alt="Een dragende muur eruit"><figcaption>Een dragende muur eruit</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa329.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa329.jpg" alt="Toilet met nieuw tegelwerk" loading="lazy"><figcaption>Toilet met nieuw tegelwerk</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-toilet.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-toilet.jpg" alt="Toilet opnieuw betegeld" loading="lazy"><figcaption>Toilet opnieuw betegeld</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa132.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa132.jpg" alt="Sloopwerk bij een renovatie" loading="lazy"><figcaption>Sloopwerk bij een renovatie</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-badkamer-tegels.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-badkamer-tegels.jpg" alt="Badkamer tijdens het tegelen" loading="lazy"><figcaption>Badkamer tijdens het tegelen</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-hal-tegels.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-hal-tegels.jpg" alt="Hal met nieuwe tegelvloer" loading="lazy"><figcaption>Hal met nieuwe tegelvloer</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa316.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa316.jpg" alt="Tegelwerk in uitvoering" loading="lazy"><figcaption>Tegelwerk in uitvoering</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa309.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa309.jpg" alt="Nieuwe pannen en een doorvoer in het dak" loading="lazy"><figcaption>Nieuwe pannen en een doorvoer in het dak</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa025.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa025.jpg" alt="Toilet tijdens het tegelen, voorzetwand nog open" loading="lazy"><figcaption>Toilet tijdens het tegelen, voorzetwand nog open</figcaption></figure>
-        <figure class="dia"><img class="waas" src="../../assets/web/onderhoud-wa333.jpg" alt="" loading="lazy"><img class="foto" src="../../assets/web/onderhoud-wa333.jpg" alt="Panlatten klaar voor dakonderhoud" loading="lazy"><figcaption>Panlatten klaar voor dakonderhoud</figcaption></figure>
-        <button type="button" class="sp-pijl sp-vorige" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button type="button" class="sp-pijl sp-volgende" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-        <span class="teller" aria-live="polite"><b>01</b> / 10</span>
+    <div class="kc op">
+      <div class="kc-podium" tabindex="0" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
+        <ul class="kc-rail">
+          <div class="kc-persp"><li class="kc-kaart aan" data-i="0">
+            <div class="kc-vlak"><img src="../../assets/eigen/web/doorbraak-sloop.jpg" alt="Een dragende muur eruit"></div>
+            <div class="kc-tekst"><span class="kc-nr">01</span><h3>Een dragende muur eruit</h3><button type="button" class="kc-groot" data-groot="0">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="1">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-wa329.jpg" alt="Toilet met nieuw tegelwerk"></div>
+            <div class="kc-tekst"><span class="kc-nr">02</span><h3>Toilet met nieuw tegelwerk</h3><button type="button" class="kc-groot" data-groot="1">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="2">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-toilet.jpg" alt="Toilet opnieuw betegeld"></div>
+            <div class="kc-tekst"><span class="kc-nr">03</span><h3>Toilet opnieuw betegeld</h3><button type="button" class="kc-groot" data-groot="2">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="3">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-wa132.jpg" alt="Sloopwerk bij een renovatie" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">04</span><h3>Sloopwerk bij een renovatie</h3><button type="button" class="kc-groot" data-groot="3">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="4">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-badkamer-tegels.jpg" alt="Badkamer tijdens het tegelen" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">05</span><h3>Badkamer tijdens het tegelen</h3><button type="button" class="kc-groot" data-groot="4">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="5">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-hal-tegels.jpg" alt="Hal met nieuwe tegelvloer" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">06</span><h3>Hal met nieuwe tegelvloer</h3><button type="button" class="kc-groot" data-groot="5">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="6">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-wa316.jpg" alt="Tegelwerk in uitvoering" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">07</span><h3>Tegelwerk in uitvoering</h3><button type="button" class="kc-groot" data-groot="6">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="7">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-wa309.jpg" alt="Nieuwe pannen en een doorvoer in het dak" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">08</span><h3>Nieuwe pannen en een doorvoer in het dak</h3><button type="button" class="kc-groot" data-groot="7">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="8">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-wa025.jpg" alt="Toilet tijdens het tegelen, voorzetwand nog open" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">09</span><h3>Toilet tijdens het tegelen, voorzetwand nog open</h3><button type="button" class="kc-groot" data-groot="8">Bekijk groot</button></div>
+          </li></div>
+          <div class="kc-persp"><li class="kc-kaart" data-i="9">
+            <div class="kc-vlak"><img src="../../assets/web/onderhoud-wa333.jpg" alt="Panlatten klaar voor dakonderhoud" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">10</span><h3>Panlatten klaar voor dakonderhoud</h3><button type="button" class="kc-groot" data-groot="9">Bekijk groot</button></div>
+          </li></div>
+        </ul>
       </div>
-      <div class="strook">
-      <button type="button" class="duim aan" aria-label="Foto 1: Een dragende muur eruit"><img src="../../assets/eigen/web/doorbraak-sloop.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 2: Toilet met nieuw tegelwerk"><img src="../../assets/web/onderhoud-wa329.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 3: Toilet opnieuw betegeld"><img src="../../assets/web/onderhoud-toilet.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 4: Sloopwerk bij een renovatie"><img src="../../assets/web/onderhoud-wa132.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 5: Badkamer tijdens het tegelen"><img src="../../assets/web/onderhoud-badkamer-tegels.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 6: Hal met nieuwe tegelvloer"><img src="../../assets/web/onderhoud-hal-tegels.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 7: Tegelwerk in uitvoering"><img src="../../assets/web/onderhoud-wa316.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 8: Nieuwe pannen en een doorvoer in het dak"><img src="../../assets/web/onderhoud-wa309.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 9: Toilet tijdens het tegelen, voorzetwand nog open"><img src="../../assets/web/onderhoud-wa025.jpg" alt="" loading="lazy"></button>
-      <button type="button" class="duim" aria-label="Foto 10: Panlatten klaar voor dakonderhoud"><img src="../../assets/web/onderhoud-wa333.jpg" alt="" loading="lazy"></button>
+      <div class="kc-bediening">
+        <button type="button" class="kc-pijl kc-vorige" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <span class="kc-teller" aria-live="polite">01 / 10</span>
+        <button type="button" class="kc-pijl kc-volgende" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
     </div>
   </div>
@@ -1192,33 +1209,31 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 
   // Lichtbak voor de galerij
   var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbTxt=lb.querySelector('p');
-  function dicht(){ lb.classList.remove('open'); if(sp) sp.classList.add('speelt'); }
+  function dicht(){ lb.classList.remove('open'); }
 
-  // Speler: elke foto ~5 s in beeld; balkje loopt mee, pauze bij hover, buiten beeld of in de lichtbak
-  var sp=document.querySelector('.speler');
-  if(sp){
-    var podium=sp.querySelector('.podium'), dias=[].slice.call(sp.querySelectorAll('.dia')), balk=[].slice.call(sp.querySelectorAll('.balkjes i')),
-        duim=[].slice.call(sp.querySelectorAll('.duim')), teller=sp.querySelector('.teller b'), strook=sp.querySelector('.strook'), nu=0;
-    function toon(i){ nu=(i+dias.length)%dias.length;
-      dias.forEach(function(d,k){ d.classList.toggle('aan',k===nu); });
-      duim.forEach(function(d,k){ d.classList.toggle('aan',k===nu); });
-      balk.forEach(function(b,k){ b.classList.toggle('klaar',k<nu); b.classList.remove('nu'); });
-      void balk[nu].offsetWidth; if(!rm) balk[nu].classList.add('nu'); else balk[nu].classList.add('klaar');
-      teller.textContent=(nu<9?'0':'')+(nu+1);
-      var d=duim[nu]; strook.scrollTo({left:d.offsetLeft-strook.clientWidth/2+d.clientWidth/2,behavior:'smooth'}); }
-    balk.forEach(function(b){ b.firstChild.addEventListener('animationend',function(){ toon(nu+1); }); });
-    sp.querySelector('.sp-vorige').addEventListener('click',function(e){ e.stopPropagation(); toon(nu-1); });
-    sp.querySelector('.sp-volgende').addEventListener('click',function(e){ e.stopPropagation(); toon(nu+1); });
-    duim.forEach(function(d,k){ d.addEventListener('click',function(){ toon(k); }); });
-    var x0=null, veeg=false;
-    podium.addEventListener('pointerdown',function(e){ x0=e.clientX; veeg=false; });
-    podium.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null;
-      if(Math.abs(dx)>40){ veeg=true; toon(nu+(dx<0?1:-1)); } });
-    podium.addEventListener('click',function(){ if(veeg) return; var f=dias[nu], i=f.querySelector('.foto');
-      lbImg.src=i.src; lbImg.alt=i.alt; lbTxt.textContent=f.querySelector('figcaption').textContent; lb.classList.add('open'); sp.classList.remove('speelt'); });
-    sp.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') toon(nu+1); if(e.key==='ArrowLeft') toon(nu-1); });
-    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ sp.classList.toggle('speelt',es[0].isIntersecting && !lb.classList.contains('open')); },{threshold:.35}).observe(podium);
-    else sp.classList.add('speelt');
+  // 3D-kaarten: klik op een zijkaart schuift ernaartoe; de actieve kaart volgt licht de muis; "Bekijk groot" opent de lichtbak
+  var kc=document.querySelector('.kc');
+  if(kc){
+    var rail=kc.querySelector('.kc-rail'), kaarten=[].slice.call(kc.querySelectorAll('.kc-kaart')), podium=kc.querySelector('.kc-podium'),
+        teller=kc.querySelector('.kc-teller'), aantal=kaarten.length, nu=0;
+    function nn(i){ return (i<9?'0':'')+(i+1); }
+    function toon(i){ nu=(i+aantal)%aantal;
+      rail.style.transform='translateX(-'+(nu*(100/aantal))+'%)';
+      kaarten.forEach(function(k,j){ k.classList.toggle('aan',j===nu); });
+      teller.textContent=nn(nu)+' / '+nn(aantal-1); }
+    rail.addEventListener('click',function(e){
+      var g=e.target.closest('.kc-groot');
+      if(g){ var k=kaarten[+g.dataset.groot], im=k.querySelector('img'); lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; lb.classList.add('open'); return; }
+      var k2=e.target.closest('.kc-kaart'); if(k2 && +k2.dataset.i!==nu) toon(+k2.dataset.i); });
+    if(!rm) kaarten.forEach(function(k){ var x=0,y=0,raf=0;
+      k.addEventListener('mousemove',function(e){ var r=k.getBoundingClientRect(); x=e.clientX-(r.left+r.width/2); y=e.clientY-(r.top+r.height/2);
+        if(!raf) raf=requestAnimationFrame(function(){ raf=0; k.style.setProperty('--x',x+'px'); k.style.setProperty('--y',y+'px'); }); });
+      k.addEventListener('mouseleave',function(){ k.style.setProperty('--x','0px'); k.style.setProperty('--y','0px'); }); });
+    kc.querySelector('.kc-vorige').addEventListener('click',function(){ toon(nu-1); });
+    kc.querySelector('.kc-volgende').addEventListener('click',function(){ toon(nu+1); });
+    podium.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ e.preventDefault(); toon(nu+1); } if(e.key==='ArrowLeft'){ e.preventDefault(); toon(nu-1); } });
+    var x0=null; podium.addEventListener('pointerdown',function(e){ x0=e.clientX; });
+    podium.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null; if(dx<-40) toon(nu+1); else if(dx>40) toon(nu-1); });
     toon(0);
   }
   lb.addEventListener('click',function(e){ if(e.target===lb||e.target.tagName==='BUTTON') dicht(); });
