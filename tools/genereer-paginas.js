@@ -25,6 +25,8 @@ const fonts = tussen(hoofd, '<link rel="preconnect"', 'rel="stylesheet">');
 const kopdeel = tussen(hoofd, '<!-- iconenset', '<section class="hero">', false).replace(/\n<!--[^\n]*-->\s*$/, '\n');
 const footer = tussen(hoofd, '<footer', '</footer>');
 const dock = tussen(hoofd, '<div class="dock">', '</div>');
+// het contactraster (formulier + gegevens) komt uit de homepage, zodat er één bron is
+const contactRaster = tussen(hoofd, '<div class="contact-grid">', '<!-- /contact-grid -->');
 const gedeeldJs = tussen(hoofd, '// [[gedeeld', '// gedeeld]]');
 // reviews-raster (3 reviews + scores) — de optel-animatie draait alleen op de hoofdpagina, dus hier de eindwaarde
 const reviewkaarten = tussen(hoofd, '<div class="kaarten">', '<!-- /kaarten -->')
@@ -347,20 +349,94 @@ function oproep() {
 </section>`;
 }
 
-function stappenRaster(items, cta, iconen = []) {
+function stappenRaster(items, cta, iconen = [], ctaLink = 'd-lijn.html#contact') {
   const stappen = items.map(([kop, tekst], i) => `      <div class="stap">
         <div class="snr klein">${String(i + 1).padStart(2, '0')}</div>${iconen[i] ? `<svg class="sico" aria-hidden="true"><use href="#${iconen[i]}"/></svg>` : ''}
         <h3>${esc(kop)}</h3>
         <p>${esc(tekst)}</p>
       </div>`).join('\n');
   const slot = cta ? `
-      <a class="stap stap-cta" href="d-lijn.html#contact">
+      <a class="stap stap-cta" href="${ctaLink}">
         <div><svg class="cta-krul" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83"/></svg>
         <h3>${esc(cta[0])}</h3>
         <p>${esc(cta[1])}</p></div>
         <span class="verder">${esc(cta[2])}</span>
       </a>` : '';
   return `<div class="stappen vier op">\n${stappen}${slot}\n    </div>`;
+}
+
+
+// ---------- contactpagina ----------
+function contactPagina() {
+  const body = `<!-- HERO -->
+<section class="p-hero c-hero">
+  <div class="kolommen"></div>
+  <div class="wrap">
+    <div>
+      <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Contact</span></div>
+      ${oog('Contact')}
+      <h1>Vertel ons wat u van <em class="serif">plan</em> bent.</h1>
+      <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. Bel, app of stuur een bericht — u hoort meestal binnen een dag van ons.</p>
+      <div class="acties">
+        <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
+        <a class="knop lijn" href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="knop lijn" href="mailto:info@ok-timmerwerken.nl">Mail</a>
+      </div>
+    </div>
+    <div class="c-persoonlijk">
+      <div class="c-avatar"><img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
+      <p class="c-citaat">U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw.</p>
+      <span class="c-naam">Ozcan, eigenaar van OK Timmerwerken</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULIER -->
+<section id="contact">
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="kop op">
+      ${oog('Aanvraag')}
+      <h2>Stuur een vrijblijvende <em class="serif">aanvraag</em>.</h2>
+      <p class="lead">Vertel kort wat u van plan bent. Een foto of een paar maten helpt, maar is niet nodig — we komen toch graag even kijken.</p>
+    </div>
+    ${contactRaster}
+  </div>
+</section>
+
+<!-- HOE HET VERDER GAAT -->
+<section class="creme">
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="kop op">
+      ${oog('Zo gaat het verder')}
+      <h2>Na uw bericht, in drie <em class="serif">stappen</em>.</h2>
+    </div>
+    ${stappenRaster([
+      ['We komen langs', 'Gratis en vrijblijvend. We bekijken de situatie ter plaatse, denken mee over wat mogelijk is en zeggen eerlijk wanneer iets geen goed idee is.'],
+      ['U krijgt een duidelijke offerte', 'Vaste prijs, heldere omschrijving van het werk en de materialen, en een realistische planning. Wat erin staat, is wat u betaalt.'],
+      ['We leveren netjes op', 'Op de afgesproken dag, met een opgeruimde werkplek en garantie op het werk. Is er achteraf iets, dan komen we terug.'],
+    ], ['Liever direct bellen?', 'Bel of app Ozcan. Binnen een dag hoort u van ons.', 'Bel 06 41 42 91 06'], ['i-bezoek', 'i-offerte', 'i-opgeleverd'], 'tel:+31641429106')}
+  </div>
+</section>
+`;
+  return pagina({
+    titel: 'Contact — OK Timmerwerken Gorinchem',
+    omschrijving: 'Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–20:00, za 07:00–16:00.',
+    body,
+  }).replace('</head>', `<style>
+/* contactpagina: de werktijden staan al in het contactraster, dus niet nog eens in de footer */
+.foot-tijden-kol{display:none}
+@media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
+.c-persoonlijk{justify-self:end;max-width:360px;text-align:center}
+.c-avatar{width:clamp(180px,22vw,260px);aspect-ratio:1;border-radius:50%;overflow:hidden;margin:0 auto;background:#f2ebdf;
+  box-shadow:0 40px 70px -40px rgba(20,19,15,.45)}
+.c-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.15);transform-origin:50% 0}
+.c-citaat{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--inkt)}
+.c-naam{display:block;margin-top:12px;font-size:13px;color:var(--zacht);letter-spacing:.04em}
+@media(max-width:820px){.c-persoonlijk{justify-self:start;text-align:left}.c-avatar{margin:0}}
+</style>
+</head>`);
 }
 
 // ---------- dienstpagina ----------
@@ -668,6 +744,9 @@ for (const d of inhoud.diensten) {
 }
 fs.writeFileSync(path.join(uit, 'over.html'), overPagina(inhoud.over));
 geschreven.push('over.html');
+// contactpagina: voorlopig alleen als preview (preview/contact.html); /contact/ en de links volgen na akkoord
+fs.writeFileSync(path.join(uit, 'contact.html'), contactPagina());
+geschreven.push('contact.html');
 fs.writeFileSync(path.join(uit, 'diensten.html'), overzichtPagina(inhoud.diensten));
 fs.writeFileSync(path.join(uit, 'voorwaarden.html'), juridischPagina('Algemene voorwaarden', voorwaardenHtml(inhoud.juridisch.voorwaarden)));
 fs.writeFileSync(path.join(uit, 'disclaimer.html'), juridischPagina('Disclaimer', inhoud.juridisch.disclaimer.alineas.map((p) => `      <p>${esc(p)}</p>`).join('\n')));
