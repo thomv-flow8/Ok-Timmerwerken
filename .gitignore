@@ -39,3 +39,6 @@ assets/render/portret/*.jpg
 
 # ruwe WhatsApp-foto's van Ozcan (publieke repo: niet committen; selecties gaan via tools/webbeeld.sh naar assets/web)
 assets/whatsapp/
+
+# ruwe wolken-renders (alleen web-versies mee)
+assets/render/wolken/*.png
