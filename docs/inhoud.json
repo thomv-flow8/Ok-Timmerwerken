@@ -142,6 +142,11 @@
           "titel": "Bedrijfsvloeren",
           "tekst": "Voor werkplaatsen, loodsen en bedrijfspanden maken we betonvloeren die tegen een stootje kunnen: sterk, vochtbestendig en met een lange levensduur. We stemmen vooraf de belasting, het gebruik en de afwerking met u af."
         }
+      ],
+      "aanpak_iconen": [
+        "i-meten",
+        "i-wapening",
+        "i-truweel"
       ]
     },
     {
@@ -259,6 +264,11 @@
           "titel": "Van zolder naar kamer",
           "tekst": "Tussenwanden, deuren, plafonds en vloer: we maken van de zolder een volwaardige slaapkamer, werkkamer of logeerkamer. Een dakraam plaatsen we in hetzelfde traject."
         }
+      ],
+      "aanpak_iconen": [
+        "i-plattegrond",
+        "i-isolatie",
+        "i-opgeleverd"
       ]
     },
     {
@@ -389,6 +399,11 @@
           "titel": "Fundering & betonpoeren",
           "tekst": "Een carport of overkapping rust op betonpoeren of een betonplaat. Zo staat het hout niet in de vochtige grond en voorkomt u verzakking en houtrot."
         }
+      ],
+      "aanpak_iconen": [
+        "i-potlood",
+        "i-fundering",
+        "i-kwast"
       ]
     },
     {
@@ -518,6 +533,11 @@
       "download": [
         "Download de VELUX-brochure (pdf)",
         "../assets/documenten/velux-brochure.pdf"
+      ],
+      "aanpak_iconen": [
+        "i-meten",
+        "i-dakraam",
+        "i-kwast"
       ]
     },
     {
@@ -661,6 +681,11 @@
           "titel": "Doorbraken",
           "tekst": "Een muur eruit voor een open ruimte: we plaatsen de stalen balk volgens de berekening van de constructeur en werken alles daarna netjes af."
         }
+      ],
+      "aanpak_iconen": [
+        "i-plattegrond",
+        "i-hamer",
+        "i-kwast"
       ]
     },
     {
@@ -796,6 +821,11 @@
           "titel": "Vloerconstructies",
           "tekst": "Nieuwe vloeren bij verbouwingen — ook met stalen balken en een geïsoleerde systeemvloer."
         }
+      ],
+      "aanpak_iconen": [
+        "i-schep",
+        "i-wapening",
+        "i-truweel"
       ]
     },
     {
@@ -921,6 +951,11 @@
           "titel": "Dagelijks onderhoud",
           "tekst": "Onverwachte reparaties — een slot dat klemt, een kleine lekkage, een kapotte deur — lossen we vakkundig op. We bespreken eerst wat er moet gebeuren en pakken het daarna stap voor stap aan."
         }
+      ],
+      "aanpak_iconen": [
+        "i-bezoek",
+        "i-offerte",
+        "i-opgeleverd"
       ]
     },
     {
@@ -1042,6 +1077,11 @@
           "titel": "Ramen & deuren",
           "tekst": "Nieuwe ramen en deuren verbeteren de isolatie, de veiligheid en het wooncomfort, en verhogen de waarde van uw woning. We zetten eerst uw wensen op een rij, maken een plan en plaatsen of vervangen daarna vakkundig."
         }
+      ],
+      "aanpak_iconen": [
+        "i-potlood",
+        "i-hamer",
+        "i-kwast"
       ]
     }
   ],

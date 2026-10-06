@@ -485,7 +485,7 @@ ${galerij}
       ${oog('Zo pakken we het aan')}
       <h2>In drie stappen <em class="serif">klaar</em>.</h2>
     </div>
-    ${stappenRaster(d.aanpak, ['Klaar voor stap 1?', 'Bel, app of mail Ozcan. Binnen een dag hoort u van ons.', 'Plan een afspraak'])}
+    ${stappenRaster(d.aanpak, ['Klaar voor stap 1?', 'Bel, app of mail Ozcan. Binnen een dag hoort u van ons.', 'Plan een afspraak'], d.aanpak_iconen)}
   </div>
 </section>
 ${review}
