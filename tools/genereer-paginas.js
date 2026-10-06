@@ -379,7 +379,7 @@ function contactPagina() {
       <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. Bel, app of stuur een bericht — u hoort meestal binnen een dag van ons.</p>
       <div class="acties">
         <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
-        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.7L.4 31.6l8.2-2.1c2.2 1.2 4.8 1.9 7.4 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.6-.6-6.5-1.8l-.5-.3-4.9 1.3 1.3-4.8-.3-.5c-1.3-2-2-4.3-2-6.8C3.1 8.8 8.9 3 16 3s12.9 5.8 12.9 12.9S23.1 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.3-.1-.6-.2-.8.2-.2.4-.9 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.4-.6.1-.2.1-.5 0-.6-.1-.2-.8-2-1.2-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.5 3.9 6.1 5.4.9.4 1.5.6 2 .8.9.3 1.6.2 2.2.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>WhatsApp</a>
+        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
         <a class="knop lijn" href="mailto:info@ok-timmerwerken.nl">Mail</a>
       </div>
     </div>
@@ -434,10 +434,6 @@ function contactPagina() {
 .c-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.15);transform-origin:50% 0}
 .c-citaat{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--inkt)}
 .c-naam{display:block;margin-top:12px;font-size:13px;color:var(--zacht);letter-spacing:.04em}
-/* WhatsApp-knop in de herkenbare WhatsApp-kleur, met het icoon uit de dock */
-.wa-knop{display:inline-flex;align-items:center;gap:9px;background:#25D366;border-color:#25D366;color:#fff}
-.wa-knop:hover{background:#1da851;border-color:#1da851;color:#fff}
-.wa-knop svg{width:18px;height:18px;flex:none}
 @media(max-width:820px){.c-persoonlijk{justify-self:start;text-align:left}.c-avatar{margin:0;width:min(78vw,320px)}}
 </style>
 </head>`);
