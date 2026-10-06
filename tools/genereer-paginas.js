@@ -54,11 +54,23 @@ const extraStijl = `<style>
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
-.portret-blok{position:relative;aspect-ratio:1/1.04;border-radius:28px;overflow:hidden;display:flex;align-items:flex-end;
-  justify-content:center;padding-top:9%;
-  background:radial-gradient(120% 90% at 50% 18%,#ffffff 0%,#f6f1e9 52%,#e9e0d1 100%)}   /* zachte, warme gloed: blendt in, net iets anders dan de achtergrond */
-.portret-blok img{width:100%;height:auto;display:block}
-.portret-blok .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
+.portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}   /* vrijstaand op wit: één geheel met de pagina */
+/* lucht achter Ozcan: zacht blauw dat naar wit vervaagt, met wolken die traag voorbij drijven */
+.lucht{position:absolute;left:-12%;right:-12%;top:-20%;height:92%;z-index:0;pointer-events:none;overflow:hidden;
+  background:radial-gradient(closest-side at 50% 46%,#aecbe5 0%,#cadeef 48%,#eaf2f9 78%,rgba(255,255,255,0) 100%);
+  -webkit-mask-image:radial-gradient(closest-side at 50% 46%,#000 52%,transparent 100%);mask-image:radial-gradient(closest-side at 50% 46%,#000 52%,transparent 100%)}
+.lucht i{position:absolute;display:block;border-radius:50%;background:#fff;filter:blur(14px);opacity:.95;animation:drijf linear infinite}
+.lucht i::before,.lucht i::after{content:'';position:absolute;border-radius:50%;background:#fff}
+.lucht i::before{width:60%;height:120%;left:12%;top:-55%}.lucht i::after{width:46%;height:95%;right:10%;top:-38%}
+.lucht .w1{width:46%;height:16%;top:22%;animation-duration:70s;animation-delay:-12s}
+.lucht .w2{width:34%;height:12%;top:48%;animation-duration:95s;animation-delay:-60s;opacity:.8}
+.lucht .w3{width:28%;height:10%;top:10%;animation-duration:120s;animation-delay:-35s;opacity:.7}
+.lucht .w4{width:38%;height:13%;top:36%;animation-duration:85s;animation-delay:-80s;opacity:.85}
+@keyframes drijf{from{transform:translateX(-60%)}to{transform:translateX(330%)}}
+@media(prefers-reduced-motion:reduce){.lucht i{animation:none;transform:translateX(60%)}}
+.portret-blok img{position:relative;z-index:1;width:100%;height:auto;display:block;
+  -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 99%);mask-image:linear-gradient(to bottom,#000 72%,transparent 99%)}
+.portret-blok .tag{z-index:2;opacity:1;translate:0 0;position:absolute;left:4%;bottom:12%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#14130f;color:#fff;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
 .p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
 .leeg-in{display:flex;flex-direction:column;align-items:center;gap:10px;color:#9a8f7e;text-align:center}
@@ -132,8 +144,10 @@ const extraStijl = `<style>
 .download{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 22px;border-radius:999px;
   background:#14130f;color:#fff;font-weight:600;font-size:14px}
 .download::before{content:'↓';color:var(--brons);font-size:16px}
-.p-hero .erkend{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
+.p-hero .erkend{display:flex;color:var(--inkt);align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
 .p-hero .erkend img{width:64px;height:64px;border-radius:6px}
+.krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
+@media(max-width:900px){.krul-over{display:none}}
 @media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
   .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
 
@@ -283,6 +297,14 @@ ${dock}
     if(doelEl) addEventListener('load',function(){ setTimeout(function(){ document.documentElement.style.scrollBehavior='auto';
       doelEl.scrollIntoView({block:'start'}); document.documentElement.style.scrollBehavior=''; vang(); },60); }); }
 
+  // Krullen tekenen zich mee met het scrollen, en weer terug bij omhoog scrollen
+  var krullen=[].slice.call(document.querySelectorAll('svg.krul path'));
+  krullen.forEach(function(p){ p._L=p.getTotalLength(); p.style.strokeDasharray=p._L; p.style.strokeDashoffset=rm?0:p._L; });
+  function krulScroll(){ var h=innerHeight; krullen.forEach(function(p){ var r=p.ownerSVGElement.getBoundingClientRect(), top=r.top+scrollY,
+    t=top<h ? .22+scrollY/(top+r.height)*1.1 : (h*.95-r.top)/(r.height+h*.25);
+    t=Math.min(1,Math.max(0,t)); p.style.strokeDashoffset=(p._L*(1-t)).toFixed(1); }); }
+  if(!rm && krullen.length){ addEventListener('scroll',krulScroll,{passive:true}); krulScroll(); }
+
   // Lichtbak voor de galerij
   var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbTxt=lb.querySelector('p');
   function dicht(){ lb.classList.remove('open'); if(sp) sp.classList.add('speelt'); }
@@ -344,9 +366,9 @@ function oproep() {
 </section>`;
 }
 
-function stappenRaster(items, cta) {
+function stappenRaster(items, cta, iconen = []) {
   const stappen = items.map(([kop, tekst], i) => `      <div class="stap">
-        <div class="snr klein">${String(i + 1).padStart(2, '0')}</div>
+        <div class="snr klein">${String(i + 1).padStart(2, '0')}</div>${iconen[i] ? `<svg class="sico" aria-hidden="true"><use href="#${iconen[i]}"/></svg>` : ''}
         <h3>${esc(kop)}</h3>
         <p>${esc(tekst)}</p>
       </div>`).join('\n');
@@ -523,6 +545,7 @@ function overPagina(o) {
   const body = `<!-- HERO -->
 <section class="p-hero">
   <div class="kolommen"></div>
+  <svg class="krul krul-over" viewBox="0 0 560 230" aria-hidden="true"><path d="M548,8 C470,-2 396,30 408,84 C419,132 484,124 474,86 C464,48 384,52 330,104 C276,156 162,198 34,212 M34,212 L49,202 M34,212 L49,222"/></svg>
   <div class="wrap">
     <div>
       <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Over ons</span></div>
@@ -533,9 +556,11 @@ function overPagina(o) {
         <a class="knop" href="d-lijn.html#contact">Maak kennis met Ozcan</a>
         <a class="knop lijn" href="d-lijn.html#diensten">Bekijk de diensten</a>
       </div>
+      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
-    <div class="portret-blok" data-kantel>
-      <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="800" height="775">
+    <div class="portret-blok">
+      <div class="lucht" aria-hidden="true"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i></div>
+      <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1200" height="1162">
       <span class="tag">— Ozcan, OK Timmerwerken</span>
     </div>
   </div>
@@ -565,7 +590,7 @@ function overPagina(o) {
       ${oog('Waar we voor staan')}
       <h2>Drie dingen die u <em class="serif">altijd</em> krijgt.</h2>
     </div>
-    ${stappenRaster(o.waarden, ['Kennismaken?', 'Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend.', 'Plan een afspraak'])}
+    ${stappenRaster(o.waarden, ['Kennismaken?', 'Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend.', 'Plan een afspraak'], ['i-persoon', 'i-ploeg', 'i-afspraak'])}
   </div>
 </section>
 
