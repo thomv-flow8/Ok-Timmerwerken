@@ -455,13 +455,13 @@ function contactPagina() {
 /* contactpagina: de werktijden staan al in het contactraster, dus niet nog eens in de footer */
 .foot-tijden-kol{display:none}
 @media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
-.c-persoonlijk{justify-self:end;max-width:440px;text-align:center}
-.c-avatar{width:clamp(240px,30vw,380px);aspect-ratio:1;border-radius:50%;overflow:hidden;margin:0 auto;background:#f2ebdf;
+.c-persoonlijk{justify-self:end;max-width:360px;text-align:center}
+.c-avatar{width:clamp(180px,22vw,260px);aspect-ratio:1;border-radius:50%;overflow:hidden;margin:0 auto;background:#f2ebdf;
   box-shadow:0 40px 70px -40px rgba(20,19,15,.45)}
 .c-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.15);transform-origin:50% 0}
 .c-citaat{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--inkt)}
 .c-naam{display:block;margin-top:12px;font-size:13px;color:var(--zacht);letter-spacing:.04em}
-@media(max-width:820px){.c-persoonlijk{justify-self:start;text-align:left}.c-avatar{margin:0;width:min(78vw,320px)}}
+@media(max-width:820px){.c-persoonlijk{justify-self:start;text-align:left}.c-avatar{margin:0}}
 </style>
 </head>`);
 }
