@@ -786,12 +786,15 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .rv-hero .wrap{align-items:end}
 .rv-scores{display:grid;gap:14px;justify-self:end;width:min(100%,380px)}
 .rv-score{display:grid;grid-template-columns:auto 1fr;grid-template-areas:'logo cijfer' 'logo sterren' 'logo tekst';column-gap:16px;align-items:center;
-  background:#fff;border:1px solid var(--rand);border-radius:16px;padding:18px 22px;color:var(--inkt);transition:transform .3s var(--ease),box-shadow .3s}
-.rv-score:hover{transform:translateY(-2px);box-shadow:0 20px 40px -26px rgba(20,19,15,.35)}
+  background:#14130f;border:1px solid #14130f;border-radius:16px;padding:18px 22px;color:#fff;transition:transform .3s var(--ease),box-shadow .3s;
+  box-shadow:0 30px 60px -40px rgba(20,19,15,.55)}   /* zwart, zoals het scoreblok op home */
+.rv-score:hover{transform:translateY(-2px);box-shadow:0 24px 46px -26px rgba(20,19,15,.6)}
 .rv-score .rv-bron{grid-area:logo;width:46px;height:46px}
+.rv-score .rv-bron.g{padding:7px;box-shadow:none}
+.rv-score .sterscore{--ster-leeg:rgba(255,255,255,.22)}
 .rv-score b{grid-area:cijfer;font-size:34px;font-weight:300;line-height:1}
 .rv-score .sterscore{grid-area:sterren;margin-top:4px}
-.rv-score span{grid-area:tekst;font-size:13px;color:var(--zacht);margin-top:4px}
+.rv-score span{grid-area:tekst;font-size:13px;color:rgba(255,255,255,.7);margin-top:4px}
 .rv-bron{width:18px;height:18px;border-radius:50%;object-fit:contain;vertical-align:-4px;margin-left:4px}
 .rv-bron.g{background:#fff;padding:2px;box-shadow:0 0 0 1px var(--rand)}
 .rv-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
