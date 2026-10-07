@@ -56,9 +56,6 @@ const contactRaster = `<div class="contact-grid">
       </div>
     </div><!-- /contact-grid -->`;
 const gedeeldJs = tussen(hoofd, '// [[gedeeld', '// gedeeld]]');
-// reviews-raster (3 reviews + scores) — de optel-animatie draait alleen op de hoofdpagina, dus hier de eindwaarde
-const reviewkaarten = tussen(hoofd, '<div class="kaarten">', '<!-- /kaarten -->')
-  .replace(/<b data-tel data-naar="([\d.]+)" data-dec="(\d)">[^<]*<\/b>/g, (m, n, d) => `<b>${Number(n).toFixed(Number(d)).replace('.', ',')}</b>`);
 
 // Ankers op de hoofdpagina werken vanaf een subpagina via d-lijn.html#…
 // (alleen <a>-links; <use href="#i-…"> verwijst naar de iconenset op dezelfde pagina en blijft staan)
@@ -782,6 +779,13 @@ ${oproep()}`;
 
 // ---------- over ons ----------
 function overPagina(o) {
+  // uitgelichte review: Kevin (Google) gaat over Ozcan zelf — afspraken, eerlijk, meedenken
+  const uit = reviewData.reviews.find((r) => r.bron === 'google' && r.naam === 'Kevin' && r.tekst);
+  if (!uit) throw new Error('uitgelichte review (Kevin, Google) niet gevonden in docs/reviews.json');
+  const maanden = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+  const totaalReviews = reviewData.bronnen.google.aantal + reviewData.bronnen.werkspot.aantal;
+  const metScore = reviewData.reviews;
+  const nlScore = (metScore.reduce((t, r) => t + r.score, 0) / metScore.length).toFixed(1).replace('.', ',');
   const body = `<!-- HERO -->
 <section class="p-hero">
   <div class="kolommen"></div>
@@ -845,9 +849,13 @@ function overPagina(o) {
       ${oog('Wat klanten zeggen')}
       <h2>In de reviews staat <em class="serif">Ozcan</em>.</h2>
     </div>
-    <div class="op">
-    ${reviewkaarten}
-    </div>
+    <figure class="uitgelicht op">
+      <span class="uit-quote" aria-hidden="true">“</span>
+      <blockquote>${esc(uit.tekst)}</blockquote>
+      <figcaption><i class="sterscore" style="--pct:${uit.score * 20}%" role="img" aria-label="${uit.score} van 5 sterren"></i>
+        <span><img class="uit-bron" src="../assets/socials/google-officieel.png" alt="Google"><b>${esc(uit.naam)}</b> · Google-review, ${maanden[+uit.datum.slice(5, 7) - 1]} ${uit.datum.slice(0, 4)}</span></figcaption>
+    </figure>
+    <div class="uit-voet op"><span>Gemiddeld <b>${nlScore}</b> uit ${totaalReviews} reviews op Google en Werkspot</span><a class="pil" href="reviews.html">Lees alle reviews</a></div>
   </div>
 </section>
 
@@ -856,7 +864,21 @@ ${oproep()}`;
     titel: 'Over ons — OK Timmerwerken Gorinchem',
     omschrijving: o.intro.slice(0, 155),
     body,
-  });
+  }).replace('</head>', `<style>
+/* Over ons: één uitgelichte review over Ozcan zelf (de drie kaarten staan al op home) */
+.uitgelicht{position:relative;max-width:880px;margin:0 auto;padding:clamp(34px,5vw,56px) clamp(24px,5vw,64px);background:#fff;
+  border:1px solid var(--rand);border-radius:20px;box-shadow:0 46px 80px -56px rgba(20,19,15,.38)}
+.uit-quote{position:absolute;top:-30px;left:clamp(24px,5vw,64px);font-family:var(--serif);font-size:110px;line-height:1;color:var(--brons)}
+.uitgelicht blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);line-height:1.35;color:var(--inkt)}
+.uitgelicht figcaption{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:14px;color:var(--zacht)}
+.uitgelicht figcaption .sterscore{margin:0}
+.uitgelicht figcaption span{display:inline-flex;align-items:center;gap:8px}
+.uitgelicht figcaption b{color:var(--inkt);font-weight:600}
+.uit-bron{width:22px;height:22px;border-radius:50%;background:#fff;padding:2px;box-shadow:0 0 0 1px var(--rand)}
+.uit-voet{max-width:880px;margin:26px auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;font-size:14px;color:var(--zacht)}
+.uit-voet b{color:var(--inkt)}
+</style>
+</head>`);
 }
 
 // ---------- diensten-overzicht ----------
