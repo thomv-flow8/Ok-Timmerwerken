@@ -115,15 +115,11 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .menu-voet .tel{font-size:20px;font-weight:600;color:#fff}
 .menu-voet .mail{font-size:15px;color:rgba(255,255,255,.8)}
 .menu-voet .knoppen{display:flex;gap:10px;align-items:center}
-.menu-voet .wa-knop{background:#2a2925;border:1px solid rgba(255,255,255,.22);color:#fff;   /* zwart op het zwarte menu: iets lichter + rand */
-  border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
+.menu-voet .wa-knop{background:#25D366;color:#fff;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
 /* WhatsApp-knoppen: overal de herkenbare WhatsApp-groen, met het icoon uit de iconenset */
 .wa-knop{display:inline-flex;align-items:center;gap:8px}
-.knop.wa-knop{background:var(--inkt);border-color:var(--inkt);color:#fff}   /* WhatsApp-knoppen zwart, met het groene ronde logo erin */
-.wa-rond{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#25D366;color:#fff;flex:none;
-  margin:-4px 0 -4px -8px;transition:transform .3s var(--ease)}
-.wa-rond svg{width:14px!important;height:14px!important}
-.wa-knop:hover .wa-rond{transform:scale(1.12)}
+.knop.wa-knop{background:#25D366;border-color:#25D366;color:#fff}   /* WhatsApp-knoppen helemaal WhatsApp-groen, wit icoon */
+.knop.wa-knop:hover{background:#1da851;border-color:#1da851;color:#fff}
 .wa-knop svg{width:16px;height:16px;flex:none}
 .menu-voet .soc{width:42px;height:42px;border-radius:50%;background:var(--kl);color:#fff;
   display:grid;place-items:center}
@@ -671,7 +667,7 @@ footer.groot{padding:72px 0 46px}
     <a class="tel" href="tel:+31641429106">06 41 42 91 06</a>
     <a class="mail" href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>
     <div class="knoppen">
-      <a class="wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><span class="wa-rond" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>WhatsApp ons</a>
+      <a class="wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp ons</a>
       <a class="soc insta" href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
       <a class="soc werkspot" href="https://www.werkspot.nl/profiel/ok-timmerwerken" target="_blank" rel="noopener" aria-label="Werkspot"><svg aria-hidden="true"><use href="#i-werkspot"/></svg></a>
       <a class="soc google" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener" aria-label="Google reviews"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
@@ -1041,7 +1037,7 @@ footer.groot{padding:72px 0 46px}
       bellen of appen mag natuurlijk ook.</p>
       <div class="contact-knoppen">
         <a class="knop" href="contact.html">Naar het contactformulier</a>
-        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><span class="wa-rond" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>WhatsApp</a>
+        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
         <a class="knop lijn" href="tel:+31641429106">Bel 06 41 42 91 06</a>
       </div>
     </div>

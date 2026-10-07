@@ -406,7 +406,7 @@ function contactPagina() {
       <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. Bel, app of stuur een bericht — u hoort meestal binnen een dag van ons.</p>
       <div class="acties">
         <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
-        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><span class="wa-rond" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>WhatsApp</a>
+        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
         <a class="knop lijn" href="mailto:info@ok-timmerwerken.nl">Mail</a>
       </div>
     </div>
