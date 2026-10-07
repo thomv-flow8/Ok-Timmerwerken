@@ -396,39 +396,35 @@ function stappenRaster(items, cta, iconen = [], ctaLink = 'contact.html') {
 
 // ---------- contactpagina ----------
 function contactPagina() {
-  const body = `<!-- HERO -->
-<section class="p-hero c-hero">
+  // formulier en gegevens uit het contactraster halen: het formulier staat nu meteen in beeld, rechts in de hero
+  const formHtml = contactRaster.slice(contactRaster.indexOf('<form'), contactRaster.indexOf('</form>') + 7);
+  const infoHtml = contactRaster.slice(contactRaster.indexOf('<div class="contact-info">'), contactRaster.lastIndexOf('</div><!-- /contact-grid -->'));
+  const body = `<!-- HERO: alles in één oogopslag — links wie en hoe, rechts het formulier -->
+<section class="p-hero c-hero" id="contact">
   <div class="kolommen"></div>
   <div class="wrap">
-    <div>
+    <div class="c-links">
       <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Contact</span></div>
       ${oog('Contact')}
       <h1>Vertel ons wat u van <em class="serif">plan</em> bent.</h1>
-      <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. Bel, app of stuur een bericht — u hoort meestal binnen een dag van ons.</p>
+      <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. U hoort meestal binnen een dag van ons.</p>
+      <div class="c-persoon">
+        <div class="c-avatar"><img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
+        <div><p class="c-citaat">U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw.</p>
+        <span class="c-naam">Ozcan, eigenaar van OK Timmerwerken</span></div>
+      </div>
       <div class="acties">
         <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
         <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
         <a class="knop lijn" href="mailto:info@ok-timmerwerken.nl">Mail</a>
       </div>
     </div>
-    <div class="c-persoonlijk">
-      <div class="c-avatar"><img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
-      <p class="c-citaat">U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw.</p>
-      <span class="c-naam">Ozcan, eigenaar van OK Timmerwerken</span>
+    <div class="c-formkaart contact-grid">
+      <div class="c-formkop"><h2>Stuur een aanvraag</h2><p>Vrijblijvend. Een foto of een paar maten helpt, maar is niet nodig.</p></div>
+      ${formHtml}
     </div>
-  </div>
-</section>
-
-<!-- FORMULIER -->
-<section id="contact">
-  <div class="kolommen"></div>
-  <div class="wrap sectie">
-    <div class="kop op">
-      ${oog('Aanvraag')}
-      <h2>Stuur een vrijblijvende <em class="serif">aanvraag</em>.</h2>
-      <p class="lead">Vertel kort wat u van plan bent. Een foto of een paar maten helpt, maar is niet nodig — we komen toch graag even kijken.</p>
-    </div>
-    ${contactRaster}
+    <!-- gegevens na het formulier in de bron: op mobiel komt het formulier zo eerder in beeld; op desktop via het raster terug onder de knoppen -->
+    <div class="c-gegevens">${infoHtml}</div>
   </div>
 </section>
 
@@ -456,13 +452,32 @@ function contactPagina() {
 /* contactpagina: de werktijden staan al in het contactraster, dus niet nog eens in de footer */
 .foot-tijden-kol{display:none}
 @media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
-.c-persoonlijk{justify-self:end;align-self:end;width:calc(min(var(--max),94vw) / 2 - 48px);text-align:center}   /* midden op de 3e kolomlijn; onderkant gelijk met de knoppen */
-.c-avatar{width:clamp(220px,20vw,290px);   /* bovenkant gelijk met de kop links */aspect-ratio:1;border-radius:50%;overflow:hidden;margin:0 auto;background:#f2ebdf;
-  box-shadow:0 40px 70px -40px rgba(20,19,15,.45)}
-.c-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.15);transform-origin:50% 0}
-.c-citaat{max-width:30ch;margin-left:auto;margin-right:auto;margin-top:24px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,26px);line-height:1.3;color:var(--inkt)}
-.c-naam{display:block;margin-top:12px;font-size:13px;color:var(--zacht);letter-spacing:.04em}
-@media(max-width:820px){.c-persoonlijk{justify-self:start;align-self:start;width:auto;text-align:left}.c-avatar{margin:0}.c-citaat{margin-left:0}}
+.c-hero{padding:36px 0 84px}
+.c-hero .wrap{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;align-items:start;gap:0 clamp(36px,5vw,80px)}
+.c-links{grid-column:1;grid-row:1}
+.c-formkaart{grid-column:2;grid-row:1 / span 2}
+.c-gegevens{grid-column:1;grid-row:2}
+.c-hero h1{font-size:clamp(36px,4.6vw,62px)}
+.c-hero .lead{margin-top:18px}
+.c-persoon{display:flex;align-items:center;gap:16px;margin-top:24px}
+.c-avatar{width:76px;height:76px;flex:none;border-radius:50%;overflow:hidden;background:#f2ebdf;box-shadow:0 14px 30px -18px rgba(20,19,15,.5)}
+.c-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;transform:scale(1.25);transform-origin:50% 0}
+.c-citaat{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.3;color:var(--inkt)}
+.c-naam{display:block;margin-top:4px;font-size:12.5px;color:var(--zacht)}
+.c-hero .acties{margin-top:24px}
+/* gegevens compact in twee kolommen onder de knoppen */
+.c-gegevens .contact-info{display:grid;grid-template-columns:auto auto;column-gap:40px;margin-top:22px;width:max-content;max-width:100%}
+.c-gegevens .contact-info .lbl{grid-column:span 2;margin:18px 0 6px}
+.c-gegevens .contact-info > a,.c-gegevens .contact-info > .tijden,.c-gegevens .contact-info > .nu-open{grid-column:span 2}
+.c-gegevens .contact-info a{margin-bottom:4px;font-size:15px}
+/* formulier als witte kaart, meteen in beeld */
+.c-formkaart{display:block!important;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:30px 30px 26px;margin-top:0!important;
+  box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
+.c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.c-formkop p{margin:6px 0 20px;font-size:14px;color:var(--zacht)}
+.c-formkaart textarea{min-height:110px}
+@media(max-width:900px){.c-hero .wrap{grid-template-columns:1fr;grid-template-rows:none;row-gap:34px}
+  .c-links,.c-formkaart,.c-gegevens{grid-column:1;grid-row:auto}.c-gegevens .contact-info{width:auto;margin-top:0}}
 </style>
 </head>`);
 }
