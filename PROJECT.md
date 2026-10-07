@@ -481,4 +481,6 @@ nagaan of 'm opvragen bij Ozcan.
    (X-Frame-Options/CSP) en caching voor afbeeldingen/lettertypes. HTTPS-certificaat aan.
 6. Sitemap indienen in Google Search Console; Google-bedrijfsprofiel: werktijden gelijkzetten met de site.
 7. Privacyverklaring: naam hostingpartij invullen, concept-melding weghalen (`concept: false` in `inhoud.json`).
-8. Statistieken: Ozcan kiest tussen GA4 (cookiebanner nodig) of cookieloos (bv. Plausible, geen banner); privacyverklaring daarop aanpassen.
+8. Statistieken: **gekozen: GA4 met cookiebanner** (GA laadt pas na toestemming, Consent Mode; "Weigeren" even duidelijk als "Accepteren"); privacyverklaring aanvullen met cookie-overzicht.
+
+Openstaande vragen en aan te leveren zaken voor Ozcan: `docs/checklist-ozcan.md`.
