@@ -403,9 +403,12 @@ function contactPagina() {
 <section class="p-hero c-hero" id="contact">
   <div class="kolommen"></div>
   <div class="wrap">
-    <div class="c-links">
+    <!-- kruimel en oog in een eigen rij: zo begint het formulier precies op de hoogte van de kop -->
+    <div class="c-kop">
       <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Contact</span></div>
       ${oog('Contact')}
+    </div>
+    <div class="c-links">
       <h1>Vertel ons wat u van <em class="serif">plan</em> bent.</h1>
       <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. U hoort meestal binnen een dag van ons.</p>
       <div class="c-persoon">
@@ -453,10 +456,11 @@ function contactPagina() {
 .foot-tijden-kol{display:none}
 @media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
 .c-hero{padding:36px 0 84px}
-.c-hero .wrap{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;align-items:start;gap:0 clamp(36px,5vw,80px)}
-.c-links{grid-column:1;grid-row:1}
-.c-formkaart{grid-column:2;grid-row:1 / span 2}
-.c-gegevens{grid-column:1;grid-row:2}
+.c-hero .wrap{grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;align-items:start;gap:0 clamp(36px,5vw,80px)}
+.c-kop{grid-column:1;grid-row:1}
+.c-links{grid-column:1;grid-row:2}
+.c-formkaart{grid-column:2;grid-row:2 / span 2}
+.c-gegevens{grid-column:1;grid-row:3}
 .c-hero h1{font-size:clamp(36px,4.6vw,62px)}
 .c-hero .lead{margin-top:18px}
 .c-persoon{display:flex;align-items:center;gap:16px;margin-top:24px}
@@ -477,7 +481,7 @@ function contactPagina() {
 .c-formkop p{margin:6px 0 20px;font-size:14px;color:var(--zacht)}
 .c-formkaart textarea{min-height:110px}
 @media(max-width:900px){.c-hero .wrap{grid-template-columns:1fr;grid-template-rows:none;row-gap:34px}
-  .c-links,.c-formkaart,.c-gegevens{grid-column:1;grid-row:auto}.c-gegevens .contact-info{width:auto;margin-top:0}}
+  .c-kop,.c-links,.c-formkaart,.c-gegevens{grid-column:1;grid-row:auto}.c-kop{margin-bottom:-34px}.c-gegevens .contact-info{width:auto;margin-top:0}}
 </style>
 </head>`);
 }
