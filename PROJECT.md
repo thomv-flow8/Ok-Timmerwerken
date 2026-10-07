@@ -458,3 +458,21 @@ nagaan of 'm opvragen bij Ozcan.
   nieuwe plek; tabel in `docs/inhoud.json` → `doorverwijzingen`.
 - Portret van Ozcan (AI, op basis van 3 eigen foto's) staat in `assets/render/portret/` — **niet in git** tot Ozcan
   akkoord geeft; zijn eigen foto's (`assets/aangeleverd/ozcan-*.jpg`) blijven ook buiten de openbare repo.
+
+## Vindbaarheid en delen (okt 2026)
+- **Favicon**: `assets/icon/favicon.svg` (zwart, in donkere modus wit), `favicon-32.png`, `apple-touch-icon.png` (180),
+  `icon-512.png` — allemaal uit het overgetrokken originele logo (`assets/logo-oud/ok-timmerwerken-icoon.svg`).
+- **Voorbeeld bij delen** (WhatsApp, Facebook, LinkedIn): `og:`-tags op elke pagina, beeld `assets/og/ok-timmerwerken-delen.jpg` (1200×630).
+- **Google-bedrijfsgegevens**: JSON-LD `GeneralContractor` op de homepage (adres, telefoon, e-mail, werktijden uit
+  `inhoud.werktijden`, sinds 2011, Instagram/Werkspot/Google). Bewust **geen** reviewscore: Google toont zelf geplaatste
+  sterren van een eigen bedrijf niet.
+- **canonical** per pagina, **sitemap.xml** (15 pagina's) en **404.html** (werkt op elke diepte, kiest zelf het basisadres).
+- Alles wordt gebouwd door `node tools/genereer-paginas.js`; het adres staat in één constante `SITE`.
+
+### Checklist livegang op ok-timmerwerken.nl
+1. In `tools/genereer-paginas.js`: `SITE = 'https://www.ok-timmerwerken.nl/'` en de generator draaien.
+2. `noindex` weghalen: `preview/d-lijn.html` en `pagina()` in de generator (`<meta name="robots" …>`).
+3. `robots.txt` vervangen door: `User-agent: *` / `Allow: /` / `Sitemap: https://www.ok-timmerwerken.nl/sitemap.xml`.
+4. Formulier koppelen (Web3Forms) en de testmelding weghalen.
+5. Domein (DNS) naar GitHub Pages, eigen domein instellen, HTTPS aan.
+6. Sitemap indienen in Google Search Console; Google-bedrijfsprofiel: werktijden gelijkzetten met de site.

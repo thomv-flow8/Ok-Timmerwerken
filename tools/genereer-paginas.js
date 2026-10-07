@@ -274,6 +274,9 @@ function pagina({ titel, omschrijving, body }) {
 <meta name="robots" content="noindex, nofollow">
 <title>${esc(titel)}</title>
 <meta name="description" content="${esc(omschrijving)}">
+<link rel="icon" href="../assets/icon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/icon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">
 <!-- GEGENEREERD door tools/genereer-paginas.js uit docs/inhoud.json — niet met de hand aanpassen -->
 ${fonts}
 ${stijl}
@@ -1100,6 +1103,77 @@ schrijf('diensten/index.html', herschrijf(fs.readFileSync(path.join(uit, 'dienst
 schrijf('algemene-voorwaarden/index.html', herschrijf(fs.readFileSync(path.join(uit, 'voorwaarden.html'), 'utf8'), '../'));
 schrijf('disclaimer/index.html', herschrijf(fs.readFileSync(path.join(uit, 'disclaimer.html'), 'utf8'), '../'));
 
+// ---------- vindbaarheid: canonical, voorbeeld bij delen, bedrijfsgegevens voor Google, sitemap, 404 ----------
+// SITE = het adres waaronder de site draait. Nu de testomgeving; BIJ LIVEGANG wijzigen in 'https://www.ok-timmerwerken.nl/'.
+const SITE = 'https://thomv-flow8.github.io/Ok-Timmerwerken/';
+const sitePaginas = ['', 'over-ons/', 'diensten/', ...slugs.map((s) => `diensten/${s}/`), 'contact/', 'reviews/', 'algemene-voorwaarden/', 'disclaimer/'];
+const dagen = { 'Maandag – vrijdag': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 'Zaterdag': ['Saturday'], 'Zondag': ['Sunday'] };
+const bedrijf = {
+  '@context': 'https://schema.org', '@type': 'GeneralContractor',
+  name: 'OK Timmerwerken', url: SITE, logo: SITE + 'assets/icon/icon-512.png', image: SITE + 'assets/og/ok-timmerwerken-delen.jpg',
+  description: 'Timmer- en betonwerk in Gorinchem en omstreken. Erkend VELUX Montagepartner.',
+  telephone: '+31641429106', email: 'info@ok-timmerwerken.nl', foundingDate: '2011',
+  address: { '@type': 'PostalAddress', streetAddress: 'Suzanna van Oostdijkstraat 4', postalCode: '4206 XW', addressLocality: 'Gorinchem', addressCountry: 'NL' },
+  areaServed: [{ '@type': 'City', name: 'Gorinchem' }, { '@type': 'AdministrativeArea', name: 'Zuid-Holland' }],
+  // werktijden uit inhoud.werktijden, zodat ze altijd gelijk zijn aan wat op de site staat
+  openingHoursSpecification: inhoud.werktijden.filter(([, t]) => t !== 'Gesloten').map(([dag, t]) => {
+    if (!dagen[dag]) throw new Error(`onbekende dag in werktijden: ${dag}`);
+    const [open, dicht] = t.split('–').map((x) => x.trim());
+    return { '@type': 'OpeningHoursSpecification', dayOfWeek: dagen[dag], opens: open, closes: dicht };
+  }),
+  sameAs: ['https://www.instagram.com/oktimmerwerken', reviewData.bronnen.werkspot.url.replace(/\/reviews$/, ''), reviewData.bronnen.google.url],
+};
+function vindbaar(rel) {
+  const doel = path.join(root, rel === '' ? 'index.html' : rel + 'index.html');
+  let html = fs.readFileSync(doel, 'utf8');
+  const titel = (html.match(/<title>([^<]*)<\/title>/) || [])[1];
+  const oms = (html.match(/<meta name="description" content="([^"]*)">/) || [])[1];
+  if (!titel || !oms) throw new Error(`${rel || 'home'}: titel of omschrijving ontbreekt`);
+  const kop = `<link rel="canonical" href="${SITE}${rel}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="OK Timmerwerken">
+<meta property="og:title" content="${titel}">
+<meta property="og:description" content="${oms}">
+<meta property="og:url" content="${SITE}${rel}">
+<meta property="og:image" content="${SITE}assets/og/ok-timmerwerken-delen.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OK Timmerwerken — timmer- en betonwerk in Gorinchem">
+<meta name="twitter:card" content="summary_large_image">
+${rel === '' ? `<script type="application/ld+json">${JSON.stringify(bedrijf)}</script>\n` : ''}`;
+  html = html.replace(/(<meta name="description" content="[^"]*">\n)/, `$1${kop}`);
+  fs.writeFileSync(doel, html);
+}
+sitePaginas.forEach(vindbaar);
+const vandaag = new Date().toISOString().slice(0, 10);
+schrijf('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitePaginas.map((r) => `  <url><loc>${SITE}${r}</loc><lastmod>${vandaag}</lastmod></url>`).join('\n')}
+</urlset>
+`);
+// 404: GitHub Pages toont /404.html bij elk onbekend adres, op elke diepte. Daarom eerst het basisadres bepalen
+// (testomgeving /Ok-Timmerwerken/ of straks /) zodat beelden en links overal kloppen.
+const nietGevonden = pagina({
+  titel: 'Pagina niet gevonden — OK Timmerwerken',
+  omschrijving: 'Deze pagina bestaat niet (meer). Ga naar de homepage, de diensten of neem contact op met OK Timmerwerken.',
+  body: `<section class="p-hero">
+  <div class="kolommen"></div>
+  <div class="wrap" style="display:block">
+    ${oog('404')}
+    <h1>Deze pagina bestaat <em class="serif">niet</em> (meer).</h1>
+    <p class="lead">Misschien is het adres veranderd: de site is vernieuwd. Hieronder vindt u de weg terug.</p>
+    <div class="acties">
+      <a class="knop" href="d-lijn.html">Naar de homepage</a>
+      <a class="knop lijn" href="diensten.html">Bekijk de diensten</a>
+      <a class="knop lijn" href="contact.html">Contact</a>
+    </div>
+  </div>
+</section>
+${oproep()}`,
+}).replace('<head>\n', `<head>\n<script>document.write('<base href="' + (location.pathname.indexOf('/Ok-Timmerwerken/') === 0 ? '/Ok-Timmerwerken/' : '/') + '">');</script>\n`);
+schrijf('404.html', herschrijf(nietGevonden, ''));
+
 // doorverwijzingen: elk oud adres van ok-timmerwerken.nl krijgt een klein bestand dat direct doorstuurt
 // naar de nieuwe plek (GitHub Pages kent geen serverredirects; dit werkt ook voor Google via canonical).
 const oud = Object.entries(inhoud.doorverwijzingen);
@@ -1130,4 +1204,4 @@ for (const rel of ['index.html', 'over-ons/index.html', 'diensten/index.html', '
     if (!fs.existsSync(path.join(map, m[1]))) { console.error(`  ${rel}: ontbreekt ${m[1]}`); fout++; }
   }
 }
-console.log(`site gebouwd: index.html, over-ons/, diensten/ (+${slugs.length}), algemene-voorwaarden/, disclaimer/, ${oud.length} doorverwijzingen${fout ? ` — ${fout} probleem/problemen` : ' — alle links en beelden in orde'}`);
+console.log(`site gebouwd: index.html, over-ons/, diensten/ (+${slugs.length}), algemene-voorwaarden/, disclaimer/, 404.html, sitemap.xml, ${oud.length} doorverwijzingen${fout ? ` — ${fout} probleem/problemen` : ' — alle links en beelden in orde'}`);
