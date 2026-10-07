@@ -804,8 +804,9 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .rv-filter button.aan span{color:rgba(255,255,255,.7)}
 /* muur: kolommen tussen de verticale lijnen */
 .rv-muur{columns:4 250px;column-gap:18px}
-.rv{break-inside:avoid;margin:0 0 18px;background:#fff;border-radius:16px;padding:30px 26px 26px;text-align:center;
-  box-shadow:0 30px 60px -44px rgba(20,19,15,.4);display:flex;flex-direction:column;align-items:center}
+.rv{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 18px;background:#fff;border-radius:16px;padding:30px 26px 26px;text-align:center;
+  box-shadow:0 30px 60px -44px rgba(20,19,15,.4);display:inline-flex;width:100%;vertical-align:top;flex-direction:column;align-items:center}
+/* inline-flex + volle breedte: Safari breekt een kaart dan nooit over twee kolommen (anders lekt schaduw/marge naar de volgende kolom) */
 .rv[hidden]{display:none}
 .rv-quote{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#f2ebdf;color:var(--brons);
   font-family:var(--serif);font-size:44px;line-height:1;padding-top:14px;margin-bottom:18px}
