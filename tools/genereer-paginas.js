@@ -392,97 +392,6 @@ function stappenRaster(items, cta, iconen = [], ctaLink = 'contact.html') {
 
 
 // ---------- contactpagina ----------
-function contactPagina() {
-  // formulier en gegevens uit het contactraster halen: het formulier staat nu meteen in beeld, rechts in de hero
-  const formHtml = contactRaster.slice(contactRaster.indexOf('<form'), contactRaster.indexOf('</form>') + 7);
-  const infoHtml = contactRaster.slice(contactRaster.indexOf('<div class="contact-info">'), contactRaster.lastIndexOf('</div><!-- /contact-grid -->'));
-  const body = `<!-- HERO: alles in één oogopslag — links wie en hoe, rechts het formulier -->
-<section class="p-hero c-hero" id="contact">
-  <div class="kolommen"></div>
-  <div class="wrap">
-    <!-- kruimel en oog in een eigen rij: zo begint het formulier precies op de hoogte van de kop -->
-    <div class="c-kop">
-      <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Contact</span></div>
-      ${oog('Contact')}
-    </div>
-    <div class="c-links">
-      <h1>Vertel ons wat u van <em class="serif">plan</em> bent.</h1>
-      <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. U hoort meestal binnen een dag van ons.</p>
-      <div class="c-persoon">
-        <div class="c-avatar"><img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
-        <div><p class="c-citaat">U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw.</p>
-        <span class="c-naam">Ozcan, eigenaar van OK Timmerwerken</span></div>
-      </div>
-      <div class="acties">
-        <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
-        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
-        <a class="knop lijn" href="mailto:info@ok-timmerwerken.nl">Mail</a>
-      </div>
-    </div>
-    <div class="c-formkaart contact-grid">
-      <div class="c-formkop"><h2>Stuur een aanvraag</h2><p>Vrijblijvend. Heeft u foto's of maten? Stuur ze gerust via <a href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp</a>.</p></div>
-      ${formHtml}
-    </div>
-    <!-- gegevens na het formulier in de bron: op mobiel komt het formulier zo eerder in beeld; op desktop via het raster terug onder de knoppen -->
-    <div class="c-gegevens">${infoHtml}</div>
-  </div>
-</section>
-
-<!-- HOE HET VERDER GAAT -->
-<section class="creme">
-  <div class="kolommen"></div>
-  <div class="wrap sectie">
-    <div class="kop op">
-      ${oog('Zo gaat het verder')}
-      <h2>Na uw bericht, in drie <em class="serif">stappen</em>.</h2>
-    </div>
-    ${stappenRaster([
-      ['We komen langs', 'Gratis en vrijblijvend. We bekijken de situatie ter plaatse, denken mee over wat mogelijk is en zeggen eerlijk wanneer iets geen goed idee is.'],
-      ['U krijgt een duidelijke offerte', 'Vaste prijs, heldere omschrijving van het werk en de materialen, en een realistische planning. Wat erin staat, is wat u betaalt.'],
-      ['We leveren netjes op', 'Op de afgesproken dag, met een opgeruimde werkplek en garantie op het werk. Is er achteraf iets, dan komen we terug.'],
-    ], ['Liever direct bellen?', 'Bel of app Ozcan. Binnen een dag hoort u van ons.', 'Bel 06 41 42 91 06'], ['i-bezoek', 'i-offerte', 'i-opgeleverd'], 'tel:+31641429106')}
-  </div>
-</section>
-`;
-  return pagina({
-    titel: 'Contact — OK Timmerwerken Gorinchem',
-    omschrijving: 'Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–20:00, za 07:00–16:00.',
-    body,
-  }).replace('</head>', `<style>
-/* contactpagina: de werktijden staan al in het contactraster, dus niet nog eens in de footer */
-.foot-tijden-kol{display:none}
-@media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
-.c-hero{padding:36px 0 84px}
-.c-hero .wrap{grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;align-items:start;gap:0 clamp(36px,5vw,80px)}
-.c-kop{grid-column:1;grid-row:1}
-.c-links{grid-column:1;grid-row:2}
-.c-formkaart{grid-column:2;grid-row:2 / span 2}
-.c-gegevens{grid-column:1;grid-row:3}
-.c-hero h1{font-size:clamp(36px,4.6vw,62px)}
-.c-hero .lead{margin-top:18px}
-.c-persoon{display:flex;align-items:center;gap:16px;margin-top:24px}
-.c-avatar{width:76px;height:76px;flex:none;border-radius:50%;overflow:hidden;background:#f2ebdf;box-shadow:0 14px 30px -18px rgba(20,19,15,.5)}
-.c-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;transform:scale(1.25);transform-origin:50% 0}
-.c-citaat{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.3;color:var(--inkt)}
-.c-naam{display:block;margin-top:4px;font-size:12.5px;color:var(--zacht)}
-.c-hero .acties{margin-top:24px}
-/* gegevens compact in twee kolommen onder de knoppen */
-.c-gegevens .contact-info{display:grid;grid-template-columns:auto auto;column-gap:40px;margin-top:22px;width:max-content;max-width:100%}
-.c-gegevens .contact-info .lbl{grid-column:span 2;margin:18px 0 6px}
-.c-gegevens .contact-info > a,.c-gegevens .contact-info > .tijden,.c-gegevens .contact-info > .nu-open{grid-column:span 2}
-.c-gegevens .contact-info a{margin-bottom:4px;font-size:15px}
-/* formulier als witte kaart, meteen in beeld */
-.c-formkaart{display:block!important;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:30px 30px 26px;margin-top:0!important;
-  box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
-.c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em}
-.c-formkop p{margin:6px 0 20px;font-size:14px;color:var(--zacht)}
-.c-formkop p a{color:var(--inkt);text-decoration:underline;text-underline-offset:2px}
-.c-formkaart textarea{min-height:110px}
-@media(max-width:900px){.c-hero .wrap{grid-template-columns:1fr;grid-template-rows:none;row-gap:34px}
-  .c-kop,.c-links,.c-formkaart,.c-gegevens{grid-column:1;grid-row:auto}.c-kop{margin-bottom:-34px}.c-gegevens .contact-info{width:auto;margin-top:0}}
-</style>
-</head>`);
-}
 
 
 // ---------- reviewpagina: alle reviews van Google en Werkspot door elkaar, als muur van kaarten ----------
@@ -877,6 +786,110 @@ ${oproep()}`;
 .uit-bron{width:22px;height:22px;border-radius:50%;background:#fff;padding:2px;box-shadow:0 0 0 1px var(--rand)}
 .uit-voet{max-width:880px;margin:26px auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;font-size:14px;color:var(--zacht)}
 .uit-voet b{color:var(--inkt)}
+</style>
+</head>`);
+}
+
+// ---------- contactpagina: kop + twee gelijke kaarten (direct contact | formulier) ----------
+function contactPagina() {
+  const formHtml = contactRaster.slice(contactRaster.indexOf('<form'), contactRaster.indexOf('</form>') + 7);
+  const body = `<section class="p-hero c2-hero" id="contact">
+  <div class="kolommen"></div>
+  <div class="wrap c2-wrap">
+    <div class="c2-kop">
+      <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Contact</span></div>
+      ${oog('Contact')}
+      <h1>Vertel ons wat u van <em class="serif">plan</em> bent.</h1>
+      <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. U hoort meestal binnen een dag van ons.</p>
+    </div>
+    <div class="c2-kaarten">
+      <!-- links: direct contact (donkere kaart, zelfde beeldtaal als de 'Kennismaken?'-kaart) -->
+      <div class="c2-direct">
+        <div class="c2-wie">
+          <div class="c2-avatar"><img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
+          <div><b>Ozcan</b><span>eigenaar van OK Timmerwerken</span></div>
+        </div>
+        <p class="c2-citaat">U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw.</p>
+        <div class="c2-acties">
+          <a class="knop c2-bel" href="tel:+31641429106">Bel 06 41 42 91 06</a>
+          <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+          <a class="knop c2-mail" href="mailto:info@ok-timmerwerken.nl">Mail</a>
+        </div>
+        <div class="c2-info">
+          <div><div class="lbl">E-mail</div><a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>
+            <div class="lbl">Werkgebied</div><p>Gorinchem en regio Zuid-Holland</p></div>
+          <div><div class="lbl">Werktijden</div>
+            <div class="tijden"><span>Ma – vr</span><span>07:00 – 20:00</span><span>Zaterdag</span><span>07:00 – 16:00</span><span>Zondag</span><span>Gesloten</span></div>
+            <div class="nu-open" hidden><i></i><span></span></div></div>
+        </div>
+      </div>
+      <!-- rechts: het formulier -->
+      <div class="c2-form contact-grid">
+        <div class="c-formkop"><h2>Stuur een aanvraag</h2><p>Vrijblijvend. Heeft u foto's of maten? Stuur ze gerust via <a href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp</a>.</p></div>
+        ${formHtml}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="creme">
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="kop op">
+      ${oog('Zo gaat het verder')}
+      <h2>Na uw bericht, in drie <em class="serif">stappen</em>.</h2>
+    </div>
+    ${stappenRaster([
+      ['We komen langs', 'Gratis en vrijblijvend. We bekijken de situatie ter plaatse, denken mee over wat mogelijk is en zeggen eerlijk wanneer iets geen goed idee is.'],
+      ['U krijgt een duidelijke offerte', 'Vaste prijs, heldere omschrijving van het werk en de materialen, en een realistische planning. Wat erin staat, is wat u betaalt.'],
+      ['We leveren netjes op', 'Op de afgesproken dag, met een opgeruimde werkplek en garantie op het werk. Is er achteraf iets, dan komen we terug.'],
+    ], ['Liever direct bellen?', 'Bel of app Ozcan. Binnen een dag hoort u van ons.', 'Bel 06 41 42 91 06'], ['i-bezoek', 'i-offerte', 'i-opgeleverd'], 'tel:+31641429106')}
+  </div>
+</section>
+`;
+  return pagina({ titel: 'Contact — OK Timmerwerken Gorinchem', omschrijving: 'Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–20:00, za 07:00–16:00.', body }).replace('</head>', `<style>
+/* de werktijden staan al in de kaart, dus niet nog eens in de footer */
+.foot-tijden-kol{display:none}
+@media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
+.c2-hero{padding:36px 0 84px}
+.c2-wrap{display:block!important}
+.c2-kop{display:grid;grid-template-columns:1fr 1fr;column-gap:20px;align-items:end}   /* kop links, korte tekst rechts: zo staat het formulier eerder in beeld */
+.c2-kop .kruimel,.c2-kop .oog{grid-column:1 / -1}
+.c2-kop .kruimel{margin-bottom:28px}.c2-kop .oog{margin-bottom:40px}   /* compacter dan de andere hero's: hier draait het om het formulier */
+.c2-kop h1{font-size:clamp(36px,4.6vw,62px)}
+.c2-kop .lead{margin:0;padding-left:34px;max-width:46ch}
+.c2-kaarten{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px;align-items:stretch}
+/* links: donker */
+.c2-direct{background:#14130f;color:#fff;border-radius:20px;padding:34px 34px 30px;display:flex;flex-direction:column;
+  box-shadow:0 40px 80px -50px rgba(20,19,15,.55)}
+.c2-wie{display:flex;align-items:center;gap:16px}
+.c2-avatar{width:84px;height:84px;flex:none;border-radius:50%;overflow:hidden;background:#f2ebdf}
+.c2-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;transform:scale(1.25);transform-origin:50% 0}
+.c2-wie b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em}
+.c2-wie span{font-size:13px;color:rgba(255,255,255,.6)}
+.c2-citaat{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35;color:rgba(255,255,255,.92)}
+.c2-acties{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.c2-acties .knop{padding:12px 20px;font-size:14px}
+.c2-bel{background:#fff;color:#14130f;border-color:#fff}.c2-bel:hover{background:transparent;color:#fff}
+.c2-mail{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}.c2-mail:hover{background:#fff;color:#14130f}
+.c2-info{margin-top:auto;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:1fr 1fr;gap:6px 28px}
+.c2-direct .c2-info{margin-top:28px}
+.c2-info .lbl{color:rgba(255,255,255,.5);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
+.c2-info .lbl ~ .lbl{margin-top:16px}
+.c2-info a,.c2-info p{color:#fff;font-size:14.5px;display:block}
+.c2-info .tijden{display:grid;grid-template-columns:auto auto;gap:3px 14px;font-size:14px;width:fit-content}
+.c2-info .tijden span:nth-child(even){color:rgba(255,255,255,.6)}
+.c2-direct .nu-open{color:#fff;font-size:13.5px;margin-top:12px}
+.c2-direct .nu-open.dicht i{background:rgba(255,255,255,.4)}
+/* rechts: wit formulier */
+.c2-form{display:block!important;margin-top:0!important;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:34px 34px 30px;
+  box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
+.c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.c-formkop p{margin:6px 0 20px;font-size:14px;color:var(--zacht)}
+.c-formkop p a{color:var(--inkt);text-decoration:underline;text-underline-offset:2px}
+.c2-form textarea{min-height:120px}
+@media(max-width:900px){.c2-kaarten,.c2-kop{grid-template-columns:1fr}.c2-kop .lead{padding-left:0;margin-top:16px}.c2-form{order:-1}}
+@media(max-width:520px){.c2-direct,.c2-form{padding:26px 22px}.c2-info{grid-template-columns:1fr}.c2-info > div + div .lbl{margin-top:16px}}
 </style>
 </head>`);
 }
