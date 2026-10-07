@@ -559,7 +559,7 @@ ${oproep()}
 function dienstPagina(d, alle) {
   const n = d.galerij.length, nn = (i) => String(i).padStart(2, '0');
   const kaarten = d.galerij.map(([src, bijschrift], i) => `          <li class="kc-persp"><div class="kc-kaart${i ? '' : ' aan'}" data-i="${i}">
-            <div class="kc-vlak"><img src="${src}" alt="${esc(bijschrift)}"${i > 2 ? ' loading="lazy"' : ''}></div>
+            <div class="kc-vlak"><img src="${src}" alt="${esc(bijschrift)}" loading="lazy"></div>
             <div class="kc-tekst"><span class="kc-nr">${nn(i + 1)}</span><h3>${esc(bijschrift)}</h3><button type="button" class="kc-groot" data-groot="${i}">Bekijk groot</button></div>
           </div></li>`).join('\n');
   const pijl = (r) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${r ? 'M5 12h14M13 6l6 6-6 6' : 'M19 12H5M11 6l-6 6 6 6'}"/></svg>`;
@@ -634,7 +634,7 @@ ${d.download ? `        <a class="download" href="${d.download[1]}" target="_bla
       </div>${erkend}
     </div>
     <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
-      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}">
+      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -782,7 +782,7 @@ function overPagina(o, proef = false) {
       <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
-      <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1600" height="1550">
+      <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1600" height="1550" fetchpriority="high">
       <span class="tag">— Ozcan, OK Timmerwerken</span>
     </div>
   </div>
@@ -1024,7 +1024,7 @@ ${oproep()}`;
 const juridischeOmschrijving = {
   'Algemene voorwaarden': 'De algemene voorwaarden van OK Timmerwerken in Gorinchem: offertes, uitvoering, betaling, garantie en aansprakelijkheid bij timmer- en betonwerk.',
   'Privacyverklaring': 'Hoe OK Timmerwerken in Gorinchem omgaat met uw persoonsgegevens: welke gegevens we verwerken, waarom, hoe lang we ze bewaren en uw rechten.',
-  'Disclaimer': 'Disclaimer van OK Timmerwerken in Gorinchem: over de informatie op deze website, aansprakelijkheid, links naar andere sites en het gebruik van teksten en beelden.',
+  'Disclaimer': 'Disclaimer van OK Timmerwerken in Gorinchem: over de informatie op deze website, aansprakelijkheid, links naar andere sites en het gebruik van beelden.',
 };
 function juridischPagina(titel, inhoudHtml) {
   const body = `<section class="p-hero" style="padding-bottom:20px">
