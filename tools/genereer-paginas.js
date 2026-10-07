@@ -423,7 +423,7 @@ function contactPagina() {
       </div>
     </div>
     <div class="c-formkaart contact-grid">
-      <div class="c-formkop"><h2>Stuur een aanvraag</h2><p>Vrijblijvend. Een foto of een paar maten helpt, maar is niet nodig.</p></div>
+      <div class="c-formkop"><h2>Stuur een aanvraag</h2><p>Vrijblijvend. Heeft u foto's of maten? Stuur ze gerust via <a href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp</a>.</p></div>
       ${formHtml}
     </div>
     <!-- gegevens na het formulier in de bron: op mobiel komt het formulier zo eerder in beeld; op desktop via het raster terug onder de knoppen -->
@@ -479,6 +479,7 @@ function contactPagina() {
   box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
 .c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em}
 .c-formkop p{margin:6px 0 20px;font-size:14px;color:var(--zacht)}
+.c-formkop p a{color:var(--inkt);text-decoration:underline;text-underline-offset:2px}
 .c-formkaart textarea{min-height:110px}
 @media(max-width:900px){.c-hero .wrap{grid-template-columns:1fr;grid-template-rows:none;row-gap:34px}
   .c-kop,.c-links,.c-formkaart,.c-gegevens{grid-column:1;grid-row:auto}.c-kop{margin-bottom:-34px}.c-gegevens .contact-info{width:auto;margin-top:0}}
