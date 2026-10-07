@@ -11,6 +11,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const hoofd = fs.readFileSync(path.join(root, 'preview/d-lijn.html'), 'utf8');
 const inhoud = JSON.parse(fs.readFileSync(path.join(root, 'docs/inhoud.json'), 'utf8'));
+const reviewData = JSON.parse(fs.readFileSync(path.join(root, 'docs/reviews.json'), 'utf8'));
 
 // ---------- delen uit de hoofdpagina ----------
 function tussen(tekst, start, eind, metEind = true) {
@@ -466,6 +467,134 @@ function contactPagina() {
 </head>`);
 }
 
+
+// ---------- reviewpagina: alle reviews van Google en Werkspot door elkaar, als muur van kaarten ----------
+function reviewsPagina() {
+  const MND = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
+  const datumTekst = (r) => {
+    const [j, m, dg] = r.datum.split('-');
+    if (r.datum_precisie === 'jaar') return j;
+    if (!dg) return `${MND[+m - 1]} ${j}`;
+    return `${+dg} ${MND[+m - 1]} ${j}`;
+  };
+  const naamTekst = (r) => {
+    if (r.naam === 'Werkspot-gebruiker') return r.plaats ? `Klant uit ${r.plaats}` : 'Klant via Werkspot';
+    if (r.naam === 'Klant van OK timmerwerken') return 'Klant via Werkspot';
+    return r.naam.replace(/(^|\s)(\p{Ll})/gu, (m, a, b) => a + b.toUpperCase());
+  };
+  const alle = reviewData.reviews;
+  const g = reviewData.bronnen.google, w = reviewData.bronnen.werkspot;
+  const totaal = g.aantal + w.aantal;
+  const gemiddeld = (alle.reduce((s, r) => s + r.score, 0) / alle.length);
+  const toon = alle.filter((r) => r.tekst && !r.dubbel_met).sort((a, b) => (a.datum < b.datum ? 1 : -1));
+  const logo = (b) => b === 'google'
+    ? `<img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google">`
+    : `<img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot">`;
+  const kaart = (r) => {
+    const bronnen = [r.bron].concat(r.ook_op ? [r.ook_op] : []);
+    const sub = [r.plaats && r.naam !== 'Werkspot-gebruiker' ? r.plaats : '', r.klus ? r.klus.split(':')[0] : ''].filter(Boolean).join(' · ');
+    return `      <article class="rv" data-bron="${bronnen.join(' ')}">
+        <span class="rv-quote" aria-hidden="true">“</span>
+        <p class="rv-tekst">${esc(r.tekst).replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>')}</p>
+        <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <i class="sterscore" style="--pct:${r.score * 20}%" role="img" aria-label="${r.score} van 5 sterren"></i>
+        <div class="rv-wie"><b>${esc(naamTekst(r))}</b>${sub ? `<span>${esc(sub)}</span>` : ''}
+          <small>${datumTekst(r)} ${bronnen.map(logo).join('')}</small></div>
+      </article>`;
+  };
+  const nl = (x, d = 1) => x.toFixed(d).replace('.', ',');
+  const body = `<!-- HERO -->
+<section class="p-hero rv-hero">
+  <div class="kolommen"></div>
+  <div class="wrap">
+    <div>
+      <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Reviews</span></div>
+      ${oog('Reviews')}
+      <h1>${totaal} klanten gingen u <em class="serif">voor</em>.</h1>
+      <p class="lead">Alle reviews van Google en Werkspot op één plek, door elkaar en ongefilterd — ook de reviews met vier sterren. Gemiddeld ${nl(gemiddeld)} uit 5.</p>
+    </div>
+    <div class="rv-scores">
+      <a class="rv-score" href="${g.url}" target="_blank" rel="noopener">${logo('google')}<b>${nl(g.score)}</b><i class="sterscore" style="--pct:${g.score * 20}%" aria-hidden="true"></i><span>${g.aantal} reviews op Google</span></a>
+      <a class="rv-score" href="${w.url}" target="_blank" rel="noopener">${logo('werkspot')}<b>${nl(w.score)}</b><i class="sterscore" style="--pct:${w.score * 20}%" aria-hidden="true"></i><span>${w.aantal} reviews op Werkspot</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ALLE REVIEWS -->
+<section class="fris" id="alle">
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="rv-filter" role="group" aria-label="Filter op platform">
+      <button type="button" class="aan" data-f="alle">Alle <span>${toon.length}</span></button>
+      <button type="button" data-f="google">Google <span>${toon.filter((r) => r.bron === 'google' || r.ook_op === 'google').length}</span></button>
+      <button type="button" data-f="werkspot">Werkspot <span>${toon.filter((r) => r.bron === 'werkspot').length}</span></button>
+    </div>
+    <div class="rv-muur">
+${toon.map(kaart).join('\n')}
+    </div>
+    <p class="rv-noot">Reviews zoals geplaatst op Google en Werkspot; reviews die op beide staan tonen we één keer. Reviews met alleen sterren en geen tekst tellen mee in de totalen. Bekijk ze ook zelf op <a href="${g.url}" target="_blank" rel="noopener">Google</a> en <a href="${w.url}" target="_blank" rel="noopener">Werkspot</a>.</p>
+  </div>
+</section>
+
+${oproep()}
+`;
+  return pagina({
+    titel: 'Reviews — OK Timmerwerken Gorinchem',
+    omschrijving: `${totaal} reviews op Google en Werkspot, gemiddeld ${nl(gemiddeld)} uit 5. Lees wat klanten over OK Timmerwerken in Gorinchem zeggen.`,
+    body,
+  }).replace('</head>', `<style>
+/* reviewpagina */
+.rv-hero .wrap{align-items:end}
+.rv-scores{display:grid;gap:14px;justify-self:end;width:min(100%,380px)}
+.rv-score{display:grid;grid-template-columns:auto 1fr;grid-template-areas:'logo cijfer' 'logo sterren' 'logo tekst';column-gap:16px;align-items:center;
+  background:#fff;border:1px solid var(--rand);border-radius:16px;padding:18px 22px;color:var(--inkt);transition:transform .3s var(--ease),box-shadow .3s}
+.rv-score:hover{transform:translateY(-2px);box-shadow:0 20px 40px -26px rgba(20,19,15,.35)}
+.rv-score .rv-bron{grid-area:logo;width:46px;height:46px}
+.rv-score b{grid-area:cijfer;font-size:34px;font-weight:300;line-height:1}
+.rv-score .sterscore{grid-area:sterren;margin-top:4px}
+.rv-score span{grid-area:tekst;font-size:13px;color:var(--zacht);margin-top:4px}
+.rv-bron{width:18px;height:18px;border-radius:50%;object-fit:contain;vertical-align:-4px;margin-left:4px}
+.rv-bron.g{background:#fff;padding:2px;box-shadow:0 0 0 1px var(--rand)}
+.rv-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.rv-filter button{border:1px solid var(--rand);background:#fff;border-radius:999px;padding:9px 16px;font:600 13.5px var(--f,inherit);cursor:pointer;color:var(--inkt)}
+.rv-filter button span{color:var(--zacht);font-weight:500;margin-left:4px}
+.rv-filter button.aan{background:var(--inkt);border-color:var(--inkt);color:#fff}
+.rv-filter button.aan span{color:rgba(255,255,255,.7)}
+/* muur: kolommen tussen de verticale lijnen */
+.rv-muur{columns:4 250px;column-gap:18px}
+.rv{break-inside:avoid;margin:0 0 18px;background:#fff;border-radius:16px;padding:30px 26px 26px;text-align:center;
+  box-shadow:0 30px 60px -44px rgba(20,19,15,.4);display:flex;flex-direction:column;align-items:center}
+.rv[hidden]{display:none}
+.rv-quote{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#f2ebdf;color:var(--brons);
+  font-family:var(--serif);font-size:44px;line-height:1;padding-top:14px;margin-bottom:18px}
+.rv-tekst{font-size:15.5px;line-height:1.6;color:#2b2925;font-weight:400}
+.rv.kort .rv-tekst{display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden}
+.rv-meer{margin-top:10px;border:0;background:none;color:var(--brons);font:600 13px var(--f,inherit);cursor:pointer}
+.rv-meer::after{content:' ›'}
+.rv .sterscore{margin:18px auto 0}
+.rv-wie{margin-top:18px;padding-top:16px;border-top:1px solid var(--rand);width:100%}
+.rv-wie b{display:block;font-size:16px;font-weight:600}
+.rv-wie span{display:block;font-size:13px;color:var(--zacht);margin-top:3px}
+.rv-wie small{display:block;font-size:12.5px;color:var(--zacht);margin-top:6px}
+.rv-noot{margin-top:30px;font-size:13px;color:var(--zacht);max-width:70ch}
+.rv-noot a{text-decoration:underline}
+@media(max-width:820px){.rv-scores{justify-self:start}}
+</style>
+</head>`).replace('</body>', `<script>
+(function(){
+  // lange reviews inkorten met "Lees volledig"
+  [].forEach.call(document.querySelectorAll('.rv'),function(k){ var p=k.querySelector('.rv-tekst'), b=k.querySelector('.rv-meer');
+    k.classList.add('kort'); if(p.scrollHeight>p.clientHeight+4){ b.hidden=false; b.addEventListener('click',function(){ var open=k.classList.toggle('kort'); b.textContent=open?'Lees volledig':'Minder tonen'; }); } else k.classList.remove('kort'); });
+  // filter op platform
+  var f=document.querySelector('.rv-filter');
+  f.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return;
+    [].forEach.call(f.children,function(x){ x.classList.toggle('aan',x===b); });
+    [].forEach.call(document.querySelectorAll('.rv'),function(k){ k.hidden=b.dataset.f!=='alle' && k.dataset.bron.indexOf(b.dataset.f)<0; }); });
+})();
+</script>
+</body>`);
+}
+
 // ---------- dienstpagina ----------
 function dienstPagina(d, alle) {
   const n = d.galerij.length, nn = (i) => String(i).padStart(2, '0');
@@ -774,6 +903,9 @@ geschreven.push('over.html');
 // contactpagina
 fs.writeFileSync(path.join(uit, 'contact.html'), contactPagina());
 geschreven.push('contact.html');
+// reviewpagina
+fs.writeFileSync(path.join(uit, 'reviews.html'), reviewsPagina());
+geschreven.push('reviews.html');
 fs.writeFileSync(path.join(uit, 'diensten.html'), overzichtPagina(inhoud.diensten));
 fs.writeFileSync(path.join(uit, 'voorwaarden.html'), juridischPagina('Algemene voorwaarden', voorwaardenHtml(inhoud.juridisch.voorwaarden)));
 fs.writeFileSync(path.join(uit, 'disclaimer.html'), juridischPagina('Disclaimer', inhoud.juridisch.disclaimer.alineas.map((p) => `      <p>${esc(p)}</p>`).join('\n')));
@@ -806,6 +938,7 @@ function herschrijf(html, pre) {
   h = h.replace(/href="voorwaarden\.html"/g, `href="${pre}algemene-voorwaarden/"`);
   h = h.replace(/href="disclaimer\.html"/g, `href="${pre}disclaimer/"`);
   h = h.replace(/href="contact\.html"/g, `href="${pre}contact/"`);
+  h = h.replace(/href="reviews\.html"/g, `href="${pre}reviews/"`);
   for (const s of slugs) h = h.replace(new RegExp(`href="dienst-${s}\\.html(#[^"]*)?"`, 'g'), (m, a) => `href="${pre}diensten/${s}/${a || ''}"`);
   return h;
 }
@@ -817,6 +950,7 @@ function schrijf(rel, html) {
 schrijf('index.html', herschrijf(fs.readFileSync(path.join(uit, 'd-lijn.html'), 'utf8'), ''));
 schrijf('over-ons/index.html', herschrijf(fs.readFileSync(path.join(uit, 'over.html'), 'utf8'), '../'));
 schrijf('contact/index.html', herschrijf(fs.readFileSync(path.join(uit, 'contact.html'), 'utf8'), '../'));
+schrijf('reviews/index.html', herschrijf(fs.readFileSync(path.join(uit, 'reviews.html'), 'utf8'), '../'));
 for (const s of slugs) {
   schrijf(`diensten/${s}/index.html`, herschrijf(fs.readFileSync(path.join(uit, `dienst-${s}.html`), 'utf8'), '../../'));
 }
