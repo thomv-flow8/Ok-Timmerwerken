@@ -35,6 +35,7 @@
 <!-- fonts]] -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+img{height:auto}   /* width/height-attributen (afmetingen vooraf bekend, geen verspringen) bepalen alleen de verhouding */
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .naar-inhoud{position:fixed;left:16px;top:-60px;z-index:200;background:#14130f;color:#fff;padding:10px 16px;border-radius:999px;font:600 14px Inter,system-ui,sans-serif;transition:top .2s}
 .naar-inhoud:focus{top:12px}
@@ -858,14 +859,14 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div class="nav-sub">
         <a href="../../diensten/" aria-haspopup="true">Diensten<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></a>
         <div class="submenu">
-          <a href="../../diensten/betonvloeren/" style="--kl:#7394b4"><img src="../../assets/render/echt/thumb/beton.jpg" alt="" loading="lazy"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
-          <a href="../../diensten/zolder/" style="--kl:#9cb189"><img src="../../assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
-          <a href="../../diensten/carport/" style="--kl:#d87f57"><img src="../../assets/render/echt/thumb/carport.jpg" alt="" loading="lazy"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
-          <a href="../../diensten/dakramen/" style="--kl:#7394b4"><img src="../../assets/render/echt/thumb/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
-          <a href="../../diensten/timmerwerk/" style="--kl:#9cb189"><img src="../../assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
-          <a href="../../diensten/funderingen/" style="--kl:#474e5b"><img src="../../assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a href="../../diensten/onderhoud/" style="--kl:#b98b6e"><img src="../../assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
-          <a href="../../diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="../../assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a href="../../diensten/betonvloeren/" style="--kl:#7394b4"><img src="../../assets/render/echt/thumb/beton.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
+          <a href="../../diensten/zolder/" style="--kl:#9cb189"><img src="../../assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
+          <a href="../../diensten/carport/" style="--kl:#d87f57"><img src="../../assets/render/echt/thumb/carport.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
+          <a href="../../diensten/dakramen/" style="--kl:#7394b4"><img src="../../assets/render/echt/thumb/velux.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
+          <a href="../../diensten/timmerwerk/" style="--kl:#9cb189"><img src="../../assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
+          <a href="../../diensten/funderingen/" style="--kl:#474e5b"><img src="../../assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
+          <a href="../../diensten/onderhoud/" style="--kl:#b98b6e"><img src="../../assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="../../diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="../../assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
           <a class="alle" href="../../diensten/">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
@@ -937,7 +938,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
     </div>
     <div class="p-beeld" style="--bg:#9cb189" data-kantel>
-      <img src="../../assets/render/echt/web/plafond-af.jpg" alt="Kamer met afgewerkt verlaagd plafond en inbouwspots" fetchpriority="high">
+      <img src="../../assets/render/echt/web/plafond-af.jpg" alt="Kamer met afgewerkt verlaagd plafond en inbouwspots" fetchpriority="high" width="1024" height="1024">
     </div>
   </div>
 </section>
@@ -1020,51 +1021,51 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div class="kc-podium" tabindex="0" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
         <ul class="kc-rail">
           <li class="kc-persp"><div class="kc-kaart aan" data-i="0">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-wa110.jpg" alt="Regelwerk voor een voorzetwand" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-wa110.jpg" alt="Regelwerk voor een voorzetwand" loading="lazy" width="1050" height="1400"></div>
             <div class="kc-tekst"><span class="kc-nr">01</span><h3>Regelwerk voor een voorzetwand</h3><button type="button" class="kc-groot" data-groot="0">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="1">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-wa066.jpg" alt="Tv-wand met nissen in opbouw" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-wa066.jpg" alt="Tv-wand met nissen in opbouw" loading="lazy" width="1600" height="900"></div>
             <div class="kc-tekst"><span class="kc-nr">02</span><h3>Tv-wand met nissen in opbouw</h3><button type="button" class="kc-groot" data-groot="1">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="2">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-wa094.jpg" alt="Wand met nissen naast de keuken" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-wa094.jpg" alt="Wand met nissen naast de keuken" loading="lazy" width="768" height="1024"></div>
             <div class="kc-tekst"><span class="kc-nr">03</span><h3>Wand met nissen naast de keuken</h3><button type="button" class="kc-groot" data-groot="2">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="3">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-wa141.jpg" alt="Trapopgang strak afgetimmerd" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-wa141.jpg" alt="Trapopgang strak afgetimmerd" loading="lazy" width="1200" height="1600"></div>
             <div class="kc-tekst"><span class="kc-nr">04</span><h3>Trapopgang strak afgetimmerd</h3><button type="button" class="kc-groot" data-groot="3">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="4">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-wa179.jpg" alt="Stalen deur naar de werkkamer" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-wa179.jpg" alt="Stalen deur naar de werkkamer" loading="lazy" width="1050" height="1400"></div>
             <div class="kc-tekst"><span class="kc-nr">05</span><h3>Stalen deur naar de werkkamer</h3><button type="button" class="kc-groot" data-groot="4">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="5">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-plafond-spots.jpg" alt="Verlaagd plafond met inbouwspots" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-plafond-spots.jpg" alt="Verlaagd plafond met inbouwspots" loading="lazy" width="1600" height="1200"></div>
             <div class="kc-tekst"><span class="kc-nr">06</span><h3>Verlaagd plafond met inbouwspots</h3><button type="button" class="kc-groot" data-groot="5">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="6">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-stalen-balk.jpg" alt="Doorbraak met stalen balk, gestempeld" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-stalen-balk.jpg" alt="Doorbraak met stalen balk, gestempeld" loading="lazy" width="1050" height="1400"></div>
             <div class="kc-tekst"><span class="kc-nr">07</span><h3>Doorbraak met stalen balk, gestempeld</h3><button type="button" class="kc-groot" data-groot="6">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="7">
-            <div class="kc-vlak"><img src="../../assets/web/timmerwerk-tvwand.jpg" alt="Tv-wand met nissen en haard" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmerwerk-tvwand.jpg" alt="Tv-wand met nissen en haard" loading="lazy" width="1400" height="1050"></div>
             <div class="kc-tekst"><span class="kc-nr">08</span><h3>Tv-wand met nissen en haard</h3><button type="button" class="kc-groot" data-groot="7">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="8">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-wa036.jpg" alt="Stalen binnendeur" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-wa036.jpg" alt="Stalen binnendeur" loading="lazy" width="853" height="1280"></div>
             <div class="kc-tekst"><span class="kc-nr">09</span><h3>Stalen binnendeur</h3><button type="button" class="kc-groot" data-groot="8">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="9">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-wa067.jpg" alt="Nieuwe wanden op zolder, klaar voor de afwerking" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-wa067.jpg" alt="Nieuwe wanden op zolder, klaar voor de afwerking" loading="lazy" width="1600" height="1200"></div>
             <div class="kc-tekst"><span class="kc-nr">10</span><h3>Nieuwe wanden op zolder, klaar voor de afwerking</h3><button type="button" class="kc-groot" data-groot="9">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="10">
-            <div class="kc-vlak"><img src="../../assets/web/timmerwerk-lamellenwand.jpg" alt="Lamellenwand in de woonkamer" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmerwerk-lamellenwand.jpg" alt="Lamellenwand in de woonkamer" loading="lazy" width="1400" height="1050"></div>
             <div class="kc-tekst"><span class="kc-nr">11</span><h3>Lamellenwand in de woonkamer</h3><button type="button" class="kc-groot" data-groot="10">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="11">
-            <div class="kc-vlak"><img src="../../assets/web/timmer-lamellen-hanglampen.jpg" alt="Lamellenwand met hanglampen" loading="lazy"></div>
+            <div class="kc-vlak"><img src="../../assets/web/timmer-lamellen-hanglampen.jpg" alt="Lamellenwand met hanglampen" loading="lazy" width="1400" height="1050"></div>
             <div class="kc-tekst"><span class="kc-nr">12</span><h3>Lamellenwand met hanglampen</h3><button type="button" class="kc-groot" data-groot="11">Bekijk groot</button></div>
           </div></li>
         </ul>
@@ -1139,37 +1140,37 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     </div>
     <div class="andere op">
       <a class="kaart" href="../../diensten/betonvloeren/" style="--kl:#7394b4" data-kantel>
-        <img src="../../assets/render/echt/web/beton.jpg" alt="" loading="lazy">
+        <img src="../../assets/render/echt/web/beton.jpg" alt="" loading="lazy" width="1024" height="1024">
         <span class="knr">01</span>
         <span class="knaam"><b>Betonvloeren</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="../../diensten/zolder/" style="--kl:#9cb189" data-kantel>
-        <img src="../../assets/render/echt/web/zolder-na.jpg" alt="" loading="lazy">
+        <img src="../../assets/render/echt/web/zolder-na.jpg" alt="" loading="lazy" width="1024" height="1024">
         <span class="knr">02</span>
         <span class="knaam"><b>Vliering &amp; zolder</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="../../diensten/carport/" style="--kl:#d87f57" data-kantel>
-        <img src="../../assets/render/echt/web/carport.jpg" alt="" loading="lazy">
+        <img src="../../assets/render/echt/web/carport.jpg" alt="" loading="lazy" width="1024" height="1024">
         <span class="knr">03</span>
         <span class="knaam"><b>Carport &amp; overkapping</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="../../diensten/dakramen/" style="--kl:#7394b4" data-kantel>
-        <img src="../../assets/render/echt/web/velux.jpg" alt="" loading="lazy">
+        <img src="../../assets/render/echt/web/velux.jpg" alt="" loading="lazy" width="1024" height="1024">
         <span class="knr">04</span>
         <span class="knaam"><b>Dakramen (Velux)</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="../../diensten/funderingen/" style="--kl:#474e5b" data-kantel>
-        <img src="../../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy">
+        <img src="../../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy" width="1024" height="1024">
         <span class="knr">06</span>
         <span class="knaam"><b>Funderingen</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="../../diensten/onderhoud/" style="--kl:#b98b6e" data-kantel>
-        <img src="../../assets/render/echt/web/onderhoud.jpg" alt="" loading="lazy">
+        <img src="../../assets/render/echt/web/onderhoud.jpg" alt="" loading="lazy" width="1024" height="1024">
         <span class="knr">07</span>
         <span class="knaam"><b>Onderhoud &amp; renovatie</b><span>Bekijk dienst</span></span>
       </a>
       <a class="kaart" href="../../diensten/nieuwbouw/" style="--kl:#6f7d6a" data-kantel>
-        <img src="../../assets/render/echt/web/nieuwbouw.jpg" alt="" loading="lazy">
+        <img src="../../assets/render/echt/web/nieuwbouw.jpg" alt="" loading="lazy" width="1200" height="1200">
         <span class="knr">08</span>
         <span class="knaam"><b>Nieuwbouw</b><span>Bekijk dienst</span></span>
       </a>
@@ -1204,7 +1205,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div>
         <div class="merk-foot" role="img" aria-label="OK Timmerwerken"><svg class="m-ico" viewBox="0 0 444 418" aria-hidden="true"><use href="#i-logo"/></svg><svg class="m-woord" viewBox="0 0 862 74" aria-hidden="true"><use href="#i-logo-woord"/></svg></div>
         <p>Timmer- en betonwerk in Gorinchem en omstreken. Vakwerk waar u op kunt bouwen.</p>
-        <a class="erkend foot-erkend" href="../../diensten/dakramen/"><img src="../../assets/web/velux-montagepartner.jpg" alt=""><span>Erkend VELUX<br>Montagepartner</span></a>
+        <a class="erkend foot-erkend" href="../../diensten/dakramen/"><img src="../../assets/web/velux-montagepartner.jpg" alt="" width="600" height="600"><span>Erkend VELUX<br>Montagepartner</span></a>
       </div>
       <div>
         <h2>Diensten</h2>

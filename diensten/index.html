@@ -35,6 +35,7 @@
 <!-- fonts]] -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+img{height:auto}   /* width/height-attributen (afmetingen vooraf bekend, geen verspringen) bepalen alleen de verhouding */
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .naar-inhoud{position:fixed;left:16px;top:-60px;z-index:200;background:#14130f;color:#fff;padding:10px 16px;border-radius:999px;font:600 14px Inter,system-ui,sans-serif;transition:top .2s}
 .naar-inhoud:focus{top:12px}
@@ -858,14 +859,14 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div class="nav-sub">
         <a href="../diensten/" aria-haspopup="true">Diensten<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></a>
         <div class="submenu">
-          <a href="../diensten/betonvloeren/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/beton.jpg" alt="" loading="lazy"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
-          <a href="../diensten/zolder/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
-          <a href="../diensten/carport/" style="--kl:#d87f57"><img src="../assets/render/echt/thumb/carport.jpg" alt="" loading="lazy"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
-          <a href="../diensten/dakramen/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
-          <a href="../diensten/timmerwerk/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
-          <a href="../diensten/funderingen/" style="--kl:#474e5b"><img src="../assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a href="../diensten/onderhoud/" style="--kl:#b98b6e"><img src="../assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
-          <a href="../diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="../assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a href="../diensten/betonvloeren/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/beton.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
+          <a href="../diensten/zolder/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
+          <a href="../diensten/carport/" style="--kl:#d87f57"><img src="../assets/render/echt/thumb/carport.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
+          <a href="../diensten/dakramen/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/velux.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
+          <a href="../diensten/timmerwerk/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
+          <a href="../diensten/funderingen/" style="--kl:#474e5b"><img src="../assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
+          <a href="../diensten/onderhoud/" style="--kl:#b98b6e"><img src="../assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="../diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="../assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
           <a class="alle" href="../diensten/">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
@@ -937,7 +938,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     <div class="overzicht op">
       <div class="blok">
         <a class="kaart" href="../diensten/betonvloeren/" style="--kl:#7394b4" data-kantel>
-          <img src="../assets/render/echt/web/beton.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/beton.jpg" alt="" loading="lazy" width="1024" height="1024">
           <span class="knr">01</span>
           <span class="knaam"><b>Betonvloeren</b><span>Bekijk dienst</span></span>
         </a>
@@ -952,7 +953,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <div class="blok">
         <a class="kaart" href="../diensten/zolder/" style="--kl:#9cb189" data-kantel>
-          <img src="../assets/render/echt/web/zolder-na.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/zolder-na.jpg" alt="" loading="lazy" width="1024" height="1024">
           <span class="knr">02</span>
           <span class="knaam"><b>Vliering &amp; zolder</b><span>Bekijk dienst</span></span>
         </a>
@@ -965,7 +966,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <div class="blok">
         <a class="kaart" href="../diensten/carport/" style="--kl:#d87f57" data-kantel>
-          <img src="../assets/render/echt/web/carport.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/carport.jpg" alt="" loading="lazy" width="1024" height="1024">
           <span class="knr">03</span>
           <span class="knaam"><b>Carport &amp; overkapping</b><span>Bekijk dienst</span></span>
         </a>
@@ -979,7 +980,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <div class="blok">
         <a class="kaart" href="../diensten/dakramen/" style="--kl:#7394b4" data-kantel>
-          <img src="../assets/render/echt/web/velux.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/velux.jpg" alt="" loading="lazy" width="1024" height="1024">
           <span class="knr">04</span>
           <span class="knaam"><b>Dakramen (Velux)</b><span>Bekijk dienst</span></span>
         </a>
@@ -993,7 +994,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <div class="blok">
         <a class="kaart" href="../diensten/timmerwerk/" style="--kl:#9cb189" data-kantel>
-          <img src="../assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/plafond-af.jpg" alt="" loading="lazy" width="1024" height="1024">
           <span class="knr">05</span>
           <span class="knaam"><b>Timmerwerk &amp; afbouw</b><span>Bekijk dienst</span></span>
         </a>
@@ -1009,7 +1010,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <div class="blok">
         <a class="kaart" href="../diensten/funderingen/" style="--kl:#474e5b" data-kantel>
-          <img src="../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/fundering-gestort.jpg" alt="" loading="lazy" width="1024" height="1024">
           <span class="knr">06</span>
           <span class="knaam"><b>Funderingen</b><span>Bekijk dienst</span></span>
         </a>
@@ -1025,7 +1026,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <div class="blok">
         <a class="kaart" href="../diensten/onderhoud/" style="--kl:#b98b6e" data-kantel>
-          <img src="../assets/render/echt/web/onderhoud.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/onderhoud.jpg" alt="" loading="lazy" width="1024" height="1024">
           <span class="knr">07</span>
           <span class="knaam"><b>Onderhoud &amp; renovatie</b><span>Bekijk dienst</span></span>
         </a>
@@ -1039,7 +1040,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <div class="blok">
         <a class="kaart" href="../diensten/nieuwbouw/" style="--kl:#6f7d6a" data-kantel>
-          <img src="../assets/render/echt/web/nieuwbouw.jpg" alt="" loading="lazy">
+          <img src="../assets/render/echt/web/nieuwbouw.jpg" alt="" loading="lazy" width="1200" height="1200">
           <span class="knr">08</span>
           <span class="knaam"><b>Nieuwbouw</b><span>Bekijk dienst</span></span>
         </a>
@@ -1078,7 +1079,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div>
         <div class="merk-foot" role="img" aria-label="OK Timmerwerken"><svg class="m-ico" viewBox="0 0 444 418" aria-hidden="true"><use href="#i-logo"/></svg><svg class="m-woord" viewBox="0 0 862 74" aria-hidden="true"><use href="#i-logo-woord"/></svg></div>
         <p>Timmer- en betonwerk in Gorinchem en omstreken. Vakwerk waar u op kunt bouwen.</p>
-        <a class="erkend foot-erkend" href="../diensten/dakramen/"><img src="../assets/web/velux-montagepartner.jpg" alt=""><span>Erkend VELUX<br>Montagepartner</span></a>
+        <a class="erkend foot-erkend" href="../diensten/dakramen/"><img src="../assets/web/velux-montagepartner.jpg" alt="" width="600" height="600"><span>Erkend VELUX<br>Montagepartner</span></a>
       </div>
       <div>
         <h2>Diensten</h2>

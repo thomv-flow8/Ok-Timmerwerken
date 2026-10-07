@@ -35,6 +35,7 @@
 <!-- fonts]] -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+img{height:auto}   /* width/height-attributen (afmetingen vooraf bekend, geen verspringen) bepalen alleen de verhouding */
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .naar-inhoud{position:fixed;left:16px;top:-60px;z-index:200;background:#14130f;color:#fff;padding:10px 16px;border-radius:999px;font:600 14px Inter,system-ui,sans-serif;transition:top .2s}
 .naar-inhoud:focus{top:12px}
@@ -904,14 +905,14 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div class="nav-sub">
         <a href="../diensten/" aria-haspopup="true">Diensten<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></a>
         <div class="submenu">
-          <a href="../diensten/betonvloeren/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/beton.jpg" alt="" loading="lazy"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
-          <a href="../diensten/zolder/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
-          <a href="../diensten/carport/" style="--kl:#d87f57"><img src="../assets/render/echt/thumb/carport.jpg" alt="" loading="lazy"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
-          <a href="../diensten/dakramen/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
-          <a href="../diensten/timmerwerk/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
-          <a href="../diensten/funderingen/" style="--kl:#474e5b"><img src="../assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a href="../diensten/onderhoud/" style="--kl:#b98b6e"><img src="../assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
-          <a href="../diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="../assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a href="../diensten/betonvloeren/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/beton.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
+          <a href="../diensten/zolder/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
+          <a href="../diensten/carport/" style="--kl:#d87f57"><img src="../assets/render/echt/thumb/carport.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
+          <a href="../diensten/dakramen/" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/velux.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
+          <a href="../diensten/timmerwerk/" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
+          <a href="../diensten/funderingen/" style="--kl:#474e5b"><img src="../assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
+          <a href="../diensten/onderhoud/" style="--kl:#b98b6e"><img src="../assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="../diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="../assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
           <a class="alle" href="../diensten/">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
@@ -979,8 +980,8 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <p class="lead">Alle reviews van Google en Werkspot op één plek, door elkaar en ongefilterd — ook de reviews met vier sterren. Gemiddeld 4,9 uit 5.</p>
     </div>
     <div class="rv-scores">
-      <a class="rv-score" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"><b>5,0</b><i class="sterscore" style="--pct:100%" aria-hidden="true"></i><span>97 reviews op Google</span></a>
-      <a class="rv-score" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><b>4,9</b><i class="sterscore" style="--pct:98%" aria-hidden="true"></i><span>78 reviews op Werkspot</span></a>
+      <a class="rv-score" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"><b>5,0</b><i class="sterscore" style="--pct:100%" aria-hidden="true"></i><span>97 reviews op Google</span></a>
+      <a class="rv-score" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><b>4,9</b><i class="sterscore" style="--pct:98%" aria-hidden="true"></i><span>78 reviews op Werkspot</span></a>
     </div>
   </div>
 </section>
@@ -1002,7 +1003,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter</b><span>Den Haag · Carport plaatsen</span>
-          <small>11 sep 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>11 sep 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1011,7 +1012,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Roos Van Der Linde</b>
-          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1020,7 +1021,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Nick Van Hoogdalem</b>
-          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1029,7 +1030,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter Deursen</b>
-          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1038,7 +1039,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Ivo Visser</b>
-          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1047,7 +1048,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Wouter V. Tuijl</b>
-          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1056,7 +1057,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rudolph Dekker</b>
-          <small>aug 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>aug 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1065,7 +1066,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rick Monshouwer</b>
-          <small>jun 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>jun 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1074,7 +1075,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Sanel Ahmetovic</b>
-          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1083,7 +1084,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Yannic Smeets</b>
-          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1092,7 +1093,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Tolga</b>
-          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1101,7 +1102,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Chadia Boussaid</b>
-          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1110,7 +1111,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Siar Karim Ian</b>
-          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1119,7 +1120,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rick</b><span>Cromvoirt · Betonnen vloer aanbrengen</span>
-          <small>29 mrt 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>29 mrt 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1128,7 +1129,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>M.F Stavast</b>
-          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1137,7 +1138,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hendrik Boer</b>
-          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1146,7 +1147,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Renate VM</b>
-          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1155,7 +1156,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Wout Van Zantvoort</b>
-          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1164,7 +1165,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Johan Nooitrust</b>
-          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1173,7 +1174,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Etten-Leur</b><span>Betonnen vloer aanbrengen</span>
-          <small>3 feb 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>3 feb 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1182,7 +1183,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Joris Seghers</b><span>Bavel · Vliering plaatsen of renoveren</span>
-          <small>4 jan 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>4 jan 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1191,7 +1192,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Aykut Eseroğlu</b>
-          <small>jan 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>jan 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1200,7 +1201,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rob M</b>
-          <small>jan 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>jan 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1209,7 +1210,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit De Meern</b><span>Trap plaatsen of renoveren</span>
-          <small>30 dec 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>30 dec 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1218,7 +1219,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jan Bruil</b>
-          <small>dec 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>dec 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1227,7 +1228,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rene Loenen, Van</b>
-          <small>dec 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>dec 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1236,7 +1237,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Omar</b><span>Katwijk · Vliering bouwen</span>
-          <small>20 nov 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>20 nov 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1245,7 +1246,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Sascha</b><span>Gorinchem · Trap plaatsen of renoveren</span>
-          <small>16 nov 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>16 nov 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1254,7 +1255,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Carmen Elizen</b>
-          <small>nov 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>nov 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1263,7 +1264,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>S VP</b>
-          <small>nov 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>nov 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1272,7 +1273,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Caghan C</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1281,7 +1282,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Cees Van Den Berg</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1290,7 +1291,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Max Noordijk</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1299,7 +1300,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Gerwin Boel</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1308,7 +1309,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kasper Euser</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1317,7 +1318,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jeroen Haers</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1326,7 +1327,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Joost Van Nes</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1335,7 +1336,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Frank Van Der Zwaan</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1344,7 +1345,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Elles Janssen</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1353,7 +1354,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Nour Ig</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1362,7 +1363,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jane Van 't</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1371,7 +1372,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Aletta 't Hoen</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1380,7 +1381,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Maren Den Besten</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1389,7 +1390,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Leonard De Boer</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1398,7 +1399,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Robert10275</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1407,7 +1408,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Thom Heijdra</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1416,7 +1417,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Leon Groen</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1425,7 +1426,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hanane Bidari</b>
-          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1434,7 +1435,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Adri Cordfunke</b><span>Oosterhout · Betonnen vloer aanbrengen</span>
-          <small>28 aug 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>28 aug 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1443,7 +1444,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Pijnacker</b><span>Betonnen vloer aanbrengen</span>
-          <small>24 jul 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>24 jul 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1452,7 +1453,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jonathan Van Putten</b><span>Gouda · Betonnen vloer aanbrengen</span>
-          <small>26 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>26 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1461,7 +1462,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Willem</b><span>Den Haag · Betonnen vloer aanbrengen</span>
-          <small>26 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>26 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1470,7 +1471,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Oosterhout</b><span>Betonnen vloer aanbrengen</span>
-          <small>19 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>19 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1479,7 +1480,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Bus</b><span>Geldermalsen · Betonnen vloer aanbrengen</span>
-          <small>16 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>16 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1488,7 +1489,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Arkel</b><span>Veranda aanleggen of vervangen</span>
-          <small>12 mei 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>12 mei 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1497,7 +1498,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>6 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Mike</b><span>Apeldoorn · Betonnen vloer aanbrengen</span>
-          <small>25 apr 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>25 apr 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1506,7 +1507,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Zevenhuizen</b><span>Binnenwand plaatsen</span>
-          <small>6 apr 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>6 apr 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1515,7 +1516,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Kampen</b><span>Betonnen vloer aanbrengen</span>
-          <small>17 mrt 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>17 mrt 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1524,7 +1525,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Emile</b><span>Giesbeek · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>6 mrt 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>6 mrt 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1533,7 +1534,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Caghan</b><span>Lisse · Plafond</span>
-          <small>22 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>22 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1542,7 +1543,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Djunaedi</b><span>Vleuten · Constructie</span>
-          <small>8 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>8 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1551,7 +1552,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Krishh</b><span>St. Willebrord · Vliering bouwen</span>
-          <small>2 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>2 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1560,7 +1561,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Pascal Kuijlaars</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1569,7 +1570,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Stijn Van Den Hoogen</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1578,7 +1579,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Tineke Lokhorst</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1587,7 +1588,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Roland</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1596,7 +1597,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Otto N.</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1605,7 +1606,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Farley Simon</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1614,7 +1615,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kees Van Der Meer</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1623,7 +1624,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kevin</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1632,7 +1633,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Eline Van Hooff</b>
-          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1641,7 +1642,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Zevenhuizen</b><span>Carport plaatsen</span>
-          <small>26 sep 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>26 sep 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1650,7 +1651,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Danielle</b><span>Loosdrecht · Trappen</span>
-          <small>8 sep 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>8 sep 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1659,7 +1660,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Stijn</b><span>Reuver · Trappen</span>
-          <small>15 jul 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>15 jul 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1668,7 +1669,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Voorburg</b><span>Betonvloertje storten in tuin</span>
-          <small>29 jun 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>29 jun 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1677,7 +1678,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Zevenhuizen</b><span>Vliering bouwen</span>
-          <small>8 jun 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>8 jun 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1686,7 +1687,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant via Werkspot</b>
-          <small>29 nov 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>29 nov 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1695,7 +1696,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Tilburg</b><span>Vliering bouwen</span>
-          <small>5 okt 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>5 okt 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1704,7 +1705,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Floor Van Keijzerswaard</b>
-          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1713,7 +1714,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hendrikjan Versteeg</b>
-          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1722,7 +1723,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Vish Chhatta</b>
-          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1731,7 +1732,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jochem Van Akooij</b>
-          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1740,7 +1741,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Valentino Campos Castro</b>
-          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1749,7 +1750,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Leusden</b><span>Schutting of hek plaatsen</span>
-          <small>4 jul 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>4 jul 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1758,7 +1759,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Breda</b><span>Object ophangen</span>
-          <small>26 jun 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>26 jun 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1767,7 +1768,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Pieter</b><span>Zevenhuizen · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>8 jun 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>8 jun 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1776,7 +1777,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Maassluis</b><span>Plafond</span>
-          <small>26 mei 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>26 mei 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1785,7 +1786,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jaap</b><span>Rhoon · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>17 mrt 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>17 mrt 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1794,7 +1795,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Ryan</b>
-          <small>19 jan 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>19 jan 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1803,7 +1804,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Eindhoven</b><span>Vlonder plaatsen</span>
-          <small>26 dec 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>26 dec 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1812,7 +1813,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Akersloot</b><span>Garage vloer storten</span>
-          <small>14 okt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>14 okt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1821,7 +1822,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Laudine P</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1830,7 +1831,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Robert Duin Van</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1839,7 +1840,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>E Vd Weel</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1848,7 +1849,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>HiVi</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1857,7 +1858,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Arjan Butter</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1866,7 +1867,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Arno Groeneveld</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1875,7 +1876,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>John In Almere</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1884,7 +1885,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Stephan Van Der Ruit</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1893,7 +1894,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Erwin Kalsbeek</b>
-          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1902,7 +1903,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Thijs</b><span>Amsterdam · Vloer isolatie</span>
-          <small>26 sep 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>26 sep 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1911,7 +1912,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Den Haag</b><span>Vloer isolatie</span>
-          <small>5 sep 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>5 sep 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1920,7 +1921,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Andre</b><span>Rotterdam · Vliering bouwen</span>
-          <small>7 aug 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>7 aug 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1929,7 +1930,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Ton</b><span>Emmeloord · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>31 jul 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>31 jul 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1938,7 +1939,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Henk</b><span>Haarlem · Vloer egaliseren</span>
-          <small>30 jul 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>30 jul 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1947,7 +1948,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hamza</b><span>Zevenhuizen · Vliering bouwen</span>
-          <small>2 jun 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>2 jun 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1956,7 +1957,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Souhail</b><span>Den Haag · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>16 apr 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>16 apr 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1965,7 +1966,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant via Werkspot</b>
-          <small>12 apr 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>12 apr 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1974,7 +1975,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Laudine</b><span>Eindhoven · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>28 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>28 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1983,7 +1984,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Pieterjan</b><span>Castricum · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>21 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>21 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -1992,7 +1993,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Rotterdam</b>
-          <small>9 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>9 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2001,7 +2002,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Waddinxveen</b><span>Vliering bouwen</span>
-          <small>7 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>7 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2010,7 +2011,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Dorota</b><span>Den Haag · Vloer isolatie</span>
-          <small>1 feb 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>1 feb 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2019,7 +2020,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>John</b><span>Almere · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>18 jan 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>18 jan 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2028,7 +2029,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Dennis</b><span>Uithoorn · Vliering bouwen</span>
-          <small>28 nov 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>28 nov 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2037,7 +2038,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Leon</b><span>Spijkenisse · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>10 nov 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>10 nov 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2046,7 +2047,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Noordwijk</b><span>Vloer cement storten + egaliseren</span>
-          <small>30 okt 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>30 okt 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2055,7 +2056,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Rijsenhout</b><span>Betonvloer of cementdekvloer aanbrengen</span>
-          <small>12 okt 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>12 okt 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2064,7 +2065,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Sander Van Der Wolf</b>
-          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2073,7 +2074,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Michelle Brink</b>
-          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2082,7 +2083,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Marieke De Vries</b>
-          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="google">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2091,7 +2092,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Ewoud Havenaar</b>
-          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
+          <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2100,7 +2101,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Daniel</b><span>Vleuten · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>12 aug 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>12 aug 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2109,7 +2110,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter</b><span>Zoelen · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>21 jun 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>21 jun 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2118,7 +2119,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Waddinxveen</b><span>Betonvloer of cementdekvloer aanbrengen</span>
-          <small>28 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>28 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2127,7 +2128,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Quintin</b><span>Dordrecht · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>27 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>27 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2136,7 +2137,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter</b><span>Nieuw-Beijerland · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>27 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>27 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2145,7 +2146,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jarno</b><span>Breda · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>18 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>18 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2154,7 +2155,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Nils</b><span>Krimpen aan de Lek · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>6 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>6 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2163,7 +2164,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Joël</b><span>Ouderkerk aan de Amstel · Betonen terras</span>
-          <small>13 sep 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>13 sep 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2172,7 +2173,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rollin</b><span>Ridderkerk · Vloer egaliseren</span>
-          <small>1 sep 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>1 sep 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2181,7 +2182,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Marvin</b><span>Berkel en Rodenrijs · Betonvloer of cementdekvloer aanbrengen</span>
-          <small>27 mei 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>27 mei 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2190,7 +2191,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Gorinchem</b><span>Kleine klus</span>
-          <small>25 feb 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>25 feb 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2199,7 +2200,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Cynthia</b><span>Berkel en Rodenrijs · Vloer isolatie</span>
-          <small>10 feb 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>10 feb 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2208,7 +2209,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Susana</b><span>Den Bosch · Vlonder plaatsen</span>
-          <small>15 dec 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>15 dec 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2217,7 +2218,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Susana</b>
-          <small>1 dec 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>1 dec 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
       <article class="rv" data-bron="werkspot">
         <span class="rv-quote" aria-hidden="true">“</span>
@@ -2226,7 +2227,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kemal Velioglu</b>
-          <small>3 sep 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
+          <small>3 sep 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96"></small></div>
       </article>
     </div>
     <p class="rv-noot">Reviews zoals geplaatst op Google en Werkspot; reviews die op beide staan tonen we één keer. Reviews met alleen sterren en geen tekst tellen mee in de totalen. Bekijk ze ook zelf op <a href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener">Google</a> en <a href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener">Werkspot</a>.</p>
@@ -2257,7 +2258,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div>
         <div class="merk-foot" role="img" aria-label="OK Timmerwerken"><svg class="m-ico" viewBox="0 0 444 418" aria-hidden="true"><use href="#i-logo"/></svg><svg class="m-woord" viewBox="0 0 862 74" aria-hidden="true"><use href="#i-logo-woord"/></svg></div>
         <p>Timmer- en betonwerk in Gorinchem en omstreken. Vakwerk waar u op kunt bouwen.</p>
-        <a class="erkend foot-erkend" href="../diensten/dakramen/"><img src="../assets/web/velux-montagepartner.jpg" alt=""><span>Erkend VELUX<br>Montagepartner</span></a>
+        <a class="erkend foot-erkend" href="../diensten/dakramen/"><img src="../assets/web/velux-montagepartner.jpg" alt="" width="600" height="600"><span>Erkend VELUX<br>Montagepartner</span></a>
       </div>
       <div>
         <h2>Diensten</h2>

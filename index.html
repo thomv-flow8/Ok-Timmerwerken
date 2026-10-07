@@ -36,6 +36,7 @@
 <!-- fonts]] -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+img{height:auto}   /* width/height-attributen (afmetingen vooraf bekend, geen verspringen) bepalen alleen de verhouding */
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .naar-inhoud{position:fixed;left:16px;top:-60px;z-index:200;background:#14130f;color:#fff;padding:10px 16px;border-radius:999px;font:600 14px Inter,system-ui,sans-serif;transition:top .2s}
 .naar-inhoud:focus{top:12px}
@@ -651,14 +652,14 @@ footer.groot{padding:72px 0 46px}
       <div class="nav-sub">
         <a href="diensten/" aria-haspopup="true">Diensten<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></a>
         <div class="submenu">
-          <a href="diensten/betonvloeren/" style="--kl:#7394b4"><img src="assets/render/echt/thumb/beton.jpg" alt="" loading="lazy"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
-          <a href="diensten/zolder/" style="--kl:#9cb189"><img src="assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
-          <a href="diensten/carport/" style="--kl:#d87f57"><img src="assets/render/echt/thumb/carport.jpg" alt="" loading="lazy"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
-          <a href="diensten/dakramen/" style="--kl:#7394b4"><img src="assets/render/echt/thumb/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
-          <a href="diensten/timmerwerk/" style="--kl:#9cb189"><img src="assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
-          <a href="diensten/funderingen/" style="--kl:#474e5b"><img src="assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a href="diensten/onderhoud/" style="--kl:#b98b6e"><img src="assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
-          <a href="diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a href="diensten/betonvloeren/" style="--kl:#7394b4"><img src="assets/render/echt/thumb/beton.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
+          <a href="diensten/zolder/" style="--kl:#9cb189"><img src="assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
+          <a href="diensten/carport/" style="--kl:#d87f57"><img src="assets/render/echt/thumb/carport.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
+          <a href="diensten/dakramen/" style="--kl:#7394b4"><img src="assets/render/echt/thumb/velux.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
+          <a href="diensten/timmerwerk/" style="--kl:#9cb189"><img src="assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
+          <a href="diensten/funderingen/" style="--kl:#474e5b"><img src="assets/render/echt/thumb/fundering-gestort.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
+          <a href="diensten/onderhoud/" style="--kl:#b98b6e"><img src="assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="diensten/nieuwbouw/" style="--kl:#6f7d6a"><img src="assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy" width="160" height="160"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
           <a class="alle" href="diensten/">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
@@ -717,9 +718,9 @@ footer.groot{padding:72px 0 46px}
 <!-- HERO — beeld behouden -->
 <section class="hero">
   <div class="hero-kader">
-    <div class="hero-beeld"><img src="assets/render/hero-wolken.jpg" fetchpriority="high" alt="Modern huis met gevlinderde betonvloer, dakraam, carport en timmerwerk, met wolken erboven"><video muted playsinline preload="none" poster="assets/render/hero-wolken.jpg" aria-hidden="true" data-src="assets/render/hero-wolken.mp4"></video></div>
+    <div class="hero-beeld"><img src="assets/render/hero-wolken.jpg" fetchpriority="high" alt="Modern huis met gevlinderde betonvloer, dakraam, carport en timmerwerk, met wolken erboven" width="2560" height="1434"><video muted playsinline preload="none" poster="assets/render/hero-wolken.jpg" aria-hidden="true" data-src="assets/render/hero-wolken.mp4"></video></div>
     <div class="hero-in">
-      <span class="badge"><img src="assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner</span>
+      <span class="badge"><img src="assets/web/velux-montagepartner.jpg" alt="" width="600" height="600">Erkend VELUX Montagepartner</span>
       <h1>Vakwerk waar u<br>op kunt <em class="serif">bouwen</em>.</h1>
       <p>Gevlinderde betonvloeren, vlieringen, carports en Velux-dakramen. Ozcan en zijn ploeg
       komen op de afgesproken dag, maken het af zoals besproken en laten de boel netjes achter.</p>
@@ -754,7 +755,7 @@ footer.groot{padding:72px 0 46px}
       <!-- 01 BETON -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-beton vignet" style="--bg:var(--kl-google);--tag:#e2ecf5;--cx:44%;--cy:62%">
-          <img class="beeld" src="assets/render/echt/web/beton.jpg" alt="Vers gevlinderd betonterras achter een woning">
+          <img class="beeld" src="assets/render/echt/web/beton.jpg" alt="Vers gevlinderd betonterras achter een woning" width="1024" height="1024">
           <span class="ring2"></span>
           <span class="tag">machinaal gevlinderd</span>
         </div></div>
@@ -768,8 +769,8 @@ footer.groot{padding:72px 0 46px}
       <!-- 02 ZOLDER -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-zolder" style="--bg:#9cb189;--tag:#e7f0de">
-          <img class="beeld" src="assets/render/echt/web/zolder-na.jpg" alt="Afgewerkte zolder met vliering en bergruimte">
-          <div class="voor"><img src="assets/render/echt/web/zolder-voor.jpg" alt="Kale zolder vóór de verbouwing"></div>
+          <img class="beeld" src="assets/render/echt/web/zolder-na.jpg" alt="Afgewerkte zolder met vliering en bergruimte" width="1024" height="1024">
+          <div class="voor"><img src="assets/render/echt/web/zolder-voor.jpg" alt="Kale zolder vóór de verbouwing" width="1024" height="1024"></div>
           <div class="greep"></div>
           <span class="vl l">Voor</span><span class="vl r">Na</span>
           <span class="tag">van zolder tot kamer</span>
@@ -784,7 +785,7 @@ footer.groot{padding:72px 0 46px}
       <!-- 03 CARPORT -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-carport vignet" style="--bg:#d87f57;--tag:#f8e1d6;--cx:62%;--cy:40%">
-          <img class="beeld" src="assets/render/echt/web/carport.jpg" alt="Houten carport naast een woning">
+          <img class="beeld" src="assets/render/echt/web/carport.jpg" alt="Houten carport naast een woning" width="1024" height="1024">
           <span class="ring2"></span>
           <span class="tag">op maat in hout</span>
         </div></div>
@@ -798,7 +799,7 @@ footer.groot{padding:72px 0 46px}
       <!-- 04 VELUX -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-velux opbouw" style="--bg:#7394b4;--tag:#e2ecf5">
-          <img class="beeld" src="assets/render/echt/web/velux.jpg" alt="Twee nieuwe dakramen naast elkaar in een zolder">
+          <img class="beeld" src="assets/render/echt/web/velux.jpg" alt="Twee nieuwe dakramen naast elkaar in een zolder" width="1024" height="1024">
           <div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
           <div class="badge"><svg class="ring" viewBox="0 0 62 62"><defs><path id="rv" d="M31,31 m-23,0 a23,23 0 1,1 46,0 a23,23 0 1,1 -46,0"/></defs><text><textPath href="#rv">VELUX · MONTAGEPARTNER · ERKEND · </textPath></text></svg>
             <svg class="icoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l9-8 9 8M8 9.5l4-3 4 3V14H8z M12 6.5V14"/></svg></div>
@@ -814,8 +815,8 @@ footer.groot{padding:72px 0 46px}
       <!-- 05 TIMMERWERK -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-timmer vignet" style="--bg:var(--kl-werkspot);--tag:#e7f0de;--cx:54%;--cy:34%">
-          <img class="beeld" src="assets/render/echt/web/plafond-regelwerk.jpg" alt="Regelwerk voor een verlaagd plafond, met isolatie">
-          <img class="beeld na" src="assets/render/echt/web/plafond-af.jpg" alt="Dezelfde kamer met afgewerkt verlaagd plafond en inbouwspots">
+          <img class="beeld" src="assets/render/echt/web/plafond-regelwerk.jpg" alt="Regelwerk voor een verlaagd plafond, met isolatie" width="1024" height="1024">
+          <img class="beeld na" src="assets/render/echt/web/plafond-af.jpg" alt="Dezelfde kamer met afgewerkt verlaagd plafond en inbouwspots" width="1024" height="1024">
           <span class="ring2"></span><span class="fl">Regelwerk</span>
           <span class="tag" style="left:auto;right:7%">tot de laatste lijst</span>
         </div></div>
@@ -829,8 +830,8 @@ footer.groot{padding:72px 0 46px}
       <!-- 06 FUNDERING -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-fundering" style="--bg:#474e5b;--tag:#e5e8eb">
-          <img class="beeld" src="assets/render/echt/web/fundering-wapening.jpg" alt="Bekisting en wapeningsnet voor een betonplaat in de tuin">
-          <img class="beeld na" src="assets/render/echt/web/fundering-gestort.jpg" alt="Dezelfde betonplaat, gestort en gevlinderd">
+          <img class="beeld" src="assets/render/echt/web/fundering-wapening.jpg" alt="Bekisting en wapeningsnet voor een betonplaat in de tuin" width="1024" height="1024">
+          <img class="beeld na" src="assets/render/echt/web/fundering-gestort.jpg" alt="Dezelfde betonplaat, gestort en gevlinderd" width="1024" height="1024">
           <span class="snijlijn"></span><span class="fl">Wapening</span>
           <span class="tag" style="left:auto;right:7%">degelijk voorbereid</span>
         </div></div>
@@ -844,7 +845,7 @@ footer.groot{padding:72px 0 46px}
       <!-- 07 ONDERHOUD -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-onderhoud vignet" style="--bg:#b98b6e;--tag:#f3e7de;--cx:46%;--cy:44%">
-          <img class="beeld" src="assets/render/echt/web/onderhoud.jpg" alt="Gerenoveerde badkamer met nieuw tegelwerk">
+          <img class="beeld" src="assets/render/echt/web/onderhoud.jpg" alt="Gerenoveerde badkamer met nieuw tegelwerk" width="1024" height="1024">
           <span class="ring2"></span>
           <span class="tag">tegel voor tegel</span>
         </div></div>
@@ -858,7 +859,7 @@ footer.groot{padding:72px 0 46px}
       <!-- 08 NIEUWBOUW -->
       <article class="rij">
         <div class="vak"><div class="vitrine v-nieuwbouw opbouw" style="--bg:#6f7d6a;--tag:#e6ebe3">
-          <img class="beeld" src="assets/render/echt/web/nieuwbouw.jpg" alt="Nieuwe woning met houten spanten en een gevlinderde betonvloer">
+          <img class="beeld" src="assets/render/echt/web/nieuwbouw.jpg" alt="Nieuwe woning met houten spanten en een gevlinderde betonvloer" width="1200" height="1200">
           <div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
           <span class="tag" style="left:auto;right:7%">vanaf de eerste balk</span>
         </div></div>
@@ -918,8 +919,8 @@ footer.groot{padding:72px 0 46px}
 <!-- ---------- CHAOS-BAND: van puin naar thuis (scroll-gestuurd) ---------- -->
 <section class="chaos donker" id="chaos">
   <div class="scene">
-    <img src="assets/render/chaos/web/chaos.jpg" alt="Woonkamer tijdens de verbouwing, vol puin">
-    <img class="na" src="assets/render/chaos/web/na.jpg" alt="Dezelfde woonkamer, afgewerkt">
+    <img src="assets/render/chaos/web/chaos.jpg" alt="Woonkamer tijdens de verbouwing, vol puin" width="1344" height="752">
+    <img class="na" src="assets/render/chaos/web/na.jpg" alt="Dezelfde woonkamer, afgewerkt" width="1344" height="752">
     <span class="snede"></span>
     <div class="waas"></div>
     <div class="wrap">
@@ -946,30 +947,30 @@ footer.groot{padding:72px 0 46px}
 
     <div class="kaarten">
       <article class="rev">
-        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot"></div>
+        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot" width="96" height="96"></div>
         <p>"OK Timmerwerken levert vakwerk. Er werd goed meegedacht en alles is netjes op de
         bestaande situatie aangepast. Mooi en degelijk Douglas hout, EPDM-dak en keurig
         afgewerkte boeidelen."</p>
         <div class="wie"><b>Peter</b><span>Den Haag · Carport voor 2 auto's</span></div>
       </article>
       <article class="rev">
-        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot"></div>
+        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot" width="96" height="96"></div>
         <p>"Ozcan is een sterke allround aannemer die actief meedenkt en oplossingsgericht werkt.
         Van het doorbreken van een dragende muur tot een nieuwe vliering: alles vakkundig en
         strak uitgevoerd."</p>
         <div class="wie"><b>Joris Seghers</b><span>Bavel · Vliering 40 m²</span></div>
       </article>
       <article class="rev">
-        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot"></div>
+        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot" width="96" height="96"></div>
         <p>"Vriendelijk, betrouwbaar, transparant en goede communicatie. Ik wist niets van beton
         en vloeren, en Ozcan gaf me uitstekend advies op basis van wat ik nodig had."</p>
         <div class="wie"><b>Jonathan van Putten</b><span>Gouda · Betonvloer schuur</span></div>
       </article>
       <aside class="rev-totaal">
         <div class="score"><b data-tel data-naar="4.9" data-dec="1">0,0</b><i class="sterscore" style="--pct:98%" role="img" aria-label="4,9 van 5 sterren"></i>
-          <span><img class="logo" src="assets/socials/werkspot-officieel.png" alt="Werkspot">Werkspot · 78 reviews</span></div>
+          <span><img class="logo" src="assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96">Werkspot · 78 reviews</span></div>
         <div class="score"><b data-tel data-naar="5.0" data-dec="1">0,0</b><i class="sterscore" style="--pct:100%" role="img" aria-label="5,0 van 5 sterren"></i>
-          <span><img class="logo g" src="assets/socials/google-officieel.png" alt="Google">Google · 97 reviews</span></div>
+          <span><img class="logo g" src="assets/socials/google-officieel.png" alt="Google" width="96" height="96">Google · 97 reviews</span></div>
         <div class="links">
           <a href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener">Alle reviews op Werkspot</a>
           <a href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener">Onze Google-reviews</a>
@@ -984,88 +985,88 @@ footer.groot{padding:72px 0 46px}
 <section class="werkmuur" aria-label="Een greep uit het afgeronde werk van OK Timmerwerken">
   <div class="muur">
     <div class="mrij">
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-01.jpg" alt="Gevlinderde vloer onder een veranda" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-06.jpg" alt="Toilet opnieuw betegeld" decoding="async"><span>Onderhoud &amp; renovatie</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-11.jpg" alt="Nieuw dakraam, helemaal open" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-16.jpg" alt="Donkere betonvloer in de tuin, net afgewerkt" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-21.jpg" alt="Afgewerkt plafond met vlieringluik" decoding="async"><span>Vliering &amp; zolder</span></a>
-      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-26.jpg" alt="Afgewerkte zolder met spots en luik" decoding="async"><span>Vliering &amp; zolder</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-31.jpg" alt="Gevlinderde vloer onder een overkapping" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-37.jpg" alt="Dakraam met strakke dagkanten" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-42.jpg" alt="Betonvloeren" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-04.jpg" alt="Dakramen (Velux)" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-09.jpg" alt="Strakke betonvloer onder een overkapping" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-14.jpg" alt="Nieuwe woning met houten spanten" decoding="async"><span>Nieuwbouw</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-01.jpg" alt="Gevlinderde vloer onder een veranda" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-06.jpg" alt="Toilet opnieuw betegeld" decoding="async" width="640" height="480"><span>Onderhoud &amp; renovatie</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-11.jpg" alt="Nieuw dakraam, helemaal open" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-16.jpg" alt="Donkere betonvloer in de tuin, net afgewerkt" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-21.jpg" alt="Afgewerkt plafond met vlieringluik" decoding="async" width="640" height="480"><span>Vliering &amp; zolder</span></a>
+      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-26.jpg" alt="Afgewerkte zolder met spots en luik" decoding="async" width="640" height="480"><span>Vliering &amp; zolder</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-31.jpg" alt="Gevlinderde vloer onder een overkapping" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-37.jpg" alt="Dakraam met strakke dagkanten" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-42.jpg" alt="Betonvloeren" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-04.jpg" alt="Dakramen (Velux)" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-09.jpg" alt="Strakke betonvloer onder een overkapping" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-14.jpg" alt="Nieuwe woning met houten spanten" decoding="async" width="640" height="480"><span>Nieuwbouw</span></a>
     </div>
     <div class="mrij">
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-12.jpg" alt="Lamellenwand in de woonkamer" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-17.jpg" alt="Overkapping achter in de tuin" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-22.jpg" alt="Betonplaat tot aan de achtergevel" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-27.jpg" alt="Betonvloer onder een carport" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-32.jpg" alt="Tuinhuis in Douglas met deur en raam" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-38.jpg" alt="Trapopgang strak afgetimmerd" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-43.jpg" alt="Twee lichtkoepels in een plat dak" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-05.jpg" alt="Lamellenwand met hanglampen" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-10.jpg" alt="Overkapping met glazen schuifwanden en zwarte gevel" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-15.jpg" alt="Vliering met vaste ladder en hekwerk" decoding="async"><span>Vliering &amp; zolder</span></a>
-      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-20.jpg" alt="Toilet met nieuw tegelwerk" decoding="async"><span>Onderhoud &amp; renovatie</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-25.jpg" alt="Verlaagd plafond met inbouwspots" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-12.jpg" alt="Lamellenwand in de woonkamer" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-17.jpg" alt="Overkapping achter in de tuin" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-22.jpg" alt="Betonplaat tot aan de achtergevel" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-27.jpg" alt="Betonvloer onder een carport" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-32.jpg" alt="Tuinhuis in Douglas met deur en raam" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-38.jpg" alt="Trapopgang strak afgetimmerd" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-43.jpg" alt="Twee lichtkoepels in een plat dak" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-05.jpg" alt="Lamellenwand met hanglampen" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-10.jpg" alt="Overkapping met glazen schuifwanden en zwarte gevel" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-15.jpg" alt="Vliering met vaste ladder en hekwerk" decoding="async" width="640" height="480"><span>Vliering &amp; zolder</span></a>
+      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-20.jpg" alt="Toilet met nieuw tegelwerk" decoding="async" width="640" height="480"><span>Onderhoud &amp; renovatie</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-25.jpg" alt="Verlaagd plafond met inbouwspots" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
     </div>
     <div class="mrij">
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-23.jpg" alt="Overkapping met glazen schuifwanden" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-28.jpg" alt="Carport &amp; overkapping" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-33.jpg" alt="Het dakraam van buiten, netjes in de pannen" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-39.jpg" alt="Betonvloeren" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-01.jpg" alt="Gevlinderde vloer onder een veranda" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-06.jpg" alt="Toilet opnieuw betegeld" decoding="async"><span>Onderhoud &amp; renovatie</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-11.jpg" alt="Nieuw dakraam, helemaal open" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-16.jpg" alt="Donkere betonvloer in de tuin, net afgewerkt" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-21.jpg" alt="Afgewerkt plafond met vlieringluik" decoding="async"><span>Vliering &amp; zolder</span></a>
-      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-26.jpg" alt="Afgewerkte zolder met spots en luik" decoding="async"><span>Vliering &amp; zolder</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-31.jpg" alt="Gevlinderde vloer onder een overkapping" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-37.jpg" alt="Dakraam met strakke dagkanten" decoding="async"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-23.jpg" alt="Overkapping met glazen schuifwanden" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-28.jpg" alt="Carport &amp; overkapping" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-33.jpg" alt="Het dakraam van buiten, netjes in de pannen" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-39.jpg" alt="Betonvloeren" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-01.jpg" alt="Gevlinderde vloer onder een veranda" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-06.jpg" alt="Toilet opnieuw betegeld" decoding="async" width="640" height="480"><span>Onderhoud &amp; renovatie</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-11.jpg" alt="Nieuw dakraam, helemaal open" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-16.jpg" alt="Donkere betonvloer in de tuin, net afgewerkt" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-21.jpg" alt="Afgewerkt plafond met vlieringluik" decoding="async" width="640" height="480"><span>Vliering &amp; zolder</span></a>
+      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-26.jpg" alt="Afgewerkte zolder met spots en luik" decoding="async" width="640" height="480"><span>Vliering &amp; zolder</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-31.jpg" alt="Gevlinderde vloer onder een overkapping" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-37.jpg" alt="Dakraam met strakke dagkanten" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
     </div>
     <div class="mrij">
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-34.jpg" alt="Stalen deur naar de werkkamer" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-40.jpg" alt="Dakramen (Velux)" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/funderingen/" tabindex="-1"><img data-src="assets/web/mix/mix-02.jpg" alt="Betonplaat in het gras, strak bekist" decoding="async"><span>Funderingen</span></a>
-      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-07.jpg" alt="Nieuwbouw" decoding="async"><span>Nieuwbouw</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-12.jpg" alt="Lamellenwand in de woonkamer" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-17.jpg" alt="Overkapping achter in de tuin" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-22.jpg" alt="Betonplaat tot aan de achtergevel" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-27.jpg" alt="Betonvloer onder een carport" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-32.jpg" alt="Tuinhuis in Douglas met deur en raam" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-38.jpg" alt="Trapopgang strak afgetimmerd" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-43.jpg" alt="Twee lichtkoepels in een plat dak" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-05.jpg" alt="Lamellenwand met hanglampen" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-34.jpg" alt="Stalen deur naar de werkkamer" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-40.jpg" alt="Dakramen (Velux)" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/funderingen/" tabindex="-1"><img data-src="assets/web/mix/mix-02.jpg" alt="Betonplaat in het gras, strak bekist" decoding="async" width="640" height="480"><span>Funderingen</span></a>
+      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-07.jpg" alt="Nieuwbouw" decoding="async" width="640" height="480"><span>Nieuwbouw</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-12.jpg" alt="Lamellenwand in de woonkamer" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-17.jpg" alt="Overkapping achter in de tuin" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-22.jpg" alt="Betonplaat tot aan de achtergevel" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-27.jpg" alt="Betonvloer onder een carport" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-32.jpg" alt="Tuinhuis in Douglas met deur en raam" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-38.jpg" alt="Trapopgang strak afgetimmerd" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-43.jpg" alt="Twee lichtkoepels in een plat dak" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-05.jpg" alt="Lamellenwand met hanglampen" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
     </div>
     <div class="mrij">
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-03.jpg" alt="Carport tegen de woning" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-08.jpg" alt="Vliering &amp; zolder" decoding="async"><span>Vliering &amp; zolder</span></a>
-      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-13.jpg" alt="Hal met nieuwe tegelvloer" decoding="async"><span>Onderhoud &amp; renovatie</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-18.jpg" alt="Dakramen (Velux)" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-23.jpg" alt="Overkapping met glazen schuifwanden" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-28.jpg" alt="Carport &amp; overkapping" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-33.jpg" alt="Het dakraam van buiten, netjes in de pannen" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-39.jpg" alt="Betonvloeren" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-01.jpg" alt="Gevlinderde vloer onder een veranda" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-06.jpg" alt="Toilet opnieuw betegeld" decoding="async"><span>Onderhoud &amp; renovatie</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-11.jpg" alt="Nieuw dakraam, helemaal open" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-16.jpg" alt="Donkere betonvloer in de tuin, net afgewerkt" decoding="async"><span>Betonvloeren</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-03.jpg" alt="Carport tegen de woning" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/zolder/" tabindex="-1"><img data-src="assets/web/mix/mix-08.jpg" alt="Vliering &amp; zolder" decoding="async" width="640" height="480"><span>Vliering &amp; zolder</span></a>
+      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-13.jpg" alt="Hal met nieuwe tegelvloer" decoding="async" width="640" height="480"><span>Onderhoud &amp; renovatie</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-18.jpg" alt="Dakramen (Velux)" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-23.jpg" alt="Overkapping met glazen schuifwanden" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-28.jpg" alt="Carport &amp; overkapping" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-33.jpg" alt="Het dakraam van buiten, netjes in de pannen" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-39.jpg" alt="Betonvloeren" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-01.jpg" alt="Gevlinderde vloer onder een veranda" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/onderhoud/" tabindex="-1"><img data-src="assets/web/mix/mix-06.jpg" alt="Toilet opnieuw betegeld" decoding="async" width="640" height="480"><span>Onderhoud &amp; renovatie</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-11.jpg" alt="Nieuw dakraam, helemaal open" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-16.jpg" alt="Donkere betonvloer in de tuin, net afgewerkt" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
     </div>
     <div class="mrij">
-      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-14.jpg" alt="Nieuwe woning met houten spanten" decoding="async"><span>Nieuwbouw</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-19.jpg" alt="Tv-wand met nissen en haard" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-24.jpg" alt="Dakraam met afgewerkte omlijsting" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-29.jpg" alt="Drie dakramen, veel daglicht" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-34.jpg" alt="Stalen deur naar de werkkamer" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-40.jpg" alt="Dakramen (Velux)" decoding="async"><span>Dakramen (Velux)</span></a>
-      <a href="diensten/funderingen/" tabindex="-1"><img data-src="assets/web/mix/mix-02.jpg" alt="Betonplaat in het gras, strak bekist" decoding="async"><span>Funderingen</span></a>
-      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-07.jpg" alt="Nieuwbouw" decoding="async"><span>Nieuwbouw</span></a>
-      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-12.jpg" alt="Lamellenwand in de woonkamer" decoding="async"><span>Timmerwerk &amp; afbouw</span></a>
-      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-17.jpg" alt="Overkapping achter in de tuin" decoding="async"><span>Carport &amp; overkapping</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-22.jpg" alt="Betonplaat tot aan de achtergevel" decoding="async"><span>Betonvloeren</span></a>
-      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-27.jpg" alt="Betonvloer onder een carport" decoding="async"><span>Betonvloeren</span></a>
+      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-14.jpg" alt="Nieuwe woning met houten spanten" decoding="async" width="640" height="480"><span>Nieuwbouw</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-19.jpg" alt="Tv-wand met nissen en haard" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-24.jpg" alt="Dakraam met afgewerkte omlijsting" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-29.jpg" alt="Drie dakramen, veel daglicht" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-34.jpg" alt="Stalen deur naar de werkkamer" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/dakramen/" tabindex="-1"><img data-src="assets/web/mix/mix-40.jpg" alt="Dakramen (Velux)" decoding="async" width="640" height="480"><span>Dakramen (Velux)</span></a>
+      <a href="diensten/funderingen/" tabindex="-1"><img data-src="assets/web/mix/mix-02.jpg" alt="Betonplaat in het gras, strak bekist" decoding="async" width="640" height="480"><span>Funderingen</span></a>
+      <a href="diensten/nieuwbouw/" tabindex="-1"><img data-src="assets/web/mix/mix-07.jpg" alt="Nieuwbouw" decoding="async" width="640" height="480"><span>Nieuwbouw</span></a>
+      <a href="diensten/timmerwerk/" tabindex="-1"><img data-src="assets/web/mix/mix-12.jpg" alt="Lamellenwand in de woonkamer" decoding="async" width="640" height="480"><span>Timmerwerk &amp; afbouw</span></a>
+      <a href="diensten/carport/" tabindex="-1"><img data-src="assets/web/mix/mix-17.jpg" alt="Overkapping achter in de tuin" decoding="async" width="640" height="480"><span>Carport &amp; overkapping</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-22.jpg" alt="Betonplaat tot aan de achtergevel" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
+      <a href="diensten/betonvloeren/" tabindex="-1"><img data-src="assets/web/mix/mix-27.jpg" alt="Betonvloer onder een carport" decoding="async" width="640" height="480"><span>Betonvloeren</span></a>
     </div>
   </div>
 </section>
@@ -1097,7 +1098,7 @@ footer.groot{padding:72px 0 46px}
       <div>
         <div class="merk-foot" role="img" aria-label="OK Timmerwerken"><svg class="m-ico" viewBox="0 0 444 418" aria-hidden="true"><use href="#i-logo"/></svg><svg class="m-woord" viewBox="0 0 862 74" aria-hidden="true"><use href="#i-logo-woord"/></svg></div>
         <p>Timmer- en betonwerk in Gorinchem en omstreken. Vakwerk waar u op kunt bouwen.</p>
-        <a class="erkend foot-erkend" href="diensten/dakramen/"><img src="assets/web/velux-montagepartner.jpg" alt=""><span>Erkend VELUX<br>Montagepartner</span></a>
+        <a class="erkend foot-erkend" href="diensten/dakramen/"><img src="assets/web/velux-montagepartner.jpg" alt="" width="600" height="600"><span>Erkend VELUX<br>Montagepartner</span></a>
       </div>
       <div>
         <h2>Diensten</h2>

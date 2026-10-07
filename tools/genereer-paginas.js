@@ -1203,6 +1203,48 @@ ${oproep()}`,
 }).replace('<head>\n', `<head>\n<script>document.write('<base href="' + (location.pathname.indexOf('/Ok-Timmerwerken/') === 0 ? '/Ok-Timmerwerken/' : '/') + '">');</script>\n`);
 schrijf('404.html', herschrijf(nietGevonden, ''));
 
+// Afmetingen van elke foto als width/height op <img>: de browser reserveert dan meteen de juiste ruimte (geen verspringen).
+// Gelezen uit het bestand zelf (JPEG/PNG/WebP), zonder extra pakketten; de CSS (img{height:auto}) bepaalt de echte weergavemaat.
+function beeldMaten(bestand) {
+  const b = fs.readFileSync(bestand);
+  if (b.readUInt32BE(0) === 0x89504e47) return [b.readUInt32BE(16), b.readUInt32BE(20)];
+  if (b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP') {
+    const soort = b.toString('ascii', 12, 16);
+    if (soort === 'VP8X') return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
+    if (soort === 'VP8L') { const v = b.readUInt32LE(21); return [(v & 0x3fff) + 1, ((v >> 14) & 0x3fff) + 1]; }
+    if (soort === 'VP8 ') return [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
+  }
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    let i = 2;
+    while (i < b.length) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const m = b[i + 1];
+      if (m === 0xff || (m >= 0xd0 && m <= 0xd9) || m === 0x01) { i += m === 0xff ? 1 : 2; continue; }
+      if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return [b.readUInt16BE(i + 7), b.readUInt16BE(i + 5)];
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  return null;
+}
+const matenCache = {};
+let metMaten = 0;
+for (const rel of [...sitePaginas.map((r) => r + 'index.html'), '404.html']) {
+  const doel = path.join(root, rel), map = path.dirname(doel);
+  const html = fs.readFileSync(doel, 'utf8').replace(/<img\b([^>]*)>/g, (tag, attr) => {
+    if (/\swidth=/.test(attr)) return tag;
+    const m = attr.match(/\s(?:src|data-src)="([^"]+\.(?:jpe?g|png|webp))"/);
+    if (!m || /^https?:/.test(m[1])) return tag;
+    const bestand = path.join(map, m[1]);
+    if (!fs.existsSync(bestand)) return tag;
+    const maat = matenCache[bestand] || (matenCache[bestand] = beeldMaten(bestand));
+    if (!maat) return tag;
+    metMaten++;
+    return `<img${attr} width="${maat[0]}" height="${maat[1]}">`;
+  });
+  fs.writeFileSync(doel, html);
+}
+console.log(`afmetingen toegevoegd aan ${metMaten} <img>-tags (${Object.keys(matenCache).length} verschillende beelden)`);
+
 // doorverwijzingen: elk oud adres van ok-timmerwerken.nl krijgt een klein bestand dat direct doorstuurt
 // naar de nieuwe plek (GitHub Pages kent geen serverredirects; dit werkt ook voor Google via canonical).
 const oud = Object.entries(inhoud.doorverwijzingen);
