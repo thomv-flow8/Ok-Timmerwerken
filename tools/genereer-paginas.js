@@ -152,6 +152,10 @@ const extraStijl = `<style>
 .vz-logos{display:flex;gap:10px;align-items:center}
 .vz-logos img{height:76px;width:auto;border-radius:6px}
 .velux-zij .woordmerk{display:block;height:30px;width:auto;margin-top:14px;border-radius:4px}
+/* desktop (zijkolom): de drie keurmerken onder elkaar, even breed; op mobiel blijven ze naast elkaar */
+@media(min-width:821px){.vz-logos{flex-direction:column;align-items:flex-start;gap:14px}
+  .vz-logos img{width:120px;height:auto}.vz-logos img+img{width:auto;height:120px}
+  .velux-zij .woordmerk{width:120px;height:auto;margin-top:14px}}
 .velux-zij p{margin-top:10px;font-size:13.5px;font-weight:600;color:var(--inkt)}
 .ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
   transition:color .2s,border-color .2s}
