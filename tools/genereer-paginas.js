@@ -690,7 +690,44 @@ ${oproep()}`;
 }
 
 // ---------- over ons ----------
-function overPagina(o) {
+// Tijdlijn op Over ons (data: inhoud.over.tijdlijn). Live alleen 'zeker'; in de proef ook 'navragen' (gemarkeerd).
+function tijdlijnHtml(items, ookNavragen) {
+  const g = reviewData.bronnen.google, w = reviewData.bronnen.werkspot, alle = reviewData.reviews;
+  const nl = (x) => x.toFixed(1).replace('.', ',');
+  const vul = (t) => t.replace('{werkspot.aantal}', w.aantal).replace('{google.aantal}', g.aantal).replace('{google.score}', nl(g.score))
+    .replace('{totaal}', g.aantal + w.aantal).replace('{gemiddeld}', nl(alle.reduce((t2, r) => t2 + r.score, 0) / alle.length));
+  const lijst = items.filter((x) => x.status === 'zeker' || ookNavragen);
+  const punten = lijst.map((x) => {
+    const nav = x.status !== 'zeker';
+    const jaar = x.jaar === 'nu' ? `Nu <small data-jaar-nu>${new Date().getFullYear()}</small>` : (x.jaar || '20??');
+    return `        <li class="tl-punt${nav ? ' tl-nav' : ''}"><span class="tl-jaar">${jaar}</span><span class="tl-dot" aria-hidden="true"></span>
+          <b>${esc(vul(x.titel))}</b><p>${esc(vul(x.tekst))}</p>${nav ? '<span class="tl-label">navragen bij Ozcan</span>' : ''}</li>`;
+  }).join('\n');
+  return `
+    <div class="tijdlijn" style="--n:${lijst.length}">
+      <div class="tl-lijn" aria-hidden="true"><i></i></div>
+      <ol>
+${punten}
+      </ol>
+    </div>
+    <script>
+    // tijdlijn: de lijn tekent zich mee met het scrollen; een punt licht op zodra de lijn het bereikt
+    (function(){
+      var t=document.querySelector('.tijdlijn'); if(!t) return;
+      var pts=[].slice.call(t.querySelectorAll('.tl-punt')), n=pts.length;
+      [].forEach.call(t.querySelectorAll('[data-jaar-nu]'),function(e){ e.textContent=new Date().getFullYear(); });
+      function zet(p){ t.style.setProperty('--p',p.toFixed(3)); pts.forEach(function(e,i){ e.classList.toggle('aan', p>=(i+.35)/n); }); }
+      if(matchMedia('(prefers-reduced-motion: reduce)').matches){ zet(1); return; }
+      var tik=false;
+      function stand(){ tik=false; var r=t.getBoundingClientRect(), h=innerHeight;
+        zet(Math.min(1,Math.max(0,(h*.88-r.top)/(r.height+h*.3)))); }
+      addEventListener('scroll',function(){ if(!tik){ tik=true; requestAnimationFrame(stand);} },{passive:true});
+      addEventListener('resize',stand); stand();
+    })();
+    </script>`;
+}
+
+function overPagina(o, proef = false) {
   // uitgelichte review: Kevin (Google) gaat over Ozcan zelf — afspraken, eerlijk, meedenken
   const uit = reviewData.reviews.find((r) => r.bron === 'google' && r.naam === 'Kevin' && r.tekst);
   if (!uit) throw new Error('uitgelichte review (Kevin, Google) niet gevonden in docs/reviews.json');
@@ -737,7 +774,7 @@ function overPagina(o) {
       <div><p>${esc(o.verhaal[0])}</p>
         <svg class="skyline" viewBox="0 0 600 136" role="img" aria-label="Lijntekening van Gorinchem: Merwedebrug, Grote Kerk, trapgevels, Dalempoort, kanon op de vestingwal en molen De Hoop"><path pathLength="1" style="--d:0.00s" d="M0 118 H172 M6 118 Q46 80 86 118 M22 105.8 V118 M34 100.7 V118 M46 99.0 V118 M58 100.7 V118 M70 105.8 V118 M86 118 Q126 80 166 118 M102 105.8 V118 M114 100.7 V118 M126 99.0 V118 M138 100.7 V118 M150 105.8 V118 M6 118 V130 M166 118 V130 M86 118 V130"/><path pathLength="1" style="--d:0.18s" d="M205 130 V40 H235 V130 M205 70 H235 M205 52 H235 M216 64 V58 M224 64 V58 M216 96 V84 M224 96 V84 M209 40 V30 H231 V40 M213 30 L220 6 L227 30"/><path pathLength="1" style="--d:0.36s" d="M235 130 V96 L275 80 L315 96 V130 M252 122 V108 M268 122 V108 M284 122 V108 M300 122 V108"/><path pathLength="1" style="--d:0.54s" d="M330 130 V92 H336 V84 H342 V76 H348 V68 H362 V76 H368 V84 H374 V92 H380 V130 M349 88 H361 V100 H349 Z M343 112 H353 V130 M359 112 H369 V122 H359 Z"/><path pathLength="1" style="--d:0.72s" d="M395 130 V88 H455 V130 M415 130 V112 Q425 100 435 112 V130 M391 88 L425 70 L459 88 M421 74 V62 H429 V74 M419 62 L425 54 L431 62"/><path pathLength="1" style="--d:0.90s" d="M465 130 L471 116 H521 L527 130 M480 111 L513 103 M481 115 L514 107 M513 103 L514 107 M486 116 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/><path pathLength="1" style="--d:1.08s" d="M549 130 L556 76 H574 L581 130 M541 101 H589 M562 130 V118 Q565 113 568 118 V130 M554 76 Q565 64 576 76 M565 71 L541 47 M565 71 L589 47 M565 71 L541 95 M565 71 L589 95 M545 51 L551 45 M585 51 L579 45"/><path pathLength="1" style="--d:1.26s" d="M0 130 H600"/></svg></div>
       <div>${o.verhaal.slice(1).map((p) => `<p style="margin-bottom:18px">${esc(p)}</p>`).join('')}</div>
-    </div>
+    </div>${proef && o.tijdlijn ? tijdlijnHtml(o.tijdlijn, true) : ''}
   </div>
 </section>
 
@@ -789,6 +826,34 @@ ${oproep()}`;
 .uit-bron{width:22px;height:22px;border-radius:50%;background:#fff;padding:2px;box-shadow:0 0 0 1px var(--rand)}
 .uit-voet{max-width:880px;margin:26px auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;font-size:14px;color:var(--zacht)}
 .uit-voet b{color:var(--inkt)}
+/* tijdlijn 2011 – nu: liggend op desktop, staand op mobiel; --p (0–1) = hoe ver de lijn getekend is */
+.tijdlijn{position:relative;margin-top:clamp(64px,8vw,104px);--p:0}
+.tijdlijn ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(var(--n),1fr);gap:0 22px}
+.tl-lijn{position:absolute;left:0;right:0;top:63px;height:2px;background:var(--rand)}
+.tl-lijn i{position:absolute;inset:0;background:var(--brons);transform:scaleX(var(--p));transform-origin:0 50%}
+.tl-punt{position:relative;opacity:.28;transform:translateY(10px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.tl-punt.aan{opacity:1;transform:none}
+.tl-jaar{display:flex;align-items:baseline;gap:8px;height:44px;font-size:clamp(26px,2.6vw,36px);font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--inkt)}
+.tl-jaar small{font-size:13px;font-weight:500;letter-spacing:0;color:var(--zacht)}
+.tl-dot{display:block;width:14px;height:14px;margin:12px 0 22px;border-radius:50%;background:#fff;border:2px solid var(--rand);position:relative;z-index:1;
+  transition:background .4s,border-color .4s,transform .5s var(--ease)}
+.tl-punt.aan .tl-dot{background:var(--brons);border-color:var(--brons);transform:scale(1.15)}
+.tl-punt b{display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.tl-punt p{margin-top:6px;font-size:14px;font-weight:300;line-height:1.55;color:var(--zacht)}
+.tl-punt:last-child .tl-dot{box-shadow:0 0 0 6px rgba(181,138,82,.2)}
+/* proef: nog navragen */
+.tl-nav .tl-jaar{color:#c6702f}
+.tl-nav .tl-dot{border-style:dashed;border-color:#c6702f;background:#fff!important}
+.tl-label{display:inline-block;margin-top:10px;padding:3px 9px;border:1px dashed #c6702f;border-radius:999px;font-size:11px;font-weight:600;color:#c6702f}
+@media(max-width:900px){
+  .tijdlijn ol{grid-template-columns:1fr;gap:26px;padding-left:34px}
+  .tl-lijn{left:6px;right:auto;top:6px;bottom:6px;width:2px;height:auto}
+  .tl-lijn i{transform:scaleY(var(--p));transform-origin:50% 0}
+  .tl-jaar{height:auto;font-size:26px}
+  .tl-dot{position:absolute;left:-34px;top:6px;margin:0}
+  .tl-punt b{margin-top:6px}
+}
+@media(prefers-reduced-motion:reduce){.tl-punt{transition:none}}
 </style>
 </head>`);
 }
@@ -862,34 +927,39 @@ function contactPagina() {
 .c2-kop h1{font-size:clamp(36px,4.6vw,62px)}
 .c2-kop .lead{margin:0;padding-left:34px;max-width:46ch}
 .c2-kaarten{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px;align-items:stretch}
-/* links: donker */
-.c2-direct{background:#14130f;color:#fff;border-radius:20px;padding:34px 34px 30px;display:flex;flex-direction:column;
-  box-shadow:0 40px 80px -50px rgba(20,19,15,.55)}
+/* links: wit — direct contact */
+.c2-direct{background:#fff;color:var(--inkt);border:1px solid var(--rand);border-radius:20px;padding:34px 34px 30px;display:flex;flex-direction:column;
+  box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
 .c2-wie{display:flex;align-items:center;gap:16px}
 .c2-avatar{width:84px;height:84px;flex:none;border-radius:50%;overflow:hidden;background:#f2ebdf}
 .c2-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;transform:scale(1.25);transform-origin:50% 0}
 .c2-wie b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em}
-.c2-wie span{font-size:13px;color:rgba(255,255,255,.6)}
-.c2-citaat{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35;color:rgba(255,255,255,.92)}
+.c2-wie span{font-size:13px;color:var(--zacht)}
+.c2-citaat{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35;color:var(--inkt)}
 .c2-acties{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 .c2-acties .knop{padding:12px 20px;font-size:14px}
-.c2-bel{background:#fff;color:#14130f;border-color:#fff}.c2-bel:hover{background:transparent;color:#fff}
-.c2-mail{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}.c2-mail:hover{background:#fff;color:#14130f}
-.c2-info{margin-top:auto;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:1fr 1fr;gap:6px 28px}
-.c2-direct .c2-info{margin-top:28px}
-.c2-info .lbl{color:rgba(255,255,255,.5);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
+.c2-bel{background:var(--inkt);color:#fff;border-color:var(--inkt)}.c2-bel:hover{background:#fff;color:var(--inkt)}
+.c2-mail{background:transparent;color:var(--inkt);border:1px solid var(--inkt)}.c2-mail:hover{background:var(--inkt);color:#fff}
+.c2-info{margin-top:28px;padding-top:26px;border-top:1px solid var(--rand);display:grid;grid-template-columns:1fr 1fr;gap:6px 28px}
+.c2-info .lbl{color:var(--zacht);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}
 .c2-info .lbl ~ .lbl{margin-top:16px}
-.c2-info a,.c2-info p{color:#fff;font-size:14.5px;display:block}
+.c2-info a,.c2-info p{color:var(--inkt);font-size:14.5px;display:block}
 .c2-info .tijden{display:grid;grid-template-columns:auto auto;gap:3px 14px;font-size:14px;width:fit-content}
-.c2-info .tijden span:nth-child(even){color:rgba(255,255,255,.6)}
-.c2-direct .nu-open{color:#fff;font-size:13.5px;margin-top:12px}
-.c2-direct .nu-open.dicht i{background:rgba(255,255,255,.4)}
-/* rechts: wit formulier */
-.c2-form{display:block!important;margin-top:0!important;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:34px 34px 30px;
-  box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
-.c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em}
-.c-formkop p{margin:6px 0 20px;font-size:14px;color:var(--zacht)}
-.c-formkop p a{color:var(--inkt);text-decoration:underline;text-underline-offset:2px}
+.c2-info .tijden span:nth-child(even){color:var(--zacht)}
+.c2-direct .nu-open{font-size:13.5px;margin-top:12px}
+/* rechts: zwart — het formulier (donkere variant van de velden, alleen hier) */
+.c2-form{display:block!important;margin-top:0!important;background:#14130f;color:#fff;border:1px solid #14130f;border-radius:20px;padding:34px 34px 30px;
+  box-shadow:0 40px 80px -50px rgba(20,19,15,.55)}
+.c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em;color:#fff}
+.c-formkop p{margin:6px 0 20px;font-size:14px;color:rgba(255,255,255,.65)}
+.c-formkop p a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.c2-form label{color:rgba(255,255,255,.65)}
+.c2-form input,.c2-form textarea{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22);color:#fff}
+.c2-form input::placeholder,.c2-form textarea::placeholder{color:rgba(255,255,255,.4)}
+.c2-form input:focus,.c2-form textarea:focus{outline-color:#fff;border-color:transparent}
+.c2-form .veld-knop{background:#fff;color:#14130f}
+.c2-form .veld-knop:hover{background:var(--brons);color:#fff}
+.c2-form .form-melding{color:var(--inkt)}
 .c2-form textarea{min-height:120px}
 @media(max-width:900px){.c2-kaarten,.c2-kop{grid-template-columns:1fr}.c2-kop .lead{padding-left:0;margin-top:16px}.c2-form{order:-1}}
 @media(max-width:520px){.c2-direct,.c2-form{padding:26px 22px}.c2-info{grid-template-columns:1fr}.c2-info > div + div .lbl{margin-top:16px}}
@@ -966,6 +1036,7 @@ for (const d of inhoud.diensten) {
   geschreven.push(f);
 }
 fs.writeFileSync(path.join(uit, 'over.html'), overPagina(inhoud.over));
+fs.writeFileSync(path.join(uit, 'over-proef.html'), overPagina(inhoud.over, true));   // PROEF tijdlijn — niet in de nette URL's
 geschreven.push('over.html');
 // contactpagina
 fs.writeFileSync(path.join(uit, 'contact.html'), contactPagina());

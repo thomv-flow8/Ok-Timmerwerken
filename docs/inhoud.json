@@ -1109,7 +1109,52 @@
       ]
     ],
     "beeld": "../assets/eigen/web/beton-vlinderen-machine.jpg",
-    "beeldAlt": "Ozcan aan het werk met de vlindermachine"
+    "beeldAlt": "Ozcan aan het werk met de vlindermachine",
+    "_tijdlijn_uitleg": "Tijdlijn op Over ons. status: zeker = mag live; navragen = alleen in de proef, eerst bij Ozcan navragen (zie docs/vraag-ozcan-tijdlijn.md). In tekst worden {werkspot.aantal}, {google.aantal}, {google.score}, {totaal} en {gemiddeld} ingevuld uit docs/reviews.json. jaar \"nu\" = het huidige jaar.",
+    "tijdlijn": [
+      {
+        "jaar": "2011",
+        "titel": "De start in Gorinchem",
+        "tekst": "Ozcan begint OK Timmerwerken, vanuit Gorinchem.",
+        "status": "zeker"
+      },
+      {
+        "jaar": null,
+        "titel": "Een vaste ploeg",
+        "tekst": "Jaartal en tekst navragen bij Ozcan.",
+        "status": "navragen"
+      },
+      {
+        "jaar": null,
+        "titel": "Ook betonwerk",
+        "tekst": "Sinds wanneer betonvloeren en funderingen? Navragen.",
+        "status": "navragen"
+      },
+      {
+        "jaar": "2019",
+        "titel": "Eerste review op Werkspot",
+        "tekst": "In september 2019 schrijft de eerste klant een review. Inmiddels staan er {werkspot.aantal} op Werkspot.",
+        "status": "zeker"
+      },
+      {
+        "jaar": "2021",
+        "titel": "Ook op Google",
+        "tekst": "Vanaf oktober 2021 schrijven klanten ook op Google: {google.aantal} reviews, gemiddeld {google.score}.",
+        "status": "zeker"
+      },
+      {
+        "jaar": null,
+        "titel": "Erkend VELUX Montagepartner",
+        "tekst": "Getraind en gecertificeerd door VELUX. Jaartal navragen.",
+        "status": "navragen"
+      },
+      {
+        "jaar": "nu",
+        "titel": "{totaal} reviews, 500+ projecten",
+        "tekst": "Gemiddeld {gemiddeld} uit 5, op Google en Werkspot samen.",
+        "status": "zeker"
+      }
+    ]
   },
   "werktijden": [
     [
