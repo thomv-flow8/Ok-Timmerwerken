@@ -23,19 +23,19 @@ function tussen(tekst, start, eind, metEind = true) {
 }
 const stijl = tussen(hoofd, '<style>', '</style>');
 const fonts = tussen(hoofd, '<link rel="preconnect"', 'rel="stylesheet">');
-const kopdeel = tussen(hoofd, '<!-- iconenset', '<section class="hero">', false).replace(/\n<!--[^\n]*-->\s*$/, '\n');
+const kopdeel = tussen(hoofd, '<!-- iconenset', '<main id="inhoud">', false).replace(/\n<!--[^\n]*-->\s*$/, '\n');
 const footer = tussen(hoofd, '<footer', '</footer>');
 const dock = tussen(hoofd, '<div class="dock">', '</div>');
 // het contactraster (formulier + gegevens) staat alleen op de contactpagina; hier is de bron
 const contactRaster = `<div class="contact-grid">
-      <form id="aanvraag" novalidate>
+      <form id="aanvraag">
         <label for="c-naam">Naam</label>
-        <input id="c-naam" name="naam" type="text" autocomplete="name" placeholder="Uw naam" required>
+        <input id="c-naam" name="naam" type="text" autocomplete="name" enterkeyhint="next" placeholder="Uw naam" required>
         <div class="veld-rij">
           <div><label for="c-mail">E-mailadres</label>
-          <input id="c-mail" name="email" type="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required></div>
+          <input id="c-mail" name="email" type="email" autocomplete="email" enterkeyhint="next" placeholder="naam@voorbeeld.nl" required></div>
           <div><label for="c-tel">Telefoonnummer</label>
-          <input id="c-tel" name="telefoon" type="tel" autocomplete="tel" placeholder="06 ..."></div>
+          <input id="c-tel" name="telefoon" type="tel" autocomplete="tel" enterkeyhint="next" placeholder="06 ..."></div>
         </div>
         <label for="c-ber">Waar kunnen we mee helpen?</label>
         <textarea id="c-ber" name="bericht" placeholder="Bijvoorbeeld: gevlinderde betonvloer van 30 m² in de garage" required></textarea>
@@ -52,7 +52,7 @@ const contactRaster = `<div class="contact-grid">
         <div class="tijden"><span>Maandag – vrijdag</span><span>07:00 – 20:00</span><span>Zaterdag</span><span>07:00 – 16:00</span><span>Zondag</span><span>Gesloten</span></div>
         <div class="nu-open" hidden><i></i><span></span></div>
         <div class="lbl">Erkenning</div>
-        <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner</a>
+        <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner</a>
       </div>
     </div><!-- /contact-grid -->`;
 const gedeeldJs = tussen(hoofd, '// [[gedeeld', '// gedeeld]]');
@@ -105,7 +105,7 @@ const extraStijl = `<style>
 .kc-podium{--kc-maat:min(70vmin,560px);--kc-marge:min(4vmin,32px);position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0 auto;outline:none}
 .kc-rail{position:absolute;inset:0;margin:0;padding:0}
 /* eindeloze lus: elke kaart staat op --o plaatsen van de actieve (kortste weg rond, dus na 12 komt 1); ver weg = verborgen */
-.kc-persp{position:absolute;left:0;top:0;width:var(--kc-maat);height:var(--kc-maat);perspective:1200px;transform-style:preserve-3d;
+.kc-persp{list-style:none;position:absolute;left:0;top:0;width:var(--kc-maat);height:var(--kc-maat);perspective:1200px;transform-style:preserve-3d;
   transform:translateX(calc(var(--o,0) * (var(--kc-maat) + 2 * var(--kc-marge))));transition:transform 1s var(--ease),opacity .6s ease,visibility .6s}
 .kc-persp.ver{opacity:0;visibility:hidden;pointer-events:none}
 .kc-kaart{position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0;list-style:none;cursor:pointer;
@@ -283,16 +283,19 @@ ${stijl}
 ${extraStijl}
 </head>
 <body>
+<a class="naar-inhoud" href="#inhoud">Naar de inhoud</a>
 
 ${naarHoofd(kopdeel).replace('<div class="nav-in">\n    <a class="merk"', '<div class="nav-in">\n    <a class="terug" href="d-lijn.html" aria-label="Terug naar de homepage" title="Terug naar home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>\n    <a class="merk"')}
+<main id="inhoud">
 ${body}
+</main>
 
 ${naarHoofd(footer)}
 
 ${dock}
 
 <div class="lichtbak" id="lichtbak" role="dialog" aria-modal="true" aria-label="Foto vergroot">
-  <button type="button" aria-label="Sluiten">×</button>
+  <button type="button"><span aria-hidden="true">×</span><span class="vh">Sluiten</span></button>
   <div><img alt=""><p></p></div>
 </div>
 
@@ -357,7 +360,7 @@ ${dock}
     podium.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null; if(dx<-40) toon(nu+1); else if(dx>40) toon(nu-1); });
     toon(0);
   }
-  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.tagName==='BUTTON') dicht(); });
+  lb.addEventListener('click',function(e){ if(e.target===lb||e.target.closest('button')) dicht(); });
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });
 
   ${gedeeldJs}
@@ -480,7 +483,7 @@ ${oproep()}
 `;
   return pagina({
     titel: 'Reviews — OK Timmerwerken Gorinchem',
-    omschrijving: `${totaal} reviews op Google en Werkspot, gemiddeld ${nl(gemiddeld)} uit 5. Lees wat klanten over OK Timmerwerken in Gorinchem zeggen.`,
+    omschrijving: `${totaal} reviews op Google en Werkspot, gemiddeld ${nl(gemiddeld)} uit 5. Lees wat klanten over het timmer- en betonwerk van OK Timmerwerken in Gorinchem zeggen.`,
     body,
   }).replace('</head>', `<style>
 /* reviewpagina */
@@ -546,10 +549,10 @@ ${oproep()}
 // ---------- dienstpagina ----------
 function dienstPagina(d, alle) {
   const n = d.galerij.length, nn = (i) => String(i).padStart(2, '0');
-  const kaarten = d.galerij.map(([src, bijschrift], i) => `          <div class="kc-persp"><li class="kc-kaart${i ? '' : ' aan'}" data-i="${i}">
+  const kaarten = d.galerij.map(([src, bijschrift], i) => `          <li class="kc-persp"><div class="kc-kaart${i ? '' : ' aan'}" data-i="${i}">
             <div class="kc-vlak"><img src="${src}" alt="${esc(bijschrift)}"${i > 2 ? ' loading="lazy"' : ''}></div>
             <div class="kc-tekst"><span class="kc-nr">${nn(i + 1)}</span><h3>${esc(bijschrift)}</h3><button type="button" class="kc-groot" data-groot="${i}">Bekijk groot</button></div>
-          </li></div>`).join('\n');
+          </div></li>`).join('\n');
   const pijl = (r) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${r ? 'M5 12h14M13 6l6 6-6 6' : 'M19 12H5M11 6l-6 6 6 6'}"/></svg>`;
   const galerij = `    <div class="kc op">
       <div class="kc-podium" tabindex="0" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
@@ -594,7 +597,7 @@ ${d.download ? `        <a class="download" href="${d.download[1]}" target="_bla
   </div>
 </section>` : '';
   const erkend = d.slug === 'dakramen' ? `
-      <div class="erkend"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</div>` : '';
+      <div class="erkend"><img src="../assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</div>` : '';
   const review = d.review ? `
 <section>
   <div class="kolommen"></div>
@@ -767,7 +770,7 @@ function overPagina(o, proef = false) {
         <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
         <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
       </div>
-      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
+      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
       <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1600" height="1550">
@@ -816,7 +819,7 @@ function overPagina(o, proef = false) {
       <span class="uit-quote" aria-hidden="true">“</span>
       <blockquote>${esc(uit.tekst)}</blockquote>
       <figcaption><i class="sterscore" style="--pct:${uit.score * 20}%" role="img" aria-label="${uit.score} van 5 sterren"></i>
-        <span><img class="uit-bron" src="../assets/socials/google-officieel.png" alt="Google"><b>${esc(uit.naam)}</b> · Google-review, ${maanden[+uit.datum.slice(5, 7) - 1]} ${uit.datum.slice(0, 4)}</span></figcaption>
+        <span><img class="uit-bron" src="../assets/socials/google-officieel.png" alt=""><b>${esc(uit.naam)}</b> · Google-review, ${maanden[+uit.datum.slice(5, 7) - 1]} ${uit.datum.slice(0, 4)}</span></figcaption>
     </figure>
     <div class="uit-voet op"><span>Gemiddeld <b>${nlScore}</b> uit ${totaalReviews} reviews op Google en Werkspot</span><a class="pil" href="reviews.html">Lees alle reviews</a></div>
   </div>
@@ -1005,10 +1008,14 @@ ${blokken}
 </section>
 
 ${oproep()}`;
-  return pagina({ titel: 'Diensten — OK Timmerwerken Gorinchem', omschrijving: 'Alle diensten van OK Timmerwerken: timmerwerk, betonvloeren, funderingen, dakramen (Velux), carports, onderhoud & renovatie en nieuwbouw in Gorinchem en Zuid-Holland.', body });
+  return pagina({ titel: 'Diensten — OK Timmerwerken Gorinchem', omschrijving: 'Alle diensten van OK Timmerwerken in Gorinchem: timmerwerk, betonvloeren, funderingen, Velux-dakramen, carports, onderhoud en nieuwbouw.', body });
 }
 
 // ---------- juridische pagina's ----------
+const juridischeOmschrijving = {
+  'Algemene voorwaarden': 'De algemene voorwaarden van OK Timmerwerken in Gorinchem: offertes, uitvoering, betaling, garantie en aansprakelijkheid bij timmer- en betonwerk.',
+  'Disclaimer': 'Disclaimer van OK Timmerwerken in Gorinchem: over de informatie op deze website, aansprakelijkheid, links naar andere sites en het gebruik van teksten en beelden.',
+};
 function juridischPagina(titel, inhoudHtml) {
   const body = `<section class="p-hero" style="padding-bottom:20px">
   <div class="kolommen"></div>
@@ -1026,7 +1033,7 @@ ${inhoudHtml}
     </div>
   </div>
 </section>`;
-  return pagina({ titel: `${titel} — OK Timmerwerken`, omschrijving: `${titel} van OK Timmerwerken, Gorinchem.`, body });
+  return pagina({ titel: `${titel} — OK Timmerwerken, timmer- en betonwerk Gorinchem`, omschrijving: juridischeOmschrijving[titel] || `${titel} van OK Timmerwerken, Gorinchem.`, body });
 }
 function voorwaardenHtml(v) {
   return `      <p>${esc(v.intro)}</p>
