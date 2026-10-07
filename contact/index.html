@@ -813,19 +813,12 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .c2-info .tijden{display:grid;grid-template-columns:auto auto;gap:3px 14px;font-size:14px;width:fit-content}
 .c2-info .tijden span:nth-child(even){color:var(--zacht)}
 .c2-direct .nu-open{font-size:13.5px;margin-top:12px}
-/* rechts: zwart — het formulier (donkere variant van de velden, alleen hier) */
-.c2-form{display:block!important;margin-top:0!important;background:#14130f;color:#fff;border:1px solid #14130f;border-radius:20px;padding:34px 34px 30px;
-  box-shadow:0 40px 80px -50px rgba(20,19,15,.55)}
-.c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em;color:#fff}
-.c-formkop p{margin:6px 0 20px;font-size:14px;color:rgba(255,255,255,.65)}
-.c-formkop p a{color:#fff;text-decoration:underline;text-underline-offset:2px}
-.c2-form label{color:rgba(255,255,255,.65)}
-.c2-form input,.c2-form textarea{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.22);color:#fff}
-.c2-form input::placeholder,.c2-form textarea::placeholder{color:rgba(255,255,255,.4)}
-.c2-form input:focus,.c2-form textarea:focus{outline-color:#fff;border-color:transparent}
-.c2-form .veld-knop{background:#fff;color:#14130f}
-.c2-form .veld-knop:hover{background:var(--brons);color:#fff}
-.c2-form .form-melding{color:var(--inkt)}
+/* rechts: wit — het formulier (zelfde kaart als links) */
+.c2-form{display:block!important;margin-top:0!important;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:34px 34px 30px;
+  box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
+.c-formkop h2{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.c-formkop p{margin:6px 0 20px;font-size:14px;color:var(--zacht)}
+.c-formkop p a{color:var(--inkt);text-decoration:underline;text-underline-offset:2px}
 .c2-form textarea{min-height:120px}
 @media(max-width:900px){.c2-kaarten,.c2-kop{grid-template-columns:1fr}.c2-kop .lead{padding-left:0;margin-top:16px}.c2-form{order:-1}}
 @media(max-width:520px){.c2-direct,.c2-form{padding:26px 22px}.c2-info{grid-template-columns:1fr}.c2-info > div + div .lbl{margin-top:16px}}
