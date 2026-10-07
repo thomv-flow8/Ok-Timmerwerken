@@ -53,7 +53,7 @@ const contactRaster = `<div class="contact-grid">
         <div class="tijden"><span>Maandag – vrijdag</span><span>07:00 – 20:00</span><span>Zaterdag</span><span>07:00 – 16:00</span><span>Zondag</span><span>Gesloten</span></div>
         <div class="nu-open" hidden><i></i><span></span></div>
         <div class="lbl">Erkenning</div>
-        <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner</a>
+        <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner</a>
       </div>
     </div><!-- /contact-grid -->`;
 const gedeeldJs = tussen(hoofd, '// [[gedeeld', '// gedeeld]]');
@@ -160,6 +160,9 @@ const extraStijl = `<style>
 .download::before{content:'↓';color:var(--brons);font-size:16px}
 .p-hero .erkend{display:flex;color:var(--inkt);align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
 .p-hero .erkend img{width:64px;height:64px;border-radius:6px}
+.velux-rij{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:30px;font-size:14px;font-weight:600;color:var(--inkt)}
+.velux-rij img{height:64px;width:auto;border-radius:6px}
+.velux-rij img.woordmerk{height:40px;border-radius:4px}
 .krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
 @media(max-width:900px){.krul-over{display:none}}
 @media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
@@ -606,7 +609,7 @@ ${d.download ? `        <a class="download" href="${d.download[1]}" target="_bla
   </div>
 </section>` : '';
   const erkend = d.slug === 'dakramen' ? `
-      <div class="erkend"><img src="../assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</div>` : '';
+      <div class="velux-rij"><img src="../assets/velux/velux-montagepartner.jpg" alt="VELUX Montagepartner"><img src="../assets/velux/velux-getraind-2025.jpg" alt="VELUX getraind 2025"><img class="woordmerk" src="../assets/velux/velux-logo.jpg" alt="VELUX"><span>Erkend en getraind door VELUX</span></div>` : '';
   const review = d.review ? `
 <section>
   <div class="kolommen"></div>
@@ -779,7 +782,7 @@ function overPagina(o, proef = false) {
         <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
         <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
       </div>
-      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
+      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
       <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1600" height="1550" fetchpriority="high">
