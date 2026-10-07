@@ -469,7 +469,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .rev:hover{box-shadow:0 24px 50px -34px rgba(20,19,15,.35);position:relative;z-index:1}
 .rev .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .rev .sterren{color:var(--ster);letter-spacing:2px;font-size:19px;line-height:1}
-.rev .via{width:17px;height:17px;color:var(--kl-werkspot)}
+.rev .via{width:24px;height:24px;border-radius:50%;object-fit:contain;flex:none}   /* zelfde officiële bronlogo's als op de reviewpagina */
+.rev .via.g{background:#fff;padding:3px;box-shadow:0 0 0 1px var(--rand)}
 .rev p{margin:16px 0 20px;font-weight:300;line-height:1.65;color:#3b3934;font-size:15px;flex:1}
 .rev .wie b{font-weight:600;font-size:14px}
 .rev .wie span{color:var(--zacht);font-size:13px;display:block;margin-top:2px}
@@ -553,11 +554,12 @@ footer.groot{padding:72px 0 46px}
   .stappen{grid-template-columns:1fr;width:auto;margin-left:0}
   .stap{padding:26px 0 30px;border-top:1px solid var(--rand)}
   .stap .sico{top:30px;right:0;width:30px;height:30px}
+  :is(.creme,.fris) .stap:not(.stap-cta) .sico{right:22px}   /* in de witte kaart: binnen de kaartrand */
   .stap-cta{padding:28px 24px;border-radius:14px;border:0}
   :is(.creme,.fris) .stap:not(.stap-cta){padding:26px 22px 30px;border:0;margin-bottom:10px;border-radius:12px}
   :is(.creme,.fris) .stap{box-shadow:0 20px 40px -30px rgba(20,19,15,.3)}
   .kaarten{grid-template-columns:1fr;width:auto;margin-left:0}
-  .rev{padding:26px 0 30px;border-top:1px solid var(--rand)}
+  .rev{padding:26px 22px 30px;border:0;margin-bottom:10px;border-radius:12px;box-shadow:0 20px 40px -30px rgba(20,19,15,.3)}
   .rev-totaal{padding:28px 24px;border-radius:14px}
   .over{grid-template-columns:1fr;gap:26px}
   .contact-grid{grid-template-columns:1fr;gap:34px}
@@ -909,21 +911,21 @@ footer.groot{padding:72px 0 46px}
 
     <div class="kaarten">
       <article class="rev">
-        <div class="top"><span class="sterren">★★★★★</span><svg class="via" aria-label="via Werkspot"><use href="#i-werkspot"/></svg></div>
+        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="../assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot"></div>
         <p>"OK Timmerwerken levert vakwerk. Er werd goed meegedacht en alles is netjes op de
         bestaande situatie aangepast. Mooi en degelijk Douglas hout, EPDM-dak en keurig
         afgewerkte boeidelen."</p>
         <div class="wie"><b>Peter</b><span>Den Haag · Carport voor 2 auto's</span></div>
       </article>
       <article class="rev">
-        <div class="top"><span class="sterren">★★★★★</span><svg class="via" aria-label="via Werkspot"><use href="#i-werkspot"/></svg></div>
+        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="../assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot"></div>
         <p>"Ozcan is een sterke allround aannemer die actief meedenkt en oplossingsgericht werkt.
         Van het doorbreken van een dragende muur tot een nieuwe vliering: alles vakkundig en
         strak uitgevoerd."</p>
         <div class="wie"><b>Joris Seghers</b><span>Bavel · Vliering 40 m²</span></div>
       </article>
       <article class="rev">
-        <div class="top"><span class="sterren">★★★★★</span><svg class="via" aria-label="via Werkspot"><use href="#i-werkspot"/></svg></div>
+        <div class="top"><span class="sterren">★★★★★</span><img class="via" src="../assets/socials/werkspot-officieel.png" alt="Werkspot-review" title="Review op Werkspot"></div>
         <p>"Vriendelijk, betrouwbaar, transparant en goede communicatie. Ik wist niets van beton
         en vloeren, en Ozcan gaf me uitstekend advies op basis van wat ik nodig had."</p>
         <div class="wie"><b>Jonathan van Putten</b><span>Gouda · Betonvloer schuur</span></div>
