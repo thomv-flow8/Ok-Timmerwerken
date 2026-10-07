@@ -624,9 +624,12 @@ footer.groot{padding:72px 0 46px}
    de actieve foto beweegt licht mee met de muis. Klassen met kc- om botsingen met gedeelde stijlen te voorkomen. */
 .kc{margin-top:46px}
 .kc-podium{--kc-maat:min(70vmin,560px);--kc-marge:min(4vmin,32px);position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0 auto;outline:none}
-.kc-rail{position:absolute;left:calc(-1 * var(--kc-marge));top:0;display:flex;height:100%;margin:0;padding:0;transition:transform 1s var(--ease)}
-.kc-persp{perspective:1200px;transform-style:preserve-3d}
-.kc-kaart{position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0 var(--kc-marge);list-style:none;cursor:pointer;
+.kc-rail{position:absolute;inset:0;margin:0;padding:0}
+/* eindeloze lus: elke kaart staat op --o plaatsen van de actieve (kortste weg rond, dus na 12 komt 1); ver weg = verborgen */
+.kc-persp{position:absolute;left:0;top:0;width:var(--kc-maat);height:var(--kc-maat);perspective:1200px;transform-style:preserve-3d;
+  transform:translateX(calc(var(--o,0) * (var(--kc-maat) + 2 * var(--kc-marge))));transition:transform 1s var(--ease),opacity .6s ease,visibility .6s}
+.kc-persp.ver{opacity:0;visibility:hidden;pointer-events:none}
+.kc-kaart{position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0;list-style:none;cursor:pointer;
   transform-origin:bottom;transform:scale(.98) rotateX(8deg);transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .kc-kaart.aan{transform:scale(1) rotateX(0);cursor:default}
 .kc-vlak{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#1d1d1a;transition:transform .15s ease-out;
@@ -651,7 +654,7 @@ footer.groot{padding:72px 0 46px}
 .kc-pijl svg{width:18px;height:18px}
 .kc-pijl:focus-visible,.kc-podium:focus-visible .kc-kaart.aan .kc-vlak{outline:2px solid var(--brons);outline-offset:3px}
 @media(max-width:600px){.kc-podium{--kc-maat:80vw;--kc-marge:3vw}.kc-groot{padding:10px 16px}}   /* op telefoons groter dan 70vmin */
-@media(prefers-reduced-motion:reduce){.kc-rail,.kc-kaart,.kc-vlak,.kc-vlak img,.kc-tekst{transition:none}}
+@media(prefers-reduced-motion:reduce){.kc-persp,.kc-kaart,.kc-vlak,.kc-vlak img,.kc-tekst{transition:none}}
 .lichtbak{position:fixed;inset:0;z-index:95;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;
   opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
 .lichtbak.open{opacity:1;visibility:visible;transition:opacity .3s}
@@ -1237,10 +1240,17 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   var kc=document.querySelector('.kc');
   if(kc){
     var rail=kc.querySelector('.kc-rail'), kaarten=[].slice.call(kc.querySelectorAll('.kc-kaart')), podium=kc.querySelector('.kc-podium'),
-        teller=kc.querySelector('.kc-teller'), aantal=kaarten.length, nu=0;
+        teller=kc.querySelector('.kc-teller'), aantal=kaarten.length, nu=0, vorig=[],
+        persp=kaarten.map(function(k){ return k.parentNode; });
     function nn(i){ return (i<9?'0':'')+(i+1); }
+    // afstand tot de actieve kaart over de kortste kant van de cirkel (bij 12 foto's: -5 … +6)
+    function afstand(j){ var o=((j-nu)%aantal+aantal)%aantal; return o>aantal/2 ? o-aantal : o; }
     function toon(i){ nu=(i+aantal)%aantal;
-      rail.style.transform='translateX(-'+(nu*(100/aantal))+'%)';
+      persp.forEach(function(p,j){ var o=afstand(j), sprong=vorig[j]!==undefined && Math.abs(o-vorig[j])>1;
+        if(sprong) p.style.transition='none';            // kaart die van de ene naar de andere kant wisselt: onzichtbaar verplaatsen
+        p.style.setProperty('--o',o); p.classList.toggle('ver',Math.abs(o)>2);
+        if(sprong){ void p.offsetWidth; p.style.transition=''; }
+        vorig[j]=o; });
       kaarten.forEach(function(k,j){ k.classList.toggle('aan',j===nu); });
       teller.textContent=nn(nu)+' / '+nn(aantal-1); }
     rail.addEventListener('click',function(e){
