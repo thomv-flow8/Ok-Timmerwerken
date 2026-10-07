@@ -45,3 +45,6 @@ assets/render/wolken/*.png
 
 # lokale proefpagina (tijdlijn met plekken die nog navragen zijn)
 preview/over-proef.html
+
+# proefpaginas (lokaal bekijken, niet publiceren)
+proef-hero-*.html
