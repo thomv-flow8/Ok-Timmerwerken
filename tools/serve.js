@@ -11,7 +11,18 @@ http.createServer((req, res) => {
   if (!f.startsWith(root)) { res.writeHead(403); return res.end(); }
   fs.readFile(f, (err, data) => {
     if (err) { res.writeHead(404); return res.end('Niet gevonden'); }
-    res.writeHead(200, { 'Content-Type': types[path.extname(f).toLowerCase()] || 'application/octet-stream', 'Cache-Control': 'no-store' });
+    const kop = { 'Content-Type': types[path.extname(f).toLowerCase()] || 'application/octet-stream', 'Cache-Control': 'no-store', 'Accept-Ranges': 'bytes' };
+    // Range-verzoeken (206): Safari speelt video alleen af als de server stukjes van het bestand kan leveren
+    const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+    if (m) {
+      let start = m[1] === '' ? data.length - Number(m[2]) : Number(m[1]);
+      let eind = m[1] !== '' && m[2] !== '' ? Number(m[2]) : data.length - 1;
+      eind = Math.min(eind, data.length - 1);
+      if (isNaN(start) || start < 0 || start > eind) { res.writeHead(416, { 'Content-Range': 'bytes */' + data.length }); return res.end(); }
+      res.writeHead(206, Object.assign(kop, { 'Content-Range': `bytes ${start}-${eind}/${data.length}`, 'Content-Length': eind - start + 1 }));
+      return res.end(data.subarray(start, eind + 1));
+    }
+    res.writeHead(200, Object.assign(kop, { 'Content-Length': data.length }));
     res.end(data);
   });
 }).listen(port, '127.0.0.1', () => console.log('Preview: http://localhost:' + port + '/preview/'));
