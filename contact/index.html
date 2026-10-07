@@ -88,7 +88,9 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .menu-knop i{position:absolute;left:12px;right:12px;height:1.5px;background:var(--inkt);transition:transform .35s var(--ease)}
 .menu-knop i:first-child{top:17px}.menu-knop i:last-child{top:23px}
 @media(max-width:820px){.nav-links{display:none}.menu-knop{display:block}}
-@media(max-width:600px){.nav-in .knop{display:none}}   /* WhatsApp zit dan in het menu en rechtsonder */
+/* e-mail in de menubalk: volledig adres alleen op brede schermen, daaronder alleen het icoon; op telefoons via het menu */
+@media(max-width:1180px){.nav-mail .nr{display:none}}
+@media(max-width:600px){.nav-mail{display:none}}
 
 /* mobiel menu: donker paneel over de hele pagina, links schuiven gestaffeld in */
 .menu-paneel{position:fixed;inset:0;z-index:90;background:#14130f;color:#fff;display:flex;flex-direction:column;
@@ -112,15 +114,18 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .menu-sub a{font-size:14px;color:rgba(255,255,255,.65)}
 .menu-voet{margin-top:auto;padding-top:30px;display:flex;flex-direction:column;gap:12px}
 .menu-voet .tel{font-size:20px;font-weight:600;color:#fff}
+.menu-voet .mail{font-size:15px;color:rgba(255,255,255,.8)}
 .menu-voet .knoppen{display:flex;gap:10px;align-items:center}
-.menu-voet .wa-knop{background:var(--inkt);color:#fff;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
+.menu-voet .wa-knop{background:#2a2925;border:1px solid rgba(255,255,255,.22);color:#fff;   /* zwart op het zwarte menu: iets lichter + rand */
+  border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
 /* WhatsApp-knoppen: overal de herkenbare WhatsApp-groen, met het icoon uit de iconenset */
 .wa-knop{display:inline-flex;align-items:center;gap:8px}
-.knop.wa-knop{background:var(--inkt);border-color:var(--inkt);color:#fff}   /* WhatsApp-knoppen altijd zwart; alleen het ronde knopje rechtsonder is groen */
+.knop.wa-knop{background:var(--inkt);border-color:var(--inkt);color:#fff}   /* WhatsApp-knoppen zwart, met het groene ronde logo erin */
+.wa-rond{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#25D366;color:#fff;flex:none;
+  margin:-4px 0 -4px -8px;transition:transform .3s var(--ease)}
+.wa-rond svg{width:14px!important;height:14px!important}
+.wa-knop:hover .wa-rond{transform:scale(1.12)}
 .wa-knop svg{width:16px;height:16px;flex:none}
-/* WhatsApp-knop in de menubalk: donker zoals de andere knoppen, met het icoon */
-.wa-nav{display:inline-flex;align-items:center;gap:8px}
-.wa-nav svg{width:16px;height:16px;flex:none}
 .menu-voet .soc{width:42px;height:42px;border-radius:50%;background:var(--kl);color:#fff;
   display:grid;place-items:center}
 .menu-voet .soc svg{width:18px;height:18px}
@@ -836,7 +841,10 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
       <span class="nr">06 41 42 91 06</span>
     </a>
-    <a class="knop wa-nav" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+    <a class="nav-tel nav-mail" href="mailto:info@ok-timmerwerken.nl" aria-label="Mail info@ok-timmerwerken.nl">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+      <span class="nr">info@ok-timmerwerken.nl</span>
+    </a>
     <button class="menu-knop" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
   </div>
 </nav>
@@ -871,8 +879,9 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   </div>
   <div class="menu-voet">
     <a class="tel" href="tel:+31641429106">06 41 42 91 06</a>
+    <a class="mail" href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>
     <div class="knoppen">
-      <a class="wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener">WhatsApp ons</a>
+      <a class="wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><span class="wa-rond" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>WhatsApp ons</a>
       <a class="soc insta" href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
       <a class="soc werkspot" href="https://www.werkspot.nl/profiel/ok-timmerwerken" target="_blank" rel="noopener" aria-label="Werkspot"><svg aria-hidden="true"><use href="#i-werkspot"/></svg></a>
       <a class="soc google" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener" aria-label="Google reviews"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
@@ -892,7 +901,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <p class="lead">Een vloer, een vliering, een carport of een complete verbouwing: Ozcan denkt graag met u mee. Bel, app of stuur een bericht — u hoort meestal binnen een dag van ons.</p>
       <div class="acties">
         <a class="knop" href="tel:+31641429106">Bel 06 41 42 91 06</a>
-        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+        <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><span class="wa-rond" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>WhatsApp</a>
         <a class="knop lijn" href="mailto:info@ok-timmerwerken.nl">Mail</a>
       </div>
     </div>
