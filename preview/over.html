@@ -965,6 +965,34 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <svg class="skyline" viewBox="0 0 600 136" role="img" aria-label="Lijntekening van Gorinchem: Merwedebrug, Grote Kerk, trapgevels, Dalempoort, kanon op de vestingwal en molen De Hoop"><path pathLength="1" style="--d:0.00s" d="M0 118 H172 M6 118 Q46 80 86 118 M22 105.8 V118 M34 100.7 V118 M46 99.0 V118 M58 100.7 V118 M70 105.8 V118 M86 118 Q126 80 166 118 M102 105.8 V118 M114 100.7 V118 M126 99.0 V118 M138 100.7 V118 M150 105.8 V118 M6 118 V130 M166 118 V130 M86 118 V130"/><path pathLength="1" style="--d:0.18s" d="M205 130 V40 H235 V130 M205 70 H235 M205 52 H235 M216 64 V58 M224 64 V58 M216 96 V84 M224 96 V84 M209 40 V30 H231 V40 M213 30 L220 6 L227 30"/><path pathLength="1" style="--d:0.36s" d="M235 130 V96 L275 80 L315 96 V130 M252 122 V108 M268 122 V108 M284 122 V108 M300 122 V108"/><path pathLength="1" style="--d:0.54s" d="M330 130 V92 H336 V84 H342 V76 H348 V68 H362 V76 H368 V84 H374 V92 H380 V130 M349 88 H361 V100 H349 Z M343 112 H353 V130 M359 112 H369 V122 H359 Z"/><path pathLength="1" style="--d:0.72s" d="M395 130 V88 H455 V130 M415 130 V112 Q425 100 435 112 V130 M391 88 L425 70 L459 88 M421 74 V62 H429 V74 M419 62 L425 54 L431 62"/><path pathLength="1" style="--d:0.90s" d="M465 130 L471 116 H521 L527 130 M480 111 L513 103 M481 115 L514 107 M513 103 L514 107 M486 116 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/><path pathLength="1" style="--d:1.08s" d="M549 130 L556 76 H574 L581 130 M541 101 H589 M562 130 V118 Q565 113 568 118 V130 M554 76 Q565 64 576 76 M565 71 L541 47 M565 71 L589 47 M565 71 L541 95 M565 71 L589 95 M545 51 L551 45 M585 51 L579 45"/><path pathLength="1" style="--d:1.26s" d="M0 130 H600"/></svg></div>
       <div><p style="margin-bottom:18px">Ozcan werkt met een vaste ploeg vakmensen. Geen wisselende onderaannemers, maar mensen die elkaars werk kennen — zodat het betonwerk, het timmerwerk en de afbouw naadloos op elkaar aansluiten.</p><p style="margin-bottom:18px">Als erkend VELUX Montagepartner en met tientallen reviews van tevreden klanten op Werkspot en Google weet u waar u aan toe bent.</p><p style="margin-bottom:18px">Klantgericht. Professioneel. Flexibel. Dat zijn de principes waar we elke dag naar werken — en op al onze werkzaamheden krijgt u garantie.</p></div>
     </div>
+    <div class="tijdlijn" style="--n:4">
+      <div class="tl-lijn" aria-hidden="true"><i></i></div>
+      <ol>
+        <li class="tl-punt"><span class="tl-jaar">2011</span><span class="tl-dot" aria-hidden="true"></span>
+          <b>De start in Gorinchem</b><p>Ozcan begint OK Timmerwerken, vanuit Gorinchem.</p></li>
+        <li class="tl-punt"><span class="tl-jaar">2019</span><span class="tl-dot" aria-hidden="true"></span>
+          <b>Eerste review op Werkspot</b><p>In september 2019 schrijft de eerste klant een review. Inmiddels staan er 78 op Werkspot.</p></li>
+        <li class="tl-punt"><span class="tl-jaar">2021</span><span class="tl-dot" aria-hidden="true"></span>
+          <b>Ook op Google</b><p>Vanaf oktober 2021 schrijven klanten ook op Google: 97 reviews, gemiddeld 5,0.</p></li>
+        <li class="tl-punt"><span class="tl-jaar">Nu <small data-jaar-nu>2026</small></span><span class="tl-dot" aria-hidden="true"></span>
+          <b>175 reviews, 500+ projecten</b><p>Gemiddeld 4,9 uit 5, op Google en Werkspot samen.</p></li>
+      </ol>
+    </div>
+    <script>
+    // tijdlijn: de lijn tekent zich mee met het scrollen; een punt licht op zodra de lijn het bereikt
+    (function(){
+      var t=document.querySelector('.tijdlijn'); if(!t) return;
+      var pts=[].slice.call(t.querySelectorAll('.tl-punt')), n=pts.length;
+      [].forEach.call(t.querySelectorAll('[data-jaar-nu]'),function(e){ e.textContent=new Date().getFullYear(); });
+      function zet(p){ t.style.setProperty('--p',p.toFixed(3)); pts.forEach(function(e,i){ e.classList.toggle('aan', p>=(i+.35)/n); }); }
+      if(matchMedia('(prefers-reduced-motion: reduce)').matches){ zet(1); return; }
+      var tik=false;
+      function stand(){ tik=false; var r=t.getBoundingClientRect(), h=innerHeight;
+        zet(Math.min(1,Math.max(0,(h*.88-r.top)/(r.height+h*.3)))); }
+      addEventListener('scroll',function(){ if(!tik){ tik=true; requestAnimationFrame(stand);} },{passive:true});
+      addEventListener('resize',stand); stand();
+    })();
+    </script>
   </div>
 </section>
 
