@@ -40,6 +40,7 @@ const contactRaster = `<div class="contact-grid">
         <label for="c-ber">Waar kunnen we mee helpen?</label>
         <textarea id="c-ber" name="bericht" placeholder="Bijvoorbeeld: gevlinderde betonvloer van 30 m² in de garage" required></textarea>
         <button class="veld-knop" type="submit">Verstuur aanvraag</button>
+        <p class="form-privacy">We gebruiken uw gegevens alleen om uw aanvraag te beantwoorden. Lees meer in de <a href="privacy.html">privacyverklaring</a>.</p>
         <p class="form-melding" role="status" hidden>Dit formulier is nog in de testfase en verstuurt nog niets. Bel of app Ozcan op <a href="tel:+31641429106">06 41 42 91 06</a> of mail naar <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>.</p>
       </form>
       <div class="contact-info">
@@ -178,6 +179,14 @@ const extraStijl = `<style>
 .juridisch h2{font-size:20px;font-weight:700;margin:34px 0 10px;letter-spacing:-.01em}
 .juridisch ol{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300}
 .juridisch p{color:#4a4740;line-height:1.8;font-weight:300;margin-top:14px}
+.juridisch ul{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300;margin-top:12px}
+.juridisch ul li{margin-top:6px}
+.juridisch .bijgewerkt{margin-top:34px;font-size:13.5px;color:var(--zacht)}
+.concept-melding{margin:0 0 30px;padding:16px 20px;border:1px dashed #c6702f;border-radius:12px;background:#fff8f1;color:#7a4a1f;font-size:14px;line-height:1.6}
+.concept-melding b{display:block;margin-bottom:6px}
+.concept-melding ul{margin:6px 0 0;padding-left:20px;color:inherit}
+.form-privacy{margin-top:12px;font-size:12.5px;line-height:1.5;color:var(--zacht)}
+.form-privacy a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 
 /* review-citaat */
 .citaat{max-width:880px}
@@ -1014,6 +1023,7 @@ ${oproep()}`;
 // ---------- juridische pagina's ----------
 const juridischeOmschrijving = {
   'Algemene voorwaarden': 'De algemene voorwaarden van OK Timmerwerken in Gorinchem: offertes, uitvoering, betaling, garantie en aansprakelijkheid bij timmer- en betonwerk.',
+  'Privacyverklaring': 'Hoe OK Timmerwerken in Gorinchem omgaat met uw persoonsgegevens: welke gegevens we verwerken, waarom, hoe lang we ze bewaren en uw rechten.',
   'Disclaimer': 'Disclaimer van OK Timmerwerken in Gorinchem: over de informatie op deze website, aansprakelijkheid, links naar andere sites en het gebruik van teksten en beelden.',
 };
 function juridischPagina(titel, inhoudHtml) {
@@ -1035,6 +1045,15 @@ ${inhoudHtml}
 </section>`;
   return pagina({ titel: `${titel} — OK Timmerwerken, timmer- en betonwerk Gorinchem`, omschrijving: juridischeOmschrijving[titel] || `${titel} van OK Timmerwerken, Gorinchem.`, body });
 }
+function privacyHtml(v) {
+  const lijst = (l) => (l ? `\n      <ul>${l.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '');
+  const alineas = (a) => (a || []).map((x) => `\n      <p>${esc(x)}</p>`).join('');
+  const concept = v.concept ? `      <div class="concept-melding"><b>Concept — nog niet definitief</b>Deze tekst moet OK Timmerwerken nog controleren, in het bijzonder:<ul>${v.concept_punten.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>\n` : '';
+  return `${concept}      <p>${esc(v.intro)}</p>
+${v.secties.map((x) => `      <h2>${esc(x.titel)}</h2>${alineas(x.alineas)}${lijst(x.lijst)}${alineas(x.na)}`).join('\n')}
+      <p class="bijgewerkt">Laatst bijgewerkt: ${esc(v.bijgewerkt)}</p>`;
+}
+
 function voorwaardenHtml(v) {
   return `      <p>${esc(v.intro)}</p>
       <a class="download" href="${v.pdf}" target="_blank" rel="noopener">Download als pdf</a>
@@ -1061,7 +1080,8 @@ geschreven.push('reviews.html');
 fs.writeFileSync(path.join(uit, 'diensten.html'), overzichtPagina(inhoud.diensten));
 fs.writeFileSync(path.join(uit, 'voorwaarden.html'), juridischPagina('Algemene voorwaarden', voorwaardenHtml(inhoud.juridisch.voorwaarden)));
 fs.writeFileSync(path.join(uit, 'disclaimer.html'), juridischPagina('Disclaimer', inhoud.juridisch.disclaimer.alineas.map((p) => `      <p>${esc(p)}</p>`).join('\n')));
-geschreven.push('diensten.html', 'voorwaarden.html', 'disclaimer.html');
+fs.writeFileSync(path.join(uit, 'privacy.html'), juridischPagina('Privacyverklaring', privacyHtml(inhoud.juridisch.privacy)));
+geschreven.push('diensten.html', 'voorwaarden.html', 'disclaimer.html', 'privacy.html');
 
 // controle: bestaan alle verwezen beelden?
 let mist = 0;
@@ -1089,6 +1109,7 @@ function herschrijf(html, pre) {
   h = h.replace(/href="diensten\.html"/g, `href="${pre}diensten/"`);
   h = h.replace(/href="voorwaarden\.html"/g, `href="${pre}algemene-voorwaarden/"`);
   h = h.replace(/href="disclaimer\.html"/g, `href="${pre}disclaimer/"`);
+  h = h.replace(/href="privacy\.html"/g, `href="${pre}privacyverklaring/"`);
   h = h.replace(/href="contact\.html"/g, `href="${pre}contact/"`);
   h = h.replace(/href="reviews\.html"/g, `href="${pre}reviews/"`);
   for (const s of slugs) h = h.replace(new RegExp(`href="dienst-${s}\\.html(#[^"]*)?"`, 'g'), (m, a) => `href="${pre}diensten/${s}/${a || ''}"`);
@@ -1109,11 +1130,12 @@ for (const s of slugs) {
 schrijf('diensten/index.html', herschrijf(fs.readFileSync(path.join(uit, 'diensten.html'), 'utf8'), '../'));
 schrijf('algemene-voorwaarden/index.html', herschrijf(fs.readFileSync(path.join(uit, 'voorwaarden.html'), 'utf8'), '../'));
 schrijf('disclaimer/index.html', herschrijf(fs.readFileSync(path.join(uit, 'disclaimer.html'), 'utf8'), '../'));
+schrijf('privacyverklaring/index.html', herschrijf(fs.readFileSync(path.join(uit, 'privacy.html'), 'utf8'), '../'));
 
 // ---------- vindbaarheid: canonical, voorbeeld bij delen, bedrijfsgegevens voor Google, sitemap, 404 ----------
 // SITE = het adres waaronder de site draait. Nu de testomgeving; BIJ LIVEGANG wijzigen in 'https://www.ok-timmerwerken.nl/'.
 const SITE = 'https://thomv-flow8.github.io/Ok-Timmerwerken/';
-const sitePaginas = ['', 'over-ons/', 'diensten/', ...slugs.map((s) => `diensten/${s}/`), 'contact/', 'reviews/', 'algemene-voorwaarden/', 'disclaimer/'];
+const sitePaginas = ['', 'over-ons/', 'diensten/', ...slugs.map((s) => `diensten/${s}/`), 'contact/', 'reviews/', 'algemene-voorwaarden/', 'disclaimer/', 'privacyverklaring/'];
 const dagen = { 'Maandag – vrijdag': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 'Zaterdag': ['Saturday'], 'Zondag': ['Sunday'] };
 const bedrijf = {
   '@context': 'https://schema.org', '@type': 'GeneralContractor',
@@ -1203,10 +1225,10 @@ for (const [van, naar] of oud) {
 }
 // controle: verwijst de gebouwde site nog naar preview-bestanden, en bestaan alle beelden?
 let fout = 0;
-for (const rel of ['index.html', 'over-ons/index.html', 'diensten/index.html', 'algemene-voorwaarden/index.html', 'disclaimer/index.html', ...slugs.map((s) => `diensten/${s}/index.html`)]) {
+for (const rel of ['index.html', 'over-ons/index.html', 'diensten/index.html', 'algemene-voorwaarden/index.html', 'disclaimer/index.html', 'privacyverklaring/index.html', ...slugs.map((s) => `diensten/${s}/index.html`)]) {
   const html = fs.readFileSync(path.join(root, rel), 'utf8');
   const map = path.dirname(path.join(root, rel));
-  if (/d-lijn\.html|dienst-[a-z]+\.html|over\.html|diensten\.html|voorwaarden\.html|disclaimer\.html|\.\.\/assets\/(?!)/.test(html.replace(/\.\.\/(\.\.\/)?assets\//g, ''))) { console.error(`  ${rel}: bevat nog een preview-link`); fout++; }
+  if (/d-lijn\.html|dienst-[a-z]+\.html|over\.html|diensten\.html|voorwaarden\.html|disclaimer\.html|privacy\.html|\.\.\/assets\/(?!)/.test(html.replace(/\.\.\/(\.\.\/)?assets\//g, ''))) { console.error(`  ${rel}: bevat nog een preview-link`); fout++; }
   for (const m of html.matchAll(/(?:src|href)="([^"#:?][^"]*\.(?:jpg|png|webp|svg))"/g)) {
     if (!fs.existsSync(path.join(map, m[1]))) { console.error(`  ${rel}: ontbreekt ${m[1]}`); fout++; }
   }
