@@ -474,5 +474,11 @@ nagaan of 'm opvragen bij Ozcan.
 2. `noindex` weghalen: `preview/d-lijn.html` en `pagina()` in de generator (`<meta name="robots" …>`).
 3. `robots.txt` vervangen door: `User-agent: *` / `Allow: /` / `Sitemap: https://www.ok-timmerwerken.nl/sitemap.xml`.
 4. Formulier koppelen (Web3Forms) en de testmelding weghalen.
-5. Domein (DNS) naar GitHub Pages, eigen domein instellen, HTTPS aan.
+5. **Hosting: bij Ozcans eigen hostingpartij** (domein en hosting bestaan al; naam nog navragen). De gebouwde site
+   (hoofdmap: `index.html`, mappen, `assets/`, `404.html`, `sitemap.xml`, `robots.txt`) uploaden; `preview/`, `docs/`,
+   `tools/` en `.git` niet. Bij Apache-hosting een `.htaccess` maken met: echte 301-redirects voor de 41 oude adressen
+   (i.p.v. de doorstuurbestandjes), `ErrorDocument 404 /404.html`, https afdwingen, beveiligingsheaders
+   (X-Frame-Options/CSP) en caching voor afbeeldingen/lettertypes. HTTPS-certificaat aan.
 6. Sitemap indienen in Google Search Console; Google-bedrijfsprofiel: werktijden gelijkzetten met de site.
+7. Privacyverklaring: naam hostingpartij invullen, concept-melding weghalen (`concept: false` in `inhoud.json`).
+8. Statistieken: Ozcan kiest tussen GA4 (cookiebanner nodig) of cookieloos (bv. Plausible, geen banner); privacyverklaring daarop aanpassen.
