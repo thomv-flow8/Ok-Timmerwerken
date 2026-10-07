@@ -21,8 +21,8 @@ function tussen(tekst, start, eind, metEind = true) {
   if (j < 0) throw new Error('Einde niet gevonden na: ' + start);
   return tekst.slice(i, metEind ? j + eind.length : j);
 }
-const stijl = tussen(hoofd, '<style>', '</style>');
-const fonts = tussen(hoofd, '<link rel="preconnect"', 'rel="stylesheet">');
+const stijl = tussen(hoofd.slice(hoofd.indexOf('<!-- fonts]] -->')), '<style>', '</style>');   // hoofdstijl staat ná het lettertypeblok
+const fonts = tussen(hoofd, '<!-- [[fonts', '<!-- fonts]] -->');
 const kopdeel = tussen(hoofd, '<!-- iconenset', '<main id="inhoud">', false).replace(/\n<!--[^\n]*-->\s*$/, '\n');
 const footer = tussen(hoofd, '<footer', '</footer>');
 const dock = tussen(hoofd, '<div class="dock">', '</div>');

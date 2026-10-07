@@ -1,0 +1,8 @@
+Lettertypes op deze site (zelf gehost, Latijnse tekensets):
+
+- Inter — Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
+- Instrument Serif — Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)
+
+Beide vallen onder de SIL Open Font License, versie 1.1: vrij te gebruiken en mee te leveren,
+ook op commerciële websites. Volledige licentietekst: https://openfontlicense.org/open-font-license-official-text/
+Bron van de bestanden: Google Fonts (fonts.google.com).
