@@ -166,12 +166,18 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .knop.licht{background:var(--inkt);color:#fff}
 .knop.lijn{background:transparent;border-color:var(--rand);color:var(--inkt)}
 /* zachte binnenkomst van de herotekst */
-.hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties{opacity:0;transform:translateY(18px);
+.hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties,.hero-in .feiten{opacity:0;transform:translateY(18px);
   animation:heroIn .9s var(--ease) forwards}
-.hero-in h1{animation-delay:.08s}.hero-in p{animation-delay:.18s}.hero-in .hero-acties{animation-delay:.28s}
+.hero-in h1{animation-delay:.08s}.hero-in p{animation-delay:.18s}.hero-in .hero-acties{animation-delay:.28s}.hero-in .feiten{animation-delay:.38s}
 @keyframes heroIn{to{opacity:1;transform:none}}
+/* kerncijfers (home-hero en Over ons): tellen op via [data-tel] */
+.feiten{display:flex;flex-wrap:wrap;gap:16px clamp(24px,3vw,44px);margin-top:34px;padding-top:22px;border-top:1px solid var(--rand);width:max-content;max-width:100%}
+.feiten > div{display:flex;align-items:center;gap:12px}
+.feiten b{font-size:clamp(30px,3.2vw,40px);font-weight:300;letter-spacing:-.02em;line-height:1;color:var(--inkt);font-variant-numeric:tabular-nums;min-width:2ch}
+.feiten b[data-na]{min-width:3.7ch}
+.feiten span{font-size:12.5px;line-height:1.35;color:var(--zacht)}
 @media(prefers-reduced-motion:reduce){.hero-kader img{animation:none}
-  .hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties{animation:none;opacity:1;transform:none}}
+  .hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties,.hero-in .feiten{animation:none;opacity:1;transform:none}}
 
 /* kort, wegfadend scroll-teken onder de hero */
 /* Vaste scroll-indicator op de middelste verticale lijn (zoals de referentie):
@@ -795,6 +801,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   <symbol id="i-persoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.9-3.7 3.7-5.6 7-5.6s6.1 1.9 7 5.6"/></symbol>
   <symbol id="i-ploeg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.2" r="3.1"/><circle cx="16.8" cy="9.4" r="2.4"/><path d="M3.2 19.5c.8-3.3 3-5 5.8-5s5 1.7 5.8 5"/><path d="M15.3 14.6c2.5 0 4.4 1.4 5.2 4.1"/></symbol>
   <symbol id="i-afspraak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="14.5" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/><path d="m9 15.2 2 2 4-4"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h3.2L8.8 5h6.4l1.6 2.5H20a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></symbol>
   <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-werkspot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 3.8l6.9 6.9-2.3 2.3-6.9-6.9z"/><path d="M12.1 8.4L4.3 16.2a1.7 1.7 0 0 0 0 2.4l1.1 1.1a1.7 1.7 0 0 0 2.4 0l7.8-7.8"/></symbol>
   <symbol id="i-google" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v3.2h5.35c-.25 1.4-1.65 4.1-5.35 4.1-3.2 0-5.85-2.65-5.85-5.9S8.8 6.6 12 6.6c1.85 0 3.05.8 3.75 1.45l2.55-2.45C16.7 4.1 14.55 3.1 12 3.1 7.05 3.1 3.05 7.1 3.05 12s4 8.9 8.95 8.9c5.15 0 8.6-3.6 8.6-8.7 0-.6-.05-1.05-.15-1.5z"/></symbol>
@@ -896,6 +903,10 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a class="knop" href="contact.html">Maak kennis met Ozcan</a>
         <a class="knop lijn" href="d-lijn.html#diensten">Bekijk de diensten</a>
       </div>
+      <div class="feiten">
+        <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
+        <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
+      </div>
       <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
@@ -914,7 +925,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <h2>Vakwerk uit <em class="serif">Gorinchem</em>.</h2>
     </div>
     <div class="verhaal op">
-      <div><p>Sinds 2019 werkt OK Timmerwerken vanuit Gorinchem aan woningen in de wijde omgeving: van een gevlinderde vloer in een schuur tot een complete verbouwing met doorbraak, vliering en dakramen.</p>
+      <div><p>Sinds 2011 werkt OK Timmerwerken vanuit Gorinchem aan woningen in de wijde omgeving: van een gevlinderde vloer in een schuur tot een complete verbouwing met doorbraak, vliering en dakramen.</p>
         <svg class="skyline" viewBox="0 0 600 136" role="img" aria-label="Lijntekening van Gorinchem: Merwedebrug, Grote Kerk, trapgevels, Dalempoort, kanon op de vestingwal en molen De Hoop"><path pathLength="1" style="--d:0.00s" d="M0 118 H172 M6 118 Q46 80 86 118 M22 105.8 V118 M34 100.7 V118 M46 99.0 V118 M58 100.7 V118 M70 105.8 V118 M86 118 Q126 80 166 118 M102 105.8 V118 M114 100.7 V118 M126 99.0 V118 M138 100.7 V118 M150 105.8 V118 M6 118 V130 M166 118 V130 M86 118 V130"/><path pathLength="1" style="--d:0.18s" d="M205 130 V40 H235 V130 M205 70 H235 M205 52 H235 M216 64 V58 M224 64 V58 M216 96 V84 M224 96 V84 M209 40 V30 H231 V40 M213 30 L220 6 L227 30"/><path pathLength="1" style="--d:0.36s" d="M235 130 V96 L275 80 L315 96 V130 M252 122 V108 M268 122 V108 M284 122 V108 M300 122 V108"/><path pathLength="1" style="--d:0.54s" d="M330 130 V92 H336 V84 H342 V76 H348 V68 H362 V76 H368 V84 H374 V92 H380 V130 M349 88 H361 V100 H349 Z M343 112 H353 V130 M359 112 H369 V122 H359 Z"/><path pathLength="1" style="--d:0.72s" d="M395 130 V88 H455 V130 M415 130 V112 Q425 100 435 112 V130 M391 88 L425 70 L459 88 M421 74 V62 H429 V74 M419 62 L425 54 L431 62"/><path pathLength="1" style="--d:0.90s" d="M465 130 L471 116 H521 L527 130 M480 111 L513 103 M481 115 L514 107 M513 103 L514 107 M486 116 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/><path pathLength="1" style="--d:1.08s" d="M549 130 L556 76 H574 L581 130 M541 101 H589 M562 130 V118 Q565 113 568 118 V130 M554 76 Q565 64 576 76 M565 71 L541 47 M565 71 L589 47 M565 71 L541 95 M565 71 L589 95 M545 51 L551 45 M585 51 L579 45"/><path pathLength="1" style="--d:1.26s" d="M0 130 H600"/></svg></div>
       <div><p style="margin-bottom:18px">Ozcan werkt met een vaste ploeg vakmensen. Geen wisselende onderaannemers, maar mensen die elkaars werk kennen — zodat het betonwerk, het timmerwerk en de afbouw naadloos op elkaar aansluiten.</p><p style="margin-bottom:18px">Als erkend VELUX Montagepartner en met tientallen reviews van tevreden klanten op Werkspot en Google weet u waar u aan toe bent.</p><p style="margin-bottom:18px">Klantgericht. Professioneel. Flexibel. Dat zijn de principes waar we elke dag naar werken — en op al onze werkzaamheden krijgt u garantie.</p></div>
     </div>
@@ -1138,6 +1149,25 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });
 
   // [[gedeeld — wordt door tools/genereer-paginas.js overgenomen
+  // Cijfers tellen op zodra ze in beeld komen. In de HTML staat het echte getal (voor zoekmachines en zonder JS);
+  // data-sinds="2011" rekent het aantal jaren live uit, data-na="+" komt achter het getal, data-dec = decimalen.
+  (function(){
+    var tellers=[].slice.call(document.querySelectorAll('[data-tel]')); if(!tellers.length) return;
+    tellers.forEach(function(el){ var s=el.getAttribute('data-sinds'); if(s) el.setAttribute('data-naar', new Date().getFullYear()-parseInt(s,10)); });
+    function fmt(el,v){ return v.toFixed(parseInt(el.getAttribute('data-dec')||'0',10)).replace('.',',')+(el.getAttribute('data-na')||''); }
+    function eind(el){ el.textContent=fmt(el,parseFloat(el.getAttribute('data-naar'))); }
+    if(rm || !('IntersectionObserver' in window)){ tellers.forEach(eind); return; }
+    function telOp(el){
+      var naar=parseFloat(el.getAttribute('data-naar')), duur=1300, start=null;
+      function stap(t){ if(start===null) start=t; var p=Math.min(1,(t-start)/duur);
+        if(p<1){ el.textContent=fmt(el,naar*(1-Math.pow(1-p,3))); requestAnimationFrame(stap); } else eind(el); }   // ease-out
+      requestAnimationFrame(stap);
+    }
+    tellers.forEach(function(el){ el.textContent=fmt(el,0); });
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ telOp(e.target); io.unobserve(e.target); } }); },{threshold:.6});
+    tellers.forEach(function(t){ io.observe(t); });
+  })();
+
   // CTA-krullen: tekenen zich mee met het scrollen (en weer terug bij omhoog scrollen).
   (function(){
     var paden=[].slice.call(document.querySelectorAll('.cta-krul path'));

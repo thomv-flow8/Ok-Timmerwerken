@@ -517,6 +517,7 @@ function reviewsPagina() {
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">${esc(r.tekst).replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>')}</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        ${r.fotos_bij_review ? `<a class="rv-fotos" href="${reviewData.bronnen[r.bron].url}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>${r.fotos_bij_review === 1 ? '1 foto' : `${r.fotos_bij_review} foto's`} bekijken op ${r.bron === 'google' ? 'Google' : 'Werkspot'}</a>` : ''}
         <i class="sterscore" style="--pct:${r.score * 20}%" role="img" aria-label="${r.score} van 5 sterren"></i>
         <div class="rv-wie"><b>${esc(naamTekst(r))}</b>${sub ? `<span>${esc(sub)}</span>` : ''}
           <small>${datumTekst(r)} ${bronnen.map(logo).join('')}</small></div>
@@ -591,6 +592,10 @@ ${oproep()}
 .rv.kort .rv-tekst{display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden}
 .rv-meer{margin-top:10px;border:0;background:none;color:var(--brons);font:600 13px var(--f,inherit);cursor:pointer}
 .rv-meer::after{content:' ›'}
+/* foto's bij de review: niet overgenomen (geen gebruiksrecht), wel een link naar de bron */
+.rv-fotos{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:6px 12px 6px 10px;border:1px solid var(--rand);border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--inkt);transition:background .25s,border-color .25s}
+.rv-fotos svg{width:16px;height:16px;color:var(--brons)}
+.rv-fotos:hover{background:#f5f1ea;border-color:var(--brons)}
 .rv .sterscore{margin:18px auto 0}
 .rv-wie{margin-top:18px;padding-top:16px;border-top:1px solid var(--rand);width:100%}
 .rv-wie b{display:block;font-size:16px;font-weight:600}
@@ -790,6 +795,10 @@ function overPagina(o) {
       <div class="acties">
         <a class="knop" href="contact.html">Maak kennis met Ozcan</a>
         <a class="knop lijn" href="d-lijn.html#diensten">Bekijk de diensten</a>
+      </div>
+      <div class="feiten">
+        <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
+        <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
       </div>
       <a class="erkend" href="dienst-dakramen.html"><img src="../assets/web/velux-montagepartner.jpg" alt="VELUX Montagepartner">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>

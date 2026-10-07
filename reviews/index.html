@@ -166,12 +166,18 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .knop.licht{background:var(--inkt);color:#fff}
 .knop.lijn{background:transparent;border-color:var(--rand);color:var(--inkt)}
 /* zachte binnenkomst van de herotekst */
-.hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties{opacity:0;transform:translateY(18px);
+.hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties,.hero-in .feiten{opacity:0;transform:translateY(18px);
   animation:heroIn .9s var(--ease) forwards}
-.hero-in h1{animation-delay:.08s}.hero-in p{animation-delay:.18s}.hero-in .hero-acties{animation-delay:.28s}
+.hero-in h1{animation-delay:.08s}.hero-in p{animation-delay:.18s}.hero-in .hero-acties{animation-delay:.28s}.hero-in .feiten{animation-delay:.38s}
 @keyframes heroIn{to{opacity:1;transform:none}}
+/* kerncijfers (home-hero en Over ons): tellen op via [data-tel] */
+.feiten{display:flex;flex-wrap:wrap;gap:16px clamp(24px,3vw,44px);margin-top:34px;padding-top:22px;border-top:1px solid var(--rand);width:max-content;max-width:100%}
+.feiten > div{display:flex;align-items:center;gap:12px}
+.feiten b{font-size:clamp(30px,3.2vw,40px);font-weight:300;letter-spacing:-.02em;line-height:1;color:var(--inkt);font-variant-numeric:tabular-nums;min-width:2ch}
+.feiten b[data-na]{min-width:3.7ch}
+.feiten span{font-size:12.5px;line-height:1.35;color:var(--zacht)}
 @media(prefers-reduced-motion:reduce){.hero-kader img{animation:none}
-  .hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties{animation:none;opacity:1;transform:none}}
+  .hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties,.hero-in .feiten{animation:none;opacity:1;transform:none}}
 
 /* kort, wegfadend scroll-teken onder de hero */
 /* Vaste scroll-indicator op de middelste verticale lijn (zoals de referentie):
@@ -801,6 +807,10 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .rv.kort .rv-tekst{display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden}
 .rv-meer{margin-top:10px;border:0;background:none;color:var(--brons);font:600 13px var(--f,inherit);cursor:pointer}
 .rv-meer::after{content:' ›'}
+/* foto's bij de review: niet overgenomen (geen gebruiksrecht), wel een link naar de bron */
+.rv-fotos{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:6px 12px 6px 10px;border:1px solid var(--rand);border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--inkt);transition:background .25s,border-color .25s}
+.rv-fotos svg{width:16px;height:16px;color:var(--brons)}
+.rv-fotos:hover{background:#f5f1ea;border-color:var(--brons)}
 .rv .sterscore{margin:18px auto 0}
 .rv-wie{margin-top:18px;padding-top:16px;border-top:1px solid var(--rand);width:100%}
 .rv-wie b{display:block;font-size:16px;font-weight:600}
@@ -833,6 +843,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   <symbol id="i-persoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.9-3.7 3.7-5.6 7-5.6s6.1 1.9 7 5.6"/></symbol>
   <symbol id="i-ploeg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.2" r="3.1"/><circle cx="16.8" cy="9.4" r="2.4"/><path d="M3.2 19.5c.8-3.3 3-5 5.8-5s5 1.7 5.8 5"/><path d="M15.3 14.6c2.5 0 4.4 1.4 5.2 4.1"/></symbol>
   <symbol id="i-afspraak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="14.5" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/><path d="m9 15.2 2 2 4-4"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h3.2L8.8 5h6.4l1.6 2.5H20a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></symbol>
   <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-werkspot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.2 3.8l6.9 6.9-2.3 2.3-6.9-6.9z"/><path d="M12.1 8.4L4.3 16.2a1.7 1.7 0 0 0 0 2.4l1.1 1.1a1.7 1.7 0 0 0 2.4 0l7.8-7.8"/></symbol>
   <symbol id="i-google" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1H12v3.2h5.35c-.25 1.4-1.65 4.1-5.35 4.1-3.2 0-5.85-2.65-5.85-5.9S8.8 6.6 12 6.6c1.85 0 3.05.8 3.75 1.45l2.55-2.45C16.7 4.1 14.55 3.1 12 3.1 7.05 3.1 3.05 7.1 3.05 12s4 8.9 8.95 8.9c5.15 0 8.6-3.6 8.6-8.7 0-.6-.05-1.05-.15-1.5z"/></symbol>
@@ -951,6 +962,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK TImmerwerken levert vakwerk.<br>Wij zijn erg tevreden met onze nieuwe carport. Bouwen bij een bestaande woning betekent vrijwel altijd maatwerk, maar er werd goed meegedacht en alles is netjes op de bestaande situatie aangepast.<br><br>De carport is uitgevoerd in mooi en degelijk Douglas hout, met een EPDM-dak en keurig afgewerkte boeidelen. Er zijn duidelijk goede materialen gebruikt en het geheel ziet er erg goed uit. De constructie voelt stevig aan en sluit mooi aan bij de woning.<br><br>De plaatsing verliep professioneel, de afspraken werden nagekomen en alles werd na afloop netjes achtergelaten. Wij zijn zeer tevreden met het resultaat en kunnen dit bedrijf zeker aanbevelen!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter</b><span>Den Haag · Carport plaatsen</span>
           <small>11 sep 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -959,6 +971,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Heel blij met het resultaat! Zij hebben bij ons een vliering en zolderindeling gemaakt en het resultaat is echt supermooi geworden. Er werd goed meegedacht over de mogelijkheden en alles is netjes uitgevoerd. We zouden OK Timmerwerken zeker aanbevelen!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Roos Van Der Linde</b>
           <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -967,6 +980,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Betrouwbaar, goede kwaliteit &amp; communicatie  dik in orde. Groetjes Nick en Monica.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Nick Van Hoogdalem</b>
           <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -975,6 +989,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">We zijn super blij met onze nieuwe carport van OK Timmerwerken. Bij een bestaande woning is geen situatie hetzelfde, dus maatwerk was hier echt nodig.. De carport is gebouwd van mooi, stevig Douglas hout en heeft een EPDM-dak met strak afgewerkte boeidelen. . Het resultaat ziet er heel goed uit. Ik raad OKtimmerwerken zeker aan.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter Deursen</b>
           <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -983,6 +998,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goede kwaliteit, netjes afgewerkt.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Ivo Visser</b>
           <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -991,6 +1007,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Prima werk geleverd voor de afgesproken prijs.Goede, snelle en vriendelijke communicatie.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Wouter V. Tuijl</b>
           <small>sep 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -999,6 +1016,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Herstel van overkapping: betrouwbaar en zeer deskundig, zeer tevreden over de werkzaamheden.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rudolph Dekker</b>
           <small>aug 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1007,6 +1025,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Wij zijn ontzettend tevreden met het werk van Ozcan! Hij heeft bij ons een complete klus uitgevoerd, waaronder: betonvloer gestort, vloerverwarming aangelegd, elektra aangelegd, gestuct, en het plafond gemaakt én geïsoleerd. Alles is strak afgewerkt en netjes opgeleverd. Ozcan denkt goed mee, werkt precies en communiceert prettig. Ook na het opleveren van de klus is hij bereikbaar voor vragen en advies. Een aanrader als je een goede professional zoekt!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rick Monshouwer</b>
           <small>jun 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1015,6 +1034,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer tevreden met het nieuwe dakraam die vakkundig en snel geplaatst werd door deze vakmannen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Sanel Ahmetovic</b>
           <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1023,6 +1043,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zij hebben op hele korte termijn ons kunnen helpen aan een nieuwe vloer. Top lui, werken hard, snel, en netjes. Kan ze iedereen aanraden!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Yannic Smeets</b>
           <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1031,6 +1052,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer tevreden over de werkzaamheden. Onze bijkeuken is geïsoleerd en er is een nieuwe schuifpui geplaatst. Nieuwe toilet geplaatst, opnieuw betegeld en nog veel andere werkzaamheden. Kom zeker weer bij ze terug.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Tolga</b>
           <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1039,6 +1061,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heef bij ons een dakraam  geplaatst, ondanks het moeilijk positie van de raam namelijk net onder de zonnepanelen heeft hij prima werk geleverd .hij is zeker een aanrader !</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Chadia Boussaid</b>
           <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1047,6 +1070,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ik ben zeer tevreden over de werkzaamheden die dit bedrijf heeft geleverd bij het maken van mijn betonvloer. Vanaf het eerste contactmoment verliep de communicatie duidelijk, snel en prettig. Er werd goed meegedacht en alle afspraken zijn netjes nagekomen.<br><br>De uitvoering van het werk was professioneel en het eindresultaat is precies zoals ik had gehoopt. Je merkt dat ze verstand van zaken hebben en oog voor detail.<br><br>Ik kan dit bedrijf dan ook zeker aanraden aan iedereen die op zoek is naar kwaliteit en goede service.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Siar Karim Ian</b>
           <small>mei 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1055,6 +1079,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft met zijn mannen snel en goed werk geleverd. Heel fijn dat hij meedacht over hoe de afvoer en waterleiding in het werk goed ingepast konden worden. Fijn om mee te werken.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rick</b><span>Cromvoirt · Betonnen vloer aanbrengen</span>
           <small>29 mrt 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1063,6 +1088,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Snel en prima werk geleverd!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>M.F Stavast</b>
           <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1071,6 +1097,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Prima service en goede prijs kwaliteit verhouding</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hendrik Boer</b>
           <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1079,6 +1106,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Tevreden; heeft allerlei klussen mbt een verbouwing gedaan.<br><br>Werkt zelfstandig en top met houtwerkzaamheden</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Renate VM</b>
           <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1087,6 +1115,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Bizar hoe snel ze de afgelopen vier dagen hebben gewerkt. Het was enorm veel werk om de oude vloer te verwijderen, maar de heren hebben ontzettend hard doorgewerkt. We zijn zeer tevreden met het resultaat en zullen voor toekomstige klussen zeker weer contact opnemen!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Wout Van Zantvoort</b>
           <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1095,6 +1124,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Prima werk geleverd door Ozcan en zijn team van OK Timmerwerken! Ze werken secuur, volgens afspraak, zijn vriendelijk. Kortom: echte vaklui! Kan ze van harte aanbevelen 👍</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Johan Nooitrust</b>
           <small>mrt 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1103,6 +1133,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft bij ons een oude vloer verwijderd tot op het zand, isolatie aangebracht, beton gestort en afgewerkt met een dekvloer en vloerverwarming. Erg behulpzaam, flexibel en netjes in omgang.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Etten-Leur</b><span>Betonnen vloer aanbrengen</span>
           <small>3 feb 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1111,6 +1142,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer goede ervaring met OK Timmerwerken. Ozcan is een sterke allround aannemer die actief meedenkt en oplossingsgericht werkt om wensen haalbaar te maken. Van het doorbreken van een dragende muur tot een nieuwe betonvloer met vloerverwarming, biobased isoleren en het bouwen van een houten vliering: alles is vakkundig en strak uitgevoerd. Hij werkt snel en efficiënt, communiceert duidelijk en is prettig in de samenwerking. Kortom een betrouwbare vakman en absoluut een aanrader.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Joris Seghers</b><span>Bavel · Vliering plaatsen of renoveren</span>
           <small>4 jan 2026 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1119,6 +1151,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft een dakraam in ons nieuwe huis geïnstalleerd. De communicatie verliep uitstekend en hij heeft de installatie eerder afgerond dan aanvankelijk beloofd.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Aykut Eseroğlu</b>
           <small>jan 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1127,6 +1160,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Vanaf het begin tot het eind heel prettig contact gehad, er wordt meegedacht, duidelijke communicatie, komt afspraken na en levert keurig werk af. Alles werkt naar behoren. We zijn er blij mee!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rob M</b>
           <small>jan 2026 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1135,6 +1169,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan is zeer vakkundig en werkt netjes en snel. De vlizotrap is perfect geplaatst. Ook heeft hij de zolderladder die we hadden staan netjes losgemaakt en meegenomen. We zijn heel tevreden over het resultaat en de communicatie.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit De Meern</b><span>Trap plaatsen of renoveren</span>
           <small>30 dec 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1143,6 +1178,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK Timmerwerken heeft prima werk geleverd, ook tijdens de bouw van de carport was het mogelijk om over veranderingen te praten. Gr. Jan Bruil</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jan Bruil</b>
           <small>dec 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1151,6 +1187,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft onze garage geïsoleerd en was aanbevolen door onze buren. We zijn enorm tevreden over het resultaat. Daarnaast maakt Ozcan duidelijke afspraken, is flexibel en denkt mee. Echte een vakman die ook nog is erg prettig in de omgang is. Een aanrader dus!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rene Loenen, Van</b>
           <small>dec 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1159,6 +1196,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Verbouwing van zolder inclusief washok, vliering en badkamer (douch/wc/wastafel) hebben de heren boven verwachting afgerond. Denk goed mee en zeer kundig in aanpak en uitvoering. Dikke 10!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Omar</b><span>Katwijk · Vliering bouwen</span>
           <small>20 nov 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1167,6 +1205,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Vakmensen en een super communicatie! Aanrader.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Sascha</b><span>Gorinchem · Trap plaatsen of renoveren</span>
           <small>16 nov 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1175,6 +1214,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Fijne communicatie, netjes gewerkt en mooi werk opgeleverd!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Carmen Elizen</b>
           <small>nov 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1183,6 +1223,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Volledige siding van de bovenverdieping vervangen voor Keralit alsook buiten deur inclusief kozijn door een team van vriendelijke vakmannen.<br>Mooi eindresultaat tegen een schappelijke prijs.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>S VP</b>
           <small>nov 2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1191,6 +1232,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en zijn team (Muhammed en Goksen) zijn echte experts in het plaatsen van gipsplaten. Ze voerden hun werk nauwkeurig en zorgvuldig uit en rondden het zoals beloofd en op tijd af. Het zijn beleefde en flexibele mensen die hun best doen om aan de verwachtingen van de klant te voldoen en mensen tevreden te stellen. We zouden ze graag nog eens in de toekomst zien!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Caghan C</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1199,6 +1241,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft bij ons een nieuwe kozijn geplaatst, .. Bedankt Ozcan...!!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Cees Van Den Berg</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1207,6 +1250,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Top werk geleverd en vloeiend verlopen. Erg bij met het resultaat en de flexibiliteit. Aanrader!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Max Noordijk</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1215,6 +1259,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">De heren hebben onze waterschade keurig opgelost. Fijne communicatie!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Gerwin Boel</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1223,6 +1268,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Profesioneel, kundig, vriendelijk en nette mensen. Erg tevreden met OK Timmerwerken.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kasper Euser</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1231,6 +1277,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Snel, vakkundig en vriendelijk geholpen door Ozcan! De nieuwe betonvloer ziet er strak uit :)</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jeroen Haers</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1239,6 +1286,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Planning goed<br>Kwaliteit goed<br>Prijs goed<br>Daarnaast krijg je snel antwoord als je nog vragen hebt.<br>Wat verwacht je nog meer van een aannemer.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Joost Van Nes</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1247,6 +1295,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en team hebben bij ons een mooie schuur met betonnen ondergrond en fietsenhok gebouwd. Hardwerkende mannen, goede communicatie, betrouwbaar, flexibel en denken met je mee!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Frank Van Der Zwaan</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1255,6 +1304,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Pergola bij ons geplaatst, erg blij met het eind resultaat! Ondanks de hittegolf hard gewerkt in de hete zon. Afspraken zijn goed nagekomen en duidelijke communicatie.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Elles Janssen</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1263,6 +1313,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Wij hebben onlangs een op maat gemaakte opbergkast onder onze trap laten maken door OK Timmerman, en we zijn ontzettend tevreden met het resultaat! Vanaf het eerste contact was de communicatie duidelijk en professioneel. Ze namen de tijd om onze wensen door te nemen en kwamen met slimme oplossingen om de ruimte optimaal te benutten.<br><br>Het vakmanschap is uitstekend; de kast is stevig, mooi afgewerkt en past perfect in de ruimte. Bovendien was de prijs zeer betaalbaar in vergelijking met andere offertes die we hadden ontvangen. De montage verliep vlot en netjes, zonder rommel achter te laten.<br><br>Kortom, als je op zoek bent naar een betrouwbare en vaardige timmerman, raden wij OK Timmerman van harte aan!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Nour Ig</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1271,6 +1322,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">De heren hebben bij ons een vliering en 2 slaapkamers op de zolder gemaakt wat fantastisch goed gelukt is. Ze werkte heel netjes en kwamen alle afspraken na. Ze waren vriendelijk en waren flexibel in het mee denken. Tevens konden ze op redelijk korte termijn aan de slag en dat is toch ook wel eens fijn, omdat je tegenwoordig op veel plekken lang moet wachten. Zeker aan te raden!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jane Van 't</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1279,6 +1331,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Wij zijn tevreden met de overkapping die OK timmerwerken boven de garage heeft gemaakt. Werkt snel en goed met prima materialen. Ozcan en zijn mensen zijn vakkundig en communiceren goed met ons. Ook flexibel, ze hebben op korte termijn de elektriciteit voor onze nieuwe keuken aangelegd, vakkundig en snel. Prima bedrijf!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Aletta 't Hoen</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1287,6 +1340,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Heel tevreden! Deuren en kozijnen zijn vervangen, radiatoren zijn voorzien van een mooie ombouw, de hal is omgetoverd tot een fijne entree, het balkon is gerenoveerd en nog meer! Ozcan denkt heel fijn mee over de mogelijkheden, levert goed werk, communiceert snel en prettig. Al met al een aanrader!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Maren Den Besten</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1295,6 +1349,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Heb Ozcan leren kennen via zijn broertje Hekin die een vliering heeft geplaatst in ons nieuwbouwhuis. Heb Ozcan leren kennen als een betrouwbare timmerman. Hij heeft ook goede mensen in dienst, speciaal een goed woord voor zijn elektricien, een ware tovenaar. Ze hebben eerst de elektriciteit voorbereid voor de nieuwe keuken, hij was zo flexibel om dit snel uit te voeren. Daarna een houten overkapping gebouwd boven de garage en de voordeur, zeer degelijk en mooi en ook de elektriciteit aangelegd. De dakbedekking met EPDM is ook goed verzorgd. Ozcan denkt goed mee en lost alles snel op en heeft goede ideeën. En je kunt ook nog met hem lachen...</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Leonard De Boer</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1303,6 +1358,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Afgelopen weken is Ozcan met zijn team bezig geweest om een vide te maken boven op onze zolder boven het trappengat. Dit is met afwerking en al een heel mooi resultaat geworden. Ook had ik nog wat andere kleine vragen aan hem, dingen die we niet hadden afgesproken en ook dat was geen enkel probleem. Super fijne ervaring en we zullen daar waar nodig ook zeker weer zaken met hem doen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Robert10275</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1311,6 +1367,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft onze opdracht op zolder tot een mooi eindresultaat gemaakt. Ook wanneer er onduidelijkheden waren of aanpassingen, was dit geen probleem en konden we er samen uitkomen. Mocht ik weer een nieuwe klus hebben, zal ik Ozcan zeker benaderen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Thom Heijdra</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1319,6 +1376,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">3 jaar na het plaatsen van een betonvloer in ons oude huis hadden wij ook een betonvloer nodig in ons nieuwe huis. Ozzie werkt heel netjes, is altijd op tijd en niets is te veel gevraagd. Hij denkt overal over mee en hij probeert overal een oplossing voor te bedenken. Ik raad jou aan iedereen aan Ozzie, bedankt 💪.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Leon Groen</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1327,6 +1385,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft onze fundering compleet verzorgd. Echt topwerk! Vanaf de eerste afspraak heeft hij ons goed geadviseerd. Als je niet weet waar je moet beginnen, bel dan Ozcan, hij heeft onze complete klus ontzorgd, van materiaal tot en met uitvoering. En het resultaat is echt prachtig. Supergladde betonnen vloer. Een echte vakman.<br><br>Onze hovenier en schilder zijn na de vloer gezien te hebben beide ook onder de indruk van de betonnen fundering en hebben mij gevraagd om het telefoonnummer van Ozcan. Ook onze veranda leverancier heeft gevraagd om de gegevens van Ozcan - het geeft toch een fijn gevoel dat wij een goede keuze hebben gemaakt door voor Ozcan te kiezen. Zie foto's!<br><br>Bedankt Ozcan!<br><br>Groeten,<br><br>Mohamed en Hanane</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hanane Bidari</b>
           <small>2025 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1335,6 +1394,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Perfect. Hele aardige vakbekwame man.<br>Het ziet er heel goed uit.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Adri Cordfunke</b><span>Oosterhout · Betonnen vloer aanbrengen</span>
           <small>28 aug 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1343,6 +1403,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Mooie bergingsvloer aangebracht door Ozcan. Snel, vriendelijk en vakkundig geholpen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Pijnacker</b><span>Betonnen vloer aanbrengen</span>
           <small>24 jul 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1351,6 +1412,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Vriendelijk, betrouwbaar, transparant, goede communicatie en geeft uitstekend advies!<br><br>Ik wist helemaal niets van beton en vloeren of wat ik moest doen en Ozcan gaf me goed advies gebaseerd op wat ik wilde, met details over wat er gaat gebeuren en alles wat ik moet doen om me voor te bereiden op het werk en voor de nazorg. De klus zelf verliep zeer soepel, Ozcan en zijn team hebben fantastisch werk geleverd.<br><br>Wat betreft de klus zelf, ik ben zeer tevreden met het eindresultaat. De vloer is glad, schoon en ik kan niet wachten om er gebruik van te maken zodra het is uitgehard!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jonathan Van Putten</b><span>Gouda · Betonnen vloer aanbrengen</span>
           <small>26 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1359,6 +1421,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ik ben tevreden over de uitgevoerde werkzaamheden. En zeker de flexibele manier hoe de afspraken tot stand kwamen. Communicatie is erg belangrijk en vooraf is Ozcan meerdere keren langs geweest om alles te bespreken. Maar zoals altijd komen er altijd zaken naar voren die vooraf niet voorzien waren. <br>Bij mij is een betonvloer gestort, de gehele meterkast vervangen en een leiding voorgetrokken en verwerkt in de betonvloer. Ziet er allemaal prima uit! <br>Ik kan Ozcan en zijn mannen zeker aanraden.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Willem</b><span>Den Haag · Betonnen vloer aanbrengen</span>
           <small>26 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1367,6 +1430,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeker een aanrader, snelle reactie, goede communicatie en werken netjes!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Oosterhout</b><span>Betonnen vloer aanbrengen</span>
           <small>19 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1375,6 +1439,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goede communicatie en uitleg. Goede planning en een goed en nauwkeurig eindresultaat. Heel erg tevreden!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Bus</b><span>Geldermalsen · Betonnen vloer aanbrengen</span>
           <small>16 jun 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1383,6 +1448,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Communicatie is top. Komt op tijd opdagen, bij vertraging laat ook op tijd weten. Zeer vakkundige mannen, weet waar men over praat en is meedenkend in advies. Zou zeker aanraden.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Arkel</b><span>Veranda aanleggen of vervangen</span>
           <small>12 mei 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1391,6 +1457,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer veel details gegeven met betrekking tot hoe het proces zal verlopen en waar ik op moet letten (aangezien ik de fundering omheining + wapening zelf gedaan heb).<br><br>Zeer fijn in omgang en het resultaat is prachtig. Ik ben erg tevreden!<br><br>Beton werd gestort om +-07:15 en betonwagen was weg om +-08:00. Daarna was het egaliseren en uitharden zodat er gevlinderd kon worden. Het vlinder proces duurde t/m 15:00 omdat het na elke stap weer moest uitharden.<br><br>Al met al in een dag helemaal voor elkaar gekregen! Top werk.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>6 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Mike</b><span>Apeldoorn · Betonnen vloer aanbrengen</span>
           <small>25 apr 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1399,6 +1466,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Via werkspot hebben ik kennis mogen maken met dit bedrijf. Snelle communicatie. Ze hebben hun werk ijverig uitgevoerd en het werk afgerond zoals beloofd en op tijd. Ozcan denkt goed mee en voert de klus uit zoals je het zelf wil. Duidelijke prijsafspraak en inschatting van de tijd benodigde vooraf. Zal zeker aan ze denken bij een volgende klus.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Zevenhuizen</b><span>Binnenwand plaatsen</span>
           <small>6 apr 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1407,6 +1475,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Via werkspot hebben wij kennis mogen maken met dit fijne bedrijf. Super snelle communicatie, personeel is heel netjes en denkt goed mee. Scherpe prijs en een hele mooie strakke fundering.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Kampen</b><span>Betonnen vloer aanbrengen</span>
           <small>17 mrt 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1415,6 +1484,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Betonvloer laten maken in mijn garage, zeer blij met het resultaat! Vriendelijke vaklui en hebben mooi werk afgeleverd. Bedankt!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Emile</b><span>Giesbeek · Betonvloer of cementdekvloer aanbrengen</span>
           <small>6 mrt 2025 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1423,6 +1493,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan and his crew (Muhammed and Goksen) are real experts in application of plasterboard. They precisely and diligently carried out their work and finished the work as promised and on time. They are polite and flexible people who do their best to meet customer expectations and make people happy. We would love to see them again!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Caghan</b><span>Lisse · Plafond</span>
           <small>22 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1431,6 +1502,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Kan en doet veel meer dan alleen timmerwerken. Harde werker(s), fijn in de omgang en inhoudelijk bereid om mee te denken. Ben zeer tevreden over het geleverde werk, Ozcan is dan ook zeker aan te raden voor iedereen die een klus willen laten uitvoeren.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Djunaedi</b><span>Vleuten · Constructie</span>
           <small>8 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1439,6 +1511,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goede vakman! Netjes gewerkt en mooie oplevering gehad!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Krishh</b><span>St. Willebrord · Vliering bouwen</span>
           <small>2 okt 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1447,6 +1520,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Contact verloopt altijd erg soepel. Afspraken worden nagekomen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Pascal Kuijlaars</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1455,6 +1529,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goed en heel netjes het werk afgeleverd bij ons. Wij zijn heel tevreden, er wordt goed meegedacht en vriendelijk gewerkt!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Stijn Van Den Hoogen</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1463,6 +1538,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer tevreden, goed vakmanschap. Werken netjes en zorgvuldig. Zullen ze zeker weer benaderen als het nodig is.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Tineke Lokhorst</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1471,6 +1547,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK-Timmerwerken heeft onze zolder volledig aangepakt. Werkzaamheden werden nauw afgestemd na meerdere gesprekken en meedenken van Ozcan. Werkzaamheden die uitgevoerd zijn:<br><br>- Indeling/muren plaatsen + isolatie + deuren/kozijnen<br>- Dakraam<br>- Stopcontacten<br>- Lichtpunten<br>- Vliering + trap<br><br>Elke keer als ze geweest waren lieten ze alles netjes opgeruimd achter. Al met al een hele grote aanrader!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Roland</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1479,6 +1556,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft een hele mooie carport bij ons geplaatst en is kundig en werkt netjes. Ik beveel hem van harte aan!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Otto N.</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1487,6 +1565,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK Timmerwerken. Top bedrijf van afspraken. Ozcan heeft bij ons een fundering gemaakt echt top duidelijke afspraken, mooi werk afgeleverd. In een woord, fantastisch.<br><br>OK Timmerwerken is echt een aanrader.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Farley Simon</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1495,6 +1574,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Douglas overkapping met lichtkoepel laten plaatsen tussen de schutting en een bestaand schuurtje door OK Timmerwerken. Vriendelijk, snel en denken mee in oplossingen. Volgende klus bel ik Ozcan zeker weer</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kees Van Der Meer</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1503,6 +1583,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft bij ons de schoorsteen van het dak tm de begane grond compleet verwijderd. Hij is echt een top aannemer! Hij komt zijn afspraken na, reageert snel, werkt hard, denkt mee, is eerlijk en hij heeft voor alles een oplossing. Zeker een aanrader!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kevin</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1511,6 +1592,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan heeft samen met ons het gehele huis verbouwd (jaren 30 woning). Denk aan, betonvloer gestort, verschillende muren verzet en geplaatst, leidingwerk, elektra en sanitair geplaatst. Ozcan reageert snel, denkt mee en is ook altijd gezellig aanwezig! Ook de collega’s van Ozcan zijn super en niets is teveel gevraagd.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Eline Van Hooff</b>
           <small>2024 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1519,6 +1601,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Fantastisch mooie carport opgeleverd gekregen. Ozcan werkt secuur en naar tevredenheid!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Zevenhuizen</b><span>Carport plaatsen</span>
           <small>26 sep 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1527,6 +1610,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ontzettend aardig, legde alles goed uit en werkt snel.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Danielle</b><span>Loosdrecht · Trappen</span>
           <small>8 sep 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1535,6 +1619,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Uitstekend werk geleverd door OK timmerwerken.<br>Ingehuurd voor het plaatsen van een nieuwe vlizotrap.<br><br>Flexibel bij de uitvoering, snel contact en enorm vriendelijk.<br><br>Zeker aan te bevelen!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Stijn</b><span>Reuver · Trappen</span>
           <small>15 jul 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1543,6 +1628,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Uitstekend werk verricht door Ozcan en zijn team. Werkt netjes, goed contact voorafgaand, tijdens en ook na de klus. Service met een dikke plus 💪🏻<br><br>Ik ga OK Timmerwerken zeker nog vaker inzetten voor klussen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Voorburg</b><span>Betonvloertje storten in tuin</span>
           <small>29 jun 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1551,6 +1637,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Uitstekend geholpen! Professioneel team die netjes werkt en netjes opruimt. Het is een grote klus met vele uitdagingen die allemaal in overleg zijn opgelost. Er moest een vliering van een kleine 20m2 gebouwd worden, gestuuct, geschilderd. Daarnaast nog een zolderkamer splitsen, elke kamer een eigen kozijn/deur, ventilatie, verlichting en stroomvoorzieningen. Zal toekomstige opdrachten ook uitbesteden bij OK Timmerwerken. Toppers!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Zevenhuizen</b><span>Vliering bouwen</span>
           <small>8 jun 2024 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1559,6 +1646,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK Timmerwerken heeft een prima klus gedaan bij ons. Heel netjes gewerkt en goed mee gedacht met ons. Flexibel ook. Wij zijn heel tevreden.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant via Werkspot</b>
           <small>29 nov 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1567,6 +1655,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Hele fijne timmerman. Je kan alles is bespreekbaar tegen een redelijke prijs.<br><br>Ozcan heeft bij mij een vliering geplaatst met kamerindeling. Hij heeft de tijd genomen om alles zo goed mogelijk te realiseren. Tussendoor veel afstemmomenten gehad met hem en hij heeft het gemaakt hoe we het uiteindelijk wilde.<br><br>Service achteraf is ook gewoon heel goed. Er moest een deur goed afgehangen worden. Hij heeft tussendoor tijd gemaakt om dit te doen.<br><br>Ik zal Ozcan dus sterk aanraden. Hij levert kwaliteit.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Tilburg</b><span>Vliering bouwen</span>
           <small>5 okt 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1575,6 +1664,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goede kwaliteit, komt afspraken na en is betrouwbaar</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Floor Van Keijzerswaard</b>
           <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1583,6 +1673,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Uitstekend vakwerk afgeleverd.<br>Goede communicatie,mee denkend en afspraken nakomend.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hendrikjan Versteeg</b>
           <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1591,6 +1682,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Vakmanschap heel tevreden heeft heel goed werk muur en dakraam geplaatst ben er heel blij mee aan te raden</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Vish Chhatta</b>
           <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1599,6 +1691,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan/OK timmerwerken is een heel fijn persoon/bedrijf om mee samen te werken.<br>Hij denkt mee, heeft veel ervaring, is origineel en vindt overal een oplossing voor. Hij en zijn team werken gestructureerd en reageert snel als je hem iets vraagt.<br><br>Absolute aanrader!!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jochem Van Akooij</b>
           <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1607,6 +1700,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozkan heeft voor onze nieuwbouwwoning de zolderkamers gerealiseerd. Dit ging om het maken van 2 slaapkamers, een technische ruimte en een vliering met vlizotrap. In een van de slaapkamers is een vide met vaste trap gemaakt. Ook heeft Ozkan een dakraam ingebouw. Alles is netjes verzorgd, goede communicatie en betalen doe je bij Ozkan pas als alles klaar en naar wens is. Er werd gedurende het proces goed meegedacht en rekening gehouden met onze wensen. Kortom, fijne samenwerking en prachtig resultaat.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Google</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Valentino Campos Castro</b>
           <small>2023 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1615,6 +1709,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">De schutting is netjes geplaatst</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Leusden</b><span>Schutting of hek plaatsen</span>
           <small>4 jul 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1623,6 +1718,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goede communicatie, snel, goede afspraken gemaakt, betrouwbaar</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Breda</b><span>Object ophangen</span>
           <small>26 jun 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1631,6 +1727,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Voor een schuur in onze tuin hadden we een betonvloer nodig. Ozcan van OK timmerwerken heeft ons hier heel goed mee geholpen. Het resultaat, een gevlinderde betonvloer, ziet er goed uit en helemaal volgens onze verwachting. Het contact verliep goed, de klus is snel uitgevoerd en de mannen zijn erg flexibel. Daarbij hebben ze alles netjes achtergelaten!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Pieter</b><span>Zevenhuizen · Betonvloer of cementdekvloer aanbrengen</span>
           <small>8 jun 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1639,6 +1736,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Het plafond vervangen is tot alle tevredenheid verlopen. Hij komt over als een vakman die zijn vak verstaat.ik kan hem aanbevelen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Maassluis</b><span>Plafond</span>
           <small>26 mei 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1647,6 +1745,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Vakmensen die weten waar ze mee bezig zijn. Snelle, duidelijke communicatie. Komen gemaakte afspraken netjes na.<br><br>Hebben bij ons de garagevloer keurig netjes van een mooie, rechte en gladde laag beton voorzien. Echt netjes gewerkt.<br><br>Ook alle bijkomende rotzooi weer netjes schoongemaakt en opgeruimd.<br><br>En dat alles voor een heel acceptabele prijs.<br><br>Aanrader.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jaap</b><span>Rhoon · Betonvloer of cementdekvloer aanbrengen</span>
           <small>17 mrt 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1655,6 +1754,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ik heb in een nieuwbouwwoning de onafgewerkte zolder laten verbouwen door 2 slaapkamers en een wasmachineruimte te realiseren, evenals een vliering. OK-TIMMERWERKEN heeft dit prettig, snel en zeer professioneel aangepakt en, zeker in deze tijd, in een redelijke termijn kunnen inplannen. Ozcan heeft goed meegedacht en waar nodig advies gegeven over de aanpak of specifieke details. Ook last minute extra werk of veranderingen waren geen enkel probleem. De klus omvatte het plaatsen van de vliering en draagbalken, vlizotrap, gipswanden, elektra, stucwerk en schilderwerk. Oftewel een geheel ontzorgt bouwproject. Ik kan OK-TIMMERWERKEN dan ook van harte aanbevelen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Ryan</b>
           <small>19 jan 2023 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1663,6 +1763,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Was erg veel geld maar wel direct beschikbaar en goed werk.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Eindhoven</b><span>Vlonder plaatsen</span>
           <small>26 dec 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1671,6 +1772,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">We hebben een gewapende betonnen vloer van 45m2 in onze Schuur laten storten en vlinderen.<br>Ozcan en collega hebben hard gewerkt om het binnen de afgesproken tijd voor elkaar te krijgen en we zijn erg blij met het resultaat. <br>We liepen wat vertraging op door de afval-zand-container die niet op de afgesproken tijd werd geleverd maar dat was overnacht en niets ten nadele van OK Timmerwerken.<br><br>De communicatie en samenwerking met Ozcan hebben wij als zeer prettig ervaren en zouden zeker een volgende opdracht aan hem uitbesteden!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Akersloot</b><span>Garage vloer storten</span>
           <small>14 okt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1679,6 +1781,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Uitstekend werk en goede communicatie. Ozcan zorgde ervoor dat alles duidelijk was voordat ze begonnen, en hoewel de klus niet makkelijk was, verliep alles heel soepel. Ik ben erg blij met mijn nieuwe terras!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Laudine P</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1687,6 +1790,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Kan niet anders zeggen dan dat alles echt perfect is.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Robert Duin Van</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1695,6 +1799,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Professioneel werk geleverd. Twee vlotte mannen die niet vies zijn van een praatje en ook goed werk leveren, gewoon top!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>E Vd Weel</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1703,6 +1808,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Een echte topper die eerlijk is en zijn woord nakomt. Werkt nauwkeurig, neemt altijd de tijd. Zijn focus is op kwaliteit ipv gehaast een klus uitvoeren.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>HiVi</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1711,6 +1817,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK Timmerwerken heeft bij ons een betonnen terrasvloer en fundering voor een tuinhuis gemaakt. Compleet van bekisting tot en met afvlinderen van de vloer. Prima werk geleverd, wij zijn zeer tevreden!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Arjan Butter</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1719,6 +1826,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Super vriendelijk, vakbekwaam, netjes en in overleg geleverd wat besproken is. Wij hebben een vliering gevraagd en hebben een parel van een vliering gekregen waar we heel blij mee zijn. Het plafond is superstrak gestuct.<br><br>Zeker aan te raden als je een klus hebt om contact te leggen. 5 sterren, het is dat er niet meer sterren gegeven kunnen worden.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Arno Groeneveld</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1727,6 +1835,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en zijn team hebben fantastisch werk geleverd. In de tuin een betonnen vloer gestort inclusief alle noodzakelijke voorbereidingen. Ik kan het bedrijf zeer aanbevelen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>John In Almere</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1735,6 +1844,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Topklasse. Betrouwbaar en dat is in deze tijden waar beschikbaarheid een probleem kan zijn zeer waardevol. Komen afspraken na en zijn vooral vakkundig en daarbij plezierig om mee te werken. Zou ze altijd aanbevelen en voor de volgende klus zit Ozcan bij mijn favorieten opgeslagen. Dankjewel</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Stephan Van Der Ruit</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1743,6 +1853,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Net bedrijf, communiceert helder, komt afspraken na, op tijd aanwezig en duidelijk overleg. Ook tijdens de werkzaamheden meedenkend en eerlijk.Technisch goed onderlegt qua kennis wat kan en niet kan. Absoluut aan te bevelen. Gezellige hardwerkende en eerlijke mensen.<br><br>Ozcan heeft bij ons een technische ruimte afgetimmerd met mooie vliering en wat kasten gemaakt. Top werk!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Erwin Kalsbeek</b>
           <small>2022 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1751,6 +1862,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK Timmerwerken heeft in 1 dag een perfecte vloer van Fermacell gelegd. Erg blij met het resultaat, de communicatie en de korte termijn waarop de klus geklaard kon worden.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Thijs</b><span>Amsterdam · Vloer isolatie</span>
           <small>26 sep 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1759,6 +1871,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goede afstemming vooraf en prettig contact tijdens de uitvoering. Goed werk geleverd.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Den Haag</b><span>Vloer isolatie</span>
           <small>5 sep 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1767,6 +1880,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en zijn collega hebben in juni van dit jaar bij ons een vliering gemaakt op de zolder.<br><br>Het contact was prettig en er werd goed meegedacht met onze wensen.<br><br>Op de afgesproken dag zijn ze begonnen en 3 dagen later waren ze klaar en hadden wij een hele mooie vliering.<br><br>Ze werken heel netjes en dat ook nog eens voor een zeer schappelijke prijs.<br><br>Voor de volgende klus zal ik zeker weer contact met ze opnemen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Andre</b><span>Rotterdam · Vliering bouwen</span>
           <small>7 aug 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"><img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1775,6 +1889,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Prima betonvloertje gestort, leuke mensen, prima communicatie.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Ton</b><span>Emmeloord · Betonvloer of cementdekvloer aanbrengen</span>
           <small>31 jul 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1783,6 +1898,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Snelle reactie en heeft prima werk geleverd. Vrijdag gebeld en maandag erop om 14.00 uur is hij begonnen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Henk</b><span>Haarlem · Vloer egaliseren</span>
           <small>30 jul 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1791,6 +1907,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Een topper! Eerlijk en betrouwbaar gebleken. Wordt voor toekomstige klusjes opnieuw gevraagd.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Hamza</b><span>Zevenhuizen · Vliering bouwen</span>
           <small>2 jun 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1799,6 +1916,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ik schrijf normaal gesproken nooit reviews, maar dit project is echt super verlopen. Voor het storten van een betonnen vloer kreeg ik een zeer duidelijke offerte. Afspraken werden nagekomen en minutieus uitgewerkt. En het eindproduct was boven mijn verwachtingen afgeleverd. Dit alles op een zeer klantvriendelijke manier. Dit waren vakmensen waar je op kunt bouwen!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Souhail</b><span>Den Haag · Betonvloer of cementdekvloer aanbrengen</span>
           <small>16 apr 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1807,6 +1925,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK-timmerwerken is erg flexibel en denkt graag met je mee in mogelijkheden. <br>De klusser komt op tijd, is een echte doorzetter en klaart een mooie klus.<br><br>We zijn te tevreden over de gang van zaken en ook over het eindresultaat van de klus!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant via Werkspot</b>
           <small>12 apr 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1815,6 +1934,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Good communication and work well done, very happy with my new terrace</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Laudine</b><span>Eindhoven · Betonvloer of cementdekvloer aanbrengen</span>
           <small>28 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1823,6 +1943,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan van OK Timmerwerken heeft bij ons een ruw betonnen  garagevloer (20 m2) gestort op EPS/tempex. De voorgesprekken gingen per telefoon, het contact was helder en duidelijk, Ozcan had goed advies voor de beste uitvoering en stond open voor mijn wensen. Op de dag van uitvoering arriveerden ze op tijd, met alle materialen die we afgesproken hadden en goed voorbereid. Ze werkten vlot door en leverden prima resultaat. Fijne gasten ook om over de vloer te hebben. Mijn klus is van A tot Z goed en precies volgens afspraak uitgevoerd. Ik raad OK Timmerwerken zeker aan.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Pieterjan</b><span>Castricum · Betonvloer of cementdekvloer aanbrengen</span>
           <small>21 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1831,6 +1952,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en zijn collega hebben Fermacell bij ons gelegd en dat is prima gegaan. Ze hebben het werk naar tevredenheid in 1 dag uitgevoerd.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Rotterdam</b>
           <small>9 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1839,6 +1961,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">De mannen van OK timmerwerken weten goed wat ze doen, werken snel en zijn ernaast ook nog gewoon lekker vlot.<br><br>Werk is top maar kan op een paar kleine puntjes net iets netter.<br><br>Iets mindere score in de afspraken komt doordat wij als eerst te horen kregen dat de werkzaamheden begin februari zouden worden uitgevoerd en dat werd steeds later. Tot een week van tevoren. Toen hebben we de dagen daadwerkelijk bepaald. Dit is misschien ook helemaal geen eerlijke kritiek aangezien planning erg moeilijk is in de bouw.<br><br>Al met al, goed werk geleverd voor een eerlijke prijs, door fijne mensen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Waddinxveen</b><span>Vliering bouwen</span>
           <small>7 mrt 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1847,6 +1970,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en team hebben Fermacell gelegd, dit hebben ze top gedaan! Hiernaast is Ozcan heel erg flexibel en communiceert duidelijk en denkt goed mee. Ik kan OK Timmerwerken van harte aanbevelen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Dorota</b><span>Den Haag · Vloer isolatie</span>
           <small>1 feb 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1855,6 +1979,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en zijn collega's hebben uitstekend werk geleverd, communiceren eerlijk en komen afspraken correct na. Gewoon zoals je het graag wilt hebben, wat wat niet altijd vanzelfsprekend is. Ik kan het bedrijf van harte aanbevelen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>John</b><span>Almere · Betonvloer of cementdekvloer aanbrengen</span>
           <small>18 jan 2022 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1863,6 +1988,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeker een aanrader, snelle reactie, goede communicatie en netjes en nauwkeurig werk! Daarnaast super fijne gasten.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Dennis</b><span>Uithoorn · Vliering bouwen</span>
           <small>28 nov 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1871,6 +1997,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Oczan en zijn mannen zijn heel netjes te werk gegaan in mijn klus. Er is van te voren heel duidelijk besproken wat er gedaan moest worden en alles is prima uitgevoerd. Als ik nog een klus heb waar ik ervaren mannen voor nodig heb dan weet ik nu waar ik terecht kan. Bedankt Ozzie!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Leon</b><span>Spijkenisse · Betonvloer of cementdekvloer aanbrengen</span>
           <small>10 nov 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1879,6 +2006,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Prima! Van begin tot eind goede communicatie, duidelijke afspraken, en de kwaliteit van het geleverde werk is prima. Aanrader!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Noordwijk</b><span>Vloer cement storten + egaliseren</span>
           <small>30 okt 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1887,6 +2015,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Erg tevreden met het resultaat. Ozcan en zijn team zijn harde werkers, erg vriendelijk en behulpzaam. Ze werken netjes, houden zich aan de afspraken en ruimen naderhand ook netjes op. <br>Extreem late wijzigingen vanuit onze kant werden ook opgevangen</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>4 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Rijsenhout</b><span>Betonvloer of cementdekvloer aanbrengen</span>
           <small>12 okt 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1895,6 +2024,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Aardige gasten, staan voor hun werk. Ik ben zeer tevreden.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Sander Van Der Wolf</b>
           <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1903,6 +2033,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Op zeer korte termijn heeft ozzy een fundering voor ons gerealiseerd in ons achtertuin zeer tevreden en echt een aanrader ,</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Michelle Brink</b>
           <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1911,6 +2042,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">de heer Kaygan is een probleemoplosser.Ziet nergens een probleem en zal koste wat kost het probleem aanpakken. Een super mens bestaat niet, maar met zijn kollega Kemal weet hij het eindresultaat van een zwembadvloer tot volle tevredenheid uit te voeren.Zeker aan te bevelen!!!!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Marieke De Vries</b>
           <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1919,6 +2051,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer goede communicatie voor dat de klus begon. Vervolgens 2 super aardige gasten de bekisting komen zetten voor het betonnen vloer.<br>Ook snel beton op kleur komen storten, vlinderen en coaten.<br>Snelle service, nette prijs en vakwerk!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Ewoud Havenaar</b>
           <small>2021 <img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google"></small></div>
@@ -1927,6 +2060,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Mooie nette beton vloer gemaakt. Nu nog steeds veel plezier van. Goede prijs tov anderen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>2 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Daniel</b><span>Vleuten · Betonvloer of cementdekvloer aanbrengen</span>
           <small>12 aug 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1935,6 +2069,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">OK timmerwerken heeft een mooie betonvloer in garage en schuur verzorgd. Goed gevlinderd en nabehandeld. Ze nemen voldoende de tijd om een mooi vlak eindresultaat te komen.  Ozzy reageert snel en heeft goede tips voor de voorbereiding om tot het beste resultaat te komen. Beton was snel gestort met behulp van een lange giek op de betonmolen.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>1 foto bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter</b><span>Zoelen · Betonvloer of cementdekvloer aanbrengen</span>
           <small>21 jun 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1943,6 +2078,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Goede, super aardige gasten die goed werk bij ons hebben geleverd. Ze hebben een betonnen vloer gestort tbv zwembad 3,5x4,5m op 1,5m diepte met veel grondwater.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Waddinxveen</b><span>Betonvloer of cementdekvloer aanbrengen</span>
           <small>28 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1951,6 +2087,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Prima, goed geholpen. Heeft snel gehandeld bij een aanpassing. Tevreden!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:80%" role="img" aria-label="4 van 5 sterren"></i>
         <div class="rv-wie"><b>Quintin</b><span>Dordrecht · Betonvloer of cementdekvloer aanbrengen</span>
           <small>27 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1959,6 +2096,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozcan en Kamel hebben voor ons een betonvloer gestort t.b.v. een zwembad afm.700x400. betrouwbare harde werkers die goed werk hebben geleverd.Dit bedrijf is zeker aan te bevelen voor nieuwe opdrachtgevers.Wellicht zal ik in de toekomst zeker gebruik maken van hun diensten.<br><br>Peter Rosbergen</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Peter</b><span>Nieuw-Beijerland · Betonvloer of cementdekvloer aanbrengen</span>
           <small>27 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1967,6 +2105,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Om te beginnen, Ozcan heeft prima werk afgeleverd! Hij kwam zelfs een week eerder dan we hadden ingepland, maar dat kwam voor ons alleen maar gunstig uit. <br>De kwaliteit van het werk is prima, we zijn dan ook zeer tevreden. Weken nadien neemt Ozcan nog contact met ons op om te vragen hoe het met onze vloer gaat. Zo fijn!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Jarno</b><span>Breda · Betonvloer of cementdekvloer aanbrengen</span>
           <small>18 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1975,6 +2114,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer netjes gewerkt. De beoordeling zegt genoeg.<br>Aanrader</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Nils</b><span>Krimpen aan de Lek · Betonvloer of cementdekvloer aanbrengen</span>
           <small>6 mei 2021 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1983,6 +2123,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozzie was snel met het aannemen van de opdracht. Heeft 2 dagen hard gewerkt en toen was de klus. Van contact tot afronden opdracht duurde nog geen 4 weken. Heel blij met het resultaat</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Joël</b><span>Ouderkerk aan de Amstel · Betonen terras</span>
           <small>13 sep 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1991,6 +2132,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Zeer vriendelijke jonge man.<br>Ik had met spoed iemand nodig.<br>Hij kwam zijn afspraken na. <br>Ik had meteen een click aan de tel.<br>Harde werker en klant vriendelijk.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Rollin</b><span>Ridderkerk · Vloer egaliseren</span>
           <small>1 sep 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -1999,6 +2141,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ik wist dat ik een zwembad wilde gaan bouwen. En ik wist ook hoe ik dat gedaan wilde hebben. Ik wist ook dat het een mega project zou worden.<br><br>Tsja en dan zoeken naar iemand die dat kan. Beter is om te zeggen dat ik heb gezocht naar iemand die bij mij past.<br><br>Ozzy kan alles en kan daarom goed meedenken en meebewegen als dat moet. Communiceert zoals iedereen dat zou moeten doen. Reageert altijd op elk telefoontje en op elk bericht. Niets is hem te veel.<br><br>Hij is al zijn afspraken nagekomen, is eerlijk en wat minstens zo belangrijk is, is dat hij altijd positief is, ook al zit iets tegen.<br>Want juist als dingen lastig worden, dan heb je mensen nodig die doorgaan en oplossingen zoeken.<br><br>Vantevoren kende ik Ozzy niet, maar ik heb er een vriend bij.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Marvin</b><span>Berkel en Rodenrijs · Betonvloer of cementdekvloer aanbrengen</span>
           <small>27 mei 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -2007,6 +2150,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Ozzie schoot ons op het laatste moment nog te hulp met een paar andere klussen, allemaal prima uitgevoerd en erg betrouwbaar!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Klant uit Gorinchem</b><span>Kleine klus</span>
           <small>25 feb 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -2015,6 +2159,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Prima vakman</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Cynthia</b><span>Berkel en Rodenrijs · Vloer isolatie</span>
           <small>10 feb 2020 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -2023,6 +2168,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Top!! Ik kan hem aanraden!!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Susana</b><span>Den Bosch · Vlonder plaatsen</span>
           <small>15 dec 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -2031,6 +2177,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">We zijn heel tevreden met het resultaat! Communicatie en uitvoering van de werkzaamheden verliep uitstekend. Ozzie is betrouwbaar, hij komt zijn afspraken na. Ook tevreden met de prijs. Ik kan deze bedrijf zeker aanraden!</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        <a class="rv-fotos" href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-camera"/></svg>3 foto's bekijken op Werkspot</a>
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Susana</b>
           <small>1 dec 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -2039,6 +2186,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <span class="rv-quote" aria-hidden="true">“</span>
         <p class="rv-tekst">Uitstekend gozer. Doet zijn werk perfect. Alles na behoren uitgevoerd.</p>
         <button type="button" class="rv-meer" hidden>Lees volledig</button>
+        
         <i class="sterscore" style="--pct:100%" role="img" aria-label="5 van 5 sterren"></i>
         <div class="rv-wie"><b>Kemal Velioglu</b>
           <small>3 sep 2019 <img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot"></small></div>
@@ -2187,6 +2335,25 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });
 
   // [[gedeeld — wordt door tools/genereer-paginas.js overgenomen
+  // Cijfers tellen op zodra ze in beeld komen. In de HTML staat het echte getal (voor zoekmachines en zonder JS);
+  // data-sinds="2011" rekent het aantal jaren live uit, data-na="+" komt achter het getal, data-dec = decimalen.
+  (function(){
+    var tellers=[].slice.call(document.querySelectorAll('[data-tel]')); if(!tellers.length) return;
+    tellers.forEach(function(el){ var s=el.getAttribute('data-sinds'); if(s) el.setAttribute('data-naar', new Date().getFullYear()-parseInt(s,10)); });
+    function fmt(el,v){ return v.toFixed(parseInt(el.getAttribute('data-dec')||'0',10)).replace('.',',')+(el.getAttribute('data-na')||''); }
+    function eind(el){ el.textContent=fmt(el,parseFloat(el.getAttribute('data-naar'))); }
+    if(rm || !('IntersectionObserver' in window)){ tellers.forEach(eind); return; }
+    function telOp(el){
+      var naar=parseFloat(el.getAttribute('data-naar')), duur=1300, start=null;
+      function stap(t){ if(start===null) start=t; var p=Math.min(1,(t-start)/duur);
+        if(p<1){ el.textContent=fmt(el,naar*(1-Math.pow(1-p,3))); requestAnimationFrame(stap); } else eind(el); }   // ease-out
+      requestAnimationFrame(stap);
+    }
+    tellers.forEach(function(el){ el.textContent=fmt(el,0); });
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ telOp(e.target); io.unobserve(e.target); } }); },{threshold:.6});
+    tellers.forEach(function(t){ io.observe(t); });
+  })();
+
   // CTA-krullen: tekenen zich mee met het scrollen (en weer terug bij omhoog scrollen).
   (function(){
     var paden=[].slice.call(document.querySelectorAll('.cta-krul path'));
