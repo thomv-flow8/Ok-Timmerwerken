@@ -145,7 +145,14 @@ const extraStijl = `<style>
 
 /* alle werkzaamheden: inhoudsopgave links (blijft staan), teksten rechts */
 .onderdelen{display:grid;grid-template-columns:260px 1fr;gap:clamp(30px,6vw,90px);margin-top:46px;align-items:start}
-.ond-nav{position:sticky;top:100px;display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-zij{position:sticky;top:100px}   /* menu + (bij dakramen) VELUX-keurmerken schuiven samen mee */
+.ond-nav{display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-download{grid-column:2}
+.velux-zij{margin-top:34px;padding:18px;background:#fff;border:1px solid var(--rand);border-radius:14px;box-shadow:0 24px 50px -36px rgba(20,19,15,.35)}
+.vz-logos{display:flex;gap:10px;align-items:center}
+.vz-logos img{height:76px;width:auto;border-radius:6px}
+.velux-zij .woordmerk{display:block;height:30px;width:auto;margin-top:14px;border-radius:4px}
+.velux-zij p{margin-top:10px;font-size:13.5px;font-weight:600;color:var(--inkt)}
 .ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
   transition:color .2s,border-color .2s}
 .ond-nav a:hover{color:var(--inkt);border-left-color:var(--brons)}
@@ -160,12 +167,11 @@ const extraStijl = `<style>
 .download::before{content:'↓';color:var(--brons);font-size:16px}
 .p-hero .erkend{display:flex;color:var(--inkt);align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
 .p-hero .erkend img{width:64px;height:64px;border-radius:6px}
-.velux-rij{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:30px;font-size:14px;font-weight:600;color:var(--inkt)}
-.velux-rij img{height:64px;width:auto;border-radius:6px}
-.velux-rij img.woordmerk{height:40px;border-radius:4px}
+
 .krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
 @media(max-width:900px){.krul-over{display:none}}
 @media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
+  .ond-zij{display:contents}.ond-lijst{order:1}.velux-zij{order:2;margin-top:6px;max-width:340px}.ond-download{order:3;grid-column:auto}
   .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
 
 /* diensten-overzicht */
@@ -588,6 +594,13 @@ ${kaarten}
         <svg class="krul-mini" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
         <b>Alle diensten</b><small>Alle werkzaamheden op een rij →</small>
       </a>`;
+  // dakramen: de VELUX-keurmerken staan in de zijkolom van "Alle werkzaamheden", naast de uitleg (op mobiel onder de lijst)
+  const veluxZij = d.slug === 'dakramen' ? `
+        <div class="velux-zij">
+          <div class="vz-logos"><img src="../assets/velux/velux-montagepartner.jpg" alt="VELUX Montagepartner"><img src="../assets/velux/velux-getraind-2025.jpg" alt="VELUX getraind 2025"></div>
+          <img class="woordmerk" src="../assets/velux/velux-logo.jpg" alt="VELUX">
+          <p>Erkend en getraind door VELUX</p>
+        </div>` : '';
   const onderdelen = d.onderdelen ? `
 <!-- ALLE WERKZAAMHEDEN -->
 <section class="creme" id="werkzaamheden">
@@ -598,18 +611,18 @@ ${kaarten}
       <h2>Wat we doen binnen <em class="serif">${esc(d.naam.charAt(0).toLowerCase() + d.naam.slice(1))}</em>.</h2>
     </div>
     <div class="onderdelen op">
-      <nav class="ond-nav" aria-label="Werkzaamheden">
-${d.onderdelen.map((o) => `        <a href="#${o.id}">${esc(o.titel)}</a>`).join('\n')}
-      </nav>
+      <div class="ond-zij">
+        <nav class="ond-nav" aria-label="Werkzaamheden">
+${d.onderdelen.map((o) => `          <a href="#${o.id}">${esc(o.titel)}</a>`).join('\n')}
+        </nav>${veluxZij}
+      </div>
       <div class="ond-lijst">
 ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${String(i + 1).padStart(2, '0')}</span><h3>${esc(o.titel)}</h3><p>${esc(o.tekst)}</p></article>`).join('\n')}
-${d.download ? `        <a class="download" href="${d.download[1]}" target="_blank" rel="noopener">${esc(d.download[0])}</a>` : ''}
-      </div>
+      </div>${d.download ? `
+      <div class="ond-download"><a class="download" href="${d.download[1]}" target="_blank" rel="noopener">${esc(d.download[0])}</a></div>` : ''}
     </div>
   </div>
 </section>` : '';
-  const erkend = d.slug === 'dakramen' ? `
-      <div class="velux-rij"><img src="../assets/velux/velux-montagepartner.jpg" alt="VELUX Montagepartner"><img src="../assets/velux/velux-getraind-2025.jpg" alt="VELUX getraind 2025"><img class="woordmerk" src="../assets/velux/velux-logo.jpg" alt="VELUX"><span>Erkend en getraind door VELUX</span></div>` : '';
   const review = d.review ? `
 <section>
   <div class="kolommen"></div>
@@ -634,7 +647,7 @@ ${d.download ? `        <a class="download" href="${d.download[1]}" target="_bla
       <div class="acties">
         <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
-      </div>${erkend}
+      </div>
     </div>
     <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
       <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">

@@ -700,7 +700,14 @@ footer.groot{padding:72px 0 46px}
 
 /* alle werkzaamheden: inhoudsopgave links (blijft staan), teksten rechts */
 .onderdelen{display:grid;grid-template-columns:260px 1fr;gap:clamp(30px,6vw,90px);margin-top:46px;align-items:start}
-.ond-nav{position:sticky;top:100px;display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-zij{position:sticky;top:100px}   /* menu + (bij dakramen) VELUX-keurmerken schuiven samen mee */
+.ond-nav{display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-download{grid-column:2}
+.velux-zij{margin-top:34px;padding:18px;background:#fff;border:1px solid var(--rand);border-radius:14px;box-shadow:0 24px 50px -36px rgba(20,19,15,.35)}
+.vz-logos{display:flex;gap:10px;align-items:center}
+.vz-logos img{height:76px;width:auto;border-radius:6px}
+.velux-zij .woordmerk{display:block;height:30px;width:auto;margin-top:14px;border-radius:4px}
+.velux-zij p{margin-top:10px;font-size:13.5px;font-weight:600;color:var(--inkt)}
 .ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
   transition:color .2s,border-color .2s}
 .ond-nav a:hover{color:var(--inkt);border-left-color:var(--brons)}
@@ -715,12 +722,11 @@ footer.groot{padding:72px 0 46px}
 .download::before{content:'↓';color:var(--brons);font-size:16px}
 .p-hero .erkend{display:flex;color:var(--inkt);align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
 .p-hero .erkend img{width:64px;height:64px;border-radius:6px}
-.velux-rij{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:30px;font-size:14px;font-weight:600;color:var(--inkt)}
-.velux-rij img{height:64px;width:auto;border-radius:6px}
-.velux-rij img.woordmerk{height:40px;border-radius:4px}
+
 .krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
 @media(max-width:900px){.krul-over{display:none}}
 @media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
+  .ond-zij{display:contents}.ond-lijst{order:1}.velux-zij{order:2;margin-top:6px;max-width:340px}.ond-download{order:3;grid-column:auto}
   .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
 
 /* diensten-overzicht */
@@ -996,15 +1002,17 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <h2>Wat we doen binnen <em class="serif">funderingen</em>.</h2>
     </div>
     <div class="onderdelen op">
-      <nav class="ond-nav" aria-label="Werkzaamheden">
-        <a href="#strokenfundering">Strokenfundering</a>
-        <a href="#traditionele-fundering">Traditionele fundering</a>
-        <a href="#tempex-fundering">Tempex-fundering</a>
-        <a href="#betonpoeren">Betonpoeren</a>
-        <a href="#vorstrand">Vorstrand</a>
-        <a href="#zwembad-fundering">Zwembadfundering</a>
-        <a href="#constructies-vloer">Vloerconstructies</a>
-      </nav>
+      <div class="ond-zij">
+        <nav class="ond-nav" aria-label="Werkzaamheden">
+          <a href="#strokenfundering">Strokenfundering</a>
+          <a href="#traditionele-fundering">Traditionele fundering</a>
+          <a href="#tempex-fundering">Tempex-fundering</a>
+          <a href="#betonpoeren">Betonpoeren</a>
+          <a href="#vorstrand">Vorstrand</a>
+          <a href="#zwembad-fundering">Zwembadfundering</a>
+          <a href="#constructies-vloer">Vloerconstructies</a>
+        </nav>
+      </div>
       <div class="ond-lijst">
         <article id="strokenfundering"><span class="onr">01</span><h3>Strokenfundering</h3><p>Bij een strokenfundering rusten de muren op stroken of platen van gewapend beton, op een draagkrachtige ondergrond (fundering op staal). Er is minder beton nodig dan voor een volledige vloer, en de methode laat zich goed combineren met een borstwering.</p></article>
         <article id="traditionele-fundering"><span class="onr">02</span><h3>Traditionele fundering</h3><p>Een traditionele fundering op staal — een betonnen of gemetselde fundering direct op een stevige, draagkrachtige grondlaag — is een beproefde oplossing voor aanbouwen, schuren en bijgebouwen. We bepalen samen met u (en waar nodig de constructeur) wat uw project nodig heeft.</p></article>
@@ -1013,7 +1021,6 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <article id="vorstrand"><span class="onr">05</span><h3>Vorstrand</h3><p>Een vorstrand is een funderingsrib die in één keer met de vloer wordt meegestort, zonder heipalen. Hij voorkomt dat de grond onder het bouwwerk opvriest en verschuift — ideaal voor kleinere bouwwerken zoals een schuur, samen met een funderingsplaat.</p></article>
         <article id="zwembad-fundering"><span class="onr">06</span><h3>Zwembadfundering</h3><p>Water is zwaar: een zwembad vraagt om een stevige ondergrond en een robuuste fundering. We controleren vooraf de draagkracht en de grondwaterstand, en storten daarna de fundering op maat.</p></article>
         <article id="constructies-vloer"><span class="onr">07</span><h3>Vloerconstructies</h3><p>Nieuwe vloeren bij verbouwingen — ook met stalen balken en een geïsoleerde systeemvloer.</p></article>
-
       </div>
     </div>
   </div>

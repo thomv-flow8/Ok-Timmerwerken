@@ -700,7 +700,14 @@ footer.groot{padding:72px 0 46px}
 
 /* alle werkzaamheden: inhoudsopgave links (blijft staan), teksten rechts */
 .onderdelen{display:grid;grid-template-columns:260px 1fr;gap:clamp(30px,6vw,90px);margin-top:46px;align-items:start}
-.ond-nav{position:sticky;top:100px;display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-zij{position:sticky;top:100px}   /* menu + (bij dakramen) VELUX-keurmerken schuiven samen mee */
+.ond-nav{display:flex;flex-direction:column;border-left:1px solid var(--rand)}
+.ond-download{grid-column:2}
+.velux-zij{margin-top:34px;padding:18px;background:#fff;border:1px solid var(--rand);border-radius:14px;box-shadow:0 24px 50px -36px rgba(20,19,15,.35)}
+.vz-logos{display:flex;gap:10px;align-items:center}
+.vz-logos img{height:76px;width:auto;border-radius:6px}
+.velux-zij .woordmerk{display:block;height:30px;width:auto;margin-top:14px;border-radius:4px}
+.velux-zij p{margin-top:10px;font-size:13.5px;font-weight:600;color:var(--inkt)}
 .ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
   transition:color .2s,border-color .2s}
 .ond-nav a:hover{color:var(--inkt);border-left-color:var(--brons)}
@@ -715,12 +722,11 @@ footer.groot{padding:72px 0 46px}
 .download::before{content:'↓';color:var(--brons);font-size:16px}
 .p-hero .erkend{display:flex;color:var(--inkt);align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
 .p-hero .erkend img{width:64px;height:64px;border-radius:6px}
-.velux-rij{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:30px;font-size:14px;font-weight:600;color:var(--inkt)}
-.velux-rij img{height:64px;width:auto;border-radius:6px}
-.velux-rij img.woordmerk{height:40px;border-radius:4px}
+
 .krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
 @media(max-width:900px){.krul-over{display:none}}
 @media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
+  .ond-zij{display:contents}.ond-lijst{order:1}.velux-zij{order:2;margin-top:6px;max-width:340px}.ond-download{order:3;grid-column:auto}
   .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
 
 /* diensten-overzicht */
