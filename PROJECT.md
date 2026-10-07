@@ -484,3 +484,4 @@ nagaan of 'm opvragen bij Ozcan.
 8. Statistieken: **gekozen: GA4 met cookiebanner** (GA laadt pas na toestemming, Consent Mode; "Weigeren" even duidelijk als "Accepteren"); privacyverklaring aanvullen met cookie-overzicht.
 
 Openstaande vragen en aan te leveren zaken voor Ozcan: `docs/checklist-ozcan.md`.
+Onze eigen takenlijst (voorbereiding, livegang, Google, nazorg): `docs/todo-lancering.md`.

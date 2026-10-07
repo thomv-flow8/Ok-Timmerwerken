@@ -1,6 +1,6 @@
 # Checklist nieuwe website OK Timmerwerken — nog navragen en aanleveren
 
-Stand: 7 oktober 2026. Testadres: https://thomv-flow8.github.io/Ok-Timmerwerken/ (niet vindbaar in Google).
+Stand: 7 oktober 2026. Onze eigen takenlijst: `docs/todo-lancering.md`. Testadres: https://thomv-flow8.github.io/Ok-Timmerwerken/ (niet vindbaar in Google).
 
 De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een antwoord of een bestand van Ozcan.
 **Vet** = nodig vóór de livegang; de rest mag later.
@@ -46,10 +46,10 @@ De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een antwoord
 ## 2. Aanleveren
 
 ### Nodig voor de livegang
-- [ ] **Hosting** — naam van de partij en toegang voor Thomas om de site te plaatsen (beheerpaneel of FTP/SFTP).
+- [ ] **Hosting** — naam van de partij (het domein staat bij **GoDaddy**; is de hosting daar ook?) en toegang voor Thomas om de site te plaatsen (beheerpaneel of FTP/SFTP).
       Wachtwoorden niet via WhatsApp of mail; samen inloggen of via de "gebruiker toevoegen"-functie van de hosting.
-- [ ] **Domeinbeheer** — staat ok-timmerwerken.nl bij dezelfde partij? Zo niet: waar, en toegang daartoe (voor DNS en https-certificaat).
-- [ ] **E-mail** — op welk adres moeten aanvragen via het formulier binnenkomen (info@ok-timmerwerken.nl?) en bij welke dienst draait die mailbox.
+- [ ] **Domeinbeheer** — ok-timmerwerken.nl staat bij GoDaddy; toegang voor Thomas tot de DNS-instellingen (voor de overstap en het https-certificaat).
+- [ ] **E-mail** — de mailbox lijkt te draaien bij **Microsoft 365 via GoDaddy**: klopt dat? En moeten aanvragen via het formulier op info@ok-timmerwerken.nl binnenkomen?
 - [ ] **Formulier (Web3Forms, gratis)** — er wordt een sleutel aangemaakt op dat e-mailadres; Ozcan krijgt één bevestigingsmail en moet daarop klikken.
 - [ ] **Google Analytics 4** — met Ozcans Google-account een GA4-property aanmaken (of Thomas als beheerder toevoegen) en de
       meet-ID doorgeven (begint met `G-`). In de instellingen: gegevensdeling met Google uit, de verwerkersvoorwaarden van Google accepteren.
