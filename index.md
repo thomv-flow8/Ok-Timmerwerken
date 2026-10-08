@@ -249,7 +249,7 @@ Vliering & zolder
 
 Betonvloeren
 
-Dakramen (Velux)
+Nieuwbouw
 
 Betonvloeren
 
@@ -305,7 +305,7 @@ Vliering & zolder
 
 Betonvloeren
 
-Dakramen (Velux)
+Nieuwbouw
 
 Timmerwerk & afbouw
 
@@ -337,7 +337,7 @@ Vliering & zolder
 
 Onderhoud & renovatie
 
-Dakramen (Velux)
+Funderingen
 
 Carport & overkapping
 
@@ -361,7 +361,7 @@ Timmerwerk & afbouw
 
 Dakramen (Velux)
 
-Dakramen (Velux)
+Funderingen
 
 Timmerwerk & afbouw
 

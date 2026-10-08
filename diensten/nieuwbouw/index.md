@@ -111,39 +111,45 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 04
 
-### Betonwand in aanbouw
+### Bekisting en steiger voor de betonwanden
 
 -
 
 05
 
-### Betonpomp op de bouwplaats van een nieuwbouwproject
+### Betonwand in aanbouw
 
 -
 
 06
 
-### HSB-wand met isolatie
+### Betonpomp op de bouwplaats van een nieuwbouwproject
 
 -
 
 07
 
-### Balklaag en plafond in een nieuwe woning
+### Vloer met trapgat in de ruwbouw
 
 -
 
 08
 
-### Houtconstructie met trap naar boven
+### Balklaag en plafond in een nieuwe woning
 
 -
 
 09
 
-### Ruwe vloer, klaar voor de afwerking
+### Houten frame voor de binnenwanden
 
-01 / 09
+-
+
+10
+
+### Houtconstructie met trap naar boven
+
+01 / 10
 
 Zo pakken we het aan
 
