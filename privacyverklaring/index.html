@@ -1019,7 +1019,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     </div>
     <div class="foot-onder">
       <span>Suzanna van Oostdijkstraat 4, 4206 XW Gorinchem · KvK 51855232</span>
-      <span><a href="../algemene-voorwaarden/">Algemene voorwaarden</a> · <a href="../disclaimer/">Disclaimer</a> · <a href="../privacyverklaring/">Privacyverklaring</a> · © 2026 OK Timmerwerken</span>
+      <span><a href="../algemene-voorwaarden/">Algemene voorwaarden</a> · <a href="../disclaimer/">Disclaimer</a> · <a href="../privacyverklaring/">Privacyverklaring</a> · © <span data-jaar>2026</span> OK Timmerwerken · Website door <a href="https://vivoproducts.nl/" target="_blank" rel="noopener">ViVo</a></span>
     </div>
   </div>
 </footer>
@@ -1105,6 +1105,8 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });
 
   // [[gedeeld — wordt door tools/genereer-paginas.js overgenomen
+  // jaartal in de footer loopt vanzelf mee
+  [].forEach.call(document.querySelectorAll('[data-jaar]'),function(e){ e.textContent=new Date().getFullYear(); });
   // Cijfers tellen op zodra ze in beeld komen. In de HTML staat het echte getal (voor zoekmachines en zonder JS);
   // data-sinds="2011" rekent het aantal jaren live uit, data-na="+" komt achter het getal, data-dec = decimalen.
   (function(){
