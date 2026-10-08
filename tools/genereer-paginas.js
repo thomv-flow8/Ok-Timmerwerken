@@ -317,7 +317,7 @@ ${dock}
 
 <div class="lichtbak" id="lichtbak" role="dialog" aria-modal="true" aria-label="Foto vergroot">
   <button type="button"><span aria-hidden="true">×</span><span class="vh">Sluiten</span></button>
-  <div><img alt=""><video controls playsinline muted loop hidden></video><p></p></div>
+  <div><img alt=""><p></p></div>
 </div>
 
 <script>
@@ -346,8 +346,10 @@ ${dock}
   if(!rm && krullen.length){ addEventListener('scroll',krulScroll,{passive:true}); krulScroll(); }
 
   // Lichtbak voor de galerij
-  var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbVid=lb.querySelector('video'), lbTxt=lb.querySelector('p');
-  function dicht(){ lb.classList.remove('open'); lbVid.pause(); }
+  var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbVid=null, lbTxt=lb.querySelector('p');
+  // videospeler pas aanmaken als iemand een video groot bekijkt (pagina's zonder video's hebben er dan geen)
+  function speler(){ if(!lbVid){ lbVid=document.createElement('video'); lbVid.controls=true; lbVid.muted=true; lbVid.loop=true; lbVid.setAttribute('playsinline',''); lbImg.after(lbVid); } return lbVid; }
+  function dicht(){ lb.classList.remove('open'); if(lbVid) lbVid.pause(); }
 
   // 3D-kaarten: klik op een zijkaart schuift ernaartoe; de actieve kaart volgt licht de muis; "Bekijk groot" opent de lichtbak
   var kc=document.querySelector('.kc');
@@ -371,8 +373,8 @@ ${dock}
     rail.addEventListener('click',function(e){
       var g=e.target.closest('.kc-groot');
       if(g){ var k=kaarten[+g.dataset.groot], im=k.querySelector('img'), vd=k.querySelector('video');
-        if(vd){ vd.pause(); lbImg.hidden=true; lbVid.hidden=false; lbVid.poster=vd.poster; lbVid.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); lbVid.play().catch(function(){}); }
-        else { lbVid.hidden=true; lbVid.pause(); lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
+        if(vd){ vd.pause(); var sp=speler(); lbImg.hidden=true; sp.hidden=false; sp.poster=vd.poster; sp.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); sp.play().catch(function(){}); }
+        else { if(lbVid){ lbVid.hidden=true; lbVid.pause(); } lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
         lb.classList.add('open'); return; }
       var k2=e.target.closest('.kc-kaart'); if(k2 && +k2.dataset.i!==nu) toon(+k2.dataset.i); });
     if(!rm) kaarten.forEach(function(k){ var x=0,y=0,raf=0;
@@ -661,7 +663,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
     </div>
     ${d.slug === 'dakramen' ? `<div class="p-rechts">
 ${pBeeld}
-      <div class="p-keurmerk"><img src="../assets/velux/velux-logo.jpg" alt="VELUX"><img src="../assets/velux/velux-getraind-2025.jpg" alt="VELUX getraind 2025"><span>Getraind en gecertificeerd<br>door VELUX</span></div>
+      <div class="p-keurmerk"><img src="../assets/velux/velux-logo.jpg" alt=""><img src="../assets/velux/velux-getraind-2025.jpg" alt=""><span>Getraind en gecertificeerd<br>door VELUX</span></div>
     </div>` : pBeeld}
   </div>
 </section>
@@ -1179,6 +1181,26 @@ const bedrijf = {
   }),
   sameAs: ['https://www.instagram.com/oktimmerwerken', reviewData.bronnen.werkspot.url.replace(/\/reviews$/, ''), reviewData.bronnen.google.url],
 };
+// lengte van een mp4 uit de 'mvhd'-box (tijdschaal en duur), als ISO 8601 (PT20S)
+function videoDuur(bestand) {
+  const b = fs.readFileSync(bestand), i = b.indexOf('mvhd');
+  if (i < 0) return undefined;
+  const v = b[i + 4], ts = v ? b.readUInt32BE(i + 24) : b.readUInt32BE(i + 16), du = v ? Number(b.readBigUInt64BE(i + 28)) : b.readUInt32BE(i + 20);
+  return `PT${Math.round(du / ts)}S`;
+}
+function videoGegevens(rel) {
+  const m = rel.match(/^diensten\/([a-z]+)\/$/); if (!m) return '';
+  const dienst = inhoud.diensten.find((x) => x.slug === m[1]); if (!dienst) return '';
+  const vids = dienst.galerij.filter((g) => /\.mp4$/.test(g[0]));
+  if (!vids.length) return '';
+  const lijst = vids.map(([src, naam, poster]) => {
+    const pad = src.replace('../', ''), stat = fs.statSync(path.join(root, pad));
+    return { '@type': 'VideoObject', name: naam, description: `${naam} — ${dienst.naam} door OK Timmerwerken in Gorinchem.`,
+      thumbnailUrl: SITE + poster.replace('../', ''), contentUrl: SITE + pad, uploadDate: stat.mtime.toISOString().slice(0, 10),
+      duration: videoDuur(path.join(root, pad)), inLanguage: 'nl' };
+  });
+  return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': lijst })}</script>\n`;
+}
 function vindbaar(rel) {
   const doel = path.join(root, rel === '' ? 'index.html' : rel + 'index.html');
   let html = fs.readFileSync(doel, 'utf8');
@@ -1197,7 +1219,7 @@ function vindbaar(rel) {
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OK Timmerwerken — timmer- en betonwerk in Gorinchem">
 <meta name="twitter:card" content="summary_large_image">
-${rel === '' ? `<script type="application/ld+json">${JSON.stringify(bedrijf)}</script>\n` : ''}`;
+${rel === '' ? `<script type="application/ld+json">${JSON.stringify(bedrijf)}</script>\n` : ''}${videoGegevens(rel)}`;
   html = html.replace(/(<meta name="description" content="[^"]*">\n)/, `$1${kop}`);
   fs.writeFileSync(doel, html);
 }

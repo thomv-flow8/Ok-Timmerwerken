@@ -18,6 +18,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OK Timmerwerken — timmer- en betonwerk in Gorinchem">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"VideoObject","name":"Betonvloer vlinderen onder de overkapping","description":"Betonvloer vlinderen onder de overkapping — Betonvloeren door OK Timmerwerken in Gorinchem.","thumbnailUrl":"https://thomv-flow8.github.io/Ok-Timmerwerken/assets/video/beton-vlinderen.jpg","contentUrl":"https://thomv-flow8.github.io/Ok-Timmerwerken/assets/video/beton-vlinderen.mp4","uploadDate":"2026-10-08","duration":"PT20S","inLanguage":"nl"},{"@type":"VideoObject","name":"Ondergrond voorbereid voor een nieuwe betonvloer","description":"Ondergrond voorbereid voor een nieuwe betonvloer — Betonvloeren door OK Timmerwerken in Gorinchem.","thumbnailUrl":"https://thomv-flow8.github.io/Ok-Timmerwerken/assets/video/beton-ondergrond.jpg","contentUrl":"https://thomv-flow8.github.io/Ok-Timmerwerken/assets/video/beton-ondergrond.mp4","uploadDate":"2026-10-08","duration":"PT20S","inLanguage":"nl"}]}</script>
 <link rel="icon" href="../../assets/icon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/icon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/icon/apple-touch-icon.png">
@@ -1086,8 +1087,8 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
             <div class="kc-tekst"><span class="kc-nr">11</span><h3>Gevlinderde vloer onder een overkapping</h3><button type="button" class="kc-groot" data-groot="10">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="11">
-            <div class="kc-vlak"><img src="../../assets/web/beton-wa175.jpg" alt="Betonplaat in de bekisting, net gestort" loading="lazy" width="1024" height="768"></div>
-            <div class="kc-tekst"><span class="kc-nr">12</span><h3>Betonplaat in de bekisting, net gestort</h3><button type="button" class="kc-groot" data-groot="11">Bekijk groot</button></div>
+            <div class="kc-vlak"><img src="../../assets/web/beton-vloerverwarming-wapening.jpg" alt="Vloerverwarming op het wapeningsnet, klaar om te storten" loading="lazy" width="665" height="1182"></div>
+            <div class="kc-tekst"><span class="kc-nr">12</span><h3>Vloerverwarming op het wapeningsnet, klaar om te storten</h3><button type="button" class="kc-groot" data-groot="11">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="12">
             <div class="kc-vlak"><img src="../../assets/web/beton-wa283.jpg" alt="Spiegelgladde betonplaat, net gestort" loading="lazy" width="1400" height="1050"></div>
@@ -1292,7 +1293,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 
 <div class="lichtbak" id="lichtbak" role="dialog" aria-modal="true" aria-label="Foto vergroot">
   <button type="button"><span aria-hidden="true">×</span><span class="vh">Sluiten</span></button>
-  <div><img alt=""><video controls playsinline muted loop hidden></video><p></p></div>
+  <div><img alt=""><p></p></div>
 </div>
 
 <script>
@@ -1321,8 +1322,10 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   if(!rm && krullen.length){ addEventListener('scroll',krulScroll,{passive:true}); krulScroll(); }
 
   // Lichtbak voor de galerij
-  var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbVid=lb.querySelector('video'), lbTxt=lb.querySelector('p');
-  function dicht(){ lb.classList.remove('open'); lbVid.pause(); }
+  var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbVid=null, lbTxt=lb.querySelector('p');
+  // videospeler pas aanmaken als iemand een video groot bekijkt (pagina's zonder video's hebben er dan geen)
+  function speler(){ if(!lbVid){ lbVid=document.createElement('video'); lbVid.controls=true; lbVid.muted=true; lbVid.loop=true; lbVid.setAttribute('playsinline',''); lbImg.after(lbVid); } return lbVid; }
+  function dicht(){ lb.classList.remove('open'); if(lbVid) lbVid.pause(); }
 
   // 3D-kaarten: klik op een zijkaart schuift ernaartoe; de actieve kaart volgt licht de muis; "Bekijk groot" opent de lichtbak
   var kc=document.querySelector('.kc');
@@ -1346,8 +1349,8 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     rail.addEventListener('click',function(e){
       var g=e.target.closest('.kc-groot');
       if(g){ var k=kaarten[+g.dataset.groot], im=k.querySelector('img'), vd=k.querySelector('video');
-        if(vd){ vd.pause(); lbImg.hidden=true; lbVid.hidden=false; lbVid.poster=vd.poster; lbVid.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); lbVid.play().catch(function(){}); }
-        else { lbVid.hidden=true; lbVid.pause(); lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
+        if(vd){ vd.pause(); var sp=speler(); lbImg.hidden=true; sp.hidden=false; sp.poster=vd.poster; sp.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); sp.play().catch(function(){}); }
+        else { if(lbVid){ lbVid.hidden=true; lbVid.pause(); } lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
         lb.classList.add('open'); return; }
       var k2=e.target.closest('.kc-kaart'); if(k2 && +k2.dataset.i!==nu) toon(+k2.dataset.i); });
     if(!rm) kaarten.forEach(function(k){ var x=0,y=0,raf=0;
