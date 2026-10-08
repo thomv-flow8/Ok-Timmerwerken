@@ -187,8 +187,8 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .hero-in{position:relative;z-index:2;color:var(--inkt);width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
 .hero .badge{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.1em;
   text-transform:uppercase;background:rgba(20,19,15,.05);border:1px solid var(--rand);
-  border-radius:9999px;padding:9px 18px 9px 10px;margin-bottom:22px;color:var(--zacht);display:inline-flex;align-items:center;gap:12px}
-.hero .badge img{width:42px;height:42px;border-radius:6px;margin:-4px 0}   /* officieel VELUX Montagepartner-logo, goed herkenbaar */
+  border-radius:9999px;padding:8px 18px 8px 8px;margin-bottom:22px;color:var(--zacht);display:inline-flex;align-items:center;gap:12px}
+.hero .badge img{width:auto;height:26px;border-radius:4px;margin:0}   /* rood VELUX-woordmerk: krachtig en direct herkenbaar */
 .hero h1{font-size:clamp(40px,7vw,84px);font-weight:700;letter-spacing:-.035em;line-height:1.0}
 .hero p{margin-top:20px;max-width:44ch;font-weight:300;color:var(--zacht);font-size:clamp(15px,1.6vw,18px)}
 .hero-acties{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
@@ -205,6 +205,10 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .feiten b{font-size:clamp(34px,3.6vw,46px);font-weight:700;letter-spacing:-.035em;line-height:1;color:var(--inkt);font-variant-numeric:tabular-nums;min-width:2ch}
 .feiten b[data-na]{min-width:3.7ch}
 .feiten span{font-size:12.5px;line-height:1.35;color:var(--zacht)}
+/* home-hero: VELUX Montagepartner + Getraind 2025 als derde punt naast de kerncijfers */
+.hero-in .feiten{gap:16px 26px}
+.feiten .f-logos{gap:8px}
+.feiten .f-logos img{height:48px;width:auto;border-radius:6px;box-shadow:0 8px 18px -10px rgba(20,19,15,.4)}
 @media(prefers-reduced-motion:reduce){.hero-kader img{animation:none}
   .hero-in .badge,.hero-in h1,.hero-in p,.hero-in .hero-acties,.hero-in .feiten{animation:none;opacity:1;transform:none}}
 
@@ -726,7 +730,7 @@ footer.groot{padding:72px 0 46px}
   <div class="hero-kader">
     <div class="hero-beeld"><img src="assets/render/hero-wolken.jpg" fetchpriority="high" alt="Modern huis met gevlinderde betonvloer, dakraam, carport en timmerwerk, met wolken erboven" width="2560" height="1434"><video muted playsinline preload="none" poster="assets/render/hero-wolken.jpg" aria-hidden="true" data-src="assets/render/hero-wolken.mp4"></video></div>
     <div class="hero-in">
-      <span class="badge"><img src="assets/velux/velux-montagepartner.jpg" alt="" width="300" height="300">Erkend VELUX Montagepartner</span>
+      <span class="badge"><img src="assets/velux/velux-logo.jpg" alt="VELUX" width="480" height="160">Erkend montagepartner</span>
       <h1>Vakwerk waar u<br>op kunt <em class="serif">bouwen</em>.</h1>
       <p>Gevlinderde betonvloeren, vlieringen, carports en Velux-dakramen. Ozcan en zijn ploeg
       komen op de afgesproken dag, maken het af zoals besproken en laten de boel netjes achter.</p>
@@ -737,6 +741,7 @@ footer.groot{padding:72px 0 46px}
       <div class="feiten">
         <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
         <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
+        <div class="f-logos"><img src="assets/velux/velux-montagepartner.jpg" alt="VELUX Montagepartner" width="300" height="300"><img src="assets/velux/velux-getraind-2025.jpg" alt="VELUX getraind 2025" width="208" height="300"></div>
       </div>
     </div>
   </div>
