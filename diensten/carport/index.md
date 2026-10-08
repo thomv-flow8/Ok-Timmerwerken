@@ -93,7 +93,7 @@ Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto a
 
 01
 
-### Tuinhuis in Douglas met deur en raam
+### Carport in douglashout tegen de woning
 
 -
 
@@ -111,25 +111,25 @@ Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto a
 
 04
 
-### Carport tegen de woning
+### Lange carport langs de gevel, in douglashout
 
 -
 
 05
 
-### Overkapping met vlonder tegen de woning
+### Carport tegen de woning
 
 -
 
 06
 
-### Overkapping met glazen schuifwanden
+### Overkapping met berging en lichtkoepel
 
 -
 
 07
 
-### Overkapping met vlonder in aanbouw
+### Overkapping met glazen schuifwanden
 
 -
 
@@ -141,27 +141,21 @@ Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto a
 
 09
 
-### Overkapping in douglashout met glazen schuifwanden
+### Vrijstaande carport in douglashout met schoren
 
 -
 
 10
 
-### Overkapping met berging in Douglas
+### Overkapping in douglashout met glazen schuifwanden
 
 -
 
 11
 
-### Overkapping met vlonder en deur
-
--
-
-12
-
 ### Overkapping achter in de tuin
 
-01 / 12
+01 / 11
 
 Zo pakken we het aan
 

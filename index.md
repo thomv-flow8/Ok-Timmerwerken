@@ -8,8 +8,8 @@ Erkend montagepartner
 
 # Vakwerk waar u op kunt bouwen.
 
-Gevlinderde betonvloeren, vlieringen, carports en Velux-dakramen. Ozcan en zijn ploeg
-komen op de afgesproken dag, maken het af zoals besproken en laten de boel netjes achter.
+Gevlinderde betonvloeren, vlieringen, carports en Velux-dakramen. OK Timmerwerken
+komt op de afgesproken dag, maakt het af zoals besproken en laat de boel netjes achter.
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 Bekijk het werk
