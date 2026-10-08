@@ -687,7 +687,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
     </div>
     ${d.slug === 'dakramen' ? `<div class="p-rechts">
 ${pBeeld}
-      <div class="p-keurmerk"><img src="../assets/velux/velux-logo.jpg" alt=""><img src="../assets/velux/velux-getraind-2025.jpg" alt=""><span>Getraind en gecertificeerd<br>door VELUX</span></div>
+      <div class="p-keurmerk"><img src="../assets/velux/velux-logo.jpg" alt="" loading="lazy"><img src="../assets/velux/velux-getraind-2025.jpg" alt="" loading="lazy"><span>Getraind en gecertificeerd<br>door VELUX</span></div>
     </div>` : pBeeld}
   </div>
 </section>
@@ -833,7 +833,7 @@ function overPagina(o, proef = false) {
         <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
         <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
       </div>
-      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
+      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="" loading="lazy">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
       <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1600" height="1550" fetchpriority="high">
@@ -1197,7 +1197,7 @@ const SITE = 'https://thomv-flow8.github.io/Ok-Timmerwerken/';
 const sitePaginas = ['', 'over-ons/', 'diensten/', ...slugs.map((s) => `diensten/${s}/`), 'contact/', 'reviews/', 'algemene-voorwaarden/', 'disclaimer/', 'privacyverklaring/'];
 const dagen = { 'Maandag – vrijdag': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 'Zaterdag': ['Saturday'], 'Zondag': ['Sunday'] };
 const bedrijf = {
-  '@context': 'https://schema.org', '@type': 'GeneralContractor',
+  '@context': 'https://schema.org', '@type': 'GeneralContractor', '@id': SITE + '#bedrijf',
   name: 'OK Timmerwerken', url: SITE, logo: SITE + 'assets/icon/icon-512.png', image: SITE + 'assets/og/ok-timmerwerken-delen.jpg',
   description: 'Timmer- en betonwerk in Gorinchem en omstreken. Erkend VELUX Montagepartner.',
   telephone: '+31641429106', email: 'info@ok-timmerwerken.nl', foundingDate: '2011',
@@ -1233,9 +1233,9 @@ function videoGegevens(rel) {
 }
 // wie de pagina schreef (E-E-A-T): dienstpagina's door Ozcan, de reviewpagina door het bedrijf
 function paginaGegevens(rel, titel, oms) {
-  const bedrijfKort = { '@type': 'GeneralContractor', name: 'OK Timmerwerken', url: SITE };
+  const bedrijfKort = { '@type': 'GeneralContractor', '@id': SITE + '#bedrijf', name: 'OK Timmerwerken', url: SITE };
   let auteur = null;
-  if (/^diensten\/[a-z]+\/$/.test(rel)) auteur = { '@type': 'Person', name: 'Ozcan', jobTitle: 'Eigenaar', url: `${SITE}over-ons/`, worksFor: bedrijfKort };
+  if (/^diensten\/[a-z]+\/$/.test(rel)) auteur = { '@type': 'Person', '@id': `${SITE}over-ons/#ozcan`, name: 'Ozcan', jobTitle: 'Eigenaar', url: `${SITE}over-ons/`, worksFor: bedrijfKort };
   else if (rel === 'reviews/') auteur = bedrijfKort;
   if (!auteur) return '';
   const pg = { '@context': 'https://schema.org', '@type': 'WebPage', name: titel, description: oms, url: `${SITE}${rel}`, inLanguage: 'nl', author: auteur, publisher: bedrijfKort };
