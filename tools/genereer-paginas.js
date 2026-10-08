@@ -80,6 +80,7 @@ const extraStijl = `<style>
 .p-beeld{position:relative;aspect-ratio:1/1;background:var(--bg);overflow:hidden;border-radius:2px;
   box-shadow:0 50px 90px -40px rgba(20,19,15,.45),0 18px 36px -24px rgba(20,19,15,.25)}
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.p-beeld img.p-logo{inset:auto;left:7%;bottom:7%;z-index:2;width:clamp(68px,17%,100px);height:auto;object-fit:contain;border-radius:8px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}   /* dakramen: officieel VELUX-logo op de foto, zoals op home */
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
 .portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}   /* vrijstaand op wit: één geheel met de pagina */
@@ -654,7 +655,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
       </div>
     </div>
     <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
-      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">
+      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">${d.slug === 'dakramen' ? '\n      <img class="p-logo" src="../assets/velux/velux-montagepartner.jpg" alt="Erkend VELUX Montagepartner">' : ''}
     </div>
   </div>
 </section>
