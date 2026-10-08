@@ -48,3 +48,6 @@ preview/over-proef.html
 
 # proefpaginas (lokaal bekijken, niet publiceren)
 proef-hero-*.html
+
+# tijdelijke kopieën van macOS bij het wegschrijven van video's
+*.sb-*

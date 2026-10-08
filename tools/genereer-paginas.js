@@ -120,8 +120,10 @@ const extraStijl = `<style>
 .kc-vlak{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#1d1d1a;transition:transform .15s ease-out;
   box-shadow:0 50px 90px -40px rgba(20,19,15,.5)}
 .kc-kaart.aan .kc-vlak{transform:translate3d(calc(var(--x,0px) / 30),calc(var(--y,0px) / 30),0)}
-.kc-vlak img{position:absolute;inset:-10%;width:120%;height:120%;max-width:none;object-fit:cover;opacity:.5;transition:opacity .6s ease}
-.kc-kaart.aan .kc-vlak img{opacity:1}
+.kc-vlak img,.kc-vlak video{position:absolute;inset:-10%;width:120%;height:120%;max-width:none;object-fit:cover;opacity:.5;transition:opacity .6s ease}
+.kc-kaart.aan .kc-vlak img,.kc-kaart.aan .kc-vlak video{opacity:1}
+.kc-speel{position:absolute;z-index:3;right:6%;top:6%;width:40px;height:40px;border-radius:50%;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);display:grid;place-items:center}
+.kc-speel svg{width:16px;height:16px;fill:#fff;margin-left:2px}
 .kc-kaart.aan .kc-vlak::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.65),rgba(10,10,8,.05) 55%)}
 .kc-tekst{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 7% 7%;color:#fff;opacity:0;visibility:hidden;transition:opacity 1s ease,visibility 1s}
 .kc-kaart.aan .kc-tekst{opacity:1;visibility:visible}
@@ -143,7 +145,8 @@ const extraStijl = `<style>
 .lichtbak{position:fixed;inset:0;z-index:95;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;
   opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
 .lichtbak.open{opacity:1;visibility:visible;transition:opacity .3s}
-.lichtbak img{max-width:min(1200px,92vw);max-height:80vh;object-fit:contain;border-radius:6px}
+.lichtbak img,.lichtbak video{max-width:min(1200px,92vw);max-height:80vh;object-fit:contain;border-radius:6px}
+.lichtbak [hidden]{display:none}
 .lichtbak p{color:rgba(255,255,255,.8);font-size:14px;margin-top:14px;text-align:center}
 .lichtbak button{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;
   border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:20px;cursor:pointer}
@@ -314,7 +317,7 @@ ${dock}
 
 <div class="lichtbak" id="lichtbak" role="dialog" aria-modal="true" aria-label="Foto vergroot">
   <button type="button"><span aria-hidden="true">×</span><span class="vh">Sluiten</span></button>
-  <div><img alt=""><p></p></div>
+  <div><img alt=""><video controls playsinline muted loop hidden></video><p></p></div>
 </div>
 
 <script>
@@ -343,8 +346,8 @@ ${dock}
   if(!rm && krullen.length){ addEventListener('scroll',krulScroll,{passive:true}); krulScroll(); }
 
   // Lichtbak voor de galerij
-  var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbTxt=lb.querySelector('p');
-  function dicht(){ lb.classList.remove('open'); }
+  var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbVid=lb.querySelector('video'), lbTxt=lb.querySelector('p');
+  function dicht(){ lb.classList.remove('open'); lbVid.pause(); }
 
   // 3D-kaarten: klik op een zijkaart schuift ernaartoe; de actieve kaart volgt licht de muis; "Bekijk groot" opent de lichtbak
   var kc=document.querySelector('.kc');
@@ -361,11 +364,16 @@ ${dock}
         p.style.setProperty('--o',o); p.classList.toggle('ver',Math.abs(o)>2);
         if(sprong){ void p.offsetWidth; p.style.transition=''; }
         vorig[j]=o; });
-      kaarten.forEach(function(k,j){ k.classList.toggle('aan',j===nu); });
+      kaarten.forEach(function(k,j){ k.classList.toggle('aan',j===nu);
+        var v=k.querySelector('video'); if(!v) return;
+        if(j===nu && !rm && kcZicht){ if(!v.getAttribute('src')) v.src=v.dataset.src; v.play().catch(function(){}); } else v.pause(); });
       teller.textContent=nn(nu)+' / '+nn(aantal-1); }
     rail.addEventListener('click',function(e){
       var g=e.target.closest('.kc-groot');
-      if(g){ var k=kaarten[+g.dataset.groot], im=k.querySelector('img'); lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; lb.classList.add('open'); return; }
+      if(g){ var k=kaarten[+g.dataset.groot], im=k.querySelector('img'), vd=k.querySelector('video');
+        if(vd){ vd.pause(); lbImg.hidden=true; lbVid.hidden=false; lbVid.poster=vd.poster; lbVid.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); lbVid.play().catch(function(){}); }
+        else { lbVid.hidden=true; lbVid.pause(); lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
+        lb.classList.add('open'); return; }
       var k2=e.target.closest('.kc-kaart'); if(k2 && +k2.dataset.i!==nu) toon(+k2.dataset.i); });
     if(!rm) kaarten.forEach(function(k){ var x=0,y=0,raf=0;
       k.addEventListener('mousemove',function(e){ var r=k.getBoundingClientRect(); x=e.clientX-(r.left+r.width/2); y=e.clientY-(r.top+r.height/2);
@@ -376,6 +384,9 @@ ${dock}
     podium.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ e.preventDefault(); toon(nu+1); } if(e.key==='ArrowLeft'){ e.preventDefault(); toon(nu-1); } });
     var x0=null; podium.addEventListener('pointerdown',function(e){ x0=e.clientX; });
     podium.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null; if(dx<-40) toon(nu+1); else if(dx>40) toon(nu-1); });
+    // video's spelen alleen als de carrousel in beeld is (en laden pas dan)
+    var kcZicht=false;
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ kcZicht=es[0].isIntersecting; toon(nu); },{threshold:.25}).observe(podium);
     toon(0);
   }
   lb.addEventListener('click',function(e){ if(e.target===lb||e.target.closest('button')) dicht(); });
@@ -567,9 +578,12 @@ ${oproep()}
 // ---------- dienstpagina ----------
 function dienstPagina(d, alle) {
   const n = d.galerij.length, nn = (i) => String(i).padStart(2, '0');
-  const kaarten = d.galerij.map(([src, bijschrift], i) => `          <li class="kc-persp"><div class="kc-kaart${i ? '' : ' aan'}" data-i="${i}">
-            <div class="kc-vlak"><img src="${src}" alt="${esc(bijschrift)}" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">${nn(i + 1)}</span><h3>${esc(bijschrift)}</h3><button type="button" class="kc-groot" data-groot="${i}">Bekijk groot</button></div>
+  // galerij-item: [beeld, bijschrift] of [video.mp4, bijschrift, beginbeeld.jpg] — een video speelt (zonder geluid) als de kaart in het midden staat
+  const kaarten = d.galerij.map(([src, bijschrift, poster], i) => `          <li class="kc-persp"><div class="kc-kaart${i ? '' : ' aan'}${/\.mp4$/.test(src) ? ' kc-video' : ''}" data-i="${i}">
+            <div class="kc-vlak">${/\.mp4$/.test(src)
+    ? `<video data-src="${src}" poster="${poster}" muted loop playsinline preload="none" aria-label="${esc(bijschrift)}"></video><span class="kc-speel" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>`
+    : `<img src="${src}" alt="${esc(bijschrift)}" loading="lazy">`}</div>
+            <div class="kc-tekst"><span class="kc-nr">${nn(i + 1)}</span><h3>${esc(bijschrift)}</h3><button type="button" class="kc-groot" data-groot="${i}">${/\.mp4$/.test(src) ? 'Bekijk video' : 'Bekijk groot'}</button></div>
           </div></li>`).join('\n');
   const pijl = (r) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${r ? 'M5 12h14M13 6l6 6-6 6' : 'M19 12H5M11 6l-6 6 6 6'}"/></svg>`;
   const galerij = `    <div class="kc op">
