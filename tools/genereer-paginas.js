@@ -1280,8 +1280,23 @@ function beeldMaten(bestand) {
   }
   return null;
 }
+// verkleinen van de inline CSS en JS (veilig: alleen commentaar en witruimte; regeleinden in JS blijven staan)
+function verkleinCss(css) {
+  return css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ')
+    .replace(/\s*([{};,])\s*/g, '$1').replace(/:\s+/g, ':').replace(/;}/g, '}').trim();
+}
+function verkleinJs(js) {
+  return js.split('\n').map((r) => r.trim()).filter((r) => r && !r.startsWith('//') && !/^\/\*.*\*\/$/.test(r)).join('\n');
+}
+function verklein(html) {
+  return html
+    .replace(/<style>([\s\S]*?)<\/style>/g, (t, css) => `<style>${verkleinCss(css)}</style>`)
+    .replace(/<script>([\s\S]*?)<\/script>/g, (t, js) => `<script>${verkleinJs(js)}</script>`)
+    .replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (t, j) => `<script type="application/ld+json">${JSON.stringify(JSON.parse(j))}</script>`);
+}
 const matenCache = {};
 let metMaten = 0;
+let bespaard = 0;
 for (const rel of [...sitePaginas.map((r) => r + 'index.html'), '404.html']) {
   const doel = path.join(root, rel), map = path.dirname(doel);
   const html = fs.readFileSync(doel, 'utf8').replace(/<img\b([^>]*)>/g, (tag, attr) => {
@@ -1295,9 +1310,11 @@ for (const rel of [...sitePaginas.map((r) => r + 'index.html'), '404.html']) {
     metMaten++;
     return `<img${attr} width="${maat[0]}" height="${maat[1]}">`;
   });
-  fs.writeFileSync(doel, html);
+  const klein = verklein(html);
+  bespaard += html.length - klein.length;
+  fs.writeFileSync(doel, klein);
 }
-console.log(`afmetingen toegevoegd aan ${metMaten} <img>-tags (${Object.keys(matenCache).length} verschillende beelden)`);
+console.log(`afmetingen toegevoegd aan ${metMaten} <img>-tags (${Object.keys(matenCache).length} verschillende beelden); CSS/JS verkleind: ${Math.round(bespaard / 1024)} KB minder`);
 
 // doorverwijzingen: elk oud adres van ok-timmerwerken.nl krijgt een klein bestand dat direct doorstuurt
 // naar de nieuwe plek (GitHub Pages kent geen serverredirects; dit werkt ook voor Google via canonical).
