@@ -972,9 +972,9 @@ function contactPagina() {
   </div>
 </section>
 `;
-  return pagina({ titel: 'Contact — OK Timmerwerken Gorinchem', omschrijving: 'Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–20:00, za 07:00–16:00.', body }).replace('</head>', `<style>
-/* de werktijden staan al in de kaart, dus niet nog eens in de footer */
-.foot-tijden-kol{display:none}
+  // de werktijden staan al in de kaart, dus de werktijdenkolom gaat uit de footer (weghalen i.p.v. verbergen: geen verborgen tekst)
+  return pagina({ titel: 'Contact — OK Timmerwerken Gorinchem', omschrijving: 'Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–20:00, za 07:00–16:00.', body })
+    .replace(/\s*<div class="foot-tijden-kol">[\s\S]*?<\/div>\s*<\/div>/, '').replace('</head>', `<style>
 @media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
 .c2-hero{padding:36px 0 84px}
 .c2-wrap{display:block!important}
