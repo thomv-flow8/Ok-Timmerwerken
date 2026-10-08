@@ -32,6 +32,7 @@ De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een antwoord
 - [ ] **Portret** — de foto van Ozcan op Over ons en Contact is een AI-bewerking op basis van zijn eigen foto's. Akkoord dat die online staat?
 - [ ] **Renders** — de hero (huis met wolken) en de beelden bij de diensten op de homepage zijn gegenereerd; de galerijen zijn zijn eigen foto's. Akkoord?
 - [ ] **Origineel logo** — exact overgetrokken van zijn logo, niets aan veranderd. Akkoord?
+- [ ] **Naam bij de teksten** — op de dienstpagina's staat nu "Geschreven door Ozcan, eigenaar van OK Timmerwerken" met zijn kleine portret (helpt bij Google). Akkoord, of liever weg?
 - [ ] Algemene voorwaarden en disclaimer — woordelijk van de oude site. Nog actueel?
 
 ### Privacy en cookies

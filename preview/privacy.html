@@ -480,15 +480,15 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .werkmuur .mrij{display:flex;gap:clamp(14px,1.6vw,24px);will-change:transform}
 .werkmuur .mrij:nth-child(even){margin-left:calc(-1 * var(--kaart) / 2)}
 .werkmuur{--kaart:clamp(200px,21vw,330px)}
-.werkmuur a{flex:none;position:relative;display:block;width:var(--kaart);aspect-ratio:4/3;border-radius:clamp(12px,1.3vw,20px);overflow:hidden;
+.werkmuur .mt{flex:none;position:relative;display:block;width:var(--kaart);aspect-ratio:4/3;border-radius:clamp(12px,1.3vw,20px);overflow:hidden;
   background:#eee;box-shadow:0 30px 50px -34px rgba(20,19,15,.5);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.werkmuur a img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease)}
-.werkmuur a span{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--inkt);border-radius:999px;padding:5px 13px;
+.werkmuur .mt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease)}
+.werkmuur .mt span{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--inkt);border-radius:999px;padding:5px 13px;
   font-family:var(--serif);font-style:italic;font-size:17px;transform:rotate(-24deg) translateY(8px);transform-origin:left bottom;opacity:0;
   transition:opacity .35s,transform .45s var(--ease)}
-.werkmuur a:hover{transform:scale(1.04);box-shadow:0 40px 70px -30px rgba(20,19,15,.55);z-index:2}
-.werkmuur a:hover img{transform:scale(1.06)}
-.werkmuur a:hover span{opacity:1;transform:rotate(-24deg)}
+.werkmuur .mt:hover{transform:scale(1.04);box-shadow:0 40px 70px -30px rgba(20,19,15,.55);z-index:2}
+.werkmuur .mt:hover img{transform:scale(1.06)}
+.werkmuur .mt:hover span{opacity:1;transform:rotate(-24deg)}
 /* harde randen boven en onder, zoals het voorbeeld */
 @media(max-width:820px){.werkmuur{height:92vh;--kaart:44vw}.werkmuur .muur{width:330vw}}
 @media(prefers-reduced-motion:reduce){.werkmuur .mrij{transform:none!important}}
@@ -525,6 +525,8 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .rev-totaal .links a::after{content:'→';color:var(--brons);transition:transform .3s var(--ease)}
 .rev-totaal .links a:hover::after{transform:translateX(4px)}
 
+/* links in lopende tekst */
+.lead a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 /* ---------- over Ozcan ---------- */
 .over{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-top:44px}
 .over .beeld2{aspect-ratio:4/5;border-radius:14px;overflow:hidden;position:relative}
@@ -713,6 +715,9 @@ footer.groot{padding:72px 0 46px}
 .download{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 22px;border-radius:999px;
   background:#14130f;color:#fff;font-weight:600;font-size:14px}
 .download::before{content:'↓';color:var(--brons);font-size:16px}
+.auteur{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:13.5px;color:var(--zacht)}
+.auteur img{width:36px;height:36px;border-radius:50%;flex:none;background:#f2ebdf}
+.auteur a{color:var(--inkt);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 .p-hero .erkend{display:flex;color:var(--inkt);align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
 .p-hero .erkend img{width:64px;height:64px;border-radius:6px}
 
@@ -739,6 +744,8 @@ footer.groot{padding:72px 0 46px}
 .juridisch ul{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300;margin-top:12px}
 .juridisch ul li{margin-top:6px}
 .juridisch .bijgewerkt{margin-top:34px;font-size:13.5px;color:var(--zacht)}
+.juridisch .zie-ook{margin-top:22px;font-size:14px}
+.juridisch .zie-ook a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .juridisch .downloads{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .juridisch .downloads .download{margin-top:0}
 .concept-melding{margin:0 0 30px;padding:16px 20px;border:1px dashed #c6702f;border-radius:12px;background:#fff8f1;color:#7a4a1f;font-size:14px;line-height:1.6}
@@ -871,14 +878,14 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div class="nav-sub">
         <a href="diensten.html" aria-haspopup="true">Diensten<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></a>
         <div class="submenu">
-          <a href="dienst-betonvloeren.html" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/beton.jpg" alt="" loading="lazy"><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
-          <a href="dienst-zolder.html" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/zolder-na.jpg" alt="" loading="lazy"><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
-          <a href="dienst-carport.html" style="--kl:#d87f57"><img src="../assets/render/echt/thumb/carport.jpg" alt="" loading="lazy"><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
-          <a href="dienst-dakramen.html" style="--kl:#7394b4"><img src="../assets/render/echt/thumb/velux.jpg" alt="" loading="lazy"><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
-          <a href="dienst-timmerwerk.html" style="--kl:#9cb189"><img src="../assets/render/echt/thumb/plafond-af.jpg" alt="" loading="lazy"><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
-          <a href="dienst-funderingen.html" style="--kl:#474e5b"><img src="../assets/render/echt/thumb/fundering-strook-na.jpg" alt="" loading="lazy"><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
-          <a href="dienst-onderhoud.html" style="--kl:#b98b6e"><img src="../assets/render/echt/thumb/onderhoud.jpg" alt="" loading="lazy"><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
-          <a href="dienst-nieuwbouw.html" style="--kl:#6f7d6a"><img src="../assets/render/echt/thumb/nieuwbouw.jpg" alt="" loading="lazy"><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
+          <a href="dienst-betonvloeren.html" style="--kl:#7394b4"><img data-src="../assets/render/echt/thumb/beton.jpg" alt=""><span><b>Betonvloeren</b><small>Gevlinderd, binnen en buiten</small></span></a>
+          <a href="dienst-zolder.html" style="--kl:#9cb189"><img data-src="../assets/render/echt/thumb/zolder-na.jpg" alt=""><span><b>Vliering &amp; zolder</b><small>Een hele verdieping erbij</small></span></a>
+          <a href="dienst-carport.html" style="--kl:#d87f57"><img data-src="../assets/render/echt/thumb/carport.jpg" alt=""><span><b>Carport &amp; overkapping</b><small>Maatwerk in hout</small></span></a>
+          <a href="dienst-dakramen.html" style="--kl:#7394b4"><img data-src="../assets/render/echt/thumb/velux.jpg" alt=""><span><b>Dakramen (Velux)</b><small>Erkend montagepartner</small></span></a>
+          <a href="dienst-timmerwerk.html" style="--kl:#9cb189"><img data-src="../assets/render/echt/thumb/plafond-af.jpg" alt=""><span><b>Timmerwerk &amp; afbouw</b><small>Van ruwbouw tot lijst</small></span></a>
+          <a href="dienst-funderingen.html" style="--kl:#474e5b"><img data-src="../assets/render/echt/thumb/fundering-strook-na.jpg" alt=""><span><b>Funderingen</b><small>Betonplaten & funderingen</small></span></a>
+          <a href="dienst-onderhoud.html" style="--kl:#b98b6e"><img data-src="../assets/render/echt/thumb/onderhoud.jpg" alt=""><span><b>Onderhoud &amp; renovatie</b><small>Houtrot, tegelwerk, isolatie</small></span></a>
+          <a href="dienst-nieuwbouw.html" style="--kl:#6f7d6a"><img data-src="../assets/render/echt/thumb/nieuwbouw.jpg" alt=""><span><b>Nieuwbouw</b><small>HSB, kozijnen, constructies</small></span></a>
           <a class="alle" href="diensten.html">Alle diensten en werkzaamheden →</a>
         </div>
       </div>
@@ -974,6 +981,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <h2>Wijzigingen</h2>
       <p>We kunnen deze verklaring aanpassen, bijvoorbeeld als we nieuwe diensten gaan gebruiken. Hieronder staat wanneer de tekst voor het laatst is bijgewerkt.</p>
       <p class="bijgewerkt">Laatst bijgewerkt: oktober 2026</p>
+      <p class="zie-ook">Zie ook: <a href="voorwaarden.html">algemene voorwaarden</a> en <a href="disclaimer.html">disclaimer</a>.</p>
     </div>
   </div>
 </section>
@@ -986,7 +994,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <div>
         <div class="merk-foot" role="img" aria-label="OK Timmerwerken"><svg class="m-ico" viewBox="0 0 444 418" aria-hidden="true"><use href="#i-logo"/></svg><svg class="m-woord" viewBox="0 0 862 74" aria-hidden="true"><use href="#i-logo-woord"/></svg></div>
         <p>Timmer- en betonwerk in Gorinchem en omstreken. Vakwerk waar u op kunt bouwen.</p>
-        <a class="erkend foot-erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt=""><img class="getraind" src="../assets/velux/velux-getraind-2025.jpg" alt=""><span>Erkend VELUX<br>Montagepartner, getraind 2025</span></a>
+        <a class="erkend foot-erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="" loading="lazy"><img class="getraind" src="../assets/velux/velux-getraind-2025.jpg" alt="" loading="lazy"><span>Erkend VELUX<br>Montagepartner, getraind 2025</span></a>
       </div>
       <div>
         <h2>Diensten</h2>
@@ -1230,6 +1238,12 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     document.addEventListener('mouseover',function(e){ if(e.target.closest&&e.target.closest(sel)) cur.classList.add('groot'); });
     document.addEventListener('mouseout',function(e){ var n=e.relatedTarget;
       if(e.target.closest&&e.target.closest(sel) && !(n&&n.closest&&n.closest(sel))) cur.classList.remove('groot'); });
+  })();
+  // Diensten-menu: de kleine beelden pas laden als het menu voor het eerst opengaat (scheelt laadtijd op elke pagina)
+  (function(){
+    var sub=document.querySelector('.nav-sub'); if(!sub) return;
+    function laad(){ [].forEach.call(sub.querySelectorAll('img[data-src]'),function(im){ im.src=im.dataset.src; im.removeAttribute('data-src'); }); }
+    ['mouseenter','focusin','touchstart'].forEach(function(ev){ sub.addEventListener(ev,laad,{once:true,passive:true}); });
   })();
   // gedeeld]]
 })();

@@ -40,7 +40,7 @@ const contactRaster = `<div class="contact-grid">
         <label for="c-ber">Waar kunnen we mee helpen?</label>
         <textarea id="c-ber" name="bericht" placeholder="Bijvoorbeeld: gevlinderde betonvloer van 30 m² in de garage" required></textarea>
         <button class="veld-knop" type="submit">Verstuur aanvraag</button>
-        <p class="form-privacy">We gebruiken uw gegevens alleen om uw aanvraag te beantwoorden. Lees meer in de <a href="privacy.html">privacyverklaring</a>.</p>
+        <p class="form-privacy">We gebruiken uw gegevens alleen om uw aanvraag te beantwoorden. Lees meer in de <a href="privacy.html">privacyverklaring</a>. Op onze offertes zijn onze <a href="voorwaarden.html">algemene voorwaarden</a> van toepassing.</p>
         <p class="form-melding" role="status" hidden>Dit formulier is nog in de testfase en verstuurt nog niets. Bel of app Ozcan op <a href="tel:+31641429106">06 41 42 91 06</a> of mail naar <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>.</p>
       </form>
       <div class="contact-info">
@@ -168,6 +168,9 @@ const extraStijl = `<style>
 .download{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 22px;border-radius:999px;
   background:#14130f;color:#fff;font-weight:600;font-size:14px}
 .download::before{content:'↓';color:var(--brons);font-size:16px}
+.auteur{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:13.5px;color:var(--zacht)}
+.auteur img{width:36px;height:36px;border-radius:50%;flex:none;background:#f2ebdf}
+.auteur a{color:var(--inkt);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 .p-hero .erkend{display:flex;color:var(--inkt);align-items:center;gap:14px;margin-top:30px;font-size:14px;font-weight:600}
 .p-hero .erkend img{width:64px;height:64px;border-radius:6px}
 
@@ -194,6 +197,8 @@ const extraStijl = `<style>
 .juridisch ul{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300;margin-top:12px}
 .juridisch ul li{margin-top:6px}
 .juridisch .bijgewerkt{margin-top:34px;font-size:13.5px;color:var(--zacht)}
+.juridisch .zie-ook{margin-top:22px;font-size:14px}
+.juridisch .zie-ook a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .juridisch .downloads{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .juridisch .downloads .download{margin-top:0}
 .concept-melding{margin:0 0 30px;padding:16px 20px;border:1px dashed #c6702f;border-radius:12px;background:#fff8f1;color:#7a4a1f;font-size:14px;line-height:1.6}
@@ -288,7 +293,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 </style>`;
 
 // ---------- bouwstenen ----------
-function pagina({ titel, omschrijving, body }) {
+function pagina({ titel, omschrijving, body, voorladen }) {
   return `<!doctype html>
 <html lang="nl">
 <head>
@@ -299,7 +304,7 @@ function pagina({ titel, omschrijving, body }) {
 <meta name="description" content="${esc(omschrijving)}">
 <link rel="icon" href="../assets/icon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/icon/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">${voorladen ? `\n<link rel="preload" as="image" href="${voorladen}" fetchpriority="high">` : ''}
 <!-- GEGENEREERD door tools/genereer-paginas.js uit docs/inhoud.json — niet met de hand aanpassen -->
 ${fonts}
 ${stijl}
@@ -462,9 +467,11 @@ function reviewsPagina() {
   const totaal = g.aantal + w.aantal;
   const gemiddeld = (alle.reduce((s, r) => s + r.score, 0) / alle.length);
   const toon = alle.filter((r) => r.tekst && !r.dubbel_met).sort((a, b) => (a.datum < b.datum ? 1 : -1));
+  // eerst een deel tonen, de rest staat als tekst in de pagina en komt erbij met 'Toon meer' (houdt de pagina licht)
+  const eersteReviews = 24;
   const logo = (b) => b === 'google'
-    ? `<img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google">`
-    : `<img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot">`;
+    ? `<img class="rv-bron g" src="../assets/socials/google-officieel.png" alt="Google" width="96" height="96" loading="lazy">`
+    : `<img class="rv-bron" src="../assets/socials/werkspot-officieel.png" alt="Werkspot" width="96" height="96" loading="lazy">`;
   const kaart = (r) => {
     const bronnen = [r.bron].concat(r.ook_op ? [r.ook_op] : []);
     const sub = [r.plaats && r.naam !== 'Werkspot-gebruiker' ? r.plaats : '', r.klus ? r.klus.split(':')[0] : ''].filter(Boolean).join(' · ');
@@ -506,8 +513,10 @@ function reviewsPagina() {
       <button type="button" data-f="werkspot">Werkspot <span>${toon.filter((r) => r.bron === 'werkspot').length}</span></button>
     </div>
     <div class="rv-muur">
-${toon.map(kaart).join('\n')}
+${toon.slice(0, eersteReviews).map(kaart).join('\n')}
     </div>
+    <button type="button" class="rv-alle">Toon meer reviews <span>(${toon.length - eersteReviews})</span></button>
+    <script type="application/json" id="rv-rest">${JSON.stringify(toon.slice(eersteReviews).map(kaart)).replace(/</g, '\\u003c')}</script>
     <p class="rv-noot">Reviews zoals geplaatst op Google en Werkspot; reviews die op beide staan tonen we één keer. Reviews met alleen sterren en geen tekst tellen mee in de totalen. Bekijk ze ook zelf op <a href="${g.url}" target="_blank" rel="noopener">Google</a> en <a href="${w.url}" target="_blank" rel="noopener">Werkspot</a>.</p>
   </div>
 </section>
@@ -539,6 +548,9 @@ ${oproep()}
 .rv-filter button span{color:var(--zacht);font-weight:500;margin-left:4px}
 .rv-filter button.aan{background:var(--inkt);border-color:var(--inkt);color:#fff}
 .rv-filter button.aan span{color:rgba(255,255,255,.7)}
+.rv-alle{display:flex;align-items:center;gap:6px;margin:30px auto 0;border:0;background:var(--inkt);color:#fff;border-radius:999px;padding:14px 24px;font:600 14px var(--f,inherit);cursor:pointer}
+.rv-alle span{color:rgba(255,255,255,.7);font-weight:500}
+.rv-alle[hidden]{display:none}
 /* muur: kolommen tussen de verticale lijnen */
 .rv-muur{columns:4 250px;column-gap:18px}
 .rv{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 18px;background:#fff;border-radius:16px;padding:30px 26px 26px;text-align:center;
@@ -567,13 +579,22 @@ ${oproep()}
 </head>`).replace('</body>', `<script>
 (function(){
   // lange reviews inkorten met "Lees volledig"
-  [].forEach.call(document.querySelectorAll('.rv'),function(k){ var p=k.querySelector('.rv-tekst'), b=k.querySelector('.rv-meer');
-    k.classList.add('kort'); if(p.scrollHeight>p.clientHeight+4){ b.hidden=false; b.addEventListener('click',function(){ var open=k.classList.toggle('kort'); b.textContent=open?'Lees volledig':'Minder tonen'; }); } else k.classList.remove('kort'); });
-  // filter op platform
+  function inkorten(k){ var p=k.querySelector('.rv-tekst'), b=k.querySelector('.rv-meer');
+    k.classList.add('kort'); if(p.scrollHeight>p.clientHeight+4){ b.hidden=false; b.addEventListener('click',function(){ var open=k.classList.toggle('kort'); b.textContent=open?'Lees volledig':'Minder tonen'; }); } else k.classList.remove('kort'); }
+  [].forEach.call(document.querySelectorAll('.rv'),inkorten);
+  // "Toon meer": de overige reviews staan als tekst in de pagina en worden per 24 toegevoegd
+  var muur=document.querySelector('.rv-muur'), knop=document.querySelector('.rv-alle'), rest=JSON.parse(document.getElementById('rv-rest').textContent), filter='alle';
+  function meer(n){ var stuk=rest.splice(0,n), tmp=document.createElement('div'); tmp.innerHTML=stuk.join('');
+    [].slice.call(tmp.children).forEach(function(k){ k.hidden=filter!=='alle' && k.dataset.bron.indexOf(filter)<0; muur.appendChild(k); inkorten(k); });
+    if(rest.length) knop.querySelector('span').textContent='('+rest.length+')'; else knop.hidden=true; }
+  if(!rest.length) knop.hidden=true;
+  knop.addEventListener('click',function(){ meer(24); });
+  // filter op platform (laadt eerst alle reviews, zodat de telling klopt)
   var f=document.querySelector('.rv-filter');
   f.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return;
+    filter=b.dataset.f; if(rest.length) meer(rest.length);
     [].forEach.call(f.children,function(x){ x.classList.toggle('aan',x===b); });
-    [].forEach.call(document.querySelectorAll('.rv'),function(k){ k.hidden=b.dataset.f!=='alle' && k.dataset.bron.indexOf(b.dataset.f)<0; }); });
+    [].forEach.call(document.querySelectorAll('.rv'),function(k){ k.hidden=filter!=='alle' && k.dataset.bron.indexOf(filter)<0; }); });
 })();
 </script>
 </body>`);
@@ -658,6 +679,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
       ${oog(d.nr + ' — ' + d.naam)}
       <h1>${esc(d.kop)}</h1>
       <p class="lead">${esc(d.intro)}</p>
+      <p class="auteur"><img src="../assets/render/portret/web/ozcan-avatar.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
       <div class="acties">
         <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
@@ -743,6 +765,7 @@ ${oproep()}`;
     titel: `${d.naam} — OK Timmerwerken Gorinchem`,
     omschrijving: d.intro.slice(0, 155),
     body,
+    voorladen: d.beeld,
   });
 }
 
@@ -859,7 +882,7 @@ function overPagina(o, proef = false) {
       <span class="uit-quote" aria-hidden="true">“</span>
       <blockquote>${esc(uit.tekst)}</blockquote>
       <figcaption><i class="sterscore" style="--pct:${uit.score * 20}%" role="img" aria-label="${uit.score} van 5 sterren"></i>
-        <span><img class="uit-bron" src="../assets/socials/google-officieel.png" alt=""><b>${esc(uit.naam)}</b> · Google-review, ${maanden[+uit.datum.slice(5, 7) - 1]} ${uit.datum.slice(0, 4)}</span></figcaption>
+        <span><img class="uit-bron" src="../assets/socials/google-officieel.png" alt="" loading="lazy"><b>${esc(uit.naam)}</b> · Google-review, ${maanden[+uit.datum.slice(5, 7) - 1]} ${uit.datum.slice(0, 4)}</span></figcaption>
     </figure>
     <div class="uit-voet op"><span>Gemiddeld <b>${nlScore}</b> uit ${totaalReviews} reviews op Google en Werkspot</span><a class="pil" href="reviews.html">Lees alle reviews</a></div>
   </div>
@@ -870,6 +893,7 @@ ${oproep()}`;
     titel: 'Over ons — OK Timmerwerken Gorinchem',
     omschrijving: o.intro.slice(0, 155),
     body,
+    voorladen: '../assets/render/portret/web/ozcan-bovenlijf.webp',
   }).replace('</head>', `<style>
 /* Over ons: één uitgelichte review over Ozcan zelf (de drie kaarten staan al op home) */
 .uitgelicht{position:relative;max-width:880px;margin:0 auto;padding:clamp(34px,5vw,56px) clamp(24px,5vw,64px);background:#fff;
@@ -931,7 +955,7 @@ function contactPagina() {
       <!-- links: direct contact (donkere kaart, zelfde beeldtaal als de 'Kennismaken?'-kaart) -->
       <div class="c2-direct">
         <div class="c2-wie">
-          <div class="c2-avatar"><img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
+          <div class="c2-avatar"><img src="../assets/render/portret/web/ozcan-avatar.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
           <div><b>Ozcan</b><span>eigenaar van OK Timmerwerken</span></div>
         </div>
         <p class="c2-citaat">U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw.</p>
@@ -989,7 +1013,7 @@ function contactPagina() {
   box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
 .c2-wie{display:flex;align-items:center;gap:16px}
 .c2-avatar{width:84px;height:84px;flex:none;border-radius:50%;overflow:hidden;background:#f2ebdf}
-.c2-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;transform:scale(1.25);transform-origin:50% 0}
+.c2-avatar img{width:100%;height:100%;object-fit:cover}   /* ozcan-avatar.webp is al uitgesneden (hoofd en schouders) */
 .c2-wie b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em}
 .c2-wie span{font-size:13px;color:var(--zacht)}
 .c2-citaat{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35;color:var(--inkt)}
@@ -1071,6 +1095,7 @@ function juridischPagina(titel, inhoudHtml) {
   <div class="wrap sectie" style="padding-top:20px">
     <div class="juridisch">
 ${inhoudHtml}
+      <p class="zie-ook">Zie ook: ${[['Algemene voorwaarden', 'voorwaarden.html'], ['Privacyverklaring', 'privacy.html'], ['Disclaimer', 'disclaimer.html']].filter(([t]) => t !== titel).map(([t, h]) => `<a href="${h}">${t.toLowerCase()}</a>`).join(' en ')}.</p>
     </div>
   </div>
 </section>`;
@@ -1206,6 +1231,16 @@ function videoGegevens(rel) {
   });
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': lijst })}</script>\n`;
 }
+// wie de pagina schreef (E-E-A-T): dienstpagina's door Ozcan, de reviewpagina door het bedrijf
+function paginaGegevens(rel, titel, oms) {
+  const bedrijfKort = { '@type': 'GeneralContractor', name: 'OK Timmerwerken', url: SITE };
+  let auteur = null;
+  if (/^diensten\/[a-z]+\/$/.test(rel)) auteur = { '@type': 'Person', name: 'Ozcan', jobTitle: 'Eigenaar', url: `${SITE}over-ons/`, worksFor: bedrijfKort };
+  else if (rel === 'reviews/') auteur = bedrijfKort;
+  if (!auteur) return '';
+  const pg = { '@context': 'https://schema.org', '@type': 'WebPage', name: titel, description: oms, url: `${SITE}${rel}`, inLanguage: 'nl', author: auteur, publisher: bedrijfKort };
+  return `<script type="application/ld+json">${JSON.stringify(pg)}</script>\n`;
+}
 function vindbaar(rel) {
   const doel = path.join(root, rel === '' ? 'index.html' : rel + 'index.html');
   let html = fs.readFileSync(doel, 'utf8');
@@ -1224,7 +1259,7 @@ function vindbaar(rel) {
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OK Timmerwerken — timmer- en betonwerk in Gorinchem">
 <meta name="twitter:card" content="summary_large_image">
-${rel === '' ? `<script type="application/ld+json">${JSON.stringify(bedrijf)}</script>\n` : ''}${videoGegevens(rel)}`;
+${rel === '' ? `<script type="application/ld+json">${JSON.stringify(bedrijf)}</script>\n` : ''}${paginaGegevens(rel, titel, oms)}${videoGegevens(rel)}`;
   html = html.replace(/(<meta name="description" content="[^"]*">\n)/, `$1${kop}`);
   fs.writeFileSync(doel, html);
 }
@@ -1316,6 +1351,70 @@ function beeldMaten(bestand) {
   }
   return null;
 }
+// tekstversie van elke pagina in Markdown (index.md naast index.html), voor AI-assistenten;
+// de pagina verwijst ernaar met <link rel="alternate" type="text/markdown">
+const htmlEnt = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', euro: '€', middot: '·', ndash: '–', mdash: '—', hellip: '…' };
+const tekst = (t) => t.replace(/&(#x?[0-9a-f]+|\w+);/gi, (m, c) => (c[0] === '#' ? String.fromCodePoint(c[1].toLowerCase() === 'x' ? parseInt(c.slice(2), 16) : +c.slice(1)) : htmlEnt[c] ?? m));
+function naarMarkdown(html, paginaUrl) {
+  let m = (html.match(/<main id="inhoud">([\s\S]*?)<\/main>/) || [])[1] || '';
+  m = m.replace(/<(script|style|svg|video|button|template|form|noscript)\b[\s\S]*?<\/\1>/gi, '')
+    .replace(/<div class="kruimel">[\s\S]*?<\/div>/g, '')
+    .replace(/<img\b[^>]*>/gi, '')
+    .replace(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (t, href, inh) => {
+      const label = inh.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      if (!label) return '';
+      if (/^(tel:|mailto:|#)/.test(href)) return label;
+      return `[${label}](${new URL(href, paginaUrl).href})`;
+    })
+    .replace(/<h([1-4])\b[^>]*>([\s\S]*?)<\/h\1>/gi, (t, n, inh) => `\n\n${'#'.repeat(+n)} ${inh.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()}\n\n`)
+    .replace(/<li\b[^>]*>/gi, '\n- ').replace(/<\/li>/gi, '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/?(b|strong)\b[^>]*>/gi, '**')
+    .replace(/<\/(p|div|section|ul|ol|figure|figcaption|article|blockquote|dd|dt|dl|summary|details)>/gi, '\n\n')
+    .replace(/<[^>]+>/g, ' ');
+  return tekst(m).split('\n').map((r) => r.replace(/[ \t]+/g, ' ').replace(/ ([.,;:!?])/g, '$1').trim()).join('\n')
+    .replace(/\*\*\s*\*\*/g, '').replace(/\n{3,}/g, '\n\n').trim() + '\n';
+}
+for (const rel of sitePaginas) {
+  const doel = path.join(root, rel, 'index.html');
+  let html = fs.readFileSync(doel, 'utf8');
+  const titel = (html.match(/<title>([^<]*)<\/title>/) || [])[1] || '';
+  const oms = (html.match(/<meta name="description" content="([^"]*)">/) || [])[1] || '';
+  fs.writeFileSync(path.join(root, rel, 'index.md'), `# ${tekst(titel)}\n\n> ${tekst(oms)}\n\nBron: ${SITE}${rel}\n\n${naarMarkdown(html, SITE + rel)}`);
+  html = html.replace(/(<link rel="canonical" href="[^"]*">\n)/, `$1<link rel="alternate" type="text/markdown" href="index.md">\n`);
+  fs.writeFileSync(doel, html);
+}
+
+// gedeelde opmaak als los, cachebaar bestand: site.css (lettertypes + hoofdstijl, alle pagina's) en
+// pagina.css (opmaak van de subpagina's). Elke pagina laadt ze via <link>; de browser haalt ze maar één keer op.
+// Paden in de CSS zijn relatief aan de preview-map (../assets/…) en worden relatief aan assets/css/ (../…).
+const cssBlokken = [
+  ['site.css', [tussen(fonts, '<style>', '</style>'), stijl]],
+  ['pagina.css', [extraStijl]],
+];
+const cssLinks = {};
+fs.mkdirSync(path.join(root, 'assets/css'), { recursive: true });
+for (const [naam, blokken] of cssBlokken) {
+  const inhoudCss = verkleinCss(blokken.map((b) => b.replace(/^<style>|<\/style>$/g, '')).join('\n').split('../assets/').join('../'));
+  fs.writeFileSync(path.join(root, 'assets/css', naam), inhoudCss + '\n');
+  cssLinks[naam] = require('crypto').createHash('md5').update(inhoudCss).digest('hex').slice(0, 8);
+}
+function cssNaarBestand(html, rel) {
+  if (process.env.INLINE_CSS) return html;   // alleen voor vergelijkingstests
+  // de diepte van de pagina bepaalt het voorvoegsel; site.css moet er altijd in zitten, pagina.css alleen op subpagina's
+  for (const pre of ['../../', '../', '']) {
+    const delen = (blokken) => blokken.map((b) => b.split('../assets/').join(pre + 'assets/'));
+    if (!delen(cssBlokken[0][1]).every((d) => html.includes(d))) continue;
+    for (const [naam, blokken] of cssBlokken) {
+      const d = delen(blokken);
+      if (!d.every((x) => html.includes(x))) continue;
+      d.forEach((x, i) => { html = html.replace(x, i === 0 ? `<link rel="stylesheet" href="${pre}assets/css/${naam}?v=${cssLinks[naam]}">` : ''); });
+    }
+    return html;
+  }
+  throw new Error(`${rel}: gedeelde CSS niet gevonden`);
+}
+
 // verkleinen van de inline CSS en JS (veilig: alleen commentaar en witruimte; regeleinden in JS blijven staan)
 function verkleinCss(css) {
   return css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ')
@@ -1346,7 +1445,7 @@ for (const rel of [...sitePaginas.map((r) => r + 'index.html'), '404.html']) {
     metMaten++;
     return `<img${attr} width="${maat[0]}" height="${maat[1]}">`;
   });
-  const klein = verklein(html);
+  const klein = verklein(cssNaarBestand(html, rel));
   bespaard += html.length - klein.length;
   fs.writeFileSync(doel, klein);
 }
