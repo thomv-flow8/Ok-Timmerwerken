@@ -309,7 +309,7 @@ Dakramen (Velux)
 
 Timmerwerk & afbouw
 
-Dakramen (Velux)
+Funderingen
 
 Funderingen
 
@@ -365,7 +365,7 @@ Dakramen (Velux)
 
 Timmerwerk & afbouw
 
-Dakramen (Velux)
+Funderingen
 
 Funderingen
 

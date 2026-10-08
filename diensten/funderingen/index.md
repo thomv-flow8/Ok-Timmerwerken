@@ -151,47 +151,53 @@ Na
 
 08
 
-### Wapening voor een betonpoer
+### Fundering voor een zwembad, net gestort
 
 -
 
 09
 
-### Wapening met afstandhouders voor een betonplaat
+### Wapening voor een betonpoer
 
 -
 
 10
 
-### Gestorte betonplaat langs de schutting
+### Wapening met afstandhouders voor een betonplaat
 
 -
 
 11
 
-### Bekisting, wapening en poeren voor de fundering
+### Gestorte betonplaat langs de schutting
 
 -
 
 12
+
+### Bekisting, wapening en poeren voor de fundering
+
+-
+
+13
 
 ### Tempex-fundering ligt klaar
 
 -
 Voor
 
-13
+14
 
 ### Storten van een funderingsplaat
 
 -
 Na
 
-14
+15
 
 ### Dezelfde plaat, gestort tegen de schutting
 
-01 / 14
+01 / 15
 
 Zo pakken we het aan
 
