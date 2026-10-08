@@ -17,7 +17,12 @@ let duur = CMTimeGetSeconds(bron.duration)
 // 1. samenstelling: alleen beeld (geen geluid), de stukken achter elkaar, eventueel versneld
 let comp = AVMutableComposition()
 let vSpoor = comp.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)!
-vSpoor.preferredTransform = vBron.preferredTransform
+// draai-instructie opnieuw opbouwen uit de echte afmeting: WhatsApp verkleint video's maar laat de verschuiving
+// van het telefoonorigineel staan (bijv. 1080 bij een video van 576 breed), waardoor het beeld buiten het vlak valt
+let t0 = vBron.preferredTransform
+let draai = CGAffineTransform(a: t0.a, b: t0.b, c: t0.c, d: t0.d, tx: 0, ty: 0)
+let vlak = CGRect(origin: .zero, size: vBron.naturalSize).applying(draai)
+vSpoor.preferredTransform = draai.concatenating(CGAffineTransform(translationX: -vlak.minX, y: -vlak.minY))
 var cursor = CMTime.zero
 for stuk in a.dropFirst(3) {
   let delen = stuk.split(separator: "@"), bereik = delen[0].split(separator: "-")
@@ -34,6 +39,8 @@ for stuk in a.dropFirst(3) {
 
 // 2. opnieuw coderen met vaste bitrate, in de juiste stand (staand blijft staand)
 let vc = AVMutableVideoComposition(propertiesOf: comp)
+// eindmaat = afmeting ná de draai-instructie van de telefoon (anders wordt een staande video liggend uitgesneden)
+vc.renderSize = CGSize(width: vlak.width.rounded(), height: vlak.height.rounded())
 let maat = vc.renderSize
 let lezer = try! AVAssetReader(asset: comp)
 let lUit = AVAssetReaderVideoCompositionOutput(videoTracks: [vSpoor], videoSettings: [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange])
