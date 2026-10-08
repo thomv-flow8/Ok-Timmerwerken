@@ -102,16 +102,18 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Een dragende muur eruit
 
 -
+Voor
 
 03
 
-### Toilet met nieuw tegelwerk
+### Toilet: kale wanden, klaar voor het tegelwerk
 
 -
+Na
 
 04
 
-### Toilet opnieuw betegeld
+### Hetzelfde toilet met groene wandtegels
 
 -
 
@@ -123,13 +125,13 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 06
 
-### Toilet met groene wandtegels, tijdens het tegelen
+### Hal met nieuwe tegelvloer
 
 -
 
 07
 
-### Hal met nieuwe tegelvloer
+### Toilet opnieuw betegeld
 
 -
 
@@ -141,21 +143,29 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 09
 
-### Toilet tijdens het tegelen, voorzetwand nog open
+### Toilet met groene wandtegels, tijdens het tegelen
 
 -
+Voor
 
 10
 
 ### Doorbraak in de gevel, gestempeld
 
 -
+Na
 
 11
 
 ### Nieuwe schuifpui in de doorbraak
 
-01 / 11
+-
+
+12
+
+### Toilet tijdens het tegelen, voorzetwand nog open
+
+01 / 12
 
 Zo pakken we het aan
 

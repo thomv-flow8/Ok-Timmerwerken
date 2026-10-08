@@ -670,6 +670,9 @@ footer.groot{padding:72px 0 46px}
 .kc-kaart.aan .kc-vlak{transform:translate3d(calc(var(--x,0px) / 30),calc(var(--y,0px) / 30),0)}
 .kc-vlak img,.kc-vlak video{position:absolute;inset:-10%;width:120%;height:120%;max-width:none;object-fit:cover;opacity:.5;transition:opacity .6s ease}
 .kc-kaart.aan .kc-vlak img,.kc-kaart.aan .kc-vlak video{opacity:1}
+.kc-fase{position:absolute;z-index:3;left:6%;top:6%;padding:6px 13px;border-radius:999px;font:700 11.5px var(--f,inherit);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 6px 18px -8px rgba(0,0,0,.45)}
+.kc-fase.voor{background:rgba(255,255,255,.94);color:var(--inkt)}
+.kc-fase.na{background:var(--brons);color:#fff}
 .kc-speel{position:absolute;z-index:3;right:6%;top:6%;width:40px;height:40px;border-radius:50%;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);display:grid;place-items:center}
 .kc-speel svg{width:16px;height:16px;fill:#fff;margin-left:2px}
 .kc-kaart.aan .kc-vlak::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.65),rgba(10,10,8,.05) 55%)}
@@ -1047,46 +1050,54 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
             <div class="kc-tekst"><span class="kc-nr">02</span><h3>Pergola in opbouw: balken op maat gezaagd</h3><button type="button" class="kc-groot" data-groot="1">Bekijk video</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="2">
-            <div class="kc-vlak"><img src="../assets/web/carport-wa076.jpg" alt="Overkapping met glazen schuifwanden en zwarte gevel" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">03</span><h3>Overkapping met glazen schuifwanden en zwarte gevel</h3><button type="button" class="kc-groot" data-groot="2">Bekijk groot</button></div>
+            <div class="kc-vlak"><span class="kc-fase voor">Voor</span><img src="../assets/web/carport-pergola-geraamte.jpg" alt="Voor: Overkapping in opbouw: het geraamte staat" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">03</span><h3>Overkapping in opbouw: het geraamte staat</h3><button type="button" class="kc-groot" data-groot="2">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="3">
-            <div class="kc-vlak"><img src="../assets/web/carport-langs-gevel.jpg" alt="Lange carport langs de gevel, in douglashout" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">04</span><h3>Lange carport langs de gevel, in douglashout</h3><button type="button" class="kc-groot" data-groot="3">Bekijk groot</button></div>
+            <div class="kc-vlak"><span class="kc-fase na">Na</span><img src="../assets/web/carport-pergola-af.jpg" alt="Na: Dezelfde overkapping, afgewerkt" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">04</span><h3>Dezelfde overkapping, afgewerkt</h3><button type="button" class="kc-groot" data-groot="3">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="4">
-            <div class="kc-vlak"><img src="../assets/web/carport-wa004.jpg" alt="Carport tegen de woning" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">05</span><h3>Carport tegen de woning</h3><button type="button" class="kc-groot" data-groot="4">Bekijk groot</button></div>
+            <div class="kc-vlak"><img src="../assets/web/carport-wa076.jpg" alt="Overkapping met glazen schuifwanden en zwarte gevel" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">05</span><h3>Overkapping met glazen schuifwanden en zwarte gevel</h3><button type="button" class="kc-groot" data-groot="4">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="5">
-            <div class="kc-vlak"><img src="../assets/web/overkapping-berging-lichtkoepel.jpg" alt="Overkapping met berging en lichtkoepel" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">06</span><h3>Overkapping met berging en lichtkoepel</h3><button type="button" class="kc-groot" data-groot="5">Bekijk groot</button></div>
+            <div class="kc-vlak"><img src="../assets/web/carport-langs-gevel.jpg" alt="Lange carport langs de gevel, in douglashout" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">06</span><h3>Lange carport langs de gevel, in douglashout</h3><button type="button" class="kc-groot" data-groot="5">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="6">
-            <div class="kc-vlak"><img src="../assets/web/overkapping-glas.jpg" alt="Overkapping met glazen schuifwanden" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">07</span><h3>Overkapping met glazen schuifwanden</h3><button type="button" class="kc-groot" data-groot="6">Bekijk groot</button></div>
+            <div class="kc-vlak"><img src="../assets/web/carport-wa004.jpg" alt="Carport tegen de woning" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">07</span><h3>Carport tegen de woning</h3><button type="button" class="kc-groot" data-groot="6">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="7">
-            <div class="kc-vlak"><img src="../assets/web/carport-tussenwoning.jpg" alt="Carport tussen twee woningen" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">08</span><h3>Carport tussen twee woningen</h3><button type="button" class="kc-groot" data-groot="7">Bekijk groot</button></div>
+            <div class="kc-vlak"><img src="../assets/web/overkapping-berging-lichtkoepel.jpg" alt="Overkapping met berging en lichtkoepel" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">08</span><h3>Overkapping met berging en lichtkoepel</h3><button type="button" class="kc-groot" data-groot="7">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="8">
-            <div class="kc-vlak"><img src="../assets/web/carport-vrijstaand-schoren.jpg" alt="Vrijstaande carport in douglashout met schoren" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">09</span><h3>Vrijstaande carport in douglashout met schoren</h3><button type="button" class="kc-groot" data-groot="8">Bekijk groot</button></div>
+            <div class="kc-vlak"><img src="../assets/web/overkapping-glas.jpg" alt="Overkapping met glazen schuifwanden" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">09</span><h3>Overkapping met glazen schuifwanden</h3><button type="button" class="kc-groot" data-groot="8">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="9">
-            <div class="kc-vlak"><img src="../assets/web/carport-overkapping-glas.jpg" alt="Overkapping in douglashout met glazen schuifwanden" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">10</span><h3>Overkapping in douglashout met glazen schuifwanden</h3><button type="button" class="kc-groot" data-groot="9">Bekijk groot</button></div>
+            <div class="kc-vlak"><img src="../assets/web/carport-tussenwoning.jpg" alt="Carport tussen twee woningen" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">10</span><h3>Carport tussen twee woningen</h3><button type="button" class="kc-groot" data-groot="9">Bekijk groot</button></div>
           </div></li>
           <li class="kc-persp"><div class="kc-kaart" data-i="10">
+            <div class="kc-vlak"><img src="../assets/web/carport-vrijstaand-schoren.jpg" alt="Vrijstaande carport in douglashout met schoren" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">11</span><h3>Vrijstaande carport in douglashout met schoren</h3><button type="button" class="kc-groot" data-groot="10">Bekijk groot</button></div>
+          </div></li>
+          <li class="kc-persp"><div class="kc-kaart" data-i="11">
+            <div class="kc-vlak"><img src="../assets/web/carport-overkapping-glas.jpg" alt="Overkapping in douglashout met glazen schuifwanden" loading="lazy"></div>
+            <div class="kc-tekst"><span class="kc-nr">12</span><h3>Overkapping in douglashout met glazen schuifwanden</h3><button type="button" class="kc-groot" data-groot="11">Bekijk groot</button></div>
+          </div></li>
+          <li class="kc-persp"><div class="kc-kaart" data-i="12">
             <div class="kc-vlak"><img src="../assets/web/carport-wa093.jpg" alt="Overkapping achter in de tuin" loading="lazy"></div>
-            <div class="kc-tekst"><span class="kc-nr">11</span><h3>Overkapping achter in de tuin</h3><button type="button" class="kc-groot" data-groot="10">Bekijk groot</button></div>
+            <div class="kc-tekst"><span class="kc-nr">13</span><h3>Overkapping achter in de tuin</h3><button type="button" class="kc-groot" data-groot="12">Bekijk groot</button></div>
           </div></li>
         </ul>
       </div>
       <div class="kc-bediening">
         <button type="button" class="kc-pijl kc-vorige" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-        <span class="kc-teller" aria-live="polite">01 / 11</span>
+        <span class="kc-teller" aria-live="polite">01 / 13</span>
         <button type="button" class="kc-pijl kc-volgende" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
     </div>

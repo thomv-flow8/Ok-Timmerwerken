@@ -116,16 +116,18 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Van werkplaats naar afgewerkte ruimte: voor en na
 
 -
+Voor
 
 03
 
-### Tv-wand met nissen in opbouw
+### Verlaagd plafond: balklaag met vlieringluik
 
 -
+Na
 
 04
 
-### Wand met nissen naast de keuken
+### Dichtgemaakt, met inbouwspots en luik
 
 -
 
@@ -134,54 +136,76 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Trap bekleed en afgewerkt, met verlichting in de treden
 
 -
+Voor
 
 06
 
-### Trapopgang strak afgetimmerd
+### Tv-wand met nissen in opbouw
 
 -
+Na
 
 07
-
-### Stalen deur naar de werkkamer
-
--
-
-08
-
-### Lamellenwand met inbouwhaard
-
--
-
-09
-
-### Stalen binnendeur
-
--
-
-10
 
 ### Tv-wand met nissen en haard
 
 -
 
+08
+
+### Trapopgang strak afgetimmerd
+
+-
+Voor
+
+09
+
+### Wand met nissen in opbouw
+
+-
+Na
+
+10
+
+### Wand met nissen naast de keuken
+
+-
+
 11
 
-### Nieuwe wanden op zolder, klaar voor de afwerking
+### Stalen deur naar de werkkamer
 
 -
 
 12
 
-### Lamellenwand in de woonkamer
+### Lamellenwand met inbouwhaard
 
 -
 
 13
 
+### Stalen binnendeur
+
+-
+
+14
+
+### Nieuwe wanden op zolder, klaar voor de afwerking
+
+-
+
+15
+
+### Lamellenwand in de woonkamer
+
+-
+
+16
+
 ### Afgewerkt plafond met inbouwspots
 
-01 / 13
+01 / 16
 
 Zo pakken we het aan
 

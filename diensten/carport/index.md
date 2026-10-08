@@ -102,60 +102,74 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Pergola in opbouw: balken op maat gezaagd
 
 -
+Voor
 
 03
 
-### Overkapping met glazen schuifwanden en zwarte gevel
+### Overkapping in opbouw: het geraamte staat
 
 -
+Na
 
 04
 
-### Lange carport langs de gevel, in douglashout
+### Dezelfde overkapping, afgewerkt
 
 -
 
 05
 
-### Carport tegen de woning
+### Overkapping met glazen schuifwanden en zwarte gevel
 
 -
 
 06
 
-### Overkapping met berging en lichtkoepel
+### Lange carport langs de gevel, in douglashout
 
 -
 
 07
 
-### Overkapping met glazen schuifwanden
+### Carport tegen de woning
 
 -
 
 08
 
-### Carport tussen twee woningen
+### Overkapping met berging en lichtkoepel
 
 -
 
 09
 
-### Vrijstaande carport in douglashout met schoren
+### Overkapping met glazen schuifwanden
 
 -
 
 10
 
-### Overkapping in douglashout met glazen schuifwanden
+### Carport tussen twee woningen
 
 -
 
 11
 
+### Vrijstaande carport in douglashout met schoren
+
+-
+
+12
+
+### Overkapping in douglashout met glazen schuifwanden
+
+-
+
+13
+
 ### Overkapping achter in de tuin
 
-01 / 11
+01 / 13
 
 Zo pakken we het aan
 

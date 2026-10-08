@@ -53,6 +53,18 @@
           "../assets/video/beton-vlinderen.jpg"
         ],
         [
+          "../assets/web/beton-woonkamer-vloerverwarming.jpg",
+          "Woonkamer: vloerverwarming op de wapening",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/beton-woonkamer-gevlinderd.jpg",
+          "Dezelfde woonkamer, gestort en gevlinderd",
+          "",
+          "na"
+        ],
+        [
           "../assets/web/beton-wa202.jpg",
           "Vlinderen in een garage"
         ],
@@ -66,6 +78,18 @@
           "../assets/video/beton-ondergrond.jpg"
         ],
         [
+          "../assets/web/beton-werkplaats-wapening.jpg",
+          "Werkplaats: wapening ligt klaar",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/beton-werkplaats-gestort.jpg",
+          "Dezelfde werkplaats, vloer gestort",
+          "",
+          "na"
+        ],
+        [
           "../assets/web/beton-wa120.jpg",
           "De garagevloer wordt machinaal gevlinderd"
         ],
@@ -76,6 +100,18 @@
         [
           "../assets/web/beton-wa233.jpg",
           "Donkere betonvloer in de tuin, net afgewerkt"
+        ],
+        [
+          "../assets/web/beton-schuur-wapening.jpg",
+          "Betonplaat bij de schuur: wapening wordt gelegd",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/beton-schuur-gestort.jpg",
+          "Dezelfde plaat, gestort en afgewerkt",
+          "",
+          "na"
         ],
         [
           "../assets/web/beton-wa225.jpg",
@@ -348,6 +384,18 @@
           "../assets/video/carport-pergola.jpg"
         ],
         [
+          "../assets/web/carport-pergola-geraamte.jpg",
+          "Overkapping in opbouw: het geraamte staat",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/carport-pergola-af.jpg",
+          "Dezelfde overkapping, afgewerkt",
+          "",
+          "na"
+        ],
+        [
           "../assets/web/carport-wa076.jpg",
           "Overkapping met glazen schuifwanden en zwarte gevel"
         ],
@@ -484,7 +532,15 @@
         ],
         [
           "../assets/web/dakramen-drie-ramen.jpg",
-          "Drie VELUX-dakramen naast elkaar, strak afgewerkt"
+          "Drie VELUX-dakramen geplaatst, afwerking volgt",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/dakramen-drie-ramen-af.jpg",
+          "Dezelfde dakramen, binnen afgewerkt",
+          "",
+          "na"
         ],
         [
           "../assets/web/dakramen-sparing.jpg",
@@ -626,12 +682,16 @@
           "../assets/video/timmerwerk-voor-na.jpg"
         ],
         [
-          "../assets/web/timmer-wa066.jpg",
-          "Tv-wand met nissen in opbouw"
+          "../assets/web/timmer-plafond-open.jpg",
+          "Verlaagd plafond: balklaag met vlieringluik",
+          "",
+          "voor"
         ],
         [
-          "../assets/web/timmer-wa094.jpg",
-          "Wand met nissen naast de keuken"
+          "../assets/web/timmer-plafond-dicht-spots.jpg",
+          "Dichtgemaakt, met inbouwspots en luik",
+          "",
+          "na"
         ],
         [
           "../assets/video/timmerwerk-trap.mp4",
@@ -639,8 +699,32 @@
           "../assets/video/timmerwerk-trap.jpg"
         ],
         [
+          "../assets/web/timmer-wa066.jpg",
+          "Tv-wand met nissen in opbouw",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/timmerwerk-tvwand.jpg",
+          "Tv-wand met nissen en haard",
+          "",
+          "na"
+        ],
+        [
           "../assets/web/timmer-wa141.jpg",
           "Trapopgang strak afgetimmerd"
+        ],
+        [
+          "../assets/web/timmer-nissen-opbouw.jpg",
+          "Wand met nissen in opbouw",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/timmer-wa094.jpg",
+          "Wand met nissen naast de keuken",
+          "",
+          "na"
         ],
         [
           "../assets/web/timmer-wa179.jpg",
@@ -653,10 +737,6 @@
         [
           "../assets/web/timmer-wa036.jpg",
           "Stalen binnendeur"
-        ],
-        [
-          "../assets/web/timmerwerk-tvwand.jpg",
-          "Tv-wand met nissen en haard"
         ],
         [
           "../assets/web/timmer-wa067.jpg",
@@ -788,7 +868,15 @@
         ],
         [
           "../assets/web/fundering-wa032.jpg",
-          "Wapening ligt klaar in de bekisting"
+          "Wapening ligt klaar in de bekisting",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/fundering-haag-gestort.jpg",
+          "Dezelfde plaat, gestort en afgewerkt",
+          "",
+          "na"
         ],
         [
           "../assets/video/fundering-storten.mp4",
@@ -817,7 +905,15 @@
         ],
         [
           "../assets/web/fundering-wa038.jpg",
-          "Storten van een funderingsplaat"
+          "Storten van een funderingsplaat",
+          "",
+          "voor"
+        ],
+        [
+          "../assets/web/fundering-schutting-gestort.jpg",
+          "Dezelfde plaat, gestort tegen de schutting",
+          "",
+          "na"
         ]
       ],
       "faq": [
@@ -928,40 +1024,52 @@
           "Een dragende muur eruit"
         ],
         [
-          "../assets/web/onderhoud-wa329.jpg",
-          "Toilet met nieuw tegelwerk"
+          "../assets/web/onderhoud-toilet-kaal.jpg",
+          "Toilet: kale wanden, klaar voor het tegelwerk",
+          "",
+          "voor"
         ],
         [
-          "../assets/web/onderhoud-toilet.jpg",
-          "Toilet opnieuw betegeld"
+          "../assets/web/onderhoud-wa329.jpg",
+          "Hetzelfde toilet met groene wandtegels",
+          "",
+          "na"
         ],
         [
           "../assets/web/onderhoud-wa132.jpg",
           "Sloopwerk bij een renovatie"
         ],
         [
-          "../assets/web/onderhoud-toilet-groen.jpg",
-          "Toilet met groene wandtegels, tijdens het tegelen"
-        ],
-        [
           "../assets/web/onderhoud-hal-tegels.jpg",
           "Hal met nieuwe tegelvloer"
+        ],
+        [
+          "../assets/web/onderhoud-toilet.jpg",
+          "Toilet opnieuw betegeld"
         ],
         [
           "../assets/web/onderhoud-wa309.jpg",
           "Nieuwe pannen en een doorvoer in het dak"
         ],
         [
-          "../assets/web/onderhoud-wa025.jpg",
-          "Toilet tijdens het tegelen, voorzetwand nog open"
+          "../assets/web/onderhoud-toilet-groen.jpg",
+          "Toilet met groene wandtegels, tijdens het tegelen"
         ],
         [
           "../assets/web/onderhoud-doorbraak-gevel.jpg",
-          "Doorbraak in de gevel, gestempeld"
+          "Doorbraak in de gevel, gestempeld",
+          "",
+          "voor"
         ],
         [
           "../assets/web/onderhoud-schuifpui-geplaatst.jpg",
-          "Nieuwe schuifpui in de doorbraak"
+          "Nieuwe schuifpui in de doorbraak",
+          "",
+          "na"
+        ],
+        [
+          "../assets/web/onderhoud-wa025.jpg",
+          "Toilet tijdens het tegelen, voorzetwand nog open"
         ]
       ],
       "faq": [

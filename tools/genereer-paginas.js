@@ -122,6 +122,9 @@ const extraStijl = `<style>
 .kc-kaart.aan .kc-vlak{transform:translate3d(calc(var(--x,0px) / 30),calc(var(--y,0px) / 30),0)}
 .kc-vlak img,.kc-vlak video{position:absolute;inset:-10%;width:120%;height:120%;max-width:none;object-fit:cover;opacity:.5;transition:opacity .6s ease}
 .kc-kaart.aan .kc-vlak img,.kc-kaart.aan .kc-vlak video{opacity:1}
+.kc-fase{position:absolute;z-index:3;left:6%;top:6%;padding:6px 13px;border-radius:999px;font:700 11.5px var(--f,inherit);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 6px 18px -8px rgba(0,0,0,.45)}
+.kc-fase.voor{background:rgba(255,255,255,.94);color:var(--inkt)}
+.kc-fase.na{background:var(--brons);color:#fff}
 .kc-speel{position:absolute;z-index:3;right:6%;top:6%;width:40px;height:40px;border-radius:50%;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);display:grid;place-items:center}
 .kc-speel svg{width:16px;height:16px;fill:#fff;margin-left:2px}
 .kc-kaart.aan .kc-vlak::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.65),rgba(10,10,8,.05) 55%)}
@@ -603,11 +606,13 @@ ${oproep()}
 // ---------- dienstpagina ----------
 function dienstPagina(d, alle) {
   const n = d.galerij.length, nn = (i) => String(i).padStart(2, '0');
-  // galerij-item: [beeld, bijschrift] of [video.mp4, bijschrift, beginbeeld.jpg] — een video speelt (zonder geluid) als de kaart in het midden staat
-  const kaarten = d.galerij.map(([src, bijschrift, poster], i) => `          <li class="kc-persp"><div class="kc-kaart${i ? '' : ' aan'}${/\.mp4$/.test(src) ? ' kc-video' : ''}" data-i="${i}">
-            <div class="kc-vlak">${/\.mp4$/.test(src)
+  // galerij-item: [beeld, bijschrift] of [video.mp4, bijschrift, beginbeeld.jpg] — een video speelt (zonder geluid) als de kaart in het midden staat.
+  // Optioneel 4e element 'voor' of 'na' (bij een foto is het 3e dan ''): label op de kaart; voor en na staan direct na elkaar.
+  const faseNaam = { voor: 'Voor', na: 'Na' };
+  const kaarten = d.galerij.map(([src, bijschrift, poster, fase], i) => `          <li class="kc-persp"><div class="kc-kaart${i ? '' : ' aan'}${/\.mp4$/.test(src) ? ' kc-video' : ''}" data-i="${i}">
+            <div class="kc-vlak">${fase ? `<span class="kc-fase ${fase}">${faseNaam[fase]}</span>` : ''}${/\.mp4$/.test(src)
     ? `<video data-src="${src}" poster="${poster}" muted loop playsinline preload="none" aria-label="${esc(bijschrift)}"></video><span class="kc-speel" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>`
-    : `<img src="${src}" alt="${esc(bijschrift)}" loading="lazy">`}</div>
+    : `<img src="${src}" alt="${fase ? faseNaam[fase] + ': ' : ''}${esc(bijschrift)}" loading="lazy">`}</div>
             <div class="kc-tekst"><span class="kc-nr">${nn(i + 1)}</span><h3>${esc(bijschrift)}</h3><button type="button" class="kc-groot" data-groot="${i}">${/\.mp4$/.test(src) ? 'Bekijk video' : 'Bekijk groot'}</button></div>
           </div></li>`).join('\n');
   const pijl = (r) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${r ? 'M5 12h14M13 6l6 6-6 6' : 'M19 12H5M11 6l-6 6 6 6'}"/></svg>`;

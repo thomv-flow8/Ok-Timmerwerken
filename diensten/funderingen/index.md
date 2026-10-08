@@ -128,54 +128,70 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### De plaat gestort, met mantelbuizen voor de aansluitingen
 
 -
+Voor
 
 05
 
 ### Wapening ligt klaar in de bekisting
 
 -
+Na
 
 06
 
-### Funderingsplaat storten met de betonpomp
+### Dezelfde plaat, gestort en afgewerkt
 
 -
 
 07
 
-### Wapening voor een betonpoer
+### Funderingsplaat storten met de betonpomp
 
 -
 
 08
 
-### Wapening met afstandhouders voor een betonplaat
+### Wapening voor een betonpoer
 
 -
 
 09
 
-### Gestorte betonplaat langs de schutting
+### Wapening met afstandhouders voor een betonplaat
 
 -
 
 10
 
-### Bekisting, wapening en poeren voor de fundering
+### Gestorte betonplaat langs de schutting
 
 -
 
 11
 
-### Tempex-fundering ligt klaar
+### Bekisting, wapening en poeren voor de fundering
 
 -
 
 12
 
+### Tempex-fundering ligt klaar
+
+-
+Voor
+
+13
+
 ### Storten van een funderingsplaat
 
-01 / 12
+-
+Na
+
+14
+
+### Dezelfde plaat, gestort tegen de schutting
+
+01 / 14
 
 Zo pakken we het aan
 

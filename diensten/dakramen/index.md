@@ -101,66 +101,74 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Nieuw dakraam, helemaal open
 
 -
+Voor
 
 02
 
-### Drie VELUX-dakramen naast elkaar, strak afgewerkt
+### Drie VELUX-dakramen geplaatst, afwerking volgt
 
 -
+Na
 
 03
 
-### De sparing in het dak is gemaakt
+### Dezelfde dakramen, binnen afgewerkt
 
 -
 
 04
 
-### Het dakraam van buiten, netjes in de pannen
+### De sparing in het dak is gemaakt
 
 -
 
 05
 
-### Het dakraam wordt ingebouwd
+### Het dakraam van buiten, netjes in de pannen
 
 -
 
 06
 
-### Dakraam met strakke dagkanten
+### Het dakraam wordt ingebouwd
 
 -
 
 07
 
-### Drie dakramen, veel daglicht
+### Dakraam met strakke dagkanten
 
 -
 
 08
 
-### Twee lichtkoepels in een plat dak
+### Drie dakramen, veel daglicht
 
 -
 
 09
 
-### Afgewerkt dakraam in een schuin dak
+### Twee lichtkoepels in een plat dak
 
 -
 
 10
 
-### Lichtkoepel plaatsen in een plat dak
+### Afgewerkt dakraam in een schuin dak
 
 -
 
 11
 
+### Lichtkoepel plaatsen in een plat dak
+
+-
+
+12
+
 ### Dakraam met afgewerkte omlijsting
 
-01 / 11
+01 / 12
 
 Zo pakken we het aan
 
