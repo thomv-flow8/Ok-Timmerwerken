@@ -920,6 +920,10 @@
       ],
       "galerij": [
         [
+          "../assets/web/onderhoud-badkamer-afgewerkt.jpg",
+          "Afgewerkte badkamer met inloopdouche"
+        ],
+        [
           "../assets/eigen/web/doorbraak-sloop.jpg",
           "Een dragende muur eruit"
         ],
@@ -936,16 +940,12 @@
           "Sloopwerk bij een renovatie"
         ],
         [
-          "../assets/web/onderhoud-badkamer-tegels.jpg",
-          "Badkamer tijdens het tegelen"
+          "../assets/web/onderhoud-toilet-groen.jpg",
+          "Toilet met groene wandtegels, tijdens het tegelen"
         ],
         [
           "../assets/web/onderhoud-hal-tegels.jpg",
           "Hal met nieuwe tegelvloer"
-        ],
-        [
-          "../assets/web/onderhoud-wa316.jpg",
-          "Tegelwerk in uitvoering"
         ],
         [
           "../assets/web/onderhoud-wa309.jpg",
