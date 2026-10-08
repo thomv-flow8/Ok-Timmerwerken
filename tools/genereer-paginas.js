@@ -194,6 +194,8 @@ const extraStijl = `<style>
 .juridisch ul{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300;margin-top:12px}
 .juridisch ul li{margin-top:6px}
 .juridisch .bijgewerkt{margin-top:34px;font-size:13.5px;color:var(--zacht)}
+.juridisch .downloads{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.juridisch .downloads .download{margin-top:0}
 .concept-melding{margin:0 0 30px;padding:16px 20px;border:1px dashed #c6702f;border-radius:12px;background:#fff8f1;color:#7a4a1f;font-size:14px;line-height:1.6}
 .concept-melding b{display:block;margin-bottom:6px}
 .concept-melding ul{margin:6px 0 0;padding-left:20px;color:inherit}
@@ -1084,9 +1086,12 @@ ${v.secties.map((x) => `      <h2>${esc(x.titel)}</h2>${alineas(x.alineas)}${lij
 }
 
 function voorwaardenHtml(v) {
+  const formulier = v.formulier ? `\n        <a class="download" href="${v.formulier}" target="_blank" rel="noopener">Herroepingsformulier (pdf)</a>` : '';
   return `      <p>${esc(v.intro)}</p>
-      <a class="download" href="${v.pdf}" target="_blank" rel="noopener">Download als pdf</a>
-${v.artikelen.map((a) => `      <h2>${esc(a.titel)}</h2>\n      <ol>${a.leden.map((l) => `<li>${esc(l)}</li>`).join('')}</ol>`).join('\n')}`;
+      <div class="downloads">
+        <a class="download" href="${v.pdf}" target="_blank" rel="noopener">Download als pdf</a>${formulier}
+      </div>
+${v.artikelen.map((a) => `      <h2>${esc(a.titel)}</h2>\n      <ol>${a.leden.map((l) => `<li>${esc(l)}</li>`).join('')}</ol>`).join('\n')}${v.versie ? `\n      <p class="bijgewerkt">${esc(v.versie)}</p>` : ''}`;
 }
 
 // ---------- schrijven ----------
