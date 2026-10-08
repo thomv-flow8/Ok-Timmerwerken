@@ -93,7 +93,7 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 01
 
-### Carport in douglashout tegen de woning
+### Carport tegen de woning, met nieuwe bestrating
 
 -
 
@@ -167,33 +167,21 @@ Na
 
 13
 
-### Tuinhuis in douglashout met openslaande deuren
+### Vrijstaande carport in douglashout met schoren
 
 -
 
 14
 
-### Vrijstaande carport in douglashout met schoren
+### Overkapping in douglashout met glazen schuifwanden
 
 -
 
 15
 
-### Overkapping in douglashout met glazen schuifwanden
-
--
-
-16
-
 ### Overkapping achter in de tuin
 
--
-
-17
-
-### Carport tegen de woning, met nieuwe bestrating
-
-01 / 17
+01 / 15
 
 Zo pakken we het aan
 

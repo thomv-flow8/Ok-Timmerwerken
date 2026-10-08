@@ -142,62 +142,44 @@ Na
 ### Dezelfde plaat, gestort en afgewerkt
 
 -
-
-07
-
-### Funderingsplaat storten met de betonpomp
-
--
-
-08
-
-### Verse betonplaat naast de kas, net gestort
-
--
-
-09
-
-### Wapening voor een betonpoer
-
--
-
-10
-
-### Wapening met afstandhouders voor een betonplaat
-
--
-
-11
-
-### Gestorte betonplaat langs de schutting
-
--
-
-12
-
-### Bekisting, wapening en poeren voor de fundering
-
--
-
-13
-
-### Tempex-fundering ligt klaar
-
--
 Voor
 
-14
+07
 
 ### Storten van een funderingsplaat
 
 -
 Na
 
-15
+08
 
 ### Dezelfde plaat, gestort tegen de schutting
 
-01 / 15
+-
+
+09
+
+### Funderingsplaat storten met de betonpomp
+
+-
+
+10
+
+### Wapening voor een betonpoer
+
+-
+
+11
+
+### Wapening met afstandhouders voor een betonplaat
+
+-
+
+12
+
+### Gestorte betonplaat langs de schutting
+
+01 / 12
 
 Zo pakken we het aan
 

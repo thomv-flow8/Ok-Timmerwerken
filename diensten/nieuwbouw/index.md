@@ -99,7 +99,7 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 02
 
-### Betonpomp op de bouwplaats van een nieuwbouwproject
+### Nieuwe woning met gevlinderde vloer en open spanten
 
 -
 
@@ -111,51 +111,39 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 04
 
-### Betonmixer en pomp op de bouwplaats
+### Betonwand in aanbouw
 
 -
 
 05
 
-### Betonwand in aanbouw
+### Betonpomp op de bouwplaats van een nieuwbouwproject
 
 -
 
 06
 
-### Betonwanden storten met de pomp
+### HSB-wand met isolatie
 
 -
 
 07
 
-### HSB-wand met isolatie
+### Balklaag en plafond in een nieuwe woning
 
 -
 
 08
 
-### Balklaag en plafond in een nieuwe woning
+### Houtconstructie met trap naar boven
 
 -
 
 09
 
-### Houtconstructie met trap naar boven
-
--
-
-10
-
 ### Ruwe vloer, klaar voor de afwerking
 
--
-
-11
-
-### Nieuwe woning met gevlinderde vloer en open spanten
-
-01 / 11
+01 / 09
 
 Zo pakken we het aan
 

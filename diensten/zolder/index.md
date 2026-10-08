@@ -86,19 +86,19 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 01
 
-### Vliering met vaste ladder en hekwerk
+### Rondgang over de verbouwde zolder
 
 -
 
 02
 
-### Rondgang over de verbouwde zolder
+### Vliering met vaste ladder en hekwerk
 
 -
 
 03
 
-### Zolderverbouwing in volle gang
+### Afgewerkte zolder met knieschotten en dakraam
 
 -
 
@@ -110,31 +110,31 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 05
 
-### Regelwerk voor de nieuwe wanden
+### Zolderverbouwing in volle gang
 
 -
 
 06
 
-### Vlizotrap naar de vliering
+### Zolder in afbouw: wanden geplaatst, plafond in regelwerk
 
 -
 
 07
 
-### Nieuwe vloerconstructie op zolder
+### Afgewerkte zolder met spots en luik
 
 -
 
 08
 
-### Afgewerkte zolder met knieschotten en dakraam
+### Nieuwe vloerconstructie op zolder
 
 -
 
 09
 
-### Zolder in afbouw: wanden geplaatst, plafond in regelwerk
+### Vlizotrap naar de vliering
 
 -
 
@@ -142,19 +142,7 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 ### Vliering in opbouw, met isolatie
 
--
-
-11
-
-### Dakisolatie tussen de spanten
-
--
-
-12
-
-### Afgewerkte zolder met spots en luik
-
-01 / 12
+01 / 10
 
 Zo pakken we het aan
 

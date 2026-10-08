@@ -96,76 +96,70 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Afgewerkte badkamer met inloopdouche
 
 -
-
-02
-
-### Een dragende muur eruit
-
--
 Voor
 
-03
+02
 
 ### Toilet: kale wanden, klaar voor het tegelwerk
 
 -
 Na
 
-04
+03
 
 ### Hetzelfde toilet met groene wandtegels
 
 -
-
-05
-
-### Sloopwerk bij een renovatie
-
--
-
-06
-
-### Hal met nieuwe tegelvloer
-
--
-
-07
-
-### Toilet opnieuw betegeld
-
--
-
-08
-
-### Nieuwe pannen en een doorvoer in het dak
-
--
-
-09
-
-### Toilet met groene wandtegels, tijdens het tegelen
-
--
 Voor
 
-10
+04
 
 ### Doorbraak in de gevel, gestempeld
 
 -
 Na
 
-11
+05
 
 ### Nieuwe schuifpui in de doorbraak
 
 -
 
-12
+06
+
+### Een dragende muur eruit
+
+-
+
+07
+
+### Sloopwerk bij een renovatie
+
+-
+
+08
+
+### Hal met nieuwe tegelvloer
+
+-
+
+09
+
+### Nieuwe pannen en een doorvoer in het dak
+
+-
+
+10
 
 ### Toilet tijdens het tegelen, voorzetwand nog open
 
-01 / 12
+-
+
+11
+
+### Toilet opnieuw betegeld
+
+01 / 11
 
 Zo pakken we het aan
 

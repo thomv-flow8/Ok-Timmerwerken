@@ -104,82 +104,82 @@ Uitgevoerd werk
 Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
 
 -
+Voor
 
 01
 
-### Regelwerk voor nieuwe wanden op zolder
+### Tv-wand met nissen in opbouw
 
 -
 
 02
 
-### Van werkplaats naar afgewerkte ruimte: voor en na
+### Tv-wand in afbouw: de tv hangt, de afwerking volgt
+
+-
+Na
+
+03
+
+### Tv-wand met nissen en haard
+
+-
+
+04
+
+### Lamellenwand met inbouwhaard
 
 -
 Voor
 
-03
+05
 
 ### Verlaagd plafond: balklaag met vlieringluik
 
 -
 Na
 
-04
+06
 
 ### Dichtgemaakt, met inbouwspots en luik
 
 -
-
-05
-
-### Trap bekleed en afgewerkt, met verlichting in de treden
-
--
 Voor
-
-06
-
-### Tv-wand met nissen in opbouw
-
--
-Na
 
 07
-
-### Tv-wand met nissen en haard
-
--
-
-08
-
-### Trapopgang strak afgetimmerd
-
--
-
-09
-
-### Tv-wand in afbouw: de tv hangt, de afwerking volgt
-
--
-Voor
-
-10
 
 ### Wand met nissen in opbouw
 
 -
 Na
 
-11
+08
 
 ### Wand met nissen naast de keuken
 
 -
 
-12
+09
+
+### Trap bekleed en afgewerkt, met verlichting in de treden
+
+-
+
+10
+
+### Trapopgang strak afgetimmerd
+
+-
+
+11
 
 ### Stalen deur naar de werkkamer
+
+-
+
+12
+
+### Stalen binnendeur
 
 -
 
@@ -191,39 +191,21 @@ Na
 
 14
 
-### Lamellenwand met inbouwhaard
+### Nieuwe wanden op zolder, klaar voor de afwerking
 
 -
 
 15
 
-### Stalen binnendeur
+### Vlonder met twee beloopbare lichtkoepels
 
 -
 
 16
 
-### Nieuwe wanden op zolder, klaar voor de afwerking
-
--
-
-17
-
-### Vlonder met twee beloopbare lichtkoepels
-
--
-
-18
-
 ### Lamellenwand in de woonkamer
 
--
-
-19
-
-### Afgewerkt plafond met inbouwspots
-
-01 / 19
+01 / 16
 
 Zo pakken we het aan
 
