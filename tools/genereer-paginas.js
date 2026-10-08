@@ -80,6 +80,10 @@ const extraStijl = `<style>
 .p-beeld{position:relative;aspect-ratio:1/1;background:var(--bg);overflow:hidden;border-radius:2px;
   box-shadow:0 50px 90px -40px rgba(20,19,15,.45),0 18px 36px -24px rgba(20,19,15,.25)}
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.p-keurmerk{display:flex;align-items:center;gap:16px;margin-top:22px}   /* dakramen: VELUX + Getraind 2025 onder de foto, even hoog */
+.p-keurmerk img{height:42px;width:auto;border-radius:5px;flex:none}
+.p-keurmerk img+img{height:60px}   /* smalle sticker iets hoger dan het brede woordmerk: visueel even zwaar */
+.p-keurmerk span{font-size:13.5px;font-weight:600;line-height:1.35;color:var(--zacht)}
 .p-beeld img.p-logo{inset:auto;left:7%;bottom:7%;z-index:2;width:clamp(68px,17%,100px);height:auto;object-fit:contain;border-radius:8px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}   /* dakramen: officieel VELUX-logo op de foto, zoals op home */
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
@@ -149,15 +153,6 @@ const extraStijl = `<style>
 .ond-zij{position:sticky;top:100px}   /* menu + (bij dakramen) VELUX-keurmerken schuiven samen mee */
 .ond-nav{display:flex;flex-direction:column;border-left:1px solid var(--rand)}
 .ond-download{grid-column:2}
-.velux-zij{margin-top:34px;padding:18px;background:#fff;border:1px solid var(--rand);border-radius:14px;box-shadow:0 24px 50px -36px rgba(20,19,15,.35)}
-.vz-logos{display:flex;gap:10px;align-items:center}
-.vz-logos img{height:76px;width:auto;border-radius:6px}
-.velux-zij .woordmerk{display:block;height:30px;width:auto;margin-top:14px;border-radius:4px}
-/* desktop (zijkolom): de drie keurmerken onder elkaar, even breed; op mobiel blijven ze naast elkaar */
-@media(min-width:821px){.vz-logos{flex-direction:column;align-items:flex-start;gap:14px}
-  .vz-logos img{width:120px;height:auto}.vz-logos img+img{width:auto;height:120px}
-  .velux-zij .woordmerk{width:120px;height:auto;margin-top:14px}}
-.velux-zij p{margin-top:10px;font-size:13.5px;font-weight:600;color:var(--inkt)}
 .ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
   transition:color .2s,border-color .2s}
 .ond-nav a:hover{color:var(--inkt);border-left-color:var(--brons)}
@@ -176,7 +171,7 @@ const extraStijl = `<style>
 .krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
 @media(max-width:900px){.krul-over{display:none}}
 @media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
-  .ond-zij{display:contents}.ond-lijst{order:1}.velux-zij{order:2;margin-top:6px;max-width:340px}.ond-download{order:3;grid-column:auto}
+  .ond-zij{display:contents}.ond-lijst{order:1}.ond-download{order:2;grid-column:auto}
   .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
 
 /* diensten-overzicht */
@@ -599,13 +594,9 @@ ${kaarten}
         <svg class="krul-mini" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
         <b>Alle diensten</b><small>Alle werkzaamheden op een rij →</small>
       </a>`;
-  // dakramen: de VELUX-keurmerken staan in de zijkolom van "Alle werkzaamheden", naast de uitleg (op mobiel onder de lijst)
-  const veluxZij = d.slug === 'dakramen' ? `
-        <div class="velux-zij">
-          <div class="vz-logos"><img src="../assets/velux/velux-montagepartner.jpg" alt="VELUX Montagepartner"><img src="../assets/velux/velux-getraind-2025.jpg" alt="VELUX getraind 2025"></div>
-          <img class="woordmerk" src="../assets/velux/velux-logo.jpg" alt="VELUX">
-          <p>Erkend en getraind door VELUX</p>
-        </div>` : '';
+  const pBeeld = `    <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
+      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">${d.slug === 'dakramen' ? '\n      <img class="p-logo" src="../assets/velux/velux-montagepartner.jpg" alt="Erkend VELUX Montagepartner">' : ''}
+    </div>`;
   const onderdelen = d.onderdelen ? `
 <!-- ALLE WERKZAAMHEDEN -->
 <section class="creme" id="werkzaamheden">
@@ -619,7 +610,7 @@ ${kaarten}
       <div class="ond-zij">
         <nav class="ond-nav" aria-label="Werkzaamheden">
 ${d.onderdelen.map((o) => `          <a href="#${o.id}">${esc(o.titel)}</a>`).join('\n')}
-        </nav>${veluxZij}
+        </nav>
       </div>
       <div class="ond-lijst">
 ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${String(i + 1).padStart(2, '0')}</span><h3>${esc(o.titel)}</h3><p>${esc(o.tekst)}</p></article>`).join('\n')}
@@ -654,9 +645,10 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
       </div>
     </div>
-    <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
-      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">${d.slug === 'dakramen' ? '\n      <img class="p-logo" src="../assets/velux/velux-montagepartner.jpg" alt="Erkend VELUX Montagepartner">' : ''}
-    </div>
+    ${d.slug === 'dakramen' ? `<div class="p-rechts">
+${pBeeld}
+      <div class="p-keurmerk"><img src="../assets/velux/velux-logo.jpg" alt="VELUX"><img src="../assets/velux/velux-getraind-2025.jpg" alt="VELUX getraind 2025"><span>Getraind en gecertificeerd<br>door VELUX</span></div>
+    </div>` : pBeeld}
   </div>
 </section>
 
