@@ -92,7 +92,7 @@ Uitgevoerd werk
 
 ## Echte projecten van OK.
 
-Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
+Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
 
 -
 

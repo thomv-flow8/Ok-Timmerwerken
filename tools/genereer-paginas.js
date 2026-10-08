@@ -712,7 +712,7 @@ ${onderdelen}
     <div class="kop op">
       ${oog('Uitgevoerd werk')}
       <h2>Echte projecten van <em class="serif">OK</em>.</h2>
-      <p class="lead">Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op <em>Bekijk groot</em>.</p>
+      <p class="lead">Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op <em>Bekijk groot</em>.</p>
     </div>
 ${galerij}
   </div>

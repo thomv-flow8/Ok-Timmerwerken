@@ -25,7 +25,7 @@ Diensten
 ## Alle vakken. Eén vaste ploeg.
 
 Van de fundering tot het dakraam. Scroll door het werk — elke dienst laat zien
-wat [Ozcan en zijn ploeg](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/) opleveren.
+wat [OK Timmerwerken](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/) oplevert.
 
 machinaal gevlinderd
 
