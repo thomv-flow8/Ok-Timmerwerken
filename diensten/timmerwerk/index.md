@@ -149,13 +149,13 @@ Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto a
 
 08
 
-### Verlaagd plafond met inbouwspots
+### Lamellenwand met inbouwhaard
 
 -
 
 09
 
-### Lamellenwand met inbouwhaard
+### Stalen binnendeur
 
 -
 
@@ -167,27 +167,21 @@ Foto's van klussen die Ozcan en zijn ploeg hebben uitgevoerd. Klik op een foto a
 
 11
 
-### Stalen binnendeur
+### Nieuwe wanden op zolder, klaar voor de afwerking
 
 -
 
 12
 
-### Nieuwe wanden op zolder, klaar voor de afwerking
+### Lamellenwand in de woonkamer
 
 -
 
 13
 
-### Lamellenwand in de woonkamer
-
--
-
-14
-
 ### Afgewerkt plafond met inbouwspots
 
-01 / 14
+01 / 13
 
 Zo pakken we het aan
 
