@@ -1235,6 +1235,42 @@ schrijf('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 ${sitePaginas.map((r) => `  <url><loc>${SITE}${r}</loc><lastmod>${vandaag}</lastmod></url>`).join('\n')}
 </urlset>
 `);
+// llms.txt (llmstxt.org): korte, leesbare samenvatting van de site voor AI-assistenten en -zoekmachines,
+// opgebouwd uit dezelfde inhoud als de pagina's, zodat hij altijd actueel is
+{
+  const rb = reviewData.bronnen, tijden = inhoud.werktijden.map(([d, t]) => `${d} ${t.toLowerCase()}`).join(', ');
+  const kort = (t) => t.replace(/\s+/g, ' ').trim();
+  const cijfer = (n) => n.toFixed(1).replace('.', ',');
+  schrijf('llms.txt', `# OK Timmerwerken
+
+> Timmer- en betonwerk in Gorinchem en omstreken, sinds 2011. Eenmanszaak van Ozcan: één vast aanspreekpunt van offerte tot oplevering. Erkend VELUX Montagepartner (door VELUX getraind in 2025). Beoordeeld met een ${cijfer(rb.werkspot.score)} op Werkspot (${rb.werkspot.aantal} reviews) en een ${cijfer(rb.google.score)} op Google (${rb.google.aantal} reviews).
+
+- Adres: Suzanna van Oostdijkstraat 4, 4206 XW Gorinchem
+- Werkgebied: Gorinchem en regio Zuid-Holland
+- Telefoon en WhatsApp: 06 41 42 91 06
+- E-mail: info@ok-timmerwerken.nl
+- KvK: 51855232
+- Werktijden: ${tijden}
+- Offerte: gratis en vrijblijvend, na een bezoek ter plaatse
+
+## Diensten
+
+${inhoud.diensten.map((d) => `- [${d.naam}](${SITE}diensten/${d.slug}/): ${kort(d.intro)}`).join('\n')}
+
+## Over het bedrijf
+
+- [Over ons](${SITE}over-ons/): ${kort(inhoud.over.intro)}
+- [Reviews](${SITE}reviews/): alle klantbeoordelingen van Werkspot en Google op één pagina.
+- [Contact](${SITE}contact/): bellen, appen of een vrijblijvende aanvraag sturen.
+- [Alle diensten](${SITE}diensten/): overzicht van alle werkzaamheden.
+
+## Optional
+
+- [Algemene voorwaarden](${SITE}algemene-voorwaarden/)
+- [Privacyverklaring](${SITE}privacyverklaring/)
+- [Disclaimer](${SITE}disclaimer/)
+`);
+}
 // 404: GitHub Pages toont /404.html bij elk onbekend adres, op elke diepte. Daarom eerst het basisadres bepalen
 // (testomgeving /Ok-Timmerwerken/ of straks /) zodat beelden en links overal kloppen.
 const nietGevonden = pagina({

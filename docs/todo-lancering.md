@@ -113,6 +113,6 @@ De technische details van de livegang staan ook in `PROJECT.md` (Checklist liveg
 - [ ] Tijdlijn en "500+ projecten" af en toe bijwerken (jaren lopen al vanzelf mee).
 
 ## Optioneel (kleine winst)
-- [ ] `llms.txt` voor AI-zoekmachines.
-- [ ] Inline CSS/JS verkleinen bij het bouwen (~10 KB per pagina).
+- [x] `llms.txt` voor AI-zoekmachines (wordt door de generator gemaakt uit `docs/inhoud.json` en `docs/reviews.json`; loopt mee met `SITE`).
+- [x] Inline CSS/JS verkleinen bij het bouwen (~10 KB per pagina).
 - [ ] Foto's in WebP-formaat (iets lichter; meer werk).
