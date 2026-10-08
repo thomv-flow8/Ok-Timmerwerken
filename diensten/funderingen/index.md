@@ -151,7 +151,7 @@ Na
 
 08
 
-### Fundering voor een zwembad, net gestort
+### Verse betonplaat naast de kas, net gestort
 
 -
 
