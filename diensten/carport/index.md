@@ -131,45 +131,69 @@ Na
 
 07
 
-### Carport tegen de woning
+### Dezelfde carport: dichte zijwand in douglashout
 
 -
 
 08
 
-### Overkapping met berging en lichtkoepel
+### Dezelfde carport van buiten, tussen het groen
 
 -
 
 09
 
-### Overkapping met glazen schuifwanden
+### Carport tegen de woning
 
 -
 
 10
 
-### Carport tussen twee woningen
+### Overkapping met berging en lichtkoepel
 
 -
 
 11
 
-### Vrijstaande carport in douglashout met schoren
+### Overkapping met glazen schuifwanden
 
 -
 
 12
 
-### Overkapping in douglashout met glazen schuifwanden
+### Carport tussen twee woningen
 
 -
 
 13
 
+### Tuinhuis in douglashout met openslaande deuren
+
+-
+
+14
+
+### Vrijstaande carport in douglashout met schoren
+
+-
+
+15
+
+### Overkapping in douglashout met glazen schuifwanden
+
+-
+
+16
+
 ### Overkapping achter in de tuin
 
-01 / 13
+-
+
+17
+
+### Carport tegen de woning, met nieuwe bestrating
+
+01 / 17
 
 Zo pakken we het aan
 

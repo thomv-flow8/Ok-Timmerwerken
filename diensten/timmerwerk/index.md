@@ -156,56 +156,74 @@ Na
 ### Trapopgang strak afgetimmerd
 
 -
-Voor
 
 09
+
+### Tv-wand in afbouw: de tv hangt, de afwerking volgt
+
+-
+Voor
+
+10
 
 ### Wand met nissen in opbouw
 
 -
 Na
 
-10
+11
 
 ### Wand met nissen naast de keuken
 
 -
 
-11
+12
 
 ### Stalen deur naar de werkkamer
 
 -
 
-12
-
-### Lamellenwand met inbouwhaard
-
--
-
 13
 
-### Stalen binnendeur
+### Regelwerk voor een verlaagd plafond
 
 -
 
 14
 
-### Nieuwe wanden op zolder, klaar voor de afwerking
+### Lamellenwand met inbouwhaard
 
 -
 
 15
 
-### Lamellenwand in de woonkamer
+### Stalen binnendeur
 
 -
 
 16
 
+### Nieuwe wanden op zolder, klaar voor de afwerking
+
+-
+
+17
+
+### Vlonder met twee beloopbare lichtkoepels
+
+-
+
+18
+
+### Lamellenwand in de woonkamer
+
+-
+
+19
+
 ### Afgewerkt plafond met inbouwspots
 
-01 / 16
+01 / 19
 
 Zo pakken we het aan
 

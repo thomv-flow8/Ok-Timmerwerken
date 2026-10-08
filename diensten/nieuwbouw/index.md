@@ -149,7 +149,13 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 ### Ruwe vloer, klaar voor de afwerking
 
-01 / 10
+-
+
+11
+
+### Nieuwe woning met gevlinderde vloer en open spanten
+
+01 / 11
 
 Zo pakken we het aan
 

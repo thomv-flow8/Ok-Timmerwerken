@@ -138,91 +138,121 @@ Na
 
 07
 
+### Betonplaat in de achtertuin, net gestort
+
+-
+
+08
+
 ### Ondergrond voorbereid voor een nieuwe betonvloer
 
 -
 Voor
 
-08
+09
 
 ### Werkplaats: wapening ligt klaar
 
 -
 Na
 
-09
+10
 
 ### Dezelfde werkplaats, vloer gestort
 
 -
 
-10
+11
 
 ### De garagevloer wordt machinaal gevlinderd
 
 -
 
-11
+12
 
 ### Strakke betonvloer onder een overkapping
 
 -
 
-12
+13
+
+### Verse vloer onder de veranda, net gevlinderd
+
+-
+
+14
 
 ### Donkere betonvloer in de tuin, net afgewerkt
 
 -
+
+15
+
+### Gevlinderde vloer voor een glazen pui
+
+-
 Voor
 
-13
+16
 
 ### Betonplaat bij de schuur: wapening wordt gelegd
 
 -
 Na
 
-14
+17
 
 ### Dezelfde plaat, gestort en afgewerkt
 
 -
 
-15
-
-### Betonplaat tot aan de achtergevel
-
--
-
-16
-
-### Betonvloer onder een carport
-
--
-
-17
-
-### Gevlinderde vloer onder een overkapping
-
--
-
 18
 
-### Vloerverwarming op het wapeningsnet, klaar om te storten
+### Betonplaat in L-vorm, net gestort
 
 -
 
 19
 
-### Spiegelgladde betonplaat, net gestort
+### Betonplaat tot aan de achtergevel
 
 -
 
 20
 
+### Betonvloer onder een carport
+
+-
+
+21
+
+### Gevlinderde vloer onder een overkapping
+
+-
+
+22
+
+### Vloerverwarming op het wapeningsnet, klaar om te storten
+
+-
+
+23
+
+### Spiegelgladde betonplaat, net gestort
+
+-
+
+24
+
 ### Zandbed en hoogtemeting voor een garagevloer
 
-01 / 20
+-
+
+25
+
+### Gevlinderde vloer in een berging
+
+01 / 25
 
 Zo pakken we het aan
 

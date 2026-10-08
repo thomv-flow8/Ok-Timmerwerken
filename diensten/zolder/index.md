@@ -128,27 +128,33 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 08
 
-### Zolder in afbouw: wanden geplaatst, plafond in regelwerk
+### Afgewerkte zolder met knieschotten en dakraam
 
 -
 
 09
 
-### Vliering in opbouw, met isolatie
+### Zolder in afbouw: wanden geplaatst, plafond in regelwerk
 
 -
 
 10
 
-### Dakisolatie tussen de spanten
+### Vliering in opbouw, met isolatie
 
 -
 
 11
 
+### Dakisolatie tussen de spanten
+
+-
+
+12
+
 ### Afgewerkte zolder met spots en luik
 
-01 / 11
+01 / 12
 
 Zo pakken we het aan
 

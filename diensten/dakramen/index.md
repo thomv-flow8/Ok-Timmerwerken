@@ -124,51 +124,63 @@ Na
 
 05
 
-### Het dakraam van buiten, netjes in de pannen
+### Drie dakramen naast elkaar, klaar voor de afwerking
 
 -
 
 06
 
-### Het dakraam wordt ingebouwd
+### Het dakraam van buiten, netjes in de pannen
 
 -
 
 07
 
-### Dakraam met strakke dagkanten
+### Het dakraam wordt ingebouwd
 
 -
 
 08
 
-### Drie dakramen, veel daglicht
+### Dakraam met strakke dagkanten
 
 -
 
 09
 
-### Twee lichtkoepels in een plat dak
+### Drie dakramen, veel daglicht
 
 -
 
 10
 
-### Afgewerkt dakraam in een schuin dak
+### Twee dakramen boven een werkplek
 
 -
 
 11
 
-### Lichtkoepel plaatsen in een plat dak
+### Twee lichtkoepels in een plat dak
 
 -
 
 12
 
+### Afgewerkt dakraam in een schuin dak
+
+-
+
+13
+
+### Lichtkoepel plaatsen in een plat dak
+
+-
+
+14
+
 ### Dakraam met afgewerkte omlijsting
 
-01 / 12
+01 / 14
 
 Zo pakken we het aan
 

@@ -73,6 +73,10 @@
           "Verse betonplaat in een smalle achtertuin"
         ],
         [
+          "../assets/web/beton-achtertuin-gestort.jpg",
+          "Betonplaat in de achtertuin, net gestort"
+        ],
+        [
           "../assets/video/beton-ondergrond.mp4",
           "Ondergrond voorbereid voor een nieuwe betonvloer",
           "../assets/video/beton-ondergrond.jpg"
@@ -98,8 +102,16 @@
           "Strakke betonvloer onder een overkapping"
         ],
         [
+          "../assets/web/beton-veranda-gevlinderd.jpg",
+          "Verse vloer onder de veranda, net gevlinderd"
+        ],
+        [
           "../assets/web/beton-wa233.jpg",
           "Donkere betonvloer in de tuin, net afgewerkt"
+        ],
+        [
+          "../assets/web/beton-aanbouw-glazen-pui.jpg",
+          "Gevlinderde vloer voor een glazen pui"
         ],
         [
           "../assets/web/beton-schuur-wapening.jpg",
@@ -112,6 +124,10 @@
           "Dezelfde plaat, gestort en afgewerkt",
           "",
           "na"
+        ],
+        [
+          "../assets/web/beton-plaat-l-vorm.jpg",
+          "Betonplaat in L-vorm, net gestort"
         ],
         [
           "../assets/web/beton-wa225.jpg",
@@ -136,6 +152,10 @@
         [
           "../assets/web/beton-wa294.jpg",
           "Zandbed en hoogtemeting voor een garagevloer"
+        ],
+        [
+          "../assets/web/beton-berging-gevlinderd.jpg",
+          "Gevlinderde vloer in een berging"
         ]
       ],
       "review": [
@@ -266,6 +286,10 @@
         [
           "../assets/web/zolder-wa104.jpg",
           "Nieuwe vloerconstructie op zolder"
+        ],
+        [
+          "../assets/web/zolder-knieschotten-dakraam.jpg",
+          "Afgewerkte zolder met knieschotten en dakraam"
         ],
         [
           "../assets/video/zolder-afwerking.mp4",
@@ -404,6 +428,14 @@
           "Lange carport langs de gevel, in douglashout"
         ],
         [
+          "../assets/web/carport-langs-gevel-wand.jpg",
+          "Dezelfde carport: dichte zijwand in douglashout"
+        ],
+        [
+          "../assets/web/carport-langs-gevel-buiten.jpg",
+          "Dezelfde carport van buiten, tussen het groen"
+        ],
+        [
           "../assets/web/carport-wa004.jpg",
           "Carport tegen de woning"
         ],
@@ -420,6 +452,10 @@
           "Carport tussen twee woningen"
         ],
         [
+          "../assets/web/carport-tuinhuis-deuren.jpg",
+          "Tuinhuis in douglashout met openslaande deuren"
+        ],
+        [
           "../assets/web/carport-vrijstaand-schoren.jpg",
           "Vrijstaande carport in douglashout met schoren"
         ],
@@ -430,6 +466,10 @@
         [
           "../assets/web/carport-wa093.jpg",
           "Overkapping achter in de tuin"
+        ],
+        [
+          "../assets/web/carport-bestrating.jpg",
+          "Carport tegen de woning, met nieuwe bestrating"
         ]
       ],
       "review": [
@@ -547,6 +587,10 @@
           "De sparing in het dak is gemaakt"
         ],
         [
+          "../assets/web/dakramen-drie-ramen-hout.jpg",
+          "Drie dakramen naast elkaar, klaar voor de afwerking"
+        ],
+        [
           "../assets/web/dakraam-buiten.jpg",
           "Het dakraam van buiten, netjes in de pannen"
         ],
@@ -561,6 +605,10 @@
         [
           "../assets/web/dakraam-wa108.jpg",
           "Drie dakramen, veel daglicht"
+        ],
+        [
+          "../assets/web/dakramen-twee-werkplek.jpg",
+          "Twee dakramen boven een werkplek"
         ],
         [
           "../assets/web/lichtkoepels-dak.jpg",
@@ -715,6 +763,10 @@
           "Trapopgang strak afgetimmerd"
         ],
         [
+          "../assets/web/timmer-tvwand-afbouw.jpg",
+          "Tv-wand in afbouw: de tv hangt, de afwerking volgt"
+        ],
+        [
           "../assets/web/timmer-nissen-opbouw.jpg",
           "Wand met nissen in opbouw",
           "",
@@ -731,6 +783,10 @@
           "Stalen deur naar de werkkamer"
         ],
         [
+          "../assets/web/timmer-plafond-regelwerk.jpg",
+          "Regelwerk voor een verlaagd plafond"
+        ],
+        [
           "../assets/web/timmer-lamellenwand-haard.jpg",
           "Lamellenwand met inbouwhaard"
         ],
@@ -741,6 +797,10 @@
         [
           "../assets/web/timmer-wa067.jpg",
           "Nieuwe wanden op zolder, klaar voor de afwerking"
+        ],
+        [
+          "../assets/web/timmer-vlonder-lichtkoepels.jpg",
+          "Vlonder met twee beloopbare lichtkoepels"
         ],
         [
           "../assets/web/timmerwerk-lamellenwand.jpg",
@@ -1205,6 +1265,10 @@
         [
           "../assets/web/nieuwbouw-ruwe-vloer.jpg",
           "Ruwe vloer, klaar voor de afwerking"
+        ],
+        [
+          "../assets/web/nieuwbouw-vloer-spanten.jpg",
+          "Nieuwe woning met gevlinderde vloer en open spanten"
         ]
       ],
       "faq": [
