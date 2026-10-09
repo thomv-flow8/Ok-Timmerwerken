@@ -1,79 +1,66 @@
-# Checklist nieuwe website OK Timmerwerken — nog navragen en aanleveren
+# Checklist nieuwe website OK Timmerwerken — wat Ozcan nog moet doen
 
-Stand: 7 oktober 2026. Onze eigen takenlijst: `docs/todo-lancering.md`. Testadres: https://thomv-flow8.github.io/Ok-Timmerwerken/ (niet vindbaar in Google).
+Stand: 9 oktober 2026. Onze eigen takenlijst: `docs/todo-lancering.md`.
+Testadres: https://thomv-flow8.github.io/Ok-Timmerwerken/ (niet vindbaar in Google).
 
-De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een antwoord of een bestand van Ozcan.
+De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een akkoord, een antwoord of toegang van Ozcan.
 **Vet** = nodig vóór de livegang; de rest mag later.
 
 ---
 
-## 1. Bevestigen of kiezen
+## 1. Akkoord geven
 
-### Bedrijfsgegevens
-- [ ] **Werktijden** — Google zegt ma–vr 7:00–20:00, za 7:00–16:00; de oude site zei ma–vr 7:00–18:00, za 7:00–15:00.
-      Wat klopt? (Komt op de site, in de footer, in de gegevens voor Google en moet gelijk staan op het Google-bedrijfsprofiel.)
-- [ ] **Adres op de site** — Suzanna van Oostdijkstraat 4, 4206 XW Gorinchem staat in de footer en bij Google. Is dat oké om openbaar te tonen?
-- [ ] **Werkgebied** — "Gorinchem en regio Zuid-Holland". Klopt dat zo?
-- [ ] **"U hoort meestal binnen een dag van ons"** — die belofte staat op de contactpagina. Haalbaar?
-
-### Cijfers en tijdlijn
-- [ ] **"500+ projecten"** — een schatting (175 reviews sinds 2019). Klopt het ongeveer, of meer/minder?
-- [ ] Tijdlijn op Over ons — vragen in `docs/vraag-ozcan-tijdlijn.md`: begintijd, jaar vaste ploeg, sinds wanneer betonwerk,
-      jaar VELUX Montagepartner, een keerpunt. (Nu staan alleen de zekere punten online: 2011, 2019, 2021, nu.)
-
-### Diensten
-- [ ] **Doet hij alle klussen van de oude site nog?** — afvinklijst in `docs/vraag-ozcan-diensten.md`
-      (houtrot, tegelwerk, HSB-wanden, schuimbeton, zwembadfundering, enz.). Alles staat nu op de site.
-- [ ] Mist er een klus die hij wél doet?
-
-### Teksten en beelden
+- [ ] **De hele site doorlopen en akkoord geven** — teksten, foto's, video's, volgorde van de galerijen.
 - [ ] **Alle teksten nalezen** — vooral de veelgestelde vragen en "zo pakken we het aan" op de 8 dienstpagina's,
       het verhaal op Over ons en het citaat op de contactpagina ("U belt met Ozcan, niet met een kantoor…").
-- [ ] **Portret** — de foto van Ozcan op Over ons en Contact is een AI-bewerking op basis van zijn eigen foto's. Akkoord dat die online staat?
+- [ ] **"Geschreven door Ozcan, eigenaar van OK Timmerwerken"** op de dienstpagina's (met klein portret; helpt bij Google). Akkoord, of liever weg?
+- [ ] **Portret** — de foto van Ozcan op Over ons en Contact is een AI-bewerking van zijn eigen foto's. Akkoord?
 - [ ] **Renders** — de hero (huis met wolken) en de beelden bij de diensten op de homepage zijn gegenereerd; de galerijen zijn zijn eigen foto's. Akkoord?
-- [ ] **Origineel logo** — exact overgetrokken van zijn logo, niets aan veranderd. Akkoord?
-- [ ] **Naam bij de teksten** — op de dienstpagina's staat nu "Geschreven door Ozcan, eigenaar van OK Timmerwerken" met zijn kleine portret (helpt bij Google). Akkoord, of liever weg?
-- [ ] Algemene voorwaarden en disclaimer — woordelijk van de oude site. Nog actueel?
+- [ ] **Badkamerfoto** (onderhoud, plek 1) — op de wastafel staan spullen van de bewoners. Zo laten, of de spullen laten wegpoetsen?
+- [x] Logo — origineel logo, exact overgenomen.
+- [x] Galerijen — voor-en-na-paren, keuze uit het archief en volgorde per dienst (8–9 oktober).
+- [x] Fotostrook op de home — alleen foto's die ook in een galerij staan.
 
-### Privacy en cookies
-- [ ] **Privacyverklaring nalezen en goedkeuren** (staat nu als concept op /privacyverklaring/). Daarin nog in te vullen:
+## 2. Algemene voorwaarden en privacy
+
+- [x] **Algemene voorwaarden** versie 1.0 — goedgekeurd door Ozcan, online met pdf en herroepingsformulier.
+- [ ] Laten nakijken door een jurist (aangeraden, niet verplicht) — vooral art. 5 lid 5, art. 7, art. 9 lid 3 en art. 10.
+- [ ] **Ingangsdatum** van de voorwaarden (nu "oktober 2026"; wordt de datum van de livegang).
+- [ ] Voorwaarden + herroepingsformulier voortaan **met elke offerte meesturen**.
+- [ ] **Privacyverklaring nalezen en goedkeuren** (staat nu als concept op /privacyverklaring/). Nog in te vullen:
   - [ ] **Naam van de hostingpartij** (waar website en e-mail staan)
   - [ ] **Bewaartermijn** van aanvragen zonder opdracht (voorstel: 12 maanden)
-- [x] Statistieken: **Google Analytics 4 met cookiebanner** (gekozen). Gevolg: bezoekers krijgen een banner met "Accepteren" en
-      "Weigeren"; Google Analytics laadt pas na "Accepteren"; de privacyverklaring krijgt een cookie-overzicht.
 
----
+## 3. Bedrijfsgegevens bevestigen
 
-## 2. Aanleveren
+- [ ] **Werktijden** — op de site: ma–vr 07:00–20:00, za 07:00–16:00 (zoals Google). De oude site zei ma–vr 07:00–18:00, za 07:00–15:00. Wat klopt?
+- [ ] **Adres openbaar** — Suzanna van Oostdijkstraat 4, 4206 XW Gorinchem staat in de footer, voorwaarden en bij Google. Akkoord?
+- [ ] **Werkgebied** — "Gorinchem en regio Zuid-Holland". Klopt dat?
+- [ ] **"U hoort meestal binnen een dag van ons"** (contactpagina). Haalbaar?
+- [ ] **"500+ projecten"** — een schatting. Klopt het ongeveer?
+- [ ] Tijdlijn op Over ons — vragen in `docs/vraag-ozcan-tijdlijn.md` (nu alleen de zekere punten: 2011, 2019, 2021, nu).
+- [ ] Doet hij alle klussen van de oude site nog? Afvinklijst in `docs/vraag-ozcan-diensten.md`.
 
-### Nodig voor de livegang
-- [ ] **Hosting** — naam van de partij (het domein staat bij **GoDaddy**; is de hosting daar ook?) en toegang voor Thomas om de site te plaatsen (beheerpaneel of FTP/SFTP).
-      Wachtwoorden niet via WhatsApp of mail; samen inloggen of via de "gebruiker toevoegen"-functie van de hosting.
-- [ ] **Domeinbeheer** — ok-timmerwerken.nl staat bij GoDaddy; toegang voor Thomas tot de DNS-instellingen (voor de overstap en het https-certificaat).
-- [ ] **E-mail** — de mailbox lijkt te draaien bij **Microsoft 365 via GoDaddy**: klopt dat? En moeten aanvragen via het formulier op info@ok-timmerwerken.nl binnenkomen?
-- [ ] **Formulier (Web3Forms, gratis)** — er wordt een sleutel aangemaakt op dat e-mailadres; Ozcan krijgt één bevestigingsmail en moet daarop klikken.
-- [ ] **Google Analytics 4** — met Ozcans Google-account een GA4-property aanmaken (of Thomas als beheerder toevoegen) en de
-      meet-ID doorgeven (begint met `G-`). In de instellingen: gegevensdeling met Google uit, de verwerkersvoorwaarden van Google accepteren.
-- [ ] **Google Search Console** — met hetzelfde Google-account; Thomas toevoegen als gebruiker. Nodig om de sitemap in te dienen
-      en te zien hoe de site in Google staat.
+## 4. Toegang en accounts (nodig voor de livegang)
 
-### Na de livegang
-- [ ] **Google-bedrijfsprofiel** — websitelink naar de nieuwe site, werktijden gelijk aan de site (Thomas eventueel als beheerder toevoegen).
-- [ ] **Werkspot-profiel en Instagram** — link naar de nieuwe website.
+Wachtwoorden **niet** via WhatsApp of mail; samen inloggen of via "gebruiker toevoegen".
 
-### Graag, maar niet verplicht
-- [ ] Recente projectfoto's, vooral van een geplaatst **VELUX-dakraam** en van grote verbouwingen (origineel uit de telefoon, niet via WhatsApp: die verkleint ze).
-- [ ] Een echte foto van Ozcan, als hij liever geen AI-portret wil.
+- [ ] **Hosting** — naam van de partij (domein staat bij GoDaddy; hosting daar ook?) en toegang voor Thomas (beheerpaneel of FTP/SFTP).
+- [ ] **Domeinbeheer GoDaddy** — toegang tot de DNS-instellingen (voor de overstap en het https-certificaat).
+- [ ] **E-mail** — klopt het dat de mail bij Microsoft 365 via GoDaddy draait? Moeten aanvragen op info@ok-timmerwerken.nl binnenkomen?
+- [ ] **Web3Forms (contactformulier, gratis)** — er wordt een sleutel aangemaakt op info@ok-timmerwerken.nl; Ozcan klikt één keer op de bevestigingsmail.
+- [ ] **Google Analytics 4** — met Ozcans Google-account een GA4-property aanmaken (of Thomas als beheerder toevoegen) en de meet-ID doorgeven (begint met `G-`).
+- [ ] **Google Search Console** — met hetzelfde Google-account; Thomas toevoegen als gebruiker.
+
+## 5. Na de livegang
+
+- [ ] **Google-bedrijfsprofiel** — websitelink naar de nieuwe site, werktijden gelijk aan de site.
+- [ ] **Werkspot-profiel, Instagram en mailhandtekening** — link naar de nieuwe website.
+- [ ] Duda-abonnement (oude site) opzeggen — pas als de nieuwe site minstens 2 weken goed draait.
+
+## Graag, niet verplicht
+
+- [ ] Originele (scherpe) foto's van de nieuwe funderingsfoto's (nu WhatsApp-kwaliteit).
+- [ ] Een foto van een zwembadfundering (die is er nu niet).
+- [ ] Recente projectfoto's, rechtstreeks uit de telefoon (WhatsApp verkleint ze).
 - [ ] Het logo als origineel bestand (ai, eps, pdf of svg), als dat bestaat.
-- [ ] Een export van de Google-reviews (via Google Takeout), zodat de reviewpagina met de officiële gegevens wordt bijgewerkt.
-
----
-
-## 3. Wat Thomas/Claude daarna doen
-
-1. Antwoorden verwerken: werktijden, tijdlijn, diensten, tekstcorrecties, 500+.
-2. Cookiebanner bouwen + Google Analytics 4 (laadt pas na toestemming), privacyverklaring aanvullen met cookies.
-3. Formulier koppelen aan Web3Forms (met spambescherming), testmelding weghalen, proefaanvraag versturen.
-4. Livegang op de eigen hosting: zoekmachineblokkade eraf, echte doorverwijzingen voor de 41 oude adressen,
-   https en beveiligingsinstellingen, sitemap indienen in Search Console (zie de checklist in `PROJECT.md`).
-5. Audit opnieuw draaien op het echte domein en de laatste punten oplossen.
