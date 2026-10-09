@@ -1432,11 +1432,14 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   })();
 
   // Hero: wolkenvideo speelt één keer en blijft op het laatste beeld staan (geen loop: geen sprong). Alleen op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
+  // De video is decoratie: hij wordt hier pas aangemaakt (staat niet in de HTML), zodat hij niet als inhoud geldt.
   (function(){
-    var v=document.querySelector('.hero-beeld video'); if(!v) return;
+    var box=document.querySelector('.hero-beeld[data-video]'); if(!box) return;
     var zuinig=navigator.connection&&navigator.connection.saveData;
     if(rm||zuinig||!matchMedia('(min-width:821px)').matches) return;
-    v.muted=true; v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
+    var v=document.createElement('video'); v.muted=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true');
+    v.poster=box.querySelector('img').src; box.appendChild(v);
+    v.src=box.dataset.video; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
     var p=v.play(); if(p&&p.catch) p.catch(function(){});
     var inBeeld=true;
     function speel(){ if(!v.ended) v.play().catch(function(){}); }   // een afgelopen video niet opnieuw starten

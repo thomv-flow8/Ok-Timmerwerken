@@ -307,7 +307,7 @@ function pagina({ titel, omschrijving, body, voorladen }) {
 <meta name="description" content="${esc(omschrijving)}">
 <link rel="icon" href="../assets/icon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/icon/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">${voorladen ? `\n<link rel="preload" as="image" href="${voorladen}" fetchpriority="high">` : ''}
+<link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">${[].concat(voorladen || []).map((v, i) => `\n<link rel="preload" as="image" href="${v}"${i ? '' : ' fetchpriority="high"'}>`).join('')}
 <!-- GEGENEREERD door tools/genereer-paginas.js uit docs/inhoud.json — niet met de hand aanpassen -->
 ${fonts}
 ${stijl}
@@ -452,6 +452,7 @@ function stappenRaster(items, cta, iconen = [], ctaLink = 'contact.html') {
 
 
 // ---------- reviewpagina: alle reviews van Google en Werkspot door elkaar, als muur van kaarten ----------
+let reviewsHash = '';
 function reviewsPagina() {
   const MND = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
   const datumTekst = (r) => {
@@ -519,13 +520,19 @@ function reviewsPagina() {
 ${toon.slice(0, eersteReviews).map(kaart).join('\n')}
     </div>
     <button type="button" class="rv-alle">Toon meer reviews <span>(${toon.length - eersteReviews})</span></button>
-    <script type="application/json" id="rv-rest">${JSON.stringify(toon.slice(eersteReviews).map(kaart)).replace(/</g, '\\u003c')}</script>
+    <p class="rv-fout" role="status" hidden>De overige reviews konden niet worden geladen. Bekijk ze op <a href="${g.url}" target="_blank" rel="noopener">Google</a> of <a href="${w.url}" target="_blank" rel="noopener">Werkspot</a>.</p>
     <p class="rv-noot">Reviews zoals geplaatst op Google en Werkspot; reviews die op beide staan tonen we één keer. Reviews met alleen sterren en geen tekst tellen mee in de totalen. Bekijk ze ook zelf op <a href="${g.url}" target="_blank" rel="noopener">Google</a> en <a href="${w.url}" target="_blank" rel="noopener">Werkspot</a>.</p>
   </div>
 </section>
 
 ${oproep()}
 `;
+  {   // de rest als los bestand; de hash in de naam ververst de cache bij nieuwe reviews
+    const rest = JSON.stringify(toon.slice(eersteReviews).map(kaart));
+    fs.mkdirSync(path.join(root, 'assets/data'), { recursive: true });
+    fs.writeFileSync(path.join(root, 'assets/data/reviews-meer.json'), rest + '\n');
+    reviewsHash = require('crypto').createHash('md5').update(rest).digest('hex').slice(0, 8);
+  }
   return pagina({
     titel: 'Reviews — OK Timmerwerken Gorinchem',
     omschrijving: `${totaal} reviews op Google en Werkspot, gemiddeld ${nl(gemiddeld)} uit 5. Lees wat klanten over het timmer- en betonwerk van OK Timmerwerken in Gorinchem zeggen.`,
@@ -554,6 +561,9 @@ ${oproep()}
 .rv-alle{display:flex;align-items:center;gap:6px;margin:30px auto 0;border:0;background:var(--inkt);color:#fff;border-radius:999px;padding:14px 24px;font:600 14px var(--f,inherit);cursor:pointer}
 .rv-alle span{color:rgba(255,255,255,.7);font-weight:500}
 .rv-alle[hidden]{display:none}
+.rv-alle[disabled]{opacity:.6;cursor:progress}
+.rv-fout{margin:14px auto 0;max-width:60ch;text-align:center;color:var(--zacht);font-size:14px}
+.rv-fout a{color:inherit;text-decoration:underline}
 /* muur: kolommen tussen de verticale lijnen */
 .rv-muur{columns:4 250px;column-gap:18px}
 .rv{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 18px;background:#fff;border-radius:16px;padding:30px 26px 26px;text-align:center;
@@ -586,18 +596,23 @@ ${oproep()}
     k.classList.add('kort'); if(p.scrollHeight>p.clientHeight+4){ b.hidden=false; b.addEventListener('click',function(){ var open=k.classList.toggle('kort'); b.textContent=open?'Lees volledig':'Minder tonen'; }); } else k.classList.remove('kort'); }
   [].forEach.call(document.querySelectorAll('.rv'),inkorten);
   // "Toon meer": de overige reviews staan als tekst in de pagina en worden per 24 toegevoegd
-  var muur=document.querySelector('.rv-muur'), knop=document.querySelector('.rv-alle'), rest=JSON.parse(document.getElementById('rv-rest').textContent), filter='alle';
+  // de overige reviews staan in een los bestand dat pas laadt als iemand verder wil lezen (houdt de pagina licht)
+  var muur=document.querySelector('.rv-muur'), knop=document.querySelector('.rv-alle'), rest=null, filter='alle', bezig=false;
+  function haal(klaar){ if(rest) return klaar(); if(bezig) return; bezig=true; knop.disabled=true;
+    fetch('../assets/data/reviews-meer.json?v=${reviewsHash}').then(function(r){ if(!r.ok) throw r; return r.json(); })
+      .then(function(d){ rest=d; bezig=false; knop.disabled=false; klaar(); })
+      .catch(function(){ bezig=false; knop.disabled=false; document.querySelector('.rv-fout').hidden=false; }); }
   function meer(n){ var stuk=rest.splice(0,n), tmp=document.createElement('div'); tmp.innerHTML=stuk.join('');
     [].slice.call(tmp.children).forEach(function(k){ k.hidden=filter!=='alle' && k.dataset.bron.indexOf(filter)<0; muur.appendChild(k); inkorten(k); });
     if(rest.length) knop.querySelector('span').textContent='('+rest.length+')'; else knop.hidden=true; }
-  if(!rest.length) knop.hidden=true;
-  knop.addEventListener('click',function(){ meer(24); });
+  knop.addEventListener('click',function(){ haal(function(){ meer(24); }); });
   // filter op platform (laadt eerst alle reviews, zodat de telling klopt)
   var f=document.querySelector('.rv-filter');
   f.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return;
-    filter=b.dataset.f; if(rest.length) meer(rest.length);
+    filter=b.dataset.f;
     [].forEach.call(f.children,function(x){ x.classList.toggle('aan',x===b); });
-    [].forEach.call(document.querySelectorAll('.rv'),function(k){ k.hidden=filter!=='alle' && k.dataset.bron.indexOf(filter)<0; }); });
+    function pas(){ [].forEach.call(document.querySelectorAll('.rv'),function(k){ k.hidden=filter!=='alle' && k.dataset.bron.indexOf(filter)<0; }); }
+    pas(); if(filter!=='alle') haal(function(){ if(rest.length) meer(rest.length); pas(); }); });
 })();
 </script>
 </body>`);
@@ -770,7 +785,7 @@ ${oproep()}`;
     titel: `${d.naam} — OK Timmerwerken Gorinchem`,
     omschrijving: d.intro.slice(0, 155),
     body,
-    voorladen: d.beeld,
+    voorladen: d.slug === 'dakramen' ? [d.beeld, '../assets/velux/velux-montagepartner.jpg'] : d.beeld,
   });
 }
 

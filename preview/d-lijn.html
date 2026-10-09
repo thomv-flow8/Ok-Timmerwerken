@@ -11,6 +11,8 @@
 <link rel="icon" href="../assets/icon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">
 <link rel="preload" as="image" href="../assets/render/hero-wolken.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="../assets/velux/velux-logo.jpg">
+<link rel="preload" as="image" href="../assets/velux/velux-montagepartner.jpg">
 <!-- [[fonts — eigen lettertypes (Inter, Instrument Serif; SIL Open Font License), geen verbinding met Google -->
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -718,7 +720,7 @@ footer.groot{padding:72px 0 46px}
 <!-- HERO — beeld behouden -->
 <section class="hero">
   <div class="hero-kader">
-    <div class="hero-beeld"><img src="../assets/render/hero-wolken.jpg" fetchpriority="high" alt="Modern huis met gevlinderde betonvloer, dakraam, carport en timmerwerk, met wolken erboven"><video muted playsinline preload="none" poster="../assets/render/hero-wolken.jpg" aria-hidden="true" data-src="../assets/render/hero-wolken.mp4"></video></div>
+    <div class="hero-beeld" data-video="../assets/render/hero-wolken.mp4"><img src="../assets/render/hero-wolken.jpg" fetchpriority="high" alt="Modern huis met gevlinderde betonvloer, dakraam, carport en timmerwerk, met wolken erboven"></div>
     <div class="hero-in">
       <span class="badge"><img src="../assets/velux/velux-logo.jpg" alt="VELUX">Erkend montagepartner</span>
       <h1>Vakwerk waar u<br>op kunt <em class="serif">bouwen</em>.</h1>
@@ -731,7 +733,7 @@ footer.groot{padding:72px 0 46px}
       <div class="feiten">
         <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
         <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
-        <div class="f-logos"><img src="../assets/velux/velux-montagepartner.jpg" alt="Erkend VELUX Montagepartner"><img src="../assets/velux/velux-getraind-2025.jpg" alt="In 2025 door VELUX getraind"></div>
+        <div class="f-logos"><img src="../assets/velux/velux-montagepartner.jpg" alt="Erkend VELUX Montagepartner"><img src="../assets/velux/velux-getraind-2025.jpg" alt="In 2025 door VELUX getraind" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -1331,11 +1333,14 @@ footer.groot{padding:72px 0 46px}
   })();
 
   // Hero: wolkenvideo speelt één keer en blijft op het laatste beeld staan (geen loop: geen sprong). Alleen op desktop, niet bij "minder beweging" of databesparing; pauzeert buiten beeld.
+  // De video is decoratie: hij wordt hier pas aangemaakt (staat niet in de HTML), zodat hij niet als inhoud geldt.
   (function(){
-    var v=document.querySelector('.hero-beeld video'); if(!v) return;
+    var box=document.querySelector('.hero-beeld[data-video]'); if(!box) return;
     var zuinig=navigator.connection&&navigator.connection.saveData;
     if(rm||zuinig||!matchMedia('(min-width:821px)').matches) return;
-    v.muted=true; v.src=v.dataset.src; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
+    var v=document.createElement('video'); v.muted=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true');
+    v.poster=box.querySelector('img').src; box.appendChild(v);
+    v.src=box.dataset.video; v.addEventListener('playing',function(){ v.classList.add('speelt'); });
     var p=v.play(); if(p&&p.catch) p.catch(function(){});
     var inBeeld=true;
     function speel(){ if(!v.ended) v.play().catch(function(){}); }   // een afgelopen video niet opnieuw starten

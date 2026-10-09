@@ -176,6 +176,8 @@ Ozcan is zeer vakkundig en werkt netjes en snel. De vlizotrap is perfect geplaat
 **Klant uit De Meern** Trap plaatsen of renoveren
 30 dec 2025
 
+De overige reviews konden niet worden geladen. Bekijk ze op [Google](https://www.google.com/maps?cid=13014174389854650295) of [Werkspot](https://www.werkspot.nl/profiel/ok-timmerwerken/reviews).
+
 Reviews zoals geplaatst op Google en Werkspot; reviews die op beide staan tonen we één keer. Reviews met alleen sterren en geen tekst tellen mee in de totalen. Bekijk ze ook zelf op [Google](https://www.google.com/maps?cid=13014174389854650295) en [Werkspot](https://www.werkspot.nl/profiel/ok-timmerwerken/reviews).
 
 Contact
