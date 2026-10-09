@@ -93,7 +93,7 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 
 01
 
-### Carport tegen de woning, met nieuwe bestrating
+### Autostalling tegen de woning, met nieuwe bestrating
 
 -
 
@@ -125,19 +125,19 @@ Na
 
 06
 
-### Lange carport langs de gevel, in douglashout
+### Lange overkapping langs de gevel, in douglashout
 
 -
 
 07
 
-### Dezelfde carport: dichte zijwand in douglashout
+### Dichte zijwand in douglashout
 
 -
 
 08
 
-### Dezelfde carport van buiten, tussen het groen
+### Dezelfde overkapping van buiten, tussen het groen
 
 -
 
@@ -161,13 +161,13 @@ Na
 
 12
 
-### Carport tussen twee woningen
+### Autostalling tussen twee woningen
 
 -
 
 13
 
-### Vrijstaande carport in douglashout met schoren
+### Vrijstaande overkapping in douglashout met schoren
 
 -
 
