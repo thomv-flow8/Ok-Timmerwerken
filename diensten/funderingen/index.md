@@ -104,6 +104,7 @@ Uitgevoerd werk
 Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
 
 -
+Voor
 
 01
 
@@ -122,6 +123,7 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Wapeningsnetten op de isolatie, klaar om te storten
 
 -
+Na
 
 04
 

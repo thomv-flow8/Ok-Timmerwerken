@@ -160,13 +160,13 @@ Na
 
 11
 
-### Twee lichtkoepels in een plat dak
+### Lichtkoepel plaatsen in een plat dak
 
 -
 
 12
 
-### Lichtkoepel plaatsen in een plat dak
+### Twee lichtkoepels in een plat dak
 
 01 / 12
 

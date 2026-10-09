@@ -557,12 +557,12 @@
           "Dakraam met strakke dagkanten"
         ],
         [
-          "../assets/web/lichtkoepels-dak.jpg",
-          "Twee lichtkoepels in een plat dak"
-        ],
-        [
           "../assets/web/dakraam-wa277.jpg",
           "Lichtkoepel plaatsen in een plat dak"
+        ],
+        [
+          "../assets/web/lichtkoepels-dak.jpg",
+          "Twee lichtkoepels in een plat dak"
         ]
       ],
       "faq": [
@@ -837,7 +837,9 @@
       "galerij": [
         [
           "../assets/web/fundering-ontgraven.jpg",
-          "Grond ontgraven en geëgaliseerd voor een betonplaat"
+          "Grond ontgraven en geëgaliseerd voor een betonplaat",
+          "",
+          "voor"
         ],
         [
           "../assets/web/fundering-isolatieplaten.jpg",
@@ -849,7 +851,9 @@
         ],
         [
           "../assets/web/fundering-plaat-mantelbuizen.jpg",
-          "De plaat gestort, met mantelbuizen voor de aansluitingen"
+          "De plaat gestort, met mantelbuizen voor de aansluitingen",
+          "",
+          "na"
         ],
         [
           "../assets/web/fundering-wa032.jpg",
@@ -998,7 +1002,7 @@
         ],
         [
           "../assets/web/onderhoud-toilet-kaal.jpg",
-          "Toilet: kale wanden, klaar voor het tegelwerk",
+          "Toilet betegeld, het sanitair moet er nog in",
           "",
           "voor"
         ],
@@ -1035,10 +1039,6 @@
         [
           "../assets/web/onderhoud-wa309.jpg",
           "Nieuwe pannen en een doorvoer in het dak"
-        ],
-        [
-          "../assets/web/onderhoud-wa025.jpg",
-          "Toilet tijdens het tegelen, voorzetwand nog open"
         ],
         [
           "../assets/web/onderhoud-toilet.jpg",

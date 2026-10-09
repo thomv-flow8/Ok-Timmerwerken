@@ -100,7 +100,7 @@ Voor
 
 02
 
-### Toilet: kale wanden, klaar voor het tegelwerk
+### Toilet betegeld, het sanitair moet er nog in
 
 -
 Na
@@ -151,15 +151,9 @@ Na
 
 10
 
-### Toilet tijdens het tegelen, voorzetwand nog open
-
--
-
-11
-
 ### Toilet opnieuw betegeld
 
-01 / 11
+01 / 10
 
 Zo pakken we het aan
 
