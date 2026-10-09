@@ -48,15 +48,6 @@
           "Gevlinderde vloer onder een overkapping"
         ],
         [
-          "../assets/web/beton-wa009.jpg",
-          "Gevlinderde vloer onder een veranda"
-        ],
-        [
-          "../assets/video/beton-vlinderen.mp4",
-          "Betonvloer vlinderen onder de overkapping",
-          "../assets/video/beton-vlinderen.jpg"
-        ],
-        [
           "../assets/web/beton-woonkamer-vloerverwarming.jpg",
           "Woonkamer: vloerverwarming op de wapening",
           "",
@@ -67,19 +58,6 @@
           "Dezelfde woonkamer, gestort en gevlinderd",
           "",
           "na"
-        ],
-        [
-          "../assets/web/beton-wa202.jpg",
-          "Vlinderen in een garage"
-        ],
-        [
-          "../assets/web/beton-achtertuin-gestort.jpg",
-          "Betonplaat in de achtertuin, net gestort"
-        ],
-        [
-          "../assets/video/beton-ondergrond.mp4",
-          "Ondergrond voorbereid voor een nieuwe betonvloer",
-          "../assets/video/beton-ondergrond.jpg"
         ],
         [
           "../assets/web/beton-werkplaats-wapening.jpg",
@@ -94,14 +72,6 @@
           "na"
         ],
         [
-          "../assets/web/beton-wa193.jpg",
-          "Strakke betonvloer onder een overkapping"
-        ],
-        [
-          "../assets/web/beton-veranda-gevlinderd.jpg",
-          "Verse vloer onder de veranda, net gevlinderd"
-        ],
-        [
           "../assets/web/beton-schuur-wapening.jpg",
           "Betonplaat bij de schuur: wapening wordt gelegd",
           "",
@@ -114,6 +84,31 @@
           "na"
         ],
         [
+          "../assets/video/beton-ondergrond.mp4",
+          "Ondergrond voorbereid voor een nieuwe betonvloer",
+          "../assets/video/beton-ondergrond.jpg"
+        ],
+        [
+          "../assets/web/beton-vloerverwarming-wapening.jpg",
+          "Vloerverwarming op het wapeningsnet, klaar om te storten"
+        ],
+        [
+          "../assets/web/beton-wa202.jpg",
+          "Vlinderen in een garage"
+        ],
+        [
+          "../assets/web/beton-achtertuin-gestort.jpg",
+          "Betonplaat in de achtertuin, net gestort"
+        ],
+        [
+          "../assets/web/beton-wa193.jpg",
+          "Strakke betonvloer onder een overkapping"
+        ],
+        [
+          "../assets/web/beton-veranda-gevlinderd.jpg",
+          "Verse vloer onder de veranda, net gevlinderd"
+        ],
+        [
           "../assets/web/beton-plaat-l-vorm.jpg",
           "Betonplaat in L-vorm, net gestort"
         ],
@@ -124,10 +119,6 @@
         [
           "../assets/web/betonvloer-oprit.jpg",
           "Betonvloer onder een carport"
-        ],
-        [
-          "../assets/web/beton-vloerverwarming-wapening.jpg",
-          "Vloerverwarming op het wapeningsnet, klaar om te storten"
         ]
       ],
       "review": [

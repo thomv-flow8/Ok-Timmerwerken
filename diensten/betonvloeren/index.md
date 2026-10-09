@@ -103,42 +103,46 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de
 ### Gevlinderde vloer onder een overkapping
 
 -
-
-02
-
-### Gevlinderde vloer onder een veranda
-
--
-
-03
-
-### Betonvloer vlinderen onder de overkapping
-
--
 Voor
 
-04
+02
 
 ### Woonkamer: vloerverwarming op de wapening
 
 -
 Na
 
-05
+03
 
 ### Dezelfde woonkamer, gestort en gevlinderd
 
 -
+Voor
+
+04
+
+### Werkplaats: wapening ligt klaar
+
+-
+Na
+
+05
+
+### Dezelfde werkplaats, vloer gestort
+
+-
+Voor
 
 06
 
-### Vlinderen in een garage
+### Betonplaat bij de schuur: wapening wordt gelegd
 
 -
+Na
 
 07
 
-### Betonplaat in de achtertuin, net gestort
+### Dezelfde plaat, gestort en afgewerkt
 
 -
 
@@ -147,70 +151,54 @@ Na
 ### Ondergrond voorbereid voor een nieuwe betonvloer
 
 -
-Voor
 
 09
 
-### Werkplaats: wapening ligt klaar
+### Vloerverwarming op het wapeningsnet, klaar om te storten
 
 -
-Na
 
 10
 
-### Dezelfde werkplaats, vloer gestort
+### Vlinderen in een garage
 
 -
 
 11
 
-### Strakke betonvloer onder een overkapping
+### Betonplaat in de achtertuin, net gestort
 
 -
 
 12
 
-### Verse vloer onder de veranda, net gevlinderd
+### Strakke betonvloer onder een overkapping
 
 -
-Voor
 
 13
 
-### Betonplaat bij de schuur: wapening wordt gelegd
+### Verse vloer onder de veranda, net gevlinderd
 
 -
-Na
 
 14
-
-### Dezelfde plaat, gestort en afgewerkt
-
--
-
-15
 
 ### Betonplaat in L-vorm, net gestort
 
 -
 
-16
+15
 
 ### Betonplaat tot aan de achtergevel
 
 -
 
-17
+16
 
 ### Betonvloer onder een carport
 
--
-
-18
-
-### Vloerverwarming op het wapeningsnet, klaar om te storten
-
-01 / 18
+01 / 16
 
 Zo pakken we het aan
 
