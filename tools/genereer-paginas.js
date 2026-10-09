@@ -1434,6 +1434,25 @@ function verklein(html) {
     .replace(/<script>([\s\S]*?)<\/script>/g, (t, js) => `<script>${verkleinJs(js)}</script>`)
     .replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (t, j) => `<script type="application/ld+json">${JSON.stringify(JSON.parse(j))}</script>`);
 }
+// pictogrammen (de SVG-iconenset) en het pagina-script als losse, cachebare bestanden; de bestandsnaam bevat een
+// hash van de inhoud, zodat een wijziging altijd een nieuwe naam krijgt. Scheelt per pagina ~45 KB HTML.
+for (const m of ['assets/js', 'assets/icons']) { fs.rmSync(path.join(root, m), { recursive: true, force: true }); fs.mkdirSync(path.join(root, m), { recursive: true }); }
+const hash = (t) => require('crypto').createHash('md5').update(t).digest('hex').slice(0, 10);
+function naarLosseBestanden(html, rel) {
+  if (process.env.INLINE_CSS) return html;   // alleen voor vergelijkingstests
+  const pre = '../'.repeat(rel.split('/').length - 1);
+  const sprite = html.match(/<svg width="0" height="0" style="position:absolute" aria-hidden="true">([\s\S]*?)<\/svg>\n?/);
+  if (sprite) {
+    const inhoud = `<svg xmlns="http://www.w3.org/2000/svg">${sprite[1].trim()}</svg>\n`, naam = `assets/icons/${hash(inhoud)}.svg`;
+    fs.writeFileSync(path.join(root, naam), inhoud);
+    html = html.replace(sprite[0], '').replace(/<use href="#(i-[^"]+)"/g, `<use href="${pre}${naam}#$1"`);
+  }
+  return html.replace(/<script>((?:(?!<\/script>)[\s\S]){1500,})<\/script>/g, (t, js) => {   // nooit over een </script> heen
+    const naam = `assets/js/${hash(js)}.js`;
+    fs.writeFileSync(path.join(root, naam), js + '\n');
+    return `<script src="${pre}${naam}"></script>`;
+  });
+}
 const matenCache = {};
 let metMaten = 0;
 let bespaard = 0;
@@ -1450,7 +1469,7 @@ for (const rel of [...sitePaginas.map((r) => r + 'index.html'), '404.html']) {
     metMaten++;
     return `<img${attr} width="${maat[0]}" height="${maat[1]}">`;
   });
-  const klein = verklein(cssNaarBestand(html, rel));
+  const klein = naarLosseBestanden(verklein(cssNaarBestand(html, rel)), rel);
   bespaard += html.length - klein.length;
   fs.writeFileSync(doel, klein);
 }
