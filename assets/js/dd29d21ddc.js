@@ -18,42 +18,31 @@ if(!rm && krullen.length){ addEventListener('scroll',krulScroll,{passive:true});
 var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbVid=null, lbTxt=lb.querySelector('p');
 function speler(){ if(!lbVid){ lbVid=document.createElement('video'); lbVid.controls=true; lbVid.muted=true; lbVid.loop=true; lbVid.setAttribute('playsinline',''); lbImg.after(lbVid); } return lbVid; }
 function dicht(){ lb.classList.remove('open'); if(lbVid) lbVid.pause(); }
-var kc=document.querySelector('.kc');
-if(kc){
-var rail=kc.querySelector('.kc-rail'), kaarten=[].slice.call(kc.querySelectorAll('.kc-kaart')), podium=kc.querySelector('.kc-podium'),
-teller=kc.querySelector('.kc-teller'), aantal=kaarten.length, nu=0, vorig=[],
-persp=kaarten.map(function(k){ return k.parentNode; });
-function nn(i){ return (i<9?'0':'')+(i+1); }
-function afstand(j){ var o=((j-nu)%aantal+aantal)%aantal; return o>aantal/2 ? o-aantal : o; }
-function toon(i){ nu=(i+aantal)%aantal;
-persp.forEach(function(p,j){ var o=afstand(j), sprong=vorig[j]!==undefined && Math.abs(o-vorig[j])>1;
-if(sprong) p.style.transition='none';            // kaart die van de ene naar de andere kant wisselt: onzichtbaar verplaatsen
-p.style.setProperty('--o',o); p.classList.toggle('ver',Math.abs(o)>2);
-if(sprong){ void p.offsetWidth; p.style.transition=''; }
-vorig[j]=o; });
-kaarten.forEach(function(k,j){ k.classList.toggle('aan',j===nu);
-var v=k.querySelector('video'); if(!v) return;
-if(j===nu && !rm && kcZicht){ if(!v.getAttribute('src')) v.src=v.dataset.src; v.play().catch(function(){}); } else v.pause(); });
-teller.textContent=nn(nu)+' / '+nn(aantal-1); }
-rail.addEventListener('click',function(e){
-var g=e.target.closest('.kc-groot');
-if(g){ var k=kaarten[+g.dataset.groot], im=k.querySelector('img'), vd=k.querySelector('video');
+var vg=document.querySelector('.vg');
+if(vg){
+var dias=[].slice.call(vg.querySelectorAll('.vg-dia')), duimen=[].slice.call(vg.querySelectorAll('.vg-duim')), vgPod=vg.querySelector('.vg-podium'),
+vgTel=vg.querySelector('.vg-teller'), vgBij=vg.querySelector('.vg-bij'), bij=JSON.parse(vg.dataset.bij), vgNu=0, vgZicht=false;
+function vgToon(i){ vgNu=(i+dias.length)%dias.length;
+dias.forEach(function(f,j){ var aan=j===vgNu; f.classList.toggle('aan',aan); if(aan) f.removeAttribute('aria-hidden'); else f.setAttribute('aria-hidden','true');
+var v=f.querySelector('video'); if(!v) return;
+if(aan && vgZicht && !rm){ if(!v.getAttribute('src')) v.src=v.dataset.src; v.play().catch(function(){}); } else v.pause(); });
+duimen.forEach(function(b,j){ var aan=j===vgNu; b.classList.toggle('aan',aan); if(aan){ b.setAttribute('aria-current','true');
+var rij=b.parentNode, l=b.offsetLeft-rij.offsetLeft; if(l<rij.scrollLeft||l+b.offsetWidth>rij.scrollLeft+rij.clientWidth) rij.scrollTo({left:l-rij.clientWidth/2+b.offsetWidth/2,behavior:rm?'auto':'smooth'}); }
+else b.removeAttribute('aria-current'); });
+vgTel.textContent=(vgNu+1)+' / '+dias.length; vgBij.textContent=bij[vgNu];
+[vgNu+1,vgNu-1].forEach(function(k){ var im=dias[(k+dias.length)%dias.length].querySelector('img[loading]'); if(im) im.loading='eager'; }); }   // buren alvast laden, zodat bladeren direct een hele foto toont
+vg.querySelector('.vg-vorige').addEventListener('click',function(){ vgToon(vgNu-1); });
+vg.querySelector('.vg-volgende').addEventListener('click',function(){ vgToon(vgNu+1); });
+duimen.forEach(function(b){ b.addEventListener('click',function(){ vgToon(+b.dataset.i); }); });
+vgPod.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ e.preventDefault(); vgToon(vgNu+1); } if(e.key==='ArrowLeft'){ e.preventDefault(); vgToon(vgNu-1); } });
+var vx=null; vgPod.addEventListener('pointerdown',function(e){ vx=e.clientX; });
+vgPod.addEventListener('pointerup',function(e){ if(vx===null) return; var dx=e.clientX-vx; vx=null; if(dx<-40) vgToon(vgNu+1); else if(dx>40) vgToon(vgNu-1); });
+vg.querySelector('.vg-groot').addEventListener('click',function(){ var f=dias[vgNu], im=f.querySelector('img'), vd=f.querySelector('video');
 if(vd){ vd.pause(); var sp=speler(); lbImg.hidden=true; sp.hidden=false; sp.poster=vd.poster; sp.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); sp.play().catch(function(){}); }
 else { if(lbVid){ lbVid.hidden=true; lbVid.pause(); } lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
-lb.classList.add('open'); return; }
-var k2=e.target.closest('.kc-kaart'); if(k2 && +k2.dataset.i!==nu) toon(+k2.dataset.i); });
-if(!rm) kaarten.forEach(function(k){ var x=0,y=0,raf=0;
-k.addEventListener('mousemove',function(e){ var r=k.getBoundingClientRect(); x=e.clientX-(r.left+r.width/2); y=e.clientY-(r.top+r.height/2);
-if(!raf) raf=requestAnimationFrame(function(){ raf=0; k.style.setProperty('--x',x+'px'); k.style.setProperty('--y',y+'px'); }); });
-k.addEventListener('mouseleave',function(){ k.style.setProperty('--x','0px'); k.style.setProperty('--y','0px'); }); });
-kc.querySelector('.kc-vorige').addEventListener('click',function(){ toon(nu-1); });
-kc.querySelector('.kc-volgende').addEventListener('click',function(){ toon(nu+1); });
-podium.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ e.preventDefault(); toon(nu+1); } if(e.key==='ArrowLeft'){ e.preventDefault(); toon(nu-1); } });
-var x0=null; podium.addEventListener('pointerdown',function(e){ x0=e.clientX; });
-podium.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null; if(dx<-40) toon(nu+1); else if(dx>40) toon(nu-1); });
-var kcZicht=false;
-if('IntersectionObserver' in window) new IntersectionObserver(function(es){ kcZicht=es[0].isIntersecting; toon(nu); },{threshold:.25}).observe(podium);
-toon(0);
+lb.classList.add('open'); });
+if('IntersectionObserver' in window) new IntersectionObserver(function(es){ vgZicht=es[0].isIntersecting; vgToon(vgNu); },{threshold:.25}).observe(vgPod);
+vgToon(0);
 }
 lb.addEventListener('click',function(e){ if(e.target===lb||e.target.closest('button')) dicht(); });
 addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });

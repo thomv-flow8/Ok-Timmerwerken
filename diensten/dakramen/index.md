@@ -92,83 +92,15 @@ Uitgevoerd werk
 
 ## Echte projecten van OK.
 
-Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
+Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of kies een foto in de rij eronder.
 
--
-
-01
-
-### Afgewerkt dakraam in een schuin dak
-
--
-
-02
-
-### Twee dakramen boven een werkplek
-
--
 Voor
 
-03
-
-### Drie VELUX-dakramen geplaatst, afwerking volgt
-
--
 Na
 
-04
+1 / 12
 
-### Dezelfde dakramen, binnen afgewerkt
-
--
-
-05
-
-### Nieuw dakraam, helemaal open
-
--
-
-06
-
-### De sparing in het dak is gemaakt
-
--
-
-07
-
-### Drie dakramen naast elkaar, klaar voor de afwerking
-
--
-
-08
-
-### Drie dakramen, veel daglicht
-
--
-
-09
-
-### Het dakraam van buiten, netjes in de pannen
-
--
-
-10
-
-### Dakraam met strakke dagkanten
-
--
-
-11
-
-### Lichtkoepel plaatsen in een plat dak
-
--
-
-12
-
-### Twee lichtkoepels in een plat dak
-
-01 / 12
+Afgewerkt dakraam in een schuin dak
 
 Zo pakken we het aan
 

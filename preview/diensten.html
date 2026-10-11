@@ -652,46 +652,36 @@ footer.groot{padding:72px 0 46px}
 .stappen.vier .stap{min-height:220px}
 .stap .snr.klein{font-size:42px}
 
-/* 3D-kaarten: grote vierkante foto in het midden, buren kantelen naar achteren en zijn gedimd;
-   de actieve foto beweegt licht mee met de muis. Klassen met kc- om botsingen met gedeelde stijlen te voorkomen. */
-.kc{margin-top:46px}
-.kc-podium{--kc-maat:min(70vmin,560px);--kc-marge:min(4vmin,32px);position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0 auto;outline:none}
-.kc-rail{position:absolute;inset:0;margin:0;padding:0}
-/* eindeloze lus: elke kaart staat op --o plaatsen van de actieve (kortste weg rond, dus na 12 komt 1); ver weg = verborgen */
-.kc-persp{list-style:none;position:absolute;left:0;top:0;width:var(--kc-maat);height:var(--kc-maat);perspective:1200px;transform-style:preserve-3d;
-  transform:translateX(calc(var(--o,0) * (var(--kc-maat) + 2 * var(--kc-marge))));transition:transform 1s var(--ease),opacity .6s ease,visibility .6s}
-.kc-persp.ver{opacity:0;visibility:hidden;pointer-events:none}
-.kc-kaart{position:relative;width:var(--kc-maat);height:var(--kc-maat);margin:0;list-style:none;cursor:pointer;
-  transform-origin:bottom;transform:scale(.98) rotateX(8deg);transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.kc-kaart.aan{transform:scale(1) rotateX(0);cursor:default}
-.kc-vlak{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#1d1d1a;transition:transform .15s ease-out;
-  box-shadow:0 50px 90px -40px rgba(20,19,15,.5)}
-.kc-kaart.aan .kc-vlak{transform:translate3d(calc(var(--x,0px) / 30),calc(var(--y,0px) / 30),0)}
-.kc-vlak img,.kc-vlak video{position:absolute;inset:-10%;width:120%;height:120%;max-width:none;object-fit:cover;opacity:.5;transition:opacity .6s ease}
-.kc-kaart.aan .kc-vlak img,.kc-kaart.aan .kc-vlak video{opacity:1}
-.kc-fase{position:absolute;z-index:3;left:6%;top:6%;padding:6px 13px;border-radius:999px;font:700 11.5px var(--f,inherit);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 6px 18px -8px rgba(0,0,0,.45)}
-.kc-fase.voor{background:rgba(255,255,255,.94);color:var(--inkt)}
-.kc-fase.na{background:var(--brons);color:#fff}
-.kc-speel{position:absolute;z-index:3;right:6%;top:6%;width:40px;height:40px;border-radius:50%;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);display:grid;place-items:center}
-.kc-speel svg{width:16px;height:16px;fill:#fff;margin-left:2px}
-.kc-kaart.aan .kc-vlak::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.65),rgba(10,10,8,.05) 55%)}
-.kc-tekst{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 7% 7%;color:#fff;opacity:0;visibility:hidden;transition:opacity 1s ease,visibility 1s}
-.kc-kaart.aan .kc-tekst{opacity:1;visibility:visible}
-.kc-nr{font-family:var(--serif);font-style:italic;color:#e7c9a0;font-size:22px}
-.kc-tekst h3{font-size:clamp(19px,2.4vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-top:6px}
-.kc-groot{margin-top:18px;border:0;background:#fff;color:var(--inkt);border-radius:999px;padding:11px 20px;font:600 13.5px var(--f,inherit);cursor:pointer;
-  transition:background .25s,color .25s}
-.kc-groot:hover{background:var(--brons);color:#fff}
-.kc-bediening{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:34px}
-.kc-teller{min-width:76px;text-align:center;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--brons)}
-.kc-pijl{width:48px;height:48px;border-radius:50%;border:0;background:var(--inkt);color:#fff;cursor:pointer;display:grid;place-items:center;
-  transition:transform .25s,background .25s}
-.kc-pijl:hover{transform:translateY(-2px);background:var(--brons)}
-.kc-pijl:active{transform:translateY(1px)}
-.kc-pijl svg{width:18px;height:18px}
-.kc-pijl:focus-visible,.kc-podium:focus-visible .kc-kaart.aan .kc-vlak{outline:2px solid var(--brons);outline-offset:3px}
-@media(max-width:600px){.kc-podium{--kc-maat:80vw;--kc-marge:3vw}.kc-groot{padding:10px 16px}}   /* op telefoons groter dan 70vmin */
-@media(prefers-reduced-motion:reduce){.kc-persp,.kc-kaart,.kc-vlak,.kc-vlak img,.kc-tekst{transition:none}}
+/* galerij: grote foto in zijn geheel, pijlen, teller en miniaturen eronder */
+.vg-label{position:absolute;z-index:3;left:6%;top:6%;padding:6px 13px;border-radius:999px;font:700 11.5px var(--f,inherit);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 6px 18px -8px rgba(0,0,0,.45)}
+.vg-label.voor{background:rgba(255,255,255,.94);color:var(--inkt)}
+.vg-label.na{background:var(--brons);color:#fff}
+.vg{margin-top:46px;max-width:1040px;margin-inline:auto}
+.vg-podium{position:relative;aspect-ratio:3/2;max-height:62vh;width:100%;background:#f1ede6;border-radius:18px;overflow:hidden;outline:none}
+.vg-podium:focus-visible{box-shadow:0 0 0 3px var(--brons)}
+.vg-dia{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.vg-dia.aan{opacity:1;visibility:visible}
+.vg-dia img,.vg-dia video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;display:block}   /* altijd de hele foto, staand of liggend */
+.vg-dia .vg-label{left:20px;top:20px}
+.vg-pijl,.vg-groot{position:absolute;z-index:4;border:0;cursor:pointer;display:grid;place-items:center;background:#fff;color:var(--inkt);
+  box-shadow:0 6px 18px -8px rgba(20,19,15,.45);transition:transform .2s,background .2s,color .2s}
+.vg-pijl{top:50%;width:50px;height:50px;border-radius:50%;transform:translateY(-50%)}
+.vg-pijl svg,.vg-groot svg{width:20px;height:20px}
+.vg-vorige{left:18px} .vg-volgende{right:18px}
+.vg-pijl:hover,.vg-groot:hover{background:var(--brons);color:#fff}
+.vg-groot{right:18px;top:18px;width:42px;height:42px;border-radius:50%}
+.vg-teller{position:absolute;z-index:4;right:18px;bottom:18px;background:#fff;border-radius:999px;padding:6px 13px;font:600 13px var(--f,inherit);font-variant-numeric:tabular-nums;box-shadow:0 6px 18px -8px rgba(20,19,15,.45)}
+.vg-bij{margin:16px 2px 0;font-weight:600;font-size:clamp(17px,1.8vw,20px);letter-spacing:-.01em;min-height:1.4em}
+.vg-duimen{display:flex;gap:10px;margin-top:16px;overflow-x:auto;padding:4px 2px 10px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.vg-duim{position:relative;flex:none;width:96px;height:96px;padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:#f1ede6;scroll-snap-align:start;transition:border-color .2s,opacity .2s;opacity:.72}
+.vg-duim img{width:100%;height:100%;object-fit:cover;display:block}
+.vg-duim:hover{opacity:1}
+.vg-duim.aan{border-color:var(--inkt);opacity:1}
+.vg-play{position:absolute;inset:0;display:grid;place-items:center}
+.vg-play svg{width:26px;height:26px;fill:#fff;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
+.vg-fase{position:absolute;left:5px;bottom:5px;font:700 9.5px var(--f,inherit);letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:999px}
+.vg-fase.voor{background:rgba(255,255,255,.94);color:var(--inkt)} .vg-fase.na{background:var(--brons);color:#fff}
+@media(max-width:760px){.vg-podium{aspect-ratio:4/5;border-radius:14px}.vg-pijl{width:42px;height:42px}.vg-vorige{left:10px}.vg-volgende{right:10px}.vg-duim{width:72px;height:72px}}
 .lichtbak{position:fixed;inset:0;z-index:95;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;
   opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
 .lichtbak.open{opacity:1;visibility:visible;transition:opacity .3s}
@@ -1183,45 +1173,32 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   function speler(){ if(!lbVid){ lbVid=document.createElement('video'); lbVid.controls=true; lbVid.muted=true; lbVid.loop=true; lbVid.setAttribute('playsinline',''); lbImg.after(lbVid); } return lbVid; }
   function dicht(){ lb.classList.remove('open'); if(lbVid) lbVid.pause(); }
 
-  // 3D-kaarten: klik op een zijkaart schuift ernaartoe; de actieve kaart volgt licht de muis; "Bekijk groot" opent de lichtbak
-  var kc=document.querySelector('.kc');
-  if(kc){
-    var rail=kc.querySelector('.kc-rail'), kaarten=[].slice.call(kc.querySelectorAll('.kc-kaart')), podium=kc.querySelector('.kc-podium'),
-        teller=kc.querySelector('.kc-teller'), aantal=kaarten.length, nu=0, vorig=[],
-        persp=kaarten.map(function(k){ return k.parentNode; });
-    function nn(i){ return (i<9?'0':'')+(i+1); }
-    // afstand tot de actieve kaart over de kortste kant van de cirkel (bij 12 foto's: -5 … +6)
-    function afstand(j){ var o=((j-nu)%aantal+aantal)%aantal; return o>aantal/2 ? o-aantal : o; }
-    function toon(i){ nu=(i+aantal)%aantal;
-      persp.forEach(function(p,j){ var o=afstand(j), sprong=vorig[j]!==undefined && Math.abs(o-vorig[j])>1;
-        if(sprong) p.style.transition='none';            // kaart die van de ene naar de andere kant wisselt: onzichtbaar verplaatsen
-        p.style.setProperty('--o',o); p.classList.toggle('ver',Math.abs(o)>2);
-        if(sprong){ void p.offsetWidth; p.style.transition=''; }
-        vorig[j]=o; });
-      kaarten.forEach(function(k,j){ k.classList.toggle('aan',j===nu);
-        var v=k.querySelector('video'); if(!v) return;
-        if(j===nu && !rm && kcZicht){ if(!v.getAttribute('src')) v.src=v.dataset.src; v.play().catch(function(){}); } else v.pause(); });
-      teller.textContent=nn(nu)+' / '+nn(aantal-1); }
-    rail.addEventListener('click',function(e){
-      var g=e.target.closest('.kc-groot');
-      if(g){ var k=kaarten[+g.dataset.groot], im=k.querySelector('img'), vd=k.querySelector('video');
-        if(vd){ vd.pause(); var sp=speler(); lbImg.hidden=true; sp.hidden=false; sp.poster=vd.poster; sp.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); sp.play().catch(function(){}); }
-        else { if(lbVid){ lbVid.hidden=true; lbVid.pause(); } lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
-        lb.classList.add('open'); return; }
-      var k2=e.target.closest('.kc-kaart'); if(k2 && +k2.dataset.i!==nu) toon(+k2.dataset.i); });
-    if(!rm) kaarten.forEach(function(k){ var x=0,y=0,raf=0;
-      k.addEventListener('mousemove',function(e){ var r=k.getBoundingClientRect(); x=e.clientX-(r.left+r.width/2); y=e.clientY-(r.top+r.height/2);
-        if(!raf) raf=requestAnimationFrame(function(){ raf=0; k.style.setProperty('--x',x+'px'); k.style.setProperty('--y',y+'px'); }); });
-      k.addEventListener('mouseleave',function(){ k.style.setProperty('--x','0px'); k.style.setProperty('--y','0px'); }); });
-    kc.querySelector('.kc-vorige').addEventListener('click',function(){ toon(nu-1); });
-    kc.querySelector('.kc-volgende').addEventListener('click',function(){ toon(nu+1); });
-    podium.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ e.preventDefault(); toon(nu+1); } if(e.key==='ArrowLeft'){ e.preventDefault(); toon(nu-1); } });
-    var x0=null; podium.addEventListener('pointerdown',function(e){ x0=e.clientX; });
-    podium.addEventListener('pointerup',function(e){ if(x0===null) return; var dx=e.clientX-x0; x0=null; if(dx<-40) toon(nu+1); else if(dx>40) toon(nu-1); });
-    // video's spelen alleen als de carrousel in beeld is (en laden pas dan)
-    var kcZicht=false;
-    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ kcZicht=es[0].isIntersecting; toon(nu); },{threshold:.25}).observe(podium);
-    toon(0);
+  // galerij met grote foto en miniaturen: foto's staan in hun geheel in beeld; video speelt stil als hij actief en in beeld is
+  var vg=document.querySelector('.vg');
+  if(vg){
+    var dias=[].slice.call(vg.querySelectorAll('.vg-dia')), duimen=[].slice.call(vg.querySelectorAll('.vg-duim')), vgPod=vg.querySelector('.vg-podium'),
+        vgTel=vg.querySelector('.vg-teller'), vgBij=vg.querySelector('.vg-bij'), bij=JSON.parse(vg.dataset.bij), vgNu=0, vgZicht=false;
+    function vgToon(i){ vgNu=(i+dias.length)%dias.length;
+      dias.forEach(function(f,j){ var aan=j===vgNu; f.classList.toggle('aan',aan); if(aan) f.removeAttribute('aria-hidden'); else f.setAttribute('aria-hidden','true');
+        var v=f.querySelector('video'); if(!v) return;
+        if(aan && vgZicht && !rm){ if(!v.getAttribute('src')) v.src=v.dataset.src; v.play().catch(function(){}); } else v.pause(); });
+      duimen.forEach(function(b,j){ var aan=j===vgNu; b.classList.toggle('aan',aan); if(aan){ b.setAttribute('aria-current','true');
+        var rij=b.parentNode, l=b.offsetLeft-rij.offsetLeft; if(l<rij.scrollLeft||l+b.offsetWidth>rij.scrollLeft+rij.clientWidth) rij.scrollTo({left:l-rij.clientWidth/2+b.offsetWidth/2,behavior:rm?'auto':'smooth'}); }
+        else b.removeAttribute('aria-current'); });
+      vgTel.textContent=(vgNu+1)+' / '+dias.length; vgBij.textContent=bij[vgNu];
+      [vgNu+1,vgNu-1].forEach(function(k){ var im=dias[(k+dias.length)%dias.length].querySelector('img[loading]'); if(im) im.loading='eager'; }); }   // buren alvast laden, zodat bladeren direct een hele foto toont
+    vg.querySelector('.vg-vorige').addEventListener('click',function(){ vgToon(vgNu-1); });
+    vg.querySelector('.vg-volgende').addEventListener('click',function(){ vgToon(vgNu+1); });
+    duimen.forEach(function(b){ b.addEventListener('click',function(){ vgToon(+b.dataset.i); }); });
+    vgPod.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ e.preventDefault(); vgToon(vgNu+1); } if(e.key==='ArrowLeft'){ e.preventDefault(); vgToon(vgNu-1); } });
+    var vx=null; vgPod.addEventListener('pointerdown',function(e){ vx=e.clientX; });
+    vgPod.addEventListener('pointerup',function(e){ if(vx===null) return; var dx=e.clientX-vx; vx=null; if(dx<-40) vgToon(vgNu+1); else if(dx>40) vgToon(vgNu-1); });
+    vg.querySelector('.vg-groot').addEventListener('click',function(){ var f=dias[vgNu], im=f.querySelector('img'), vd=f.querySelector('video');
+      if(vd){ vd.pause(); var sp=speler(); lbImg.hidden=true; sp.hidden=false; sp.poster=vd.poster; sp.src=vd.dataset.src; lbTxt.textContent=vd.getAttribute('aria-label'); sp.play().catch(function(){}); }
+      else { if(lbVid){ lbVid.hidden=true; lbVid.pause(); } lbImg.hidden=false; lbImg.src=im.src; lbImg.alt=im.alt; lbTxt.textContent=im.alt; }
+      lb.classList.add('open'); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ vgZicht=es[0].isIntersecting; vgToon(vgNu); },{threshold:.25}).observe(vgPod);
+    vgToon(0);
   }
   lb.addEventListener('click',function(e){ if(e.target===lb||e.target.closest('button')) dicht(); });
   addEventListener('keydown',function(e){ if(e.key==='Escape') dicht(); });

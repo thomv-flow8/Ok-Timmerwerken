@@ -87,73 +87,19 @@ Uitgevoerd werk
 
 ## Echte projecten van OK.
 
-Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
+Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of kies een foto in de rij eronder.
 
--
-
-01
-
-### Afgewerkte badkamer met inloopdouche
-
--
 Voor
 
-02
-
-### Toilet betegeld, het sanitair moet er nog in
-
--
 Na
 
-03
-
-### Hetzelfde toilet met groene wandtegels
-
--
 Voor
 
-04
-
-### Doorbraak in de gevel, gestempeld
-
--
 Na
 
-05
+1 / 10
 
-### Nieuwe schuifpui in de doorbraak
-
--
-
-06
-
-### Een dragende muur eruit
-
--
-
-07
-
-### Sloopwerk bij een renovatie
-
--
-
-08
-
-### Hal met nieuwe tegelvloer
-
--
-
-09
-
-### Nieuwe pannen en een doorvoer in het dak
-
--
-
-10
-
-### Toilet opnieuw betegeld
-
-01 / 10
+Afgewerkte badkamer met inloopdouche
 
 Zo pakken we het aan
 

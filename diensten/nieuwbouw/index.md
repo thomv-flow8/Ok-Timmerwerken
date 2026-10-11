@@ -87,69 +87,11 @@ Uitgevoerd werk
 
 ## Echte projecten van OK.
 
-Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
+Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of kies een foto in de rij eronder.
 
--
+1 / 10
 
-01
-
-### Nieuwe woning met houten spanten
-
--
-
-02
-
-### Nieuwe woning met gevlinderde vloer en open spanten
-
--
-
-03
-
-### Bekisting met schoren, klaar om te storten
-
--
-
-04
-
-### Bekisting en steiger voor de betonwanden
-
--
-
-05
-
-### Betonwand in aanbouw
-
--
-
-06
-
-### Betonpomp op de bouwplaats van een nieuwbouwproject
-
--
-
-07
-
-### Vloer met trapgat in de ruwbouw
-
--
-
-08
-
-### Balklaag en plafond in een nieuwe woning
-
--
-
-09
-
-### Houten frame voor de binnenwanden
-
--
-
-10
-
-### Houtconstructie met trap naar boven
-
-01 / 10
+Nieuwe woning met houten spanten
 
 Zo pakken we het aan
 

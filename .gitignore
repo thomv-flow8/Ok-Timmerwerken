@@ -52,3 +52,4 @@ proef-hero-*.html
 # tijdelijke kopieën van macOS bij het wegschrijven van video's
 *.sb-*
 tools/.documenten/
+preview/proef-galerij-*.html

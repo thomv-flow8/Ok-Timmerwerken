@@ -101,111 +101,23 @@ Uitgevoerd werk
 
 ## Echte projecten van OK.
 
-Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
+Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of kies een foto in de rij eronder.
 
--
 Voor
 
-01
-
-### Tv-wand met nissen in opbouw
-
--
-
-02
-
-### Tv-wand in afbouw: de tv hangt, de afwerking volgt
-
--
 Na
 
-03
-
-### Tv-wand met nissen en haard
-
--
-
-04
-
-### Lamellenwand met inbouwhaard
-
--
 Voor
 
-05
-
-### Verlaagd plafond: balklaag met vlieringluik
-
--
 Na
 
-06
-
-### Dichtgemaakt, met inbouwspots en luik
-
--
 Voor
 
-07
-
-### Wand met nissen in opbouw
-
--
 Na
 
-08
+1 / 16
 
-### Wand met nissen naast de keuken
-
--
-
-09
-
-### Trap bekleed en afgewerkt, met verlichting in de treden
-
--
-
-10
-
-### Trapopgang strak afgetimmerd
-
--
-
-11
-
-### Stalen deur naar de werkkamer
-
--
-
-12
-
-### Stalen binnendeur
-
--
-
-13
-
-### Regelwerk voor een verlaagd plafond
-
--
-
-14
-
-### Nieuwe wanden op zolder, klaar voor de afwerking
-
--
-
-15
-
-### Vlonder met twee beloopbare lichtkoepels
-
--
-
-16
-
-### Lamellenwand in de woonkamer
-
-01 / 16
+Tv-wand met nissen in opbouw
 
 Zo pakken we het aan
 

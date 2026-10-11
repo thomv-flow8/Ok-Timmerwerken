@@ -101,87 +101,23 @@ Uitgevoerd werk
 
 ## Echte projecten van OK.
 
-Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
+Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of kies een foto in de rij eronder.
 
--
 Voor
 
-01
-
-### Grond ontgraven en geëgaliseerd voor een betonplaat
-
--
-
-02
-
-### Isolatieplaten gelegd binnen de bekisting
-
--
-
-03
-
-### Wapeningsnetten op de isolatie, klaar om te storten
-
--
 Na
 
-04
-
-### De plaat gestort, met mantelbuizen voor de aansluitingen
-
--
 Voor
 
-05
-
-### Wapening ligt klaar in de bekisting
-
--
 Na
 
-06
-
-### Dezelfde plaat, gestort en afgewerkt
-
--
 Voor
 
-07
-
-### Storten van een funderingsplaat
-
--
 Na
 
-08
+1 / 12
 
-### Dezelfde plaat, gestort tegen de schutting
-
--
-
-09
-
-### Funderingsplaat storten met de betonpomp
-
--
-
-10
-
-### Wapening voor een betonpoer
-
--
-
-11
-
-### Wapening met afstandhouders voor een betonplaat
-
--
-
-12
-
-### Gestorte betonplaat langs de schutting
-
-01 / 12
+Grond ontgraven en geëgaliseerd voor een betonplaat
 
 Zo pakken we het aan
 

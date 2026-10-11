@@ -87,101 +87,15 @@ Uitgevoerd werk
 
 ## Echte projecten van OK.
 
-Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Klik op een foto aan de zijkant om ernaartoe te gaan, of op Bekijk groot.
+Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of kies een foto in de rij eronder.
 
--
-
-01
-
-### Autostalling tegen de woning, met nieuwe bestrating
-
--
-
-02
-
-### Pergola in opbouw: balken op maat gezaagd
-
--
 Voor
 
-03
-
-### Overkapping in opbouw: het geraamte staat
-
--
 Na
 
-04
+1 / 15
 
-### Dezelfde overkapping, afgewerkt
-
--
-
-05
-
-### Overkapping met glazen schuifwanden en zwarte gevel
-
--
-
-06
-
-### Lange overkapping langs de gevel, in douglashout
-
--
-
-07
-
-### Dichte zijwand in douglashout
-
--
-
-08
-
-### Dezelfde overkapping van buiten, tussen het groen
-
--
-
-09
-
-### Carport tegen de woning
-
--
-
-10
-
-### Overkapping met berging en lichtkoepel
-
--
-
-11
-
-### Overkapping met glazen schuifwanden
-
--
-
-12
-
-### Autostalling tussen twee woningen
-
--
-
-13
-
-### Vrijstaande overkapping in douglashout met schoren
-
--
-
-14
-
-### Overkapping in douglashout met glazen schuifwanden
-
--
-
-15
-
-### Overkapping achter in de tuin
-
-01 / 15
+Autostalling tegen de woning, met nieuwe bestrating
 
 Zo pakken we het aan
 
