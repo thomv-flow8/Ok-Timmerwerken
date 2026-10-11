@@ -161,18 +161,10 @@
           <b>175 reviews, 500+ projecten</b><p>Gemiddeld 4,9 uit 5, op Google en Werkspot samen.</p></li>
       </ol>
     </div>
-    <script>(function(){
-var t=document.querySelector('.tijdlijn'); if(!t) return;
-var pts=[].slice.call(t.querySelectorAll('.tl-punt')), n=pts.length;
-[].forEach.call(t.querySelectorAll('[data-jaar-nu]'),function(e){ e.textContent=new Date().getFullYear(); });
-function zet(p){ t.style.setProperty('--p',p.toFixed(3)); pts.forEach(function(e,i){ e.classList.toggle('aan', p>=(i+.35)/n); }); }
+    <script>(function(){var t=document.querySelector('.tijdlijn'); if(!t) return;var pts=[].slice.call(t.querySelectorAll('.tl-punt')), n=pts.length;[].forEach.call(t.querySelectorAll('[data-jaar-nu]'),function(e){ e.textContent=new Date().getFullYear(); });function zet(p){ t.style.setProperty('--p',p.toFixed(3)); pts.forEach(function(e,i){ e.classList.toggle('aan', p>=(i+.35)/n); }); }
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){ zet(1); return; }
-var tik=false;
-function stand(){ tik=false; var r=t.getBoundingClientRect(), h=innerHeight;
-zet(Math.min(1,Math.max(0,(h*.88-r.top)/(r.height+h*.3)))); }
-addEventListener('scroll',function(){ if(!tik){ tik=true; requestAnimationFrame(stand);} },{passive:true});
-addEventListener('resize',stand); stand();
-})();</script>
+var tik=false;function stand(){ tik=false; var r=t.getBoundingClientRect(), h=innerHeight;zet(Math.min(1,Math.max(0,(h*.88-r.top)/(r.height+h*.3)))); }
+addEventListener('scroll',function(){ if(!tik){ tik=true; requestAnimationFrame(stand);} },{passive:true});addEventListener('resize',stand); stand();})();</script>
   </div>
 </section>
 
@@ -302,6 +294,6 @@ addEventListener('resize',stand); stand();
   <div><img alt=""><p></p></div>
 </div>
 
-<script src="../assets/js/dd29d21ddc.js"></script>
+<script src="../assets/js/7499b2fc0c.js"></script>
 </body>
 </html>

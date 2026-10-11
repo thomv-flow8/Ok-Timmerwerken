@@ -607,9 +607,9 @@ function dienstPagina(d, alle) {
     const video = /\.mp4$/.test(src), label = fase ? `<span class="vg-label ${fase}">${faseNaam[fase]}</span>` : '';
     return `          <figure class="vg-dia${i ? '' : ' aan'}" data-i="${i}"${i ? ' aria-hidden="true"' : ''}>${label}${video
       ? `<video data-src="${src}" poster="${poster}" muted loop playsinline preload="none" aria-label="${esc(bijschrift)}"></video>`
-      : `<img src="${src}" alt="${fase ? faseNaam[fase] + ': ' : ''}${esc(bijschrift)}"${i ? ' loading="lazy"' : ''}>`}</figure>`;
+      : `<img src="${src}" alt="${fase ? faseNaam[fase] + ': ' : ''}${esc(bijschrift)}" loading="lazy">`}</figure>`;
   }).join('\n');
-  const vgDuim = d.galerij.map(([src, bijschrift, poster, fase], i) => `          <button type="button" class="vg-duim${i ? '' : ' aan'}" data-i="${i}" aria-label="Foto ${i + 1}: ${esc(bijschrift)}"${i ? '' : ' aria-current="true"'}><img src="${/\.mp4$/.test(src) ? poster : src}" alt="" loading="lazy">${/\.mp4$/.test(src) ? '<span class="vg-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>' : ''}${fase ? `<span class="vg-fase ${fase}">${faseNaam[fase]}</span>` : ''}</button>`).join('\n');
+  const vgDuim = d.galerij.map(([src, bijschrift, poster, fase], i) => `          <button type="button" class="vg-duim${i ? '' : ' aan'}" data-i="${i}" aria-label="${fase ? faseNaam[fase] + ' — ' : ''}foto ${i + 1}: ${esc(bijschrift)}"${i ? '' : ' aria-current="true"'}><img src="${/\.mp4$/.test(src) ? poster : src}" alt="" loading="lazy">${/\.mp4$/.test(src) ? '<span class="vg-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>' : ''}${fase ? `<span class="vg-fase ${fase}">${faseNaam[fase]}</span>` : ''}</button>`).join('\n');
   const vgBij = d.galerij.map(([, bijschrift]) => bijschrift);
   const galerij = `    <div class="vg op" data-bij='${esc(JSON.stringify(vgBij)).replace(/'/g, '&#39;')}'>
       <div class="vg-podium" tabindex="0" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
@@ -1422,7 +1422,9 @@ function verkleinCss(css) {
     .replace(/\s*([{};,])\s*/g, '$1').replace(/:\s+/g, ':').replace(/;}/g, '}').trim();
 }
 function verkleinJs(js) {
-  return js.split('\n').map((r) => r.trim()).filter((r) => r && !r.startsWith('//') && !/^\/\*.*\*\/$/.test(r)).join('\n');
+  const regels = js.split('\n').map((r) => r.trim()).filter((r) => r && !r.startsWith('//') && !/^\/\*.*\*\/$/.test(r));
+  // regels na ; { of , veilig aan elkaar (geen automatische puntkomma mogelijk); overige regeleinden blijven staan
+  return regels.reduce((uit, r) => uit + (uit === '' ? '' : /[;{,]$/.test(uit) && !/\/\/[^'"]*$/.test(uit) ? '' : '\n') + r, '');
 }
 function verklein(html) {
   return html
