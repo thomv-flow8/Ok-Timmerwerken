@@ -635,9 +635,8 @@ footer.groot{padding:72px 0 46px}
 .p-beeld img.p-logo{inset:auto;left:7%;bottom:7%;z-index:2;width:clamp(68px,17%,100px);height:auto;object-fit:contain;border-radius:8px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}   /* dakramen: officieel VELUX-logo op de foto, zoals op home */
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
-.portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}   /* vrijstaand op wit: één geheel met de pagina */
-.portret-blok img{position:relative;z-index:1;width:100%;height:auto;display:block;
-  -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 99%);mask-image:linear-gradient(to bottom,#000 72%,transparent 99%)}
+.portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}
+.portret-blok img{position:relative;z-index:1;width:100%;max-width:520px;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;display:block;border-radius:22px}   /* echte foto van Ozcan, in een afgeronde lijst */
 .portret-blok .tag{z-index:2;opacity:1;translate:0 0;position:absolute;left:4%;bottom:12%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#14130f;color:#fff;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
 .p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
@@ -945,7 +944,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <span class="oog">06 — Funderingen<i class="baan"></i></span>
       <h1>Het fundament onder al het werk.</h1>
       <p class="lead">Gewapende betonplaten en funderingen voor een aanbouw, tuinhuis, overkapping of grote verbouwing. Bekisting, wapening en storten houden we in eigen hand — zodat alles wat erop komt, goed staat.</p>
-      <p class="auteur"><img src="../assets/render/portret/web/ozcan-avatar.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
+      <p class="auteur"><img src="../assets/render/portret/web/ozcan-foto-avatar.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
       <div class="acties">
         <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>

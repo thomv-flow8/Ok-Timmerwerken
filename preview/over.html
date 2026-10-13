@@ -9,7 +9,7 @@
 <link rel="icon" href="../assets/icon/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/icon/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/icon/apple-touch-icon.png">
-<link rel="preload" as="image" href="../assets/render/portret/web/ozcan-bovenlijf.webp" fetchpriority="high">
+<link rel="preload" as="image" href="../assets/render/portret/web/ozcan-foto.webp" fetchpriority="high">
 <!-- GEGENEREERD door tools/genereer-paginas.js uit docs/inhoud.json — niet met de hand aanpassen -->
 <!-- [[fonts — eigen lettertypes (Inter, Instrument Serif; SIL Open Font License), geen verbinding met Google -->
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -635,9 +635,8 @@ footer.groot{padding:72px 0 46px}
 .p-beeld img.p-logo{inset:auto;left:7%;bottom:7%;z-index:2;width:clamp(68px,17%,100px);height:auto;object-fit:contain;border-radius:8px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}   /* dakramen: officieel VELUX-logo op de foto, zoals op home */
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
-.portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}   /* vrijstaand op wit: één geheel met de pagina */
-.portret-blok img{position:relative;z-index:1;width:100%;height:auto;display:block;
-  -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 99%);mask-image:linear-gradient(to bottom,#000 72%,transparent 99%)}
+.portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}
+.portret-blok img{position:relative;z-index:1;width:100%;max-width:520px;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;display:block;border-radius:22px}   /* echte foto van Ozcan, in een afgeronde lijst */
 .portret-blok .tag{z-index:2;opacity:1;translate:0 0;position:absolute;left:4%;bottom:12%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#14130f;color:#fff;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
 .p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
@@ -999,7 +998,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="" loading="lazy">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
-      <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1600" height="1550" fetchpriority="high">
+      <img src="../assets/render/portret/web/ozcan-foto.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1086" height="1448" fetchpriority="high">
       <span class="tag">— Ozcan, OK Timmerwerken</span>
     </div>
   </div>

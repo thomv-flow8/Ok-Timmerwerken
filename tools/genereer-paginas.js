@@ -87,9 +87,8 @@ const extraStijl = `<style>
 .p-beeld img.p-logo{inset:auto;left:7%;bottom:7%;z-index:2;width:clamp(68px,17%,100px);height:auto;object-fit:contain;border-radius:8px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}   /* dakramen: officieel VELUX-logo op de foto, zoals op home */
 .p-beeld .tag{position:absolute;left:7%;bottom:7%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#fff;color:#14130f;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
-.portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}   /* vrijstaand op wit: één geheel met de pagina */
-.portret-blok img{position:relative;z-index:1;width:100%;height:auto;display:block;
-  -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 99%);mask-image:linear-gradient(to bottom,#000 72%,transparent 99%)}
+.portret-blok{position:relative;display:flex;align-items:flex-end;justify-content:center;background:transparent}
+.portret-blok img{position:relative;z-index:1;width:100%;max-width:520px;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;display:block;border-radius:22px}   /* echte foto van Ozcan, in een afgeronde lijst */
 .portret-blok .tag{z-index:2;opacity:1;translate:0 0;position:absolute;left:4%;bottom:12%;font-family:var(--serif);font-style:italic;font-size:19px;
   background:#14130f;color:#fff;padding:6px 18px;border-radius:999px;transform:rotate(-4deg)}
 .p-beeld.leeg{display:grid;place-items:center;border:1px dashed #cfc5b5;box-shadow:none}
@@ -680,7 +679,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
       ${oog(d.nr + ' — ' + d.naam)}
       <h1>${esc(d.kop)}</h1>
       <p class="lead">${esc(d.intro)}</p>
-      <p class="auteur"><img src="../assets/render/portret/web/ozcan-avatar.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
+      <p class="auteur"><img src="../assets/render/portret/web/ozcan-foto-avatar.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
       <div class="acties">
         <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
@@ -837,7 +836,7 @@ function overPagina(o, proef = false) {
       <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="" loading="lazy">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
-      <img src="../assets/render/portret/web/ozcan-bovenlijf.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1600" height="1550" fetchpriority="high">
+      <img src="../assets/render/portret/web/ozcan-foto.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1086" height="1448" fetchpriority="high">
       <span class="tag">— Ozcan, OK Timmerwerken</span>
     </div>
   </div>
@@ -894,7 +893,7 @@ ${oproep()}`;
     titel: 'Over ons — OK Timmerwerken Gorinchem',
     omschrijving: o.intro.slice(0, 155),
     body,
-    voorladen: '../assets/render/portret/web/ozcan-bovenlijf.webp',
+    voorladen: '../assets/render/portret/web/ozcan-foto.webp',
   }).replace('</head>', `<style>
 /* Over ons: één uitgelichte review over Ozcan zelf (de drie kaarten staan al op home) */
 .uitgelicht{position:relative;max-width:880px;margin:0 auto;padding:clamp(34px,5vw,56px) clamp(24px,5vw,64px);background:#fff;
@@ -956,7 +955,7 @@ function contactPagina() {
       <!-- links: direct contact (donkere kaart, zelfde beeldtaal als de 'Kennismaken?'-kaart) -->
       <div class="c2-direct">
         <div class="c2-wie">
-          <div class="c2-avatar"><img src="../assets/render/portret/web/ozcan-avatar.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
+          <div class="c2-avatar"><img src="../assets/render/portret/web/ozcan-foto-avatar.webp" alt="Ozcan, eigenaar van OK Timmerwerken"></div>
           <div><b>Ozcan</b><span>eigenaar van OK Timmerwerken</span></div>
         </div>
         <p class="c2-citaat">U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en staat zelf op de bouw.</p>
@@ -1014,7 +1013,7 @@ function contactPagina() {
   box-shadow:0 40px 80px -50px rgba(20,19,15,.45)}
 .c2-wie{display:flex;align-items:center;gap:16px}
 .c2-avatar{width:84px;height:84px;flex:none;border-radius:50%;overflow:hidden;background:#f2ebdf}
-.c2-avatar img{width:100%;height:100%;object-fit:cover}   /* ozcan-avatar.webp is al uitgesneden (hoofd en schouders) */
+.c2-avatar img{width:100%;height:100%;object-fit:cover}   /* ozcan-foto-avatar.webp is al uitgesneden (hoofd en schouders) */
 .c2-wie b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em}
 .c2-wie span{font-size:13px;color:var(--zacht)}
 .c2-citaat{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.35;color:var(--inkt)}

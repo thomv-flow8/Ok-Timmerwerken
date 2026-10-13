@@ -14,7 +14,7 @@ De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een akkoord,
 - [ ] **Alle teksten nalezen** — vooral de veelgestelde vragen en "zo pakken we het aan" op de 8 dienstpagina's,
       het verhaal op Over ons en het citaat op de contactpagina ("U belt met Ozcan, niet met een kantoor…").
 - [ ] **"Geschreven door Ozcan, eigenaar van OK Timmerwerken"** op de dienstpagina's (met klein portret; helpt bij Google). Akkoord, of liever weg?
-- [ ] **Portret** — de foto van Ozcan op Over ons en Contact is een AI-bewerking van zijn eigen foto's. Akkoord?
+- [x] **Portret** — echte foto van Ozcan aangeleverd (13 okt), staat op Over ons, Contact en bij de dienstpagina's.
 - [ ] **Renders** — de hero (huis met wolken) en de beelden bij de diensten op de homepage zijn gegenereerd; de galerijen zijn zijn eigen foto's. Akkoord?
 - [ ] **Badkamerfoto** (onderhoud, plek 1) — op de wastafel staan spullen van de bewoners. Zo laten, of de spullen laten wegpoetsen?
 - [x] Logo — origineel logo, exact overgenomen.
