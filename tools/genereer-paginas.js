@@ -48,9 +48,9 @@ const contactRaster = `<div class="contact-grid">
         <a href="tel:+31641429106">06 41 42 91 06</a>
         <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>
         <div class="lbl">Werkgebied</div>
-        <a href="#" style="pointer-events:none">Gorinchem en regio Zuid-Holland</a>
+        <a href="#" style="pointer-events:none">Vanuit Gorinchem, door heel Nederland</a>
         <div class="lbl">Werktijden</div>
-        <div class="tijden"><span>Maandag – vrijdag</span><span>07:00 – 20:00</span><span>Zaterdag</span><span>07:00 – 16:00</span><span>Zondag</span><span>Gesloten</span></div>
+        <div class="tijden"><span>Maandag – vrijdag</span><span>07:00 – 18:00</span><span>Zaterdag</span><span>07:00 – 15:00</span><span>Zondag</span><span>Gesloten</span></div>
         <div class="nu-open" hidden><i></i><span></span></div>
         <div class="lbl">Erkenning</div>
         <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner</a>
@@ -867,7 +867,7 @@ function overPagina(o, proef = false) {
       ${oog('Waar we voor staan')}
       <h2>Drie dingen die u <em class="serif">altijd</em> krijgt.</h2>
     </div>
-    ${stappenRaster(o.waarden, ['Kennismaken?', 'Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend.', 'Plan een afspraak'], ['i-persoon', 'i-ploeg', 'i-afspraak'])}
+    ${stappenRaster(o.waarden, ['Kennismaken?', 'Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend.', 'Plan een afspraak'], ['i-persoon', 'i-hamer', 'i-afspraak'])}
   </div>
 </section>
 
@@ -967,9 +967,9 @@ function contactPagina() {
         </div>
         <div class="c2-info">
           <div><div class="lbl">E-mail</div><a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>
-            <div class="lbl">Werkgebied</div><p>Gorinchem en regio Zuid-Holland</p></div>
+            <div class="lbl">Werkgebied</div><p>Vanuit Gorinchem, door heel Nederland</p></div>
           <div><div class="lbl">Werktijden</div>
-            <div class="tijden"><span>Ma – vr</span><span>07:00 – 20:00</span><span>Zaterdag</span><span>07:00 – 16:00</span><span>Zondag</span><span>Gesloten</span></div>
+            <div class="tijden"><span>Ma – vr</span><span>07:00 – 18:00</span><span>Zaterdag</span><span>07:00 – 15:00</span><span>Zondag</span><span>Gesloten</span></div>
             <div class="nu-open" hidden><i></i><span></span></div></div>
         </div>
       </div>
@@ -998,7 +998,7 @@ function contactPagina() {
 </section>
 `;
   // de werktijden staan al in de kaart, dus de werktijdenkolom gaat uit de footer (weghalen i.p.v. verbergen: geen verborgen tekst)
-  return pagina({ titel: 'Contact — OK Timmerwerken Gorinchem', omschrijving: 'Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–20:00, za 07:00–16:00.', body })
+  return pagina({ titel: 'Contact — OK Timmerwerken Gorinchem', omschrijving: 'Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–18:00, za 07:00–15:00.', body })
     .replace(/\s*<div class="foot-tijden-kol">[\s\S]*?<\/div>\s*<\/div>/, '').replace('</head>', `<style>
 @media(min-width:761px){.foot-grid{grid-template-columns:1.6fr 1fr 1fr}}
 .c2-hero{padding:36px 0 84px}
@@ -1059,7 +1059,7 @@ ${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#
   <div class="wrap" style="display:block">
     <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Diensten</span></div>
     ${oog('Diensten')}
-    <h1>Alle vakken, <em class="serif">één</em> ploeg.</h1>
+    <h1>Alle vakken, <em class="serif">één</em> aanspreekpunt.</h1>
     <p class="lead">Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot de laatste lijst. Kies een dienst of ga direct naar een werkzaamheid.</p>
   </div>
 </section>
@@ -1200,10 +1200,10 @@ const dagen = { 'Maandag – vrijdag': ['Monday', 'Tuesday', 'Wednesday', 'Thurs
 const bedrijf = {
   '@context': 'https://schema.org', '@type': 'GeneralContractor', '@id': SITE + '#bedrijf',
   name: 'OK Timmerwerken', url: SITE, logo: SITE + 'assets/icon/icon-512.png', image: SITE + 'assets/og/ok-timmerwerken-delen.jpg',
-  description: 'Timmer- en betonwerk in Gorinchem en omstreken. Erkend VELUX Montagepartner.',
+  description: 'Timmer- en betonwerk vanuit Gorinchem, door heel Nederland. Erkend VELUX Montagepartner.',
   telephone: '+31641429106', email: 'info@ok-timmerwerken.nl', foundingDate: '2011',
   address: { '@type': 'PostalAddress', streetAddress: 'Suzanna van Oostdijkstraat 4', postalCode: '4206 XW', addressLocality: 'Gorinchem', addressCountry: 'NL' },
-  areaServed: [{ '@type': 'City', name: 'Gorinchem' }, { '@type': 'AdministrativeArea', name: 'Zuid-Holland' }],
+  areaServed: [{ '@type': 'City', name: 'Gorinchem' }, { '@type': 'Country', name: 'Nederland' }],
   // werktijden uit inhoud.werktijden, zodat ze altijd gelijk zijn aan wat op de site staat
   openingHoursSpecification: inhoud.werktijden.filter(([, t]) => t !== 'Gesloten').map(([dag, t]) => {
     if (!dagen[dag]) throw new Error(`onbekende dag in werktijden: ${dag}`);
@@ -1279,10 +1279,10 @@ ${sitePaginas.map((r) => `  <url><loc>${SITE}${r}</loc><lastmod>${vandaag}</last
   const cijfer = (n) => n.toFixed(1).replace('.', ',');
   schrijf('llms.txt', `# OK Timmerwerken
 
-> Timmer- en betonwerk in Gorinchem en omstreken, sinds 2011. Eenmanszaak van Ozcan: één vast aanspreekpunt van offerte tot oplevering. Erkend VELUX Montagepartner (door VELUX getraind in 2025). Beoordeeld met een ${cijfer(rb.werkspot.score)} op Werkspot (${rb.werkspot.aantal} reviews) en een ${cijfer(rb.google.score)} op Google (${rb.google.aantal} reviews).
+> Timmer- en betonwerk vanuit Gorinchem, door heel Nederland, sinds 2011. Eenmanszaak van Ozcan: één vast aanspreekpunt van offerte tot oplevering. Erkend VELUX Montagepartner (door VELUX getraind in 2025). Beoordeeld met een ${cijfer(rb.werkspot.score)} op Werkspot (${rb.werkspot.aantal} reviews) en een ${cijfer(rb.google.score)} op Google (${rb.google.aantal} reviews).
 
 - Adres: Suzanna van Oostdijkstraat 4, 4206 XW Gorinchem
-- Werkgebied: Gorinchem en regio Zuid-Holland
+- Werkgebied: vanuit Gorinchem, door heel Nederland
 - Telefoon en WhatsApp: 06 41 42 91 06
 - E-mail: info@ok-timmerwerken.nl
 - KvK: 51855232

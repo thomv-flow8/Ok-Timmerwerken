@@ -6,7 +6,7 @@ Bron: https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/
 
 Diensten
 
-# Alle vakken, één ploeg.
+# Alle vakken, één aanspreekpunt.
 
 Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot de laatste lijst. Kies een dienst of ga direct naar een werkzaamheid.
 
@@ -99,6 +99,8 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 - [Tegelwerk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/#tegelwerk)
 
 - [Isolatie](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/#isolatie)
+
+- [Totale renovatie](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/#totale-renovatie)
 
 - [Dagelijks onderhoud](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/#dagelijks-onderhoud)
 

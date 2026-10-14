@@ -1,6 +1,6 @@
 # Timmerwerk & afbouw — OK Timmerwerken Gorinchem
 
-> Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt. Van het regelwerk tot de laatste plint werkt één ploeg aan uw verbouwi
+> Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt. Van het regelwerk tot de laatste plint blijft alles in één hand — zoda
 
 Bron: https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/
 
@@ -8,7 +8,7 @@ Bron: https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/
 
 # Van ruwbouw tot de laatste lijst.
 
-Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt. Van het regelwerk tot de laatste plint werkt één ploeg aan uw verbouwing — zodat alles op elkaar aansluit.
+Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt. Van het regelwerk tot de laatste plint blijft alles in één hand — zodat alles op elkaar aansluit.
 
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 

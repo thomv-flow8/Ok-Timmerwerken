@@ -84,7 +84,7 @@ Een nieuw VELUX-dakraam met HR++-glas houdt in de winter de warmte binnen en in 
 
 ### Erkend VELUX Montagepartner
 
-OK Timmerwerken wordt door VELUX getraind en gecertificeerd. Zo bent u verzekerd van een vakkundige montage en een duurzaam resultaat — in Gorinchem en de hele regio Zuid-Holland.
+OK Timmerwerken wordt door VELUX getraind en gecertificeerd. Zo bent u verzekerd van een vakkundige montage en een duurzaam resultaat — vanuit Gorinchem, door heel Nederland.
 
 [Download de VELUX-brochure (pdf)](https://thomv-flow8.github.io/Ok-Timmerwerken/assets/documenten/velux-brochure.pdf)
 

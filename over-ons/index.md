@@ -27,22 +27,28 @@ Het verhaal
 
 ## Vakwerk uit Gorinchem.
 
-Sinds 2011 werkt OK Timmerwerken vanuit Gorinchem aan woningen in de wijde omgeving: van een gevlinderde vloer in een schuur tot een complete verbouwing met doorbraak, vliering en dakramen.
+Sinds 2011 werkt OK Timmerwerken vanuit Gorinchem aan woningen door heel Nederland: van een gevlinderde vloer in een schuur tot een complete verbouwing met doorbraak, vliering en dakramen.
 
-Ozcan werkt met een vaste ploeg vakmensen. Geen wisselende onderaannemers, maar mensen die elkaars werk kennen — zodat het betonwerk, het timmerwerk en de afbouw naadloos op elkaar aansluiten.
+In de beginjaren werkte Ozcan vooral voor vaste aannemers; betonwerk doet hij al sinds 2004. Die ervaring zit in elk project: betonwerk, timmerwerk en afbouw uit één hand, zodat alles naadloos op elkaar aansluit.
 
 Als erkend VELUX Montagepartner en met tientallen reviews van tevreden klanten op Werkspot en Google weet u waar u aan toe bent.
 
 Klantgericht. Professioneel. Flexibel. Dat zijn de principes waar we elke dag naar werken — en op al onze werkzaamheden krijgt u garantie.
 
+- 2004
+**Begonnen in het beton** Ozcan doet betonwerk sinds 2004: vloeren en funderingen.
+
 - 2011
-**De start in Gorinchem** Ozcan begint OK Timmerwerken, vanuit Gorinchem.
+**De start in Gorinchem** Ozcan begint OK Timmerwerken, vanuit Gorinchem. In de beginjaren werkt hij vooral voor vaste aannemers.
 
 - 2019
-**Eerste review op Werkspot** In september 2019 schrijft de eerste klant een review. Inmiddels staan er 78 op Werkspot.
+**Het gaat hard** Steeds meer eigen klanten. In september 2019 schrijft de eerste klant een review; inmiddels staan er 78 op Werkspot.
 
 - 2021
 **Ook op Google** Vanaf oktober 2021 schrijven klanten ook op Google: 97 reviews, gemiddeld 5,0.
+
+- 2025
+**Erkend VELUX Montagepartner** Getraind en gecertificeerd door VELUX.
 
 - Nu 2026
 **175 reviews, 500+ projecten** Gemiddeld 4,9 uit 5, op Google en Werkspot samen.
@@ -59,9 +65,9 @@ U belt met Ozcan, niet met een kantoor. Hij komt kijken, maakt de offerte en sta
 
 02
 
-### Vaste ploeg
+### Alles uit één hand
 
-Vakmensen die al jaren samenwerken. Dat merkt u aan het tempo én aan de afwerking.
+Beton, timmerwerk en afbouw door één bedrijf. Geen gedoe tussen partijen, wel één strakke afwerking.
 
 03
 

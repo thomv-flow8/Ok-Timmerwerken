@@ -8,12 +8,6 @@ OK Timmerwerken
 
 # Privacyverklaring
 
-**Concept — nog niet definitief**Deze tekst moet OK Timmerwerken nog controleren, in het bijzonder:
-- Naam van de hostingpartij waar de website en het e-mailadres info@ok-timmerwerken.nl draaien
-- Bewaartermijn van aanvragen zonder opdracht (nu: 12 maanden)
-- Formulierdienst: Web3Forms — wordt definitief bij het koppelen van het formulier
-- Cookies en statistieken: nu geen; wordt aangepast als er een statistiekdienst komt
-
 OK Timmerwerken gaat zorgvuldig om met uw persoonsgegevens. In deze privacyverklaring leest u welke gegevens we verwerken, waarom we dat doen, hoe lang we ze bewaren en welke rechten u heeft.
 
 ## Wie zijn wij
@@ -38,14 +32,15 @@ We doen dit omdat het nodig is om een overeenkomst met u voor te bereiden en uit
 
 ## Hoe lang we ze bewaren
 
-- Aanvragen die niet tot een opdracht leiden: uiterlijk 12 maanden na het laatste contact.
+- Aanvragen die niet tot een opdracht leiden: uiterlijk 3 maanden na het laatste contact.
 - Gegevens van opdrachten en facturen: 7 jaar, omdat de Belastingdienst dat wettelijk verplicht stelt.
 
 ## Met wie we ze delen
 
 We verkopen uw gegevens nooit en delen ze niet met anderen voor reclame. Wel gebruiken we een paar diensten die gegevens voor ons verwerken:
 
-- De website en ons e-mailadres staan bij onze hostingpartij. Zoals elke webserver registreert die technische gegevens, zoals uw IP-adres, alleen voor de werking en beveiliging van de site; e-mails worden in onze mailbox bij die partij bewaard.
+- De website staat bij GitHub (GitHub Pages). Zoals elke webserver registreert GitHub technische gegevens, zoals uw IP-adres, alleen voor de werking en beveiliging van de site.
+- Ons e-mailadres draait op Microsoft 365, afgenomen via GoDaddy (dat ook onze domeinnaam beheert). E-mails worden in onze mailbox bij Microsoft bewaard.
 - Het contactformulier wordt verstuurd via Web3Forms, dat uw bericht doorstuurt naar ons e-mailadres.
 - Als u ons via WhatsApp benadert, gelden daarnaast de voorwaarden van WhatsApp.
 

@@ -1,6 +1,6 @@
 # Contact — OK Timmerwerken Gorinchem
 
-> Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–20:00, za 07:00–16:00.
+> Neem contact op met OK Timmerwerken in Gorinchem: bel, app of stuur een vrijblijvende aanvraag. Ma–vr 07:00–18:00, za 07:00–15:00.
 
 Bron: https://thomv-flow8.github.io/Ok-Timmerwerken/contact/
 
@@ -23,11 +23,11 @@ E-mail
 info@ok-timmerwerken.nl
 Werkgebied
 
-Gorinchem en regio Zuid-Holland
+Vanuit Gorinchem, door heel Nederland
 
 Werktijden
 
-Ma – vr 07:00 – 20:00 Zaterdag 07:00 – 16:00 Zondag Gesloten
+Ma – vr 07:00 – 18:00 Zaterdag 07:00 – 15:00 Zondag Gesloten
 
 ## Stuur een aanvraag
 

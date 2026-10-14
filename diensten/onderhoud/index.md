@@ -1,6 +1,6 @@
 # Onderhoud & renovatie — OK Timmerwerken Gorinchem
 
-> Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties: OK Timmerwerken houdt uw woning in goede staat. Eén vaste ploeg die meedenkt, h
+> Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties: OK Timmerwerken houdt uw woning in goede staat. Eén vast aanspreekpunt dat meed
 
 Bron: https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/
 
@@ -8,7 +8,7 @@ Bron: https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/
 
 # Uw woning weer in topconditie.
 
-Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties: OK Timmerwerken houdt uw woning in goede staat. Eén vaste ploeg die meedenkt, het werk vooraf helder bespreekt en netjes oplevert.
+Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties: OK Timmerwerken houdt uw woning in goede staat. Eén vast aanspreekpunt dat meedenkt, het werk vooraf helder bespreekt en netjes oplevert.
 
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
@@ -51,6 +51,7 @@ Houtrot
 Kleine schilderwerkzaamheden
 Tegelwerk
 Isolatie
+Totale renovatie
 Dagelijks onderhoud
 
 01
@@ -78,6 +79,12 @@ Tegels zijn duurzaam, waterbestendig en makkelijk schoon te houden — ideaal vo
 Goede isolatie verlaagt uw energiekosten, voorkomt vochtproblemen en schimmel, en zorgt voor minder geluidsoverlast. We isoleren daken, vloeren en wanden met de juiste materialen en werken alles netjes af.
 
 05
+
+### Totale renovatie
+
+Van één kamer tot het hele huis: OK Timmerwerken pakt een complete renovatie in één keer aan. Vloeren, wanden, plafonds, isolatie, tegelwerk en afwerking — met één aanspreekpunt en één planning, zodat alles op elkaar aansluit.
+
+06
 
 ### Dagelijks onderhoud
 

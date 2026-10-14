@@ -1,6 +1,6 @@
 # OK Timmerwerken — Timmer- en betonwerk in Gorinchem
 
-> Timmer- en betonwerk in Gorinchem en omstreken: gevlinderde betonvloeren, vlieringen, carports en VELUX-dakramen. Erkend VELUX Montagepartner, sinds 2011.
+> Timmer- en betonwerk vanuit Gorinchem, door heel Nederland: gevlinderde betonvloeren, vlieringen, carports en VELUX-dakramen. Erkend VELUX Montagepartner.
 
 Bron: https://thomv-flow8.github.io/Ok-Timmerwerken/
 
@@ -22,7 +22,7 @@ opgeleverd
 
 Diensten
 
-## Alle vakken. Eén vaste ploeg.
+## Alle vakken. Eén vast aanspreekpunt.
 
 Van de fundering tot het dakraam. Scroll door het werk — elke dienst laat zien
 wat [OK Timmerwerken](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/) oplevert.
@@ -49,7 +49,7 @@ van zolder tot kamer
 
 ### Een hele verdieping erbij.
 
-Van een rommelige zolder naar een strakke, lichte ruimte — met een vliering erboven voor extra bergruimte. Vloer, wanden, isolatie en afwerking door één ploeg.
+Van een rommelige zolder naar een strakke, lichte ruimte — met een vliering erboven voor extra bergruimte. Vloer, wanden, isolatie en afwerking in één hand.
 
 - Vliering plaatsen
 - Zolder isoleren
@@ -93,7 +93,7 @@ tot de laatste lijst
 
 ### Van ruwbouw tot de laatste lijst.
 
-Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt — van het regelwerk tot de laatste lijst, door één ploeg.
+Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt — van het regelwerk tot de laatste lijst, alles in één hand.
 
 - Verlaagde plafonds
 - Wanden
@@ -125,7 +125,7 @@ tegel voor tegel
 
 ### Uw woning weer in topconditie.
 
-Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties. Eén vaste ploeg die het werk vooraf helder bespreekt en netjes oplevert.
+Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties. Eén vast aanspreekpunt dat het werk vooraf helder bespreekt en netjes oplevert.
 
 - Houtrot
 - Tegelwerk
