@@ -92,15 +92,15 @@ Onverwachte reparaties — een slot dat klemt, een kleine lekkage, een kapotte d
 
 Voor & na
 
-## Van kaal toilet tot af.
+## Van gestempelde opening tot nieuwe pui.
 
-Hetzelfde toilet, voor en na. Eerst de wanden betegeld, daarna het sanitair en de afwerking.
+Dezelfde gevel, voor en na. De muur gestempeld en doorgebroken, daarna de schuifpui geplaatst en netjes aangesloten op het metselwerk.
 
 Sleep de lijn om te vergelijken
 
 Voor Na
 
-Toilet opnieuw betegeld en afgewerkt
+Doorbraak in de gevel, met een nieuwe schuifpui
 
 Uitgevoerd werk
 

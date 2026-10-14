@@ -1174,14 +1174,14 @@
         "i-opgeleverd"
       ],
       "voorna": {
-        "voor": "../assets/web/voorna/toilet-voor.jpg",
-        "na": "../assets/web/voorna/toilet-na.jpg",
-        "kop": "Van kaal toilet tot <em class=\"serif\">af</em>.",
-        "tekst": "Hetzelfde toilet, voor en na. Eerst de wanden betegeld, daarna het sanitair en de afwerking.",
-        "bij": "Toilet opnieuw betegeld en afgewerkt",
-        "altVoor": "het toilet betegeld, het sanitair moet er nog in",
-        "altNa": "het toilet af, met groene wandtegels",
-        "verhouding": "4/5"
+        "voor": "../assets/web/voorna/gevel-voor.jpg",
+        "na": "../assets/web/voorna/gevel-na.jpg",
+        "kop": "Van gestempelde opening tot <em class=\"serif\">nieuwe</em> pui.",
+        "tekst": "Dezelfde gevel, voor en na. De muur gestempeld en doorgebroken, daarna de schuifpui geplaatst en netjes aangesloten op het metselwerk.",
+        "bij": "Doorbraak in de gevel, met een nieuwe schuifpui",
+        "altVoor": "de gevel doorgebroken en gestempeld",
+        "altNa": "de nieuwe schuifpui in de opening",
+        "verhouding": "1031/1223"
       }
     },
     {
