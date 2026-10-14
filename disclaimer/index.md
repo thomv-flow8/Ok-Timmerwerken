@@ -1,4 +1,4 @@
-# Disclaimer — OK Timmerwerken, timmer- en betonwerk Gorinchem
+# Disclaimer — OK Timmerwerken Gorinchem
 
 > Disclaimer van OK Timmerwerken in Gorinchem: over de informatie op deze website, aansprakelijkheid, links naar andere sites en het gebruik van beelden.
 

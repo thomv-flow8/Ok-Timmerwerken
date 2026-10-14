@@ -1,4 +1,4 @@
-# Algemene voorwaarden — OK Timmerwerken, timmer- en betonwerk Gorinchem
+# Algemene voorwaarden — OK Timmerwerken Gorinchem
 
 > De algemene voorwaarden van OK Timmerwerken in Gorinchem: offertes, uitvoering, betaling, garantie en aansprakelijkheid bij timmer- en betonwerk.
 

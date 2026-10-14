@@ -1,4 +1,4 @@
-# Privacyverklaring — OK Timmerwerken, timmer- en betonwerk Gorinchem
+# Privacyverklaring — OK Timmerwerken Gorinchem
 
 > Hoe OK Timmerwerken in Gorinchem omgaat met uw persoonsgegevens: welke gegevens we verwerken, waarom, hoe lang we ze bewaren en uw rechten.
 

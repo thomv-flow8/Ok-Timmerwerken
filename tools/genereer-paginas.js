@@ -1182,7 +1182,7 @@ ${inhoudHtml}
     </div>
   </div>
 </section>`;
-  return pagina({ titel: `${titel} — OK Timmerwerken, timmer- en betonwerk Gorinchem`, omschrijving: juridischeOmschrijving[titel] || `${titel} van OK Timmerwerken, Gorinchem.`, body });
+  return pagina({ titel: `${titel} — OK Timmerwerken Gorinchem`, omschrijving: juridischeOmschrijving[titel] || `${titel} van OK Timmerwerken, Gorinchem.`, body });
 }
 function privacyHtml(v) {
   const lijst = (l) => (l ? `\n      <ul>${l.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '');
