@@ -53,7 +53,7 @@ const contactRaster = `<div class="contact-grid">
         <div class="tijden"><span>Maandag – vrijdag</span><span>07:00 – 18:00</span><span>Zaterdag</span><span>07:00 – 15:00</span><span>Zondag</span><span>Gesloten</span></div>
         <div class="nu-open" hidden><i></i><span></span></div>
         <div class="lbl">Erkenning</div>
-        <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="">Erkend VELUX Montagepartner</a>
+        <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.webp" alt="">Erkend VELUX Montagepartner</a>
       </div>
     </div><!-- /contact-grid -->`;
 const gedeeldJs = tussen(hoofd, '// [[gedeeld', '// gedeeld]]');
@@ -683,7 +683,7 @@ ${vgDuim}
         <b>Alle diensten</b><small>Alle werkzaamheden op een rij →</small>
       </a>`;
   const pBeeld = `    <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
-      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">${d.slug === 'dakramen' ? '\n      <img class="p-logo" src="../assets/velux/velux-montagepartner.jpg" alt="Erkend VELUX Montagepartner">' : ''}
+      <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">${d.slug === 'dakramen' ? '\n      <img class="p-logo" src="../assets/velux/velux-montagepartner.webp" alt="Erkend VELUX Montagepartner">' : ''}
     </div>`;
   const onderdelen = d.onderdelen ? `
 <!-- ALLE WERKZAAMHEDEN -->
@@ -746,7 +746,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
     </div>
     ${d.slug === 'dakramen' ? `<div class="p-rechts">
 ${pBeeld}
-      <div class="p-keurmerk"><img src="../assets/velux/velux-logo.jpg" alt="" loading="lazy"><img src="../assets/velux/velux-getraind-2025.jpg" alt="" loading="lazy"><span>Getraind en gecertificeerd<br>door VELUX</span></div>
+      <div class="p-keurmerk"><img src="../assets/velux/velux-logo.webp" alt="" loading="lazy"><img src="../assets/velux/velux-getraind-2025.webp" alt="" loading="lazy"><span>Getraind en gecertificeerd<br>door VELUX</span></div>
     </div>` : pBeeld}
   </div>
 </section>
@@ -848,7 +848,7 @@ ${oproep()}`;
     titel: `${d.naam} — OK Timmerwerken Gorinchem`,
     omschrijving: d.intro.slice(0, 155),
     body,
-    voorladen: d.slug === 'dakramen' ? [d.beeld, '../assets/velux/velux-montagepartner.jpg'] : d.beeld,
+    voorladen: d.slug === 'dakramen' ? [d.beeld, '../assets/velux/velux-montagepartner.webp'] : d.beeld,
   });
 }
 
@@ -916,7 +916,7 @@ function overPagina(o, proef = false) {
         <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
         <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
       </div>
-      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.jpg" alt="" loading="lazy">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
+      <a class="erkend" href="dienst-dakramen.html"><img src="../assets/velux/velux-montagepartner.webp" alt="" loading="lazy">Erkend VELUX Montagepartner — getraind en gecertificeerd door VELUX</a>
     </div>
     <div class="portret-blok">
       <img src="../assets/render/portret/web/ozcan-foto.webp" alt="Ozcan, eigenaar van OK Timmerwerken" width="1086" height="1448" fetchpriority="high">

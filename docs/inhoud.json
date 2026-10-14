@@ -48,13 +48,13 @@
           "Gevlinderde vloer onder een overkapping"
         ],
         [
-          "../assets/web/beton-woonkamer-vloerverwarming.jpg",
+          "../assets/web/beton-woonkamer-vloerverwarming.webp",
           "Woonkamer: vloerverwarming op de wapening",
           "",
           "voor"
         ],
         [
-          "../assets/web/beton-woonkamer-vlinderen.jpg",
+          "../assets/web/beton-woonkamer-vlinderen.webp",
           "Dezelfde woonkamer, gestort en gevlinderd",
           "",
           "na"
@@ -66,7 +66,7 @@
           "voor"
         ],
         [
-          "../assets/web/beton-werkplaats-gestort.jpg",
+          "../assets/web/beton-werkplaats-gestort.webp",
           "Dezelfde werkplaats, vloer gestort",
           "",
           "na"
@@ -86,7 +86,7 @@
         [
           "../assets/video/beton-ondergrond.mp4",
           "Ondergrond voorbereid voor een nieuwe betonvloer",
-          "../assets/video/beton-ondergrond.jpg"
+          "../assets/video/beton-ondergrond.webp"
         ],
         [
           "../assets/web/beton-vloerverwarming-wapening.jpg",
@@ -97,11 +97,11 @@
           "Vlinderen in een garage"
         ],
         [
-          "../assets/web/beton-achtertuin-gestort.jpg",
+          "../assets/web/beton-achtertuin-gestort.webp",
           "Betonplaat in de achtertuin, net gestort"
         ],
         [
-          "../assets/web/beton-wa193.jpg",
+          "../assets/web/beton-wa193.webp",
           "Strakke betonvloer onder een overkapping"
         ],
         [
@@ -201,7 +201,7 @@
       "kleur": "#9cb189",
       "kop": "Een hele verdieping erbij.",
       "intro": "Een rommelige, koude zolder wordt een lichte, volwaardige ruimte. We isoleren het dak, maken wanden en knieschotten met bergruimte, en bouwen waar mogelijk een vliering: een vlak plafond op de hanenbalken met een luik, met daarboven extra opslag.",
-      "beeld": "../assets/render/echt/web/zolder-na.jpg",
+      "beeld": "../assets/render/echt/web/zolder-na.webp",
       "beeldAlt": "Afgewerkte zolder met vliering en bergruimte",
       "werk": [
         [
@@ -239,39 +239,39 @@
         [
           "../assets/video/zolder-rondgang.mp4",
           "Rondgang over de verbouwde zolder",
-          "../assets/video/zolder-rondgang.jpg"
+          "../assets/video/zolder-rondgang.webp"
         ],
         [
-          "../assets/web/zolder-vliering-ladder.jpg",
+          "../assets/web/zolder-vliering-ladder.webp",
           "Vliering met vaste ladder en hekwerk"
         ],
         [
-          "../assets/web/zolder-knieschotten-dakraam.jpg",
+          "../assets/web/zolder-knieschotten-dakraam.webp",
           "Afgewerkte zolder met knieschotten en dakraam"
         ],
         [
-          "../assets/web/zolder-wa290.jpg",
+          "../assets/web/zolder-wa290.webp",
           "Afgewerkt plafond met vlieringluik"
         ],
         [
-          "../assets/web/zolder-wa318.jpg",
+          "../assets/web/zolder-wa318.webp",
           "Zolderverbouwing in volle gang"
         ],
         [
           "../assets/video/zolder-afwerking.mp4",
           "Zolder in afbouw: wanden geplaatst, plafond in regelwerk",
-          "../assets/video/zolder-afwerking.jpg"
+          "../assets/video/zolder-afwerking.webp"
         ],
         [
-          "../assets/web/zolder-plafond-spots.jpg",
+          "../assets/web/zolder-plafond-spots.webp",
           "Afgewerkte zolder met spots en luik"
         ],
         [
-          "../assets/web/zolder-wa104.jpg",
+          "../assets/web/zolder-wa104.webp",
           "Nieuwe vloerconstructie op zolder"
         ],
         [
-          "../assets/web/zolder-vlizotrap.jpg",
+          "../assets/web/zolder-vlizotrap.webp",
           "Vlizotrap naar de vliering"
         ],
         [
@@ -279,7 +279,7 @@
           "Schuin dak geïsoleerd, met regelwerk voor de afwerking"
         ],
         [
-          "../assets/web/zolder-wa114.jpg",
+          "../assets/web/zolder-wa114.webp",
           "Vliering in opbouw, met isolatie"
         ]
       ],
@@ -331,7 +331,7 @@
       ],
       "voorna": {
         "voor": "../assets/render/echt/web/zolder-voor.jpg",
-        "na": "../assets/render/echt/web/zolder-na.jpg",
+        "na": "../assets/render/echt/web/zolder-na.webp",
         "kop": "Van rommelzolder tot <em class=\"serif\">extra</em> kamer.",
         "tekst": "Dezelfde zolder, voor en na. Vloer, wanden, isolatie en afwerking door één bedrijf, met een vliering erboven voor extra bergruimte.",
         "bij": "Zolder verbouwd tot lichte, strakke ruimte",
@@ -383,26 +383,26 @@
       ],
       "galerij": [
         [
-          "../assets/web/carport-bestrating.jpg",
+          "../assets/web/carport-bestrating.webp",
           "Autostalling tegen de woning, met nieuwe bestrating"
         ],
         [
           "../assets/video/carport-pergola.mp4",
           "Pergola in opbouw: balken op maat gezaagd",
-          "../assets/video/carport-pergola.jpg"
+          "../assets/video/carport-pergola.webp"
         ],
         [
-          "../assets/web/carport-pergola-geraamte.jpg",
+          "../assets/web/carport-pergola-geraamte.webp",
           "Overkapping in opbouw: het geraamte staat",
           "",
           "voor"
         ],
         [
-          "../assets/web/carport-pergola-af.jpg",
+          "../assets/web/carport-pergola-af.webp",
           "Hetzelfde project: dak en zwarte achterwand zijn dicht"
         ],
         [
-          "../assets/web/carport-wa076.jpg",
+          "../assets/web/carport-wa076.webp",
           "De glazen schuifwanden zitten erin"
         ],
         [
@@ -424,11 +424,11 @@
           "Dezelfde overkapping van buiten, tussen het groen"
         ],
         [
-          "../assets/web/carport-wa004.jpg",
+          "../assets/web/carport-wa004.webp",
           "Carport tegen de woning"
         ],
         [
-          "../assets/web/overkapping-berging-lichtkoepel.jpg",
+          "../assets/web/overkapping-berging-lichtkoepel.webp",
           "Overkapping met berging en lichtkoepel"
         ],
         [
@@ -512,7 +512,7 @@
       "kleur": "#7394b4",
       "kop": "Meer licht, altijd waterdicht.",
       "intro": "Als erkend VELUX Montagepartner plaatst OK Timmerwerken dakramen vakkundig en waterdicht — van één raam tot een dubbele combinatie die uw zolder volledig verandert. Inclusief betimmering en strakke afwerking aan de binnenkant.",
-      "beeld": "../assets/render/echt/web/velux.jpg",
+      "beeld": "../assets/render/echt/web/velux.webp",
       "beeldAlt": "Twee nieuwe dakramen naast elkaar in een zolder",
       "werk": [
         [
@@ -548,27 +548,27 @@
       ],
       "galerij": [
         [
-          "../assets/web/dakraam-wa156.jpg",
+          "../assets/web/dakraam-wa156.webp",
           "Afgewerkt dakraam in een schuin dak"
         ],
         [
-          "../assets/web/dakramen-twee-werkplek.jpg",
+          "../assets/web/dakramen-twee-werkplek.webp",
           "Twee dakramen boven een werkplek"
         ],
         [
-          "../assets/web/dakramen-drie-ramen.jpg",
+          "../assets/web/dakramen-drie-ramen.webp",
           "Drie VELUX-dakramen geplaatst, afwerking volgt",
           "",
           "voor"
         ],
         [
-          "../assets/web/dakramen-drie-ramen-af.jpg",
+          "../assets/web/dakramen-drie-ramen-af.webp",
           "Dezelfde dakramen, binnen afgewerkt",
           "",
           "na"
         ],
         [
-          "../assets/web/dakraam-open.jpg",
+          "../assets/web/dakraam-open.webp",
           "Nieuw dakraam, helemaal open"
         ],
         [
@@ -576,31 +576,31 @@
           "De sparing in het dak is gemaakt"
         ],
         [
-          "../assets/web/dakramen-drie-ramen-hout.jpg",
+          "../assets/web/dakramen-drie-ramen-hout.webp",
           "Drie dakramen naast elkaar, klaar voor de afwerking"
         ],
         [
-          "../assets/web/dakraam-wa108.jpg",
+          "../assets/web/dakraam-wa108.webp",
           "Drie dakramen, veel daglicht"
         ],
         [
-          "../assets/web/dakraam-binnen-velux.jpg",
+          "../assets/web/dakraam-binnen-velux.webp",
           "VELUX-dakraam van binnen, strak afgewerkt"
         ],
         [
-          "../assets/web/dakraam-buiten.jpg",
+          "../assets/web/dakraam-buiten.webp",
           "Het dakraam van buiten, netjes in de pannen"
         ],
         [
-          "../assets/web/dakraam-schuin-dak.jpg",
+          "../assets/web/dakraam-schuin-dak.webp",
           "Dakraam in een schuin dak, met uitzicht over de daken"
         ],
         [
-          "../assets/web/dakraam-wa121.jpg",
+          "../assets/web/dakraam-wa121.webp",
           "Dakraam met strakke dagkanten"
         ],
         [
-          "../assets/web/lichtkoepels-dak.jpg",
+          "../assets/web/lichtkoepels-dak.webp",
           "Twee lichtkoepels in een plat dak"
         ],
         [
@@ -671,7 +671,7 @@
       "kleur": "#9cb189",
       "kop": "Van ruwbouw tot de laatste lijst.",
       "intro": "Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt. Van het regelwerk tot de laatste plint blijft alles in één hand — zodat alles op elkaar aansluit.",
-      "beeld": "../assets/render/echt/web/plafond-af.jpg",
+      "beeld": "../assets/render/echt/web/plafond-af.webp",
       "beeldAlt": "Kamer met afgewerkt verlaagd plafond en inbouwspots",
       "werk": [
         [
@@ -707,45 +707,45 @@
       ],
       "galerij": [
         [
-          "../assets/web/timmer-wa066.jpg",
+          "../assets/web/timmer-wa066.webp",
           "Tv-wand met nissen in opbouw",
           "",
           "voor"
         ],
         [
-          "../assets/web/timmer-tvwand-afbouw.jpg",
+          "../assets/web/timmer-tvwand-afbouw.webp",
           "Tv-wand in afbouw: de tv hangt, de afwerking volgt"
         ],
         [
-          "../assets/web/timmerwerk-tvwand.jpg",
+          "../assets/web/timmerwerk-tvwand.webp",
           "Tv-wand met nissen en haard",
           "",
           "na"
         ],
         [
-          "../assets/web/timmer-lamellenwand-haard.jpg",
+          "../assets/web/timmer-lamellenwand-haard.webp",
           "Lamellenwand met inbouwhaard"
         ],
         [
-          "../assets/web/timmer-plafond-open.jpg",
+          "../assets/web/timmer-plafond-open.webp",
           "Verlaagd plafond: balklaag met vlieringluik",
           "",
           "voor"
         ],
         [
-          "../assets/web/timmer-plafond-dicht-spots.jpg",
+          "../assets/web/timmer-plafond-dicht-spots.webp",
           "Dichtgemaakt, met inbouwspots en luik",
           "",
           "na"
         ],
         [
-          "../assets/web/timmer-nissen-opbouw.jpg",
+          "../assets/web/timmer-nissen-opbouw.webp",
           "Wand met nissen in opbouw",
           "",
           "voor"
         ],
         [
-          "../assets/web/timmer-wa094.jpg",
+          "../assets/web/timmer-wa094.webp",
           "Wand met nissen naast de keuken",
           "",
           "na"
@@ -753,26 +753,26 @@
         [
           "../assets/video/timmerwerk-trap.mp4",
           "Trap bekleed en afgewerkt, met verlichting in de treden",
-          "../assets/video/timmerwerk-trap.jpg"
+          "../assets/video/timmerwerk-trap.webp"
         ],
         [
-          "../assets/web/timmer-wa141.jpg",
+          "../assets/web/timmer-wa141.webp",
           "Trapopgang strak afgetimmerd"
         ],
         [
-          "../assets/web/timmer-wa179.jpg",
+          "../assets/web/timmer-wa179.webp",
           "Stalen deur naar de werkkamer"
         ],
         [
-          "../assets/web/timmer-wa036.jpg",
+          "../assets/web/timmer-wa036.webp",
           "Stalen binnendeur"
         ],
         [
-          "../assets/web/timmer-plafond-regelwerk.jpg",
+          "../assets/web/timmer-plafond-regelwerk.webp",
           "Regelwerk voor een verlaagd plafond"
         ],
         [
-          "../assets/web/timmer-wa067.jpg",
+          "../assets/web/timmer-wa067.webp",
           "Nieuwe wanden op zolder, klaar voor de afwerking"
         ],
         [
@@ -780,7 +780,7 @@
           "Vlonder met twee beloopbare lichtkoepels"
         ],
         [
-          "../assets/web/timmerwerk-lamellenwand.jpg",
+          "../assets/web/timmerwerk-lamellenwand.webp",
           "Lamellenwand in de woonkamer"
         ]
       ],
@@ -910,11 +910,11 @@
           "Bekisting gesteld, de laser bepaalt de hoogte"
         ],
         [
-          "../assets/web/fundering-isolatieplaten.jpg",
+          "../assets/web/fundering-isolatieplaten.webp",
           "Isolatieplaten gelegd binnen de bekisting"
         ],
         [
-          "../assets/web/fundering-school-isolatie-avond.jpg",
+          "../assets/web/fundering-school-isolatie-avond.webp",
           "Isolatieplaten over de hele plaat gelegd"
         ],
         [
@@ -966,7 +966,7 @@
         [
           "../assets/video/fundering-storten.mp4",
           "Funderingsplaat storten met de betonpomp",
-          "../assets/video/fundering-storten.jpg"
+          "../assets/video/fundering-storten.webp"
         ],
         [
           "../assets/web/fundering-poer.jpg",
@@ -1055,7 +1055,7 @@
       "kleur": "#b98b6e",
       "kop": "Uw woning weer in topconditie.",
       "intro": "Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties: OK Timmerwerken houdt uw woning in goede staat. Eén vast aanspreekpunt dat meedenkt, het werk vooraf helder bespreekt en netjes oplevert.",
-      "beeld": "../assets/render/echt/web/onderhoud.jpg",
+      "beeld": "../assets/render/echt/web/onderhoud.webp",
       "beeldAlt": "Gerenoveerde badkamer met nieuw tegelwerk",
       "werk": [
         [
@@ -1091,17 +1091,17 @@
       ],
       "galerij": [
         [
-          "../assets/web/onderhoud-badkamer-afgewerkt.jpg",
+          "../assets/web/onderhoud-badkamer-afgewerkt.webp",
           "Afgewerkte badkamer met inloopdouche"
         ],
         [
-          "../assets/web/onderhoud-toilet-kaal.jpg",
+          "../assets/web/onderhoud-toilet-kaal.webp",
           "Toilet betegeld, het sanitair moet er nog in",
           "",
           "voor"
         ],
         [
-          "../assets/web/onderhoud-wa329.jpg",
+          "../assets/web/onderhoud-wa329.webp",
           "Hetzelfde toilet met groene wandtegels",
           "",
           "na"
@@ -1127,7 +1127,7 @@
           "Sloopwerk bij een renovatie"
         ],
         [
-          "../assets/web/onderhoud-hal-tegels.jpg",
+          "../assets/web/onderhoud-hal-tegels.webp",
           "Hal met nieuwe tegelvloer"
         ],
         [
@@ -1135,7 +1135,7 @@
           "Nieuwe pannen en een doorvoer in het dak"
         ],
         [
-          "../assets/web/onderhoud-toilet.jpg",
+          "../assets/web/onderhoud-toilet.webp",
           "Toilet opnieuw betegeld"
         ]
       ],
@@ -1208,7 +1208,7 @@
       "kleur": "#6f7d6a",
       "kop": "Vakwerk vanaf de eerste balk.",
       "intro": "Voor nieuwbouwprojecten zet OK Timmerwerken HSB-wanden, stelt kozijnen, maakt dak- en vloerconstructies en plaatst ramen, deuren en boeidelen. Nauwkeurig werk volgens tekening, zodat de rest van de bouw er goed op aansluit.",
-      "beeld": "../assets/render/echt/web/nieuwbouw.jpg",
+      "beeld": "../assets/render/echt/web/nieuwbouw.webp",
       "beeldAlt": "Houtskeletbouw in opbouw",
       "werk": [
         [
@@ -1244,11 +1244,11 @@
       ],
       "galerij": [
         [
-          "../assets/web/nieuwbouw-spanten.jpg",
+          "../assets/web/nieuwbouw-spanten.webp",
           "Nieuwe woning met houten spanten"
         ],
         [
-          "../assets/web/nieuwbouw-vloer-spanten.jpg",
+          "../assets/web/nieuwbouw-vloer-spanten.webp",
           "Nieuwe woning met gevlinderde vloer en open spanten"
         ],
         [
@@ -1260,28 +1260,28 @@
           "Bekisting en steiger voor de betonwanden"
         ],
         [
-          "../assets/web/nieuwbouw-wand-steiger.jpg",
+          "../assets/web/nieuwbouw-wand-steiger.webp",
           "Betonwand in aanbouw"
         ],
         [
           "../assets/video/nieuwbouw-betonpomp.mp4",
           "Betonpomp op de bouwplaats van een nieuwbouwproject",
-          "../assets/video/nieuwbouw-betonpomp.jpg"
+          "../assets/video/nieuwbouw-betonpomp.webp"
         ],
         [
-          "../assets/web/nieuwbouw-vloer-trapgat.jpg",
+          "../assets/web/nieuwbouw-vloer-trapgat.webp",
           "Vloer met trapgat in de ruwbouw"
         ],
         [
-          "../assets/web/nieuwbouw-balklaag.jpg",
+          "../assets/web/nieuwbouw-balklaag.webp",
           "Balklaag en plafond in een nieuwe woning"
         ],
         [
-          "../assets/web/nieuwbouw-frame-binnenwanden.jpg",
+          "../assets/web/nieuwbouw-frame-binnenwanden.webp",
           "Houten frame voor de binnenwanden"
         ],
         [
-          "../assets/web/nieuwbouw-houtconstructie.jpg",
+          "../assets/web/nieuwbouw-houtconstructie.webp",
           "Houtconstructie met trap naar boven"
         ]
       ],
