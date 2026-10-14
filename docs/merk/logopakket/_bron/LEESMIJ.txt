@@ -1,0 +1,2 @@
+Bronbestanden (HTML) van de kaart, de social-afbeeldingen en het handtekeningvoorbeeld.
+Opnieuw maken: python3 tools/merkmateriaal.py <schiet-programma>  (en tools/logopakket.py voor de logobestanden).

@@ -69,6 +69,7 @@ const extraStijl = `<style>
 /* ---------- subpagina's (gegenereerd) ---------- */
 .p-hero{padding:56px 0 96px}
 .p-hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,96px);align-items:center}
+.d-hero .wrap{grid-template-columns:minmax(0,1fr) calc(100% - min(var(--max),94vw) / 2);gap:clamp(40px,4.5vw,64px)}   /* dienstfoto van de middelste tot de buitenste kolomlijn, links en rechts even veel witruimte (zoals op home); kleinere tussenruimte zodat de introtekst niet langer wordt */
 .p-hero .oog,.oproep .oog{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht)}
 .kruimel{display:flex;gap:8px;font-size:13px;color:var(--zacht);margin-bottom:clamp(36px,5vw,64px)}
 .kruimel a:hover{color:var(--inkt)}
@@ -277,7 +278,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .op.in{opacity:1;transform:none}
 
 @media(max-width:820px){
-  .p-hero .wrap,.verhaal{grid-template-columns:1fr}
+  .p-hero .wrap,.d-hero .wrap,.verhaal{grid-template-columns:1fr}
   .p-hero{padding:30px 0 70px}
   .stappen.vier .stap{min-height:0}
 }
@@ -671,7 +672,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
 </section>` : '';
 
   const body = `<!-- HERO -->
-<section class="p-hero">
+<section class="p-hero d-hero">
   <div class="kolommen"></div>
   <div class="wrap">
     <div>
