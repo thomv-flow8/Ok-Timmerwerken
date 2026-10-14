@@ -738,7 +738,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
       ${oog(d.nr + ' — ' + d.naam)}
       <h1>${esc(d.kop)}</h1>
       <p class="lead">${esc(d.intro)}</p>
-      <p class="auteur"><img src="../assets/render/portret/web/ozcan-foto-avatar.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
+      <p class="auteur"><img src="../assets/render/portret/web/ozcan-foto-avatar-72.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
       <div class="acties">
         <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
