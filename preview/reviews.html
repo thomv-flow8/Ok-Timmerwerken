@@ -625,6 +625,33 @@ footer.groot{padding:72px 0 46px}
 .p-hero .acties{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .p-hero .knop{padding:13px 24px;font-size:14px}
 .p-hero .knop.lijn{background:transparent;color:var(--inkt);border-color:var(--inkt)}
+.sfeer-band{padding:clamp(56px,8vw,110px) 0 0}
+.sfeer-beeld{width:min(var(--max),94vw);margin:0 0 0 calc(50% - min(var(--max),94vw) / 2)}   /* sfeerbeeld precies tussen de buitenste kolomlijnen */
+.sfeer-beeld img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:50% 62%;border-radius:2px;box-shadow:0 50px 90px -40px rgba(20,19,15,.45)}
+.vn-band{padding:clamp(56px,8vw,110px) 0 0}
+.vn-grid{display:grid;grid-template-columns:minmax(0,1fr) calc(100% - min(var(--max),94vw) / 2);gap:clamp(40px,4.5vw,64px);align-items:center}   /* schuifbalk van de middelste tot de buitenste kolomlijn, zoals de foto bovenaan */
+.vn-grid .oog{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht);margin-bottom:28px}
+.vn-grid h2{font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-.03em;line-height:1.02}
+.vn-grid .lead{margin-top:20px;color:var(--zacht);font-weight:300;font-size:16px;line-height:1.7}
+.vn-hint{display:flex;align-items:center;gap:10px;margin-top:26px;font-size:13px;font-weight:600;color:var(--zacht)}
+.vn-hint svg{width:22px;height:22px;flex:none}
+.vn{position:relative;overflow:hidden;border-radius:2px;cursor:ew-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none;
+  box-shadow:0 50px 90px -40px rgba(20,19,15,.45),0 18px 36px -24px rgba(20,19,15,.25)}
+.vn:focus-visible{box-shadow:0 0 0 3px var(--vlak),0 0 0 5px var(--inkt)}
+.vn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.vn-voor{position:absolute;inset:0;z-index:2;clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.vn-greep{position:absolute;z-index:3;top:0;bottom:0;left:var(--pos,50%);width:2px;margin-left:-1px;background:#fff}
+.vn-greep::after{content:'';position:absolute;top:50%;left:50%;width:40px;height:40px;margin:-20px 0 0 -20px;
+  border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.25);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314130f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-5 6 5 6M15 6l5 6-5 6'/%3E%3C/svg%3E");
+  background-size:20px;background-repeat:no-repeat;background-position:center}
+.vn-l{position:absolute;z-index:4;top:5%;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
+.vn-l.l{left:4%}.vn-l.r{right:4%}
+.vn-bij{margin-top:14px;font-size:13.5px;color:var(--zacht)}
+@media(max-width:820px){.vn-grid{grid-template-columns:1fr;gap:28px}}
+.sfeer-beeld figcaption{margin-top:14px;font-size:13.5px;color:var(--zacht)}
+@media(max-width:820px){.sfeer-beeld img{aspect-ratio:4/3}}
 .p-beeld{position:relative;aspect-ratio:1/1;background:var(--bg);overflow:hidden;border-radius:2px;
   box-shadow:0 50px 90px -40px rgba(20,19,15,.45),0 18px 36px -24px rgba(20,19,15,.25)}
 .p-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -1336,6 +1363,27 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     t=top<h ? .22+scrollY/(top+r.height)*1.1 : (h*.95-r.top)/(r.height+h*.25);
     t=Math.min(1,Math.max(0,t)); p.style.strokeDashoffset=(p._L*(1-t)).toFixed(1); }); }
   if(!rm && krullen.length){ addEventListener('scroll',krulScroll,{passive:true}); krulScroll(); }
+
+  // voor/na-schuif: loopt vanzelf heen en weer zodra hij in beeld is; met muis, vinger of pijltjestoetsen neemt u het over
+  [].forEach.call(document.querySelectorAll('.vn'),function(el){
+    var zelf=false, slepen=false, zicht=false, t0=performance.now(), terug;
+    function pos(){ return parseFloat(el.style.getPropertyValue('--pos'))||50; }
+    function zet(v){ v=Math.min(100,Math.max(0,v)); el.style.setProperty('--pos',v.toFixed(2)+'%'); el.setAttribute('aria-valuenow',Math.round(v)); }
+    function uitPunt(e){ var r=el.getBoundingClientRect(); zet((e.clientX-r.left)/r.width*100); }
+    function overnemen(){ zelf=true; clearTimeout(terug); }
+    // na loslaten verder schuiven vanaf de plek waar de lijn nu staat
+    function loslaten(ms){ clearTimeout(terug); terug=setTimeout(function(){ zelf=false; t0=performance.now()-Math.asin(Math.max(-1,Math.min(1,(pos()-50)/40)))*1300; },ms); }
+    el.addEventListener('pointerdown',function(e){ overnemen(); slepen=true; el.setPointerCapture(e.pointerId); uitPunt(e); });
+    el.addEventListener('pointermove',function(e){ if(slepen||e.pointerType==='mouse'){ overnemen(); uitPunt(e); } });
+    el.addEventListener('pointerup',function(e){ slepen=false; if(e.pointerType!=='mouse') loslaten(2500); });
+    el.addEventListener('pointercancel',function(){ slepen=false; loslaten(2500); });
+    el.addEventListener('pointerleave',function(e){ if(e.pointerType==='mouse'&&!slepen) loslaten(600); });
+    el.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); overnemen(); zet(pos()+(e.key==='ArrowRight'?5:-5)); } });
+    el.addEventListener('blur',function(){ loslaten(1500); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ zicht=es[0].isIntersecting; }).observe(el); else zicht=true;
+    zet(50);
+    if(!rm) (function schuif(t){ if(!zelf&&zicht) zet(50+40*Math.sin((t-t0)/1300)); requestAnimationFrame(schuif); })(performance.now());
+  });
 
   // Lichtbak voor de galerij
   var lb=document.getElementById('lichtbak'), lbImg=lb.querySelector('img'), lbVid=null, lbTxt=lb.querySelector('p');

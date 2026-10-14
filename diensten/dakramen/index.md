@@ -98,7 +98,7 @@ Voor
 
 Na
 
-1 / 12
+1 / 14
 
 Afgewerkt dakraam in een schuin dak
 

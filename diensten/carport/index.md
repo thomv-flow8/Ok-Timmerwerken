@@ -83,6 +83,8 @@ Een schutting geeft privacy, beschut tegen wind en zon en houdt huisdieren binne
 
 Een carport of overkapping rust op betonpoeren of een betonplaat. Zo staat het hout niet in de vochtige grond en voorkomt u verzakking en houtrot.
 
+Lamellenwand in douglas onder de overkapping, in het avondlicht
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.

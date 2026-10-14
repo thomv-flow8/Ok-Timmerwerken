@@ -97,6 +97,18 @@ De gevel bepaalt de uitstraling van uw woning en beschermt hem tegen weer en win
 
 Een muur eruit voor een open ruimte: we plaatsen de stalen balk volgens de berekening van de constructeur en werken alles daarna netjes af.
 
+Voor & na
+
+## Van kale balklaag tot strak plafond.
+
+Hetzelfde plafond, voor en na. Het regelwerk, het vlieringluik, de inbouwspots en de afwerking: alles door OK Timmerwerken.
+
+Sleep de lijn om te vergelijken
+
+Voor Na
+
+Verlaagd plafond met vlieringluik en inbouwspots
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.

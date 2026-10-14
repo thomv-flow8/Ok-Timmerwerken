@@ -90,6 +90,18 @@ Van één kamer tot het hele huis: OK Timmerwerken pakt een complete renovatie i
 
 Onverwachte reparaties — een slot dat klemt, een kleine lekkage, een kapotte deur — lossen we vakkundig op. We bespreken eerst wat er moet gebeuren en pakken het daarna stap voor stap aan.
 
+Voor & na
+
+## Van kaal toilet tot af.
+
+Hetzelfde toilet, voor en na. Eerst de wanden betegeld, daarna het sanitair en de afwerking.
+
+Sleep de lijn om te vergelijken
+
+Voor Na
+
+Toilet opnieuw betegeld en afgewerkt
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.

@@ -76,13 +76,25 @@ De lage ruimte onder het dakbeschot wordt nuttige opbergruimte met knieschotten 
 
 Tussenwanden, deuren, plafonds en vloer: we maken van de zolder een volwaardige slaapkamer, werkkamer of logeerkamer. Een dakraam plaatsen we in hetzelfde traject.
 
+Voor & na
+
+## Van rommelzolder tot extra kamer.
+
+Dezelfde zolder, voor en na. Vloer, wanden, isolatie en afwerking door één bedrijf, met een vliering erboven voor extra bergruimte.
+
+Sleep de lijn om te vergelijken
+
+Voor Na
+
+Zolder verbouwd tot lichte, strakke ruimte
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.
 
 Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of kies een foto in de rij eronder.
 
-1 / 10
+1 / 11
 
 Rondgang over de verbouwde zolder
 

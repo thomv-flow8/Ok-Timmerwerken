@@ -90,6 +90,18 @@ Schuimbeton is licht, isolerend en vorstbestendig. Het wordt gebruikt om vloeren
 
 Voor werkplaatsen, loodsen en bedrijfspanden maken we betonvloeren die tegen een stootje kunnen: sterk, vochtbestendig en met een lange levensduur. We stemmen vooraf de belasting, het gebruik en de afwerking met u af.
 
+Voor & na
+
+## Van vloerverwarming tot gladde vloer.
+
+Dezelfde woonkamer, voor en na. De vloerverwarming ligt op de wapening; daarna storten we de vloer en vlinderen hem machinaal tot een vlak, dicht oppervlak.
+
+Sleep de lijn om te vergelijken
+
+Voor Na
+
+Woonkamer: van vloerverwarming tot gevlinderde vloer
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.

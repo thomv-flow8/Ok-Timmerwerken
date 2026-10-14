@@ -97,6 +97,18 @@ Water is zwaar: een zwembad vraagt om een stevige ondergrond en een robuuste fun
 
 Nieuwe vloeren bij verbouwingen — ook met stalen balken en een geïsoleerde systeemvloer.
 
+Voor & na
+
+## Van kale grond tot strakke plaat.
+
+Dezelfde plek, voor en na. Grond ontgraven en geëgaliseerd, bekisting gesteld, isolatie en wapening gelegd en in één keer gestort, met mantelbuizen voor de aansluitingen.
+
+Sleep de lijn om te vergelijken
+
+Voor Na
+
+Grote betonplaat, van bekisting tot gestort
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.
@@ -115,7 +127,7 @@ Voor
 
 Na
 
-1 / 12
+1 / 17
 
 Grond ontgraven en geëgaliseerd voor een betonplaat
 
