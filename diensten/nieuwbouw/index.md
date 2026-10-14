@@ -83,6 +83,8 @@ Dak- en vloerconstructies — balken van hout, staal of beton — zijn de basis 
 
 Nieuwe ramen en deuren verbeteren de isolatie, de veiligheid en het wooncomfort, en verhogen de waarde van uw woning. We zetten eerst uw wensen op een rij, maken een plan en plaatsen of vervangen daarna vakkundig.
 
+Open spanten en een strakke vloer, in het late zonlicht
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.

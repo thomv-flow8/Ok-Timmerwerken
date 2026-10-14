@@ -186,7 +186,13 @@
         "altVoor": "vloerverwarming op de wapening",
         "altNa": "de vloer gestort en gevlinderd",
         "verhouding": "4/5"
-      }
+      },
+      "sfeer": [
+        "../assets/render/sfeer/betonvloer-overkapping-avondzon.jpg",
+        "Nieuwe gevlinderde betonvloer onder een overkapping, in laag avondlicht",
+        "Gevlinderde vloer onder de overkapping, in het avondlicht",
+        "onder"
+      ]
     },
     {
       "slug": "zolder",
@@ -651,6 +657,11 @@
         "i-meten",
         "i-dakraam",
         "i-kwast"
+      ],
+      "sfeer": [
+        "../assets/render/sfeer/dakramen-zon-binnen.jpg",
+        "Drie dakramen naast elkaar in een schuin dak, met zon die naar binnen valt",
+        "Drie dakramen, en de zon valt naar binnen"
       ]
     },
     {
@@ -838,7 +849,13 @@
         "altVoor": "de kale balklaag met het vlieringluik",
         "altNa": "het plafond dichtgemaakt, met inbouwspots en luik",
         "verhouding": "1024/721"
-      }
+      },
+      "sfeer": [
+        "../assets/render/sfeer/timmerwerk-tvwand-haard-avond.jpg",
+        "Tv-wand met nissen en een brandende haard, in avondsfeer",
+        "Tv-wand met nissen en haard, in de avond",
+        "onder"
+      ]
     },
     {
       "slug": "funderingen",
@@ -1313,6 +1330,11 @@
         "i-potlood",
         "i-hamer",
         "i-kwast"
+      ],
+      "sfeer": [
+        "../assets/render/sfeer/nieuwbouw-spanten-avondzon.jpg",
+        "Nieuwe woning met open houten spanten en een glanzende vloer, in laag zonlicht",
+        "Open spanten en een strakke vloer, in het late zonlicht"
       ]
     }
   ],

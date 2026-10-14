@@ -719,6 +719,16 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
   </div>
 </section>` : '';
 
+  // sfeerbeeld (render op basis van eigen foto): standaard na "Alle werkzaamheden"; met 'onder' als 4e veld na de galerij
+  const sfeerBand = d.sfeer ? `
+
+<!-- SFEERBEELD -->
+<section class="sfeer-band">
+  <div class="kolommen"></div>
+  <div class="wrap">
+    <figure class="sfeer-beeld op"><img src="${d.sfeer[0]}" alt="${esc(d.sfeer[1])}" loading="lazy"><figcaption>${esc(d.sfeer[2])}</figcaption></figure>
+  </div>
+</section>` : '';
   const body = `<!-- HERO -->
 <section class="p-hero d-hero">
   <div class="kolommen"></div>
@@ -752,15 +762,7 @@ ${pBeeld}
     ${stappenRaster(d.werk)}
   </div>
 </section>
-${onderdelen}${d.sfeer ? `
-
-<!-- SFEERBEELD -->
-<section class="sfeer-band">
-  <div class="kolommen"></div>
-  <div class="wrap">
-    <figure class="sfeer-beeld op"><img src="${d.sfeer[0]}" alt="${esc(d.sfeer[1])}" loading="lazy"><figcaption>${esc(d.sfeer[2])}</figcaption></figure>
-  </div>
-</section>` : ''}${d.voorna ? `
+${onderdelen}${d.sfeer && d.sfeer[3] !== 'onder' ? sfeerBand : ''}${d.voorna ? `
 
 <!-- VOOR & NA -->
 <section class="vn-band" id="voor-na">
@@ -810,7 +812,7 @@ ${galerij}
     ${stappenRaster(d.aanpak, ['Klaar voor stap 1?', 'Bel, app of mail Ozcan. Binnen een dag hoort u van ons.', 'Plan een afspraak'], d.aanpak_iconen)}
   </div>
 </section>
-${review}
+${d.sfeer && d.sfeer[3] === 'onder' ? sfeerBand : ''}${review}
 
 <!-- VRAGEN -->
 <section class="donker">

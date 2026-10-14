@@ -155,6 +155,8 @@ Platen, stuc- of schilderklare afwerking, kozijnen en plinten: klaar om in te wo
 
 [Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
+Tv-wand met nissen en haard, in de avond
+
 Veelgestelde vragen
 
 ## Goed om te weten.

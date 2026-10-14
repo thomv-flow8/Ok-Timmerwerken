@@ -148,6 +148,8 @@ Zodra het beton zover is, vlinderen we machinaal tot het gewenste glanzende, dic
 
 [Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
+Gevlinderde vloer onder de overkapping, in het avondlicht
+
 ★★★★★
 "Vriendelijk, betrouwbaar, transparant en goede communicatie. Ik wist niets van beton en vloeren, en Ozcan gaf me uitstekend advies op basis van wat ik nodig had."
 

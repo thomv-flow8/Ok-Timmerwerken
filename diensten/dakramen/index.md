@@ -88,6 +88,8 @@ OK Timmerwerken wordt door VELUX getraind en gecertificeerd. Zo bent u verzekerd
 
 [Download de VELUX-brochure (pdf)](https://thomv-flow8.github.io/Ok-Timmerwerken/assets/documenten/velux-brochure.pdf)
 
+Drie dakramen, en de zon valt naar binnen
+
 Uitgevoerd werk
 
 ## Echte projecten van OK.
