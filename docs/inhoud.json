@@ -178,8 +178,8 @@
         "i-truweel"
       ],
       "voorna": {
-        "voor": "../assets/web/voorna/beton-woonkamer-voor.jpg",
-        "na": "../assets/web/voorna/beton-woonkamer-na.jpg",
+        "voor": "../assets/web/voorna/beton-woonkamer-voor.webp",
+        "na": "../assets/web/voorna/beton-woonkamer-na.webp",
         "kop": "Van vloerverwarming tot <em class=\"serif\">gladde</em> vloer.",
         "tekst": "Dezelfde woonkamer, voor en na. De vloerverwarming ligt op de wapening; daarna storten we de vloer en vlinderen hem machinaal tot een vlak, dicht oppervlak.",
         "bij": "Woonkamer: van vloerverwarming tot gevlinderde vloer",
@@ -188,7 +188,7 @@
         "verhouding": "4/5"
       },
       "sfeer": [
-        "../assets/render/sfeer/betonvloer-overkapping-avondzon.jpg",
+        "../assets/render/sfeer/betonvloer-overkapping-avondzon.webp",
         "Nieuwe gevlinderde betonvloer onder een overkapping, in laag avondlicht",
         "Gevlinderde vloer onder de overkapping, in het avondlicht",
         "onder"
@@ -500,7 +500,7 @@
         "i-kwast"
       ],
       "sfeer": [
-        "../assets/render/sfeer/carport-lamellenwand-avond.jpg",
+        "../assets/render/sfeer/carport-lamellenwand-avond.webp",
         "Lamellenwand in douglas onder een houten overkapping, met tuintafel in het avondlicht",
         "Lamellenwand in douglas onder de overkapping, in het avondlicht"
       ]
@@ -659,7 +659,7 @@
         "i-kwast"
       ],
       "sfeer": [
-        "../assets/render/sfeer/dakramen-zon-binnen.jpg",
+        "../assets/render/sfeer/dakramen-zon-binnen.webp",
         "Drie dakramen naast elkaar in een schuin dak, met zon die naar binnen valt",
         "Drie dakramen, en de zon valt naar binnen"
       ]
@@ -841,8 +841,8 @@
         "i-kwast"
       ],
       "voorna": {
-        "voor": "../assets/web/voorna/plafond-voor.jpg",
-        "na": "../assets/web/voorna/plafond-na.jpg",
+        "voor": "../assets/web/voorna/plafond-voor.webp",
+        "na": "../assets/web/voorna/plafond-na.webp",
         "kop": "Van kale balklaag tot <em class=\"serif\">strak</em> plafond.",
         "tekst": "Hetzelfde plafond, voor en na. Het regelwerk, het vlieringluik, de inbouwspots en de afwerking: alles door OK Timmerwerken.",
         "bij": "Verlaagd plafond met vlieringluik en inbouwspots",
@@ -851,7 +851,7 @@
         "verhouding": "1024/721"
       },
       "sfeer": [
-        "../assets/render/sfeer/timmerwerk-tvwand-haard-avond.jpg",
+        "../assets/render/sfeer/timmerwerk-tvwand-haard-avond.webp",
         "Tv-wand met nissen en een brandende haard, in avondsfeer",
         "Tv-wand met nissen en haard, in de avond",
         "onder"
@@ -1038,8 +1038,8 @@
         "i-truweel"
       ],
       "voorna": {
-        "voor": "../assets/web/voorna/fundering-voor.jpg",
-        "na": "../assets/web/voorna/fundering-na.jpg",
+        "voor": "../assets/web/voorna/fundering-voor.webp",
+        "na": "../assets/web/voorna/fundering-na.webp",
         "kop": "Van kale grond tot <em class=\"serif\">strakke</em> plaat.",
         "tekst": "Dezelfde plek, voor en na. Grond ontgraven en geëgaliseerd, bekisting gesteld, isolatie en wapening gelegd en in één keer gestort, met mantelbuizen voor de aansluitingen.",
         "bij": "Grote betonplaat, van bekisting tot gestort",
@@ -1191,8 +1191,8 @@
         "i-opgeleverd"
       ],
       "voorna": {
-        "voor": "../assets/web/voorna/gevel-voor.jpg",
-        "na": "../assets/web/voorna/gevel-na.jpg",
+        "voor": "../assets/web/voorna/gevel-voor.webp",
+        "na": "../assets/web/voorna/gevel-na.webp",
         "kop": "Van gestempelde opening tot <em class=\"serif\">nieuwe</em> pui.",
         "tekst": "Dezelfde gevel, voor en na. De muur gestempeld en doorgebroken, daarna de schuifpui geplaatst en netjes aangesloten op het metselwerk.",
         "bij": "Doorbraak in de gevel, met een nieuwe schuifpui",
@@ -1332,7 +1332,7 @@
         "i-kwast"
       ],
       "sfeer": [
-        "../assets/render/sfeer/nieuwbouw-spanten-avondzon.jpg",
+        "../assets/render/sfeer/nieuwbouw-spanten-avondzon.webp",
         "Nieuwe woning met open houten spanten en een glanzende vloer, in laag zonlicht",
         "Open spanten en een strakke vloer, in het late zonlicht"
       ]

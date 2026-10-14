@@ -676,7 +676,7 @@ ${vgDuim}
   const andere = alle.filter((x) => x.slug !== d.slug).map((x) => `      <a class="kaart" href="dienst-${x.slug}.html" style="--kl:${x.kleur}" data-kantel>
         <img src="${x.beeld}" alt="" loading="lazy">
         <span class="knr">${x.nr}</span>
-        <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk dienst</span></span>
+        <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk het werk</span></span>
       </a>`).join('\n') + `
       <a class="kaart alle-kaart" href="diensten.html">
         <svg class="krul-mini" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
@@ -1130,7 +1130,7 @@ function overzichtPagina(alle) {
         <a class="kaart" href="dienst-${x.slug}.html" style="--kl:${x.kleur}" data-kantel>
           <img src="${x.beeld}" alt="" loading="lazy">
           <span class="knr">${x.nr}</span>
-          <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk dienst</span></span>
+          <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk het werk</span></span>
         </a>
         <ul>
 ${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#${o.id}">${esc(o.titel)}</a></li>`).join('\n')}
@@ -1142,7 +1142,7 @@ ${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#
     <div class="kruimel"><a href="d-lijn.html">Home</a><span>/</span><span>Diensten</span></div>
     ${oog('Diensten')}
     <h1>Alle vakken, <em class="serif">één</em> aanspreekpunt.</h1>
-    <p class="lead">Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot de laatste lijst. Kies een dienst of ga direct naar een werkzaamheid.</p>
+    <p class="lead">Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot de laatste lijst. Kies een vakgebied of ga direct naar een werkzaamheid.</p>
   </div>
 </section>
 <section>
@@ -1468,13 +1468,12 @@ for (const rel of sitePaginas) {
   fs.writeFileSync(doel, html);
 }
 
-// gedeelde opmaak als los, cachebaar bestand: site.css (lettertypes + hoofdstijl, alle pagina's) en
-// pagina.css (opmaak van de subpagina's). Elke pagina laadt ze via <link>; de browser haalt ze maar één keer op.
+// gedeelde opmaak als los, cachebaar bestand: site.css (lettertypes + hoofdstijl) voor de homepage en
+// alles.css (site.css + de opmaak van de subpagina's) voor alle andere pagina's: zo laadt elke pagina
+// maar één stylesheet (geen keten van twee CSS-bestanden). De browser haalt ze maar één keer op.
 // Paden in de CSS zijn relatief aan de preview-map (../assets/…) en worden relatief aan assets/css/ (../…).
-const cssBlokken = [
-  ['site.css', [tussen(fonts, '<style>', '</style>'), stijl]],
-  ['pagina.css', [extraStijl]],
-];
+const siteBlokken = [tussen(fonts, '<style>', '</style>'), stijl], paginaBlokken = [extraStijl];
+const cssBlokken = [['site.css', siteBlokken], ['alles.css', [...siteBlokken, ...paginaBlokken]]];
 const cssLinks = {};
 fs.mkdirSync(path.join(root, 'assets/css'), { recursive: true });
 for (const [naam, blokken] of cssBlokken) {
@@ -1482,17 +1481,18 @@ for (const [naam, blokken] of cssBlokken) {
   fs.writeFileSync(path.join(root, 'assets/css', naam), inhoudCss + '\n');
   cssLinks[naam] = require('crypto').createHash('md5').update(inhoudCss).digest('hex').slice(0, 8);
 }
+try { fs.unlinkSync(path.join(root, 'assets/css/pagina.css')); } catch (e) {}   // vervangen door alles.css
+const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'";
 function cssNaarBestand(html, rel) {
   if (process.env.INLINE_CSS) return html;   // alleen voor vergelijkingstests
-  // de diepte van de pagina bepaalt het voorvoegsel; site.css moet er altijd in zitten, pagina.css alleen op subpagina's
+  // de diepte van de pagina bepaalt het voorvoegsel; de site-opmaak moet er altijd in zitten
   for (const pre of ['../../', '../', '']) {
     const delen = (blokken) => blokken.map((b) => b.split('../assets/').join(pre + 'assets/'));
-    if (!delen(cssBlokken[0][1]).every((d) => html.includes(d))) continue;
-    for (const [naam, blokken] of cssBlokken) {
-      const d = delen(blokken);
-      if (!d.every((x) => html.includes(x))) continue;
-      d.forEach((x, i) => { html = html.replace(x, i === 0 ? `<link rel="stylesheet" href="${pre}assets/css/${naam}?v=${cssLinks[naam]}">` : ''); });
-    }
+    const site = delen(siteBlokken), pag = delen(paginaBlokken);
+    if (!site.every((d) => html.includes(d))) continue;
+    const sub = pag.every((d) => html.includes(d));
+    const naam = sub ? 'alles.css' : 'site.css';
+    [...site, ...(sub ? pag : [])].forEach((x, i) => { html = html.replace(x, i === 0 ? `<link rel="stylesheet" href="${pre}assets/css/${naam}?v=${cssLinks[naam]}">` : ''); });
     return html;
   }
   throw new Error(`${rel}: gedeelde CSS niet gevonden`);
@@ -1550,8 +1550,10 @@ for (const rel of [...sitePaginas.map((r) => r + 'index.html'), '404.html']) {
     return `<img${attr} width="${maat[0]}" height="${maat[1]}">`;
   });
   const klein = naarLosseBestanden(verklein(cssNaarBestand(html, rel)), rel);
+  // beveiligingsbeleid (CSP): GitHub Pages kan geen headers zetten, een meta-tag wel. Alleen op pagina's zonder inline script.
+  const metCsp = /<script>/.test(klein) ? klein : klein.replace(/(<meta charset="[^"]*">)/i, `$1\n<meta http-equiv="Content-Security-Policy" content="${CSP}">`);
   bespaard += html.length - klein.length;
-  fs.writeFileSync(doel, klein);
+  fs.writeFileSync(doel, metCsp);
 }
 console.log(`afmetingen toegevoegd aan ${metMaten} <img>-tags (${Object.keys(matenCache).length} verschillende beelden); CSS/JS verkleind: ${Math.round(bespaard / 1024)} KB minder`);
 

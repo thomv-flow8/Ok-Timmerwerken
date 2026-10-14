@@ -177,13 +177,13 @@ Meer van OK
 
 ## Andere diensten.
 
-[01 Betonvloeren Bekijk dienst](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[02 Vliering & zolder Bekijk dienst](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[03 Carport & overkapping Bekijk dienst](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[04 Dakramen (Velux) Bekijk dienst](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[06 Funderingen Bekijk dienst](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[07 Onderhoud & renovatie Bekijk dienst](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[08 Nieuwbouw Bekijk dienst](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
 [Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
 
 Contact
