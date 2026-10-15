@@ -689,6 +689,7 @@ footer.groot{padding:72px 0 46px}
 .vg-podium:focus-visible{box-shadow:0 0 0 3px var(--brons)}
 .vg-dia{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
 .vg-dia.aan{opacity:1;visibility:visible}
+.vg-dia:not(.aan):not(.buur){display:none}   /* verre dia's laden pas als je erheen bladert */
 .vg-dia img,.vg-dia video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;display:block}   /* altijd de hele foto, staand of liggend */
 .vg-dia .vg-label{left:20px;top:20px}
 .vg-pijl,.vg-groot{position:absolute;z-index:4;border:0;cursor:pointer;display:grid;place-items:center;background:#fff;color:var(--inkt);
@@ -1271,7 +1272,8 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         var rij=b.parentNode, l=b.offsetLeft-rij.offsetLeft; if(l<rij.scrollLeft||l+b.offsetWidth>rij.scrollLeft+rij.clientWidth) rij.scrollTo({left:l-rij.clientWidth/2+b.offsetWidth/2,behavior:rm?'auto':'smooth'}); }
         else b.removeAttribute('aria-current'); });
       vgTel.textContent=(vgNu+1)+' / '+dias.length; vgBij.textContent=bij[vgNu];
-      [vgNu+1,vgNu-1].forEach(function(k){ var im=dias[(k+dias.length)%dias.length].querySelector('img[loading]'); if(im) im.loading='eager'; }); }   // buren alvast laden, zodat bladeren direct een hele foto toont
+      // buren alvast laden (en tonen voor de overgang), zodat bladeren direct een hele foto laat zien
+      dias.forEach(function(f,j){ var a=(j-vgNu+dias.length)%dias.length; f.classList.toggle('buur',a===1||a===dias.length-1); }); }
     vg.querySelector('.vg-vorige').addEventListener('click',function(){ vgToon(vgNu-1); });
     vg.querySelector('.vg-volgende').addEventListener('click',function(){ vgToon(vgNu+1); });
     duimen.forEach(function(b){ b.addEventListener('click',function(){ vgToon(+b.dataset.i); }); });

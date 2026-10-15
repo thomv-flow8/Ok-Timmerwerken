@@ -141,6 +141,7 @@ const extraStijl = `<style>
 .vg-podium:focus-visible{box-shadow:0 0 0 3px var(--brons)}
 .vg-dia{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
 .vg-dia.aan{opacity:1;visibility:visible}
+.vg-dia:not(.aan):not(.buur){display:none}   /* verre dia's laden pas als je erheen bladert */
 .vg-dia img,.vg-dia video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;display:block}   /* altijd de hele foto, staand of liggend */
 .vg-dia .vg-label{left:20px;top:20px}
 .vg-pijl,.vg-groot{position:absolute;z-index:4;border:0;cursor:pointer;display:grid;place-items:center;background:#fff;color:var(--inkt);
@@ -412,7 +413,8 @@ ${dock}
         var rij=b.parentNode, l=b.offsetLeft-rij.offsetLeft; if(l<rij.scrollLeft||l+b.offsetWidth>rij.scrollLeft+rij.clientWidth) rij.scrollTo({left:l-rij.clientWidth/2+b.offsetWidth/2,behavior:rm?'auto':'smooth'}); }
         else b.removeAttribute('aria-current'); });
       vgTel.textContent=(vgNu+1)+' / '+dias.length; vgBij.textContent=bij[vgNu];
-      [vgNu+1,vgNu-1].forEach(function(k){ var im=dias[(k+dias.length)%dias.length].querySelector('img[loading]'); if(im) im.loading='eager'; }); }   // buren alvast laden, zodat bladeren direct een hele foto toont
+      // buren alvast laden (en tonen voor de overgang), zodat bladeren direct een hele foto laat zien
+      dias.forEach(function(f,j){ var a=(j-vgNu+dias.length)%dias.length; f.classList.toggle('buur',a===1||a===dias.length-1); }); }
     vg.querySelector('.vg-vorige').addEventListener('click',function(){ vgToon(vgNu-1); });
     vg.querySelector('.vg-volgende').addEventListener('click',function(){ vgToon(vgNu+1); });
     duimen.forEach(function(b){ b.addEventListener('click',function(){ vgToon(+b.dataset.i); }); });
@@ -653,11 +655,15 @@ function dienstPagina(d, alle) {
   // galerij: grote foto in zijn geheel (niet bijgesneden), pijlen, teller en een rij miniaturen eronder
   const vgDia = d.galerij.map(([src, bijschrift, poster, fase], i) => {
     const video = /\.mp4$/.test(src), label = fase ? `<span class="vg-label ${fase}">${faseNaam[fase]}</span>` : '';
-    return `          <figure class="vg-dia${i ? '' : ' aan'}" data-i="${i}"${i ? ' aria-hidden="true"' : ''}>${label}${video
+    return `          <figure class="vg-dia${i ? (i === 1 || i === d.galerij.length - 1 ? ' buur' : '') : ' aan'}" data-i="${i}"${i ? ' aria-hidden="true"' : ''}>${label}${video
       ? `<video data-src="${src}" poster="${poster}" muted loop playsinline preload="none" aria-label="${esc(bijschrift)}"></video>`
       : `<img src="${src}" alt="${fase ? faseNaam[fase] + ': ' : ''}${esc(bijschrift)}" loading="lazy">`}</figure>`;
   }).join('\n');
-  const vgDuim = d.galerij.map(([src, bijschrift, poster, fase], i) => `          <button type="button" class="vg-duim${i ? '' : ' aan'}" data-i="${i}" aria-label="${fase ? faseNaam[fase] + ' — ' : ''}foto ${i + 1}: ${esc(bijschrift)}"${i ? '' : ' aria-current="true"'}><img src="${/\.mp4$/.test(src) ? poster : src}" alt="" loading="lazy">${/\.mp4$/.test(src) ? '<span class="vg-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>' : ''}${fase ? `<span class="vg-fase ${fase}">${faseNaam[fase]}</span>` : ''}</button>`).join('\n');
+  // miniaturen: kleine vierkante WebP's in assets/duim (tools/miniaturen.py), zodat de rij niet de grote foto's laadt
+  const duimBron = d.galerij.map(([src, , poster]) => (/\.mp4$/.test(src) ? poster : src).replace(/^\.\.\//, ''));
+  require('child_process').execFileSync('python3', [path.join(root, 'tools/miniaturen.py'), ...duimBron]);
+  const duim = (bron) => '../assets/duim/' + path.basename(bron).replace(/\.[a-z]+$/i, '.webp');
+  const vgDuim = d.galerij.map(([src, bijschrift, poster, fase], i) => `          <button type="button" class="vg-duim${i ? '' : ' aan'}" data-i="${i}" aria-label="${fase ? faseNaam[fase] + ' — ' : ''}foto ${i + 1}: ${esc(bijschrift)}"${i ? '' : ' aria-current="true"'}><img src="${duim(/\.mp4$/.test(src) ? poster : src)}" alt="" loading="lazy" width="96" height="96">${/\.mp4$/.test(src) ? '<span class="vg-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>' : ''}${fase ? `<span class="vg-fase ${fase}">${faseNaam[fase]}</span>` : ''}</button>`).join('\n');
   const vgBij = d.galerij.map(([, bijschrift]) => bijschrift);
   const galerij = `    <div class="vg op" data-bij='${esc(JSON.stringify(vgBij)).replace(/'/g, '&#39;')}'>
       <div class="vg-podium" tabindex="0" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">

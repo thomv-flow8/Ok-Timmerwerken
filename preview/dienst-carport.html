@@ -689,6 +689,7 @@ footer.groot{padding:72px 0 46px}
 .vg-podium:focus-visible{box-shadow:0 0 0 3px var(--brons)}
 .vg-dia{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
 .vg-dia.aan{opacity:1;visibility:visible}
+.vg-dia:not(.aan):not(.buur){display:none}   /* verre dia's laden pas als je erheen bladert */
 .vg-dia img,.vg-dia video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;display:block}   /* altijd de hele foto, staand of liggend */
 .vg-dia .vg-label{left:20px;top:20px}
 .vg-pijl,.vg-groot{position:absolute;z-index:4;border:0;cursor:pointer;display:grid;place-items:center;background:#fff;color:var(--inkt);
@@ -1066,7 +1067,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
     <div class="vg op" data-bij='["Autostalling tegen de woning, met nieuwe bestrating","Pergola in opbouw: balken op maat gezaagd","Overkapping in opbouw: het geraamte staat","Hetzelfde project: dak en zwarte achterwand zijn dicht","De glazen schuifwanden zitten erin","Klaar en ingericht: overkapping met glazen schuifwanden","Lange overkapping langs de gevel, in douglashout","Dichte zijwand in douglashout","Dezelfde overkapping van buiten, tussen het groen","Carport tegen de woning","Overkapping met berging en lichtkoepel","Autostalling tussen twee woningen","Vrijstaande overkapping in douglashout met schoren","Overkapping in douglashout met glazen schuifwanden","Overkapping achter in de tuin"]'>
       <div class="vg-podium" tabindex="0" aria-roledescription="carrousel" aria-label="Foto's van uitgevoerd werk">
           <figure class="vg-dia aan" data-i="0"><img src="../assets/web/carport-bestrating.webp" alt="Autostalling tegen de woning, met nieuwe bestrating" loading="lazy"></figure>
-          <figure class="vg-dia" data-i="1" aria-hidden="true"><video data-src="../assets/video/carport-pergola.mp4" poster="../assets/video/carport-pergola.webp" muted loop playsinline preload="none" aria-label="Pergola in opbouw: balken op maat gezaagd"></video></figure>
+          <figure class="vg-dia buur" data-i="1" aria-hidden="true"><video data-src="../assets/video/carport-pergola.mp4" poster="../assets/video/carport-pergola.webp" muted loop playsinline preload="none" aria-label="Pergola in opbouw: balken op maat gezaagd"></video></figure>
           <figure class="vg-dia" data-i="2" aria-hidden="true"><span class="vg-label voor">Voor</span><img src="../assets/web/carport-pergola-geraamte.webp" alt="Voor: Overkapping in opbouw: het geraamte staat" loading="lazy"></figure>
           <figure class="vg-dia" data-i="3" aria-hidden="true"><img src="../assets/web/carport-pergola-af.webp" alt="Hetzelfde project: dak en zwarte achterwand zijn dicht" loading="lazy"></figure>
           <figure class="vg-dia" data-i="4" aria-hidden="true"><img src="../assets/web/carport-wa076.webp" alt="De glazen schuifwanden zitten erin" loading="lazy"></figure>
@@ -1079,7 +1080,7 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
           <figure class="vg-dia" data-i="11" aria-hidden="true"><img src="../assets/web/carport-tussenwoning.jpg" alt="Autostalling tussen twee woningen" loading="lazy"></figure>
           <figure class="vg-dia" data-i="12" aria-hidden="true"><img src="../assets/web/carport-vrijstaand-schoren.jpg" alt="Vrijstaande overkapping in douglashout met schoren" loading="lazy"></figure>
           <figure class="vg-dia" data-i="13" aria-hidden="true"><img src="../assets/web/carport-overkapping-glas.jpg" alt="Overkapping in douglashout met glazen schuifwanden" loading="lazy"></figure>
-          <figure class="vg-dia" data-i="14" aria-hidden="true"><img src="../assets/web/carport-wa093.jpg" alt="Overkapping achter in de tuin" loading="lazy"></figure>
+          <figure class="vg-dia buur" data-i="14" aria-hidden="true"><img src="../assets/web/carport-wa093.jpg" alt="Overkapping achter in de tuin" loading="lazy"></figure>
         <button type="button" class="vg-pijl vg-vorige" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
         <button type="button" class="vg-pijl vg-volgende" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <button type="button" class="vg-groot" aria-label="Foto vergroten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
@@ -1087,21 +1088,21 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
       </div>
       <p class="vg-bij">Autostalling tegen de woning, met nieuwe bestrating</p>
       <div class="vg-duimen" role="group" aria-label="Kies een foto">
-          <button type="button" class="vg-duim aan" data-i="0" aria-label="foto 1: Autostalling tegen de woning, met nieuwe bestrating" aria-current="true"><img src="../assets/web/carport-bestrating.webp" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="1" aria-label="foto 2: Pergola in opbouw: balken op maat gezaagd"><img src="../assets/video/carport-pergola.webp" alt="" loading="lazy"><span class="vg-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
-          <button type="button" class="vg-duim" data-i="2" aria-label="Voor — foto 3: Overkapping in opbouw: het geraamte staat"><img src="../assets/web/carport-pergola-geraamte.webp" alt="" loading="lazy"><span class="vg-fase voor">Voor</span></button>
-          <button type="button" class="vg-duim" data-i="3" aria-label="foto 4: Hetzelfde project: dak en zwarte achterwand zijn dicht"><img src="../assets/web/carport-pergola-af.webp" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="4" aria-label="foto 5: De glazen schuifwanden zitten erin"><img src="../assets/web/carport-wa076.webp" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="5" aria-label="Na — foto 6: Klaar en ingericht: overkapping met glazen schuifwanden"><img src="../assets/web/overkapping-glas.jpg" alt="" loading="lazy"><span class="vg-fase na">Na</span></button>
-          <button type="button" class="vg-duim" data-i="6" aria-label="foto 7: Lange overkapping langs de gevel, in douglashout"><img src="../assets/web/carport-langs-gevel.jpg" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="7" aria-label="foto 8: Dichte zijwand in douglashout"><img src="../assets/web/carport-langs-gevel-wand.jpg" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="8" aria-label="foto 9: Dezelfde overkapping van buiten, tussen het groen"><img src="../assets/web/carport-langs-gevel-buiten.jpg" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="9" aria-label="foto 10: Carport tegen de woning"><img src="../assets/web/carport-wa004.webp" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="10" aria-label="foto 11: Overkapping met berging en lichtkoepel"><img src="../assets/web/overkapping-berging-lichtkoepel.webp" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="11" aria-label="foto 12: Autostalling tussen twee woningen"><img src="../assets/web/carport-tussenwoning.jpg" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="12" aria-label="foto 13: Vrijstaande overkapping in douglashout met schoren"><img src="../assets/web/carport-vrijstaand-schoren.jpg" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="13" aria-label="foto 14: Overkapping in douglashout met glazen schuifwanden"><img src="../assets/web/carport-overkapping-glas.jpg" alt="" loading="lazy"></button>
-          <button type="button" class="vg-duim" data-i="14" aria-label="foto 15: Overkapping achter in de tuin"><img src="../assets/web/carport-wa093.jpg" alt="" loading="lazy"></button>
+          <button type="button" class="vg-duim aan" data-i="0" aria-label="foto 1: Autostalling tegen de woning, met nieuwe bestrating" aria-current="true"><img src="../assets/duim/carport-bestrating.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="1" aria-label="foto 2: Pergola in opbouw: balken op maat gezaagd"><img src="../assets/duim/carport-pergola.webp" alt="" loading="lazy" width="96" height="96"><span class="vg-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+          <button type="button" class="vg-duim" data-i="2" aria-label="Voor — foto 3: Overkapping in opbouw: het geraamte staat"><img src="../assets/duim/carport-pergola-geraamte.webp" alt="" loading="lazy" width="96" height="96"><span class="vg-fase voor">Voor</span></button>
+          <button type="button" class="vg-duim" data-i="3" aria-label="foto 4: Hetzelfde project: dak en zwarte achterwand zijn dicht"><img src="../assets/duim/carport-pergola-af.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="4" aria-label="foto 5: De glazen schuifwanden zitten erin"><img src="../assets/duim/carport-wa076.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="5" aria-label="Na — foto 6: Klaar en ingericht: overkapping met glazen schuifwanden"><img src="../assets/duim/overkapping-glas.webp" alt="" loading="lazy" width="96" height="96"><span class="vg-fase na">Na</span></button>
+          <button type="button" class="vg-duim" data-i="6" aria-label="foto 7: Lange overkapping langs de gevel, in douglashout"><img src="../assets/duim/carport-langs-gevel.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="7" aria-label="foto 8: Dichte zijwand in douglashout"><img src="../assets/duim/carport-langs-gevel-wand.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="8" aria-label="foto 9: Dezelfde overkapping van buiten, tussen het groen"><img src="../assets/duim/carport-langs-gevel-buiten.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="9" aria-label="foto 10: Carport tegen de woning"><img src="../assets/duim/carport-wa004.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="10" aria-label="foto 11: Overkapping met berging en lichtkoepel"><img src="../assets/duim/overkapping-berging-lichtkoepel.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="11" aria-label="foto 12: Autostalling tussen twee woningen"><img src="../assets/duim/carport-tussenwoning.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="12" aria-label="foto 13: Vrijstaande overkapping in douglashout met schoren"><img src="../assets/duim/carport-vrijstaand-schoren.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="13" aria-label="foto 14: Overkapping in douglashout met glazen schuifwanden"><img src="../assets/duim/carport-overkapping-glas.webp" alt="" loading="lazy" width="96" height="96"></button>
+          <button type="button" class="vg-duim" data-i="14" aria-label="foto 15: Overkapping achter in de tuin"><img src="../assets/duim/carport-wa093.webp" alt="" loading="lazy" width="96" height="96"></button>
       </div>
     </div>
   </div>
@@ -1359,7 +1360,8 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         var rij=b.parentNode, l=b.offsetLeft-rij.offsetLeft; if(l<rij.scrollLeft||l+b.offsetWidth>rij.scrollLeft+rij.clientWidth) rij.scrollTo({left:l-rij.clientWidth/2+b.offsetWidth/2,behavior:rm?'auto':'smooth'}); }
         else b.removeAttribute('aria-current'); });
       vgTel.textContent=(vgNu+1)+' / '+dias.length; vgBij.textContent=bij[vgNu];
-      [vgNu+1,vgNu-1].forEach(function(k){ var im=dias[(k+dias.length)%dias.length].querySelector('img[loading]'); if(im) im.loading='eager'; }); }   // buren alvast laden, zodat bladeren direct een hele foto toont
+      // buren alvast laden (en tonen voor de overgang), zodat bladeren direct een hele foto laat zien
+      dias.forEach(function(f,j){ var a=(j-vgNu+dias.length)%dias.length; f.classList.toggle('buur',a===1||a===dias.length-1); }); }
     vg.querySelector('.vg-vorige').addEventListener('click',function(){ vgToon(vgNu-1); });
     vg.querySelector('.vg-volgende').addEventListener('click',function(){ vgToon(vgNu+1); });
     duimen.forEach(function(b){ b.addEventListener('click',function(){ vgToon(+b.dataset.i); }); });
