@@ -548,14 +548,6 @@
       ],
       "galerij": [
         [
-          "../assets/web/dakraam-wa156.webp",
-          "Afgewerkt dakraam in een schuin dak"
-        ],
-        [
-          "../assets/web/dakramen-twee-werkplek.webp",
-          "Twee dakramen boven een werkplek"
-        ],
-        [
           "../assets/web/dakramen-drie-ramen.webp",
           "Drie VELUX-dakramen geplaatst, afwerking volgt",
           "",
@@ -566,6 +558,14 @@
           "Dezelfde dakramen, binnen afgewerkt",
           "",
           "na"
+        ],
+        [
+          "../assets/web/dakraam-wa156.webp",
+          "Afgewerkt dakraam in een schuin dak"
+        ],
+        [
+          "../assets/web/dakramen-twee-werkplek.webp",
+          "Twee dakramen boven een werkplek"
         ],
         [
           "../assets/web/dakraam-open.webp",
@@ -600,12 +600,12 @@
           "Dakraam met strakke dagkanten"
         ],
         [
-          "../assets/web/lichtkoepels-dak.webp",
-          "Twee lichtkoepels in een plat dak"
-        ],
-        [
           "../assets/web/dakraam-wa277.jpg",
           "Lichtkoepel plaatsen in een plat dak"
+        ],
+        [
+          "../assets/web/lichtkoepels-dak.webp",
+          "Twee lichtkoepels in een plat dak"
         ]
       ],
       "faq": [

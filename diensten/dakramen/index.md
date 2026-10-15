@@ -102,7 +102,7 @@ Na
 
 1 / 14
 
-Afgewerkt dakraam in een schuin dak
+Drie VELUX-dakramen geplaatst, afwerking volgt
 
 Zo pakken we het aan
 
