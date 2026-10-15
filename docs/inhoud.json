@@ -178,14 +178,14 @@
         "i-truweel"
       ],
       "voorna": {
-        "voor": "../assets/web/voorna/beton-woonkamer-voor.webp",
-        "na": "../assets/web/voorna/beton-woonkamer-na.webp",
-        "kop": "Van vloerverwarming tot <em class=\"serif\">gladde</em> vloer.",
-        "tekst": "Dezelfde woonkamer, voor en na. De vloerverwarming ligt op de wapening; daarna storten we de vloer en vlinderen hem machinaal tot een vlak, dicht oppervlak.",
-        "bij": "Woonkamer: van vloerverwarming tot gevlinderde vloer",
-        "altVoor": "vloerverwarming op de wapening",
+        "voor": "../assets/web/voorna/beton-terras-voor.webp",
+        "na": "../assets/web/voorna/beton-terras-na.webp",
+        "kop": "Van wapening tot <em class=\"serif\">gevlinderde</em> vloer.",
+        "tekst": "Hetzelfde terras onder de overkapping, voor en na. Isolatie en wapening gelegd, in één keer gestort en machinaal gevlinderd tot een vlak, dicht oppervlak.",
+        "bij": "Terras onder de overkapping: van wapening tot gevlinderde vloer",
+        "altVoor": "de wapening ligt op de isolatie, klaar om te storten",
         "altNa": "de vloer gestort en gevlinderd",
-        "verhouding": "4/5"
+        "verhouding": "1100/646"
       },
       "sfeer": [
         "../assets/render/sfeer/betonvloer-overkapping-avondzon.webp",

@@ -92,15 +92,15 @@ Voor werkplaatsen, loodsen en bedrijfspanden maken we betonvloeren die tegen een
 
 Voor & na
 
-## Van vloerverwarming tot gladde vloer.
+## Van wapening tot gevlinderde vloer.
 
-Dezelfde woonkamer, voor en na. De vloerverwarming ligt op de wapening; daarna storten we de vloer en vlinderen hem machinaal tot een vlak, dicht oppervlak.
+Hetzelfde terras onder de overkapping, voor en na. Isolatie en wapening gelegd, in één keer gestort en machinaal gevlinderd tot een vlak, dicht oppervlak.
 
 Sleep de lijn om te vergelijken
 
 Voor Na
 
-Woonkamer: van vloerverwarming tot gevlinderde vloer
+Terras onder de overkapping: van wapening tot gevlinderde vloer
 
 Uitgevoerd werk
 
