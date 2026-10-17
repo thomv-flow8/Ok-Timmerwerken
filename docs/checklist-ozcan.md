@@ -1,6 +1,6 @@
 # Checklist nieuwe website OK Timmerwerken — wat Ozcan nog moet doen
 
-Stand: 14 oktober 2026 — vragenlijst ingevuld terug (antwoorden: `docs/antwoorden-ozcan.md`). Onze eigen takenlijst: `docs/todo-lancering.md`.
+Stand: 17 oktober 2026 — Ozcan heeft akkoord gegeven op alles; nog nodig: DNS bij GoDaddy en de klik voor Web3Forms. Eerder: 14 oktober 2026 — vragenlijst ingevuld terug (antwoorden: `docs/antwoorden-ozcan.md`). Onze eigen takenlijst: `docs/todo-lancering.md`.
 Testadres: https://thomv-flow8.github.io/Ok-Timmerwerken/ (niet vindbaar in Google).
 
 De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een akkoord, een antwoord of toegang van Ozcan.
@@ -11,6 +11,7 @@ De site is inhoudelijk en technisch klaar. Alles hieronder wacht op een akkoord,
 ## 1. Akkoord geven
 
 - [x] **De hele site doorlopen en akkoord geven** — teksten, foto's, video's, volgorde van de galerijen.
+- [x] **Akkoord op de laatste aanvullingen** (17 okt) — voor/na-schuifbalken, sfeerbeelden, nieuwe galerijfoto's, logopakket en mailhandtekening.
 - [x] **Alle teksten nalezen** (geen correcties) — vooral de veelgestelde vragen en "zo pakken we het aan" op de 8 dienstpagina's,
       het verhaal op Over ons en het citaat op de contactpagina ("U belt met Ozcan, niet met een kantoor…").
 - [x] **"Geschreven door Ozcan, eigenaar van OK Timmerwerken"** op de dienstpagina's (met klein portret; helpt bij Google). Akkoord, of liever weg?
