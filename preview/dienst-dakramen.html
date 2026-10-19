@@ -235,6 +235,33 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .c-ozcan p{color:var(--zacht);font-size:16.5px;line-height:1.6}
 .c-ozcan b{color:var(--inkt);font-weight:600}
 
+/* diensten als beeldtegels: 4 naast elkaar, elke tegel precies één kolom tussen de lijnen */
+.dt-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:clamp(50px,7vw,90px) -24px 0;border-top:1px solid var(--rand)}
+.dt{display:flex;flex-direction:column;color:var(--inkt);text-decoration:none;padding:24px 24px 30px;border-bottom:1px solid var(--rand)}
+.dt-beeld{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:14px;background:#efe9e1}
+.dt-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.dt:not(.heeft-voor):hover .dt-na{transform:scale(1.05)}
+/* voor/na: de lijn loopt vanzelf heen en weer (zoals Ozcan het wil), met de muis neemt u het over */
+.dt.as-x .dt-voor{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.dt.as-y .dt-voor{clip-path:inset(0 0 calc(100% - var(--pos,50%)) 0)}
+.dt-greep{position:absolute;z-index:2;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.25)}
+.dt.as-x .dt-greep{top:0;bottom:0;left:var(--pos,50%);width:2px;margin-left:-1px}
+.dt.as-y .dt-greep{left:0;right:0;top:var(--pos,50%);height:2px;margin-top:-1px}
+.dt-fase{position:absolute;z-index:3;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
+.dt.as-x .dt-fase.v{left:12px;top:12px}.dt.as-x .dt-fase.n{right:12px;top:12px}
+.dt.as-y .dt-fase.v{left:12px;top:12px}.dt.as-y .dt-fase.n{left:12px;bottom:56px}
+.dt-tag{position:absolute;z-index:3;left:12px;bottom:14px;font-family:var(--serif);font-style:italic;font-size:17px;background:#fff;color:#14130f;padding:4px 14px;border-radius:999px;transform:rotate(-3deg)}
+.dt.as-x .dt-tag{left:auto;right:12px}
+.dt-tekst{display:grid;grid-template-columns:auto 1fr auto;column-gap:12px;align-items:baseline;margin-top:18px}
+.dt-nr{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--zacht)}
+.dt h3{font-size:clamp(19px,1.7vw,23px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.dt p{grid-column:2/4;margin-top:6px;color:var(--zacht);font-size:15px;line-height:1.5}
+.dt-pijl{font-size:18px;transition:transform .3s var(--ease)}
+.dt:hover .dt-pijl{transform:translateX(5px)}
+.dt:focus-visible{outline:2px solid var(--inkt);outline-offset:-6px;border-radius:16px}
+@media(max-width:900px){.dt-raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.dt{padding:16px 12px 22px}.dt-tag{font-size:14px;padding:3px 10px}.dt-fase{font-size:9.5px;padding:4px 8px}}
+
 /* kort, wegfadend scroll-teken onder de hero */
 /* Vaste scroll-indicator op de middelste verticale lijn (zoals de referentie):
    verticale tekst + streep met een zakkende stip + pijl. Loopt mee tijdens
@@ -326,7 +353,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .rij{display:flex;align-items:center;gap:clamp(40px,7vw,110px);padding:clamp(70px,10vw,140px) 0}
 .rij:nth-child(even){flex-direction:row-reverse}
 .rij .tekst{flex:1 1 0;max-width:430px}
-.rij:nth-child(odd) .tekst{text-align:right;margin-left:auto}
+.rij:nth-child(odd) .tekst{margin-left:auto}
 .rij:nth-child(odd) .tekst .werk{justify-content:flex-end}
 .rij .nr{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht)}
 .rij h3{margin-top:14px;font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-.03em;line-height:1.02}

@@ -236,6 +236,33 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .c-ozcan p{color:var(--zacht);font-size:16.5px;line-height:1.6}
 .c-ozcan b{color:var(--inkt);font-weight:600}
 
+/* diensten als beeldtegels: 4 naast elkaar, elke tegel precies één kolom tussen de lijnen */
+.dt-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:clamp(50px,7vw,90px) -24px 0;border-top:1px solid var(--rand)}
+.dt{display:flex;flex-direction:column;color:var(--inkt);text-decoration:none;padding:24px 24px 30px;border-bottom:1px solid var(--rand)}
+.dt-beeld{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:14px;background:#efe9e1}
+.dt-beeld img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.dt:not(.heeft-voor):hover .dt-na{transform:scale(1.05)}
+/* voor/na: de lijn loopt vanzelf heen en weer (zoals Ozcan het wil), met de muis neemt u het over */
+.dt.as-x .dt-voor{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.dt.as-y .dt-voor{clip-path:inset(0 0 calc(100% - var(--pos,50%)) 0)}
+.dt-greep{position:absolute;z-index:2;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.25)}
+.dt.as-x .dt-greep{top:0;bottom:0;left:var(--pos,50%);width:2px;margin-left:-1px}
+.dt.as-y .dt-greep{left:0;right:0;top:var(--pos,50%);height:2px;margin-top:-1px}
+.dt-fase{position:absolute;z-index:3;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(20,19,15,.55);backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
+.dt.as-x .dt-fase.v{left:12px;top:12px}.dt.as-x .dt-fase.n{right:12px;top:12px}
+.dt.as-y .dt-fase.v{left:12px;top:12px}.dt.as-y .dt-fase.n{left:12px;bottom:56px}
+.dt-tag{position:absolute;z-index:3;left:12px;bottom:14px;font-family:var(--serif);font-style:italic;font-size:17px;background:#fff;color:#14130f;padding:4px 14px;border-radius:999px;transform:rotate(-3deg)}
+.dt.as-x .dt-tag{left:auto;right:12px}
+.dt-tekst{display:grid;grid-template-columns:auto 1fr auto;column-gap:12px;align-items:baseline;margin-top:18px}
+.dt-nr{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--zacht)}
+.dt h3{font-size:clamp(19px,1.7vw,23px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.dt p{grid-column:2/4;margin-top:6px;color:var(--zacht);font-size:15px;line-height:1.5}
+.dt-pijl{font-size:18px;transition:transform .3s var(--ease)}
+.dt:hover .dt-pijl{transform:translateX(5px)}
+.dt:focus-visible{outline:2px solid var(--inkt);outline-offset:-6px;border-radius:16px}
+@media(max-width:900px){.dt-raster{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.dt{padding:16px 12px 22px}.dt-tag{font-size:14px;padding:3px 10px}.dt-fase{font-size:9.5px;padding:4px 8px}}
+
 /* kort, wegfadend scroll-teken onder de hero */
 /* Vaste scroll-indicator op de middelste verticale lijn (zoals de referentie):
    verticale tekst + streep met een zakkende stip + pijl. Loopt mee tijdens
@@ -327,7 +354,7 @@ footer{padding:56px 0;position:relative;overflow:hidden;background:var(--vlak);c
 .rij{display:flex;align-items:center;gap:clamp(40px,7vw,110px);padding:clamp(70px,10vw,140px) 0}
 .rij:nth-child(even){flex-direction:row-reverse}
 .rij .tekst{flex:1 1 0;max-width:430px}
-.rij:nth-child(odd) .tekst{text-align:right;margin-left:auto}
+.rij:nth-child(odd) .tekst{margin-left:auto}
 .rij:nth-child(odd) .tekst .werk{justify-content:flex-end}
 .rij .nr{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht)}
 .rij h3{margin-top:14px;font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-.03em;line-height:1.02}
@@ -799,129 +826,19 @@ footer.groot{padding:72px 0 46px}
       </svg>
       <span class="oog">Diensten<i class="baan"></i></span>
       <h2>Alle vakken. <br>Eén <span class="warm">vast</span> aanspreekpunt.</h2>
-      <p class="lead">Van de fundering tot het dakraam. Scroll door het werk — elke dienst laat zien
-        wat <a href="over.html">OK Timmerwerken</a> oplevert.</p>
+      <p class="lead">Van de fundering tot het dakraam, alles in één hand bij <a href="over.html">OK Timmerwerken</a>.
+        Kies een vak voor het werk en de foto&#39;s.</p>
     </div>
 
-    <div class="rijen">
-
-      <!-- 01 BETON -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-beton vignet" style="--bg:var(--kl-google);--tag:#e2ecf5;--cx:44%;--cy:62%">
-          <img class="beeld" src="../assets/render/echt/web/beton.jpg" alt="Vers gevlinderd betonterras achter een woning" loading="lazy">
-          <span class="ring2"></span>
-          <span class="tag">machinaal gevlinderd</span>
-        </div></div>
-        <div class="tekst"><span class="nr">01 — Betonvloeren</span>
-          <h3>Een vlakke, gladde vloer die jaren meegaat.</h3>
-          <p>Binnen en buiten, van een garage tot een compleet terras — inclusief isolatie, wapening en vloerverwarming. Machinaal gevlinderd tot een strak, dicht oppervlak.</p>
-          <ul class="werk"><li>Gevlinderde vloer</li><li>Vloerverwarming</li><li>Terras in beton</li><li>Isolatie &amp; wapening</li></ul>
-          <a class="pil" href="dienst-betonvloeren.html">Meer over betonvloeren</a></div>
-      </article>
-
-      <!-- 02 ZOLDER -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-zolder" style="--bg:#9cb189;--tag:#e7f0de">
-          <img class="beeld" src="../assets/render/echt/web/zolder-na.webp" alt="Afgewerkte zolder met vliering en bergruimte" loading="lazy">
-          <div class="voor"><img src="../assets/render/echt/web/zolder-voor.jpg" alt="Kale zolder vóór de verbouwing" loading="lazy"></div>
-          <div class="greep"></div>
-          <span class="vl l">Voor</span><span class="vl r">Na</span>
-          <span class="tag">van zolder tot kamer</span>
-        </div></div>
-        <div class="tekst"><span class="nr">02 — Vliering &amp; zolder</span>
-          <h3>Een hele verdieping erbij.</h3>
-          <p>Van een rommelige zolder naar een strakke, lichte ruimte — met een vliering erboven voor extra bergruimte. Vloer, wanden, isolatie en afwerking in één hand.</p>
-          <ul class="werk"><li>Vliering plaatsen</li><li>Zolder isoleren</li><li>Wanden &amp; plafonds</li><li>Trapgat</li></ul>
-          <a class="pil" href="dienst-zolder.html">Meer over vliering &amp; zolder</a></div>
-      </article>
-
-      <!-- 03 CARPORT -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-carport vignet" style="--bg:#d87f57;--tag:#f8e1d6;--cx:62%;--cy:40%">
-          <img class="beeld" src="../assets/render/echt/web/carport.jpg" alt="Houten carport naast een woning" loading="lazy">
-          <span class="ring2"></span>
-          <span class="tag">op maat in hout</span>
-        </div></div>
-        <div class="tekst"><span class="nr">03 — Carport &amp; overkapping</span>
-          <h3>Maatwerk dat uw buitenruimte afmaakt.</h3>
-          <p>Carports, veranda's en overkappingen in hout, op maat ontworpen en afgewerkt tot in de puntjes — inclusief fundering en bestrating.</p>
-          <ul class="werk"><li>Carport</li><li>Veranda</li><li>Overkapping</li><li>Lichtkoepel</li></ul>
-          <a class="pil" href="dienst-carport.html">Meer over carports</a></div>
-      </article>
-
-      <!-- 04 VELUX -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-velux opbouw" style="--bg:#7394b4;--tag:#e2ecf5">
-          <img class="beeld" src="../assets/render/echt/web/velux.webp" alt="Twee nieuwe dakramen naast elkaar in een zolder" loading="lazy">
-          <div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
-          <img class="v-logo" src="../assets/velux/velux-montagepartner.webp" alt="Erkend VELUX Montagepartner" loading="lazy">
-        </div></div>
-        <div class="tekst"><span class="nr">04 — Dakramen (Velux)</span>
-          <h3>Meer licht, altijd waterdicht.</h3>
-          <p>Als erkend VELUX montagepartner plaatst OK dakramen vakkundig en waterdicht — inclusief betimmering en afwerking aan de binnenkant.</p>
-          <ul class="werk"><li>Velux plaatsen</li><li>Vervangen</li><li>Binnenafwerking</li><li>Lichtkoepels</li></ul>
-          <a class="pil" href="dienst-dakramen.html">Meer over dakramen</a></div>
-      </article>
-
-      <!-- 05 TIMMERWERK -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-timmer vignet" style="--bg:var(--kl-werkspot);--tag:#e7f0de;--cx:54%;--cy:34%">
-          <img class="beeld" src="../assets/render/echt/web/plafond-regelwerk.jpg" alt="Regelwerk voor een verlaagd plafond, met isolatie" loading="lazy">
-          <img class="beeld na" src="../assets/render/echt/web/plafond-af.webp" alt="Dezelfde kamer met afgewerkt verlaagd plafond en inbouwspots" loading="lazy">
-          <span class="ring2"></span><span class="fl">Regelwerk</span>
-          <span class="tag" style="left:auto;right:7%">tot de laatste lijst</span>
-        </div></div>
-        <div class="tekst"><span class="nr">05 — Timmerwerk &amp; afbouw</span>
-          <h3>Van ruwbouw tot de laatste lijst.</h3>
-          <p>Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt — van het regelwerk tot de laatste lijst, alles in één hand.</p>
-          <ul class="werk"><li>Verlaagde plafonds</li><li>Wanden</li><li>Doorbraken</li><li>Kozijnen</li><li>Afwerking</li></ul>
-          <a class="pil" href="dienst-timmerwerk.html">Meer over timmerwerk</a></div>
-      </article>
-
-      <!-- 06 FUNDERING -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-fundering" style="--bg:#474e5b;--tag:#e5e8eb">
-          <img class="beeld" src="../assets/render/diensten/fundering-plaat-na.webp" alt="Dezelfde plek, de betonplaat gestort, met mantelbuizen voor de aansluitingen" loading="lazy">
-          <div class="voor"><img src="../assets/render/diensten/fundering-plaat-voor.webp" alt="De wapening ligt op de isolatieplaten, klaar om te storten" loading="lazy"></div>
-          <div class="greep"></div>
-          <span class="vl t">Voor</span><span class="vl o">Na</span>
-          <span class="tag" style="left:auto;right:7%">degelijk voorbereid</span>
-        </div></div>
-        <div class="tekst"><span class="nr">06 — Funderingen</span>
-          <h3>Het fundament onder al het werk.</h3>
-          <p>Gewapende betonplaten en funderingen — voor een aanbouw, tuinhuis, overkapping of grote verbouwing. Bekisting, wapening en storten in eigen hand, zodat alles erboven goed staat.</p>
-          <ul class="werk"><li>Betonplaten</li><li>Funderingen</li><li>Vloerconstructies</li><li>Grondwerk</li></ul>
-          <a class="pil" href="dienst-funderingen.html">Meer over funderingen</a></div>
-      </article>
-
-      <!-- 07 ONDERHOUD -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-onderhoud vignet" style="--bg:#b98b6e;--tag:#f3e7de;--cx:46%;--cy:44%">
-          <img class="beeld" src="../assets/render/echt/web/onderhoud.webp" alt="Gerenoveerde badkamer met nieuw tegelwerk" loading="lazy">
-          <span class="ring2"></span>
-          <span class="tag">tegel voor tegel</span>
-        </div></div>
-        <div class="tekst"><span class="nr">07 — Onderhoud &amp; renovatie</span>
-          <h3>Uw woning weer in topconditie.</h3>
-          <p>Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties. Eén vast aanspreekpunt dat het werk vooraf helder bespreekt en netjes oplevert.</p>
-          <ul class="werk"><li>Houtrot</li><li>Tegelwerk</li><li>Isolatie</li><li>Schilderwerk</li><li>Kleine reparaties</li></ul>
-          <a class="pil" href="dienst-onderhoud.html">Meer over onderhoud &amp; renovatie</a></div>
-      </article>
-
-      <!-- 08 NIEUWBOUW -->
-      <article class="rij">
-        <div class="vak"><div class="vitrine v-nieuwbouw opbouw" style="--bg:#6f7d6a;--tag:#e6ebe3">
-          <img class="beeld" src="../assets/render/echt/web/nieuwbouw.webp" alt="Nieuwe woning met houten spanten en een gevlinderde betonvloer" loading="lazy">
-          <div class="stroken" aria-hidden="true"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i></div>
-          <span class="tag" style="left:auto;right:7%">vanaf de eerste balk</span>
-        </div></div>
-        <div class="tekst"><span class="nr">08 — Nieuwbouw</span>
-          <h3>Vakwerk vanaf de eerste balk.</h3>
-          <p>HSB-wanden zetten, kozijnen stellen, dak- en vloerconstructies maken en ramen, deuren en boeidelen plaatsen. Nauwkeurig volgens tekening.</p>
-          <ul class="werk"><li>HSB-wanden</li><li>Stelwerk kozijnen</li><li>Constructies</li><li>Ramen &amp; deuren</li><li>Boeidelen</li></ul>
-          <a class="pil" href="dienst-nieuwbouw.html">Meer over nieuwbouw</a></div>
-      </article>
-
+    <div class="dt-raster op">
+        <a class="dt" href="dienst-betonvloeren.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/echt/web/beton.jpg" alt="" loading="lazy"><span class="dt-tag">machinaal gevlinderd</span></div><div class="dt-tekst"><span class="dt-nr">01</span><h3>Betonvloeren</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Een vlakke, gladde vloer die jaren meegaat.</p></div></a>
+        <a class="dt heeft-voor as-x" href="dienst-zolder.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/echt/web/zolder-na.webp" alt="" loading="lazy"><img class="dt-voor" src="../assets/render/echt/web/zolder-voor.jpg" alt="" loading="lazy"><span class="dt-greep" aria-hidden="true"></span><span class="dt-fase v" aria-hidden="true">Voor</span><span class="dt-fase n" aria-hidden="true">Na</span><span class="dt-tag">van zolder tot kamer</span></div><div class="dt-tekst"><span class="dt-nr">02</span><h3>Vliering &amp; zolder</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Een hele verdieping erbij.</p></div></a>
+        <a class="dt" href="dienst-carport.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/echt/web/carport.jpg" alt="" loading="lazy"><span class="dt-tag">op maat in hout</span></div><div class="dt-tekst"><span class="dt-nr">03</span><h3>Carport &amp; overkapping</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Maatwerk dat uw buitenruimte afmaakt.</p></div></a>
+        <a class="dt" href="dienst-dakramen.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/echt/web/velux.webp" alt="" loading="lazy"><span class="dt-tag">erkend montagepartner</span></div><div class="dt-tekst"><span class="dt-nr">04</span><h3>Dakramen (Velux)</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Meer licht, altijd waterdicht.</p></div></a>
+        <a class="dt heeft-voor as-x" href="dienst-timmerwerk.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/echt/web/plafond-af.webp" alt="" loading="lazy"><img class="dt-voor" src="../assets/render/echt/web/plafond-regelwerk.jpg" alt="" loading="lazy"><span class="dt-greep" aria-hidden="true"></span><span class="dt-fase v" aria-hidden="true">Voor</span><span class="dt-fase n" aria-hidden="true">Na</span><span class="dt-tag">tot de laatste lijst</span></div><div class="dt-tekst"><span class="dt-nr">05</span><h3>Timmerwerk &amp; afbouw</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Van ruwbouw tot de laatste lijst.</p></div></a>
+        <a class="dt heeft-voor as-y" href="dienst-funderingen.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/diensten/fundering-plaat-na.webp" alt="" loading="lazy"><img class="dt-voor" src="../assets/render/diensten/fundering-plaat-voor.webp" alt="" loading="lazy"><span class="dt-greep" aria-hidden="true"></span><span class="dt-fase v" aria-hidden="true">Voor</span><span class="dt-fase n" aria-hidden="true">Na</span><span class="dt-tag">degelijk voorbereid</span></div><div class="dt-tekst"><span class="dt-nr">06</span><h3>Funderingen</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Het fundament onder al het werk.</p></div></a>
+        <a class="dt" href="dienst-onderhoud.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/echt/web/onderhoud.webp" alt="" loading="lazy"><span class="dt-tag">tegel voor tegel</span></div><div class="dt-tekst"><span class="dt-nr">07</span><h3>Onderhoud &amp; renovatie</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Uw woning weer in topconditie.</p></div></a>
+        <a class="dt" href="dienst-nieuwbouw.html"><div class="dt-beeld"><img class="dt-na" src="../assets/render/echt/web/nieuwbouw.webp" alt="" loading="lazy"><span class="dt-tag">vanaf de eerste balk</span></div><div class="dt-tekst"><span class="dt-nr">08</span><h3>Nieuwbouw</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Vakwerk vanaf de eerste balk.</p></div></a>
     </div>
     <div class="alle-knop"><a class="pil" href="diensten.html">Alle diensten en werkzaamheden op een rij →</a></div>
   </div>
@@ -1270,13 +1187,23 @@ footer.groot{padding:72px 0 46px}
       requestAnimationFrame(schuif);
     })(performance.now());
   }
+  // voor/na in de dienst-tegels: dezelfde zwaai, ieder in een eigen ritme
+  [].forEach.call(document.querySelectorAll('.dt.heeft-voor'),function(t,i){
+    var as=t.classList.contains('as-y')?'y':'x', zelf=false, zicht=false, t0=performance.now()-i*900;
+    t.addEventListener('mousemove',function(e){ zelf=true; var r=t.querySelector('.dt-beeld').getBoundingClientRect();
+      var v=as==='y'?(e.clientY-r.top)/r.height:(e.clientX-r.left)/r.width; t.style.setProperty('--pos',Math.min(100,Math.max(0,v*100))+'%'); });
+    t.addEventListener('mouseleave',function(){ zelf=false; t0=performance.now(); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ zicht=es[0].isIntersecting; }).observe(t); else zicht=true;
+    if(rm) return;
+    (function zwaai(n){ if(!zelf&&zicht) t.style.setProperty('--pos',(50+38*Math.sin((n-t0)/1400)).toFixed(2)+'%'); requestAnimationFrame(zwaai); })(performance.now());
+  });
   voorNa(document.querySelector('.v-zolder'),'x');
   voorNa(document.querySelector('.v-fundering'),'y');
 
   // Scroll-gestuurde effecten
   var vakken=[].slice.call(document.querySelectorAll('.vak'));
   var vignetten=[].slice.call(document.querySelectorAll('.vignet')), opbouw=[].slice.call(document.querySelectorAll('.opbouw')), timmer=document.querySelector('.v-timmer'),
-      timmerFl=timmer.querySelector('.fl');
+      timmerFl=timmer?timmer.querySelector('.fl'):null;
   var chaos=document.querySelector('.chaos .scene'), fase=document.getElementById('fase');
   var krul=document.getElementById('krulpad'), krulLen=krul.getTotalLength();
   krul.style.strokeDasharray=krulLen; krul.style.strokeDashoffset=krulLen;
@@ -1303,7 +1230,7 @@ footer.groot{padding:72px 0 46px}
     // 04 velux en 08 nieuwbouw: kolommen rijzen op tijdens het scrollen
     opbouw.forEach(function(v){ v.style.setProperty('--p',(rm?1:voortgang(v,.95,.35)).toFixed(3)); });
     // 05 timmerwerk: label volgt het overvloeien naar het afgewerkte plafond
-    timmerFl.textContent=parseFloat(timmer.style.getPropertyValue('--p')||0)<.86?'Regelwerk':'Afgewerkt';
+    if(timmerFl) timmerFl.textContent=parseFloat(timmer.style.getPropertyValue('--p')||0)<.86?'Regelwerk':'Afgewerkt';
     // chaos-band: de afgewerkte kamer schuift over het puin
     var cr=chaos.parentElement.getBoundingClientRect(), loop=cr.height-h;
     var pk=rm?.5:Math.min(1,Math.max(0,(-cr.top-loop*.15)/(loop*.7)));

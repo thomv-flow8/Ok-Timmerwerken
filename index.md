@@ -32,132 +32,17 @@ Diensten
 
 ## Alle vakken. Eén vast aanspreekpunt.
 
-Van de fundering tot het dakraam. Scroll door het werk — elke dienst laat zien
-wat [OK Timmerwerken](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/) oplevert.
+Van de fundering tot het dakraam, alles in één hand bij [OK Timmerwerken](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/).
+Kies een vak voor het werk en de foto's.
 
-machinaal gevlinderd
-
-01 — Betonvloeren
-
-### Een vlakke, gladde vloer die jaren meegaat.
-
-Binnen en buiten, van een garage tot een compleet terras — inclusief isolatie, wapening en vloerverwarming. Machinaal gevlinderd tot een strak, dicht oppervlak.
-
-- Gevlinderde vloer
-- Vloerverwarming
-- Terras in beton
-- Isolatie & wapening
-
-[Meer over betonvloeren](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-
-Voor Na
-van zolder tot kamer
-
-02 — Vliering & zolder
-
-### Een hele verdieping erbij.
-
-Van een rommelige zolder naar een strakke, lichte ruimte — met een vliering erboven voor extra bergruimte. Vloer, wanden, isolatie en afwerking in één hand.
-
-- Vliering plaatsen
-- Zolder isoleren
-- Wanden & plafonds
-- Trapgat
-
-[Meer over vliering & zolder](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-
-op maat in hout
-
-03 — Carport & overkapping
-
-### Maatwerk dat uw buitenruimte afmaakt.
-
-Carports, veranda's en overkappingen in hout, op maat ontworpen en afgewerkt tot in de puntjes — inclusief fundering en bestrating.
-
-- Carport
-- Veranda
-- Overkapping
-- Lichtkoepel
-
-[Meer over carports](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-
-04 — Dakramen (Velux)
-
-### Meer licht, altijd waterdicht.
-
-Als erkend VELUX montagepartner plaatst OK dakramen vakkundig en waterdicht — inclusief betimmering en afwerking aan de binnenkant.
-
-- Velux plaatsen
-- Vervangen
-- Binnenafwerking
-- Lichtkoepels
-
-[Meer over dakramen](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-
-Regelwerk
-tot de laatste lijst
-
-05 — Timmerwerk & afbouw
-
-### Van ruwbouw tot de laatste lijst.
-
-Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af maakt — van het regelwerk tot de laatste lijst, alles in één hand.
-
-- Verlaagde plafonds
-- Wanden
-- Doorbraken
-- Kozijnen
-- Afwerking
-
-[Meer over timmerwerk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-
-Voor Na
-degelijk voorbereid
-
-06 — Funderingen
-
-### Het fundament onder al het werk.
-
-Gewapende betonplaten en funderingen — voor een aanbouw, tuinhuis, overkapping of grote verbouwing. Bekisting, wapening en storten in eigen hand, zodat alles erboven goed staat.
-
-- Betonplaten
-- Funderingen
-- Vloerconstructies
-- Grondwerk
-
-[Meer over funderingen](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-
-tegel voor tegel
-
-07 — Onderhoud & renovatie
-
-### Uw woning weer in topconditie.
-
-Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties. Eén vast aanspreekpunt dat het werk vooraf helder bespreekt en netjes oplevert.
-
-- Houtrot
-- Tegelwerk
-- Isolatie
-- Schilderwerk
-- Kleine reparaties
-
-[Meer over onderhoud & renovatie](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-
-vanaf de eerste balk
-
-08 — Nieuwbouw
-
-### Vakwerk vanaf de eerste balk.
-
-HSB-wanden zetten, kozijnen stellen, dak- en vloerconstructies maken en ramen, deuren en boeidelen plaatsen. Nauwkeurig volgens tekening.
-
-- HSB-wanden
-- Stelwerk kozijnen
-- Constructies
-- Ramen & deuren
-- Boeidelen
-
-[Meer over nieuwbouw](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
 
 [Alle diensten en werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
 
