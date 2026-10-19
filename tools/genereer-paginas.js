@@ -74,7 +74,7 @@ const extraStijl = `<style>
 .kruimel{display:flex;gap:8px;font-size:13px;color:var(--zacht);margin-bottom:clamp(36px,5vw,64px)}
 .kruimel a:hover{color:var(--inkt)}
 .p-hero h1{font-size:clamp(40px,6.2vw,82px);font-weight:700;letter-spacing:-.04em;line-height:.98}
-.p-hero .lead{margin-top:26px;max-width:50ch;color:var(--zacht);font-weight:300;font-size:17.5px;line-height:1.7}
+.p-hero .lead{margin-top:26px;max-width:50ch;color:var(--zacht);font-weight:400;font-size:17.5px;line-height:1.7}
 .p-hero .acties{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .p-hero .knop{padding:13px 24px;font-size:14px}
 .p-hero .knop.lijn{background:transparent;color:var(--inkt);border-color:var(--inkt)}
@@ -85,7 +85,7 @@ const extraStijl = `<style>
 .vn-grid{display:grid;grid-template-columns:minmax(0,1fr) calc(100% - min(var(--max),94vw) / 2);gap:clamp(40px,4.5vw,64px);align-items:center}   /* schuifbalk van de middelste tot de buitenste kolomlijn, zoals de foto bovenaan */
 .vn-grid .oog{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--zacht);margin-bottom:28px}
 .vn-grid h2{font-size:clamp(32px,4vw,50px);font-weight:700;letter-spacing:-.03em;line-height:1.02}
-.vn-grid .lead{margin-top:20px;color:var(--zacht);font-weight:300;font-size:16px;line-height:1.7}
+.vn-grid .lead{margin-top:20px;color:var(--zacht);font-weight:400;font-size:16px;line-height:1.7}
 .vn-hint{display:flex;align-items:center;gap:10px;margin-top:26px;font-size:13px;font-weight:600;color:var(--zacht)}
 .vn-hint svg{width:22px;height:22px;flex:none}
 .vn{position:relative;overflow:hidden;border-radius:2px;cursor:ew-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none;
@@ -160,7 +160,7 @@ const extraStijl = `<style>
 .vg-duim.aan{border-color:var(--inkt);opacity:1}
 .vg-play{position:absolute;inset:0;display:grid;place-items:center}
 .vg-play svg{width:26px;height:26px;fill:#fff;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
-.vg-fase{position:absolute;left:5px;bottom:5px;font:700 9.5px var(--f,inherit);letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:999px}
+.vg-fase{position:absolute;left:5px;bottom:5px;font:700 11px var(--f,inherit);letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:999px}
 .vg-fase.voor{background:rgba(255,255,255,.94);color:var(--inkt)} .vg-fase.na{background:var(--brons);color:#fff}
 @media(max-width:760px){.vg-podium{aspect-ratio:4/5;border-radius:14px}.vg-pijl{width:42px;height:42px}.vg-vorige{left:10px}.vg-volgende{right:10px}.vg-duim{width:72px;height:72px}}
 .lichtbak{position:fixed;inset:0;z-index:95;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;
@@ -183,9 +183,9 @@ const extraStijl = `<style>
 .ond-lijst article{padding:30px 0 32px;border-top:1px solid var(--rand);scroll-margin-top:96px;display:grid;
   grid-template-columns:56px 1fr;gap:0 20px}
 .ond-lijst article:first-child{border-top:0;padding-top:0}
-.ond-lijst .onr{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--brons);line-height:1.1}
+.ond-lijst .onr{font-family:var(--serif);font-style:italic;font-size:28px;color:#8a6532;line-height:1.1}
 .ond-lijst h3{font-size:clamp(21px,2.2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
-.ond-lijst p{grid-column:2;margin-top:10px;color:#4a4740;font-weight:300;line-height:1.75;font-size:16px;max-width:64ch}
+.ond-lijst p{grid-column:2;margin-top:10px;color:#4a4740;font-weight:400;line-height:1.75;font-size:16px;max-width:64ch}
 .download{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 22px;border-radius:999px;
   background:#14130f;color:#fff;font-weight:600;font-size:14px}
 .download::before{content:'↓';color:var(--brons);font-size:16px}
@@ -213,9 +213,9 @@ const extraStijl = `<style>
 /* juridische tekst */
 .juridisch{max-width:760px}
 .juridisch h2{font-size:20px;font-weight:700;margin:34px 0 10px;letter-spacing:-.01em}
-.juridisch ol{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300}
-.juridisch p{color:#4a4740;line-height:1.8;font-weight:300;margin-top:14px}
-.juridisch ul{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:300;margin-top:12px}
+.juridisch ol{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:400}
+.juridisch p{color:#4a4740;line-height:1.8;font-weight:400;margin-top:14px}
+.juridisch ul{padding-left:22px;color:#4a4740;line-height:1.75;font-weight:400;margin-top:12px}
 .juridisch ul li{margin-top:6px}
 .juridisch .bijgewerkt{margin-top:34px;font-size:13.5px;color:var(--zacht)}
 .juridisch .zie-ook{margin-top:22px;font-size:14px}
@@ -248,7 +248,7 @@ const extraStijl = `<style>
 .donker .faq details p{color:rgba(255,255,255,.68)}
 .donker .faq summary::after{color:var(--brons)}
 .donker .faq summary:hover{color:#fff}
-.faq details p{color:var(--zacht);font-weight:300;line-height:1.7;padding:0 44px 26px 0;max-width:68ch}
+.faq details p{color:var(--zacht);font-weight:400;line-height:1.7;padding:0 44px 26px 0;max-width:68ch}
 
 /* terugknop naar home (zwart bolletje met witte pijl) */
 .terug{width:40px;height:40px;border-radius:50%;background:#14130f;color:#fff;display:grid;place-items:center;flex:none;
@@ -284,15 +284,15 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .oproep{padding:clamp(80px,10vw,130px) 0}
 .oproep h2{font-size:clamp(36px,5.6vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1;max-width:14ch}
 .oproep h2 em{font-family:var(--serif);font-style:italic;font-weight:400}
-.oproep p{margin-top:22px;color:var(--zacht);font-weight:300;max-width:46ch;font-size:17px}
+.oproep p{margin-top:22px;color:var(--zacht);font-weight:400;max-width:46ch;font-size:17px}
 .oproep .acties{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .oproep .knop{padding:13px 24px;font-size:14px}
-.oproep .knop.wa{background:#25D366;color:#fff}
+.oproep .knop.wa{background:#157f4b;color:#fff}
 .oproep .knop.lijn{background:transparent;color:var(--inkt);border-color:var(--inkt)}
 
 /* over ons */
 .verhaal{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);margin-top:10px}
-.verhaal p{color:var(--zacht);font-weight:300;line-height:1.75;font-size:16.5px}
+.verhaal p{color:var(--zacht);font-weight:400;line-height:1.75;font-size:16.5px}
 .verhaal p:first-child{color:var(--inkt);font-size:20px;line-height:1.55;font-weight:400}
 /* skyline van Gorinchem (eigen lijntekening): tekent zichzelf als het verhaal in beeld komt */
 .skyline{display:block;width:100%;max-width:520px;height:auto;margin-top:clamp(28px,4vw,48px);overflow:visible}
@@ -1009,7 +1009,7 @@ ${oproep()}`;
   transition:background .4s,border-color .4s,transform .5s var(--ease)}
 .tl-punt.aan .tl-dot{background:var(--brons);border-color:var(--brons);transform:scale(1.15)}
 .tl-punt b{display:block;font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
-.tl-punt p{margin-top:6px;font-size:14px;font-weight:300;line-height:1.55;color:var(--zacht)}
+.tl-punt p{margin-top:6px;font-size:14.5px;font-weight:400;line-height:1.55;color:var(--zacht)}
 .tl-punt:last-child .tl-dot{box-shadow:0 0 0 6px rgba(181,138,82,.2)}
 /* proef: nog navragen */
 .tl-nav .tl-jaar{color:#c6702f}
