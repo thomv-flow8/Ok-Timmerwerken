@@ -12,6 +12,7 @@ Gevlinderde betonvloeren, vlieringen, carports en Velux-dakramen. OK Timmerwerke
 komt op de afgesproken dag, maakt het af zoals besproken en laat de boel netjes achter.
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk het werk
 
 **15** jaar vakwerk,
