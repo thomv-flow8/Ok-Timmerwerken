@@ -153,7 +153,7 @@ Sloopwerk, doorbraken, regelwerk en wanden — de basis staat strak en waterpas.
 
 Platen, stuc- of schilderklare afwerking, kozijnen en plinten: klaar om in te wonen.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Tv-wand met nissen en haard, in de avond
 

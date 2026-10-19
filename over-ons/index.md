@@ -75,7 +75,7 @@ Beton, timmerwerk en afbouw door één bedrijf. Geen gedoe tussen partijen, wel 
 
 Een heldere offerte en een realistische planning. Wat erin staat, is wat u krijgt.
 
-[Kennismaken? Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Kennismaken? Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Wat klanten zeggen
 

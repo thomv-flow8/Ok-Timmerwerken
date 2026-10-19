@@ -153,7 +153,7 @@ Stalen of houten bekisting, isolatie en wapening precies op hoogte en waterpas.
 
 Storten in één keer, en waar gewenst direct gevlinderd tot een strakke bovenkant.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Veelgestelde vragen
 

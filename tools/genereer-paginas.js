@@ -815,7 +815,7 @@ ${galerij}
       ${oog('Zo pakken we het aan')}
       <h2>In drie stappen <em class="serif">klaar</em>.</h2>
     </div>
-    ${stappenRaster(d.aanpak, ['Klaar voor stap 1?', 'Bel, app of mail Ozcan. Binnen een dag hoort u van ons.', 'Plan een afspraak'], d.aanpak_iconen)}
+    ${stappenRaster(d.aanpak, ['Klaar voor stap 1?', 'Bel, app of mail Ozcan. Binnen een dag hoort u van ons.', 'Vraag vrijblijvend advies'], d.aanpak_iconen)}
   </div>
 </section>
 ${d.sfeer && d.sfeer[3] === 'onder' ? sfeerBand : ''}${review}
@@ -955,7 +955,7 @@ function overPagina(o, proef = false) {
       ${oog('Waar we voor staan')}
       <h2>Drie dingen die u <em class="serif">altijd</em> krijgt.</h2>
     </div>
-    ${stappenRaster(o.waarden, ['Kennismaken?', 'Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend.', 'Plan een afspraak'], ['i-persoon', 'i-hamer', 'i-afspraak'])}
+    ${stappenRaster(o.waarden, ['Kennismaken?', 'Ozcan komt graag langs om uw plannen te bespreken — gratis en vrijblijvend.', 'Vraag vrijblijvend advies'], ['i-persoon', 'i-hamer', 'i-afspraak'])}
   </div>
 </section>
 

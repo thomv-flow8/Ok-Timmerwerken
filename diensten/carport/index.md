@@ -121,7 +121,7 @@ Eerst een stevige fundering, daarna staanders, balklaag en dak.
 
 Boeidelen, goten, eventueel bestrating en verlichting — netjes opgeleverd.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 ★★★★★
 "OK Timmerwerken levert vakwerk. Er werd goed meegedacht en alles is netjes op de bestaande situatie aangepast. Mooi en degelijk Douglas hout, EPDM-dak en keurig afgewerkte boeidelen."

@@ -146,7 +146,7 @@ Isolatie, wapening en eventueel vloerverwarming erin; daarna storten we in één
 
 Zodra het beton zover is, vlinderen we machinaal tot het gewenste glanzende, dichte oppervlak.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Gevlinderde vloer onder de overkapping, in het avondlicht
 

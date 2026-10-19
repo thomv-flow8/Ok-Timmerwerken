@@ -230,7 +230,7 @@ planning. Wat erin staat, is wat u betaalt.
 Op de afgesproken dag, met een opgeruimde werkplek en garantie op het werk. Is er
 achteraf iets, dan komen we terug.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons en plannen we een moment om langs te komen. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons en plannen we een moment om langs te komen. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Verbouwen
 
@@ -239,7 +239,7 @@ Verbouwen
 Een muur eruit, stof tot op de zolder, overal stenen. Voor u een chaos — voor ons het begin.
 Wij ruimen op, bouwen op en maken er iets moois van.
 
-[Plan een vrijblijvend gesprek](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Tijdens
 
@@ -393,6 +393,6 @@ Contact
 
 **U belt met Ozcan, niet met een kantoor.** Vertel kort wat u van plan bent; u hoort meestal binnen een dag van hem. Daarna komt hij gratis langs om te kijken.
 
-[Naar het contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 [WhatsApp](https://wa.me/31641429106)
 Bel 06 41 42 91 06

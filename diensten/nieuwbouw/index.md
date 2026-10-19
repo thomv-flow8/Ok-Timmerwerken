@@ -117,7 +117,7 @@ Wanden, constructies en kozijnen worden nauwkeurig en waterpas gezet.
 
 Ramen, deuren en boeidelen erin en eraan — klaar voor de volgende fase.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Veelgestelde vragen
 

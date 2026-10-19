@@ -142,7 +142,7 @@ U krijgt vooraf een helder plan: wat we doen, in welke volgorde en wat het kost.
 
 We werken netjes, ruimen op en leveren af zoals afgesproken.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Veelgestelde vragen
 

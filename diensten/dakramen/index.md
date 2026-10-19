@@ -126,7 +126,7 @@ Het raam wordt volgens de VELUX-voorschriften geplaatst en waterdicht aangeslote
 
 Binnen werken we de dagkanten en vensterbank strak af, klaar om te schilderen of al wit.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Veelgestelde vragen
 

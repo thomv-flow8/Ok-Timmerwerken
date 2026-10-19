@@ -120,7 +120,7 @@ Eerst de isolatie en het regelwerk, daarna wanden, vliering en knieschotten.
 
 Stucwerk, plinten, deurtjes en vloer: u krijgt een kamer die direct klaar is voor gebruik.
 
-[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Plan een afspraak](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 ★★★★★
 "Ozcan is een sterke allround aannemer die actief meedenkt en oplossingsgericht werkt. Van het doorbreken van een dragende muur tot een nieuwe vliering: alles vakkundig en strak uitgevoerd."
