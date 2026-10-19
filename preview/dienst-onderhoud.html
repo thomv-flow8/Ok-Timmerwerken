@@ -657,6 +657,11 @@ footer.groot{padding:72px 0 46px}
 .foot-grid h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--zacht);margin-bottom:15px}
 .foot-grid a{display:block;color:var(--inkt);font-size:14px;margin-bottom:10px;opacity:.82}
 .foot-grid a:hover{opacity:1}
+/* socials in de footer als eenkleurige ronde icoontjes (volgen de tekstkleur: wit op de donkere voet) */
+.foot-soc{display:flex;gap:10px;margin-top:8px}
+.foot-grid .foot-soc a{display:grid;place-items:center;width:42px;height:42px;margin:0;border:1px solid currentColor;border-radius:50%;opacity:.82;transition:opacity .2s,background-color .2s,color .2s}
+.foot-grid .foot-soc a:hover{opacity:1;background:var(--inkt);color:var(--vlak)}
+.foot-soc svg{width:18px;height:18px}
 .foot-onder{border-top:1px solid var(--rand);margin-top:46px;padding-top:22px;display:flex;
   justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--zacht);font-size:13px}
 
@@ -1338,9 +1343,11 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
         <a href="over.html">Over ons</a>
         <a href="tel:+31641429106">06 41 42 91 06</a>
         <a href="mailto:info@ok-timmerwerken.nl">info@ok-timmerwerken.nl</a>
-        <a href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener">Werkspot</a>
-        <a href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener">Google</a>
-        <a href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener">Instagram</a>
+        <div class="foot-soc">
+          <a href="https://www.google.com/maps?cid=13014174389854650295" target="_blank" rel="noopener" aria-label="Google-reviews" title="Google"><svg aria-hidden="true"><use href="#i-google"/></svg></a>
+          <a href="https://www.werkspot.nl/profiel/ok-timmerwerken/reviews" target="_blank" rel="noopener" aria-label="Werkspot-reviews" title="Werkspot"><svg aria-hidden="true"><use href="#i-werkspot"/></svg></a>
+          <a href="https://www.instagram.com/oktimmerwerken" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+        </div>
       </div>
     </div>
     <div class="foot-onder">
