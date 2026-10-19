@@ -20,6 +20,14 @@ sinds 2011
 **500+** projecten
 opgeleverd
 
+4,9 175 reviews op Google en Werkspot
+
+## In de reviews staat zelden onze naam. Er staat Ozcan.
+
+Achter OK Timmerwerken staat Ozcan. Hij komt zelf kijken, maakt de offerte en staat zelf op de bouw. U belt met Ozcan, niet met een kantoor.
+
+[Meer over Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/)
+
 Diensten
 
 ## Alle vakken. Eén vast aanspreekpunt.
@@ -153,6 +161,47 @@ HSB-wanden zetten, kozijnen stellen, dak- en vloerconstructies maken en ramen, d
 
 [Alle diensten en werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
 
+Reviews
+
+## Tevreden klanten, in hun eigen woorden.
+
+Openbaar na te lezen op Werkspot en Google — waar alleen mensen schrijven
+die de klus echt lieten uitvoeren.
+
+★★★★★
+
+"OK Timmerwerken levert vakwerk. Er werd goed meegedacht en alles is netjes op de
+bestaande situatie aangepast. Mooi en degelijk Douglas hout, EPDM-dak en keurig
+afgewerkte boeidelen."
+
+**Peter** Den Haag · Carport voor 2 auto's
+
+★★★★★
+
+"Ozcan is een sterke allround aannemer die actief meedenkt en oplossingsgericht werkt.
+Van het doorbreken van een dragende muur tot een nieuwe vliering: alles vakkundig en
+strak uitgevoerd."
+
+**Joris Seghers** Bavel · Vliering 40 m²
+
+★★★★★
+
+"Vriendelijk, betrouwbaar, transparant en goede communicatie. Ik wist niets van beton
+en vloeren, en Ozcan gaf me uitstekend advies op basis van wat ik nodig had."
+
+**Jonathan van Putten** Gouda · Betonvloer schuur
+
+**4,9**
+Werkspot · 78 reviews
+
+**5,0**
+Google · 97 reviews
+
+[Alle reviews op Werkspot](https://www.werkspot.nl/profiel/ok-timmerwerken/reviews)
+[Onze Google-reviews](https://www.google.com/maps?cid=13014174389854650295)
+
+[Lees alle reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
+
 Werkwijze
 
 ## In drie stappen van idee naar opgeleverd.
@@ -193,47 +242,6 @@ Wij ruimen op, bouwen op en maken er iets moois van.
 [Plan een vrijblijvend gesprek](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
 Tijdens
-
-Reviews
-
-## Tevreden klanten, in hun eigen woorden.
-
-Openbaar na te lezen op Werkspot en Google — waar alleen mensen schrijven
-die de klus echt lieten uitvoeren.
-
-★★★★★
-
-"OK Timmerwerken levert vakwerk. Er werd goed meegedacht en alles is netjes op de
-bestaande situatie aangepast. Mooi en degelijk Douglas hout, EPDM-dak en keurig
-afgewerkte boeidelen."
-
-**Peter** Den Haag · Carport voor 2 auto's
-
-★★★★★
-
-"Ozcan is een sterke allround aannemer die actief meedenkt en oplossingsgericht werkt.
-Van het doorbreken van een dragende muur tot een nieuwe vliering: alles vakkundig en
-strak uitgevoerd."
-
-**Joris Seghers** Bavel · Vliering 40 m²
-
-★★★★★
-
-"Vriendelijk, betrouwbaar, transparant en goede communicatie. Ik wist niets van beton
-en vloeren, en Ozcan gaf me uitstekend advies op basis van wat ik nodig had."
-
-**Jonathan van Putten** Gouda · Betonvloer schuur
-
-**0,0**
-Werkspot · 78 reviews
-
-**0,0**
-Google · 97 reviews
-
-[Alle reviews op Werkspot](https://www.werkspot.nl/profiel/ok-timmerwerken/reviews)
-[Onze Google-reviews](https://www.google.com/maps?cid=13014174389854650295)
-
-[Lees alle reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Betonvloeren
 
@@ -383,8 +391,7 @@ Contact
 
 ## Vraag een vrijblijvend advies aan.
 
-Vertel kort wat u van plan bent. We reageren meestal binnen een dag —
-bellen of appen mag natuurlijk ook.
+**U belt met Ozcan, niet met een kantoor.** Vertel kort wat u van plan bent; u hoort meestal binnen een dag van hem. Daarna komt hij gratis langs om te kijken.
 
 [Naar het contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 [WhatsApp](https://wa.me/31641429106)
