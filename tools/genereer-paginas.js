@@ -185,15 +185,6 @@ const extraStijl = `<style>
 .krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
 @media(max-width:900px){.krul-over{display:none}}
 
-/* diensten-overzicht */
-.overzicht{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px 22px;margin-top:46px}
-.overzicht .blok .kaart{aspect-ratio:4/3}
-.overzicht .blok ul{list-style:none;margin-top:14px}
-.overzicht .blok li a{display:flex;justify-content:space-between;gap:10px;padding:8px 2px;border-bottom:1px solid var(--rand);
-  font-size:14px;color:#4a4740}
-.overzicht .blok li a::after{content:'→';color:var(--zacht)}
-.overzicht .blok li a:hover{color:var(--inkt)}
-
 /* juridische tekst */
 .juridisch{max-width:760px}
 .juridisch h2{font-size:20px;font-weight:700;margin:34px 0 10px;letter-spacing:-.01em}
@@ -241,18 +232,6 @@ const extraStijl = `<style>
 .terug svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .nav-in .merk{margin-right:auto}
 
-a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
-  color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
-a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  clip-path:circle(38% at 50% 40%);transition:clip-path .8s var(--ease),transform .8s var(--ease)}
-a.kaart:hover img{clip-path:circle(80% at 50% 40%);transform:scale(1.04)}
-a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,8,.72) 0%,rgba(10,10,8,0) 48%)}
-.kaart .knr{position:absolute;top:14px;left:16px;z-index:1;font-family:var(--serif);font-style:italic;font-size:26px}
-.kaart .knaam{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
-.kaart .knaam b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2}
-.kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
-.kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
-.kaart:hover .knaam span::after{transform:translateX(4px)}
 
 /* afsluitende oproep */
 .oproep{padding:clamp(80px,10vw,130px) 0}
@@ -310,6 +289,15 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .dt-alle .dt-beeld{display:grid;place-items:center;background:#14130f;color:var(--brons)}
 .dt-alle .krul-mini{width:46%;height:auto}
 .sectie .dt-raster{margin-top:44px}
+/* diensten-overzicht: tegel met de werkzaamheden eronder */
+.dt-blok{display:flex;flex-direction:column;border-bottom:1px solid var(--rand)}
+.dt-blok .dt{border-bottom:0;padding-bottom:6px}
+.dt-lijst{list-style:none;margin:0;padding:0 24px 30px}
+.dt-lijst a{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--rand);font-size:14.5px;color:var(--zacht);text-decoration:none;transition:color .2s}
+.dt-lijst li:last-child a{border-bottom:0}
+.dt-lijst a::after{content:'→';transition:transform .3s var(--ease)}
+.dt-lijst a:hover{color:var(--inkt)}.dt-lijst a:hover::after{transform:translateX(4px)}
+@media(max-width:420px){.dt-lijst{padding:0 12px 22px}.dt-lijst a{font-size:13.5px}}
 .oproep + section .sectie{padding-top:clamp(40px,5vw,64px)}
 </style>`;
 
@@ -1137,16 +1125,18 @@ function contactPagina() {
 
 // ---------- diensten-overzicht ----------
 function overzichtPagina(alle) {
-  const blokken = alle.map((x) => `      <div class="blok">
-        <a class="kaart" href="dienst-${x.slug}.html" style="--kl:${x.kleur}" data-kantel>
-          <img src="${x.beeld}" alt="" loading="lazy">
-          <span class="knr">${x.nr}</span>
-          <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk het werk</span></span>
-        </a>
-        <ul>
+  // tegels van de homepage (zelfde beeld, label en voor/na-lijn), met per dienst de werkzaamheden eronder
+  const homeTegels = tussen(hoofd, '<div class="dt-raster op">', '</div>\n    <div class="alle-knop">', false).split('\n').filter((r) => /<a class="dt/.test(r));
+  const blokken = alle.map((x) => {
+    const tegel = homeTegels.find((r) => r.includes(`href="dienst-${x.slug}.html"`));
+    if (!tegel) throw new Error(`geen home-tegel voor ${x.slug}`);
+    return `      <div class="dt-blok">
+        ${tegel.trim()}
+        <ul class="dt-lijst">
 ${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#${o.id}">${esc(o.titel)}</a></li>`).join('\n')}
         </ul>
-      </div>`).join('\n');
+      </div>`;
+  }).join('\n');
   const body = `<section class="p-hero" style="padding-bottom:20px">
   <div class="kolommen"></div>
   <div class="wrap" style="display:block">
@@ -1159,7 +1149,7 @@ ${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#
 <section>
   <div class="kolommen"></div>
   <div class="wrap sectie" style="padding-top:20px">
-    <div class="overzicht op">
+    <div class="dt-raster op">
 ${blokken}
     </div>
   </div>

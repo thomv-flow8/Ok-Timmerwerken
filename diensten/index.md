@@ -10,7 +10,7 @@ Diensten
 
 Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot de laatste lijst. Kies een vakgebied of ga direct naar een werkzaamheid.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
 
 - [Gevlinderde betonvloer (monoliet vloer)](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/#gevlinderde-betonvloer)
 
@@ -24,7 +24,7 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 
 - [Bedrijfsvloeren](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/#bedrijfsvloer)
 
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
 
 - [Vliering plaatsen](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/#vliering)
 
@@ -34,7 +34,7 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 
 - [Van zolder naar kamer](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/#zolderkamer)
 
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
 
 - [Carport laten bouwen](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/#carport-laten-bouwen)
 
@@ -46,7 +46,7 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 
 - [Fundering & betonpoeren](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/#betonpoeren-carport)
 
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
 
 - [Velux dakraam laten plaatsen](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/#velux-dakraam-laten-plaatsen)
 
@@ -58,7 +58,7 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 
 - [Erkend VELUX Montagepartner](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/#erkend-montagepartner)
 
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
 
 - [Plafond verlagen](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/#plafond-verlagen)
 
@@ -74,7 +74,7 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 
 - [Doorbraken](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/#doorbraken)
 
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
 
 - [Strokenfundering](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/#strokenfundering)
 
@@ -90,7 +90,7 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 
 - [Vloerconstructies](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/#constructies-vloer)
 
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
 
 - [Houtrot](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/#houtrot)
 
@@ -104,7 +104,7 @@ Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot
 
 - [Dagelijks onderhoud](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/#dagelijks-onderhoud)
 
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
 
 - [HSB-wanden zetten](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/#hsb-wanden-zetten)
 
