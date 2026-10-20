@@ -21,7 +21,7 @@ sinds 2011
 **500+** projecten
 opgeleverd
 
-4,9 175 reviews op Google en Werkspot
+4,9 175 reviews op Google en Werkspot, gemiddeld 4,9 van 5 sterren
 
 ## In de reviews staat zelden onze naam. Er staat Ozcan.
 

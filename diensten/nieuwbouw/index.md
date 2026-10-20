@@ -18,7 +18,7 @@ Bekijk uitgevoerd werk
 
 **15 jaar** vakwerk
 **500+** projecten
-[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
+[4,9 175 reviews, gemiddeld 4,9 van 5 sterren](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Uitgevoerd werk
 

@@ -131,10 +131,10 @@ nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--vlak
 .menu-hoofd a:nth-child(4){transition-delay:.15s}.menu-hoofd a:nth-child(5){transition-delay:.2s}
 .menu-sub{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);
   display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
-.menu-sub a{font-size:14px;color:rgba(255,255,255,.65)}
+.menu-sub a{font-size:14px;color:rgba(255,255,255,.65);padding:5px 0;margin:-5px 0}   /* tikvlak 31px zonder dat de regels verschuiven */
 .menu-voet{margin-top:auto;padding-top:30px;display:flex;flex-direction:column;gap:12px}
 .menu-voet .tel{font-size:20px;font-weight:600;color:#fff}
-.menu-voet .mail{font-size:15px;color:rgba(255,255,255,.8)}
+.menu-voet .mail{font-size:15px;color:rgba(255,255,255,.8);padding:6px 0;margin:-6px 0}
 .menu-voet .knoppen{display:flex;gap:10px;align-items:center}
 .menu-voet .wa-knop{background:#157f4b;color:#fff;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px}
 /* WhatsApp-knoppen: overal de herkenbare WhatsApp-groen, met het icoon uit de iconenset */
@@ -812,7 +812,7 @@ footer.groot{padding:72px 0 46px}
       <div class="feiten">
         <div><b data-tel data-sinds="2011" data-naar="15">15</b><span>jaar vakwerk,<br>sinds 2011</span></div>
         <div><b data-tel data-naar="500" data-na="+">500+</b><span>projecten<br>opgeleverd</span></div>
-        <a class="f-score" href="#reviews" aria-label="Gemiddeld 4,9 van 5 sterren uit 175 reviews op Google en Werkspot"><b data-tel data-naar="4.9" data-dec="1">4,9</b><span><i class="sterscore" style="--pct:98%" aria-hidden="true"></i>175 reviews op<br>Google en Werkspot</span></a>
+        <a class="f-score" href="#reviews"><b data-tel data-naar="4.9" data-dec="1">4,9</b><span><i class="sterscore" style="--pct:98%" aria-hidden="true"></i>175 reviews op<br>Google en Werkspot<span class="vh">, gemiddeld 4,9 van 5 sterren</span></span></a>
       </div>
     </div>
   </div>
@@ -1063,7 +1063,7 @@ footer.groot{padding:72px 0 46px}
     <div class="kop">
       <span class="oog">Contact<i class="baan"></i></span>
       <h2>Vraag een vrijblijvend <em class="serif">advies</em> aan.</h2>
-      <div class="c-ozcan"><img src="../assets/render/portret/web/ozcan-foto-avatar.webp" alt="" width="64" height="64" loading="lazy"><p><b>U belt met Ozcan, niet met een kantoor.</b> Vertel kort wat u van plan bent; u hoort meestal binnen een dag van hem. Daarna komt hij gratis langs om te kijken.</p></div>
+      <div class="c-ozcan"><img src="../assets/render/portret/web/ozcan-foto-avatar-128.webp" alt="" width="64" height="64" loading="lazy"><p><b>U belt met Ozcan, niet met een kantoor.</b> Vertel kort wat u van plan bent; u hoort meestal binnen een dag van hem. Daarna komt hij gratis langs om te kijken.</p></div>
       <div class="contact-knoppen">
         <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
         <a class="knop wa-knop" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>

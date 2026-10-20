@@ -845,13 +845,7 @@
         "altVoor": "de kale balklaag met het vlieringluik",
         "altNa": "het plafond dichtgemaakt, met inbouwspots en luik",
         "verhouding": "1024/721"
-      },
-      "sfeer": [
-        "../assets/render/sfeer/timmerwerk-tvwand-haard-avond.webp",
-        "Tv-wand met nissen en een brandende haard, in avondsfeer",
-        "Tv-wand met nissen en haard, in de avond",
-        "onder"
-      ]
+      }
     },
     {
       "slug": "funderingen",

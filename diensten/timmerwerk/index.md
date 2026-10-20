@@ -18,7 +18,7 @@ Bekijk uitgevoerd werk
 
 **15 jaar** vakwerk
 **500+** projecten
-[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
+[4,9 175 reviews, gemiddeld 4,9 van 5 sterren](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Voor & na
 
@@ -107,8 +107,6 @@ Sloopwerk, doorbraken, regelwerk en wanden — de basis staat strak en waterpas.
 Platen, stuc- of schilderklare afwerking, kozijnen en plinten: klaar om in te wonen.
 
 [Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
-
-Tv-wand met nissen en haard, in de avond
 
 Veelgestelde vragen
 

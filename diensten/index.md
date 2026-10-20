@@ -10,6 +10,8 @@ Diensten
 
 Timmerwerk, betonwerk, dakramen, onderhoud en nieuwbouw — van de fundering tot de laatste lijst. Kies een vakgebied of ga direct naar een werkzaamheid.
 
+## Alle diensten en werkzaamheden
+
 [01 Betonvloeren Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
 
 - [Gevlinderde betonvloer (monoliet vloer)](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/#gevlinderde-betonvloer)

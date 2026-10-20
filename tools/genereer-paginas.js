@@ -267,12 +267,16 @@ const extraStijl = `<style>
 /* dienstpagina: feitenregel in de hero, werkzaamheden inklapbaar, andere diensten als tegels */
 .p-feiten{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;padding-top:22px;border-top:1px solid var(--rand);font-size:14px;color:var(--zacht)}
 .p-feiten b{color:var(--inkt);font-weight:700;margin-right:5px}
-.p-feiten a{display:inline-flex;align-items:center;color:var(--zacht);text-decoration:none}
+.p-feiten a{display:inline-flex;align-items:center;color:var(--zacht);text-decoration:none;padding:8px 0;margin:-8px 0}
 .p-feiten a:hover{color:var(--inkt)}
 .p-feiten .sterscore{margin:0 8px 0 2px;font-size:13px;letter-spacing:2px}
 .p-wa{display:none}
 @media(max-width:760px){.p-hero .p-wa{display:inline-flex}.p-feiten{gap:8px 18px;font-size:13px}}
 .p-hero.d-hero{padding-bottom:clamp(56px,7vw,88px)}
+/* dienst-hero compact op laptop/desktop: knoppen en feitenregel ook op 1280x720 boven de vouw */
+@media(min-width:821px){.p-hero.d-hero{padding-top:28px}.d-hero .kruimel{margin-bottom:26px}.d-hero .oog{margin-bottom:26px}
+  .d-hero h1{font-size:clamp(40px,4.3vw,64px);line-height:1}.d-hero .lead{margin-top:20px;font-size:17px}.d-hero .auteur{margin-top:16px}
+  .d-hero .acties{margin-top:24px}.d-hero .p-feiten{margin-top:22px;padding-top:18px}}
 .d-hero + .vn-band{padding-top:0}   /* voor/na direct onder de hero */
 .d-hero + #werk .sectie{padding-top:clamp(24px,3vw,40px)}   /* zonder voor/na: foto's direct onder de hero */
 .ond-acc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(30px,5vw,72px);margin-top:40px;border-top:1px solid var(--rand)}
@@ -601,7 +605,7 @@ ${oproep()}
   font-family:var(--serif);font-size:44px;line-height:1;padding-top:14px;margin-bottom:18px}
 .rv-tekst{font-size:15.5px;line-height:1.6;color:#2b2925;font-weight:400}
 .rv.kort .rv-tekst{display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden}
-.rv-meer{margin-top:10px;border:0;background:none;color:var(--brons);font:600 13px var(--f,inherit);cursor:pointer}
+.rv-meer{margin-top:4px;padding:6px 0;border:0;background:none;color:var(--brons);font:600 13px var(--f,inherit);cursor:pointer}
 .rv-meer::after{content:' ›'}
 /* foto's bij de review: niet overgenomen (geen gebruiksrecht), wel een link naar de bron */
 .rv-fotos{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:6px 12px 6px 10px;border:1px solid var(--rand);border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--inkt);transition:background .25s,border-color .25s}
@@ -710,7 +714,7 @@ ${vgDuim}
   const feiten = `<div class="p-feiten">
         <span><b>${new Date().getFullYear() - 2011} jaar</b> vakwerk</span>
         <span><b>500+</b> projecten</span>
-        <a href="reviews.html"><b>${gem}</b><i class="sterscore" style="--pct:${(parseFloat(gem.replace(',', '.')) / 5 * 100).toFixed(0)}%" aria-hidden="true"></i>${g.aantal + w.aantal} reviews</a>
+        <a href="reviews.html"><b>${gem}</b><i class="sterscore" style="--pct:${(parseFloat(gem.replace(',', '.')) / 5 * 100).toFixed(0)}%" aria-hidden="true"></i>${g.aantal + w.aantal} reviews<span class="vh">, gemiddeld ${gem} van 5 sterren</span></a>
       </div>`;
   // werkzaamheden: één lijst, per onderdeel in- en uitklapbaar (ankers van de oude site blijven werken: het onderdeel klapt open)
   const ondLijst = (d.onderdelen || d.werk.map(([titel, tekst]) => ({ id: '', titel, tekst })));
@@ -1149,6 +1153,7 @@ ${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#
 <section>
   <div class="kolommen"></div>
   <div class="wrap sectie" style="padding-top:20px">
+    <h2 class="vh">Alle diensten en werkzaamheden</h2>
     <div class="dt-raster op">
 ${blokken}
     </div>
