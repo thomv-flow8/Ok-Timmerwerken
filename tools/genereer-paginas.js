@@ -1140,13 +1140,13 @@ function contactPagina() {
 
 // ---------- diensten-overzicht ----------
 function overzichtPagina(alle) {
-  // tegels van de homepage (zelfde beeld, label en voor/na-lijn), met per dienst de werkzaamheden eronder
+  // tegels van de homepage (zelfde beeld, label en voor/na-lijn), zonder slogan — hier staan de werkzaamheden eronder
   const homeTegels = tussen(hoofd, '<div class="dt-raster op">', '</div>\n    <div class="alle-knop">', false).split('\n').filter((r) => /<a class="dt/.test(r));
   const blokken = alle.map((x) => {
     const tegel = homeTegels.find((r) => r.includes(`href="dienst-${x.slug}.html"`));
     if (!tegel) throw new Error(`geen home-tegel voor ${x.slug}`);
     return `      <div class="dt-blok">
-        ${tegel.trim()}
+        ${tegel.trim().replace(/<p>[^<]*<\/p>/, '')}
         <ul class="dt-lijst">
 ${(x.onderdelen || []).map((o) => `          <li><a href="dienst-${x.slug}.html#${o.id}">${esc(o.titel)}</a></li>`).join('\n')}
         </ul>
