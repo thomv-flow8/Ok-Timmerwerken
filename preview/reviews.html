@@ -898,10 +898,22 @@ footer.groot{padding:72px 0 46px}
 .p-wa{display:none}
 @media(max-width:760px){.p-hero .p-wa{display:inline-flex}.p-feiten{gap:8px 18px;font-size:13px}}
 .p-hero.d-hero{padding-bottom:clamp(56px,7vw,88px)}
-/* dienst-hero compact op laptop/desktop: knoppen en feitenregel ook op 1280x720 boven de vouw */
-@media(min-width:821px){.p-hero.d-hero{padding-top:28px}.d-hero .kruimel{margin-bottom:26px}.d-hero .oog{margin-bottom:26px}
-  .d-hero h1{font-size:clamp(40px,4.3vw,64px);line-height:1}.d-hero .lead{margin-top:20px;font-size:17px}.d-hero .auteur{margin-top:16px}
-  .d-hero .acties{margin-top:24px}.d-hero .p-feiten{margin-top:22px;padding-top:18px}}
+/* dienst-hero als vol startscherm (zoals home): precies één scherm hoog, foto van boven tot onder, kop schaalt met de schermhoogte;
+   kruimelpad boven, tekst en knoppen in het midden, feitenregel onderaan — knop ook op 1280x720 in beeld */
+@media(min-width:821px){
+  .p-hero.d-hero{min-height:calc(100vh - 68px);min-height:calc(100svh - 68px);display:flex;padding:clamp(20px,3.5vh,40px) 0 clamp(28px,5vh,56px)}
+  .d-hero > .wrap{flex:1;width:100%;align-items:stretch}
+  .d-hero .wrap > div:first-child{display:flex;flex-direction:column}
+  .d-hero .kruimel{margin-bottom:0}
+  .d-hero .oog{margin-top:auto;margin-bottom:clamp(20px,3.2vh,36px);padding-top:28px}
+  .d-hero h1{font-size:clamp(44px,min(5.4vw,9vh),84px);line-height:.98}
+  .d-hero .lead{margin-top:clamp(16px,2.6vh,26px);font-size:17px}
+  .d-hero .auteur{margin-top:16px}
+  .d-hero .acties{margin-top:clamp(20px,3.4vh,34px);margin-bottom:28px}
+  .d-hero .p-feiten{margin-top:auto;padding-top:18px}
+  .d-hero .p-beeld{aspect-ratio:auto;height:100%;min-height:420px}
+  .d-hero .p-rechts{display:flex;flex-direction:column}.d-hero .p-rechts .p-beeld{flex:1;height:auto}
+}
 .d-hero + .vn-band{padding-top:0}   /* voor/na direct onder de hero */
 .d-hero + #werk .sectie{padding-top:clamp(24px,3vw,40px)}   /* zonder voor/na: foto's direct onder de hero */
 .ond-acc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(30px,5vw,72px);margin-top:40px;border-top:1px solid var(--rand)}
