@@ -1443,6 +1443,7 @@ function naarMarkdown(html, paginaUrl) {
   let m = (html.match(/<main id="inhoud">([\s\S]*?)<\/main>/) || [])[1] || '';
   m = m.replace(/<(script|style|svg|video|button|template|form|noscript)\b[\s\S]*?<\/\1>/gi, '')
     .replace(/<div class="kruimel">[\s\S]*?<\/div>/g, '')
+    .replace(/<span\b[^>]*(?:aria-hidden="true"|class="dt-tag")[^>]*>[^<]*<\/span>/gi, '')   // decoratie (Voor/Na-labels, pijlen, labeltjes) niet in de tekst
     .replace(/<img\b[^>]*>/gi, '')
     .replace(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, (t, href, inh) => {
       const label = inh.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();

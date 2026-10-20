@@ -28,8 +28,6 @@ Hetzelfde terras onder de overkapping, voor en na. Isolatie en wapening gelegd, 
 
 Sleep de lijn om te vergelijken
 
-Voor Na
-
 Terras onder de overkapping: van wapening tot gevlinderde vloer
 
 Uitgevoerd werk
@@ -151,11 +149,11 @@ Meer van OK
 
 ## Andere diensten.
 
-[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+[02 Vliering & zolder Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[03 Carport & overkapping Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[04 Dakramen (Velux) Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[05 Timmerwerk & afbouw Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[06 Funderingen Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[07 Onderhoud & renovatie Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[08 Nieuwbouw Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

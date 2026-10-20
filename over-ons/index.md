@@ -81,7 +81,6 @@ Wat klanten zeggen
 
 ## In de reviews staat Ozcan.
 
-“
 Ozcan heeft bij ons de schoorsteen van het dak tm de begane grond compleet verwijderd. Hij is echt een top aannemer! Hij komt zijn afspraken na, reageert snel, werkt hard, denkt mee, is eerlijk en hij heeft voor alles een oplossing. Zeker een aanrader!
 
 **Kevin** · Google-review, oktober 2024
