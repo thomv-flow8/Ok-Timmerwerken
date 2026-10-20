@@ -135,7 +135,7 @@ const extraStijl = `<style>
 /* galerij: grote foto in zijn geheel, pijlen, teller en miniaturen eronder */
 .vg-label{position:absolute;z-index:3;left:6%;top:6%;padding:6px 13px;border-radius:999px;font:700 11.5px var(--f,inherit);letter-spacing:.14em;text-transform:uppercase;box-shadow:0 6px 18px -8px rgba(0,0,0,.45)}
 .vg-label.voor{background:rgba(255,255,255,.94);color:var(--inkt)}
-.vg-label.na{background:var(--brons);color:#fff}
+.vg-label.na{background:var(--inkt);color:#fff}
 .vg{margin-top:46px;max-width:1040px;margin-inline:auto}
 .vg-podium{position:relative;aspect-ratio:3/2;max-height:62vh;width:100%;background:#f1ede6;border-radius:18px;overflow:hidden;outline:none}
 .vg-podium:focus-visible{box-shadow:0 0 0 3px var(--brons)}
@@ -161,7 +161,7 @@ const extraStijl = `<style>
 .vg-play{position:absolute;inset:0;display:grid;place-items:center}
 .vg-play svg{width:26px;height:26px;fill:#fff;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6))}
 .vg-fase{position:absolute;left:5px;bottom:5px;font:700 11px var(--f,inherit);letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:999px}
-.vg-fase.voor{background:rgba(255,255,255,.94);color:var(--inkt)} .vg-fase.na{background:var(--brons);color:#fff}
+.vg-fase.voor{background:rgba(255,255,255,.94);color:var(--inkt)} .vg-fase.na{background:var(--inkt);color:#fff}
 @media(max-width:760px){.vg-podium{aspect-ratio:4/5;border-radius:14px}.vg-pijl{width:42px;height:42px}.vg-vorige{left:10px}.vg-volgende{right:10px}.vg-duim{width:72px;height:72px}}
 .lichtbak{position:fixed;inset:0;z-index:95;background:rgba(10,10,8,.92);display:grid;place-items:center;padding:24px;
   opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
@@ -172,20 +172,6 @@ const extraStijl = `<style>
 .lichtbak button{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;
   border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:20px;cursor:pointer}
 
-/* alle werkzaamheden: inhoudsopgave links (blijft staan), teksten rechts */
-.onderdelen{display:grid;grid-template-columns:260px 1fr;gap:clamp(30px,6vw,90px);margin-top:46px;align-items:start}
-.ond-zij{position:sticky;top:100px}   /* menu + (bij dakramen) VELUX-keurmerken schuiven samen mee */
-.ond-nav{display:flex;flex-direction:column;border-left:1px solid var(--rand)}
-.ond-download{grid-column:2}
-.ond-nav a{padding:9px 0 9px 18px;font-size:14px;color:var(--zacht);margin-left:-1px;border-left:2px solid transparent;
-  transition:color .2s,border-color .2s}
-.ond-nav a:hover{color:var(--inkt);border-left-color:var(--brons)}
-.ond-lijst article{padding:30px 0 32px;border-top:1px solid var(--rand);scroll-margin-top:96px;display:grid;
-  grid-template-columns:56px 1fr;gap:0 20px}
-.ond-lijst article:first-child{border-top:0;padding-top:0}
-.ond-lijst .onr{font-family:var(--serif);font-style:italic;font-size:28px;color:#8a6532;line-height:1.1}
-.ond-lijst h3{font-size:clamp(21px,2.2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
-.ond-lijst p{grid-column:2;margin-top:10px;color:#4a4740;font-weight:400;line-height:1.75;font-size:16px;max-width:64ch}
 .download{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:14px 22px;border-radius:999px;
   background:#14130f;color:#fff;font-weight:600;font-size:14px}
 .download::before{content:'↓';color:var(--brons);font-size:16px}
@@ -197,9 +183,6 @@ const extraStijl = `<style>
 
 .krul-over{top:auto;bottom:8px;right:9%;width:min(44vw,560px)}   /* van onder het portret naar "Het verhaal" */
 @media(max-width:900px){.krul-over{display:none}}
-@media(max-width:820px){.onderdelen{grid-template-columns:1fr}.ond-nav{display:none}
-  .ond-zij{display:contents}.ond-lijst{order:1}.ond-download{order:2;grid-column:auto}
-  .ond-lijst article{grid-template-columns:1fr}.ond-lijst p{grid-column:1}}
 
 /* diensten-overzicht */
 .overzicht{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px 22px;margin-top:46px}
@@ -257,15 +240,6 @@ const extraStijl = `<style>
 .terug svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .nav-in .merk{margin-right:auto}
 
-/* andere diensten: beeldkaarten met dienstkleur */
-.andere{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;
-  width:min(var(--max),94vw);margin-left:calc(50% - min(var(--max),94vw) / 2)}   /* 2 rijen van 4, precies tussen de lijnen */
-.andere > a{margin:14px}
-a.kaart.alle-kaart{background:#14130f;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:#fff}
-a.kaart.alle-kaart::after{display:none}
-.alle-kaart .krul-mini{width:70px;margin-bottom:auto;color:var(--brons)}
-.alle-kaart b{font-size:19px;font-weight:600;line-height:1.2}
-.alle-kaart small{display:block;margin-top:8px;color:rgba(255,255,255,.65);font-size:13px}
 a.kaart{position:relative;display:block;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--kl);
   color:#fff;box-shadow:0 30px 60px -40px rgba(20,19,15,.5)}
 a.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -278,7 +252,6 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
 .kaart .knaam span{display:inline-flex;gap:6px;margin-top:8px;font-size:12.5px;color:rgba(255,255,255,.8)}
 .kaart .knaam span::after{content:'→';transition:transform .3s var(--ease)}
 .kaart:hover .knaam span::after{transform:translateX(4px)}
-@media(max-width:820px){.andere{grid-template-columns:1fr 1fr;width:auto;margin-left:0}.andere > a{margin:6px}}
 
 /* afsluitende oproep */
 .oproep{padding:clamp(80px,10vw,130px) 0}
@@ -311,6 +284,32 @@ a.kaart::after{content:'';position:absolute;inset:0;background:linear-gradient(t
   .stappen.vier .stap{min-height:0}
 }
 @media(prefers-reduced-motion:reduce){.op{opacity:1;transform:none;transition:none}}
+/* dienstpagina: feitenregel in de hero, werkzaamheden inklapbaar, andere diensten als tegels */
+.p-feiten{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;padding-top:22px;border-top:1px solid var(--rand);font-size:14px;color:var(--zacht)}
+.p-feiten b{color:var(--inkt);font-weight:700;margin-right:5px}
+.p-feiten a{display:inline-flex;align-items:center;color:var(--zacht);text-decoration:none}
+.p-feiten a:hover{color:var(--inkt)}
+.p-feiten .sterscore{margin:0 8px 0 2px;font-size:13px;letter-spacing:2px}
+.p-wa{display:none}
+@media(max-width:760px){.p-hero .p-wa{display:inline-flex}.p-feiten{gap:8px 18px;font-size:13px}}
+.p-hero.d-hero{padding-bottom:clamp(56px,7vw,88px)}
+.d-hero + .vn-band{padding-top:0}   /* voor/na direct onder de hero */
+.d-hero + #werk .sectie{padding-top:clamp(24px,3vw,40px)}   /* zonder voor/na: foto's direct onder de hero */
+.ond-acc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(30px,5vw,72px);margin-top:40px;border-top:1px solid var(--rand)}
+.ond-acc details{border-bottom:1px solid var(--rand);scroll-margin-top:96px;align-self:start}
+.ond-acc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:46px 1fr 24px;align-items:baseline;padding:22px 0;font-size:clamp(18px,1.6vw,21px);font-weight:700;letter-spacing:-.015em;line-height:1.25}
+.ond-acc summary::-webkit-details-marker{display:none}
+.ond-acc summary::after{content:'+';font-size:24px;font-weight:300;color:var(--brons);justify-self:end;transition:transform .3s var(--ease)}
+.ond-acc details[open] summary::after{transform:rotate(45deg)}
+.ond-acc summary:hover{color:#000}
+.ond-acc .onr{font-family:var(--serif);font-style:italic;font-weight:400;font-size:22px;color:#8a6532}
+.ond-acc p{padding:0 24px 24px 46px;color:#4a4740;line-height:1.75;font-size:16px;max-width:62ch}
+.ond-download{margin-top:28px}
+@media(max-width:820px){.ond-acc{grid-template-columns:1fr}}
+.dt-alle .dt-beeld{display:grid;place-items:center;background:#14130f;color:var(--brons)}
+.dt-alle .krul-mini{width:46%;height:auto}
+.sectie .dt-raster{margin-top:44px}
+.oproep + section .sectie{padding-top:clamp(40px,5vw,64px)}
 </style>`;
 
 // ---------- bouwstenen ----------
@@ -362,6 +361,7 @@ ${dock}
   addEventListener('scroll',vang,{passive:true}); addEventListener('load',vang); vang();
   // kom je binnen via een anker (bijv. een doorverwijzing van de oude site), spring dan naar die werkzaamheid
   if(location.hash && location.hash.length>1){ var doelEl=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if(doelEl && doelEl.tagName==='DETAILS') doelEl.open=true;
     if(doelEl) addEventListener('load',function(){ setTimeout(function(){ document.documentElement.style.scrollBehavior='auto';
       doelEl.scrollIntoView({block:'start'}); document.documentElement.style.scrollBehavior=''; vang(); },60); }); }
 
@@ -392,6 +392,17 @@ ${dock}
     if('IntersectionObserver' in window) new IntersectionObserver(function(es){ zicht=es[0].isIntersecting; }).observe(el); else zicht=true;
     zet(50);
     if(!rm) (function schuif(t){ if(!zelf&&zicht) zet(50+40*Math.sin((t-t0)/1300)); requestAnimationFrame(schuif); })(performance.now());
+  });
+
+  // voor/na in de dienst-tegels (zoals op de homepage): eigen ritme per tegel, muis neemt het over
+  [].forEach.call(document.querySelectorAll('.dt.heeft-voor'),function(t,i){
+    var as=t.classList.contains('as-y')?'y':'x', zelf=false, zicht=false, t0=performance.now()-i*900;
+    t.addEventListener('mousemove',function(e){ zelf=true; var r=t.querySelector('.dt-beeld').getBoundingClientRect();
+      var v=as==='y'?(e.clientY-r.top)/r.height:(e.clientX-r.left)/r.width; t.style.setProperty('--pos',Math.min(100,Math.max(0,v*100))+'%'); });
+    t.addEventListener('mouseleave',function(){ zelf=false; t0=performance.now(); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ zicht=es[0].isIntersecting; }).observe(t); else zicht=true;
+    if(rm) return;
+    (function zwaai(n){ if(!zelf&&zicht) t.style.setProperty('--pos',(50+38*Math.sin((n-t0)/1400)).toFixed(2)+'%'); requestAnimationFrame(zwaai); })(performance.now());
   });
 
   // Lichtbak voor de galerij
@@ -646,6 +657,7 @@ ${oproep()}
 }
 
 // ---------- dienstpagina ----------
+// Opbouw: hero (met feitenregel) → voor/na → uitgevoerd werk → wat we doen (inklapbaar) → aanpak → sfeer + review → vragen → contact → andere diensten
 function dienstPagina(d, alle) {
   const n = d.galerij.length, nn = (i) => String(i).padStart(2, '0');
   // galerij-item: [beeld, bijschrift] of [video.mp4, bijschrift, beginbeeld.jpg] — een video speelt (zonder geluid) als de kaart in het midden staat.
@@ -678,41 +690,9 @@ ${vgDia}
 ${vgDuim}
       </div>
     </div>`;
-  const faq = d.faq.map(([v, a]) => `      <details><summary>${esc(v)}</summary><p>${esc(a)}</p></details>`).join('\n');
-  const andere = alle.filter((x) => x.slug !== d.slug).map((x) => `      <a class="kaart" href="dienst-${x.slug}.html" style="--kl:${x.kleur}" data-kantel>
-        <img src="${x.beeld}" alt="" loading="lazy">
-        <span class="knr">${x.nr}</span>
-        <span class="knaam"><b>${esc(x.naam)}</b><span>Bekijk het werk</span></span>
-      </a>`).join('\n') + `
-      <a class="kaart alle-kaart" href="diensten.html">
-        <svg class="krul-mini" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
-        <b>Alle diensten</b><small>Alle werkzaamheden op een rij →</small>
-      </a>`;
   const pBeeld = `    <div class="p-beeld" style="--bg:${d.kleur}" data-kantel>
       <img src="${d.beeld}" alt="${esc(d.beeldAlt)}" fetchpriority="high">${d.slug === 'dakramen' ? '\n      <img class="p-logo" src="../assets/velux/velux-montagepartner.webp" alt="Erkend VELUX Montagepartner">' : ''}
     </div>`;
-  const onderdelen = d.onderdelen ? `
-<!-- ALLE WERKZAAMHEDEN -->
-<section class="creme" id="werkzaamheden">
-  <div class="kolommen"></div>
-  <div class="wrap sectie">
-    <div class="kop op">
-      ${oog('Alle werkzaamheden')}
-      <h2>Wat we doen binnen <em class="serif">${esc(d.naam.charAt(0).toLowerCase() + d.naam.slice(1))}</em>.</h2>
-    </div>
-    <div class="onderdelen op">
-      <div class="ond-zij">
-        <nav class="ond-nav" aria-label="Werkzaamheden">
-${d.onderdelen.map((o) => `          <a href="#${o.id}">${esc(o.titel)}</a>`).join('\n')}
-        </nav>
-      </div>
-      <div class="ond-lijst">
-${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${String(i + 1).padStart(2, '0')}</span><h3>${esc(o.titel)}</h3><p>${esc(o.tekst)}</p></article>`).join('\n')}
-      </div>${d.download ? `
-      <div class="ond-download"><a class="download" href="${d.download[1]}" target="_blank" rel="noopener">${esc(d.download[0])}</a></div>` : ''}
-    </div>
-  </div>
-</section>` : '';
   const review = d.review ? `
 <section>
   <div class="kolommen"></div>
@@ -725,7 +705,7 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
   </div>
 </section>` : '';
 
-  // sfeerbeeld (render op basis van eigen foto): standaard na "Alle werkzaamheden"; met 'onder' als 4e veld na de galerij
+  // sfeerbeeld (render op basis van eigen foto), na de aanpak
   const sfeerBand = d.sfeer ? `
 
 <!-- SFEERBEELD -->
@@ -735,6 +715,51 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
     <figure class="sfeer-beeld op"><img src="${d.sfeer[0]}" alt="${esc(d.sfeer[1])}" loading="lazy"><figcaption>${esc(d.sfeer[2])}</figcaption></figure>
   </div>
 </section>` : '';
+  // feitenregel onder de knoppen (zelfde cijfers als de hero op home; reviews live uit reviews.json)
+  const g = reviewData.bronnen.google, w = reviewData.bronnen.werkspot, rv = reviewData.reviews;
+  const gem = (rv.reduce((t, r) => t + r.score, 0) / rv.length).toFixed(1).replace('.', ',');
+  const feiten = `<div class="p-feiten">
+        <span><b>${new Date().getFullYear() - 2011} jaar</b> vakwerk</span>
+        <span><b>500+</b> projecten</span>
+        <a href="reviews.html"><b>${gem}</b><i class="sterscore" style="--pct:${(parseFloat(gem.replace(',', '.')) / 5 * 100).toFixed(0)}%" aria-hidden="true"></i>${g.aantal + w.aantal} reviews</a>
+      </div>`;
+  // werkzaamheden: één lijst, per onderdeel in- en uitklapbaar (ankers van de oude site blijven werken: het onderdeel klapt open)
+  const ondLijst = (d.onderdelen || d.werk.map(([titel, tekst]) => ({ id: '', titel, tekst })));
+  const werkzaamheden = `<!-- WAT WE DOEN -->
+<section class="creme" id="werkzaamheden">
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="kop op">
+      ${oog('Wat we doen')}
+      <h2>Alles rond <em class="serif">${esc(d.naam.charAt(0).toLowerCase() + d.naam.slice(1))}</em>, in één hand.</h2>
+    </div>
+    <div class="ond-acc op">
+${ondLijst.map((o, i) => `      <details${o.id ? ` id="${o.id}"` : ''}><summary><span class="onr">${String(i + 1).padStart(2, '0')}</span>${esc(o.titel)}</summary><p>${esc(o.tekst)}</p></details>`).join('\n')}
+    </div>${d.download ? `
+    <div class="ond-download"><a class="download" href="${d.download[1]}" target="_blank" rel="noopener">${esc(d.download[0])}</a></div>` : ''}
+  </div>
+</section>`;
+  // vaste vragen voor elke dienst: prijs (CONCEPTTEKST — eerst akkoord Ozcan) en werkgebied
+  const faqV2 = [...d.faq,
+    ['Wat kost het, en waar hangt de prijs van af?', 'Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.'],
+    ['Werken jullie ook bij mij in de buurt?', 'OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.'],
+  ].map(([v, a]) => `      <details><summary>${esc(v)}</summary><p>${esc(a)}</p></details>`).join('\n');
+  // andere diensten: dezelfde tegels als op de homepage (inclusief de bewegende voor/na-lijn), zonder de huidige dienst
+  const tegels = tussen(hoofd, '<div class="dt-raster op">', '</div>\n    <div class="alle-knop">', false).split('\n').filter((r) => /<a class="dt/.test(r) && !r.includes(`href="dienst-${d.slug}.html"`)).join('\n');
+  const andereV2 = `<!-- ANDERE DIENSTEN -->
+<section>
+  <div class="kolommen"></div>
+  <div class="wrap sectie">
+    <div class="kop op">
+      ${oog('Meer van OK')}
+      <h2>Andere diensten.</h2>
+    </div>
+    <div class="dt-raster op">
+${tegels}
+        <a class="dt dt-alle" href="diensten.html"><div class="dt-beeld"><svg class="krul-mini" viewBox="0 0 140 100" aria-hidden="true"><path d="M132,10 C104,0 72,8 74,30 C76,50 106,48 102,32 C98,16 64,24 50,46 C41,61 33,76 25,90 M25,90 L22,77 M25,90 L36,83" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></div><div class="dt-tekst"><span class="dt-nr"></span><h3>Alle diensten</h3><span class="dt-pijl" aria-hidden="true">→</span><p>Alle werkzaamheden op een rij.</p></div></a>
+    </div>
+  </div>
+</section>`;
   const body = `<!-- HERO -->
 <section class="p-hero d-hero">
   <div class="kolommen"></div>
@@ -747,28 +772,17 @@ ${d.onderdelen.map((o, i) => `        <article id="${o.id}"><span class="onr">${
       <p class="auteur"><img src="../assets/render/portret/web/ozcan-foto-avatar-72.webp" alt="" width="36" height="36"><span>Geschreven door <a rel="author" href="over.html">Ozcan</a>, eigenaar van OK Timmerwerken</span></p>
       <div class="acties">
         <a class="knop" href="contact.html">Vraag vrijblijvend advies</a>
+        <a class="knop wa-knop p-wa" href="https://wa.me/31641429106" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
         <a class="knop lijn" href="#werk">Bekijk uitgevoerd werk</a>
       </div>
+      ${feiten}
     </div>
     ${d.slug === 'dakramen' ? `<div class="p-rechts">
 ${pBeeld}
       <div class="p-keurmerk"><img src="../assets/velux/velux-logo.webp" alt="" loading="lazy"><img src="../assets/velux/velux-getraind-2025.webp" alt="" loading="lazy"><span>Getraind en gecertificeerd<br>door VELUX</span></div>
     </div>` : pBeeld}
   </div>
-</section>
-
-<!-- WAT WE DOEN -->
-<section>
-  <div class="kolommen"></div>
-  <div class="wrap sectie">
-    <div class="kop op">
-      ${oog('Wat we doen')}
-      <h2>Alles rond ${esc(d.naam.charAt(0).toLowerCase() + d.naam.slice(1))}, in één hand.</h2>
-    </div>
-    ${stappenRaster(d.werk)}
-  </div>
-</section>
-${onderdelen}${d.sfeer && d.sfeer[3] !== 'onder' ? sfeerBand : ''}${d.voorna ? `
+</section>${d.voorna ? `
 
 <!-- VOOR & NA -->
 <section class="vn-band" id="voor-na">
@@ -807,6 +821,8 @@ ${galerij}
   </div>
 </section>
 
+${werkzaamheden}
+
 <!-- AANPAK -->
 <section class="fris">
   <div class="kolommen"></div>
@@ -818,7 +834,7 @@ ${galerij}
     ${stappenRaster(d.aanpak, ['Klaar voor stap 1?', 'Bel, app of mail Ozcan. Binnen een dag hoort u van ons.', 'Vraag vrijblijvend advies'], d.aanpak_iconen)}
   </div>
 </section>
-${d.sfeer && d.sfeer[3] === 'onder' ? sfeerBand : ''}${review}
+${sfeerBand}${review}
 
 <!-- VRAGEN -->
 <section class="donker">
@@ -829,26 +845,14 @@ ${d.sfeer && d.sfeer[3] === 'onder' ? sfeerBand : ''}${review}
       <h2>Goed om te weten.</h2>
     </div>
     <div class="faq op">
-${faq}
+${faqV2}
     </div>
   </div>
 </section>
 
-<!-- ANDERE DIENSTEN -->
-<section>
-  <div class="kolommen"></div>
-  <div class="wrap sectie">
-    <div class="kop op">
-      ${oog('Meer van OK')}
-      <h2>Andere diensten.</h2>
-    </div>
-    <div class="andere op">
-${andere}
-    </div>
-  </div>
-</section>
+${oproep()}
 
-${oproep()}`;
+${andereV2}`;
 
   return pagina({
     titel: `${d.naam} — OK Timmerwerken Gorinchem`,

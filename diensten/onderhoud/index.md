@@ -13,82 +13,12 @@ Van houtrot en een likje verf tot tegelwerk, isolatie en kleine reparaties: OK T
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
 
-Wat we doen
-
-## Alles rond onderhoud & renovatie, in één hand.
-
-01
-
-### Houtrot
-
-Aangetast hout vervangen en de oorzaak — vocht — aanpakken, zodat het niet terugkomt.
-
-02
-
-### Tegelwerk
-
-Badkamers, keukens en toiletten strak betegeld.
-
-03
-
-### Isolatie
-
-Dak, vloer en wanden isoleren voor een lagere energierekening.
-
-04
-
-### Kleine klussen
-
-Schilderwerk, reparaties en dagelijks onderhoud in en om het huis.
-
-Alle werkzaamheden
-
-## Wat we doen binnen onderhoud & renovatie.
-
-Houtrot
-Kleine schilderwerkzaamheden
-Tegelwerk
-Isolatie
-Totale renovatie
-Dagelijks onderhoud
-
-01
-
-### Houtrot
-
-Houtrot ontstaat als vocht en schimmels de structuur van het hout aantasten. Het leidt tot scheuren, lekkages en zelfs constructieve schade, en trekt insecten aan. We verwijderen het aangetaste hout, herstellen of vervangen het en maken samen een plan om te voorkomen dat het terugkomt.
-
-02
-
-### Kleine schilderwerkzaamheden
-
-Een nieuw likje verf maakt veel verschil. We schilderen trappen, deuren, kozijnen en andere onderdelen in en om het huis met hoogwaardige verf — en bespreken het werk vooraf, zodat u weet waar u aan toe bent.
-
-03
-
-### Tegelwerk
-
-Tegels zijn duurzaam, waterbestendig en makkelijk schoon te houden — ideaal voor badkamer, keuken en toilet. Goed gelegd en onderhouden gaan ze vele jaren mee. We zetten wand- en vloertegels strak en vakkundig.
-
-04
-
-### Isolatie
-
-Goede isolatie verlaagt uw energiekosten, voorkomt vochtproblemen en schimmel, en zorgt voor minder geluidsoverlast. We isoleren daken, vloeren en wanden met de juiste materialen en werken alles netjes af.
-
-05
-
-### Totale renovatie
-
-Van één kamer tot het hele huis: OK Timmerwerken pakt een complete renovatie in één keer aan. Vloeren, wanden, plafonds, isolatie, tegelwerk en afwerking — met één aanspreekpunt en één planning, zodat alles op elkaar aansluit.
-
-06
-
-### Dagelijks onderhoud
-
-Onverwachte reparaties — een slot dat klemt, een kleine lekkage, een kapotte deur — lossen we vakkundig op. We bespreken eerst wat er moet gebeuren en pakken het daarna stap voor stap aan.
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Voor & na
 
@@ -119,6 +49,34 @@ Na
 1 / 10
 
 Afgewerkte badkamer met inloopdouche
+
+Wat we doen
+
+## Alles rond onderhoud & renovatie, in één hand.
+
+01 Houtrot
+
+Houtrot ontstaat als vocht en schimmels de structuur van het hout aantasten. Het leidt tot scheuren, lekkages en zelfs constructieve schade, en trekt insecten aan. We verwijderen het aangetaste hout, herstellen of vervangen het en maken samen een plan om te voorkomen dat het terugkomt.
+
+02 Kleine schilderwerkzaamheden
+
+Een nieuw likje verf maakt veel verschil. We schilderen trappen, deuren, kozijnen en andere onderdelen in en om het huis met hoogwaardige verf — en bespreken het werk vooraf, zodat u weet waar u aan toe bent.
+
+03 Tegelwerk
+
+Tegels zijn duurzaam, waterbestendig en makkelijk schoon te houden — ideaal voor badkamer, keuken en toilet. Goed gelegd en onderhouden gaan ze vele jaren mee. We zetten wand- en vloertegels strak en vakkundig.
+
+04 Isolatie
+
+Goede isolatie verlaagt uw energiekosten, voorkomt vochtproblemen en schimmel, en zorgt voor minder geluidsoverlast. We isoleren daken, vloeren en wanden met de juiste materialen en werken alles netjes af.
+
+05 Totale renovatie
+
+Van één kamer tot het hele huis: OK Timmerwerken pakt een complete renovatie in één keer aan. Vloeren, wanden, plafonds, isolatie, tegelwerk en afwerking — met één aanspreekpunt en één planning, zodat alles op elkaar aansluit.
+
+06 Dagelijks onderhoud
+
+Onverwachte reparaties — een slot dat klemt, een kleine lekkage, een kapotte deur — lossen we vakkundig op. We bespreken eerst wat er moet gebeuren en pakken het daarna stap voor stap aan.
 
 Zo pakken we het aan
 
@@ -160,18 +118,13 @@ Kunnen jullie een complete badkamer doen?
 
 We verzorgen het tegelwerk en het timmer- en afbouwwerk. Bespreek gerust wat u verder nodig heeft — dan kijken we samen wat we voor u kunnen doen.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -182,3 +135,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

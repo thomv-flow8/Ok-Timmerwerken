@@ -13,89 +13,12 @@ Gewapende betonplaten en funderingen voor een aanbouw, tuinhuis, overkapping of 
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
 
-Wat we doen
-
-## Alles rond funderingen, in één hand.
-
-01
-
-### Betonplaten
-
-Een gewapende plaat als vloer en fundering ineen, voor tuinhuis, overkapping of berging.
-
-02
-
-### Funderingen
-
-Strokenfunderingen en poeren voor aanbouwen en carports.
-
-03
-
-### Vloerconstructies
-
-Nieuwe vloeren bij verbouwingen, ook met stalen balken.
-
-04
-
-### Grondwerk
-
-Uitgraven, aanvullen en verdichten — een stabiele ondergrond.
-
-Alle werkzaamheden
-
-## Wat we doen binnen funderingen.
-
-Strokenfundering
-Traditionele fundering
-Tempex-fundering
-Betonpoeren
-Vorstrand
-Zwembadfundering
-Vloerconstructies
-
-01
-
-### Strokenfundering
-
-Bij een strokenfundering rusten de muren op stroken of platen van gewapend beton, op een draagkrachtige ondergrond (fundering op staal). Er is minder beton nodig dan voor een volledige vloer, en de methode laat zich goed combineren met een borstwering.
-
-02
-
-### Traditionele fundering
-
-Een traditionele fundering op staal — een betonnen of gemetselde fundering direct op een stevige, draagkrachtige grondlaag — is een beproefde oplossing voor aanbouwen, schuren en bijgebouwen. We bepalen samen met u (en waar nodig de constructeur) wat uw project nodig heeft.
-
-03
-
-### Tempex-fundering
-
-Een tempex-fundering is licht en isolerend en kan hoogteverschillen opvangen, bijvoorbeeld bij een verzakte straat of tuin. Samen met schuimbeton kan tempex ook worden gebruikt om bestrating op te hogen.
-
-04
-
-### Betonpoeren
-
-Betonpoeren dragen de krachten van een constructie — zoals een carport of veranda — over op de ondergrond en voorkomen zo verzakking. Omdat het hout niet in de vochtige grond staat, voorkomen ze ook houtrot. We adviseren welk type poer bij uw project past.
-
-05
-
-### Vorstrand
-
-Een vorstrand is een funderingsrib die in één keer met de vloer wordt meegestort, zonder heipalen. Hij voorkomt dat de grond onder het bouwwerk opvriest en verschuift — ideaal voor kleinere bouwwerken zoals een schuur, samen met een funderingsplaat.
-
-06
-
-### Zwembadfundering
-
-Water is zwaar: een zwembad vraagt om een stevige ondergrond en een robuuste fundering. We controleren vooraf de draagkracht en de grondwaterstand, en storten daarna de fundering op maat.
-
-07
-
-### Vloerconstructies
-
-Nieuwe vloeren bij verbouwingen — ook met stalen balken en een geïsoleerde systeemvloer.
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Voor & na
 
@@ -130,6 +53,38 @@ Na
 1 / 17
 
 Grond ontgraven en geëgaliseerd voor een betonplaat
+
+Wat we doen
+
+## Alles rond funderingen, in één hand.
+
+01 Strokenfundering
+
+Bij een strokenfundering rusten de muren op stroken of platen van gewapend beton, op een draagkrachtige ondergrond (fundering op staal). Er is minder beton nodig dan voor een volledige vloer, en de methode laat zich goed combineren met een borstwering.
+
+02 Traditionele fundering
+
+Een traditionele fundering op staal — een betonnen of gemetselde fundering direct op een stevige, draagkrachtige grondlaag — is een beproefde oplossing voor aanbouwen, schuren en bijgebouwen. We bepalen samen met u (en waar nodig de constructeur) wat uw project nodig heeft.
+
+03 Tempex-fundering
+
+Een tempex-fundering is licht en isolerend en kan hoogteverschillen opvangen, bijvoorbeeld bij een verzakte straat of tuin. Samen met schuimbeton kan tempex ook worden gebruikt om bestrating op te hogen.
+
+04 Betonpoeren
+
+Betonpoeren dragen de krachten van een constructie — zoals een carport of veranda — over op de ondergrond en voorkomen zo verzakking. Omdat het hout niet in de vochtige grond staat, voorkomen ze ook houtrot. We adviseren welk type poer bij uw project past.
+
+05 Vorstrand
+
+Een vorstrand is een funderingsrib die in één keer met de vloer wordt meegestort, zonder heipalen. Hij voorkomt dat de grond onder het bouwwerk opvriest en verschuift — ideaal voor kleinere bouwwerken zoals een schuur, samen met een funderingsplaat.
+
+06 Zwembadfundering
+
+Water is zwaar: een zwembad vraagt om een stevige ondergrond en een robuuste fundering. We controleren vooraf de draagkracht en de grondwaterstand, en storten daarna de fundering op maat.
+
+07 Vloerconstructies
+
+Nieuwe vloeren bij verbouwingen — ook met stalen balken en een geïsoleerde systeemvloer.
 
 Zo pakken we het aan
 
@@ -171,18 +126,13 @@ Hoe zit het met afvoer en leidingen?
 
 Afvoeren en mantelbuizen leggen we vóór het storten, zodat ze netjes in de plaat zitten.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -193,3 +143,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

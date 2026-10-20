@@ -13,77 +13,12 @@ Een carport, veranda, overkapping of tuinhuis in hout — ontworpen op uw woning
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
 
-Wat we doen
-
-## Alles rond carport & overkapping, in één hand.
-
-01
-
-### Carports
-
-Vrijstaand of tegen de woning, voor één of twee auto's, in Douglas of hardhout.
-
-02
-
-### Veranda's & overkappingen
-
-Een overdekt terras dat het hele jaar bruikbaar is, eventueel met lichtkoepels.
-
-03
-
-### Tuinhuizen
-
-Van eenvoudige berging tot tuinkamer met openslaande deuren.
-
-04
-
-### Fundering & dak
-
-Poeren of een betonplaat eronder, EPDM-dak en strakke boeidelen erop.
-
-Alle werkzaamheden
-
-## Wat we doen binnen carport & overkapping.
-
-Carport laten bouwen
-Veranda & overkapping
-Schuur & tuinhuis bouwen
-Schuttingen plaatsen
-Fundering & betonpoeren
-
-01
-
-### Carport laten bouwen
-
-Een carport beschermt uw auto en voegt waarde toe aan uw woning. We beginnen met een inventarisatie van uw wensen en de mogelijkheden van uw perceel, maken een nauwkeurige planning en bouwen met degelijke materialen — van ontwerp tot afwerking.
-
-02
-
-### Veranda & overkapping
-
-Een overdekt terras dat het hele jaar bruikbaar is, eventueel met lichtkoepels. Op maat ontworpen en passend bij uw woning.
-
-03
-
-### Schuur & tuinhuis bouwen
-
-Een schuur of tuinhuis met voldoende vloeroppervlak, stahoogte, licht en minstens één raam — als berging voor gereedschap en tuinspullen of als tuinkamer. We bespreken vooraf wat u nodig heeft en bouwen het in korte tijd.
-
-04
-
-### Schuttingen plaatsen
-
-Een schutting geeft privacy, beschut tegen wind en zon en houdt huisdieren binnen. We plaatsen schuttingen snel, stevig en voor een redelijke prijs.
-
-05
-
-### Fundering & betonpoeren
-
-Een carport of overkapping rust op betonpoeren of een betonplaat. Zo staat het hout niet in de vochtige grond en voorkomt u verzakking en houtrot.
-
-Lamellenwand in douglas onder de overkapping, in het avondlicht
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Uitgevoerd werk
 
@@ -98,6 +33,30 @@ Na
 1 / 15
 
 Autostalling tegen de woning, met nieuwe bestrating
+
+Wat we doen
+
+## Alles rond carport & overkapping, in één hand.
+
+01 Carport laten bouwen
+
+Een carport beschermt uw auto en voegt waarde toe aan uw woning. We beginnen met een inventarisatie van uw wensen en de mogelijkheden van uw perceel, maken een nauwkeurige planning en bouwen met degelijke materialen — van ontwerp tot afwerking.
+
+02 Veranda & overkapping
+
+Een overdekt terras dat het hele jaar bruikbaar is, eventueel met lichtkoepels. Op maat ontworpen en passend bij uw woning.
+
+03 Schuur & tuinhuis bouwen
+
+Een schuur of tuinhuis met voldoende vloeroppervlak, stahoogte, licht en minstens één raam — als berging voor gereedschap en tuinspullen of als tuinkamer. We bespreken vooraf wat u nodig heeft en bouwen het in korte tijd.
+
+04 Schuttingen plaatsen
+
+Een schutting geeft privacy, beschut tegen wind en zon en houdt huisdieren binnen. We plaatsen schuttingen snel, stevig en voor een redelijke prijs.
+
+05 Fundering & betonpoeren
+
+Een carport of overkapping rust op betonpoeren of een betonplaat. Zo staat het hout niet in de vochtige grond en voorkomt u verzakking en houtrot.
 
 Zo pakken we het aan
 
@@ -123,6 +82,8 @@ Boeidelen, goten, eventueel bestrating en verlichting — netjes opgeleverd.
 
 [Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
+Lamellenwand in douglas onder de overkapping, in het avondlicht
+
 ★★★★★
 "OK Timmerwerken levert vakwerk. Er werd goed meegedacht en alles is netjes op de bestaande situatie aangepast. Mooi en degelijk Douglas hout, EPDM-dak en keurig afgewerkte boeidelen."
 
@@ -144,18 +105,13 @@ Leggen jullie ook de bestrating?
 
 Ja, de ondergrond — bestrating of een betonvloer — kunnen we in hetzelfde traject meenemen.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -166,3 +122,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

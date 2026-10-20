@@ -13,68 +13,12 @@ Een rommelige, koude zolder wordt een lichte, volwaardige ruimte. We isoleren he
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
 
-Wat we doen
-
-## Alles rond vliering & zolder, in één hand.
-
-01
-
-### Vliering plaatsen
-
-Een vlak plafond op de hanenbalken met een strak luik — extra bergruimte erboven.
-
-02
-
-### Zolder isoleren
-
-Het dak geïsoleerd en afgewerkt, zodat de zolder 's zomers koel en 's winters warm blijft.
-
-03
-
-### Knieschotten & kasten
-
-Knieschotten met deurtjes: de lage ruimte onder het dak wordt nuttige opbergruimte.
-
-04
-
-### Wanden & afwerking
-
-Tussenwanden, deuren, plafonds en vloer — opgeleverd als echte kamer.
-
-Alle werkzaamheden
-
-## Wat we doen binnen vliering & zolder.
-
-Vliering plaatsen
-Zolder isoleren
-Knieschotten & inbouwkasten
-Van zolder naar kamer
-
-01
-
-### Vliering plaatsen
-
-Een vlak plafond op de hanenbalken met een strak luik: daarboven ontstaat extra bergruimte, eronder een rustige, afgewerkte zolder.
-
-02
-
-### Zolder isoleren
-
-Het dak wordt geïsoleerd en afgewerkt, zodat de zolder in de zomer koel en in de winter warm blijft — en uw energierekening omlaag gaat.
-
-03
-
-### Knieschotten & inbouwkasten
-
-De lage ruimte onder het dakbeschot wordt nuttige opbergruimte met knieschotten en deurtjes op maat.
-
-04
-
-### Van zolder naar kamer
-
-Tussenwanden, deuren, plafonds en vloer: we maken van de zolder een volwaardige slaapkamer, werkkamer of logeerkamer. Een dakraam plaatsen we in hetzelfde traject.
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Voor & na
 
@@ -97,6 +41,26 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of
 1 / 11
 
 Rondgang over de verbouwde zolder
+
+Wat we doen
+
+## Alles rond vliering & zolder, in één hand.
+
+01 Vliering plaatsen
+
+Een vlak plafond op de hanenbalken met een strak luik: daarboven ontstaat extra bergruimte, eronder een rustige, afgewerkte zolder.
+
+02 Zolder isoleren
+
+Het dak wordt geïsoleerd en afgewerkt, zodat de zolder in de zomer koel en in de winter warm blijft — en uw energierekening omlaag gaat.
+
+03 Knieschotten & inbouwkasten
+
+De lage ruimte onder het dakbeschot wordt nuttige opbergruimte met knieschotten en deurtjes op maat.
+
+04 Van zolder naar kamer
+
+Tussenwanden, deuren, plafonds en vloer: we maken van de zolder een volwaardige slaapkamer, werkkamer of logeerkamer. Een dakraam plaatsen we in hetzelfde traject.
 
 Zo pakken we het aan
 
@@ -143,18 +107,13 @@ Moet ik de zolder zelf leegmaken?
 
 Graag wel de spullen; het afvoeren van oude materialen en bouwafval nemen wij mee.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -165,3 +124,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

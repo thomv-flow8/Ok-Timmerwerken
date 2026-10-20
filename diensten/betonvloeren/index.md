@@ -13,82 +13,12 @@ Van een garage of schuur tot een complete woonkamer of een terras in de tuin: OK
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
 
-Wat we doen
-
-## Alles rond betonvloeren, in één hand.
-
-01
-
-### Gevlinderde vloeren
-
-Binnen in woning, garage of schuur — machinaal gevlinderd tot een glad, dicht oppervlak.
-
-02
-
-### Vloerverwarming
-
-Leidingen op de wapening, in één keer mee ingestort en netjes afgewerkt.
-
-03
-
-### Terrassen & buitenplaten
-
-Strak afgereid met afschot, zodat regenwater vanzelf wegloopt.
-
-04
-
-### Isolatie & wapening
-
-De onzichtbare basis: isolatieplaten en wapeningsnet op de juiste hoogte.
-
-Alle werkzaamheden
-
-## Wat we doen binnen betonvloeren.
-
-Gevlinderde betonvloer (monoliet vloer)
-Cementdekvloeren
-Egaliseren
-Beton buiten
-Schuimbeton
-Bedrijfsvloeren
-
-01
-
-### Gevlinderde betonvloer (monoliet vloer)
-
-Een gevlinderde vloer — ook wel monoliet vloer — wordt in één keer gestort en direct machinaal afgewerkt met een vlindermachine, zonder aparte zandcement-dekvloer erop. Het resultaat is een dichte, harde vloer die veel gewicht verdraagt, weinig stof geeft en makkelijk schoon te houden is.
-
-02
-
-### Cementdekvloeren
-
-Een dekvloer op basis van zandcement vlakt niveauverschillen in de ondergrond uit en maakt de vloer klaar voor de afwerking. Hij is goed onder afschot te leggen — zodat water vanzelf wegloopt — en daarom ook geschikt voor vochtige ruimtes.
-
-03
-
-### Egaliseren
-
-Bij egaliseren maken we een vloer glad en waterpas. Eerst brengen we de oneffenheden in kaart, daarna wordt de vloer op het juiste niveau gebracht. Zo krijgt u een sterke, strakke ondergrond die mooi oogt en eenvoudig schoon te maken is.
-
-04
-
-### Beton buiten
-
-Terrassen, paden, opritten of een ondergrond voor een schuur of overkapping: buiten is beton duurzaam, sterk, vorstbestendig en onderhoudsarm. We storten met afschot, zodat regenwater goed wegloopt.
-
-05
-
-### Schuimbeton
-
-Schuimbeton is licht, isolerend en vorstbestendig. Het wordt gebruikt om vloeren uit te vullen en te isoleren, als vloer in kruipruimtes of als werkvloer — ook om verzakte bestrating op te hogen. Een betaalbare en duurzame oplossing.
-
-06
-
-### Bedrijfsvloeren
-
-Voor werkplaatsen, loodsen en bedrijfspanden maken we betonvloeren die tegen een stootje kunnen: sterk, vochtbestendig en met een lange levensduur. We stemmen vooraf de belasting, het gebruik en de afwerking met u af.
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Voor & na
 
@@ -120,9 +50,37 @@ Voor
 
 Na
 
-1 / 16
+1 / 15
 
-Gevlinderde vloer onder een overkapping
+Woonkamer: vloerverwarming op de wapening
+
+Wat we doen
+
+## Alles rond betonvloeren, in één hand.
+
+01 Gevlinderde betonvloer (monoliet vloer)
+
+Een gevlinderde vloer — ook wel monoliet vloer — wordt in één keer gestort en direct machinaal afgewerkt met een vlindermachine, zonder aparte zandcement-dekvloer erop. Het resultaat is een dichte, harde vloer die veel gewicht verdraagt, weinig stof geeft en makkelijk schoon te houden is.
+
+02 Cementdekvloeren
+
+Een dekvloer op basis van zandcement vlakt niveauverschillen in de ondergrond uit en maakt de vloer klaar voor de afwerking. Hij is goed onder afschot te leggen — zodat water vanzelf wegloopt — en daarom ook geschikt voor vochtige ruimtes.
+
+03 Egaliseren
+
+Bij egaliseren maken we een vloer glad en waterpas. Eerst brengen we de oneffenheden in kaart, daarna wordt de vloer op het juiste niveau gebracht. Zo krijgt u een sterke, strakke ondergrond die mooi oogt en eenvoudig schoon te maken is.
+
+04 Beton buiten
+
+Terrassen, paden, opritten of een ondergrond voor een schuur of overkapping: buiten is beton duurzaam, sterk, vorstbestendig en onderhoudsarm. We storten met afschot, zodat regenwater goed wegloopt.
+
+05 Schuimbeton
+
+Schuimbeton is licht, isolerend en vorstbestendig. Het wordt gebruikt om vloeren uit te vullen en te isoleren, als vloer in kruipruimtes of als werkvloer — ook om verzakte bestrating op te hogen. Een betaalbare en duurzame oplossing.
+
+06 Bedrijfsvloeren
+
+Voor werkplaatsen, loodsen en bedrijfspanden maken we betonvloeren die tegen een stootje kunnen: sterk, vochtbestendig en met een lange levensduur. We stemmen vooraf de belasting, het gebruik en de afwerking met u af.
 
 Zo pakken we het aan
 
@@ -171,18 +129,13 @@ Doen jullie ook vloeren buiten?
 
 Zeker: terrassen, oprit-stroken, ondergronden voor een tuinhuis of overkapping. Buiten storten we met afschot, zodat water goed wegloopt.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -193,3 +146,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

@@ -13,89 +13,12 @@ Verlaagde plafonds, wanden, doorbraken, kozijnen en de afwerking die alles af ma
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
 
-Wat we doen
-
-## Alles rond timmerwerk & afbouw, in één hand.
-
-01
-
-### Verlaagde plafonds
-
-Strak regelwerk, isolatie waar nodig, en ruimte voor inbouwspots en leidingen.
-
-02
-
-### Wanden & ombouw
-
-Metal-stud of hout, met een tv-wand, nissen of lamellen als blikvanger.
-
-03
-
-### Doorbraken
-
-Een muur eruit voor een open ruimte — inclusief stalen balk en afwerking.
-
-04
-
-### Kozijnen & afwerking
-
-Deuren, kozijnen, vensterbanken en plinten tot in de puntjes.
-
-Alle werkzaamheden
-
-## Wat we doen binnen timmerwerk & afbouw.
-
-Plafond verlagen
-Wanden plaatsen
-Deuren & kozijnen plaatsen
-Aftimmerwerk
-Koven maken
-Gevelbetimmering & gevelbekleding
-Doorbraken
-
-01
-
-### Plafond verlagen
-
-Een verlaagd plafond maakt een hoge ruimte intiemer en biedt ruimte voor leidingen, spots, airco of ventilatie. De minimale opbouw is maar enkele centimeters. We zetten strak regelwerk, isoleren waar nodig en werken het plafond glad af.
-
-02
-
-### Wanden plaatsen
-
-Met een nieuwe wand maakt u extra ruimtes, bijvoorbeeld een kamer op zolder. We werken met metal studs (stabieler en rechter dan hout), gipsplaten, gasbeton of mdf — en volgen een vast stappenplan: positie bepalen, liggers plaatsen, platen vastzetten en afwerken.
-
-03
-
-### Deuren & kozijnen plaatsen
-
-Nieuwe deuren en kozijnen verbeteren de uitstraling én de isolatie van uw woning: oude, slecht sluitende exemplaren laten veel warmte ontsnappen. We adviseren vrijblijvend over vervangen en plaatsen ze vakkundig.
-
-04
-
-### Aftimmerwerk
-
-Aftimmeren is het netjes afwerken van ruwe aansluitingen na timmerwerk — bijvoorbeeld rond een nieuw (verlaagd) plafond, kozijnen of leidingen. Het is gedetailleerd maatwerk waarbij vakmanschap het verschil maakt.
-
-05
-
-### Koven maken
-
-Een koof is een strakke ombouw op de overgang van muur en plafond om leidingen, gordijnrails of verlichting weg te werken. Met indirecte verlichting erin geeft een koof de ruimte direct meer sfeer.
-
-06
-
-### Gevelbetimmering & gevelbekleding
-
-De gevel bepaalt de uitstraling van uw woning en beschermt hem tegen weer en wind. We betimmeren en bekleden gevels in onder meer lariks, red cedar en douglas — nieuw, of ter vervanging van beschadigde of verouderde bekleding.
-
-07
-
-### Doorbraken
-
-Een muur eruit voor een open ruimte: we plaatsen de stalen balk volgens de berekening van de constructeur en werken alles daarna netjes af.
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Voor & na
 
@@ -130,6 +53,38 @@ Na
 1 / 16
 
 Tv-wand met nissen in opbouw
+
+Wat we doen
+
+## Alles rond timmerwerk & afbouw, in één hand.
+
+01 Plafond verlagen
+
+Een verlaagd plafond maakt een hoge ruimte intiemer en biedt ruimte voor leidingen, spots, airco of ventilatie. De minimale opbouw is maar enkele centimeters. We zetten strak regelwerk, isoleren waar nodig en werken het plafond glad af.
+
+02 Wanden plaatsen
+
+Met een nieuwe wand maakt u extra ruimtes, bijvoorbeeld een kamer op zolder. We werken met metal studs (stabieler en rechter dan hout), gipsplaten, gasbeton of mdf — en volgen een vast stappenplan: positie bepalen, liggers plaatsen, platen vastzetten en afwerken.
+
+03 Deuren & kozijnen plaatsen
+
+Nieuwe deuren en kozijnen verbeteren de uitstraling én de isolatie van uw woning: oude, slecht sluitende exemplaren laten veel warmte ontsnappen. We adviseren vrijblijvend over vervangen en plaatsen ze vakkundig.
+
+04 Aftimmerwerk
+
+Aftimmeren is het netjes afwerken van ruwe aansluitingen na timmerwerk — bijvoorbeeld rond een nieuw (verlaagd) plafond, kozijnen of leidingen. Het is gedetailleerd maatwerk waarbij vakmanschap het verschil maakt.
+
+05 Koven maken
+
+Een koof is een strakke ombouw op de overgang van muur en plafond om leidingen, gordijnrails of verlichting weg te werken. Met indirecte verlichting erin geeft een koof de ruimte direct meer sfeer.
+
+06 Gevelbetimmering & gevelbekleding
+
+De gevel bepaalt de uitstraling van uw woning en beschermt hem tegen weer en wind. We betimmeren en bekleden gevels in onder meer lariks, red cedar en douglas — nieuw, of ter vervanging van beschadigde of verouderde bekleding.
+
+07 Doorbraken
+
+Een muur eruit voor een open ruimte: we plaatsen de stalen balk volgens de berekening van de constructeur en werken alles daarna netjes af.
 
 Zo pakken we het aan
 
@@ -173,18 +128,13 @@ Kan ik tijdens de verbouwing thuis blijven wonen?
 
 Vaak wel. We stemmen de planning met u af en houden de werkplek zo schoon mogelijk.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -195,3 +145,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

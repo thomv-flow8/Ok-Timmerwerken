@@ -13,77 +13,12 @@ Voor nieuwbouwprojecten zet OK Timmerwerken HSB-wanden, stelt kozijnen, maakt da
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
 
-Wat we doen
-
-## Alles rond nieuwbouw, in één hand.
-
-01
-
-### HSB-wanden
-
-Houtskeletbouwwanden zetten volgens tekening.
-
-02
-
-### Stelwerk kozijnen
-
-Kozijnen exact op maat en in positie gesteld.
-
-03
-
-### Dak- & vloerconstructies
-
-Balklagen in hout, staal of beton.
-
-04
-
-### Ramen, deuren & boeidelen
-
-Plaatsen en strak afwerken.
-
-Alle werkzaamheden
-
-## Wat we doen binnen nieuwbouw.
-
-HSB-wanden zetten
-Stelwerk kozijnen
-Boeidelen
-Constructies dak & vloer
-Ramen & deuren
-
-01
-
-### HSB-wanden zetten
-
-HSB — houtskeletbouw — wanden vormen de constructie van veel nieuwbouwprojecten. We zetten ze nauwkeurig volgens tekening, zodat de verdere afbouw er goed op aansluit.
-
-02
-
-### Stelwerk kozijnen
-
-Stelwerk gebeurt vóór het metselen of lijmen: aan de hand van de bouwtekening worden kozijnen exact op maat, waterpas en in positie gezet. Precisiewerk waar we veel ervaring mee hebben.
-
-03
-
-### Boeidelen
-
-Boeidelen werken de dakrand af en beschermen het dak — bijvoorbeeld bij de dakgoot of de rand van een plat dak. We plaatsen ze in hout zoals red cedar of in onderhoudsarme materialen, passend bij uw project en budget.
-
-04
-
-### Constructies dak & vloer
-
-Dak- en vloerconstructies — balken van hout, staal of beton — zijn de basis van elk gebouw en moeten wind, regen en belasting kunnen dragen. We bouwen nieuwe constructies en inspecteren of vernieuwen bestaande, zodat problemen als houtrot geen kans krijgen.
-
-05
-
-### Ramen & deuren
-
-Nieuwe ramen en deuren verbeteren de isolatie, de veiligheid en het wooncomfort, en verhogen de waarde van uw woning. We zetten eerst uw wensen op een rij, maken een plan en plaatsen of vervangen daarna vakkundig.
-
-Open spanten en een strakke vloer, in het late zonlicht
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Uitgevoerd werk
 
@@ -94,6 +29,30 @@ Foto's van klussen die OK Timmerwerken heeft uitgevoerd. Blader met de pijlen of
 1 / 10
 
 Nieuwe woning met houten spanten
+
+Wat we doen
+
+## Alles rond nieuwbouw, in één hand.
+
+01 HSB-wanden zetten
+
+HSB — houtskeletbouw — wanden vormen de constructie van veel nieuwbouwprojecten. We zetten ze nauwkeurig volgens tekening, zodat de verdere afbouw er goed op aansluit.
+
+02 Stelwerk kozijnen
+
+Stelwerk gebeurt vóór het metselen of lijmen: aan de hand van de bouwtekening worden kozijnen exact op maat, waterpas en in positie gezet. Precisiewerk waar we veel ervaring mee hebben.
+
+03 Boeidelen
+
+Boeidelen werken de dakrand af en beschermen het dak — bijvoorbeeld bij de dakgoot of de rand van een plat dak. We plaatsen ze in hout zoals red cedar of in onderhoudsarme materialen, passend bij uw project en budget.
+
+04 Constructies dak & vloer
+
+Dak- en vloerconstructies — balken van hout, staal of beton — zijn de basis van elk gebouw en moeten wind, regen en belasting kunnen dragen. We bouwen nieuwe constructies en inspecteren of vernieuwen bestaande, zodat problemen als houtrot geen kans krijgen.
+
+05 Ramen & deuren
+
+Nieuwe ramen en deuren verbeteren de isolatie, de veiligheid en het wooncomfort, en verhogen de waarde van uw woning. We zetten eerst uw wensen op een rij, maken een plan en plaatsen of vervangen daarna vakkundig.
 
 Zo pakken we het aan
 
@@ -119,6 +78,8 @@ Ramen, deuren en boeidelen erin en eraan — klaar voor de volgende fase.
 
 [Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
+Open spanten en een strakke vloer, in het late zonlicht
+
 Veelgestelde vragen
 
 ## Goed om te weten.
@@ -135,18 +96,13 @@ Kunnen jullie ook het betonwerk doen?
 
 Zeker — funderingen, betonplaten en vloeren doen we in eigen hand. Zo sluit alles op elkaar aan.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[04 Dakramen (Velux) Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -157,3 +113,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[erkend montagepartner 04 Dakramen (Velux) → Meer licht, altijd waterdicht.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/dakramen/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)

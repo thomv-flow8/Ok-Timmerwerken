@@ -13,82 +13,15 @@ Als erkend VELUX Montagepartner plaatst OK Timmerwerken dakramen vakkundig en wa
 Geschreven door [Ozcan](https://thomv-flow8.github.io/Ok-Timmerwerken/over-ons/), eigenaar van OK Timmerwerken
 
 [Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+[WhatsApp](https://wa.me/31641429106)
 Bekijk uitgevoerd werk
+
+**15 jaar** vakwerk
+**500+** projecten
+[4,9 175 reviews](https://thomv-flow8.github.io/Ok-Timmerwerken/reviews/)
 
 Getraind en gecertificeerd
 door VELUX
-
-Wat we doen
-
-## Alles rond dakramen (Velux), in één hand.
-
-01
-
-### Nieuw dakraam plaatsen
-
-Gat in het dak, raam erin, waterdicht aangesloten op de pannen.
-
-02
-
-### Bestaand raam vervangen
-
-Een oud of lekkend dakraam vervangen door een nieuw exemplaar.
-
-03
-
-### Binnenafwerking
-
-Strakke, witte dagkanten en een vensterbank — geen losse kieren of naden.
-
-04
-
-### Lichtkoepels
-
-Voor platte daken van overkappingen en uitbouwen.
-
-Alle werkzaamheden
-
-## Wat we doen binnen dakramen (Velux).
-
-Velux dakraam laten plaatsen
-Oud dakraam vervangen voor Velux
-Officiële VELUX-gootstukken
-Meer daglicht, betere ventilatie
-Erkend VELUX Montagepartner
-
-01
-
-### Velux dakraam laten plaatsen
-
-Een dakraam plaatsen is meer dan een gat in het dak zagen: de juiste maat bepalen, de sparing correct uitvoeren, het raam waterdicht inbouwen en de binnenkant netjes afwerken. Als erkend VELUX Montagepartner doen we dit volgens de officiële montagerichtlijnen.
-
-02
-
-### Oud dakraam vervangen voor Velux
-
-Lekt uw dakraam, heeft u last van condens op het glas, tocht het langs de naden of gaat het moeilijk open en dicht? Veel dakramen van 15 à 20 jaar oud voldoen niet meer aan de huidige isolatienormen. We verwijderen het oude raam en plaatsen een nieuw VELUX-raam — snel, schoon en met minimale overlast.
-
-03
-
-### Officiële VELUX-gootstukken
-
-We werken uitsluitend met de officiële VELUX-gootstukkensets. De PRO+-set met isolatieframe (BDX) en waterkerend manchet (BFX) zorgt voor een montage zonder lekkage, koudebruggen of warmteverlies — de beste keuze voor isolatie en energieprestaties op de lange termijn.
-
-04
-
-### Meer daglicht, betere ventilatie
-
-Een nieuw VELUX-dakraam met HR++-glas houdt in de winter de warmte binnen en in de zomer de zon buiten. De ingebouwde ventilatieklep laat ook bij een gesloten raam frisse lucht binnen. Dat vermindert condens en verbetert de luchtkwaliteit in huis.
-
-05
-
-### Erkend VELUX Montagepartner
-
-OK Timmerwerken wordt door VELUX getraind en gecertificeerd. Zo bent u verzekerd van een vakkundige montage en een duurzaam resultaat — vanuit Gorinchem, door heel Nederland.
-
-[Download de VELUX-brochure (pdf)](https://thomv-flow8.github.io/Ok-Timmerwerken/assets/documenten/velux-brochure.pdf)
-
-Drie dakramen, en de zon valt naar binnen
 
 Uitgevoerd werk
 
@@ -103,6 +36,32 @@ Na
 1 / 14
 
 Drie VELUX-dakramen geplaatst, afwerking volgt
+
+Wat we doen
+
+## Alles rond dakramen (Velux), in één hand.
+
+01 Velux dakraam laten plaatsen
+
+Een dakraam plaatsen is meer dan een gat in het dak zagen: de juiste maat bepalen, de sparing correct uitvoeren, het raam waterdicht inbouwen en de binnenkant netjes afwerken. Als erkend VELUX Montagepartner doen we dit volgens de officiële montagerichtlijnen.
+
+02 Oud dakraam vervangen voor Velux
+
+Lekt uw dakraam, heeft u last van condens op het glas, tocht het langs de naden of gaat het moeilijk open en dicht? Veel dakramen van 15 à 20 jaar oud voldoen niet meer aan de huidige isolatienormen. We verwijderen het oude raam en plaatsen een nieuw VELUX-raam — snel, schoon en met minimale overlast.
+
+03 Officiële VELUX-gootstukken
+
+We werken uitsluitend met de officiële VELUX-gootstukkensets. De PRO+-set met isolatieframe (BDX) en waterkerend manchet (BFX) zorgt voor een montage zonder lekkage, koudebruggen of warmteverlies — de beste keuze voor isolatie en energieprestaties op de lange termijn.
+
+04 Meer daglicht, betere ventilatie
+
+Een nieuw VELUX-dakraam met HR++-glas houdt in de winter de warmte binnen en in de zomer de zon buiten. De ingebouwde ventilatieklep laat ook bij een gesloten raam frisse lucht binnen. Dat vermindert condens en verbetert de luchtkwaliteit in huis.
+
+05 Erkend VELUX Montagepartner
+
+OK Timmerwerken wordt door VELUX getraind en gecertificeerd. Zo bent u verzekerd van een vakkundige montage en een duurzaam resultaat — vanuit Gorinchem, door heel Nederland.
+
+[Download de VELUX-brochure (pdf)](https://thomv-flow8.github.io/Ok-Timmerwerken/assets/documenten/velux-brochure.pdf)
 
 Zo pakken we het aan
 
@@ -128,6 +87,8 @@ Binnen werken we de dagkanten en vensterbank strak af, klaar om te schilderen of
 
 [Klaar voor stap 1? Bel, app of mail Ozcan. Binnen een dag hoort u van ons. Vraag vrijblijvend advies](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
 
+Drie dakramen, en de zon valt naar binnen
+
 Veelgestelde vragen
 
 ## Goed om te weten.
@@ -144,18 +105,13 @@ Kan het ook bij een bewoonde zolder?
 
 Ja. We werken netjes en ruimen dagelijks op, zodat u de ruimte zo min mogelijk kwijt bent.
 
-Meer van OK
+Wat kost het, en waar hangt de prijs van af?
 
-## Andere diensten.
+Dat hangt af van de omvang, de opbouw en de bereikbaarheid. Ozcan komt vrijblijvend langs, kijkt ter plaatse wat er nodig is en u krijgt daarna een duidelijke prijs op papier.
 
-[01 Betonvloeren Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
-[02 Vliering & zolder Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
-[03 Carport & overkapping Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
-[05 Timmerwerk & afbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
-[06 Funderingen Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
-[07 Onderhoud & renovatie Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
-[08 Nieuwbouw Bekijk het werk](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
-[Alle diensten Alle werkzaamheden op een rij →](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
+Werken jullie ook bij mij in de buurt?
+
+OK Timmerwerken werkt vanuit Gorinchem, door heel Nederland. Vertel waar de klus is, dan horen we binnen een dag van ons.
 
 Contact
 
@@ -166,3 +122,16 @@ Vertel kort wat u van plan bent. Ozcan reageert binnen een dag en komt graag lan
 Bel 06 41 42 91 06
 [WhatsApp](https://wa.me/31641429106)
 [Contactformulier](https://thomv-flow8.github.io/Ok-Timmerwerken/contact/)
+
+Meer van OK
+
+## Andere diensten.
+
+[machinaal gevlinderd 01 Betonvloeren → Een vlakke, gladde vloer die jaren meegaat.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/betonvloeren/)
+[Voor Na van zolder tot kamer 02 Vliering & zolder → Een hele verdieping erbij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/zolder/)
+[op maat in hout 03 Carport & overkapping → Maatwerk dat uw buitenruimte afmaakt.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/carport/)
+[Voor Na tot de laatste lijst 05 Timmerwerk & afbouw → Van ruwbouw tot de laatste lijst.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/timmerwerk/)
+[Voor Na degelijk voorbereid 06 Funderingen → Het fundament onder al het werk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/funderingen/)
+[tegel voor tegel 07 Onderhoud & renovatie → Uw woning weer in topconditie.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/onderhoud/)
+[vanaf de eerste balk 08 Nieuwbouw → Vakwerk vanaf de eerste balk.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/nieuwbouw/)
+[Alle diensten → Alle werkzaamheden op een rij.](https://thomv-flow8.github.io/Ok-Timmerwerken/diensten/)
