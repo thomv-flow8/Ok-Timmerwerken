@@ -33,7 +33,7 @@ em{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:40
 
 def kaart(thema):
     d = thema == 'donker'
-    ink, bg, zacht, lijn, logo_kl = ('#ffffff', '#14130f', '#b9b4aa', 'rgba(255,255,255,.14)', 'wit') if d else ('#14130f', '#f6f3ee', '#6b6762', '#ddd6cb', 'zwart')
+    ink, bg, zacht, lijn, logo_kl = ('#ffffff', '#14130f', '#b9b4aa', 'rgba(255,255,255,.14)', 'goud') if d else ('#14130f', '#f6f3ee', '#6b6762', '#ddd6cb', 'goud-zwart')
     rijen = ''.join(f'<li><span class="ic"><svg><use href="#{i}"/></svg></span>{t}</li>' for i, t in DIENSTEN)
     return f'''<!doctype html><meta charset="utf-8"><style>{BASIS.replace('VW','1800px').replace('VH','1200px')}
 body{{background:{bg};color:{ink};position:relative}}
@@ -64,11 +64,11 @@ h1 em{{font-size:1.1em}}
 <span class="oog">Timmer- en betonwerk · Gorinchem</span><h1>Vakwerk waar u<br>op kunt <em>bouwen</em>.</h1>
 <ul class="contact"><li><span class="ic"><svg><use href="#i-web"/></svg></span>www.ok-timmerwerken.nl</li><li><span class="ic"><svg><use href="#i-mail"/></svg></span>info@ok-timmerwerken.nl</li><li><span class="ic"><svg><use href="#i-tel"/></svg></span>06 41 42 91 06</li></ul></div>
 <div class="rechts"><span class="kop">Wat we doen</span><ul class="diensten">{rijen}</ul>
-<div class="velux"><img src="../../../../assets/velux/velux-montagepartner.jpg" alt=""><img src="../../../../assets/velux/velux-getraind-2025.jpg" alt=""><span><b>Erkend VELUX Montagepartner</b><br>getraind en gecertificeerd door VELUX</span></div></div></div>'''
+<div class="velux"><img src="../../../../assets/velux/velux-montagepartner.webp" alt=""><img src="../../../../assets/velux/velux-getraind-2025.webp" alt=""><span><b>Erkend VELUX Montagepartner</b><br>getraind en gecertificeerd door VELUX</span></div></div></div>'''
 
 def profiel():
     return f'''<!doctype html><meta charset="utf-8"><style>{BASIS.replace('VW','540px').replace('VH','540px')}
-body{{background:#14130f;display:grid;place-items:center}} img{{width:300px}}</style><body><img src="{logo('beeldmerk','wit')}" alt="">'''
+body{{background:#14130f;display:grid;place-items:center}} img{{width:300px}}</style><body><img src="{logo('beeldmerk','goud')}" alt="">'''
 
 def omslag():
     # Facebook toont op mobiel alleen het midden (± 555 van de 820 breed): kaartje en huis staan daarbinnen
@@ -78,11 +78,16 @@ body{{background:#d8cdc2;position:relative}}
 .v{{position:absolute;left:138px;top:50%;transform:translateY(-50%);background:#fff;border-radius:14px;padding:22px 24px;box-shadow:0 18px 40px -24px rgba(20,19,15,.5)}}
 .v img{{width:210px;display:block}} .v p{{margin-top:12px;font-size:14px;font-weight:600;color:#14130f}} .v p em{{font-size:1.15em}}
 .v small{{display:block;margin-top:5px;font-size:11.5px;line-height:1.45;color:#6b6762}}</style>
-<body><img class="beeld" src="../../../../assets/render/hero-wolken.jpg" alt=""><div class="v"><img src="{logo('liggend','zwart')}" alt=""><p>Vakwerk waar u op kunt <em>bouwen</em>.</p><small>Timmer- en betonwerk · Gorinchem<br>06 41 42 91 06 · ok-timmerwerken.nl</small></div>'''
+<body><img class="beeld" src="../../../../assets/render/hero-wolken.webp" alt=""><div class="v"><img src="{logo('liggend','goud-zwart')}" alt=""><p>Vakwerk waar u op kunt <em>bouwen</em>.</p><small>Timmer- en betonwerk · Gorinchem<br>06 41 42 91 06 · ok-timmerwerken.nl</small></div>'''
 
 def handtekening_voorbeeld():
     return f'''<!doctype html><meta charset="utf-8"><style>{BASIS.replace('VW','640px').replace('VH','230px')}
-body{{background:#fff;padding:28px}}</style><body>{handtekening('../svg/ok-timmerwerken-liggend-zwart.svg')}'''
+body{{background:#fff;padding:28px}}</style><body>{handtekening('../svg/ok-timmerwerken-liggend-goud-zwart.svg')}'''
+
+def handtekening_plaatje():
+    # alleen de handtekening, zonder marge: wordt na het schieten bijgesneden tot de inhoud
+    return f'''<!doctype html><meta charset="utf-8"><style>{BASIS.replace('VW','460px').replace('VH','200px')}
+body{{background:#fff;padding:4px}}</style><body>{handtekening('../svg/ok-timmerwerken-liggend-goud-zwart.svg')}'''
 
 def handtekening(logo_url):
     # tabelopmaak met inline stijlen: werkt in Outlook / Microsoft 365, Gmail en Apple Mail
@@ -102,7 +107,8 @@ def handtekening(logo_url):
 
 STUKKEN = [('kaart-licht', kaart('licht'), 1800, 1200, 'kaart'), ('kaart-donker', kaart('donker'), 1800, 1200, 'kaart'),
            ('profielfoto-1080', profiel(), 540, 540, 'social'), ('facebook-omslag-1640x624', omslag(), 820, 312, 'social'),
-           ('mailhandtekening-voorbeeld', handtekening_voorbeeld(), 640, 230, 'mailhandtekening')]
+           ('mailhandtekening-voorbeeld', handtekening_voorbeeld(), 640, 230, 'mailhandtekening'),
+           ('mailhandtekening-licht', handtekening_plaatje(), 460, 200, 'mailhandtekening')]
 
 # kleine webserver vanaf de projectmap, zodat lettertypes en beelden laden
 class Stil(http.server.SimpleHTTPRequestHandler):
@@ -114,13 +120,27 @@ for naam, html, w, h, map_ in STUKKEN:
     open(os.path.join(BRON, naam + '.html'), 'w').write(html)
     uit = os.path.join(PAK, map_, naam + '.png')
     subprocess.run([SCHIET, f'http://127.0.0.1:{poort}/docs/merk/logopakket/_bron/{naam}.html', str(w), str(h), uit], check=True, capture_output=True)
+    if naam == 'mailhandtekening-licht':   # bijsnijden tot de inhoud, met een kleine witte rand
+        from PIL import Image, ImageChops
+        im = Image.open(uit).convert('RGB'); vak = ImageChops.difference(im, Image.new('RGB', im.size, 'white')).getbbox()
+        r = 12; im.crop((max(0, vak[0] - r), max(0, vak[1] - r), min(im.width, vak[2] + r), min(im.height, vak[3] + r))).save(uit, optimize=True)
     print('ok', os.path.relpath(uit, ROOT))
 srv.shutdown()
+
+# deelbeeld (WhatsApp, Facebook, LinkedIn): het bestaande beeld, met het nieuwe gouden logo in het witte kaartje
+from PIL import Image
+db = Image.open(os.path.join(PAK, 'social', 'deelbeeld-1200x630.jpg')).convert('RGB')
+lg = Image.open(os.path.join(PAK, 'png', 'ok-timmerwerken-liggend-goud-zwart-2000.png'))
+lg = lg.resize((400, round(lg.height * 400 / lg.width)), Image.LANCZOS)
+db.paste((255, 255, 255), (84, 80, 492, 164)); db.paste(lg, (88, 122 - lg.height // 2), lg)   # oude logo: x 88–487, y 86–158
+db.save(os.path.join(PAK, 'social', 'deelbeeld-1200x630.jpg'), quality=86, optimize=True, progressive=True)
+db.save(os.path.join(ROOT, 'assets/og/ok-timmerwerken-delen.jpg'), quality=86, optimize=True, progressive=True)
+print('ok deelbeeld (social + assets/og)')
 
 # mailhandtekening om te plakken: logo vanaf de website (wordt na de livegang www.ok-timmerwerken.nl)
 LIVE = 'https://www.ok-timmerwerken.nl/assets/merk/mailhandtekening-logo.png'
 os.makedirs(os.path.join(ROOT, 'assets/merk'), exist_ok=True)
-shutil.copy(os.path.join(PAK, 'png/ok-timmerwerken-liggend-zwart-600.png'), os.path.join(ROOT, 'assets/merk/mailhandtekening-logo.png'))
+shutil.copy(os.path.join(PAK, 'png/ok-timmerwerken-liggend-goud-zwart-600.png'), os.path.join(ROOT, 'assets/merk/mailhandtekening-logo.png'))
 open(os.path.join(PAK, 'mailhandtekening', 'mailhandtekening.html'), 'w').write(f'''<!doctype html><meta charset="utf-8"><title>Mailhandtekening OK Timmerwerken</title>
 <!-- Selecteer alles hieronder in de browser (Cmd+A), kopieer (Cmd+C) en plak het in het handtekeningveld van Outlook. -->
 <body style="margin:24px">

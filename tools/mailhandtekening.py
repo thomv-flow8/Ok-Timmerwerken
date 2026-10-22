@@ -44,9 +44,10 @@ for i, k in enumerate(namen):
     v.crop((round(i * C * s), 0, round((i + 1) * C * s), round(C * s))).resize((48, 48), Image.LANCZOS).save(os.path.join(BEELD, k.replace('i-', 'icoon-') + '.png'), optimize=True)
 os.remove(tmp); os.remove(png)
 
-# ---------- 2. logo (wit, staand) en VELUX-keurmerk op maat ----------
-logo = Image.open(os.path.join(ROOT, 'docs/merk/logopakket/png/ok-timmerwerken-staand-wit-600.png'))
-logo.resize((340, round(logo.height * 340 / logo.width)), Image.LANCZOS).save(os.path.join(BEELD, 'logo-staand-wit.png'), optimize=True)
+# ---------- 2. logo (goud met zilver, staand) en VELUX-keurmerk op maat ----------
+logo = Image.open(os.path.join(ROOT, 'docs/merk/logopakket/png/ok-timmerwerken-staand-goud-600.png'))
+logo.resize((340, round(logo.height * 340 / logo.width)), Image.LANCZOS).save(os.path.join(BEELD, 'logo-staand-goud.png'), optimize=True)
+if os.path.exists(os.path.join(BEELD, 'logo-staand-wit.png')): os.remove(os.path.join(BEELD, 'logo-staand-wit.png'))
 velux = Image.open(os.path.join(ROOT, 'assets/velux/velux-montagepartner.webp')).convert('RGB')
 velux.resize((round(velux.width * 88 / velux.height), 88), Image.LANCZOS).save(os.path.join(BEELD, 'velux-montagepartner.png'), optimize=True)
 getraind = Image.open(os.path.join(ROOT, 'assets/velux/velux-getraind-2025.webp')).convert('RGB')
@@ -68,7 +69,7 @@ def handtekening(b):
     return f'''<table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="{INKT}" style="width:600px;background:{INKT};border-radius:12px;{f}">
   <tr>
     <td width="320" style="padding:22px 18px 20px 24px;vertical-align:top">
-      <img src="{b}logo-staand-wit.png" width="{LW}" height="{LH}" alt="OK Timmerwerken" style="display:block;border:0;width:{LW}px;height:{LH}px">
+      <img src="{b}logo-staand-goud.png" width="{LW}" height="{LH}" alt="OK Timmerwerken" style="display:block;border:0;width:{LW}px;height:{LH}px">
       <div style="{f};font-size:16px;font-weight:bold;color:#ffffff;padding:16px 0 1px">Ozcan</div>
       <div style="{f};font-size:12px;color:{ZACHT};padding-bottom:8px">Eigenaar &middot; timmer- en betonwerk</div>
       <table cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid {LIJN}">
@@ -95,5 +96,14 @@ vb = os.path.join(BEELD, '_voorbeeld.html')
 open(vb, 'w').write(f'<!doctype html><meta charset="utf-8"><body style="margin:0;padding:28px;background:#fff;font-family:Arial,sans-serif;font-size:14px;color:#222">'
                     f'<p style="margin:0 0 6px">Beste meneer De Vries,</p><p style="margin:0 0 6px">Hierbij de offerte voor de nieuwe betonvloer. Heeft u vragen, bel of app gerust.</p><p style="margin:0 0 18px">Met vriendelijke groet,</p>{handtekening("")}</body>')
 subprocess.run([SCHIET, url('assets/merk/handtekening/_voorbeeld.html'), '660', '520', os.path.join(UIT, 'mailhandtekening-donker-voorbeeld.png')], check=True, capture_output=True)
-os.remove(vb); srv.shutdown()
+os.remove(vb)
+# de handtekening als één plaatje (2x scherp), om nu al in Outlook in te voegen: werkt zonder dat de site online staat
+pl = os.path.join(BEELD, '_plaatje.html')
+open(pl, 'w').write(f'<!doctype html><meta charset="utf-8"><body style="margin:0;padding:6px;background:#fff">{handtekening("")}</body>')
+uit_pl = os.path.join(UIT, 'mailhandtekening-donker.png')
+subprocess.run([SCHIET, url('assets/merk/handtekening/_plaatje.html'), '640', '420', uit_pl], check=True, capture_output=True)
+from PIL import ImageChops
+im = Image.open(uit_pl).convert('RGB'); vak = ImageChops.difference(im, Image.new('RGB', im.size, 'white')).getbbox()
+im.crop((max(0, vak[0] - 8), max(0, vak[1] - 8), min(im.width, vak[2] + 8), min(im.height, vak[3] + 8))).save(uit_pl, optimize=True)
+os.remove(pl); srv.shutdown()
 print('klaar:', sorted(os.listdir(BEELD)))
