@@ -1541,9 +1541,13 @@ function naarLosseBestanden(html, rel) {
   const pre = '../'.repeat(rel.split('/').length - 1);
   const sprite = html.match(/<svg width="0" height="0" style="position:absolute" aria-hidden="true">([\s\S]*?)<\/svg>\n?/);
   if (sprite) {
-    const inhoud = `<svg xmlns="http://www.w3.org/2000/svg">${sprite[1].trim()}</svg>\n`, naam = `assets/icons/${hash(inhoud)}.svg`;
+    // het gouden logo en zijn kleurverlopen blijven in de pagina: Safari toont geen verloop uit een los SVG-bestand
+    const blijft = /<defs>[\s\S]*?<\/defs>|<symbol id="i-logo(?:-woord)?"[\s\S]*?<\/symbol>/g;
+    const inPagina = (sprite[1].match(blijft) || []).join('');
+    const inhoud = `<svg xmlns="http://www.w3.org/2000/svg">${sprite[1].replace(blijft, '').trim()}</svg>\n`, naam = `assets/icons/${hash(inhoud)}.svg`;
     fs.writeFileSync(path.join(root, naam), inhoud);
-    html = html.replace(sprite[0], '').replace(/<use href="#(i-[^"]+)"/g, `<use href="${pre}${naam}#$1"`);
+    html = html.replace(sprite[0], inPagina ? `<svg width="0" height="0" style="position:absolute" aria-hidden="true">${inPagina}</svg>\n` : '')
+      .replace(/<use href="#(i-(?!logo\b|logo-woord\b)[^"]+)"/g, `<use href="${pre}${naam}#$1"`);
   }
   return html.replace(/<script>((?:(?!<\/script>)[\s\S]){1500,})<\/script>/g, (t, js) => {   // nooit over een </script> heen
     const naam = `assets/js/${hash(js)}.js`;
